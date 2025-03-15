@@ -1,0 +1,36 @@
+{
+	"name": "vConstants 💎",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "C_Tile_Size",
+			"type": "number",
+			"initialValue": "64",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 557039992155842
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Symbol_Variant_Count",
+			"type": "number",
+			"initialValue": "4",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 464612411215017
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Tile_Reveal_Time",
+			"type": "number",
+			"initialValue": "1.2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 469435592060815
+		}
+	],
+	"sid": 344291072955141
+}

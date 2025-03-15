@@ -1,0 +1,237 @@
+{
+	"name": "aTile 🟦",
+	"events": [
+		{
+			"aceType": "action",
+			"aceName": "spawn",
+			"objectClass": "Tile",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "rows",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 689592803654095
+				},
+				{
+					"name": "columns",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 718533506202646
+				}
+			],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 189491113149965,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "todo check for odd row*column count"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 362477952439719,
+							"parameters": {
+								"name": "W_X",
+								"start-index": "0",
+								"end-index": "columns - 1"
+							}
+						},
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 734064605507325,
+							"parameters": {
+								"name": "W_Y",
+								"start-index": "0",
+								"end-index": "rows - 1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 304057164749419,
+							"parameters": {
+								"object-to-create": "Tile",
+								"layer": "LAYER_Main",
+								"x": "loopindex(W_X) * C_Tile_Size + C_Tile_Size * 0.5",
+								"y": "loopindex(W_Y) * C_Tile_Size+ C_Tile_Size * 0.5",
+								"create-hierarchy": true,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Tile",
+							"sid": 467692682371345,
+							"parameters": {
+								"instance-variable": "randomId",
+								"value": "random(0, 1)"
+							}
+						}
+					],
+					"sid": 969001197324120
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "shuffle",
+			"objectClass": "Tile",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 167481556213047,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 678843425255413,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "nextSymbolNumber",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 520830809813250
+						},
+						{
+							"eventType": "variable",
+							"name": "tileIterator",
+							"type": "number",
+							"initialValue": "1",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 378642360287258
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each-ordered",
+									"objectClass": "System",
+									"sid": 398490083494332,
+									"parameters": {
+										"object": "Tile",
+										"expression": "Tile.randomId",
+										"order": "ascending"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 769726791729178,
+									"parameters": {
+										"type": "log",
+										"message": "\"Updating tile #\" & Tile.UID"
+									}
+								}
+							],
+							"sid": 200304786601294,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 994508899099384,
+											"parameters": {
+												"first-value": "tileIterator % 2",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 674106899757576,
+											"parameters": {
+												"variable": "nextSymbolNumber",
+												"value": "int(random(1, C_Symbol_Variant_Count + 1))"
+											}
+										}
+									],
+									"sid": 624534140452752
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "Tile",
+											"sid": 228548145968544,
+											"parameters": {
+												"child": "Symbol",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Tile",
+											"sid": 202962869318978,
+											"parameters": {
+												"instance-variable": "symbolNumber",
+												"value": "nextSymbolNumber"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Symbol",
+											"sid": 501715373034915,
+											"parameters": {
+												"animation": "str(Tile.symbolNumber)",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 269301943948465,
+											"parameters": {
+												"variable": "tileIterator",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 501570414841412
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 542412380648913
+}

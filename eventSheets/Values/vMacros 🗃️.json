@@ -1,0 +1,266 @@
+{
+	"name": "vMacros 🗃️",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "NOTHING",
+			"type": "number",
+			"initialValue": "-1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 995028409310032
+		},
+		{
+			"eventType": "variable",
+			"name": "NO",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 346906574628140
+		},
+		{
+			"eventType": "variable",
+			"name": "YES",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 499582822760795
+		},
+		{
+			"eventType": "comment",
+			"text": "Animations"
+		},
+		{
+			"eventType": "variable",
+			"name": "ANIM_Idle",
+			"type": "string",
+			"initialValue": "Idle",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 343566434682814
+		},
+		{
+			"eventType": "variable",
+			"name": "ANIM_Up",
+			"type": "string",
+			"initialValue": "Up",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 489541174954115
+		},
+		{
+			"eventType": "variable",
+			"name": "ANIM_Down",
+			"type": "string",
+			"initialValue": "Down",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 772294545491051
+		},
+		{
+			"eventType": "variable",
+			"name": "ANIM_Left",
+			"type": "string",
+			"initialValue": "Left",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 428035420571067
+		},
+		{
+			"eventType": "variable",
+			"name": "ANIM_Right",
+			"type": "string",
+			"initialValue": "Right",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 766018556956511
+		},
+		{
+			"eventType": "variable",
+			"name": "ANIM_Active",
+			"type": "string",
+			"initialValue": "Active",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 892067947302390
+		},
+		{
+			"eventType": "variable",
+			"name": "ANIM_Inactive",
+			"type": "string",
+			"initialValue": "Inactive",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 787197843313574
+		},
+		{
+			"eventType": "comment",
+			"text": "Layers"
+		},
+		{
+			"eventType": "variable",
+			"name": "LAYER_Main",
+			"type": "string",
+			"initialValue": "Main",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 556452912442956
+		},
+		{
+			"eventType": "variable",
+			"name": "LAYER_Player",
+			"type": "string",
+			"initialValue": "Player",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 427820323070241
+		},
+		{
+			"eventType": "comment",
+			"text": "Roles"
+		},
+		{
+			"eventType": "variable",
+			"name": "ROLE_DevLog",
+			"type": "string",
+			"initialValue": "DevLog",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 514423711778769
+		},
+		{
+			"eventType": "comment",
+			"text": "Templates"
+		},
+		{
+			"eventType": "variable",
+			"name": "TEMPLATE_Spawner_Dynamic",
+			"type": "string",
+			"initialValue": "Spawner_Dynamic",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 666287540836049
+		},
+		{
+			"eventType": "comment",
+			"text": "Timers"
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_TileReveal",
+			"type": "string",
+			"initialValue": "TileReveal",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 995737280135155
+		},
+		{
+			"eventType": "comment",
+			"text": "Words"
+		},
+		{
+			"eventType": "variable",
+			"name": "W_X",
+			"type": "string",
+			"initialValue": "X",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 193279471320981
+		},
+		{
+			"eventType": "variable",
+			"name": "W_Y",
+			"type": "string",
+			"initialValue": "Y",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 455255730079436
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Templates",
+			"description": "",
+			"isActiveOnStart": false,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Effects"
+				},
+				{
+					"eventType": "variable",
+					"name": "EFFECTS_Effect1",
+					"type": "string",
+					"initialValue": "Effect1",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 440839480306403
+				},
+				{
+					"eventType": "comment",
+					"text": "Object types"
+				},
+				{
+					"eventType": "variable",
+					"name": "OT_ObjectType1",
+					"type": "string",
+					"initialValue": "ObjectType1",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 122405122541165
+				},
+				{
+					"eventType": "comment",
+					"text": "Signals"
+				},
+				{
+					"eventType": "variable",
+					"name": "SIGNAL_Signal1",
+					"type": "string",
+					"initialValue": "Signal1",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 774070709637436
+				},
+				{
+					"eventType": "comment",
+					"text": "Tweens"
+				},
+				{
+					"eventType": "variable",
+					"name": "TWEEN_Tween1",
+					"type": "string",
+					"initialValue": "Tween1",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 904697440371338
+				}
+			],
+			"sid": 731591257483641
+		}
+	],
+	"sid": 359473117755789
+}

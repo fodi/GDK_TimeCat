@@ -1,0 +1,251 @@
+{
+	"name": "eInput_Level 🕹️",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 347869616165844,
+					"parameters": {
+						"key": 87
+					}
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 734947060289363,
+					"parameters": {
+						"key": 38
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player",
+					"sid": 278114295258586,
+					"parameters": {
+						"instance-variable": "IN_Up",
+						"value": "YES"
+					}
+				}
+			],
+			"sid": 780458562265116,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 774513482155717
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player",
+					"sid": 321084148334198,
+					"parameters": {
+						"instance-variable": "IN_Up",
+						"value": "NO"
+					}
+				}
+			],
+			"sid": 455694123049048
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 229595978736310,
+					"parameters": {
+						"key": 83
+					}
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 279607988296891,
+					"parameters": {
+						"key": 40
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player",
+					"sid": 368022174900252,
+					"parameters": {
+						"instance-variable": "IN_Down",
+						"value": "YES"
+					}
+				}
+			],
+			"sid": 948927590966608,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 903077675618320
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player",
+					"sid": 754235640690619,
+					"parameters": {
+						"instance-variable": "IN_Down",
+						"value": "NO"
+					}
+				}
+			],
+			"sid": 432243817707126
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 194950510930851,
+					"parameters": {
+						"key": 65
+					}
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 707835316502861,
+					"parameters": {
+						"key": 37
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player",
+					"sid": 247498751551668,
+					"parameters": {
+						"instance-variable": "IN_Left",
+						"value": "YES"
+					}
+				}
+			],
+			"sid": 632283559175690,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 784322143540978
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player",
+					"sid": 913135408799805,
+					"parameters": {
+						"instance-variable": "IN_Left",
+						"value": "NO"
+					}
+				}
+			],
+			"sid": 792364012998304
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 530636725474504,
+					"parameters": {
+						"key": 68
+					}
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 717333329703852,
+					"parameters": {
+						"key": 39
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player",
+					"sid": 884793435966146,
+					"parameters": {
+						"instance-variable": "IN_Right",
+						"value": "YES"
+					}
+				}
+			],
+			"sid": 838450160353632,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 253818421481821
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player",
+					"sid": 410452524988514,
+					"parameters": {
+						"instance-variable": "IN_Right",
+						"value": "NO"
+					}
+				}
+			],
+			"sid": 933742186072877
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 954550015856827,
+					"parameters": {
+						"key": 32
+					}
+				}
+			],
+			"actions": [
+				{
+					"customAction": "onAction",
+					"objectClass": "Player",
+					"sid": 195396586506617
+				}
+			],
+			"sid": 624001090247483
+		}
+	],
+	"sid": 758821500675486
+}

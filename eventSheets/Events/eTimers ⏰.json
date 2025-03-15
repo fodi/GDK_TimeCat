@@ -1,0 +1,398 @@
+{
+	"name": "eTimers ⏰",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "Player",
+					"sid": 592907479183506,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "TIMER_TileReveal"
+					}
+				},
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 462923208886294,
+					"parameters": {
+						"object": "Player"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 869342024182027,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "tile1SymbolNumber",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 245173653022720
+				},
+				{
+					"eventType": "variable",
+					"name": "tile2SymbolNumber",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 101244334032186
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Tile",
+							"sid": 910194070941021,
+							"parameters": {
+								"unique-id": "Player.tileUID1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 150657566261392,
+							"parameters": {
+								"variable": "tile1SymbolNumber",
+								"value": "Tile.symbolNumber"
+							}
+						}
+					],
+					"sid": 350060025832096
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Tile",
+							"sid": 662764973425091,
+							"parameters": {
+								"unique-id": "Player.tileUID2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 472175927525607,
+							"parameters": {
+								"variable": "tile2SymbolNumber",
+								"value": "Tile.symbolNumber"
+							}
+						}
+					],
+					"sid": 578715448412287
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 421603637992136,
+							"parameters": {
+								"variable": "tile1SymbolNumber",
+								"comparison": 0,
+								"value": "tile2SymbolNumber"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 562250685303192,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "Tile",
+									"sid": 866249882449868,
+									"parameters": {
+										"unique-id": "Player.tileUID1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Tile",
+									"sid": 610368035391403,
+									"parameters": {
+										"animation": "ANIM_Inactive",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Tile",
+									"sid": 541660098736641,
+									"parameters": {
+										"instance-variable": "playerUID",
+										"value": "NOTHING"
+									}
+								}
+							],
+							"sid": 379462595362471,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "Tile",
+											"sid": 541173132921218,
+											"parameters": {
+												"child": "Symbol",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "Symbol",
+											"sid": 498816876232730
+										}
+									],
+									"sid": 739474016100410
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "Tile",
+									"sid": 683755396653420,
+									"parameters": {
+										"unique-id": "Player.tileUID2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Tile",
+									"sid": 710199468793856,
+									"parameters": {
+										"animation": "ANIM_Inactive",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Tile",
+									"sid": 586699868270839,
+									"parameters": {
+										"instance-variable": "playerUID",
+										"value": "NOTHING"
+									}
+								}
+							],
+							"sid": 743202205636553,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "Tile",
+											"sid": 712014128849451,
+											"parameters": {
+												"child": "Symbol",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "Symbol",
+											"sid": 572025050461921
+										}
+									],
+									"sid": 880890954329773
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 335171749399562
+						}
+					],
+					"actions": [],
+					"sid": 976161529145968,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "Tile",
+									"sid": 645735025020918,
+									"parameters": {
+										"unique-id": "Player.tileUID1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Tile",
+									"sid": 720714188710828,
+									"parameters": {
+										"instance-variable": "playerUID",
+										"value": "NOTHING"
+									}
+								}
+							],
+							"sid": 625884383837983,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "Tile",
+											"sid": 487780392398441,
+											"parameters": {
+												"child": "Symbol",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "Symbol",
+											"sid": 497157144173045,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-opacity",
+											"objectClass": "Symbol",
+											"sid": 279380948033091,
+											"disabled": true,
+											"parameters": {
+												"opacity": "20"
+											}
+										}
+									],
+									"sid": 691457036242604
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "Tile",
+									"sid": 393755755735547,
+									"parameters": {
+										"unique-id": "Player.tileUID2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Tile",
+									"sid": 868879578844040,
+									"parameters": {
+										"instance-variable": "playerUID",
+										"value": "NOTHING"
+									}
+								}
+							],
+							"sid": 320627736237222,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "Tile",
+											"sid": 945863576384986,
+											"parameters": {
+												"child": "Symbol",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "Symbol",
+											"sid": 467052649221713,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-opacity",
+											"objectClass": "Symbol",
+											"sid": 935782639356909,
+											"disabled": true,
+											"parameters": {
+												"opacity": "20"
+											}
+										}
+									],
+									"sid": 752216129561041
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 955116763790622,
+							"parameters": {
+								"instance-variable": "tileUID1",
+								"value": "NOTHING"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 159073118506493,
+							"parameters": {
+								"instance-variable": "tileUID2",
+								"value": "NOTHING"
+							}
+						}
+					],
+					"sid": 158160075337735
+				}
+			]
+		}
+	],
+	"sid": 750823255495774
+}

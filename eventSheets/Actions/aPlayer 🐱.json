@@ -1,0 +1,522 @@
+{
+	"name": "aPlayer 🐱",
+	"events": [
+		{
+			"aceType": "action",
+			"aceName": "tick",
+			"objectClass": "Player",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 608725959345493,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 242562529766213,
+							"parameters": {
+								"instance-variable": "IN_Up",
+								"comparison": 0,
+								"value": "YES"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 178232391183352,
+							"parameters": {
+								"instance-variable": "IN_Down",
+								"comparison": 0,
+								"value": "YES"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 598796771236870,
+							"parameters": {
+								"instance-variable": "IN_Left",
+								"comparison": 0,
+								"value": "YES"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 173161658096628,
+							"parameters": {
+								"instance-variable": "IN_Right",
+								"comparison": 0,
+								"value": "YES"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 786782230678205,
+							"parameters": {
+								"instance-variable": "movementAngle",
+								"value": "angle(0, 0, Player.IN_Right - Player.IN_Left, Player.IN_Down - Player.IN_Up)"
+							}
+						},
+						{
+							"id": "set-vector-x",
+							"objectClass": "Player",
+							"sid": 914708578716635,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"vector-x": "(Player.IN_Right - Player.IN_Left) * Player.8Direction.MaxSpeed"
+							}
+						},
+						{
+							"id": "set-vector-y",
+							"objectClass": "Player",
+							"sid": 254507136972696,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"vector-y": "(Player.IN_Down - Player.IN_Up) * Player.8Direction.MaxSpeed"
+							}
+						}
+					],
+					"sid": 395302185597821,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 975347701768691
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player",
+							"sid": 569718961034247,
+							"parameters": {
+								"animation": "ANIM_Idle",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Player",
+							"sid": 371864621398910,
+							"behaviorType": "8Direction"
+						}
+					],
+					"sid": 987994243463132
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-angles",
+							"objectClass": "System",
+							"sid": 426347544782110,
+							"parameters": {
+								"angle": "Player.movementAngle",
+								"first-angle": "-60",
+								"second-angle": "60"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player",
+							"sid": 721715088107653,
+							"parameters": {
+								"animation": "ANIM_Right",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 244619879811170
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 139676377070486
+						},
+						{
+							"id": "is-between-angles",
+							"objectClass": "System",
+							"sid": 689829951690142,
+							"parameters": {
+								"angle": "Player.movementAngle",
+								"first-angle": "180-60",
+								"second-angle": "180+60"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player",
+							"sid": 496053164121857,
+							"parameters": {
+								"animation": "ANIM_Left",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 744070118608876
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 484588399369159
+						},
+						{
+							"id": "is-between-angles",
+							"objectClass": "System",
+							"sid": 187931701364269,
+							"parameters": {
+								"angle": "Player.movementAngle",
+								"first-angle": "270-30",
+								"second-angle": "270+30"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player",
+							"sid": 667061361538528,
+							"parameters": {
+								"animation": "ANIM_Up",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 611441748177887
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 717573425520188
+						},
+						{
+							"id": "is-between-angles",
+							"objectClass": "System",
+							"sid": 455199422218784,
+							"parameters": {
+								"angle": "Player.movementAngle",
+								"first-angle": "90-30",
+								"second-angle": "90+30"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player",
+							"sid": 501214520883930,
+							"parameters": {
+								"animation": "ANIM_Down",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 801758644113861
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "onAction",
+			"objectClass": "Player",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [
+				{
+					"id": "is-timer-running",
+					"objectClass": "Player",
+					"sid": 107047354412554,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "TIMER_TileReveal"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [],
+			"sid": 234693284807956,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "Tile",
+							"sid": 627693503568663,
+							"parameters": {
+								"animation": "ANIM_Active"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Tile",
+							"sid": 813527549734180,
+							"parameters": {
+								"instance-variable": "playerUID",
+								"comparison": 0,
+								"value": "NOTHING"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Tile",
+							"sid": 472136317732479,
+							"parameters": {
+								"object": "Player"
+							}
+						},
+						{
+							"id": "pick-overlapping-point",
+							"objectClass": "System",
+							"sid": 742309326322876,
+							"disabled": true,
+							"parameters": {
+								"object": "Tile",
+								"x": "Player.X",
+								"y": "Player.Y"
+							}
+						},
+						{
+							"id": "pick-nearestfurthest",
+							"objectClass": "Tile",
+							"sid": 846117373641708,
+							"parameters": {
+								"which": "nearest",
+								"x": "Player.X",
+								"y": "Player.Y"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 440086470812526,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 931348533734860,
+									"parameters": {
+										"instance-variable": "tileUID1",
+										"comparison": 0,
+										"value": "NOTHING"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player",
+									"sid": 199912069349420,
+									"parameters": {
+										"instance-variable": "tileUID1",
+										"value": "Tile.UID"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Tile",
+									"sid": 591370450308318,
+									"parameters": {
+										"instance-variable": "playerUID",
+										"value": "Player.UID"
+									}
+								}
+							],
+							"sid": 907191058206927,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "Tile",
+											"sid": 633898166296282,
+											"parameters": {
+												"child": "Symbol",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "Symbol",
+											"sid": 911604017759862,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-opacity",
+											"objectClass": "Symbol",
+											"sid": 490527070063789,
+											"disabled": true,
+											"parameters": {
+												"opacity": "100"
+											}
+										}
+									],
+									"sid": 442807175454692
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 337077664602185
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 786201678181917,
+									"parameters": {
+										"instance-variable": "tileUID2",
+										"comparison": 0,
+										"value": "NOTHING"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player",
+									"sid": 161254271381487,
+									"parameters": {
+										"instance-variable": "tileUID2",
+										"value": "Tile.UID"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Tile",
+									"sid": 608829098467244,
+									"parameters": {
+										"instance-variable": "playerUID",
+										"value": "Player.UID"
+									}
+								}
+							],
+							"sid": 558928239641539,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "Tile",
+											"sid": 661353976180258,
+											"parameters": {
+												"child": "Symbol",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "Symbol",
+											"sid": 684002797417383,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-opacity",
+											"objectClass": "Symbol",
+											"sid": 543307937535259,
+											"disabled": true,
+											"parameters": {
+												"opacity": "100"
+											}
+										}
+									],
+									"sid": 315944752812261
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 726934361029876,
+							"parameters": {
+								"instance-variable": "tileUID1",
+								"comparison": 1,
+								"value": "NOTHING"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 353034542358348,
+							"parameters": {
+								"instance-variable": "tileUID2",
+								"comparison": 1,
+								"value": "NOTHING"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "Player",
+							"sid": 457485624244921,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "C_Tile_Reveal_Time",
+								"type": "once",
+								"tag": "TIMER_TileReveal"
+							}
+						}
+					],
+					"sid": 689463614500175
+				}
+			]
+		}
+	],
+	"sid": 183802187831019
+}
