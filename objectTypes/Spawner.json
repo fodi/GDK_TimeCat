@@ -1,0 +1,66 @@
+{
+	"name": "Spawner",
+	"plugin-id": "Sprite",
+	"sid": 950378658485317,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "R_Spawn_Interval_Min",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 801474509514581
+		},
+		{
+			"name": "R_Spawn_Interval_Max",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 388143512509728
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Orbit",
+			"name": "Orbit",
+			"sid": 560845004533714
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 682323983802941
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6986831,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 280747000091467,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

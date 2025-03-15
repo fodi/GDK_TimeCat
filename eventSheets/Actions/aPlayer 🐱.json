@@ -3,6 +3,31 @@
 	"events": [
 		{
 			"aceType": "action",
+			"aceName": "init",
+			"objectClass": "Player",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player",
+					"sid": 904770510227589,
+					"parameters": {
+						"instance-variable": "health",
+						"value": "Self.R_Health_Max"
+					}
+				}
+			],
+			"sid": 846445072912984
+		},
+		{
+			"aceType": "action",
 			"aceName": "tick",
 			"objectClass": "Player",
 			"functionDescription": "",
@@ -16,6 +41,16 @@
 			"actions": [],
 			"sid": 608725959345493,
 			"children": [
+				{
+					"eventType": "variable",
+					"name": "isMoving",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 138926402706374
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -71,26 +106,243 @@
 							}
 						},
 						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 728336416862700,
+							"parameters": {
+								"variable": "isMoving",
+								"value": "YES"
+							}
+						}
+					],
+					"sid": 395302185597821,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 855050287440649,
+							"parameters": {
+								"instance-variable": "IN_Analog_Active",
+								"comparison": 0,
+								"value": "YES"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 344089742691932,
+							"parameters": {
+								"instance-variable": "movementAngle",
+								"value": "Player.IN_Analog_Angle"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 740373587579883,
+							"parameters": {
+								"variable": "isMoving",
+								"value": "YES"
+							}
+						}
+					],
+					"sid": 244628205038769
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 142058436858729,
+							"parameters": {
+								"variable": "isMoving",
+								"comparison": 0,
+								"value": "YES"
+							}
+						}
+					],
+					"actions": [
+						{
 							"id": "set-vector-x",
 							"objectClass": "Player",
-							"sid": 914708578716635,
+							"sid": 473178054054938,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"vector-x": "cos(Player.movementAngle) * Player.8Direction.MaxSpeed"
+							}
+						},
+						{
+							"id": "set-vector-y",
+							"objectClass": "Player",
+							"sid": 346102417760646,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"vector-y": "sin(Player.movementAngle) * Player.8Direction.MaxSpeed"
+							}
+						},
+						{
+							"id": "set-vector-x",
+							"objectClass": "Player",
+							"sid": 679425261140278,
+							"disabled": true,
 							"behaviorType": "8Direction",
 							"parameters": {
 								"vector-x": "(Player.IN_Right - Player.IN_Left) * Player.8Direction.MaxSpeed"
 							}
 						},
 						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 949427824524311,
+							"parameters": {
+								"type": "log",
+								"message": "\"Player speed: \" & Player.8Direction.Speed"
+							}
+						},
+						{
 							"id": "set-vector-y",
 							"objectClass": "Player",
-							"sid": 254507136972696,
+							"sid": 450900568883784,
+							"disabled": true,
 							"behaviorType": "8Direction",
 							"parameters": {
 								"vector-y": "(Player.IN_Down - Player.IN_Up) * Player.8Direction.MaxSpeed"
 							}
 						}
 					],
-					"sid": 395302185597821,
-					"isOrBlock": true
+					"sid": 313492083944264,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-between-angles",
+									"objectClass": "System",
+									"sid": 645798823055220,
+									"parameters": {
+										"angle": "Player.movementAngle",
+										"first-angle": "-60",
+										"second-angle": "60"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 594463706426240,
+									"parameters": {
+										"animation": "ANIM_Right",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 696824991157328
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 336886327308651
+								},
+								{
+									"id": "is-between-angles",
+									"objectClass": "System",
+									"sid": 647528264089517,
+									"parameters": {
+										"angle": "Player.movementAngle",
+										"first-angle": "180-60",
+										"second-angle": "180+60"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 955969166240741,
+									"parameters": {
+										"animation": "ANIM_Left",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 901949765147699
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 424872040408031
+								},
+								{
+									"id": "is-between-angles",
+									"objectClass": "System",
+									"sid": 468925842722970,
+									"parameters": {
+										"angle": "Player.movementAngle",
+										"first-angle": "270-30",
+										"second-angle": "270+30"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 634436274841592,
+									"parameters": {
+										"animation": "ANIM_Up",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 508015867718480
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 527774320267515
+								},
+								{
+									"id": "is-between-angles",
+									"objectClass": "System",
+									"sid": 252556433645199,
+									"parameters": {
+										"angle": "Player.movementAngle",
+										"first-angle": "90-30",
+										"second-angle": "90+30"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 840624020511207,
+									"parameters": {
+										"animation": "ANIM_Down",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 922620103052100
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -119,129 +371,6 @@
 						}
 					],
 					"sid": 987994243463132
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-between-angles",
-							"objectClass": "System",
-							"sid": 426347544782110,
-							"parameters": {
-								"angle": "Player.movementAngle",
-								"first-angle": "-60",
-								"second-angle": "60"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation",
-							"objectClass": "Player",
-							"sid": 721715088107653,
-							"parameters": {
-								"animation": "ANIM_Right",
-								"from": "beginning"
-							}
-						}
-					],
-					"sid": 244619879811170
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 139676377070486
-						},
-						{
-							"id": "is-between-angles",
-							"objectClass": "System",
-							"sid": 689829951690142,
-							"parameters": {
-								"angle": "Player.movementAngle",
-								"first-angle": "180-60",
-								"second-angle": "180+60"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation",
-							"objectClass": "Player",
-							"sid": 496053164121857,
-							"parameters": {
-								"animation": "ANIM_Left",
-								"from": "beginning"
-							}
-						}
-					],
-					"sid": 744070118608876
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 484588399369159
-						},
-						{
-							"id": "is-between-angles",
-							"objectClass": "System",
-							"sid": 187931701364269,
-							"parameters": {
-								"angle": "Player.movementAngle",
-								"first-angle": "270-30",
-								"second-angle": "270+30"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation",
-							"objectClass": "Player",
-							"sid": 667061361538528,
-							"parameters": {
-								"animation": "ANIM_Up",
-								"from": "beginning"
-							}
-						}
-					],
-					"sid": 611441748177887
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 717573425520188
-						},
-						{
-							"id": "is-between-angles",
-							"objectClass": "System",
-							"sid": 455199422218784,
-							"parameters": {
-								"angle": "Player.movementAngle",
-								"first-angle": "90-30",
-								"second-angle": "90+30"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation",
-							"objectClass": "Player",
-							"sid": 501214520883930,
-							"parameters": {
-								"animation": "ANIM_Down",
-								"from": "beginning"
-							}
-						}
-					],
-					"sid": 801758644113861
 				}
 			]
 		},
@@ -254,20 +383,17 @@
 			"functionReturnType": "none",
 			"functionCopyPicked": false,
 			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "custom-ace-block",
-			"conditions": [
+			"functionParameters": [
 				{
-					"id": "is-timer-running",
-					"objectClass": "Player",
-					"sid": 107047354412554,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "TIMER_TileReveal"
-					},
-					"isInverted": true
+					"name": "playerId",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 259019913465708
 				}
 			],
+			"eventType": "custom-ace-block",
+			"conditions": [],
 			"actions": [],
 			"sid": 234693284807956,
 			"children": [
@@ -275,202 +401,279 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-animation-playing",
-							"objectClass": "Tile",
-							"sid": 627693503568663,
-							"parameters": {
-								"animation": "ANIM_Active"
-							}
-						},
-						{
 							"id": "compare-instance-variable",
-							"objectClass": "Tile",
-							"sid": 813527549734180,
+							"objectClass": "Player",
+							"sid": 928432311911478,
 							"parameters": {
-								"instance-variable": "playerUID",
+								"instance-variable": "playerId",
 								"comparison": 0,
-								"value": "NOTHING"
-							}
-						},
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Tile",
-							"sid": 472136317732479,
-							"parameters": {
-								"object": "Player"
-							}
-						},
-						{
-							"id": "pick-overlapping-point",
-							"objectClass": "System",
-							"sid": 742309326322876,
-							"disabled": true,
-							"parameters": {
-								"object": "Tile",
-								"x": "Player.X",
-								"y": "Player.Y"
-							}
-						},
-						{
-							"id": "pick-nearestfurthest",
-							"objectClass": "Tile",
-							"sid": 846117373641708,
-							"parameters": {
-								"which": "nearest",
-								"x": "Player.X",
-								"y": "Player.Y"
+								"value": "playerId"
 							}
 						}
 					],
 					"actions": [],
-					"sid": 440086470812526,
+					"sid": 504967874491718,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-instance-variable",
+									"id": "is-timer-running",
 									"objectClass": "Player",
-									"sid": 931348533734860,
+									"sid": 106966330727118,
+									"behaviorType": "Timer",
 									"parameters": {
-										"instance-variable": "tileUID1",
-										"comparison": 0,
-										"value": "NOTHING"
-									}
+										"tag": "TIMER_TileReveal"
+									},
+									"isInverted": true
 								}
 							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Player",
-									"sid": 199912069349420,
-									"parameters": {
-										"instance-variable": "tileUID1",
-										"value": "Tile.UID"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Tile",
-									"sid": 591370450308318,
-									"parameters": {
-										"instance-variable": "playerUID",
-										"value": "Player.UID"
-									}
-								}
-							],
-							"sid": 907191058206927,
+							"actions": [],
+							"sid": 966175049562226,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "pick-children",
+											"id": "is-animation-playing",
 											"objectClass": "Tile",
-											"sid": 633898166296282,
+											"sid": 490875583598473,
 											"parameters": {
-												"child": "Symbol",
-												"which": "own"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "Symbol",
-											"sid": 911604017759862,
-											"parameters": {
-												"visibility": "visible"
+												"animation": "ANIM_Active"
 											}
 										},
 										{
-											"id": "set-opacity",
-											"objectClass": "Symbol",
-											"sid": 490527070063789,
+											"id": "compare-instance-variable",
+											"objectClass": "Tile",
+											"sid": 973575743454166,
+											"parameters": {
+												"instance-variable": "playerUID",
+												"comparison": 0,
+												"value": "NOTHING"
+											}
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "Tile",
+											"sid": 238605637198304,
 											"disabled": true,
 											"parameters": {
-												"opacity": "100"
+												"object": "Player"
+											}
+										},
+										{
+											"id": "pick-overlapping-point",
+											"objectClass": "System",
+											"sid": 928453465777006,
+											"parameters": {
+												"object": "Tile",
+												"x": "Player.X",
+												"y": "Player.Y"
+											}
+										},
+										{
+											"id": "pick-nearestfurthest",
+											"objectClass": "Tile",
+											"sid": 645007002645906,
+											"parameters": {
+												"which": "nearest",
+												"x": "Player.X",
+												"y": "Player.Y"
 											}
 										}
 									],
-									"sid": 442807175454692
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 337077664602185
+									"actions": [],
+									"sid": 184320911415308,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Player",
+													"sid": 142074752694222,
+													"parameters": {
+														"instance-variable": "tileUID1",
+														"comparison": 0,
+														"value": "NOTHING"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Player",
+													"sid": 470777347295737,
+													"parameters": {
+														"instance-variable": "tileUID1",
+														"value": "Tile.UID"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Tile",
+													"sid": 344545473994723,
+													"parameters": {
+														"instance-variable": "playerUID",
+														"value": "Player.UID"
+													}
+												}
+											],
+											"sid": 281655125209279,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-children",
+															"objectClass": "Tile",
+															"sid": 212358282078961,
+															"parameters": {
+																"child": "Symbol",
+																"which": "own"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-visible",
+															"objectClass": "Symbol",
+															"sid": 674835412263795,
+															"parameters": {
+																"visibility": "visible"
+															}
+														},
+														{
+															"id": "set-opacity",
+															"objectClass": "Symbol",
+															"sid": 827057244007128,
+															"disabled": true,
+															"parameters": {
+																"opacity": "100"
+															}
+														}
+													],
+													"sid": 304014183915826
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 637508376541953
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Player",
+													"sid": 703100870447661,
+													"parameters": {
+														"instance-variable": "tileUID2",
+														"comparison": 0,
+														"value": "NOTHING"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Player",
+													"sid": 215755207546473,
+													"parameters": {
+														"instance-variable": "tileUID2",
+														"value": "Tile.UID"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Tile",
+													"sid": 713117958565434,
+													"parameters": {
+														"instance-variable": "playerUID",
+														"value": "Player.UID"
+													}
+												}
+											],
+											"sid": 194604687258205,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-children",
+															"objectClass": "Tile",
+															"sid": 951086015181926,
+															"parameters": {
+																"child": "Symbol",
+																"which": "own"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-visible",
+															"objectClass": "Symbol",
+															"sid": 204937887875956,
+															"parameters": {
+																"visibility": "visible"
+															}
+														},
+														{
+															"id": "set-opacity",
+															"objectClass": "Symbol",
+															"sid": 336044287551704,
+															"disabled": true,
+															"parameters": {
+																"opacity": "100"
+															}
+														}
+													],
+													"sid": 458234486991085
+												}
+											]
+										}
+									]
 								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Player",
-									"sid": 786201678181917,
-									"parameters": {
-										"instance-variable": "tileUID2",
-										"comparison": 0,
-										"value": "NOTHING"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Player",
-									"sid": 161254271381487,
-									"parameters": {
-										"instance-variable": "tileUID2",
-										"value": "Tile.UID"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Tile",
-									"sid": 608829098467244,
-									"parameters": {
-										"instance-variable": "playerUID",
-										"value": "Player.UID"
-									}
-								}
-							],
-							"sid": 558928239641539,
-							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "pick-children",
-											"objectClass": "Tile",
-											"sid": 661353976180258,
+											"id": "compare-instance-variable",
+											"objectClass": "Player",
+											"sid": 504015410000600,
 											"parameters": {
-												"child": "Symbol",
-												"which": "own"
+												"instance-variable": "tileUID1",
+												"comparison": 1,
+												"value": "NOTHING"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Player",
+											"sid": 806093603903537,
+											"parameters": {
+												"instance-variable": "tileUID2",
+												"comparison": 1,
+												"value": "NOTHING"
 											}
 										}
 									],
 									"actions": [
 										{
-											"id": "set-visible",
-											"objectClass": "Symbol",
-											"sid": 684002797417383,
+											"id": "start-timer",
+											"objectClass": "Player",
+											"sid": 890147689037123,
+											"behaviorType": "Timer",
 											"parameters": {
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "set-opacity",
-											"objectClass": "Symbol",
-											"sid": 543307937535259,
-											"disabled": true,
-											"parameters": {
-												"opacity": "100"
+												"duration": "C_Tile_Reveal_Time",
+												"type": "once",
+												"tag": "TIMER_TileReveal"
 											}
 										}
 									],
-									"sid": 315944752812261
+									"sid": 786983051909338
 								}
 							]
 						}
@@ -480,40 +683,178 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player",
-							"sid": 726934361029876,
-							"parameters": {
-								"instance-variable": "tileUID1",
-								"comparison": 1,
-								"value": "NOTHING"
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player",
-							"sid": 353034542358348,
-							"parameters": {
-								"instance-variable": "tileUID2",
-								"comparison": 1,
-								"value": "NOTHING"
-							}
+							"id": "else",
+							"objectClass": "System",
+							"sid": 970898995867014
 						}
 					],
 					"actions": [
 						{
-							"id": "start-timer",
-							"objectClass": "Player",
-							"sid": 457485624244921,
-							"behaviorType": "Timer",
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 893895012316782,
 							"parameters": {
-								"duration": "C_Tile_Reveal_Time",
-								"type": "once",
-								"tag": "TIMER_TileReveal"
+								"object-to-create": "Player",
+								"layer": "LAYER_Player",
+								"x": "LayoutWidth * 0.5",
+								"y": "LayoutHeight * 0.5",
+								"create-hierarchy": true,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 446678486413401,
+							"parameters": {
+								"instance-variable": "playerId",
+								"value": "playerId"
+							}
+						},
+						{
+							"customAction": "init",
+							"objectClass": "Player",
+							"sid": 673430362258734
+						}
+					],
+					"sid": 694653583056779
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "changeHealth",
+			"objectClass": "Player",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "amount",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 788125484134714
+				}
+			],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 876028868693683,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 846304961389483,
+							"parameters": {
+								"variable": "amount",
+								"comparison": 2,
+								"value": "0"
+							}
+						},
+						{
+							"id": "is-playing",
+							"objectClass": "Player",
+							"sid": 392088468576713,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TWEEN_Player_Hurt"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 342649661845978,
+							"parameters": {
+								"instance-variable": "health",
+								"value": "max(Self.health + amount, 0)"
 							}
 						}
 					],
-					"sid": 689463614500175
+					"sid": 706340261330088,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Player is dead"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 185321927678522,
+									"parameters": {
+										"instance-variable": "health",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Player",
+									"sid": 415002685152434
+								}
+							],
+							"sid": 664925556645398
+						},
+						{
+							"eventType": "comment",
+							"text": "Player is hurt"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 574266611068341
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-value",
+									"objectClass": "Player",
+									"sid": 670393420459991,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "TWEEN_Player_Hurt",
+										"start-value": "400",
+										"end-value": "0",
+										"time": "0.5",
+										"ease": "easeoutcubic",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 168842299776406
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 187558782444200
+						}
+					],
+					"actions": [],
+					"sid": 179021471552351
 				}
 			]
 		}

@@ -392,6 +392,62 @@
 					"sid": 158160075337735
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "Spawner",
+					"sid": 601779891073436,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "TIMER_SpawnProjectile"
+					}
+				},
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 144438903343036,
+					"parameters": {
+						"object": "Spawner"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Spawner",
+					"sid": 933711948086662,
+					"parameters": {
+						"object": "Projectile",
+						"layer": "LAYER_Main",
+						"image-point": "0",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "Spawner",
+					"sid": 891304297275344,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "random(Self.R_Spawn_Interval_Min, Self.R_Spawn_Interval_Max)",
+						"type": "once",
+						"tag": "TIMER_SpawnProjectile"
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "Projectile",
+					"sid": 228321942072977,
+					"parameters": {
+						"angle": "angle(Self.X, Self.Y, LayoutWidth * 0.5, LayoutHeight * 0.5)"
+					}
+				}
+			],
+			"sid": 285412513229668
 		}
 	],
 	"sid": 750823255495774

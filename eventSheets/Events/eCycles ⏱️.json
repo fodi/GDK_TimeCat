@@ -27,15 +27,30 @@
 					"sid": 552969549724375
 				}
 			],
-			"actions": [
-				{
-					"customAction": "tick",
-					"objectClass": "Player",
-					"sid": 311132997766307
-				}
-			],
+			"actions": [],
 			"sid": 559613915501580,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 408812010461538,
+							"parameters": {
+								"object": "Player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "tick",
+							"objectClass": "Player",
+							"sid": 936314989633155
+						}
+					],
+					"sid": 832504992604495
+				},
 				{
 					"eventType": "block",
 					"conditions": [

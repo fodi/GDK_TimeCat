@@ -30,8 +30,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 748,
-						"y": 140,
+						"x": 140,
+						"y": 194,
 						"width": 160,
 						"height": 160,
 						"originX": 0.5,
@@ -82,37 +82,32 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "Player",
+					"type": "Spawner",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Idle",
+						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 7,
-					"sid": 143149282984467,
+					"uid": 15,
+					"sid": 464524216542257,
 					"tags": "",
 					"instanceVariables": {
-						"movementAngle": 0,
-						"IN_Up": 0,
-						"IN_Down": 0,
-						"IN_Left": 0,
-						"IN_Right": 0,
-						"tileUID1": -1,
-						"tileUID2": -1
+						"R_Spawn_Interval_Min": 1,
+						"R_Spawn_Interval_Max": 2
 					},
 					"behaviors": {
-						"8Direction": {
+						"Orbit": {
 							"properties": {
-								"max-speed": 100,
-								"acceleration": 600,
-								"deceleration": 500,
-								"directions": "dir-8",
-								"set-angle": "no",
-								"allow-sliding": false,
-								"default-controls": false,
-								"enabled": true
+								"speed": 50,
+								"acceleration": 0,
+								"primary-axis": 500,
+								"secondary-axis": 300,
+								"offset-angle": 0,
+								"match-rotation": true,
+								"enabled": true,
+								"live-preview": false
 							}
 						},
 						"Timer": {
@@ -120,7 +115,7 @@
 						}
 					},
 					"instanceFolderItem": {
-						"sid": 143149282984467,
+						"sid": 464524216542257,
 						"expanded": true,
 						"folderName": "",
 						"indexInFolder": -1,
@@ -129,12 +124,12 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 338,
-						"y": 148,
+						"x": 320,
+						"y": 180,
 						"width": 32,
 						"height": 32,
 						"originX": 0.5,
-						"originY": 1,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,

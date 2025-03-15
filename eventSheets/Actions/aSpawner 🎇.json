@@ -1,0 +1,33 @@
+{
+	"name": "aSpawner 🎇",
+	"events": [
+		{
+			"aceType": "action",
+			"aceName": "init",
+			"objectClass": "Spawner",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "start-timer",
+					"objectClass": "Spawner",
+					"sid": 800991448438632,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "random(Self.R_Spawn_Interval_Min, Self.R_Spawn_Interval_Max)",
+						"type": "once",
+						"tag": "TIMER_SpawnProjectile"
+					}
+				}
+			],
+			"sid": 519383514606256
+		}
+	],
+	"sid": 414515668687685
+}

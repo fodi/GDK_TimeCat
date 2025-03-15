@@ -1,0 +1,31 @@
+{
+	"name": "eTweens 🌓",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-playing",
+					"objectClass": "Player",
+					"sid": 237965250536974,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "TWEEN_Player_Hurt"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-default-color",
+					"objectClass": "Player",
+					"sid": 738239000620220,
+					"parameters": {
+						"color": "rgbEx(100 + Self.Tween.Value(TWEEN_Player_Hurt), 100 + Self.Tween.Value(TWEEN_Player_Hurt), 100 + Self.Tween.Value(TWEEN_Player_Hurt))"
+					}
+				}
+			],
+			"sid": 788990583894013
+		}
+	],
+	"sid": 858674299755667
+}

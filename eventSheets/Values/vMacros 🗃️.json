@@ -172,6 +172,30 @@
 			"sid": 995737280135155
 		},
 		{
+			"eventType": "variable",
+			"name": "TIMER_SpawnProjectile",
+			"type": "string",
+			"initialValue": "SpawnProjectile",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 317722047196521
+		},
+		{
+			"eventType": "comment",
+			"text": "Tweens"
+		},
+		{
+			"eventType": "variable",
+			"name": "TWEEN_Player_Hurt",
+			"type": "string",
+			"initialValue": "Player_Hurt",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 637902590537184
+		},
+		{
 			"eventType": "comment",
 			"text": "Words"
 		},
@@ -243,20 +267,6 @@
 					"isStatic": false,
 					"isConstant": true,
 					"sid": 774070709637436
-				},
-				{
-					"eventType": "comment",
-					"text": "Tweens"
-				},
-				{
-					"eventType": "variable",
-					"name": "TWEEN_Tween1",
-					"type": "string",
-					"initialValue": "Tween1",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": true,
-					"sid": 904697440371338
 				}
 			],
 			"sid": 731591257483641

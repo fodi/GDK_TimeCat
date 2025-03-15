@@ -1,5 +1,24 @@
 {
 	"name": "eCreated ✨",
-	"events": [],
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Spawner",
+					"sid": 587263629500675
+				}
+			],
+			"actions": [
+				{
+					"customAction": "init",
+					"objectClass": "Spawner",
+					"sid": 892411823571958
+				}
+			],
+			"sid": 568192669933317
+		}
+	],
 	"sid": 397755584574739
 }
