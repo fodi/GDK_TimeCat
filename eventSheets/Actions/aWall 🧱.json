@@ -1,0 +1,73 @@
+{
+	"name": "aWall 🧱",
+	"events": [
+		{
+			"aceType": "action",
+			"aceName": "spawn",
+			"objectClass": "Wall",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "x",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 174640476944914
+				},
+				{
+					"name": "y",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 677553216098575
+				},
+				{
+					"name": "width",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 672320833229727
+				},
+				{
+					"name": "height",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 449546358461264
+				}
+			],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 930062226664986,
+					"parameters": {
+						"object-to-create": "Wall",
+						"layer": "LAYER_Main",
+						"x": "x",
+						"y": "y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "Wall",
+					"sid": 889143486271318,
+					"parameters": {
+						"width": "width",
+						"height": "height"
+					}
+				}
+			],
+			"sid": 311397081222202
+		}
+	],
+	"sid": 778340260570193
+}

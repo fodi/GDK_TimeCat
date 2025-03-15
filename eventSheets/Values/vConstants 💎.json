@@ -5,7 +5,7 @@
 			"eventType": "variable",
 			"name": "C_Tile_Size",
 			"type": "number",
-			"initialValue": "64",
+			"initialValue": "48",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -30,6 +30,26 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 469435592060815
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Wall_Thickness",
+			"type": "number",
+			"initialValue": "10",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 332425447323879
+		},
+		{
+			"eventType": "variable",
+			"name": "C_CSV_ColorsHex",
+			"type": "string",
+			"initialValue": "ffffff, d1030a, 2baf2b, ffc107, 9c27b0",
+			"comment": "White, Player1, Player2, Player3, Player4",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 884061419103597
 		}
 	],
 	"sid": 344291072955141

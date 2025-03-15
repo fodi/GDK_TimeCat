@@ -230,7 +230,8 @@
 					"sid": 117359225502778,
 					"tags": "",
 					"instanceVariables": {
-						"R_Health_Max": 5,
+						"R_Health_Max": 30,
+						"R_Health_BonusOnPair": 5,
 						"movementAngle": 0,
 						"health": 1,
 						"IN_Up": 0,
@@ -241,7 +242,7 @@
 						"IN_Analog_Angle": 0,
 						"tileUID1": -1,
 						"tileUID2": -1,
-						"playerId": 1
+						"playerId": 0
 					},
 					"behaviors": {
 						"8Direction": {
@@ -276,11 +277,68 @@
 					"locked": false,
 					"world": {
 						"x": 208,
-						"y": 56,
+						"y": 64,
 						"width": 32,
 						"height": 32,
 						"originX": 0.5,
 						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Wall",
+					"properties": {
+						"initially-visible": false,
+						"origin": "center",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
+					},
+					"uid": 13,
+					"sid": 602784574947435,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 602784574947435,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 40,
+						"y": 104,
+						"width": 30,
+						"height": 30,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,
@@ -331,7 +389,7 @@
 	"effectTypes": [],
 	"width": 320,
 	"height": 180,
-	"unboundedScrolling": false,
+	"unboundedScrolling": true,
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",

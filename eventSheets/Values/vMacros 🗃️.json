@@ -155,6 +155,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "ROLE_PlayerHealth",
+			"type": "string",
+			"initialValue": "PlayerHealth",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 156931187970375
+		},
+		{
+			"eventType": "variable",
 			"name": "ROLE_DevLog",
 			"type": "string",
 			"initialValue": "DevLog",

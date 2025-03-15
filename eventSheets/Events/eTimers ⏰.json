@@ -31,7 +31,7 @@
 						{
 							"id": "pick-by-unique-id",
 							"objectClass": "Tile",
-							"sid": 442734661856841,
+							"sid": 139918683882070,
 							"parameters": {
 								"unique-id": "Player.tileUID1"
 							}
@@ -39,7 +39,7 @@
 						{
 							"id": "pick-by-unique-id",
 							"objectClass": "fTile",
-							"sid": 109018355537802,
+							"sid": 525576140582220,
 							"parameters": {
 								"unique-id": "Player.tileUID2"
 							}
@@ -77,6 +77,15 @@
 									"customAction": "remove",
 									"objectClass": "fTile",
 									"sid": 442142979237708
+								},
+								{
+									"customAction": "changeHealth",
+									"objectClass": "Player",
+									"sid": 534637622254336,
+									"parameters": [
+										"Self.R_Health_BonusOnPair",
+										"YES"
+									]
 								}
 							],
 							"sid": 315455249506772
@@ -118,7 +127,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 943910644069993,
+							"sid": 547055268342069,
 							"parameters": {
 								"instance-variable": "tileUID1",
 								"value": "NOTHING"
@@ -127,7 +136,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 992404614975075,
+							"sid": 336909580984732,
 							"parameters": {
 								"instance-variable": "tileUID2",
 								"value": "NOTHING"
@@ -162,39 +171,9 @@
 			],
 			"actions": [
 				{
-					"id": "spawn-another-object",
-					"objectClass": "ProjectileSpawner",
-					"sid": 933711948086662,
-					"parameters": {
-						"object": "Projectile",
-						"layer": "LAYER_Main",
-						"image-point": "0",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-speed",
-					"objectClass": "Projectile",
-					"sid": 885476692747359,
-					"behaviorType": "Bullet",
-					"parameters": {
-						"speed": "projectileSpeed"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 393027637305962,
-					"parameters": {
-						"variable": "projectileSpeed",
-						"value": "min(projectileSpeed + 10, 300)"
-					}
-				},
-				{
 					"id": "start-timer",
 					"objectClass": "ProjectileSpawner",
-					"sid": 891304297275344,
+					"sid": 481236610415525,
 					"behaviorType": "Timer",
 					"parameters": {
 						"duration": "random(Self.R_Spawn_Interval_Min, Self.R_Spawn_Interval_Max)",
@@ -211,7 +190,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player",
-							"sid": 758565768684168,
+							"sid": 757464214803311,
 							"parameters": {
 								"instance-variable": "health",
 								"comparison": 4,
@@ -231,11 +210,23 @@
 					],
 					"actions": [
 						{
-							"id": "set-angle",
+							"customAction": "spawn",
 							"objectClass": "Projectile",
-							"sid": 613786863438806,
+							"sid": 875655215829534,
+							"parameters": [
+								"ProjectileSpawner.X",
+								"ProjectileSpawner.Y",
+								"Player.X",
+								"Player.Y"
+							]
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 393027637305962,
 							"parameters": {
-								"angle": "angle(Self.X, Self.Y, Player.X, Player.Y)"
+								"variable": "R_Projectile_MovementSpeed",
+								"value": "min(R_Projectile_MovementSpeed + 10, 300)"
 							}
 						}
 					],

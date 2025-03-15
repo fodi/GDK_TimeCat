@@ -2,8 +2,116 @@
 	"name": "fPlayer",
 	"plugin-id": "Sprite",
 	"sid": 619154312433595,
-	"instanceVariables": [],
-	"behaviorTypes": [],
+	"instanceVariables": [
+		{
+			"name": "R_Health_Max",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 398628776325110
+		},
+		{
+			"name": "R_Health_BonusOnPair",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 437524512402961
+		},
+		{
+			"name": "movementAngle",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 424292893614227
+		},
+		{
+			"name": "health",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 285032409429373
+		},
+		{
+			"name": "IN_Up",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 432913961360548
+		},
+		{
+			"name": "IN_Down",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 317083269119206
+		},
+		{
+			"name": "IN_Left",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 699359518238653
+		},
+		{
+			"name": "IN_Right",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 494493892347955
+		},
+		{
+			"name": "IN_Analog_Active",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 483565425952214
+		},
+		{
+			"name": "IN_Analog_Angle",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 767403585288806
+		},
+		{
+			"name": "tileUID1",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 772057402629558
+		},
+		{
+			"name": "tileUID2",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 307947646190925
+		},
+		{
+			"name": "playerId",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 104638813909937
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 99456453927562
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 706460005688546
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 58093147090501
+		}
+	],
 	"effectTypes": [],
 	"members": [
 		"Player"

@@ -125,7 +125,7 @@
 				{
 					"id": "compare-instance-variable",
 					"objectClass": "Player",
-					"sid": 368212156931766,
+					"sid": 747139698708703,
 					"parameters": {
 						"instance-variable": "playerId",
 						"comparison": 0,
@@ -161,7 +161,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 581804918218827,
+							"sid": 781528429121854,
 							"parameters": {
 								"instance-variable": "IN_Up",
 								"value": "YES"
@@ -184,7 +184,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 267238510028434,
+							"sid": 256424498736102,
 							"parameters": {
 								"instance-variable": "IN_Up",
 								"value": "NO"
@@ -218,7 +218,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 842630694819354,
+							"sid": 555154776402363,
 							"parameters": {
 								"instance-variable": "IN_Down",
 								"value": "YES"
@@ -241,7 +241,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 901318295884153,
+							"sid": 468810965459443,
 							"parameters": {
 								"instance-variable": "IN_Down",
 								"value": "NO"
@@ -275,7 +275,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 761629940448419,
+							"sid": 482967361205739,
 							"parameters": {
 								"instance-variable": "IN_Left",
 								"value": "YES"
@@ -298,7 +298,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 310506128417812,
+							"sid": 442400669772771,
 							"parameters": {
 								"instance-variable": "IN_Left",
 								"value": "NO"
@@ -332,7 +332,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 441086753957507,
+							"sid": 847855409865918,
 							"parameters": {
 								"instance-variable": "IN_Right",
 								"value": "YES"
@@ -355,7 +355,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 499347076418327,
+							"sid": 163173922653041,
 							"parameters": {
 								"instance-variable": "IN_Right",
 								"value": "NO"
@@ -394,7 +394,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 914276696110875,
+							"sid": 266156690722580,
 							"parameters": {
 								"instance-variable": "IN_Analog_Active",
 								"value": "YES"
@@ -403,7 +403,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 759744604076184,
+							"sid": 285351212431370,
 							"parameters": {
 								"instance-variable": "IN_Analog_Angle",
 								"value": "angle(0, 0, Gamepad.Axis(2, 0), Gamepad.Axis(2, 1))"
@@ -426,7 +426,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 492532206233100,
+							"sid": 149617577863483,
 							"parameters": {
 								"instance-variable": "IN_Analog_Active",
 								"value": "NO"
@@ -443,7 +443,7 @@
 				{
 					"id": "compare-instance-variable",
 					"objectClass": "Player",
-					"sid": 582466220190689,
+					"sid": 689816535620711,
 					"parameters": {
 						"instance-variable": "playerId",
 						"comparison": 0,
@@ -479,7 +479,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 930013383069491,
+							"sid": 744059502342460,
 							"parameters": {
 								"instance-variable": "IN_Up",
 								"value": "YES"
@@ -502,7 +502,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 421304040487015,
+							"sid": 127011224452937,
 							"parameters": {
 								"instance-variable": "IN_Up",
 								"value": "NO"
@@ -536,7 +536,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 585104652473685,
+							"sid": 961682633671199,
 							"parameters": {
 								"instance-variable": "IN_Down",
 								"value": "YES"
@@ -559,7 +559,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 862019157090462,
+							"sid": 645583890347101,
 							"parameters": {
 								"instance-variable": "IN_Down",
 								"value": "NO"
@@ -593,7 +593,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 835794456775803,
+							"sid": 280371057206477,
 							"parameters": {
 								"instance-variable": "IN_Left",
 								"value": "YES"
@@ -616,7 +616,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 749971516154036,
+							"sid": 611989827057396,
 							"parameters": {
 								"instance-variable": "IN_Left",
 								"value": "NO"
@@ -650,7 +650,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 787644164705294,
+							"sid": 107139070773254,
 							"parameters": {
 								"instance-variable": "IN_Right",
 								"value": "YES"
@@ -673,7 +673,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 441952294861797,
+							"sid": 646846258407403,
 							"parameters": {
 								"instance-variable": "IN_Right",
 								"value": "NO"
@@ -712,7 +712,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 485368048478508,
+							"sid": 185144877304208,
 							"parameters": {
 								"instance-variable": "IN_Analog_Active",
 								"value": "YES"
@@ -721,7 +721,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 951429746995839,
+							"sid": 890298526328568,
 							"parameters": {
 								"instance-variable": "IN_Analog_Angle",
 								"value": "angle(0, 0, Gamepad.Axis(3, 0), Gamepad.Axis(3, 1))"
@@ -744,7 +744,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 259806049305409,
+							"sid": 314453064233665,
 							"parameters": {
 								"instance-variable": "IN_Analog_Active",
 								"value": "NO"
@@ -761,7 +761,7 @@
 				{
 					"id": "compare-instance-variable",
 					"objectClass": "Player",
-					"sid": 992971821910014,
+					"sid": 378077847571070,
 					"parameters": {
 						"instance-variable": "playerId",
 						"comparison": 0,
@@ -789,7 +789,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 666962907950653,
+							"sid": 475344923585716,
 							"parameters": {
 								"instance-variable": "IN_Up",
 								"value": "YES"
@@ -812,7 +812,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 824454572198474,
+							"sid": 188829806297363,
 							"parameters": {
 								"instance-variable": "IN_Up",
 								"value": "NO"
@@ -838,7 +838,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 619129261506970,
+							"sid": 470769270999319,
 							"parameters": {
 								"instance-variable": "IN_Down",
 								"value": "YES"
@@ -861,7 +861,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 214716065705994,
+							"sid": 163570192954237,
 							"parameters": {
 								"instance-variable": "IN_Down",
 								"value": "NO"
@@ -887,7 +887,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 533452560301299,
+							"sid": 902142246283750,
 							"parameters": {
 								"instance-variable": "IN_Left",
 								"value": "YES"
@@ -910,7 +910,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 232968400469131,
+							"sid": 762604411746358,
 							"parameters": {
 								"instance-variable": "IN_Left",
 								"value": "NO"
@@ -936,7 +936,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 211120839769404,
+							"sid": 852213043494422,
 							"parameters": {
 								"instance-variable": "IN_Right",
 								"value": "YES"
@@ -959,7 +959,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 305111819275315,
+							"sid": 685870477315364,
 							"parameters": {
 								"instance-variable": "IN_Right",
 								"value": "NO"
@@ -998,7 +998,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 658999242362393,
+							"sid": 472898648451564,
 							"parameters": {
 								"instance-variable": "IN_Analog_Active",
 								"value": "YES"
@@ -1007,7 +1007,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 639302296120331,
+							"sid": 683765826141181,
 							"parameters": {
 								"instance-variable": "IN_Analog_Angle",
 								"value": "angle(0, 0, Gamepad.Axis(0, 0), Gamepad.Axis(0, 1))"
@@ -1030,7 +1030,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 712232401652644,
+							"sid": 557056740851674,
 							"parameters": {
 								"instance-variable": "IN_Analog_Active",
 								"value": "NO"
@@ -1047,7 +1047,7 @@
 				{
 					"id": "compare-instance-variable",
 					"objectClass": "Player",
-					"sid": 364835781665744,
+					"sid": 809508538857764,
 					"parameters": {
 						"instance-variable": "playerId",
 						"comparison": 0,
@@ -1075,7 +1075,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 507229540490730,
+							"sid": 849443405978759,
 							"parameters": {
 								"instance-variable": "IN_Up",
 								"value": "YES"
@@ -1098,7 +1098,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 303009343229029,
+							"sid": 969040408332377,
 							"parameters": {
 								"instance-variable": "IN_Up",
 								"value": "NO"
@@ -1124,7 +1124,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 201647745840381,
+							"sid": 582150743293631,
 							"parameters": {
 								"instance-variable": "IN_Down",
 								"value": "YES"
@@ -1147,7 +1147,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 760327173384622,
+							"sid": 499335550841983,
 							"parameters": {
 								"instance-variable": "IN_Down",
 								"value": "NO"
@@ -1173,7 +1173,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 803118081614630,
+							"sid": 143477445161690,
 							"parameters": {
 								"instance-variable": "IN_Left",
 								"value": "YES"
@@ -1196,7 +1196,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 587552097839075,
+							"sid": 664131449170943,
 							"parameters": {
 								"instance-variable": "IN_Left",
 								"value": "NO"
@@ -1222,7 +1222,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 559578799419327,
+							"sid": 609932463771614,
 							"parameters": {
 								"instance-variable": "IN_Right",
 								"value": "YES"
@@ -1245,7 +1245,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 761398540195840,
+							"sid": 725334775175117,
 							"parameters": {
 								"instance-variable": "IN_Right",
 								"value": "NO"
@@ -1284,7 +1284,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 927488152845236,
+							"sid": 505450568523652,
 							"parameters": {
 								"instance-variable": "IN_Analog_Active",
 								"value": "YES"
@@ -1293,7 +1293,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 490896089581278,
+							"sid": 749302359515958,
 							"parameters": {
 								"instance-variable": "IN_Analog_Angle",
 								"value": "angle(0, 0, Gamepad.Axis(1, 0), Gamepad.Axis(1, 1))"
@@ -1316,7 +1316,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 754091954538805,
+							"sid": 966132878405267,
 							"parameters": {
 								"instance-variable": "IN_Analog_Active",
 								"value": "NO"
@@ -1326,6 +1326,139 @@
 					"sid": 550668327651209
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 162735831205834,
+					"parameters": {
+						"key": 82
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 163239333469262,
+					"parameters": {
+						"gamepad": "0",
+						"button": "back-view"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 205911589107013,
+					"parameters": {
+						"gamepad": "1",
+						"button": "back-view"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 993267492114300,
+					"parameters": {
+						"gamepad": "2",
+						"button": "back-view"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 596972955718944,
+					"parameters": {
+						"gamepad": "3",
+						"button": "back-view"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 506308376132972,
+					"parameters": {
+						"reset-static": false
+					}
+				},
+				{
+					"type": "comment",
+					"text": "preemptive"
+				},
+				{
+					"id": "stop-all-timers",
+					"objectClass": "GlobalTimer",
+					"sid": 288158148424196,
+					"behaviorType": "Timer"
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 519485851427841
+				}
+			],
+			"sid": 306261194890782,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 978671051120830,
+					"parameters": {
+						"key": 80
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 942314544815028,
+					"parameters": {
+						"gamepad": "0",
+						"button": "start-menu"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 211179604236753,
+					"parameters": {
+						"gamepad": "1",
+						"button": "start-menu"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 724021130545032,
+					"parameters": {
+						"gamepad": "2",
+						"button": "start-menu"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 654698871332971,
+					"parameters": {
+						"gamepad": "3",
+						"button": "start-menu"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "togglePause",
+					"sid": 163296883237656
+				}
+			],
+			"sid": 200188390220351,
+			"isOrBlock": true
 		}
 	],
 	"sid": 758821500675486

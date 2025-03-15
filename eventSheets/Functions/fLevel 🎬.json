@@ -41,32 +41,186 @@
 					"sid": 393157524293096
 				},
 				{
+					"eventType": "comment",
+					"text": "generate level"
+				},
+				{
+					"eventType": "comment",
+					"text": "todo refactor to tile CA?"
+				},
+				{
+					"eventType": "variable",
+					"name": "columns",
+					"type": "number",
+					"initialValue": "9",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 501604647936653
+				},
+				{
+					"eventType": "variable",
+					"name": "rows",
+					"type": "number",
+					"initialValue": "6",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 968580673996665
+				},
+				{
 					"eventType": "block",
-					"conditions": [],
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 432846728627798,
+							"parameters": {
+								"first-value": "(columns * rows) % 2",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
 					"actions": [
+						{
+							"type": "comment",
+							"text": "Calculate mid point"
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 428602301163613,
+							"parameters": {
+								"variable": "midX",
+								"value": "columns * C_Tile_Size * 0.5"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 123089411023141,
+							"parameters": {
+								"variable": "midY",
+								"value": "rows * C_Tile_Size * 0.5"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Initialize camera"
+						},
+						{
+							"id": "scroll-to-position",
+							"objectClass": "System",
+							"sid": 887541148419426,
+							"parameters": {
+								"x": "midX",
+								"y": "midY"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Initialize projectile spawner"
+						},
+						{
+							"id": "set-target",
+							"objectClass": "ProjectileSpawner",
+							"sid": 809900119677547,
+							"behaviorType": "Orbit",
+							"parameters": {
+								"x": "midX",
+								"y": "midY"
+							}
+						},
+						{
+							"id": "set-radius",
+							"objectClass": "ProjectileSpawner",
+							"sid": 780200512576932,
+							"behaviorType": "Orbit",
+							"parameters": {
+								"primary": "midX + C_Tile_Size * 2",
+								"secondary": "midY + C_Tile_Size * 2"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Spawn walls"
+						},
+						{
+							"customAction": "spawn",
+							"objectClass": "Wall",
+							"sid": 372836956758254,
+							"parameters": [
+								"midX",
+								"-C_Wall_Thickness * 0.5",
+								"columns * C_Tile_Size + C_Wall_Thickness * 2",
+								"C_Wall_Thickness"
+							]
+						},
+						{
+							"customAction": "spawn",
+							"objectClass": "Wall",
+							"sid": 348254049348852,
+							"parameters": [
+								"midX",
+								"rows * C_Tile_Size + C_Wall_Thickness * 0.5",
+								"columns * C_Tile_Size + C_Wall_Thickness * 2",
+								"C_Wall_Thickness"
+							]
+						},
+						{
+							"customAction": "spawn",
+							"objectClass": "Wall",
+							"sid": 432835865761800,
+							"parameters": [
+								"-C_Wall_Thickness * 0.5",
+								"midY",
+								"C_Wall_Thickness",
+								"rows * C_Tile_Size + C_Wall_Thickness * 2"
+							]
+						},
+						{
+							"customAction": "spawn",
+							"objectClass": "Wall",
+							"sid": 368900868529812,
+							"parameters": [
+								"columns * C_Tile_Size + C_Wall_Thickness * 0.5",
+								"midY",
+								"C_Wall_Thickness",
+								"rows * C_Tile_Size + C_Wall_Thickness * 2"
+							]
+						},
+						{
+							"type": "comment",
+							"text": "Spawn & shuffle tiles"
+						},
 						{
 							"customAction": "spawn",
 							"objectClass": "Tile",
 							"customActionObjectClass": "fTile",
-							"sid": 549512855091206,
+							"sid": 256687268531084,
 							"parameters": [
-								"5",
-								"10"
+								"columns",
+								"rows"
 							]
 						},
 						{
 							"id": "wait-for-previous-actions",
 							"objectClass": "System",
-							"sid": 821042666131942
+							"sid": 710581594640668
 						},
 						{
 							"customAction": "shuffle",
 							"objectClass": "Tile",
 							"customActionObjectClass": "fTile",
-							"sid": 859985040714495
+							"sid": 555594028034284
+						},
+						{
+							"type": "comment",
+							"text": "todo adjust spawner radius dynamically"
 						}
 					],
-					"sid": 249268837564547
+					"sid": 715456803686391
 				}
 			]
 		},

@@ -12,18 +12,18 @@
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
-					"name": "rows",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"sid": 689592803654095
-				},
-				{
 					"name": "columns",
 					"type": "number",
 					"initialValue": "0",
 					"comment": "",
 					"sid": 718533506202646
+				},
+				{
+					"name": "rows",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 689592803654095
 				}
 			],
 			"eventType": "custom-ace-block",
@@ -80,6 +80,15 @@
 							"parameters": {
 								"instance-variable": "randomId",
 								"value": "random(0, 1)"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "fTile",
+							"sid": 719412709610135,
+							"parameters": {
+								"width": "C_Tile_Size",
+								"height": "C_Tile_Size"
 							}
 						}
 					],
@@ -142,17 +151,7 @@
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 769726791729178,
-									"parameters": {
-										"type": "log",
-										"message": "\"Updating tile #\" & fTile.UID"
-									}
-								}
-							],
+							"actions": [],
 							"sid": 200304786601294,
 							"children": [
 								{
@@ -382,15 +381,6 @@
 					"parameters": {
 						"animation": "ANIM_Removed & fTile.playerId",
 						"from": "beginning"
-					}
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 395634740090577,
-					"parameters": {
-						"type": "log",
-						"message": "\"Removing player tile: \" & fTile.playerId"
 					}
 				},
 				{

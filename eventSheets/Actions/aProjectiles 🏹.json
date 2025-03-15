@@ -1,0 +1,82 @@
+{
+	"name": "aProjectiles 🏹",
+	"events": [
+		{
+			"aceType": "action",
+			"aceName": "spawn",
+			"objectClass": "Projectile",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "x",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 325440642273663
+				},
+				{
+					"name": "y",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 483096017544374
+				},
+				{
+					"name": "targetX",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 405490578518014
+				},
+				{
+					"name": "targetY",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 619585863374468
+				}
+			],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 410265313686535,
+					"parameters": {
+						"object-to-create": "Projectile",
+						"layer": "LAYER_Main",
+						"x": "x",
+						"y": "y",
+						"create-hierarchy": true,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Projectile",
+					"sid": 885476692747359,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "R_Projectile_MovementSpeed"
+					}
+				},
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "Projectile",
+					"sid": 472224366039007,
+					"parameters": {
+						"x": "targetX",
+						"y": "targetY"
+					}
+				}
+			],
+			"sid": 883292258865159
+		}
+	],
+	"sid": 641569333295045
+}

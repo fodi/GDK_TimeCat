@@ -2,6 +2,24 @@
 	"name": "vState ♻️",
 	"events": [
 		{
+			"eventType": "comment",
+			"text": "Rules"
+		},
+		{
+			"eventType": "variable",
+			"name": "R_Projectile_MovementSpeed",
+			"type": "number",
+			"initialValue": "150",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 226960227079097
+		},
+		{
+			"eventType": "comment",
+			"text": "State"
+		},
+		{
 			"eventType": "variable",
 			"name": "isPaused",
 			"type": "number",
@@ -13,13 +31,23 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "projectileSpeed",
+			"name": "midX",
 			"type": "number",
-			"initialValue": "150",
+			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 978092102214442
+			"sid": 948627638982788
+		},
+		{
+			"eventType": "variable",
+			"name": "midY",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 904475592420488
 		}
 	],
 	"sid": 756444675677784

@@ -114,7 +114,8 @@
 			"Symbol",
 			"Projectile",
 			"ProjectileSpawner",
-			"TiledBackground"
+			"Wall",
+			"Icons"
 		],
 		"subfolders": [
 			{
@@ -212,7 +213,9 @@
 				"items": [
 					"aPlayer 🐱",
 					"aTile 🟦",
-					"aSpawner 🎇"
+					"aSpawner 🎇",
+					"aWall 🧱",
+					"aProjectiles 🏹"
 				],
 				"subfolders": [],
 				"name": "Actions"
@@ -321,7 +324,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "7",
+		"version": "7c",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

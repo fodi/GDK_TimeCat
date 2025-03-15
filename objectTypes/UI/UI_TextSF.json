@@ -11,20 +11,27 @@
 			"desc": "",
 			"show": true,
 			"sid": 808777666493575
+		},
+		{
+			"name": "paramNumber",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 631802774838805
 		}
 	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {
 		"width": 570,
-		"height": 150,
+		"height": 180,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
 		"fileType": "image/png",
-		"imageSpriteId": 3084584,
+		"imageSpriteId": 6590166,
 		"useCollisionPoly": true,
 		"tag": ""
 	}
