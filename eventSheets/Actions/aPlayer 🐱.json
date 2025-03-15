@@ -737,7 +737,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 342649661845978,
+							"sid": 595540609486135,
 							"parameters": {
 								"instance-variable": "health",
 								"value": "max(Self.health + amount, 0)"
