@@ -3,7 +3,7 @@
 	"events": [
 		{
 			"eventType": "comment",
-			"text": "Rules"
+			"text": "Rules (can be overridden)"
 		},
 		{
 			"eventType": "variable",
@@ -13,7 +13,27 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 226960227079097
+			"sid": 823011189666784
+		},
+		{
+			"eventType": "variable",
+			"name": "R_ColumnCount",
+			"type": "number",
+			"initialValue": "9",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 602001032305359
+		},
+		{
+			"eventType": "variable",
+			"name": "R_RowCount",
+			"type": "number",
+			"initialValue": "6",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 637780812707639
 		},
 		{
 			"eventType": "comment",

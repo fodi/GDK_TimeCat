@@ -41,7 +41,16 @@
 		"subfolders": []
 	},
 	"sid": 790219537226852,
-	"nonworld-instances": [],
+	"nonworld-instances": [
+		{
+			"type": "URLParams",
+			"properties": {},
+			"uid": 21,
+			"sid": 605675422554832,
+			"tags": "",
+			"instanceVariables": {}
+		}
+	],
 	"effectTypes": [],
 	"width": 640,
 	"height": 360,

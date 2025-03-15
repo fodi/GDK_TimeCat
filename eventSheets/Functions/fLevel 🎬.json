@@ -16,6 +16,53 @@
 			"children": [
 				{
 					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Rule overrides from config (with fallback to default)"
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 321930760054318,
+							"parameters": {
+								"variable": "R_Projectile_MovementSpeed",
+								"value": "int(Functions.Config_getNumber(PARAM_Projectile_Speed, R_Projectile_MovementSpeed))"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 319653908552222,
+							"parameters": {
+								"variable": "R_RowCount",
+								"value": "int(Functions.Config_getNumber(PARAM_Tile_RowCount, R_RowCount))"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 461182895992343,
+							"parameters": {
+								"variable": "R_ColumnCount",
+								"value": "int(Functions.Config_getNumber(PARAM_Tile_ColumnCount, R_ColumnCount))"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 802792626626156,
+							"parameters": {
+								"type": "log",
+								"message": "R_RowCount & \" rows, \" & R_ColumnCount & \" columns will be generated\""
+							}
+						}
+					],
+					"sid": 700019727002712
+				},
+				{
+					"eventType": "block",
 					"conditions": [
 						{
 							"id": "compare-two-values",
@@ -49,34 +96,14 @@
 					"text": "todo refactor to tile CA?"
 				},
 				{
-					"eventType": "variable",
-					"name": "columns",
-					"type": "number",
-					"initialValue": "9",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 501604647936653
-				},
-				{
-					"eventType": "variable",
-					"name": "rows",
-					"type": "number",
-					"initialValue": "6",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 968580673996665
-				},
-				{
 					"eventType": "block",
 					"conditions": [
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 432846728627798,
+							"sid": 629448251206647,
 							"parameters": {
-								"first-value": "(columns * rows) % 2",
+								"first-value": "(R_ColumnCount * R_RowCount) % 2",
 								"comparison": 0,
 								"second-value": "0"
 							}
@@ -90,19 +117,19 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 428602301163613,
+							"sid": 595980340741436,
 							"parameters": {
 								"variable": "midX",
-								"value": "columns * C_Tile_Size * 0.5"
+								"value": "R_ColumnCount * C_Tile_Size * 0.5"
 							}
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 123089411023141,
+							"sid": 924100075291172,
 							"parameters": {
 								"variable": "midY",
-								"value": "rows * C_Tile_Size * 0.5"
+								"value": "R_RowCount * C_Tile_Size * 0.5"
 							}
 						},
 						{
@@ -149,45 +176,45 @@
 						{
 							"customAction": "spawn",
 							"objectClass": "Wall",
-							"sid": 372836956758254,
+							"sid": 203683154469368,
 							"parameters": [
 								"midX",
 								"-C_Wall_Thickness * 0.5",
-								"columns * C_Tile_Size + C_Wall_Thickness * 2",
+								"R_ColumnCount * C_Tile_Size + C_Wall_Thickness * 2",
 								"C_Wall_Thickness"
 							]
 						},
 						{
 							"customAction": "spawn",
 							"objectClass": "Wall",
-							"sid": 348254049348852,
+							"sid": 677597991395643,
 							"parameters": [
 								"midX",
-								"rows * C_Tile_Size + C_Wall_Thickness * 0.5",
-								"columns * C_Tile_Size + C_Wall_Thickness * 2",
+								"R_RowCount * C_Tile_Size + C_Wall_Thickness * 0.5",
+								"R_ColumnCount * C_Tile_Size + C_Wall_Thickness * 2",
 								"C_Wall_Thickness"
 							]
 						},
 						{
 							"customAction": "spawn",
 							"objectClass": "Wall",
-							"sid": 432835865761800,
+							"sid": 860693048021886,
 							"parameters": [
 								"-C_Wall_Thickness * 0.5",
 								"midY",
 								"C_Wall_Thickness",
-								"rows * C_Tile_Size + C_Wall_Thickness * 2"
+								"R_RowCount * C_Tile_Size + C_Wall_Thickness * 2"
 							]
 						},
 						{
 							"customAction": "spawn",
 							"objectClass": "Wall",
-							"sid": 368900868529812,
+							"sid": 256415988791608,
 							"parameters": [
-								"columns * C_Tile_Size + C_Wall_Thickness * 0.5",
+								"R_ColumnCount * C_Tile_Size + C_Wall_Thickness * 0.5",
 								"midY",
 								"C_Wall_Thickness",
-								"rows * C_Tile_Size + C_Wall_Thickness * 2"
+								"R_RowCount * C_Tile_Size + C_Wall_Thickness * 2"
 							]
 						},
 						{
@@ -198,10 +225,10 @@
 							"customAction": "spawn",
 							"objectClass": "Tile",
 							"customActionObjectClass": "fTile",
-							"sid": 256687268531084,
+							"sid": 362116919101284,
 							"parameters": [
-								"columns",
-								"rows"
+								"R_ColumnCount",
+								"R_RowCount"
 							]
 						},
 						{
@@ -301,6 +328,99 @@
 						}
 					],
 					"sid": 315146358317456
+				}
+			]
+		},
+		{
+			"functionName": "Config_getNumber",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "paramName",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 313045857507444
+				},
+				{
+					"name": "default",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 123966680024856
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 989674657250768,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-key",
+							"objectClass": "URLParams",
+							"sid": 394129202374248,
+							"parameters": {
+								"path": "paramName"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 617596883012473,
+							"parameters": {
+								"type": "log",
+								"message": "StringSub(\"[config] {0} = {1} (overridden from {2})\", paramName, URLParams.Get(paramName), default)"
+							}
+						},
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 307161544078674,
+							"parameters": {
+								"value": "float(URLParams.Get(paramName))"
+							}
+						}
+					],
+					"sid": 748280315230139
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 433522026961947
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 514698417246751,
+							"parameters": {
+								"type": "log",
+								"message": "StringSub(\"[config] {0} = {1} (default)\", paramName, default)"
+							}
+						},
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 503777903501907,
+							"parameters": {
+								"value": "default"
+							}
+						}
+					],
+					"sid": 121542529126312
 				}
 			]
 		}

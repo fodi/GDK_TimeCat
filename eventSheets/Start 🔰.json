@@ -14,22 +14,35 @@
 					"sid": 773106314372003
 				}
 			],
-			"actions": [
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 547535555338813,
-					"parameters": {
-						"layout": "Level"
-					}
-				}
-			],
+			"actions": [],
 			"sid": 375259258150390,
 			"children": [
 				{
+					"eventType": "script",
+					"script": "const paramsString = window.location.search\nconst searchParams = new URLSearchParams(paramsString)\nconsole.log(searchParams)\nruntime.objects.URLParams.getFirstInstance().setJsonDataCopy(Object.fromEntries(searchParams))\n\n\n//runtime.objects.URLParams.getFirstInstance().setJsonString('{\"pr_speed\":50,\"pl_health\":25,\"pl_speed\":50,\"rows\":6,\"cols\":3}')\n"
+				},
+				{
 					"eventType": "block",
 					"conditions": [],
-					"actions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 138455190505938,
+							"parameters": {
+								"type": "log",
+								"message": "\"URL params: \" & URLParams.ToBeautifiedString"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 416103780050053,
+							"parameters": {
+								"layout": "Level"
+							}
+						}
+					],
 					"sid": 109565956019444
 				}
 			]

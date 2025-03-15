@@ -151,6 +151,60 @@
 		},
 		{
 			"eventType": "comment",
+			"text": "Params"
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Tile_ColumnCount",
+			"type": "string",
+			"initialValue": "cols",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 403539891070752
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Tile_RowCount",
+			"type": "string",
+			"initialValue": "rows",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 977563477933247
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Player_Health",
+			"type": "string",
+			"initialValue": "pl_health",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 139285848578632
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Player_MovementSpeed",
+			"type": "string",
+			"initialValue": "pl_speed",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 791893494000948
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Projectile_Speed",
+			"type": "string",
+			"initialValue": "pr_speed",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 319843517574204
+		},
+		{
+			"eventType": "comment",
 			"text": "Roles"
 		},
 		{

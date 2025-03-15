@@ -12,14 +12,14 @@
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
-					"name": "columns",
+					"name": "columnCount",
 					"type": "number",
 					"initialValue": "0",
 					"comment": "",
 					"sid": 718533506202646
 				},
 				{
-					"name": "rows",
+					"name": "rowCount",
 					"type": "number",
 					"initialValue": "0",
 					"comment": "",
@@ -45,7 +45,7 @@
 							"parameters": {
 								"name": "W_X",
 								"start-index": "0",
-								"end-index": "columns - 1"
+								"end-index": "columnCOunt - 1"
 							}
 						},
 						{
@@ -55,7 +55,7 @@
 							"parameters": {
 								"name": "W_Y",
 								"start-index": "0",
-								"end-index": "rows - 1"
+								"end-index": "rowCount - 1"
 							}
 						}
 					],
