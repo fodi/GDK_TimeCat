@@ -43,6 +43,30 @@
 		},
 		{
 			"eventType": "comment",
+			"text": "Audio"
+		},
+		{
+			"eventType": "variable",
+			"name": "AUDIO_SFX",
+			"type": "string",
+			"initialValue": "SFX",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 739527874149314
+		},
+		{
+			"eventType": "variable",
+			"name": "AUDIO_BGM",
+			"type": "string",
+			"initialValue": "BGM",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 453182473581274
+		},
+		{
+			"eventType": "comment",
 			"text": "Animations"
 		},
 		{
@@ -280,6 +304,40 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 319843517574204
+		},
+		{
+			"eventType": "comment",
+			"text": "Pairing states"
+		},
+		{
+			"eventType": "variable",
+			"name": "PS_Unpaired",
+			"type": "string",
+			"initialValue": "Unpaired",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 391514696566229
+		},
+		{
+			"eventType": "variable",
+			"name": "PS_Pairing",
+			"type": "string",
+			"initialValue": "Pairing",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 311585650144890
+		},
+		{
+			"eventType": "variable",
+			"name": "PS_Paired",
+			"type": "string",
+			"initialValue": "Paired",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 397561088377928
 		},
 		{
 			"eventType": "comment",

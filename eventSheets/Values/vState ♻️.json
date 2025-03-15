@@ -19,7 +19,7 @@
 			"eventType": "variable",
 			"name": "R_ColumnCount",
 			"type": "number",
-			"initialValue": "10",
+			"initialValue": "7",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -48,6 +48,26 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 492134263969167
+		},
+		{
+			"eventType": "variable",
+			"name": "isMusicEnabled",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 527962130962836
+		},
+		{
+			"eventType": "variable",
+			"name": "hasMusicStarted",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 754978449688226
 		},
 		{
 			"eventType": "variable",

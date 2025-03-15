@@ -23,6 +23,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 333589245315584
+		},
+		{
+			"name": "pairingState",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 336061020471067
 		}
 	],
 	"behaviorTypes": [],

@@ -1801,6 +1801,15 @@
 							"parameters": {
 								"key": 88
 							}
+						},
+						{
+							"id": "compare-opacity",
+							"objectClass": "Symbol",
+							"sid": 375887966230010,
+							"parameters": {
+								"comparison": 0,
+								"opacity": "100"
+							}
 						}
 					],
 					"actions": [

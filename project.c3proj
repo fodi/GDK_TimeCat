@@ -8,6 +8,13 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
@@ -133,7 +140,8 @@
 				"items": [
 					"Browser",
 					"GlobalTimer",
-					"3DCamera"
+					"3DCamera",
+					"Audio"
 				],
 				"subfolders": [],
 				"name": "Utilities"
@@ -205,7 +213,7 @@
 			},
 			{
 				"items": [
-					"_fAudio 🎵",
+					"fAudio 🎵",
 					"fLevel 🎬",
 					"_fUI 📟",
 					"fUtilities 🧰"
@@ -246,7 +254,16 @@
 			"subfolders": []
 		},
 		"music": {
-			"items": [],
+			"items": [
+				{
+					"name": "BGM1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 648642992206150,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"video": {
@@ -338,7 +355,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "12b",
+		"version": "13d",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

@@ -21,7 +21,8 @@
 					"instanceVariables": {
 						"symbol": "",
 						"randomId": 0,
-						"playerId": -1
+						"playerId": -1,
+						"pairingState": ""
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -167,7 +168,7 @@
 					"type": "Projectile",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "Energy",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -248,14 +249,14 @@
 					"world": {
 						"x": 96,
 						"y": 32,
-						"width": 34,
-						"height": 10,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
-							1,
-							1,
-							1,
+							0,
+							0,
+							0,
 							0.25
 						],
 						"angle": 0,
@@ -688,10 +689,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 166,
-						"y": 172,
-						"width": 160,
-						"height": 160,
+						"x": 156,
+						"y": 122,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -708,7 +709,7 @@
 					"type": "bbProjectile",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "Energy",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -758,8 +759,8 @@
 					"world": {
 						"x": 96,
 						"y": 32,
-						"width": 34,
-						"height": 10,
+						"width": 32,
+						"height": 32,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [

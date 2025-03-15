@@ -20,6 +20,26 @@
 				}
 			],
 			"sid": 848695742537860
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 295828625477854,
+					"parameters": {
+						"key": 77
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "toggleMusic",
+					"sid": 664342529592195
+				}
+			],
+			"sid": 968157819090523
 		}
 	],
 	"sid": 489983609112987

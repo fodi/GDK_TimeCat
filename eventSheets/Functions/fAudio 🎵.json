@@ -1,0 +1,133 @@
+{
+	"name": "fAudio 🎵",
+	"events": [
+		{
+			"functionName": "toggleMusic",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 608633797087521,
+					"parameters": {
+						"variable": "isMusicEnabled",
+						"value": "isMusicEnabled = 1 ? 0 : 1"
+					}
+				}
+			],
+			"sid": 413284577371563,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 446463055208462,
+							"parameters": {
+								"variable": "isMusicEnabled",
+								"comparison": 0,
+								"value": "YES"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 534780771391040,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 860521475356719,
+									"parameters": {
+										"variable": "hasMusicStarted",
+										"comparison": 0,
+										"value": "NO"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 830233530569793,
+									"parameters": {
+										"audio-file": "BGM1",
+										"loop": "looping",
+										"volume": "-10",
+										"stereo-pan": "0",
+										"tag-optional": "AUDIO_BGM"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 299039873365839,
+									"parameters": {
+										"variable": "hasMusicStarted",
+										"value": "YES"
+									}
+								}
+							],
+							"sid": 321252440288847
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 925168588162181
+								}
+							],
+							"actions": [
+								{
+									"id": "set-paused",
+									"objectClass": "Audio",
+									"sid": 268676536798807,
+									"parameters": {
+										"tag": "AUDIO_BGM",
+										"state": "resume"
+									}
+								}
+							],
+							"sid": 293622789611371
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 839732414961503
+						}
+					],
+					"actions": [
+						{
+							"id": "set-paused",
+							"objectClass": "Audio",
+							"sid": 297390380040415,
+							"parameters": {
+								"tag": "AUDIO_BGM",
+								"state": "pause"
+							}
+						}
+					],
+					"sid": 490284697843428
+				}
+			]
+		}
+	],
+	"sid": 581452474749190
+}

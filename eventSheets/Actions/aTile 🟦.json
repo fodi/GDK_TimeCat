@@ -90,6 +90,15 @@
 								"width": "C_Tile_Size",
 								"height": "C_Tile_Size"
 							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fTile",
+							"sid": 899739641213334,
+							"parameters": {
+								"instance-variable": "pairingState",
+								"value": "PS_Unpaired"
+							}
 						}
 					],
 					"sid": 969001197324120
@@ -112,10 +121,347 @@
 			"sid": 167481556213047,
 			"children": [
 				{
+					"eventType": "variable",
+					"name": "nextSymbol",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 705522410314024
+				},
+				{
+					"eventType": "variable",
+					"name": "pairCount",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 562085562719195
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "repeat",
+							"objectClass": "System",
+							"sid": 906627507301000,
+							"parameters": {
+								"count": "ceil(R_ColumnCount * R_RowCount * 0.5)"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "fTile",
+							"sid": 592723398729277,
+							"parameters": {
+								"instance-variable": "pairingState",
+								"comparison": 0,
+								"value": "PS_Unpaired"
+							}
+						},
+						{
+							"id": "pick-random-instance",
+							"objectClass": "System",
+							"sid": 217371593734476,
+							"parameters": {
+								"object": "fTile"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fTile",
+							"sid": 289792783884646,
+							"parameters": {
+								"instance-variable": "pairingState",
+								"value": "PS_Pairing"
+							}
+						}
+					],
+					"sid": 452543476171641,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Tile",
+									"sid": 818207990369155,
+									"parameters": {
+										"instance-variable": "pairingState",
+										"comparison": 0,
+										"value": "PS_Unpaired"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 411427369365110,
+									"parameters": {
+										"variable": "nextSymbol",
+										"value": "trim(tokenat(C_CSV_Symbols, pairCount % tokencount(C_CSV_Symbols, \",\") , \",\"))"
+									}
+								}
+							],
+							"sid": 673500946184318,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Try to pair tiles within optimal distance"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 325388481640800,
+											"parameters": {
+												"object": "Tile",
+												"expression": "distance(fTile.X, fTile.Y, Tile.X, Tile.Y)",
+												"comparison": 2,
+												"value": "C_Tile_Pair_OptimalMaxDistance"
+											}
+										},
+										{
+											"id": "pick-random-instance",
+											"objectClass": "System",
+											"sid": 686136771623820,
+											"parameters": {
+												"object": "Tile"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 267040491146194,
+											"parameters": {
+												"type": "log",
+												"message": "\"Pairing within optimal distance: #\" & fTile.UID & \" & \" & Tile.UID"
+											}
+										},
+										{
+											"customAction": "setSymbolForPair",
+											"objectClass": "fTile",
+											"sid": 244033545762734,
+											"parameters": [
+												"nextSymbol"
+											]
+										},
+										{
+											"customAction": "setSymbolForPair",
+											"objectClass": "Tile",
+											"customActionObjectClass": "fTile",
+											"sid": 597548531917019,
+											"parameters": [
+												"nextSymbol"
+											]
+										},
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 287285305052273,
+											"parameters": {
+												"variable": "pairCount",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 174090887116163
+								},
+								{
+									"eventType": "comment",
+									"text": "If there are no tiles within optimal distance, pick the nearest on"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 480765738118285
+										},
+										{
+											"id": "pick-nearestfurthest",
+											"objectClass": "Tile",
+											"sid": 996855732446997,
+											"parameters": {
+												"which": "nearest",
+												"x": "fTile.X",
+												"y": "fTile.Y"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 809380356858369,
+											"parameters": {
+												"type": "log",
+												"message": "\"Pairing nearest: #\" & fTile.UID & \" & \" & Tile.UID"
+											}
+										},
+										{
+											"customAction": "setSymbolForPair",
+											"objectClass": "fTile",
+											"sid": 826821341216751,
+											"parameters": [
+												"nextSymbol"
+											]
+										},
+										{
+											"customAction": "setSymbolForPair",
+											"objectClass": "Tile",
+											"customActionObjectClass": "fTile",
+											"sid": 601960478553627,
+											"parameters": [
+												"nextSymbol"
+											]
+										},
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 703012716853252,
+											"parameters": {
+												"variable": "pairCount",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 453840347667793
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Tile",
+							"sid": 288003912561881,
+							"parameters": {
+								"instance-variable": "pairingState",
+								"comparison": 0,
+								"value": "PS_Pairing"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "remove",
+							"objectClass": "Tile",
+							"customActionObjectClass": "fTile",
+							"sid": 712111598474243
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 964230896960288,
+							"parameters": {
+								"type": "log",
+								"message": "\"Removing uneven tile #\" &Tile.UID"
+							}
+						}
+					],
+					"sid": 678843425255413
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "setSymbolForPair",
+			"objectClass": "fTile",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "newSymbol",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 144981598451333
+				}
+			],
+			"eventType": "custom-ace-block",
+			"conditions": [
+				{
+					"id": "pick-children",
+					"objectClass": "fTile",
+					"sid": 995579524449036,
+					"parameters": {
+						"child": "Symbol",
+						"which": "own"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "fTile",
+					"sid": 445008403033105,
+					"parameters": {
+						"instance-variable": "symbol",
+						"value": "newSymbol"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Symbol",
+					"sid": 376193497352210,
+					"parameters": {
+						"animation": "newSymbol",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "fTile",
+					"sid": 214432201564850,
+					"parameters": {
+						"instance-variable": "pairingState",
+						"value": "PS_Paired"
+					}
+				}
+			],
+			"sid": 364773611626042
+		},
+		{
+			"aceType": "action",
+			"aceName": "shuffleOld",
+			"objectClass": "fTile",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 902508103576580,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "todo limit distance of pairs"
+				},
+				{
 					"eventType": "block",
 					"conditions": [],
 					"actions": [],
-					"sid": 678843425255413,
+					"sid": 612837597975328,
 					"children": [
 						{
 							"eventType": "variable",
@@ -125,7 +471,7 @@
 							"comment": "",
 							"isStatic": false,
 							"isConstant": false,
-							"sid": 745129676022884
+							"sid": 161316452633114
 						},
 						{
 							"eventType": "variable",
@@ -135,7 +481,7 @@
 							"comment": "",
 							"isStatic": false,
 							"isConstant": false,
-							"sid": 521105562566829
+							"sid": 983562203176346
 						},
 						{
 							"eventType": "variable",
@@ -145,7 +491,7 @@
 							"comment": "",
 							"isStatic": false,
 							"isConstant": false,
-							"sid": 705130102189728
+							"sid": 610371495460944
 						},
 						{
 							"eventType": "variable",
@@ -155,7 +501,7 @@
 							"comment": "",
 							"isStatic": false,
 							"isConstant": false,
-							"sid": 378642360287258
+							"sid": 289428699565000
 						},
 						{
 							"eventType": "block",
@@ -163,7 +509,7 @@
 								{
 									"id": "for-each-ordered",
 									"objectClass": "System",
-									"sid": 348226826875647,
+									"sid": 718124810462173,
 									"parameters": {
 										"object": "fTile",
 										"expression": "fTile.randomId",
@@ -175,14 +521,14 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 584902889060440,
+									"sid": 338961913560206,
 									"parameters": {
 										"variable": "lastTileUID",
 										"value": "fTile.UID"
 									}
 								}
 							],
-							"sid": 200304786601294,
+							"sid": 632978563855882,
 							"children": [
 								{
 									"eventType": "block",
@@ -190,7 +536,7 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 173506071842439,
+											"sid": 623178150455851,
 											"parameters": {
 												"first-value": "(loopindex + 1) % 2",
 												"comparison": 0,
@@ -202,7 +548,7 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 107252624936955,
+											"sid": 951657865476381,
 											"parameters": {
 												"variable": "nextSymbol",
 												"value": "trim(tokenat(C_CSV_Symbols, pairCount % tokencount(C_CSV_Symbols, \",\") , \",\"))"
@@ -211,7 +557,7 @@
 										{
 											"id": "add-to-eventvar",
 											"objectClass": "System",
-											"sid": 611694284348931,
+											"sid": 578658692920355,
 											"parameters": {
 												"variable": "pairCount",
 												"value": "1"
@@ -220,7 +566,7 @@
 										{
 											"id": "log",
 											"objectClass": "Browser",
-											"sid": 423084836636666,
+											"sid": 801983798627929,
 											"disabled": true,
 											"parameters": {
 												"type": "log",
@@ -228,7 +574,7 @@
 											}
 										}
 									],
-									"sid": 624534140452752
+									"sid": 197786479606376
 								},
 								{
 									"eventType": "block",
@@ -236,7 +582,7 @@
 										{
 											"id": "pick-children",
 											"objectClass": "fTile",
-											"sid": 228548145968544,
+											"sid": 135572230345492,
 											"parameters": {
 												"child": "Symbol",
 												"which": "own"
@@ -247,7 +593,7 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "fTile",
-											"sid": 715408789741085,
+											"sid": 263258785439584,
 											"parameters": {
 												"instance-variable": "symbol",
 												"value": "nextSymbol"
@@ -256,14 +602,14 @@
 										{
 											"id": "set-animation",
 											"objectClass": "Symbol",
-											"sid": 359047676541321,
+											"sid": 363801916033716,
 											"parameters": {
 												"animation": "fTile.symbol",
 												"from": "beginning"
 											}
 										}
 									],
-									"sid": 501570414841412,
+									"sid": 989334330786785,
 									"children": [
 										{
 											"eventType": "block",
@@ -271,7 +617,7 @@
 												{
 													"id": "is-animation-playing",
 													"objectClass": "Symbol",
-													"sid": 577807685154521,
+													"sid": 854963578149420,
 													"parameters": {
 														"animation": "fTile.symbol"
 													},
@@ -282,14 +628,14 @@
 												{
 													"id": "log",
 													"objectClass": "Browser",
-													"sid": 891066306454522,
+													"sid": 446444001973245,
 													"parameters": {
 														"type": "error",
 														"message": "\"Unable to set symbol animation to \" & fTile.symbol"
 													}
 												}
 											],
-											"sid": 461328344759410
+											"sid": 609101204832542
 										}
 									]
 								}
@@ -301,7 +647,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 213042021686042,
+									"sid": 779414478354078,
 									"parameters": {
 										"first-value": "(R_ColumnCount * R_RowCount) % 2",
 										"comparison": 0,
@@ -311,7 +657,7 @@
 								{
 									"id": "pick-by-unique-id",
 									"objectClass": "Tile",
-									"sid": 647274415813358,
+									"sid": 770108358895948,
 									"parameters": {
 										"unique-id": "lastTileUID"
 									}
@@ -322,19 +668,19 @@
 									"customAction": "remove",
 									"objectClass": "Tile",
 									"customActionObjectClass": "fTile",
-									"sid": 633198454842099
+									"sid": 738291582807026
 								},
 								{
 									"id": "log",
 									"objectClass": "Browser",
-									"sid": 160920823692780,
+									"sid": 570025006869623,
 									"parameters": {
 										"type": "log",
 										"message": "\"Removing uneven tile #\" &Tile.UID"
 									}
 								}
 							],
-							"sid": 138537598109460
+							"sid": 730738468038568
 						}
 					]
 				}

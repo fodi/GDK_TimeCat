@@ -13,6 +13,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "C_Tile_Pair_OptimalMaxDistance",
+			"type": "number",
+			"initialValue": "144",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 830933754513341
+		},
+		{
+			"eventType": "variable",
 			"name": "C_Symbol_Variant_Count",
 			"type": "number",
 			"initialValue": "4",

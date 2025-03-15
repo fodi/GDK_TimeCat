@@ -20,7 +20,7 @@
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 8855076,
+						"imageSpriteId": 5380618,
 						"collisionPoly": {
 							"points": [
 								0.11764705882352941,
@@ -39,7 +39,162 @@
 					}
 				],
 				"sid": 845428369365121,
-				"name": "Animation 1",
+				"name": "Arrow",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 5351287,
+						"collisionPoly": {
+							"points": [
+								0.8125,
+								0.375,
+								0.8125,
+								0.625,
+								0.125,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 336858,
+						"collisionPoly": {
+							"points": [
+								0.8125,
+								0.375,
+								0.8125,
+								0.625,
+								0.125,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6170002,
+						"collisionPoly": {
+							"points": [
+								0.8125,
+								0.375,
+								0.8125,
+								0.625,
+								0.125,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4623483,
+						"collisionPoly": {
+							"points": [
+								0.8125,
+								0.375,
+								0.8125,
+								0.625,
+								0.125,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6359207,
+						"collisionPoly": {
+							"points": [
+								0.8125,
+								0.375,
+								0.8125,
+								0.625,
+								0.125,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 5239253,
+						"collisionPoly": {
+							"points": [
+								0.8125,
+								0.375,
+								0.8125,
+								0.625,
+								0.125,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 602727110380375,
+				"name": "Energy",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
