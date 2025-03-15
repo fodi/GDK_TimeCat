@@ -1,0 +1,11 @@
+{
+	"name": "fPlayer",
+	"plugin-id": "Sprite",
+	"sid": 619154312433595,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Player"
+	]
+}

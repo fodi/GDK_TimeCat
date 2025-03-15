@@ -116,6 +116,16 @@
 			"sid": 787197843313574
 		},
 		{
+			"eventType": "variable",
+			"name": "ANIM_Dead",
+			"type": "string",
+			"initialValue": "Dead",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 488962984099819
+		},
+		{
 			"eventType": "comment",
 			"text": "Layers"
 		},
@@ -183,6 +193,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "TIMER_Player_HealthDrain",
+			"type": "string",
+			"initialValue": "Player_HealthDrain",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 352106269751878
+		},
+		{
+			"eventType": "variable",
 			"name": "TIMER_SpawnProjectile",
 			"type": "string",
 			"initialValue": "SpawnProjectile",
@@ -228,16 +248,6 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 455255730079436
-		},
-		{
-			"eventType": "variable",
-			"name": "ANIM_Dead",
-			"type": "string",
-			"initialValue": "Dead",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 796306269481550
 		},
 		{
 			"eventType": "group",

@@ -153,7 +153,8 @@
 	"containers": [],
 	"families": {
 		"items": [
-			"fTile"
+			"fTile",
+			"fPlayer"
 		],
 		"subfolders": []
 	},
@@ -320,7 +321,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "6",
+		"version": "7",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

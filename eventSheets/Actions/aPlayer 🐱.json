@@ -49,9 +49,45 @@
 					}
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player",
+					"sid": 458252443876067,
+					"parameters": {
+						"instance-variable": "health",
+						"value": "max(Self.health - dt, 0)"
+					}
+				}
+			],
 			"sid": 608725959345493,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 876043190028565,
+							"parameters": {
+								"instance-variable": "health",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "changeHealth",
+							"objectClass": "Player",
+							"sid": 187533304450893,
+							"parameters": [
+								"0"
+							]
+						}
+					],
+					"sid": 120406182939030
+				},
 				{
 					"eventType": "variable",
 					"name": "isMoving",
@@ -482,15 +518,6 @@
 											}
 										},
 										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Tile",
-											"sid": 238605637198304,
-											"disabled": true,
-											"parameters": {
-												"object": "Player"
-											}
-										},
-										{
 											"id": "pick-overlapping-point",
 											"objectClass": "System",
 											"sid": 928453465777006,
@@ -737,7 +764,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 595540609486135,
+							"sid": 342649661845978,
 							"parameters": {
 								"instance-variable": "health",
 								"value": "max(Self.health + amount, 0)"
@@ -869,7 +896,12 @@
 							"sid": 187558782444200
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "todo"
+						}
+					],
 					"sid": 179021471552351
 				}
 			]
