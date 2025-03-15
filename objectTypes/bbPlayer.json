@@ -112,7 +112,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "Standing"
 					},
 					{
 						"width": 32,
@@ -227,7 +227,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "Standing"
 					},
 					{
 						"width": 32,
@@ -420,7 +420,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "Standing"
 					}
 				],
 				"sid": 279091241121561,
@@ -535,7 +535,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "Standing"
 					}
 				],
 				"sid": 588995867100628,
@@ -635,7 +635,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "Standing"
 					},
 					{
 						"width": 32,
@@ -750,7 +750,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "Standing"
 					},
 					{
 						"width": 32,
@@ -943,7 +943,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "Standing"
 					}
 				],
 				"sid": 406581461263506,
@@ -1058,7 +1058,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "Standing"
 					}
 				],
 				"sid": 363192776981733,
@@ -1158,7 +1158,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "Standing"
 					},
 					{
 						"width": 32,
@@ -1273,7 +1273,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "Standing"
 					},
 					{
 						"width": 32,
@@ -1466,7 +1466,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "Standing"
 					}
 				],
 				"sid": 176933299635692,
@@ -1581,7 +1581,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "Standing"
 					}
 				],
 				"sid": 406572900211599,
@@ -1681,7 +1681,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "Standing"
 					},
 					{
 						"width": 32,
@@ -1796,7 +1796,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "Standing"
 					},
 					{
 						"width": 32,
@@ -1989,7 +1989,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "Standing"
 					}
 				],
 				"sid": 193903736374295,
@@ -2104,7 +2104,7 @@
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": ""
+						"tag": "Standing"
 					}
 				],
 				"sid": 975352373074973,
@@ -2118,15 +2118,15 @@
 			{
 				"frames": [
 					{
-						"width": 64,
-						"height": 64,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 1,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 9897567,
+						"imageSpriteId": 1633354,
 						"collisionPoly": {
 							"points": [
 								0.3125,

@@ -137,6 +137,20 @@
 		},
 		{
 			"eventType": "comment",
+			"text": "Frames"
+		},
+		{
+			"eventType": "variable",
+			"name": "FRAME_Standing",
+			"type": "string",
+			"initialValue": "Standing",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 334149204190333
+		},
+		{
+			"eventType": "comment",
 			"text": "Items"
 		},
 		{

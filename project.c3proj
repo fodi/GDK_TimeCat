@@ -125,7 +125,8 @@
 			"Icons",
 			"bbPlayer",
 			"CameraHelper",
-			"Projectile2"
+			"bbProjectile",
+			"AimHelper"
 		],
 		"subfolders": [
 			{
@@ -337,7 +338,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "11b",
+		"version": "12b",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

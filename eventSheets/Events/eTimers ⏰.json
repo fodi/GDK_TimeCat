@@ -171,6 +171,15 @@
 											],
 											"actions": [
 												{
+													"id": "set-instvar-value",
+													"objectClass": "Player",
+													"sid": 489476011809061,
+													"parameters": {
+														"instance-variable": "item",
+														"value": "Symbol.AnimationName"
+													}
+												},
+												{
 													"id": "set-animation",
 													"objectClass": "Symbol",
 													"sid": 834107544046378,

@@ -24,7 +24,7 @@
 			],
 			"actions": [
 				{
-					"customAction": "onJoinOrReveal",
+					"customAction": "onAction",
 					"objectClass": "Player",
 					"sid": 681878531318208,
 					"parameters": [
@@ -58,7 +58,7 @@
 			],
 			"actions": [
 				{
-					"customAction": "onJoinOrReveal",
+					"customAction": "onAction",
 					"objectClass": "Player",
 					"sid": 670902637766603,
 					"parameters": [
@@ -84,7 +84,7 @@
 			],
 			"actions": [
 				{
-					"customAction": "onJoinOrReveal",
+					"customAction": "onAction",
 					"objectClass": "Player",
 					"sid": 805700499398432,
 					"parameters": [
@@ -109,7 +109,7 @@
 			],
 			"actions": [
 				{
-					"customAction": "onJoinOrReveal",
+					"customAction": "onAction",
 					"objectClass": "Player",
 					"sid": 225752606183331,
 					"parameters": [
