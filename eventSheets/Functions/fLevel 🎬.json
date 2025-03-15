@@ -230,21 +230,9 @@
 							"objectClass": "Tile",
 							"customActionObjectClass": "fTile",
 							"sid": 443776734082262
-						},
-						{
-							"type": "comment",
-							"text": "todo adjust spawner radius dynamically"
 						}
 					],
-					"sid": 715456803686391,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 130077506120723
-						}
-					]
+					"sid": 715456803686391
 				}
 			]
 		},

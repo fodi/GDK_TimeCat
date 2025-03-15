@@ -1459,6 +1459,44 @@
 			],
 			"sid": 200188390220351,
 			"isOrBlock": true
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Dev",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "todo prod: disable"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 741755244109110,
+							"parameters": {
+								"key": 88
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Symbol",
+							"sid": 211287232467612,
+							"parameters": {
+								"visibility": "toggle"
+							}
+						}
+					],
+					"sid": 556549061208795
+				}
+			],
+			"sid": 445167778018070
 		}
 	],
 	"sid": 758821500675486

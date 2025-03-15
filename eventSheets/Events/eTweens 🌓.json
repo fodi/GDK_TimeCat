@@ -6,7 +6,7 @@
 			"conditions": [
 				{
 					"id": "is-playing",
-					"objectClass": "Player",
+					"objectClass": "bbPlayer",
 					"sid": 237965250536974,
 					"behaviorType": "Tween",
 					"parameters": {
@@ -17,7 +17,7 @@
 			"actions": [
 				{
 					"id": "set-default-color",
-					"objectClass": "Player",
+					"objectClass": "bbPlayer",
 					"sid": 738239000620220,
 					"parameters": {
 						"color": "rgbEx(100 + Self.Tween.Value(TWEEN_Player_Hurt), 100 + Self.Tween.Value(TWEEN_Player_Hurt), 100 + Self.Tween.Value(TWEEN_Player_Hurt))"

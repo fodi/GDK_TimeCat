@@ -3,6 +3,16 @@
 	"events": [
 		{
 			"eventType": "variable",
+			"name": "EMPTY",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 494901615415078
+		},
+		{
+			"eventType": "variable",
 			"name": "NOTHING",
 			"type": "number",
 			"initialValue": "-1",
@@ -124,6 +134,70 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 488962984099819
+		},
+		{
+			"eventType": "comment",
+			"text": "Items"
+		},
+		{
+			"eventType": "variable",
+			"name": "ITEM_Attack_",
+			"type": "string",
+			"initialValue": "Attack_",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 252536485319555
+		},
+		{
+			"eventType": "variable",
+			"name": "ITEM_Slow",
+			"type": "string",
+			"initialValue": "Slow",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 396026790871713
+		},
+		{
+			"eventType": "variable",
+			"name": "ITEM_Sleep",
+			"type": "string",
+			"initialValue": "Sleep",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 922735262806377
+		},
+		{
+			"eventType": "variable",
+			"name": "ITEM_Projectile",
+			"type": "string",
+			"initialValue": "Projectile",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 170004157219562
+		},
+		{
+			"eventType": "variable",
+			"name": "ITEM_Defense_",
+			"type": "string",
+			"initialValue": "Defense_",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 383950172373018
+		},
+		{
+			"eventType": "variable",
+			"name": "ITEM_Shield",
+			"type": "string",
+			"initialValue": "Shield",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 463315219386588
 		},
 		{
 			"eventType": "comment",

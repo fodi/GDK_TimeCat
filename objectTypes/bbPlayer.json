@@ -13,7 +13,13 @@
 			"sid": 863125805456258
 		}
 	],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 540803510792621
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [

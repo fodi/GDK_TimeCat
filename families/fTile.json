@@ -4,11 +4,11 @@
 	"sid": 615158190762306,
 	"instanceVariables": [
 		{
-			"name": "symbolNumber",
-			"type": "number",
+			"name": "symbol",
+			"type": "string",
 			"desc": "",
 			"show": true,
-			"sid": 182364468032090
+			"sid": 779019279173272
 		},
 		{
 			"name": "randomId",

@@ -19,7 +19,7 @@
 					"sid": 375535735700021,
 					"tags": "",
 					"instanceVariables": {
-						"symbolNumber": 0,
+						"symbol": "",
 						"randomId": 0,
 						"playerId": -1
 					},
@@ -242,7 +242,8 @@
 						"IN_Analog_Angle": 0,
 						"tileUID1": -1,
 						"tileUID2": -1,
-						"playerId": 0
+						"playerId": 0,
+						"item": ""
 					},
 					"behaviors": {
 						"8Direction": {
@@ -276,6 +277,21 @@
 									"x": true,
 									"y": true,
 									"z": true,
+									"w": false,
+									"h": false,
+									"a": false,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							},
+							{
+								"uid": 23,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": false,
 									"w": false,
 									"h": false,
 									"a": false,
@@ -409,7 +425,13 @@
 					"instanceVariables": {
 						"playerId": 0
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"sceneGraphData": {
 						"parent-uid": 7,
 						"uid": 22,
@@ -454,6 +476,74 @@
 						"height": 32,
 						"originX": 0.5,
 						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Symbol",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 23,
+					"sid": 796242144710850,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 7,
+						"uid": 23,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": false,
+							"w": false,
+							"h": false,
+							"a": false,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 796242144710850,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 208,
+						"y": 24,
+						"width": 12,
+						"height": 12,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,

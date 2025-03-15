@@ -161,14 +161,7 @@
 		]
 	},
 	"autosaveData": null,
-	"containers": [
-		{
-			"members": [
-				"bbPlayer",
-				"Player"
-			]
-		}
-	],
+	"containers": [],
 	"families": {
 		"items": [
 			"fTile",
@@ -341,7 +334,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "9",
+		"version": "10",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

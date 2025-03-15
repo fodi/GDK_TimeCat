@@ -119,13 +119,13 @@
 					"children": [
 						{
 							"eventType": "variable",
-							"name": "nextSymbolNumber",
-							"type": "number",
-							"initialValue": "0",
+							"name": "nextSymbol",
+							"type": "string",
+							"initialValue": "",
 							"comment": "",
 							"isStatic": false,
 							"isConstant": false,
-							"sid": 520830809813250
+							"sid": 745129676022884
 						},
 						{
 							"eventType": "variable",
@@ -136,6 +136,16 @@
 							"isStatic": false,
 							"isConstant": false,
 							"sid": 521105562566829
+						},
+						{
+							"eventType": "variable",
+							"name": "pairCount",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 705130102189728
 						},
 						{
 							"eventType": "variable",
@@ -163,15 +173,6 @@
 							],
 							"actions": [
 								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 571877016536564,
-									"parameters": {
-										"type": "log",
-										"message": "\"shuffle loopindex: \" &loopindex"
-									}
-								},
-								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
 									"sid": 584902889060440,
@@ -184,6 +185,7 @@
 							"sid": 200304786601294,
 							"children": [
 								{
+									"bookmark": true,
 									"eventType": "block",
 									"conditions": [
 										{
@@ -201,10 +203,28 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 674106899757576,
+											"sid": 107252624936955,
 											"parameters": {
-												"variable": "nextSymbolNumber",
-												"value": "int(random(1, C_Symbol_Variant_Count + 1))"
+												"variable": "nextSymbol",
+												"value": "trim(tokenat(C_CSV_Symbols, pairCount % tokencount(C_CSV_Symbols, \",\") , \",\"))"
+											}
+										},
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 611694284348931,
+											"parameters": {
+												"variable": "pairCount",
+												"value": "1"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 423084836636666,
+											"parameters": {
+												"type": "log",
+												"message": "\"next symbol: \" & nextSymbol"
 											}
 										}
 									],
@@ -227,33 +247,51 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "fTile",
-											"sid": 292625047726286,
+											"sid": 715408789741085,
 											"parameters": {
-												"instance-variable": "symbolNumber",
-												"value": "nextSymbolNumber"
+												"instance-variable": "symbol",
+												"value": "nextSymbol"
 											}
 										},
 										{
 											"id": "set-animation",
 											"objectClass": "Symbol",
-											"sid": 319253140242593,
+											"sid": 359047676541321,
 											"parameters": {
-												"animation": "str(fTile.symbolNumber)",
+												"animation": "fTile.symbol",
 												"from": "beginning"
-											}
-										},
-										{
-											"id": "add-to-eventvar",
-											"objectClass": "System",
-											"sid": 269301943948465,
-											"disabled": true,
-											"parameters": {
-												"variable": "tileIterator",
-												"value": "1"
 											}
 										}
 									],
-									"sid": 501570414841412
+									"sid": 501570414841412,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "Symbol",
+													"sid": 577807685154521,
+													"parameters": {
+														"animation": "fTile.symbol"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "log",
+													"objectClass": "Browser",
+													"sid": 891066306454522,
+													"parameters": {
+														"type": "error",
+														"message": "\"Unable to set symbol animation to \" & fTile.symbol"
+													}
+												}
+											],
+											"sid": 461328344759410
+										}
+									]
 								}
 							]
 						},
@@ -483,7 +521,16 @@
 						{
 							"id": "destroy",
 							"objectClass": "Symbol",
-							"sid": 641902556869757
+							"sid": 641902556869757,
+							"disabled": true
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Symbol",
+							"sid": 250384068689123,
+							"parameters": {
+								"opacity": "10"
+							}
 						}
 					],
 					"sid": 323371826168423

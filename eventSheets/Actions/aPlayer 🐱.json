@@ -48,18 +48,37 @@
 					"parameters": {
 						"max-speed": "Functions.Config_getNumber(PARAM_Player_MovementSpeed, Self.8Direction.MaxSpeed)"
 					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "bbPlayer",
-					"sid": 854388635417100,
-					"parameters": {
-						"instance-variable": "playerId",
-						"value": "Player.playerId"
-					}
 				}
 			],
-			"sid": 846445072912984
+			"sid": 846445072912984,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "Player",
+							"sid": 492436812501198,
+							"parameters": {
+								"child": "bbPlayer",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "bbPlayer",
+							"sid": 336314641302842,
+							"parameters": {
+								"instance-variable": "playerId",
+								"value": "Player.playerId"
+							}
+						}
+					],
+					"sid": 713148674116131
+				}
+			]
 		},
 		{
 			"aceType": "action",
@@ -273,6 +292,15 @@
 										"variable": "isMoving",
 										"comparison": 0,
 										"value": "YES"
+									}
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "Player",
+									"sid": 548019944048363,
+									"parameters": {
+										"child": "bbPlayer",
+										"which": "own"
 									}
 								}
 							],
@@ -800,6 +828,15 @@
 						"comparison": 4,
 						"value": "0"
 					}
+				},
+				{
+					"id": "pick-children",
+					"objectClass": "Player",
+					"sid": 560684962059390,
+					"parameters": {
+						"child": "bbPlayer",
+						"which": "own"
+					}
 				}
 			],
 			"actions": [
@@ -864,7 +901,7 @@
 						},
 						{
 							"id": "set-animation",
-							"objectClass": "Player",
+							"objectClass": "bbPlayer",
 							"sid": 729310302741841,
 							"parameters": {
 								"animation": "ANIM_Dead",
@@ -986,7 +1023,7 @@
 								},
 								{
 									"id": "tween-value",
-									"objectClass": "Player",
+									"objectClass": "bbPlayer",
 									"sid": 445765062360582,
 									"behaviorType": "Tween",
 									"parameters": {

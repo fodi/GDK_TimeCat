@@ -50,6 +50,16 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 884061419103597
+		},
+		{
+			"eventType": "variable",
+			"name": "C_CSV_Symbols",
+			"type": "string",
+			"initialValue": "1, 2, 3, 4, Projectile, Shield, Sleep, Slow",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 797343426013108
 		}
 	],
 	"sid": 344291072955141

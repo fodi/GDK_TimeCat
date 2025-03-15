@@ -26,6 +26,10 @@
 			"sid": 454457054152501,
 			"children": [
 				{
+					"eventType": "comment",
+					"text": "todo refactor"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -58,11 +62,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Tile",
-									"sid": 151206486527415,
+									"sid": 118492516254789,
 									"parameters": {
-										"instance-variable": "symbolNumber",
+										"instance-variable": "symbol",
 										"comparison": 0,
-										"value": "fTile.symbolNumber"
+										"value": "fTile.symbol"
 									}
 								}
 							],
@@ -88,7 +92,54 @@
 									]
 								}
 							],
-							"sid": 315455249506772
+							"sid": 315455249506772,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 947589207699850,
+											"parameters": {
+												"object": "Tile",
+												"expression": "int(Tile.symbol)",
+												"comparison": 0,
+												"value": "0"
+											}
+										},
+										{
+											"id": "pick-children",
+											"objectClass": "Player",
+											"sid": 537922417560671,
+											"parameters": {
+												"child": "Symbol",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Symbol",
+											"sid": 880894879091928,
+											"parameters": {
+												"animation": "Tile.symbol",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "Symbol",
+											"sid": 954215423892806,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 619323921869795
+								}
+							]
 						},
 						{
 							"eventType": "comment",
@@ -148,7 +199,6 @@
 			]
 		},
 		{
-			"bookmark": true,
 			"eventType": "block",
 			"conditions": [
 				{
