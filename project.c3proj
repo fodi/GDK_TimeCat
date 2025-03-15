@@ -303,7 +303,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "3",
+		"version": "4",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

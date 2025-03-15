@@ -7,9 +7,9 @@
 				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 222128573665928,
+					"sid": 584790881130298,
 					"parameters": {
-						"key": 76
+						"key": 70
 					}
 				}
 			],
@@ -19,8 +19,7 @@
 					"sid": 371103427352096
 				}
 			],
-			"sid": 848695742537860,
-			"disabled": true
+			"sid": 848695742537860
 		},
 		{
 			"eventType": "block",
