@@ -95,6 +95,10 @@
 							"sid": 315455249506772,
 							"children": [
 								{
+									"eventType": "comment",
+									"text": "If symbol is an item..."
+								},
+								{
 									"eventType": "block",
 									"conditions": [
 										{
@@ -107,37 +111,86 @@
 												"comparison": 0,
 												"value": "0"
 											}
-										},
-										{
-											"id": "pick-children",
-											"objectClass": "Player",
-											"sid": 537922417560671,
-											"parameters": {
-												"child": "Symbol",
-												"which": "own"
-											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 619323921869795,
+									"children": [
 										{
-											"id": "set-animation",
-											"objectClass": "Symbol",
-											"sid": 880894879091928,
-											"parameters": {
-												"animation": "Tile.symbol",
-												"from": "beginning"
-											}
+											"eventType": "comment",
+											"text": "If item is health, heal immediately"
 										},
 										{
-											"id": "set-visible",
-											"objectClass": "Symbol",
-											"sid": 954215423892806,
-											"parameters": {
-												"visibility": "visible"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Tile",
+													"sid": 403577862978357,
+													"parameters": {
+														"instance-variable": "symbol",
+														"comparison": 0,
+														"value": "ITEM_Health"
+													}
+												}
+											],
+											"actions": [
+												{
+													"customAction": "changeHealth",
+													"objectClass": "Player",
+													"sid": 468073674070935,
+													"parameters": [
+														"Self.R_Health_BonusOnHeal",
+														"YES"
+													]
+												}
+											],
+											"sid": 737920009310871
+										},
+										{
+											"eventType": "comment",
+											"text": "Otherwise pick up item"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 178670916917806
+												},
+												{
+													"id": "pick-children",
+													"objectClass": "Player",
+													"sid": 524666934488393,
+													"parameters": {
+														"child": "Symbol",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "Symbol",
+													"sid": 834107544046378,
+													"parameters": {
+														"animation": "Tile.symbol",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "Symbol",
+													"sid": 230637959076484,
+													"parameters": {
+														"visibility": "visible"
+													}
+												}
+											],
+											"sid": 572611703805464
 										}
-									],
-									"sid": 619323921869795
+									]
 								}
 							]
 						},

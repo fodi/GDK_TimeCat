@@ -123,7 +123,9 @@
 			"ProjectileSpawner",
 			"Wall",
 			"Icons",
-			"bbPlayer"
+			"bbPlayer",
+			"CameraHelper",
+			"Projectile2"
 		],
 		"subfolders": [
 			{
@@ -225,7 +227,8 @@
 					"aTile 🟦",
 					"aSpawner 🎇",
 					"aWall 🧱",
-					"aProjectiles 🏹"
+					"aProjectiles 🏹",
+					"aCamera 🎥"
 				],
 				"subfolders": [],
 				"name": "Actions"
@@ -334,7 +337,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "10",
+		"version": "11b",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

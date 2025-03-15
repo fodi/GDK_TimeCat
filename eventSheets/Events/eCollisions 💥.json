@@ -21,6 +21,7 @@
 				}
 			],
 			"sid": 536663966245672,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "comment",
@@ -60,7 +61,67 @@
 							]
 						}
 					],
-					"sid": 443642061666678
+					"sid": 443642061666678,
+					"disabled": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 262858438598313,
+					"parameters": {
+						"object": "Projectile"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Projectile",
+					"sid": 876574991497227
+				}
+			],
+			"sid": 569478695533574,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "Player",
+							"sid": 494429868464192,
+							"parameters": {
+								"child": "bbPlayer",
+								"which": "own"
+							}
+						},
+						{
+							"id": "is-playing",
+							"objectClass": "bbPlayer",
+							"sid": 847189294861507,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TWEEN_Player_Hurt"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"customAction": "changeHealth",
+							"objectClass": "Player",
+							"sid": 392710178517158,
+							"parameters": [
+								"-Projectile.R_Damage",
+								"1"
+							]
+						}
+					],
+					"sid": 848703835571815
 				}
 			]
 		}

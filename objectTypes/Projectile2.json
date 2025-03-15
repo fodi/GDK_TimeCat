@@ -1,25 +1,11 @@
 {
-	"name": "Projectile",
+	"name": "Projectile2",
 	"plugin-id": "Sprite",
-	"sid": 181915289080855,
+	"sid": 150324123833463,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
-	"instanceVariables": [
-		{
-			"name": "R_Damage",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 657103350544509
-		}
-	],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Bullet",
-			"name": "Bullet",
-			"sid": 777921220276169
-		}
-	],
+	"instanceVariables": [],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -34,17 +20,17 @@
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 4562926,
+						"imageSpriteId": 8855076,
 						"collisionPoly": {
 							"points": [
-								0.058823529411764705,
-								0.2,
+								0.11764705882352941,
+								0.4,
 								0.9117647058823529,
-								0.2,
+								0.4,
 								0.9117647058823529,
-								0.8,
-								0.058823529411764705,
-								0.8
+								0.6,
+								0.11764705882352941,
+								0.6
 							]
 						},
 						"useCollisionPoly": true,
@@ -52,7 +38,7 @@
 						"tag": ""
 					}
 				],
-				"sid": 510808708481060,
+				"sid": 845428369365121,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

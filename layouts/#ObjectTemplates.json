@@ -92,7 +92,7 @@
 							1
 						],
 						"angle": 0,
-						"zElevation": 0
+						"zElevation": -0.5
 					}
 				},
 				{
@@ -191,6 +191,51 @@
 							}
 						}
 					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 14,
+						"children": [
+							{
+								"uid": 25,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
 					"instanceFolderItem": {
 						"sid": 919295171424457,
 						"expanded": true,
@@ -211,7 +256,7 @@
 							1,
 							1,
 							1,
-							1
+							0.25
 						],
 						"angle": 0,
 						"zElevation": 0
@@ -232,7 +277,8 @@
 					"instanceVariables": {
 						"R_Health_Max": 30,
 						"R_Health_BonusOnPair": 5,
-						"movementAngle": 0,
+						"R_Health_BonusOnHeal": 10,
+						"currentAngle": 0,
 						"health": 1,
 						"IN_Up": 0,
 						"IN_Down": 0,
@@ -240,6 +286,7 @@
 						"IN_Right": 0,
 						"IN_Analog_Active": 0,
 						"IN_Analog_Angle": 0,
+						"IN_Aiming": 0,
 						"tileUID1": -1,
 						"tileUID2": -1,
 						"playerId": 0,
@@ -467,6 +514,44 @@
 						"indexInFolder": -1,
 						"folderNestingLevel": -1
 					},
+					"mesh": {
+						"cols": 2,
+						"rows": 2,
+						"points": [
+							[
+								{
+									"x": 0,
+									"y": 1,
+									"z": 48,
+									"u": 0,
+									"v": 0
+								},
+								{
+									"x": 1,
+									"y": 1,
+									"z": 48,
+									"u": 1,
+									"v": 0
+								}
+							],
+							[
+								{
+									"x": 0,
+									"y": 1,
+									"z": 0,
+									"u": 0,
+									"v": 1
+								},
+								{
+									"x": 1,
+									"y": 1,
+									"z": 0,
+									"u": 1,
+									"v": 1
+								}
+							]
+						]
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -484,6 +569,74 @@
 						],
 						"angle": 0,
 						"zElevation": 0
+					}
+				},
+				{
+					"type": "Projectile2",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 25,
+					"sid": 190333952582812,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 14,
+						"uid": 25,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 190333952582812,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 96,
+						"y": 32,
+						"width": 34,
+						"height": 10,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 24
 					}
 				},
 				{
@@ -535,11 +688,49 @@
 						"indexInFolder": -1,
 						"folderNestingLevel": -1
 					},
+					"mesh": {
+						"cols": 2,
+						"rows": 2,
+						"points": [
+							[
+								{
+									"x": 0,
+									"y": 1,
+									"z": 18,
+									"u": 0,
+									"v": 0
+								},
+								{
+									"x": 1,
+									"y": 1,
+									"z": 18,
+									"u": 1,
+									"v": 0
+								}
+							],
+							[
+								{
+									"x": 0,
+									"y": 1,
+									"z": 0,
+									"u": 0,
+									"v": 1
+								},
+								{
+									"x": 1,
+									"y": 1,
+									"z": 0,
+									"u": 1,
+									"v": 1
+								}
+							]
+						]
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
 						"x": 208,
-						"y": 24,
+						"y": 58,
 						"width": 12,
 						"height": 12,
 						"originX": 0.5,
@@ -551,7 +742,7 @@
 							1
 						],
 						"angle": 0,
-						"zElevation": 0
+						"zElevation": 56
 					}
 				}
 			],

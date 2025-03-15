@@ -18,7 +18,14 @@
 			"sid": 437524512402961
 		},
 		{
-			"name": "movementAngle",
+			"name": "R_Health_BonusOnHeal",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 699163729016461
+		},
+		{
+			"name": "currentAngle",
 			"type": "number",
 			"desc": "",
 			"show": false,
@@ -72,6 +79,13 @@
 			"desc": "",
 			"show": false,
 			"sid": 767403585288806
+		},
+		{
+			"name": "IN_Aiming",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 499103422601942
 		},
 		{
 			"name": "tileUID1",

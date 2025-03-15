@@ -185,7 +185,6 @@
 							"sid": 200304786601294,
 							"children": [
 								{
-									"bookmark": true,
 									"eventType": "block",
 									"conditions": [
 										{
@@ -222,6 +221,7 @@
 											"id": "log",
 											"objectClass": "Browser",
 											"sid": 423084836636666,
+											"disabled": true,
 											"parameters": {
 												"type": "log",
 												"message": "\"next symbol: \" & nextSymbol"

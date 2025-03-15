@@ -55,7 +55,7 @@
 			"eventType": "variable",
 			"name": "C_CSV_Symbols",
 			"type": "string",
-			"initialValue": "1, 2, 3, 4, Projectile, Shield, Sleep, Slow",
+			"initialValue": "1, 2, 3, 4, Projectile, Sleep, Slow, Shield, Health",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,

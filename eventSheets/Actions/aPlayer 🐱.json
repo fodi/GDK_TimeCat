@@ -170,7 +170,7 @@
 						},
 						{
 							"eventType": "variable",
-							"name": "isMoving",
+							"name": "isAngleSet",
 							"type": "number",
 							"initialValue": "0",
 							"comment": "",
@@ -228,7 +228,7 @@
 									"objectClass": "Player",
 									"sid": 790496635031229,
 									"parameters": {
-										"instance-variable": "movementAngle",
+										"instance-variable": "currentAngle",
 										"value": "angle(0, 0, Player.IN_Right - Player.IN_Left, Player.IN_Down - Player.IN_Up)"
 									}
 								},
@@ -237,7 +237,7 @@
 									"objectClass": "System",
 									"sid": 694381256892420,
 									"parameters": {
-										"variable": "isMoving",
+										"variable": "isAngleSet",
 										"value": "YES"
 									}
 								}
@@ -265,7 +265,7 @@
 									"objectClass": "Player",
 									"sid": 910658680496031,
 									"parameters": {
-										"instance-variable": "movementAngle",
+										"instance-variable": "currentAngle",
 										"value": "Player.IN_Analog_Angle"
 									}
 								},
@@ -274,7 +274,7 @@
 									"objectClass": "System",
 									"sid": 824155141878664,
 									"parameters": {
-										"variable": "isMoving",
+										"variable": "isAngleSet",
 										"value": "YES"
 									}
 								}
@@ -289,7 +289,7 @@
 									"objectClass": "System",
 									"sid": 608160465761650,
 									"parameters": {
-										"variable": "isMoving",
+										"variable": "isAngleSet",
 										"comparison": 0,
 										"value": "YES"
 									}
@@ -304,28 +304,64 @@
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "set-vector-x",
-									"objectClass": "Player",
-									"sid": 729329213448601,
-									"behaviorType": "8Direction",
-									"parameters": {
-										"vector-x": "cos(Player.movementAngle) * Player.8Direction.MaxSpeed"
-									}
-								},
-								{
-									"id": "set-vector-y",
-									"objectClass": "Player",
-									"sid": 980404111041316,
-									"behaviorType": "8Direction",
-									"parameters": {
-										"vector-y": "sin(Player.movementAngle) * Player.8Direction.MaxSpeed"
-									}
-								}
-							],
+							"actions": [],
 							"sid": 139286403473144,
 							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Player",
+											"sid": 973018246771638,
+											"parameters": {
+												"instance-variable": "IN_Aiming",
+												"comparison": 0,
+												"value": "NO"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-vector-x",
+											"objectClass": "Player",
+											"sid": 388606943361479,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"vector-x": "cos(Player.currentAngle) * Player.8Direction.MaxSpeed"
+											}
+										},
+										{
+											"id": "set-vector-y",
+											"objectClass": "Player",
+											"sid": 374942039813110,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"vector-y": "sin(Player.currentAngle) * Player.8Direction.MaxSpeed"
+											}
+										}
+									],
+									"sid": 871548221558014
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 209980953132901
+										}
+									],
+									"actions": [
+										{
+											"id": "stop",
+											"objectClass": "Player",
+											"sid": 164899503664935,
+											"behaviorType": "8Direction"
+										}
+									],
+									"sid": 118088490835457
+								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -334,7 +370,7 @@
 											"objectClass": "System",
 											"sid": 207407997233340,
 											"parameters": {
-												"angle": "Player.movementAngle",
+												"angle": "Player.currentAngle",
 												"first-angle": "-60",
 												"second-angle": "60"
 											}
@@ -366,7 +402,7 @@
 											"objectClass": "System",
 											"sid": 807653698634221,
 											"parameters": {
-												"angle": "Player.movementAngle",
+												"angle": "Player.currentAngle",
 												"first-angle": "180-60",
 												"second-angle": "180+60"
 											}
@@ -398,7 +434,7 @@
 											"objectClass": "System",
 											"sid": 657282814560684,
 											"parameters": {
-												"angle": "Player.movementAngle",
+												"angle": "Player.currentAngle",
 												"first-angle": "270-30",
 												"second-angle": "270+30"
 											}
@@ -430,7 +466,7 @@
 											"objectClass": "System",
 											"sid": 536757696658184,
 											"parameters": {
-												"angle": "Player.movementAngle",
+												"angle": "Player.currentAngle",
 												"first-angle": "90-30",
 												"second-angle": "90+30"
 											}
@@ -485,7 +521,7 @@
 		},
 		{
 			"aceType": "action",
-			"aceName": "onAction",
+			"aceName": "onJoinOrReveal",
 			"objectClass": "Player",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -848,16 +884,6 @@
 						"instance-variable": "health",
 						"value": "clamp(Self.health + amount, 0, Self.R_Health_Max)"
 					}
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 368737382277083,
-					"disabled": true,
-					"parameters": {
-						"type": "log",
-						"message": "\"Player \" & Player.playerId & \" health: \" & Player.health"
-					}
 				}
 			],
 			"sid": 876028868693683,
@@ -997,6 +1023,15 @@
 							],
 							"actions": [
 								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 862403355241923,
+									"parameters": {
+										"type": "log",
+										"message": "\"Player healing: \" & amount"
+									}
+								},
+								{
 									"type": "comment",
 									"text": "todo"
 								}
@@ -1044,6 +1079,36 @@
 					]
 				}
 			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "onStartAim",
+			"objectClass": "fPlayer",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 806623578106467
+		},
+		{
+			"aceType": "action",
+			"aceName": "onEndAim",
+			"objectClass": "fPlayer",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 384748530779183
 		}
 	],
 	"sid": 183802187831019

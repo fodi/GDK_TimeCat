@@ -141,16 +141,6 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ITEM_Attack_",
-			"type": "string",
-			"initialValue": "Attack_",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 252536485319555
-		},
-		{
-			"eventType": "variable",
 			"name": "ITEM_Slow",
 			"type": "string",
 			"initialValue": "Slow",
@@ -181,16 +171,6 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ITEM_Defense_",
-			"type": "string",
-			"initialValue": "Defense_",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 383950172373018
-		},
-		{
-			"eventType": "variable",
 			"name": "ITEM_Shield",
 			"type": "string",
 			"initialValue": "Shield",
@@ -198,6 +178,16 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 463315219386588
+		},
+		{
+			"eventType": "variable",
+			"name": "ITEM_Health",
+			"type": "string",
+			"initialValue": "Health",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 940500983836366
 		},
 		{
 			"eventType": "comment",

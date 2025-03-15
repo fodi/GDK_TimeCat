@@ -129,10 +129,16 @@
 							"id": "scroll-to-position",
 							"objectClass": "System",
 							"sid": 887541148419426,
+							"disabled": true,
 							"parameters": {
 								"x": "midX",
 								"y": "midY"
 							}
+						},
+						{
+							"customAction": "init",
+							"objectClass": "CameraHelper",
+							"sid": 297026343364497
 						},
 						{
 							"type": "comment",

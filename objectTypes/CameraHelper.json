@@ -1,23 +1,37 @@
 {
-	"name": "Projectile",
+	"name": "CameraHelper",
 	"plugin-id": "Sprite",
-	"sid": 181915289080855,
+	"sid": 476565392612472,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [
 		{
-			"name": "R_Damage",
+			"name": "R_ZElevationInit",
 			"type": "number",
 			"desc": "",
 			"show": true,
-			"sid": 657103350544509
+			"sid": 761204781642649
+		},
+		{
+			"name": "R_YInit",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 831816263431699
+		},
+		{
+			"name": "R_FieldOfView",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 625815336130066
 		}
 	],
 	"behaviorTypes": [
 		{
-			"behaviorId": "Bullet",
-			"name": "Bullet",
-			"sid": 777921220276169
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 538802500110381
 		}
 	],
 	"effectTypes": [],
@@ -26,33 +40,21 @@
 			{
 				"frames": [
 					{
-						"width": 34,
-						"height": 10,
-						"originX": 0,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 4562926,
-						"collisionPoly": {
-							"points": [
-								0.058823529411764705,
-								0.2,
-								0.9117647058823529,
-								0.2,
-								0.9117647058823529,
-								0.8,
-								0.058823529411764705,
-								0.8
-							]
-						},
+						"imageSpriteId": 7142884,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 510808708481060,
+				"sid": 146651395873136,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

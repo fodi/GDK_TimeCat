@@ -27,7 +27,13 @@
 					"sid": 552969549724375
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"customAction": "tick",
+					"objectClass": "CameraHelper",
+					"sid": 956245024598579
+				}
+			],
 			"sid": 559613915501580,
 			"children": [
 				{
@@ -73,9 +79,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "UI_TextSF",
-							"sid": 394644341921319,
+							"sid": 397491524173782,
 							"parameters": {
-								"text": "Functions.getDevInfo(\", \")"
+								"text": "\"Camera @ \" & round(CameraHelper.X) & \", \" & round(CameraHelper.Y) & \", \" & round(CameraHelper.ZElevation) & \" | FoV: \" & CameraHelper.R_FieldOfView & newline & \nFunctions.getDevInfo(\", \")"
 							}
 						}
 					],

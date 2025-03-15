@@ -1,0 +1,79 @@
+{
+	"name": "aCamera 🎥",
+	"events": [
+		{
+			"aceType": "action",
+			"aceName": "init",
+			"objectClass": "CameraHelper",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-z-elevation",
+					"objectClass": "CameraHelper",
+					"sid": 783228507271557,
+					"parameters": {
+						"z": "Self.R_ZElevationInit"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "CameraHelper",
+					"sid": 838555252646354,
+					"parameters": {
+						"x": "midX * 0.55",
+						"y": "Self.R_YInit"
+					}
+				}
+			],
+			"sid": 986035733445233
+		},
+		{
+			"aceType": "action",
+			"aceName": "tick",
+			"objectClass": "CameraHelper",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "look-at-position",
+					"objectClass": "3DCamera",
+					"sid": 648093803802463,
+					"parameters": {
+						"cam-x": "CameraHelper.X",
+						"cam-y": "CameraHelper.Y",
+						"cam-z": "CameraHelper.ZElevation",
+						"look-x": "midX",
+						"look-y": "midY",
+						"look-z": "0",
+						"up-x": "0",
+						"up-y": "0",
+						"up-z": "1"
+					}
+				},
+				{
+					"id": "set-field-of-view",
+					"objectClass": "3DCamera",
+					"sid": 656775038457167,
+					"parameters": {
+						"fov": "CameraHelper.R_FieldOfView"
+					}
+				}
+			],
+			"sid": 584541642494638
+		}
+	],
+	"sid": 105065436241276
+}

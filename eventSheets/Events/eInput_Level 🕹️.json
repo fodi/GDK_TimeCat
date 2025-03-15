@@ -24,7 +24,7 @@
 			],
 			"actions": [
 				{
-					"customAction": "onAction",
+					"customAction": "onJoinOrReveal",
 					"objectClass": "Player",
 					"sid": 681878531318208,
 					"parameters": [
@@ -58,7 +58,7 @@
 			],
 			"actions": [
 				{
-					"customAction": "onAction",
+					"customAction": "onJoinOrReveal",
 					"objectClass": "Player",
 					"sid": 670902637766603,
 					"parameters": [
@@ -84,7 +84,7 @@
 			],
 			"actions": [
 				{
-					"customAction": "onAction",
+					"customAction": "onJoinOrReveal",
 					"objectClass": "Player",
 					"sid": 805700499398432,
 					"parameters": [
@@ -109,7 +109,7 @@
 			],
 			"actions": [
 				{
-					"customAction": "onAction",
+					"customAction": "onJoinOrReveal",
 					"objectClass": "Player",
 					"sid": 225752606183331,
 					"parameters": [
@@ -136,6 +136,90 @@
 			"actions": [],
 			"sid": 320679594348019,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 224109460955231,
+							"parameters": {
+								"key": 16
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 427347470446791,
+							"parameters": {
+								"gamepad": "2",
+								"button": "left-shoulder-trigger"
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 630278611894258,
+							"parameters": {
+								"gamepad": "2",
+								"button": "right-shoulder-trigger"
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 378331793437704,
+							"parameters": {
+								"gamepad": "2",
+								"button": "left-shoulder-button"
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 384261542608529,
+							"parameters": {
+								"gamepad": "2",
+								"button": "right-shoulder-button"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 745354602990060,
+							"parameters": {
+								"instance-variable": "IN_Aiming",
+								"value": "YES"
+							}
+						}
+					],
+					"sid": 985698936951769,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 750564104151104
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 422995195342754,
+							"parameters": {
+								"instance-variable": "IN_Aiming",
+								"value": "NO"
+							}
+						}
+					],
+					"sid": 151605665975802
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -460,6 +544,90 @@
 						{
 							"id": "key-is-down",
 							"objectClass": "Keyboard",
+							"sid": 986490975715603,
+							"parameters": {
+								"key": 79
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 119554428827493,
+							"parameters": {
+								"gamepad": "3",
+								"button": "left-shoulder-trigger"
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 355889346330599,
+							"parameters": {
+								"gamepad": "3",
+								"button": "right-shoulder-trigger"
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 155782505231668,
+							"parameters": {
+								"gamepad": "3",
+								"button": "left-shoulder-button"
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 191927400383230,
+							"parameters": {
+								"gamepad": "3",
+								"button": "right-shoulder-button"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 414648485949000,
+							"parameters": {
+								"instance-variable": "IN_Aiming",
+								"value": "YES"
+							}
+						}
+					],
+					"sid": 530851583316927,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 564592379412546
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 978434798915510,
+							"parameters": {
+								"instance-variable": "IN_Aiming",
+								"value": "NO"
+							}
+						}
+					],
+					"sid": 911603010029631
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
 							"sid": 144410056634793,
 							"parameters": {
 								"key": 38
@@ -468,9 +636,9 @@
 						{
 							"id": "is-button-down",
 							"objectClass": "Gamepad",
-							"sid": 119621607217985,
+							"sid": 583799623085636,
 							"parameters": {
-								"gamepad": "2",
+								"gamepad": "3",
 								"button": "d-pad-up"
 							}
 						}
@@ -778,6 +946,82 @@
 						{
 							"id": "is-button-down",
 							"objectClass": "Gamepad",
+							"sid": 825846029022821,
+							"parameters": {
+								"gamepad": "0",
+								"button": "left-shoulder-trigger"
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 290190091365757,
+							"parameters": {
+								"gamepad": "0",
+								"button": "right-shoulder-trigger"
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 875890043638564,
+							"parameters": {
+								"gamepad": "0",
+								"button": "left-shoulder-button"
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 164555541675057,
+							"parameters": {
+								"gamepad": "0",
+								"button": "right-shoulder-button"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 197331371950565,
+							"parameters": {
+								"instance-variable": "IN_Aiming",
+								"value": "YES"
+							}
+						}
+					],
+					"sid": 810748177881169,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 379601783179047
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 936520091846470,
+							"parameters": {
+								"instance-variable": "IN_Aiming",
+								"value": "NO"
+							}
+						}
+					],
+					"sid": 577903556794215
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
 							"sid": 888693030849201,
 							"parameters": {
 								"gamepad": "0",
@@ -1058,6 +1302,82 @@
 			"actions": [],
 			"sid": 761561037902944,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 668975578771372,
+							"parameters": {
+								"gamepad": "1",
+								"button": "left-shoulder-trigger"
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 291329662239422,
+							"parameters": {
+								"gamepad": "1",
+								"button": "right-shoulder-trigger"
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 657842729448024,
+							"parameters": {
+								"gamepad": "1",
+								"button": "left-shoulder-button"
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 493644551622337,
+							"parameters": {
+								"gamepad": "1",
+								"button": "right-shoulder-button"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 135040902377898,
+							"parameters": {
+								"instance-variable": "IN_Aiming",
+								"value": "YES"
+							}
+						}
+					],
+					"sid": 289664878877774,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 472663766974269
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 566589715637164,
+							"parameters": {
+								"instance-variable": "IN_Aiming",
+								"value": "NO"
+							}
+						}
+					],
+					"sid": 235069517524762
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -1494,6 +1814,228 @@
 						}
 					],
 					"sid": 556549061208795
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 694036550868403,
+							"parameters": {
+								"key": 107
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-z-elevation",
+							"objectClass": "CameraHelper",
+							"sid": 952042408619073,
+							"parameters": {
+								"z": "Self.ZElevation - 5"
+							}
+						}
+					],
+					"sid": 349815076857173
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 272062554337996,
+							"parameters": {
+								"key": 109
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-z-elevation",
+							"objectClass": "CameraHelper",
+							"sid": 202461511704725,
+							"parameters": {
+								"z": "Self.ZElevation + 5"
+							}
+						}
+					],
+					"sid": 813145669667060
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 348947455835998,
+							"parameters": {
+								"key": 111
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "CameraHelper",
+							"sid": 650983970135699,
+							"parameters": {
+								"instance-variable": "R_FieldOfView",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 181569761256367
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 426557159543174,
+							"parameters": {
+								"key": 106
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-instvar",
+							"objectClass": "CameraHelper",
+							"sid": 295332584510756,
+							"parameters": {
+								"instance-variable": "R_FieldOfView",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 981083144871587
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 845512472805252,
+							"parameters": {
+								"key": 104
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "CameraHelper",
+							"sid": 546427801694875,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "up"
+							}
+						}
+					],
+					"sid": 667294599852306
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 368023981175758,
+							"parameters": {
+								"key": 98
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "CameraHelper",
+							"sid": 545663379602025,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "down"
+							}
+						}
+					],
+					"sid": 207890546441287
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 383191344626872,
+							"parameters": {
+								"key": 100
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "CameraHelper",
+							"sid": 309146840867719,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 375526865816699
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 634988818694175,
+							"parameters": {
+								"key": 102
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "CameraHelper",
+							"sid": 377267492259088,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 764929391571421
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 978834128716843,
+							"parameters": {
+								"key": 101
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "CameraHelper",
+							"sid": 995044476593640,
+							"parameters": {
+								"x": "midX"
+							}
+						}
+					],
+					"sid": 285712576902914
 				}
 			],
 			"sid": 445167778018070

@@ -19,7 +19,7 @@
 			"eventType": "variable",
 			"name": "R_ColumnCount",
 			"type": "number",
-			"initialValue": "7",
+			"initialValue": "10",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
