@@ -47,10 +47,11 @@
 						{
 							"customAction": "spawn",
 							"objectClass": "Tile",
-							"sid": 591888170708106,
+							"customActionObjectClass": "fTile",
+							"sid": 549512855091206,
 							"parameters": [
 								"5",
-								"6"
+								"10"
 							]
 						},
 						{
@@ -61,6 +62,7 @@
 						{
 							"customAction": "shuffle",
 							"objectClass": "Tile",
+							"customActionObjectClass": "fTile",
 							"sid": 859985040714495
 						}
 					],

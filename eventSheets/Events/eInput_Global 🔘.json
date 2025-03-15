@@ -41,6 +41,26 @@
 				}
 			],
 			"sid": 306261194890782
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 978671051120830,
+					"parameters": {
+						"key": 80
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "togglePause",
+					"sid": 163296883237656
+				}
+			],
+			"sid": 200188390220351
 		}
 	],
 	"sid": 489983609112987

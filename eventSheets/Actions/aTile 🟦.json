@@ -4,7 +4,7 @@
 		{
 			"aceType": "action",
 			"aceName": "spawn",
-			"objectClass": "Tile",
+			"objectClass": "fTile",
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
@@ -65,7 +65,7 @@
 							"objectClass": "System",
 							"sid": 304057164749419,
 							"parameters": {
-								"object-to-create": "Tile",
+								"object-to-create": "fTile",
 								"layer": "LAYER_Main",
 								"x": "loopindex(W_X) * C_Tile_Size + C_Tile_Size * 0.5",
 								"y": "loopindex(W_Y) * C_Tile_Size+ C_Tile_Size * 0.5",
@@ -75,8 +75,8 @@
 						},
 						{
 							"id": "set-instvar-value",
-							"objectClass": "Tile",
-							"sid": 467692682371345,
+							"objectClass": "fTile",
+							"sid": 859439327691355,
 							"parameters": {
 								"instance-variable": "randomId",
 								"value": "random(0, 1)"
@@ -90,7 +90,7 @@
 		{
 			"aceType": "action",
 			"aceName": "shuffle",
-			"objectClass": "Tile",
+			"objectClass": "fTile",
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
@@ -134,10 +134,10 @@
 								{
 									"id": "for-each-ordered",
 									"objectClass": "System",
-									"sid": 398490083494332,
+									"sid": 348226826875647,
 									"parameters": {
-										"object": "Tile",
-										"expression": "Tile.randomId",
+										"object": "fTile",
+										"expression": "fTile.randomId",
 										"order": "ascending"
 									}
 								}
@@ -149,7 +149,7 @@
 									"sid": 769726791729178,
 									"parameters": {
 										"type": "log",
-										"message": "\"Updating tile #\" & Tile.UID"
+										"message": "\"Updating tile #\" & fTile.UID"
 									}
 								}
 							],
@@ -187,7 +187,7 @@
 									"conditions": [
 										{
 											"id": "pick-children",
-											"objectClass": "Tile",
+											"objectClass": "fTile",
 											"sid": 228548145968544,
 											"parameters": {
 												"child": "Symbol",
@@ -198,8 +198,8 @@
 									"actions": [
 										{
 											"id": "set-instvar-value",
-											"objectClass": "Tile",
-											"sid": 202962869318978,
+											"objectClass": "fTile",
+											"sid": 292625047726286,
 											"parameters": {
 												"instance-variable": "symbolNumber",
 												"value": "nextSymbolNumber"
@@ -208,9 +208,9 @@
 										{
 											"id": "set-animation",
 											"objectClass": "Symbol",
-											"sid": 501715373034915,
+											"sid": 319253140242593,
 											"parameters": {
-												"animation": "str(Tile.symbolNumber)",
+												"animation": "str(fTile.symbolNumber)",
 												"from": "beginning"
 											}
 										},
@@ -229,6 +229,203 @@
 							]
 						}
 					]
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "open",
+			"objectClass": "fTile",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "playerId",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 814452404358572
+				}
+			],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "fTile",
+					"sid": 593892206092195,
+					"parameters": {
+						"instance-variable": "playerId",
+						"value": "playerId"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "fTile",
+					"sid": 471955610617762,
+					"parameters": {
+						"animation": "ANIM_Open & playerId",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 355697437670729,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "fTile",
+							"sid": 212358282078961,
+							"parameters": {
+								"child": "Symbol",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Symbol",
+							"sid": 674835412263795,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 304014183915826
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "close",
+			"objectClass": "fTile",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "fTile",
+					"sid": 837962934735914,
+					"parameters": {
+						"animation": "ANIM_Closed",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "fTile",
+					"sid": 505946996748934,
+					"parameters": {
+						"instance-variable": "playerId",
+						"value": "NOTHING"
+					}
+				}
+			],
+			"sid": 314290759961667,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "fTile",
+							"sid": 837780991682594,
+							"parameters": {
+								"child": "Symbol",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Symbol",
+							"sid": 939353371098159,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 590462676628338
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "remove",
+			"objectClass": "fTile",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "fTile",
+					"sid": 613093376704298,
+					"parameters": {
+						"animation": "ANIM_Removed & fTile.playerId",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 395634740090577,
+					"parameters": {
+						"type": "log",
+						"message": "\"Removing player tile: \" & fTile.playerId"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "fTile",
+					"sid": 229762724106863,
+					"parameters": {
+						"instance-variable": "playerId",
+						"value": "NOTHING"
+					}
+				}
+			],
+			"sid": 460507058834829,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "fTile",
+							"sid": 748327778585385,
+							"parameters": {
+								"child": "Symbol",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Symbol",
+							"sid": 641902556869757
+						}
+					],
+					"sid": 323371826168423
 				}
 			]
 		}

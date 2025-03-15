@@ -10,7 +10,7 @@
 					"type": "Tile",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Active",
+						"initial-animation": "Closed",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -21,7 +21,7 @@
 					"instanceVariables": {
 						"symbolNumber": 0,
 						"randomId": 0,
-						"playerUID": -1
+						"playerId": -1
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -181,8 +181,8 @@
 					"behaviors": {
 						"Bullet": {
 							"properties": {
-								"speed": 100,
-								"acceleration": 0,
+								"speed": 1,
+								"acceleration": -5,
 								"gravity": 0,
 								"bounce-off-solids": false,
 								"set-angle": true,

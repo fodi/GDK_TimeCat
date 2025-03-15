@@ -37,7 +37,18 @@
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
-			"conditions": [],
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player",
+					"sid": 619872334908169,
+					"parameters": {
+						"instance-variable": "health",
+						"comparison": 4,
+						"value": "0"
+					}
+				}
+			],
 			"actions": [],
 			"sid": 608725959345493,
 			"children": [
@@ -398,6 +409,10 @@
 			"sid": 234693284807956,
 			"children": [
 				{
+					"eventType": "comment",
+					"text": "If player is already in the game..."
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -426,11 +441,25 @@
 										"tag": "TIMER_TileReveal"
 									},
 									"isInverted": true
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 966738216850185,
+									"parameters": {
+										"instance-variable": "health",
+										"comparison": 4,
+										"value": "0"
+									}
 								}
 							],
 							"actions": [],
 							"sid": 966175049562226,
 							"children": [
+								{
+									"eventType": "comment",
+									"text": "Open new tile"
+								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -439,15 +468,15 @@
 											"objectClass": "Tile",
 											"sid": 490875583598473,
 											"parameters": {
-												"animation": "ANIM_Active"
+												"animation": "ANIM_Closed"
 											}
 										},
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "Tile",
-											"sid": 973575743454166,
+											"sid": 235202388388662,
 											"parameters": {
-												"instance-variable": "playerUID",
+												"instance-variable": "playerId",
 												"comparison": 0,
 												"value": "NOTHING"
 											}
@@ -510,52 +539,16 @@
 													}
 												},
 												{
-													"id": "set-instvar-value",
+													"customAction": "open",
 													"objectClass": "Tile",
-													"sid": 344545473994723,
-													"parameters": {
-														"instance-variable": "playerUID",
-														"value": "Player.UID"
-													}
+													"customActionObjectClass": "fTile",
+													"sid": 386448218969553,
+													"parameters": [
+														"Player.playerId"
+													]
 												}
 											],
-											"sid": 281655125209279,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "pick-children",
-															"objectClass": "Tile",
-															"sid": 212358282078961,
-															"parameters": {
-																"child": "Symbol",
-																"which": "own"
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "set-visible",
-															"objectClass": "Symbol",
-															"sid": 674835412263795,
-															"parameters": {
-																"visibility": "visible"
-															}
-														},
-														{
-															"id": "set-opacity",
-															"objectClass": "Symbol",
-															"sid": 827057244007128,
-															"disabled": true,
-															"parameters": {
-																"opacity": "100"
-															}
-														}
-													],
-													"sid": 304014183915826
-												}
-											]
+											"sid": 281655125209279
 										},
 										{
 											"eventType": "block",
@@ -587,54 +580,22 @@
 													}
 												},
 												{
-													"id": "set-instvar-value",
+													"customAction": "open",
 													"objectClass": "Tile",
-													"sid": 713117958565434,
-													"parameters": {
-														"instance-variable": "playerUID",
-														"value": "Player.UID"
-													}
+													"customActionObjectClass": "fTile",
+													"sid": 316512366976906,
+													"parameters": [
+														"Player.playerId"
+													]
 												}
 											],
-											"sid": 194604687258205,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "pick-children",
-															"objectClass": "Tile",
-															"sid": 951086015181926,
-															"parameters": {
-																"child": "Symbol",
-																"which": "own"
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "set-visible",
-															"objectClass": "Symbol",
-															"sid": 204937887875956,
-															"parameters": {
-																"visibility": "visible"
-															}
-														},
-														{
-															"id": "set-opacity",
-															"objectClass": "Symbol",
-															"sid": 336044287551704,
-															"disabled": true,
-															"parameters": {
-																"opacity": "100"
-															}
-														}
-													],
-													"sid": 458234486991085
-												}
-											]
+											"sid": 194604687258205
 										}
 									]
+								},
+								{
+									"eventType": "comment",
+									"text": "If player has two tiles open, start reveal timer"
 								},
 								{
 									"eventType": "block",
@@ -678,6 +639,10 @@
 							]
 						}
 					]
+				},
+				{
+					"eventType": "comment",
+					"text": "If player is not in the game yet, add them"
 				},
 				{
 					"eventType": "block",
@@ -803,10 +768,61 @@
 								{
 									"id": "destroy",
 									"objectClass": "Player",
-									"sid": 415002685152434
+									"sid": 415002685152434,
+									"disabled": true
+								},
+								{
+									"id": "stop-timer",
+									"objectClass": "Player",
+									"sid": 329559520711098,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "TIMER_TileReveal"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 208335688245775,
+									"parameters": {
+										"animation": "ANIM_Dead",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Player",
+									"sid": 995810302385470,
+									"behaviorType": "8Direction"
 								}
 							],
-							"sid": 664925556645398
+							"sid": 664925556645398,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Tile",
+											"sid": 822431348687260,
+											"parameters": {
+												"instance-variable": "playerId",
+												"comparison": 0,
+												"value": "Player.playerId"
+											}
+										}
+									],
+									"actions": [
+										{
+											"customAction": "close",
+											"objectClass": "Tile",
+											"customActionObjectClass": "fTile",
+											"sid": 450755068468671
+										}
+									],
+									"sid": 192004587500581
+								}
+							]
 						},
 						{
 							"eventType": "comment",

@@ -1,0 +1,33 @@
+{
+	"name": "fTile",
+	"plugin-id": "Sprite",
+	"sid": 615158190762306,
+	"instanceVariables": [
+		{
+			"name": "symbolNumber",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 182364468032090
+		},
+		{
+			"name": "randomId",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 980484726489301
+		},
+		{
+			"name": "playerId",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 333589245315584
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Tile"
+	]
+}

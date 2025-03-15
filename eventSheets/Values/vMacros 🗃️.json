@@ -87,9 +87,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ANIM_Active",
+			"name": "ANIM_Closed",
 			"type": "string",
-			"initialValue": "Active",
+			"initialValue": "Closed",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -97,9 +97,19 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ANIM_Inactive",
+			"name": "ANIM_Open",
 			"type": "string",
-			"initialValue": "Inactive",
+			"initialValue": "Open",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 277597701410958
+		},
+		{
+			"eventType": "variable",
+			"name": "ANIM_Removed",
+			"type": "string",
+			"initialValue": "Removed",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -218,6 +228,16 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 455255730079436
+		},
+		{
+			"eventType": "variable",
+			"name": "ANIM_Dead",
+			"type": "string",
+			"initialValue": "Dead",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 796306269481550
 		},
 		{
 			"eventType": "group",

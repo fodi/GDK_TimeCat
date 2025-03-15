@@ -4,7 +4,7 @@
 		{
 			"aceType": "action",
 			"aceName": "init",
-			"objectClass": "Spawner",
+			"objectClass": "ProjectileSpawner",
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
@@ -16,7 +16,7 @@
 			"actions": [
 				{
 					"id": "start-timer",
-					"objectClass": "Spawner",
+					"objectClass": "ProjectileSpawner",
 					"sid": 800991448438632,
 					"behaviorType": "Timer",
 					"parameters": {

@@ -10,6 +10,16 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 492134263969167
+		},
+		{
+			"eventType": "variable",
+			"name": "projectileSpeed",
+			"type": "number",
+			"initialValue": "150",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 978092102214442
 		}
 	],
 	"sid": 756444675677784

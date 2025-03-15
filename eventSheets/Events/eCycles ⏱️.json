@@ -31,6 +31,10 @@
 			"sid": 559613915501580,
 			"children": [
 				{
+					"eventType": "comment",
+					"text": "tick all players"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
