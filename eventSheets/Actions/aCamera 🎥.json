@@ -25,10 +25,34 @@
 				{
 					"id": "set-position",
 					"objectClass": "CameraHelper",
-					"sid": 838555252646354,
+					"sid": 832216773339108,
 					"parameters": {
-						"x": "midX * 0.55",
+						"x": "midX",
 						"y": "Self.R_YInit"
+					}
+				},
+				{
+					"id": "look-at-position",
+					"objectClass": "3DCamera",
+					"sid": 163187994262451,
+					"parameters": {
+						"cam-x": "CameraHelper.X",
+						"cam-y": "CameraHelper.Y",
+						"cam-z": "CameraHelper.ZElevation",
+						"look-x": "midX",
+						"look-y": "midY",
+						"look-z": "0",
+						"up-x": "0",
+						"up-y": "0",
+						"up-z": "1"
+					}
+				},
+				{
+					"id": "set-field-of-view",
+					"objectClass": "3DCamera",
+					"sid": 965548753800107,
+					"parameters": {
+						"fov": "CameraHelper.R_FieldOfView"
 					}
 				}
 			],
@@ -46,33 +70,134 @@
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
 			"conditions": [],
-			"actions": [
+			"actions": [],
+			"sid": 584541642494638,
+			"children": [
 				{
-					"id": "look-at-position",
-					"objectClass": "3DCamera",
-					"sid": 648093803802463,
-					"parameters": {
-						"cam-x": "CameraHelper.X",
-						"cam-y": "CameraHelper.Y",
-						"cam-z": "CameraHelper.ZElevation",
-						"look-x": "midX",
-						"look-y": "midY",
-						"look-z": "0",
-						"up-x": "0",
-						"up-y": "0",
-						"up-z": "1"
-					}
+					"eventType": "variable",
+					"name": "playerCount",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 783112164049340
 				},
 				{
-					"id": "set-field-of-view",
-					"objectClass": "3DCamera",
-					"sid": 656775038457167,
-					"parameters": {
-						"fov": "CameraHelper.R_FieldOfView"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 426381487145315,
+							"parameters": {
+								"instance-variable": "health",
+								"comparison": 4,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 907274617862551,
+							"parameters": {
+								"variable": "playerCount",
+								"value": "Player.PickedCount"
+							}
+						}
+					],
+					"sid": 796885141603752,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "playerXSum",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 321105291584373
+						},
+						{
+							"eventType": "variable",
+							"name": "playerYSum",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 981260221859374
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 136870173203641,
+									"parameters": {
+										"object": "Player"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 473576685299743,
+									"parameters": {
+										"variable": "playerXSum",
+										"value": "Player.X"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 850751965215256,
+									"parameters": {
+										"variable": "playerYSum",
+										"value": "Player.Y"
+									}
+								}
+							],
+							"sid": 196791959646625
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "look-at-position",
+									"objectClass": "3DCamera",
+									"sid": 719740361637905,
+									"parameters": {
+										"cam-x": "CameraHelper.X",
+										"cam-y": "CameraHelper.Y",
+										"cam-z": "CameraHelper.ZElevation",
+										"look-x": "Functions.expDecay(3DCamera.LookX, playerXSum / playerCount, 5)",
+										"look-y": "Functions.expDecay(3DCamera.LookY, playerYSum / playerCount, 5)",
+										"look-z": "0",
+										"up-x": "0",
+										"up-y": "0",
+										"up-z": "1"
+									}
+								},
+								{
+									"id": "set-field-of-view",
+									"objectClass": "3DCamera",
+									"sid": 197440384738089,
+									"parameters": {
+										"fov": "CameraHelper.R_FieldOfView"
+									}
+								}
+							],
+							"sid": 303733081738012
+						}
+					]
 				}
-			],
-			"sid": 584541642494638
+			]
 		}
 	],
 	"sid": 105065436241276

@@ -76,6 +76,16 @@
 					"parameters": {
 						"object": "Projectile"
 					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player",
+					"sid": 469161696424432,
+					"parameters": {
+						"instance-variable": "health",
+						"comparison": 4,
+						"value": "0"
+					}
 				}
 			],
 			"actions": [

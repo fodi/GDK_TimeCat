@@ -98,18 +98,48 @@
 				{
 					"eventType": "block",
 					"conditions": [],
-					"actions": [
+					"actions": [],
+					"sid": 400669109214555
+				},
+				{
+					"eventType": "comment",
+					"text": "todo optimize updates"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
 						{
-							"customAction": "changeHealth",
-							"objectClass": "Player",
-							"sid": 595207298983393,
-							"parameters": [
-								"-dt",
-								"NO"
-							]
+							"id": "compare-instance-variable",
+							"objectClass": "UI_TextSF",
+							"sid": 111873243429299,
+							"parameters": {
+								"instance-variable": "role",
+								"comparison": 0,
+								"value": "ROLE_PlayerHealth"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UI_TextSF",
+							"sid": 604505681204781,
+							"parameters": {
+								"instance-variable": "paramNumber",
+								"comparison": 0,
+								"value": "Player.playerId"
+							}
 						}
 					],
-					"sid": 400669109214555
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UI_TextSF",
+							"sid": 508113949884363,
+							"parameters": {
+								"text": "\"[color=#\" & trim(tokenat(C_CSV_ColorsHex, Player.playerId, \",\")) & \"][scale=0.25]Health[/scale]\" & newline & roundToDp(Player.health, 1)"
+							}
+						}
+					],
+					"sid": 946005948685164
 				},
 				{
 					"eventType": "block",
@@ -137,46 +167,6 @@
 					"actions": [],
 					"sid": 684806677738028,
 					"children": [
-						{
-							"eventType": "comment",
-							"text": "todo optimize updates"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "UI_TextSF",
-									"sid": 639985147460780,
-									"parameters": {
-										"instance-variable": "role",
-										"comparison": 0,
-										"value": "ROLE_PlayerHealth"
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "UI_TextSF",
-									"sid": 338028364644187,
-									"parameters": {
-										"instance-variable": "paramNumber",
-										"comparison": 0,
-										"value": "Player.playerId"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "UI_TextSF",
-									"sid": 550285972629851,
-									"parameters": {
-										"text": "\"[color=#\" & trim(tokenat(C_CSV_ColorsHex, Player.playerId, \",\")) & \"][scale=0.25]Health[/scale]\" & newline & round(Player.health)"
-									}
-								}
-							],
-							"sid": 310236925171770
-						},
 						{
 							"eventType": "variable",
 							"name": "isAngleSet",
@@ -332,6 +322,15 @@
 										}
 									],
 									"actions": [
+										{
+											"customAction": "changeHealth",
+											"objectClass": "Player",
+											"sid": 435444127546956,
+											"parameters": [
+												"-dt",
+												"NO"
+											]
+										},
 										{
 											"id": "set-vector-x",
 											"objectClass": "Player",
@@ -1044,6 +1043,7 @@
 					"id": "compare-instance-variable",
 					"objectClass": "Player",
 					"sid": 296488847648050,
+					"disabled": true,
 					"parameters": {
 						"instance-variable": "health",
 						"comparison": 4,
@@ -1064,10 +1064,10 @@
 				{
 					"id": "set-instvar-value",
 					"objectClass": "Player",
-					"sid": 501243423629280,
+					"sid": 597449286506615,
 					"parameters": {
 						"instance-variable": "health",
-						"value": "clamp(Self.health + amount, 0, Self.R_Health_Max)"
+						"value": "max(Self.health + amount, 0)"
 					}
 				}
 			],
