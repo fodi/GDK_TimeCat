@@ -122,7 +122,8 @@
 			"Projectile",
 			"ProjectileSpawner",
 			"Wall",
-			"Icons"
+			"Icons",
+			"bbPlayer"
 		],
 		"subfolders": [
 			{
@@ -160,7 +161,14 @@
 		]
 	},
 	"autosaveData": null,
-	"containers": [],
+	"containers": [
+		{
+			"members": [
+				"bbPlayer",
+				"Player"
+			]
+		}
+	],
 	"families": {
 		"items": [
 			"fTile",
@@ -333,7 +341,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "8j",
+		"version": "9",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

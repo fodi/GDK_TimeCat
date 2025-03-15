@@ -48,6 +48,15 @@
 					"parameters": {
 						"max-speed": "Functions.Config_getNumber(PARAM_Player_MovementSpeed, Self.8Direction.MaxSpeed)"
 					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "bbPlayer",
+					"sid": 854388635417100,
+					"parameters": {
+						"instance-variable": "playerId",
+						"value": "Player.playerId"
+					}
 				}
 			],
 			"sid": 846445072912984
@@ -306,7 +315,7 @@
 									"actions": [
 										{
 											"id": "set-animation",
-											"objectClass": "Player",
+											"objectClass": "bbPlayer",
 											"sid": 811794201605945,
 											"parameters": {
 												"animation": "Self.playerId & \"_\" & ANIM_Right",
@@ -338,7 +347,7 @@
 									"actions": [
 										{
 											"id": "set-animation",
-											"objectClass": "Player",
+											"objectClass": "bbPlayer",
 											"sid": 214621983178382,
 											"parameters": {
 												"animation": "Self.playerId & \"_\" & ANIM_Left",
@@ -370,7 +379,7 @@
 									"actions": [
 										{
 											"id": "set-animation",
-											"objectClass": "Player",
+											"objectClass": "bbPlayer",
 											"sid": 748524852573552,
 											"parameters": {
 												"animation": "Self.playerId & \"_\" & ANIM_Up",
@@ -402,7 +411,7 @@
 									"actions": [
 										{
 											"id": "set-animation",
-											"objectClass": "Player",
+											"objectClass": "bbPlayer",
 											"sid": 133565815494289,
 											"parameters": {
 												"animation": "Self.playerId & \"_\" & ANIM_Down",
@@ -426,7 +435,7 @@
 							"actions": [
 								{
 									"id": "set-animation",
-									"objectClass": "Player",
+									"objectClass": "bbPlayer",
 									"sid": 415262394195642,
 									"parameters": {
 										"animation": "Self.playerId & \"_\" & ANIM_Idle",

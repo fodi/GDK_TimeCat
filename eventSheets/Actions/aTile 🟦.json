@@ -129,6 +129,16 @@
 						},
 						{
 							"eventType": "variable",
+							"name": "lastTileUID",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 521105562566829
+						},
+						{
+							"eventType": "variable",
 							"name": "tileIterator",
 							"type": "number",
 							"initialValue": "1",
@@ -151,7 +161,26 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 571877016536564,
+									"parameters": {
+										"type": "log",
+										"message": "\"shuffle loopindex: \" &loopindex"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 584902889060440,
+									"parameters": {
+										"variable": "lastTileUID",
+										"value": "fTile.UID"
+									}
+								}
+							],
 							"sid": 200304786601294,
 							"children": [
 								{
@@ -160,9 +189,9 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 994508899099384,
+											"sid": 173506071842439,
 											"parameters": {
-												"first-value": "tileIterator % 2",
+												"first-value": "(loopindex + 1) % 2",
 												"comparison": 0,
 												"second-value": "1"
 											}
@@ -217,6 +246,7 @@
 											"id": "add-to-eventvar",
 											"objectClass": "System",
 											"sid": 269301943948465,
+											"disabled": true,
 											"parameters": {
 												"variable": "tileIterator",
 												"value": "1"
@@ -226,6 +256,47 @@
 									"sid": 501570414841412
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 213042021686042,
+									"parameters": {
+										"first-value": "(R_ColumnCount * R_RowCount) % 2",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "Tile",
+									"sid": 647274415813358,
+									"parameters": {
+										"unique-id": "lastTileUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"customAction": "remove",
+									"objectClass": "Tile",
+									"customActionObjectClass": "fTile",
+									"sid": 633198454842099
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 160920823692780,
+									"parameters": {
+										"type": "log",
+										"message": "\"Removing uneven tile #\" &Tile.UID"
+									}
+								}
+							],
+							"sid": 138537598109460
 						}
 					]
 				}
@@ -377,9 +448,9 @@
 				{
 					"id": "set-animation",
 					"objectClass": "fTile",
-					"sid": 613093376704298,
+					"sid": 518224157540364,
 					"parameters": {
-						"animation": "ANIM_Removed & fTile.playerId",
+						"animation": "ANIM_Removed & (Self.playerId = NOTHING ? \"\" : fTile.playerId)",
 						"from": "beginning"
 					}
 				},
