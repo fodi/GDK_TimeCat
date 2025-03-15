@@ -237,9 +237,9 @@
 								{
 									"id": "set-animation",
 									"objectClass": "Player",
-									"sid": 594463706426240,
+									"sid": 505343949303823,
 									"parameters": {
-										"animation": "ANIM_Right",
+										"animation": "Self.playerId & \"_\" & ANIM_Right",
 										"from": "beginning"
 									}
 								}
@@ -269,9 +269,9 @@
 								{
 									"id": "set-animation",
 									"objectClass": "Player",
-									"sid": 955969166240741,
+									"sid": 220931129724376,
 									"parameters": {
-										"animation": "ANIM_Left",
+										"animation": "Self.playerId & \"_\" & ANIM_Left",
 										"from": "beginning"
 									}
 								}
@@ -301,9 +301,9 @@
 								{
 									"id": "set-animation",
 									"objectClass": "Player",
-									"sid": 634436274841592,
+									"sid": 313874956475854,
 									"parameters": {
-										"animation": "ANIM_Up",
+										"animation": "Self.playerId & \"_\" & ANIM_Up",
 										"from": "beginning"
 									}
 								}
@@ -333,9 +333,9 @@
 								{
 									"id": "set-animation",
 									"objectClass": "Player",
-									"sid": 840624020511207,
+									"sid": 136447610188411,
 									"parameters": {
-										"animation": "ANIM_Down",
+										"animation": "Self.playerId & \"_\" & ANIM_Down",
 										"from": "beginning"
 									}
 								}
@@ -357,9 +357,9 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Player",
-							"sid": 569718961034247,
+							"sid": 392817023953781,
 							"parameters": {
-								"animation": "ANIM_Idle",
+								"animation": "Self.playerId & \"_\" & ANIM_Idle",
 								"from": "beginning"
 							}
 						},

@@ -221,7 +221,7 @@
 					"type": "Player",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Idle",
+						"initial-animation": "1_Idle",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -230,7 +230,7 @@
 					"sid": 117359225502778,
 					"tags": "",
 					"instanceVariables": {
-						"R_Health_Max": 1000,
+						"R_Health_Max": 5,
 						"movementAngle": 0,
 						"health": 1,
 						"IN_Up": 0,
