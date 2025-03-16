@@ -1839,7 +1839,7 @@
 					"actions": [
 						{
 							"id": "set-z-elevation",
-							"objectClass": "CameraHelper",
+							"objectClass": "Camera",
 							"sid": 952042408619073,
 							"parameters": {
 								"z": "Self.ZElevation - 5"
@@ -1863,7 +1863,7 @@
 					"actions": [
 						{
 							"id": "set-z-elevation",
-							"objectClass": "CameraHelper",
+							"objectClass": "Camera",
 							"sid": 202461511704725,
 							"parameters": {
 								"z": "Self.ZElevation + 5"
@@ -1887,7 +1887,7 @@
 					"actions": [
 						{
 							"id": "subtract-from-instvar",
-							"objectClass": "CameraHelper",
+							"objectClass": "Camera",
 							"sid": 650983970135699,
 							"parameters": {
 								"instance-variable": "R_FieldOfView",
@@ -1912,7 +1912,7 @@
 					"actions": [
 						{
 							"id": "add-to-instvar",
-							"objectClass": "CameraHelper",
+							"objectClass": "Camera",
 							"sid": 295332584510756,
 							"parameters": {
 								"instance-variable": "R_FieldOfView",
@@ -1937,7 +1937,7 @@
 					"actions": [
 						{
 							"id": "simulate-control",
-							"objectClass": "CameraHelper",
+							"objectClass": "Camera",
 							"sid": 546427801694875,
 							"behaviorType": "8Direction",
 							"parameters": {
@@ -1962,7 +1962,7 @@
 					"actions": [
 						{
 							"id": "simulate-control",
-							"objectClass": "CameraHelper",
+							"objectClass": "Camera",
 							"sid": 545663379602025,
 							"behaviorType": "8Direction",
 							"parameters": {
@@ -1987,7 +1987,7 @@
 					"actions": [
 						{
 							"id": "simulate-control",
-							"objectClass": "CameraHelper",
+							"objectClass": "Camera",
 							"sid": 309146840867719,
 							"behaviorType": "8Direction",
 							"parameters": {
@@ -2012,7 +2012,7 @@
 					"actions": [
 						{
 							"id": "simulate-control",
-							"objectClass": "CameraHelper",
+							"objectClass": "Camera",
 							"sid": 377267492259088,
 							"behaviorType": "8Direction",
 							"parameters": {
@@ -2037,7 +2037,7 @@
 					"actions": [
 						{
 							"id": "set-x",
-							"objectClass": "CameraHelper",
+							"objectClass": "Camera",
 							"sid": 995044476593640,
 							"parameters": {
 								"x": "midX"

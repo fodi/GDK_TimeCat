@@ -136,7 +136,7 @@
 			"Projectile",
 			"Cannon",
 			"Wall",
-			"CameraHelper",
+			"Camera",
 			"AimHelper",
 			"Box"
 		],
@@ -398,7 +398,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "15b",
+		"version": "16",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

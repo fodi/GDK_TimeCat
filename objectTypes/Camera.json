@@ -1,5 +1,5 @@
 {
-	"name": "CameraHelper",
+	"name": "Camera",
 	"plugin-id": "Sprite",
 	"sid": 476565392612472,
 	"isGlobal": false,
@@ -25,6 +25,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 625815336130066
+		},
+		{
+			"name": "lookTargetX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 977667514713561
+		},
+		{
+			"name": "lookTargetY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 260788731107287
 		}
 	],
 	"behaviorTypes": [
@@ -48,7 +62,7 @@
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 7142884,
+						"imageSpriteId": 8222937,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""

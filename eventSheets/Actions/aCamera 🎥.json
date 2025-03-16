@@ -4,7 +4,7 @@
 		{
 			"aceType": "action",
 			"aceName": "init",
-			"objectClass": "CameraHelper",
+			"objectClass": "Camera",
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
@@ -16,7 +16,7 @@
 			"actions": [
 				{
 					"id": "set-z-elevation",
-					"objectClass": "CameraHelper",
+					"objectClass": "Camera",
 					"sid": 783228507271557,
 					"parameters": {
 						"z": "Self.R_ZElevationInit"
@@ -24,7 +24,7 @@
 				},
 				{
 					"id": "set-position",
-					"objectClass": "CameraHelper",
+					"objectClass": "Camera",
 					"sid": 832216773339108,
 					"parameters": {
 						"x": "midX",
@@ -32,15 +32,33 @@
 					}
 				},
 				{
+					"id": "set-instvar-value",
+					"objectClass": "Camera",
+					"sid": 943780953653690,
+					"parameters": {
+						"instance-variable": "lookTargetX",
+						"value": "midX"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Camera",
+					"sid": 651956959910255,
+					"parameters": {
+						"instance-variable": "lookTargetY",
+						"value": "midY"
+					}
+				},
+				{
 					"id": "look-at-position",
 					"objectClass": "3DCamera",
-					"sid": 163187994262451,
+					"sid": 927806853125273,
 					"parameters": {
-						"cam-x": "CameraHelper.X",
-						"cam-y": "CameraHelper.Y",
-						"cam-z": "CameraHelper.ZElevation",
-						"look-x": "midX",
-						"look-y": "midY",
+						"cam-x": "Camera.X",
+						"cam-y": "Camera.Y",
+						"cam-z": "Camera.ZElevation",
+						"look-x": "Camera.lookTargetX",
+						"look-y": "Camera.lookTargetY",
 						"look-z": "0",
 						"up-x": "0",
 						"up-y": "0",
@@ -52,7 +70,7 @@
 					"objectClass": "3DCamera",
 					"sid": 965548753800107,
 					"parameters": {
-						"fov": "CameraHelper.R_FieldOfView"
+						"fov": "Camera.R_FieldOfView"
 					}
 				}
 			],
@@ -61,7 +79,7 @@
 		{
 			"aceType": "action",
 			"aceName": "tick",
-			"objectClass": "CameraHelper",
+			"objectClass": "Camera",
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
@@ -169,15 +187,37 @@
 							"conditions": [],
 							"actions": [
 								{
+									"id": "set-instvar-value",
+									"objectClass": "Camera",
+									"sid": 840822005176086,
+									"parameters": {
+										"instance-variable": "lookTargetX",
+										"value": "playerXSum / playerCount"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Camera",
+									"sid": 127367201068491,
+									"parameters": {
+										"instance-variable": "lookTargetY",
+										"value": "playerYSum / playerCount"
+									}
+								},
+								{
+									"type": "comment",
+									"text": "todo mn (expdecay)"
+								},
+								{
 									"id": "look-at-position",
 									"objectClass": "3DCamera",
-									"sid": 719740361637905,
+									"sid": 748519857164244,
 									"parameters": {
-										"cam-x": "CameraHelper.X",
-										"cam-y": "CameraHelper.Y",
-										"cam-z": "CameraHelper.ZElevation",
-										"look-x": "Functions.expDecay(3DCamera.LookX, playerXSum / playerCount, 5)",
-										"look-y": "Functions.expDecay(3DCamera.LookY, playerYSum / playerCount, 5)",
+										"cam-x": "Camera.X",
+										"cam-y": "Camera.Y",
+										"cam-z": "Camera.ZElevation",
+										"look-x": "Functions.expDecay(3DCamera.LookX, Camera.lookTargetX, 5)",
+										"look-y": "Functions.expDecay(3DCamera.LookY, Camera.lookTargetY, 5)",
 										"look-z": "0",
 										"up-x": "0",
 										"up-y": "0",
@@ -189,7 +229,7 @@
 									"objectClass": "3DCamera",
 									"sid": 197440384738089,
 									"parameters": {
-										"fov": "CameraHelper.R_FieldOfView"
+										"fov": "Camera.R_FieldOfView"
 									}
 								}
 							],

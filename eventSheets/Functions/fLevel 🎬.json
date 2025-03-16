@@ -155,7 +155,7 @@
 						},
 						{
 							"customAction": "init",
-							"objectClass": "CameraHelper",
+							"objectClass": "Camera",
 							"sid": 297026343364497
 						},
 						{

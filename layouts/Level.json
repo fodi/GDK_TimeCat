@@ -100,7 +100,7 @@
 					}
 				},
 				{
-					"type": "CameraHelper",
+					"type": "Camera",
 					"properties": {
 						"initially-visible": false,
 						"initial-animation": "Animation 1",
@@ -114,7 +114,9 @@
 					"instanceVariables": {
 						"R_ZElevationInit": 1300,
 						"R_YInit": 1300,
-						"R_FieldOfView": 10
+						"R_FieldOfView": 10,
+						"lookTargetX": 0,
+						"lookTargetY": 0
 					},
 					"behaviors": {
 						"8Direction": {

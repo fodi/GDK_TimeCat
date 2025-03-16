@@ -24,14 +24,14 @@
 			"conditions": [
 				{
 					"id": "on-created",
-					"objectClass": "CameraHelper",
+					"objectClass": "Camera",
 					"sid": 576686082588978
 				}
 			],
 			"actions": [
 				{
 					"customAction": "init",
-					"objectClass": "CameraHelper",
+					"objectClass": "Camera",
 					"sid": 346507670821043
 				}
 			],

@@ -312,14 +312,6 @@
 											"parameters": {
 												"vector-y": "sin(Player.currentAngle) * Player.8Direction.MaxSpeed"
 											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "AimHelper",
-											"sid": 939247864124520,
-											"parameters": {
-												"visibility": "invisible"
-											}
 										}
 									],
 									"sid": 109788125646221,
@@ -342,15 +334,6 @@
 												"comparison": 1,
 												"value": "EMPTY"
 											}
-										},
-										{
-											"id": "pick-children",
-											"objectClass": "Player",
-											"sid": 374986222325888,
-											"parameters": {
-												"child": "AimHelper",
-												"which": "own"
-											}
 										}
 									],
 									"actions": [
@@ -359,22 +342,6 @@
 											"objectClass": "Player",
 											"sid": 140520251437444,
 											"behaviorType": "8Direction"
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "AimHelper",
-											"sid": 269448340618299,
-											"parameters": {
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "set-angle",
-											"objectClass": "AimHelper",
-											"sid": 710779288693207,
-											"parameters": {
-												"angle": "Player.currentAngle"
-											}
 										}
 									],
 									"sid": 836317633492823
@@ -666,15 +633,6 @@
 									"objectClass": "Player",
 									"sid": 587004288969840,
 									"behaviorType": "8Direction"
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "AimHelper",
-									"sid": 957993749828869,
-									"disabled": true,
-									"parameters": {
-										"visibility": "invisible"
-									}
 								}
 							],
 							"sid": 712603625655763
@@ -1050,6 +1008,15 @@
 											"sid": 204036427886144,
 											"parameters": {
 												"child": "Box"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 177917872828221,
+											"parameters": {
+												"instance-variable": "boxUID",
+												"value": "NOTHING"
 											}
 										},
 										{

@@ -30,7 +30,7 @@
 			"actions": [
 				{
 					"customAction": "tick",
-					"objectClass": "CameraHelper",
+					"objectClass": "Camera",
 					"sid": 956245024598579
 				}
 			],
@@ -81,7 +81,7 @@
 							"objectClass": "UI_TextSF",
 							"sid": 397491524173782,
 							"parameters": {
-								"text": "\"Camera @ \" & round(CameraHelper.X) & \", \" & round(CameraHelper.Y) & \", \" & round(CameraHelper.ZElevation) & \" | FoV: \" & CameraHelper.R_FieldOfView & newline & \nFunctions.getDevInfo(\", \")"
+								"text": "\"Camera @ \" & round(Camera.X) & \", \" & round(Camera.Y) & \", \" & round(Camera.ZElevation) & \" | FoV: \" & Camera.R_FieldOfView & newline & \nFunctions.getDevInfo(\", \")"
 							}
 						}
 					],
