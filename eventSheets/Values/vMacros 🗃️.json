@@ -450,6 +450,16 @@
 			"sid": 455255730079436
 		},
 		{
+			"eventType": "variable",
+			"name": "LAYER_UI",
+			"type": "string",
+			"initialValue": "UI",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 849359883689856
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Templates",

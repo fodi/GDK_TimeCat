@@ -1,0 +1,39 @@
+{
+	"name": "fBox",
+	"plugin-id": "Sprite",
+	"sid": 897028857692841,
+	"instanceVariables": [
+		{
+			"name": "item",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 834456836668861
+		},
+		{
+			"name": "carrierPlayerUID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 130699447469731
+		},
+		{
+			"name": "targetPlayerUID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 301020115337774
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 792053093015709
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"Box"
+	]
+}

@@ -134,6 +134,174 @@
 					"sid": 848703835571815
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 887450830041875,
+					"parameters": {
+						"object": "Box"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 820446053971430,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "If box hasn't been picked up..."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Box",
+							"sid": 888224725946542,
+							"parameters": {
+								"instance-variable": "carrierPlayerUID",
+								"comparison": 0,
+								"value": "NOTHING"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 872781635328812,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Assign it to current player, if they don't have a box yet"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 815047066581030,
+									"parameters": {
+										"instance-variable": "boxUID",
+										"comparison": 0,
+										"value": "NOTHING"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player",
+									"sid": 544114614894415,
+									"parameters": {
+										"instance-variable": "boxUID",
+										"value": "Box.UID"
+									}
+								},
+								{
+									"type": "comment",
+									"text": "todo remove player.item?"
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player",
+									"sid": 840439681769265,
+									"parameters": {
+										"instance-variable": "item",
+										"value": "Box.item"
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "Player",
+									"sid": 418530184467040,
+									"parameters": {
+										"child": "Box",
+										"transform-x": false,
+										"transform-y": false,
+										"transform-w": false,
+										"transform-h": false,
+										"transform-a": false,
+										"transform-o": false,
+										"transform-z-elevation": false,
+										"transform-visibility": false,
+										"destroy-with-parent": true
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Box",
+									"sid": 133937434739160,
+									"parameters": {
+										"instance-variable": "carrierPlayerUID",
+										"value": "Player.UID"
+									}
+								}
+							],
+							"sid": 462906727967071
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "If box has been picked up..."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 643096230017692
+						}
+					],
+					"actions": [],
+					"sid": 579585032873157,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "If box collides with a player other than the carrier and has no target yet. activate"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Box",
+									"sid": 615293819572892,
+									"parameters": {
+										"instance-variable": "carrierPlayerUID",
+										"comparison": 1,
+										"value": "Player.UID"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Box",
+									"sid": 447106090526748,
+									"parameters": {
+										"instance-variable": "targetPlayerUID",
+										"comparison": 0,
+										"value": "NOTHING"
+									}
+								}
+							],
+							"actions": [
+								{
+									"customAction": "activate",
+									"objectClass": "Box",
+									"sid": 366487767284970,
+									"parameters": [
+										"Player.UID"
+									]
+								}
+							],
+							"sid": 387367243578375
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 441405412204844

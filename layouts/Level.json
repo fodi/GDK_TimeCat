@@ -41,7 +41,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "ProjectileSpawner",
+					"type": "Cannon",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -518,46 +518,6 @@
 						"height": 30,
 						"originX": 0,
 						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "Icons",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Icons",
-						"initial-frame": 0,
-						"enable-collisions": false,
-						"live-preview": false
-					},
-					"uid": 20,
-					"sid": 199081099551258,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"instanceFolderItem": {
-						"sid": 199081099551258,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 50,
-						"y": -80,
-						"width": 32,
-						"height": 32,
-						"originX": 0.5,
-						"originY": 0.5,
 						"color": [
 							1,
 							1,

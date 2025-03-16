@@ -11,7 +11,25 @@
 			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Spawn \"textures\" (including icons)"
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 440108984268305,
+					"parameters": {
+						"object-to-create": "UI_Icons",
+						"layer": "LAYER_UI",
+						"x": "0",
+						"y": "-1000",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
 			"sid": 551882248979971,
 			"children": [
 				{
@@ -146,7 +164,7 @@
 						},
 						{
 							"id": "set-target",
-							"objectClass": "ProjectileSpawner",
+							"objectClass": "Cannon",
 							"sid": 809900119677547,
 							"behaviorType": "Orbit",
 							"parameters": {
@@ -156,7 +174,7 @@
 						},
 						{
 							"id": "set-radius",
-							"objectClass": "ProjectileSpawner",
+							"objectClass": "Cannon",
 							"sid": 780200512576932,
 							"behaviorType": "Orbit",
 							"parameters": {

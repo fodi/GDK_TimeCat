@@ -1,0 +1,424 @@
+{
+	"name": "aBoxes 📦",
+	"events": [
+		{
+			"aceType": "action",
+			"aceName": "spawn",
+			"objectClass": "Box",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "x",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 328787989175670
+				},
+				{
+					"name": "y",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 959890285742289
+				},
+				{
+					"name": "item",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 969939174049852
+				}
+			],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 128324909259821,
+					"parameters": {
+						"object-to-create": "Box",
+						"layer": "LAYER_Player",
+						"x": "x",
+						"y": "y",
+						"create-hierarchy": true,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Box",
+					"sid": 654741773896637,
+					"parameters": {
+						"instance-variable": "item",
+						"value": "item"
+					}
+				}
+			],
+			"sid": 319187247191167,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "Box",
+							"sid": 926385918120813,
+							"parameters": {
+								"child": "3dBox",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 737005105864257,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 225153787950655,
+									"parameters": {
+										"variable": "item",
+										"comparison": 0,
+										"value": "ITEM_Projectile"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-face-object",
+									"objectClass": "3dBox",
+									"sid": 788703427955117,
+									"parameters": {
+										"face": "front",
+										"object": "txBoxProjectile"
+									}
+								},
+								{
+									"id": "set-face-object",
+									"objectClass": "3dBox",
+									"sid": 959874504521635,
+									"parameters": {
+										"face": "left",
+										"object": "txBoxProjectile"
+									}
+								},
+								{
+									"id": "set-face-object",
+									"objectClass": "3dBox",
+									"sid": 459165357385627,
+									"parameters": {
+										"face": "right",
+										"object": "txBoxProjectile"
+									}
+								},
+								{
+									"id": "set-face-object",
+									"objectClass": "3dBox",
+									"sid": 478065403745948,
+									"parameters": {
+										"face": "top",
+										"object": "txBoxProjectile"
+									}
+								},
+								{
+									"id": "set-face-object",
+									"objectClass": "3dBox",
+									"sid": 653901185712324,
+									"parameters": {
+										"face": "bottom",
+										"object": "txBoxProjectile"
+									}
+								}
+							],
+							"sid": 990302720483039
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 405248619164222,
+									"parameters": {
+										"variable": "item",
+										"comparison": 0,
+										"value": "ITEM_Shield"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-face-object",
+									"objectClass": "3dBox",
+									"sid": 173814505621767,
+									"parameters": {
+										"face": "front",
+										"object": "txBoxShield"
+									}
+								},
+								{
+									"id": "set-face-object",
+									"objectClass": "3dBox",
+									"sid": 701829882698841,
+									"parameters": {
+										"face": "left",
+										"object": "txBoxShield"
+									}
+								},
+								{
+									"id": "set-face-object",
+									"objectClass": "3dBox",
+									"sid": 853880174465167,
+									"parameters": {
+										"face": "right",
+										"object": "txBoxShield"
+									}
+								},
+								{
+									"id": "set-face-object",
+									"objectClass": "3dBox",
+									"sid": 915502577167587,
+									"parameters": {
+										"face": "top",
+										"object": "txBoxShield"
+									}
+								},
+								{
+									"id": "set-face-object",
+									"objectClass": "3dBox",
+									"sid": 928541476389699,
+									"parameters": {
+										"face": "bottom",
+										"object": "txBoxShield"
+									}
+								}
+							],
+							"sid": 113132061169349
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 399024140666700,
+									"parameters": {
+										"variable": "item",
+										"comparison": 0,
+										"value": "ITEM_Sleep"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-face-object",
+									"objectClass": "3dBox",
+									"sid": 157854385741128,
+									"parameters": {
+										"face": "front",
+										"object": "txBoxSleep"
+									}
+								},
+								{
+									"id": "set-face-object",
+									"objectClass": "3dBox",
+									"sid": 144457289340072,
+									"parameters": {
+										"face": "left",
+										"object": "txBoxSleep"
+									}
+								},
+								{
+									"id": "set-face-object",
+									"objectClass": "3dBox",
+									"sid": 257758676191584,
+									"parameters": {
+										"face": "right",
+										"object": "txBoxSleep"
+									}
+								},
+								{
+									"id": "set-face-object",
+									"objectClass": "3dBox",
+									"sid": 625343278049404,
+									"parameters": {
+										"face": "top",
+										"object": "txBoxSleep"
+									}
+								},
+								{
+									"id": "set-face-object",
+									"objectClass": "3dBox",
+									"sid": 588567881320191,
+									"parameters": {
+										"face": "bottom",
+										"object": "txBoxSleep"
+									}
+								}
+							],
+							"sid": 586096495188843
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 908492121115027,
+									"parameters": {
+										"variable": "item",
+										"comparison": 0,
+										"value": "ITEM_Slow"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-face-object",
+									"objectClass": "3dBox",
+									"sid": 593165015407329,
+									"parameters": {
+										"face": "front",
+										"object": "txBoxSlow"
+									}
+								},
+								{
+									"id": "set-face-object",
+									"objectClass": "3dBox",
+									"sid": 999237748338552,
+									"parameters": {
+										"face": "left",
+										"object": "txBoxSlow"
+									}
+								},
+								{
+									"id": "set-face-object",
+									"objectClass": "3dBox",
+									"sid": 872255924114579,
+									"parameters": {
+										"face": "right",
+										"object": "txBoxSlow"
+									}
+								},
+								{
+									"id": "set-face-object",
+									"objectClass": "3dBox",
+									"sid": 349729106939263,
+									"parameters": {
+										"face": "top",
+										"object": "txBoxSlow"
+									}
+								},
+								{
+									"id": "set-face-object",
+									"objectClass": "3dBox",
+									"sid": 925162116183537,
+									"parameters": {
+										"face": "bottom",
+										"object": "txBoxSlow"
+									}
+								}
+							],
+							"sid": 310495331615993
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "3dBox",
+									"sid": 630905200509946,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 615957274240791
+						}
+					]
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "activate",
+			"objectClass": "Box",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "targetPlayerUID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 845386154397492
+				}
+			],
+			"eventType": "custom-ace-block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Box",
+					"sid": 964979276064499,
+					"parameters": {
+						"instance-variable": "targetPlayerUID",
+						"comparison": 0,
+						"value": "NOTHING"
+					}
+				},
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "Player",
+					"sid": 661219347208230,
+					"parameters": {
+						"unique-id": "targetPlayerUID"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "todo"
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Box",
+					"sid": 750050549503752,
+					"parameters": {
+						"instance-variable": "targetPlayerUID",
+						"value": "Player.UID"
+					}
+				},
+				{
+					"customAction": "changeHealth",
+					"objectClass": "Player",
+					"sid": 298413827127733,
+					"parameters": [
+						"-10",
+						"1"
+					]
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Box",
+					"sid": 342668187680926,
+					"breakpoint": true
+				}
+			],
+			"sid": 829199685530026
+		}
+	],
+	"sid": 390916670704356
+}

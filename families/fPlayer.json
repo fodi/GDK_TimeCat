@@ -25,6 +25,13 @@
 			"sid": 699163729016461
 		},
 		{
+			"name": "R_Box_MovementSpeed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 882221777031178
+		},
+		{
 			"name": "currentAngle",
 			"type": "number",
 			"desc": "",
@@ -114,6 +121,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 935226149773953
+		},
+		{
+			"name": "boxUID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 381609793924041
 		}
 	],
 	"behaviorTypes": [

@@ -158,46 +158,365 @@
 													"id": "else",
 													"objectClass": "System",
 													"sid": 178670916917806
-												},
-												{
-													"id": "pick-children",
-													"objectClass": "Player",
-													"sid": 524666934488393,
-													"parameters": {
-														"child": "Symbol",
-														"which": "own"
-													}
 												}
 											],
 											"actions": [
 												{
 													"id": "set-instvar-value",
 													"objectClass": "Player",
-													"sid": 489476011809061,
+													"sid": 252212968672863,
 													"parameters": {
 														"instance-variable": "item",
-														"value": "Symbol.AnimationName"
+														"value": "Tile.symbol"
 													}
 												},
 												{
-													"id": "set-animation",
-													"objectClass": "Symbol",
-													"sid": 834107544046378,
-													"parameters": {
-														"animation": "Tile.symbol",
-														"from": "beginning"
-													}
-												},
-												{
-													"id": "set-visible",
-													"objectClass": "Symbol",
-													"sid": 230637959076484,
-													"parameters": {
-														"visibility": "visible"
-													}
+													"customAction": "spawn",
+													"objectClass": "Box",
+													"sid": 573451306497234,
+													"parameters": [
+														"fTile.X",
+														"fTile.Y",
+														"fTile.symbol"
+													]
 												}
 											],
-											"sid": 572611703805464
+											"sid": 572611703805464,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-children",
+															"objectClass": "Player",
+															"sid": 838147145103783,
+															"parameters": {
+																"child": "Symbol",
+																"which": "own"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation",
+															"objectClass": "Symbol",
+															"sid": 286548020248676,
+															"parameters": {
+																"animation": "Tile.symbol",
+																"from": "beginning"
+															}
+														},
+														{
+															"id": "set-visible",
+															"objectClass": "Symbol",
+															"sid": 434206966980478,
+															"parameters": {
+																"visibility": "visible"
+															}
+														}
+													],
+													"sid": 273321501811304,
+													"disabled": true
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [],
+													"sid": 488308425258640
+												},
+												{
+													"bookmark": true,
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-children",
+															"objectClass": "Player",
+															"sid": 141176189294209,
+															"parameters": {
+																"child": "3dBox",
+																"which": "own"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 539739955140212,
+													"disabled": true,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Player",
+																	"sid": 980332467619039,
+																	"parameters": {
+																		"instance-variable": "item",
+																		"comparison": 0,
+																		"value": "ITEM_Projectile"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-face-object",
+																	"objectClass": "3dBox",
+																	"sid": 274484822736765,
+																	"parameters": {
+																		"face": "front",
+																		"object": "txBoxProjectile"
+																	}
+																},
+																{
+																	"id": "set-face-object",
+																	"objectClass": "3dBox",
+																	"sid": 315121240075398,
+																	"parameters": {
+																		"face": "left",
+																		"object": "txBoxProjectile"
+																	}
+																},
+																{
+																	"id": "set-face-object",
+																	"objectClass": "3dBox",
+																	"sid": 653087343354793,
+																	"parameters": {
+																		"face": "right",
+																		"object": "txBoxProjectile"
+																	}
+																},
+																{
+																	"id": "set-face-object",
+																	"objectClass": "3dBox",
+																	"sid": 850633685786511,
+																	"parameters": {
+																		"face": "top",
+																		"object": "txBoxProjectile"
+																	}
+																},
+																{
+																	"id": "set-face-object",
+																	"objectClass": "3dBox",
+																	"sid": 386645889863409,
+																	"parameters": {
+																		"face": "bottom",
+																		"object": "txBoxProjectile"
+																	}
+																}
+															],
+															"sid": 407705065108516,
+															"disabled": true
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Player",
+																	"sid": 319697959545035,
+																	"parameters": {
+																		"instance-variable": "item",
+																		"comparison": 0,
+																		"value": "ITEM_Shield"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-face-object",
+																	"objectClass": "3dBox",
+																	"sid": 374296047387169,
+																	"parameters": {
+																		"face": "front",
+																		"object": "txBoxShield"
+																	}
+																},
+																{
+																	"id": "set-face-object",
+																	"objectClass": "3dBox",
+																	"sid": 863795145197041,
+																	"parameters": {
+																		"face": "left",
+																		"object": "txBoxShield"
+																	}
+																},
+																{
+																	"id": "set-face-object",
+																	"objectClass": "3dBox",
+																	"sid": 767319903093391,
+																	"parameters": {
+																		"face": "right",
+																		"object": "txBoxShield"
+																	}
+																},
+																{
+																	"id": "set-face-object",
+																	"objectClass": "3dBox",
+																	"sid": 576847908328488,
+																	"parameters": {
+																		"face": "top",
+																		"object": "txBoxShield"
+																	}
+																},
+																{
+																	"id": "set-face-object",
+																	"objectClass": "3dBox",
+																	"sid": 237614202353983,
+																	"parameters": {
+																		"face": "bottom",
+																		"object": "txBoxShield"
+																	}
+																}
+															],
+															"sid": 133226792239028,
+															"disabled": true
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Player",
+																	"sid": 409341399797297,
+																	"parameters": {
+																		"instance-variable": "item",
+																		"comparison": 0,
+																		"value": "ITEM_Sleep"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-face-object",
+																	"objectClass": "3dBox",
+																	"sid": 114790194625569,
+																	"parameters": {
+																		"face": "front",
+																		"object": "txBoxSleep"
+																	}
+																},
+																{
+																	"id": "set-face-object",
+																	"objectClass": "3dBox",
+																	"sid": 131547427924407,
+																	"parameters": {
+																		"face": "left",
+																		"object": "txBoxSleep"
+																	}
+																},
+																{
+																	"id": "set-face-object",
+																	"objectClass": "3dBox",
+																	"sid": 279354581427049,
+																	"parameters": {
+																		"face": "right",
+																		"object": "txBoxSleep"
+																	}
+																},
+																{
+																	"id": "set-face-object",
+																	"objectClass": "3dBox",
+																	"sid": 120337774498058,
+																	"parameters": {
+																		"face": "top",
+																		"object": "txBoxSleep"
+																	}
+																},
+																{
+																	"id": "set-face-object",
+																	"objectClass": "3dBox",
+																	"sid": 266009059830719,
+																	"parameters": {
+																		"face": "bottom",
+																		"object": "txBoxSleep"
+																	}
+																}
+															],
+															"sid": 795425288854222,
+															"disabled": true
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Player",
+																	"sid": 869821567312563,
+																	"parameters": {
+																		"instance-variable": "item",
+																		"comparison": 0,
+																		"value": "ITEM_Slow"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-face-object",
+																	"objectClass": "3dBox",
+																	"sid": 495436584211042,
+																	"parameters": {
+																		"face": "front",
+																		"object": "txBoxSlow"
+																	}
+																},
+																{
+																	"id": "set-face-object",
+																	"objectClass": "3dBox",
+																	"sid": 911728444079157,
+																	"parameters": {
+																		"face": "left",
+																		"object": "txBoxSlow"
+																	}
+																},
+																{
+																	"id": "set-face-object",
+																	"objectClass": "3dBox",
+																	"sid": 226135718534724,
+																	"parameters": {
+																		"face": "right",
+																		"object": "txBoxSlow"
+																	}
+																},
+																{
+																	"id": "set-face-object",
+																	"objectClass": "3dBox",
+																	"sid": 492026388667310,
+																	"parameters": {
+																		"face": "top",
+																		"object": "txBoxSlow"
+																	}
+																},
+																{
+																	"id": "set-face-object",
+																	"objectClass": "3dBox",
+																	"sid": 615463359338632,
+																	"parameters": {
+																		"face": "bottom",
+																		"object": "txBoxSlow"
+																	}
+																}
+															],
+															"sid": 528447884414521,
+															"disabled": true
+														},
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-visible",
+																	"objectClass": "3dBox",
+																	"sid": 752795513330772,
+																	"parameters": {
+																		"visibility": "visible"
+																	}
+																}
+															],
+															"sid": 649033831769646,
+															"disabled": true
+														}
+													]
+												}
+											]
 										}
 									]
 								}
@@ -265,7 +584,7 @@
 			"conditions": [
 				{
 					"id": "on-timer",
-					"objectClass": "ProjectileSpawner",
+					"objectClass": "Cannon",
 					"sid": 601779891073436,
 					"behaviorType": "Timer",
 					"parameters": {
@@ -277,14 +596,14 @@
 					"objectClass": "System",
 					"sid": 144438903343036,
 					"parameters": {
-						"object": "ProjectileSpawner"
+						"object": "Cannon"
 					}
 				}
 			],
 			"actions": [
 				{
 					"id": "start-timer",
-					"objectClass": "ProjectileSpawner",
+					"objectClass": "Cannon",
 					"sid": 481236610415525,
 					"behaviorType": "Timer",
 					"parameters": {
@@ -315,8 +634,8 @@
 							"sid": 901508114031172,
 							"parameters": {
 								"which": "furthest",
-								"x": "ProjectileSpawner.X",
-								"y": "ProjectileSpawner.Y"
+								"x": "Cannon.X",
+								"y": "Cannon.Y"
 							}
 						}
 					],
@@ -326,8 +645,8 @@
 							"objectClass": "Projectile",
 							"sid": 875655215829534,
 							"parameters": [
-								"ProjectileSpawner.X",
-								"ProjectileSpawner.Y",
+								"Cannon.X",
+								"Cannon.Y",
 								"Player.X",
 								"Player.Y"
 							]

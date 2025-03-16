@@ -1,10 +1,10 @@
 {
-	"name": "aSpawner 🎇",
+	"name": "aCannon 🎇",
 	"events": [
 		{
 			"aceType": "action",
 			"aceName": "init",
-			"objectClass": "ProjectileSpawner",
+			"objectClass": "Cannon",
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
@@ -16,7 +16,7 @@
 			"actions": [
 				{
 					"id": "start-timer",
-					"objectClass": "ProjectileSpawner",
+					"objectClass": "Cannon",
 					"sid": 800991448438632,
 					"behaviorType": "Timer",
 					"parameters": {
@@ -27,6 +27,10 @@
 				}
 			],
 			"sid": 519383514606256
+		},
+		{
+			"eventType": "comment",
+			"text": "todo spawn CA"
 		}
 	],
 	"sid": 414515668687685

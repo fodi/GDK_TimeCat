@@ -50,6 +50,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Shape3D",
+			"name": "3D shape",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -127,13 +134,11 @@
 			"Tile",
 			"Symbol",
 			"Projectile",
-			"ProjectileSpawner",
+			"Cannon",
 			"Wall",
-			"Icons",
-			"bbPlayer",
 			"CameraHelper",
-			"bbProjectile",
-			"AimHelper"
+			"AimHelper",
+			"Box"
 		],
 		"subfolders": [
 			{
@@ -164,19 +169,56 @@
 			},
 			{
 				"items": [
-					"UI_TextSF"
+					"UI_TextSF",
+					"UI_Icons"
 				],
 				"subfolders": [],
 				"name": "UI"
+			},
+			{
+				"items": [
+					"txBoxSleep",
+					"txBoxSlow",
+					"txBoxShield",
+					"txBoxProjectile"
+				],
+				"subfolders": [],
+				"name": "Textures"
+			},
+			{
+				"items": [
+					"bbPlayer",
+					"bbProjectile"
+				],
+				"subfolders": [],
+				"name": "Billboards"
+			},
+			{
+				"items": [
+					"3dBox"
+				],
+				"subfolders": [],
+				"name": "3D"
 			}
 		]
 	},
 	"autosaveData": null,
-	"containers": [],
+	"containers": [
+		{
+			"members": [
+				"UI_Icons",
+				"txBoxProjectile",
+				"txBoxShield",
+				"txBoxSleep",
+				"txBoxSlow"
+			]
+		}
+	],
 	"families": {
 		"items": [
 			"fTile",
-			"fPlayer"
+			"fPlayer",
+			"fBox"
 		],
 		"subfolders": []
 	},
@@ -234,10 +276,11 @@
 				"items": [
 					"aPlayer 🐱",
 					"aTile 🟦",
-					"aSpawner 🎇",
+					"aCannon 🎇",
 					"aWall 🧱",
 					"aProjectiles 🏹",
-					"aCamera 🎥"
+					"aCamera 🎥",
+					"aBoxes 📦"
 				],
 				"subfolders": [],
 				"name": "Actions"
@@ -355,7 +398,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "14b",
+		"version": "15b",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

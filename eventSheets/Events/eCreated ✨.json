@@ -6,14 +6,14 @@
 			"conditions": [
 				{
 					"id": "on-created",
-					"objectClass": "ProjectileSpawner",
+					"objectClass": "Cannon",
 					"sid": 587263629500675
 				}
 			],
 			"actions": [
 				{
 					"customAction": "init",
-					"objectClass": "ProjectileSpawner",
+					"objectClass": "Cannon",
 					"sid": 892411823571958
 				}
 			],
