@@ -7,6 +7,91 @@
 			"subLayers": [],
 			"instances": [
 				{
+					"type": "3dBox",
+					"properties": {
+						"shape": "box",
+						"z-height": 12,
+						"initially-visible": false,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 28,
+					"sid": 392362778765528,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 32,
+						"uid": 28,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": false,
+							"w": false,
+							"h": false,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 392362778765528,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 240,
+						"y": 96,
+						"width": 12,
+						"height": 12,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": -20
+					}
+				},
+				{
 					"type": "Tile",
 					"properties": {
 						"initially-visible": true,
@@ -280,6 +365,7 @@
 						"R_Health_BonusOnPair": 8,
 						"R_Health_BonusOnHeal": 15,
 						"R_Box_MovementSpeed": 200,
+						"R_Box_Distance": 20,
 						"currentAngle": 0,
 						"health": 1,
 						"IN_Up": 0,
@@ -896,6 +982,7 @@
 					"sid": 413020137349645,
 					"tags": "",
 					"instanceVariables": {
+						"R_OverlapCheckTIme": 0.2,
 						"item": "",
 						"carrierPlayerUID": -1,
 						"targetPlayerUID": -1
@@ -912,11 +999,8 @@
 								"enabled": false
 							}
 						},
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
+						"Timer": {
+							"properties": {}
 						}
 					},
 					"sceneGraphData": {
@@ -933,7 +1017,7 @@
 									"h": false,
 									"a": true,
 									"o": false,
-									"v": true,
+									"v": false,
 									"d": true,
 									"sm": "normal"
 								}
@@ -988,85 +1072,6 @@
 						],
 						"angle": 0,
 						"zElevation": 0
-					}
-				},
-				{
-					"type": "3dBox",
-					"properties": {
-						"shape": "box",
-						"z-height": 12,
-						"initially-visible": false,
-						"face-back": false,
-						"face-front": true,
-						"face-left": true,
-						"face-right": true,
-						"face-top": true,
-						"face-bottom": true,
-						"z-tiling-factor": 8,
-						"object-back": -1,
-						"object-front": -1,
-						"object-left": -1,
-						"object-right": -1,
-						"object-top": -1,
-						"object-bottom": -1
-					},
-					"uid": 28,
-					"sid": 392362778765528,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 32,
-						"uid": 28,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": false,
-							"w": false,
-							"h": false,
-							"a": true,
-							"o": false,
-							"v": true,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"instanceFolderItem": {
-						"sid": 392362778765528,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 240,
-						"y": 96,
-						"width": 12,
-						"height": 12,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 20
 					}
 				},
 				{

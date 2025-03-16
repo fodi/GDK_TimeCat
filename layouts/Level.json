@@ -115,6 +115,7 @@
 						"R_ZElevationInit": 1300,
 						"R_YInit": 1300,
 						"R_FieldOfView": 10,
+						"R_SmoothingFactor": 5,
 						"lookTargetX": 0,
 						"lookTargetY": 0
 					},

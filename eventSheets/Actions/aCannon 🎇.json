@@ -22,7 +22,7 @@
 					"parameters": {
 						"duration": "random(Self.R_Spawn_Interval_Min, Self.R_Spawn_Interval_Max)",
 						"type": "once",
-						"tag": "TIMER_SpawnProjectile"
+						"tag": "TIMER_Projectile_Spawn"
 					}
 				}
 			],

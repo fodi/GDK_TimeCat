@@ -200,13 +200,10 @@
 									}
 								},
 								{
-									"type": "comment",
-									"text": "todo remove player.item?"
-								},
-								{
 									"id": "set-instvar-value",
 									"objectClass": "Player",
 									"sid": 840439681769265,
+									"disabled": true,
 									"parameters": {
 										"instance-variable": "item",
 										"value": "Box.item"

@@ -262,6 +262,10 @@
 							"sid": 139295342290383,
 							"children": [
 								{
+									"eventType": "comment",
+									"text": "todo maybe rewrite a bit"
+								},
+								{
 									"eventType": "block",
 									"conditions": [
 										{
@@ -278,10 +282,21 @@
 											"id": "compare-instance-variable",
 											"objectClass": "Player",
 											"sid": 159002640591846,
+											"disabled": true,
 											"parameters": {
 												"instance-variable": "item",
 												"comparison": 0,
 												"value": "EMPTY"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Player",
+											"sid": 168827600750044,
+											"parameters": {
+												"instance-variable": "boxUID",
+												"comparison": 0,
+												"value": "NOTHING"
 											}
 										}
 									],
@@ -329,10 +344,21 @@
 											"id": "compare-instance-variable",
 											"objectClass": "Player",
 											"sid": 782706921688947,
+											"disabled": true,
 											"parameters": {
 												"instance-variable": "item",
 												"comparison": 1,
 												"value": "EMPTY"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Player",
+											"sid": 994102200514632,
+											"parameters": {
+												"instance-variable": "boxUID",
+												"comparison": 1,
+												"value": "NOTHING"
 											}
 										}
 									],
@@ -502,10 +528,21 @@
 													"id": "compare-instance-variable",
 													"objectClass": "Player",
 													"sid": 834670439233722,
+													"disabled": true,
 													"parameters": {
 														"instance-variable": "item",
 														"comparison": 1,
 														"value": "EMPTY"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Player",
+													"sid": 339137788070597,
+													"parameters": {
+														"instance-variable": "boxUID",
+														"comparison": 1,
+														"value": "NOTHING"
 													}
 												}
 											],
@@ -529,33 +566,6 @@
 										{
 											"id": "pick-children",
 											"objectClass": "Player",
-											"sid": 555419910709043,
-											"parameters": {
-												"child": "Symbol",
-												"which": "own"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-position",
-											"objectClass": "Symbol",
-											"sid": 537381264080552,
-											"parameters": {
-												"x": "Player.X + cos(Player.currentAngle) * 20",
-												"y": "Player.Y + sin(Player.currentAngle) * 20"
-											}
-										}
-									],
-									"sid": 816261471216887,
-									"disabled": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-children",
-											"objectClass": "Player",
 											"sid": 868375331101131,
 											"parameters": {
 												"child": "Box",
@@ -565,35 +575,12 @@
 									],
 									"actions": [
 										{
-											"type": "comment",
-											"text": "todo mn"
-										},
-										{
-											"id": "set-position",
-											"objectClass": "3dBox",
-											"sid": 938583415689211,
-											"disabled": true,
-											"parameters": {
-												"x": "Player.X + cos(anglelerp(angle(Player.X, Player.Y, Self.X, Self.Y), Player.currentAngle, 0.2)) * 20",
-												"y": "Player.Y + sin(anglelerp(angle(Player.X, Player.Y, Self.X, Self.Y), Player.currentAngle, 0.2)) * 20"
-											}
-										},
-										{
 											"id": "set-position",
 											"objectClass": "Box",
-											"sid": 554527626216080,
+											"sid": 496683099872486,
 											"parameters": {
-												"x": "Player.X + cos(anglelerp(angle(Player.X, Player.Y, Self.X, Self.Y), Player.currentAngle, 0.2)) * 20",
-												"y": "Player.Y + sin(anglelerp(angle(Player.X, Player.Y, Self.X, Self.Y), Player.currentAngle, 0.2)) * 20"
-											}
-										},
-										{
-											"id": "set-angle",
-											"objectClass": "3dBox",
-											"sid": 308951907126344,
-											"disabled": true,
-											"parameters": {
-												"angle": "anglelerp(Self.Angle, Player.currentAngle, 0.2)"
+												"x": "Player.X + cos(anglelerp(angle(Player.X, Player.Y, Self.X, Self.Y), Player.currentAngle, 0.2)) * Player.R_Box_Distance",
+												"y": "Player.Y + sin(anglelerp(angle(Player.X, Player.Y, Self.X, Self.Y), Player.currentAngle, 0.2)) * Player.R_Box_Distance"
 											}
 										},
 										{
@@ -755,7 +742,7 @@
 											"sid": 665988943870155,
 											"behaviorType": "Timer",
 											"parameters": {
-												"tag": "TIMER_TileReveal"
+												"tag": "TIMER_Tile_Reveal"
 											},
 											"isInverted": true
 										},
@@ -938,7 +925,7 @@
 													"parameters": {
 														"duration": "C_Tile_Reveal_Time",
 														"type": "once",
-														"tag": "TIMER_TileReveal"
+														"tag": "TIMER_Tile_Reveal"
 													}
 												}
 											],
@@ -964,10 +951,21 @@
 									"id": "compare-instance-variable",
 									"objectClass": "Player",
 									"sid": 892161468727487,
+									"disabled": true,
 									"parameters": {
 										"instance-variable": "item",
 										"comparison": 1,
 										"value": "EMPTY"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 981807215619431,
+									"parameters": {
+										"instance-variable": "boxUID",
+										"comparison": 1,
+										"value": "NOTHING"
 									}
 								}
 							],
@@ -976,6 +974,7 @@
 									"id": "set-instvar-value",
 									"objectClass": "Player",
 									"sid": 424602465234278,
+									"disabled": true,
 									"parameters": {
 										"instance-variable": "item",
 										"value": "EMPTY"
@@ -985,6 +984,11 @@
 							"sid": 212683500043919,
 							"children": [
 								{
+									"eventType": "comment",
+									"text": "Throw box"
+								},
+								{
+									"bookmark": true,
 									"eventType": "block",
 									"conditions": [
 										{
@@ -998,10 +1002,6 @@
 										}
 									],
 									"actions": [
-										{
-											"type": "comment",
-											"text": "todo yeet box"
-										},
 										{
 											"id": "remove-child",
 											"objectClass": "Player",
@@ -1023,6 +1023,7 @@
 											"id": "set-instvar-value",
 											"objectClass": "Player",
 											"sid": 568929053150069,
+											"disabled": true,
 											"parameters": {
 												"instance-variable": "item",
 												"value": "EMPTY"
@@ -1047,8 +1048,15 @@
 											}
 										},
 										{
-											"type": "comment",
-											"text": "todo land or gc"
+											"id": "start-timer",
+											"objectClass": "Box",
+											"sid": 818817585717180,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "Self.R_OverlapCheckTIme",
+												"type": "regular",
+												"tag": "TIMER_Box_OverlapCheck"
+											}
 										}
 									],
 									"sid": 866672794691107
@@ -1206,7 +1214,7 @@
 							"sid": 685209602632978,
 							"behaviorType": "Timer",
 							"parameters": {
-								"tag": "TIMER_TileReveal"
+								"tag": "TIMER_Tile_Reveal"
 							}
 						},
 						{
@@ -1265,10 +1273,6 @@
 								}
 							],
 							"actions": [
-								{
-									"type": "comment",
-									"text": "todo fix possible bugs "
-								},
 								{
 									"customAction": "close",
 									"objectClass": "Tile",

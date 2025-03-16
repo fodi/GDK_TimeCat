@@ -27,17 +27,24 @@
 			"sid": 625815336130066
 		},
 		{
-			"name": "lookTargetX",
+			"name": "R_SmoothingFactor",
 			"type": "number",
 			"desc": "",
 			"show": true,
+			"sid": 911821838638427
+		},
+		{
+			"name": "lookTargetX",
+			"type": "number",
+			"desc": "",
+			"show": false,
 			"sid": 977667514713561
 		},
 		{
 			"name": "lookTargetY",
 			"type": "number",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 260788731107287
 		}
 	],

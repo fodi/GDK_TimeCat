@@ -4,24 +4,31 @@
 	"sid": 897028857692841,
 	"instanceVariables": [
 		{
+			"name": "R_OverlapCheckTIme",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 408962874798054
+		},
+		{
 			"name": "item",
 			"type": "string",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 834456836668861
 		},
 		{
 			"name": "carrierPlayerUID",
 			"type": "number",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 130699447469731
 		},
 		{
 			"name": "targetPlayerUID",
 			"type": "number",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 301020115337774
 		}
 	],
@@ -30,6 +37,11 @@
 			"behaviorId": "Bullet",
 			"name": "Bullet",
 			"sid": 792053093015709
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 439223749382371
 		}
 	],
 	"effectTypes": [],

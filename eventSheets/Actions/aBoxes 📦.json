@@ -74,7 +74,25 @@
 							}
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "3dBox",
+							"sid": 493912097626071,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TWEEN_3dBox_Appear",
+								"property": "offsetZElevation",
+								"end-value": "20",
+								"time": "1",
+								"ease": "easeoutback",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
 					"sid": 737005105864257,
 					"children": [
 						{

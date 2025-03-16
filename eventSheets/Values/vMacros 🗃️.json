@@ -252,6 +252,16 @@
 			"sid": 427820323070241
 		},
 		{
+			"eventType": "variable",
+			"name": "LAYER_UI",
+			"type": "string",
+			"initialValue": "UI",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 935922502294559
+		},
+		{
 			"eventType": "comment",
 			"text": "Params"
 		},
@@ -383,9 +393,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TIMER_TileReveal",
+			"name": "TIMER_Tile_Reveal",
 			"type": "string",
-			"initialValue": "TileReveal",
+			"initialValue": "Tile_Reveal",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -393,23 +403,43 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TIMER_Player_HealthDrain",
+			"name": "TIMER_Projectile_Spawn",
 			"type": "string",
-			"initialValue": "Player_HealthDrain",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 352106269751878
-		},
-		{
-			"eventType": "variable",
-			"name": "TIMER_SpawnProjectile",
-			"type": "string",
-			"initialValue": "SpawnProjectile",
+			"initialValue": "Projectile_Spawn",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 317722047196521
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_Box_OverlapCheck",
+			"type": "string",
+			"initialValue": "Box_OverlapCheck",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 444546707221867
+		},
+		{
+			"eventType": "variable",
+			"name": "TWEEN_3dBox_Disappear",
+			"type": "string",
+			"initialValue": "3dBox_Disappear",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 715742646249808
+		},
+		{
+			"eventType": "variable",
+			"name": "TWEEN_3dBox_Appear",
+			"type": "string",
+			"initialValue": "3dBox_Appear",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 327399160332522
 		},
 		{
 			"eventType": "comment",
@@ -448,16 +478,6 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 455255730079436
-		},
-		{
-			"eventType": "variable",
-			"name": "LAYER_UI",
-			"type": "string",
-			"initialValue": "UI",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 849359883689856
 		},
 		{
 			"eventType": "group",

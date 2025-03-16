@@ -25,6 +25,37 @@
 				}
 			],
 			"sid": 788990583894013
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tweens-finished",
+					"objectClass": "3dBox",
+					"sid": 900136033177275,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "TWEEN_3dBox_Disappear"
+					}
+				},
+				{
+					"id": "pick-parent",
+					"objectClass": "3dBox",
+					"sid": 719674436203736,
+					"parameters": {
+						"parent": "Box",
+						"which": "own"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Box",
+					"sid": 934073728224177
+				}
+			],
+			"sid": 482483851413794
 		}
 	],
 	"sid": 858674299755667

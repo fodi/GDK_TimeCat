@@ -206,11 +206,11 @@
 	"containers": [
 		{
 			"members": [
-				"UI_Icons",
 				"txBoxProjectile",
 				"txBoxShield",
 				"txBoxSleep",
-				"txBoxSlow"
+				"txBoxSlow",
+				"UI_Icons"
 			]
 		}
 	],
@@ -398,7 +398,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "16",
+		"version": "17",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

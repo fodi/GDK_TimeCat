@@ -32,6 +32,13 @@
 			"sid": 882221777031178
 		},
 		{
+			"name": "R_Box_Distance",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 904677452520242
+		},
+		{
 			"name": "currentAngle",
 			"type": "number",
 			"desc": "",
@@ -91,7 +98,7 @@
 			"name": "IN_Aiming",
 			"type": "number",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 499103422601942
 		},
 		{
@@ -119,14 +126,14 @@
 			"name": "item",
 			"type": "string",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 935226149773953
 		},
 		{
 			"name": "boxUID",
 			"type": "number",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 381609793924041
 		}
 	],

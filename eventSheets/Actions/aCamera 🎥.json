@@ -205,19 +205,15 @@
 									}
 								},
 								{
-									"type": "comment",
-									"text": "todo mn (expdecay)"
-								},
-								{
 									"id": "look-at-position",
 									"objectClass": "3DCamera",
-									"sid": 748519857164244,
+									"sid": 894462816221694,
 									"parameters": {
 										"cam-x": "Camera.X",
 										"cam-y": "Camera.Y",
 										"cam-z": "Camera.ZElevation",
-										"look-x": "Functions.expDecay(3DCamera.LookX, Camera.lookTargetX, 5)",
-										"look-y": "Functions.expDecay(3DCamera.LookY, Camera.lookTargetY, 5)",
+										"look-x": "Functions.expDecay(3DCamera.LookX, Camera.lookTargetX, Camera.R_SmoothingFactor)",
+										"look-y": "Functions.expDecay(3DCamera.LookY, Camera.lookTargetY, Camera.R_SmoothingFactor)",
 										"look-z": "0",
 										"up-x": "0",
 										"up-y": "0",
