@@ -23,8 +23,8 @@
 					"objectClass": "Player",
 					"sid": 862580686969775,
 					"parameters": {
-						"instance-variable": "R_Health_Max",
-						"value": "Functions.Config_getNumber(PARAM_Player_Health, Self.R_Health_Max)"
+						"instance-variable": "R_Health_Start",
+						"value": "Functions.Config_getNumber(PARAM_Player_Health, Self.R_Health_Start)"
 					}
 				},
 				{
@@ -33,7 +33,7 @@
 					"sid": 699716346394056,
 					"parameters": {
 						"instance-variable": "health",
-						"value": "Self.R_Health_Max"
+						"value": "Self.R_Health_Start"
 					}
 				},
 				{

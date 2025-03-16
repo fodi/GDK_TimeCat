@@ -4,7 +4,7 @@
 	"sid": 619154312433595,
 	"instanceVariables": [
 		{
-			"name": "R_Health_Max",
+			"name": "R_Health_Start",
 			"type": "number",
 			"desc": "",
 			"show": true,

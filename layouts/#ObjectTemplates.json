@@ -276,7 +276,7 @@
 					"sid": 117359225502778,
 					"tags": "",
 					"instanceVariables": {
-						"R_Health_Max": 5,
+						"R_Health_Start": 30,
 						"R_Health_BonusOnPair": 8,
 						"R_Health_BonusOnHeal": 15,
 						"currentAngle": 0,
