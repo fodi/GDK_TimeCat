@@ -135,6 +135,16 @@
 								"comparison": 0,
 								"value": "NO"
 							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 759744651576692,
+							"parameters": {
+								"variable": "isPaused",
+								"comparison": 0,
+								"value": "NO"
+							}
 						}
 					],
 					"actions": [],
@@ -563,9 +573,9 @@
 												{
 													"customAction": "changeHealth",
 													"objectClass": "Player",
-													"sid": 353380711709495,
+													"sid": 788180434508353,
 													"parameters": [
-														"-dt",
+														"-dt * Functions.Config_getNumber(PARAM_Player_HealthDrain)",
 														"NO",
 														"NO"
 													]
@@ -881,6 +891,16 @@
 							"sid": 922158592789209,
 							"parameters": {
 								"variable": "hasLevelEnded",
+								"comparison": 0,
+								"value": "NO"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 338698830286170,
+							"parameters": {
+								"variable": "isPaused",
 								"comparison": 0,
 								"value": "NO"
 							}
@@ -1807,6 +1827,7 @@
 									"customAction": "updateAnimation",
 									"objectClass": "Player",
 									"sid": 335316664388213,
+									"disabled": true,
 									"parameters": [
 										"ANIM_Dead"
 									]
@@ -1835,6 +1856,40 @@
 									"parameters": {
 										"instance-variable": "isDead",
 										"value": "YES"
+									}
+								},
+								{
+									"id": "tween-value",
+									"objectClass": "bbPlayer",
+									"sid": 413866086495375,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "EFFECT_bbPlayer_Brightness",
+										"start-value": "100",
+										"end-value": "Self.deadEffect_Brightness",
+										"time": "2",
+										"ease": "easeoutquad",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "tween-value",
+									"objectClass": "bbPlayer",
+									"sid": 838147450971128,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "EFFECT_bbPlayer_Grayscale",
+										"start-value": "0",
+										"end-value": "Self.deadEffectGrayscale",
+										"time": "2",
+										"ease": "easeoutquad",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
 								}
 							],
@@ -1951,6 +2006,19 @@
 										}
 									],
 									"actions": [
+										{
+											"type": "comment",
+											"text": "todo"
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 552083041615477,
+											"parameters": {
+												"seconds": "2",
+												"use-timescale": true
+											}
+										},
 										{
 											"callFunction": "endLevel",
 											"sid": 979852464736910

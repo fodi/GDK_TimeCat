@@ -344,6 +344,28 @@
 					"sid": 672715526155151
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "Basemap",
+					"sid": 264968978336509,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "TIMER_Basemap_Animate"
+					}
+				}
+			],
+			"actions": [
+				{
+					"customAction": "animate",
+					"objectClass": "Basemap",
+					"sid": 549695371164028
+				}
+			],
+			"sid": 997256967136019
 		}
 	],
 	"sid": 750823255495774

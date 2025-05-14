@@ -252,6 +252,52 @@
 								}
 							],
 							"sid": 348344614883283
+						},
+						{
+							"eventType": "comment",
+							"text": "Destroy overlapping decorations & obstacles"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "fTile",
+									"sid": 587746977800495,
+									"parameters": {
+										"object": "bbDecor"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "bbDecor",
+									"sid": 247923358132139
+								}
+							],
+							"sid": 822921768382863
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "fTile",
+									"sid": 509093355658984,
+									"parameters": {
+										"object": "f3DObstacles"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "f3DObstacles",
+									"sid": 880815799301674
+								}
+							],
+							"sid": 646897417735211
 						}
 					]
 				}

@@ -4,8 +4,22 @@
 	"sid": 874559564586547,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
-	"instanceVariables": [],
-	"behaviorTypes": [],
+	"instanceVariables": [
+		{
+			"name": "animationFrame",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 319738531989573
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 274457767949962
+		}
+	],
 	"effectTypes": [],
 	"image": {
 		"width": 384,
@@ -16,7 +30,7 @@
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
 		"fileType": "image/png",
-		"imageSpriteId": 7050865,
+		"imageSpriteId": 1007646,
 		"useCollisionPoly": true,
 		"tag": ""
 	},

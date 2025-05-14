@@ -72,6 +72,60 @@
 			],
 			"actions": [],
 			"sid": 853407720485028
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-playing",
+					"objectClass": "bbPlayer",
+					"sid": 169689730947737,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "EFFECT_bbPlayer_Brightness"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-parameter",
+					"objectClass": "bbPlayer",
+					"sid": 165879482944233,
+					"parameters": {
+						"effect": "EFFECT_bbPlayer_Brightness",
+						"parameter-index": "0",
+						"value": "Self.Tween.Value(EFFECT_bbPlayer_Brightness)"
+					}
+				}
+			],
+			"sid": 535391794478980
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-playing",
+					"objectClass": "bbPlayer",
+					"sid": 933826614190174,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "EFFECT_bbPlayer_Grayscale"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-parameter",
+					"objectClass": "bbPlayer",
+					"sid": 484322886705123,
+					"parameters": {
+						"effect": "EFFECT_bbPlayer_Grayscale",
+						"parameter-index": "0",
+						"value": "Self.Tween.Value(EFFECT_bbPlayer_Grayscale)"
+					}
+				}
+			],
+			"sid": 701792086990254
 		}
 	],
 	"sid": 858674299755667

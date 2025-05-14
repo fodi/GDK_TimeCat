@@ -11,6 +11,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 863125805456258
+		},
+		{
+			"name": "deadEffect_Brightness",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 114890372520238
+		},
+		{
+			"name": "deadEffectGrayscale",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 739350716568227
 		}
 	],
 	"behaviorTypes": [
@@ -20,7 +34,16 @@
 			"sid": 540803510792621
 		}
 	],
-	"effectTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "grayscale",
+			"name": "Grayscale"
+		},
+		{
+			"effectId": "brightness",
+			"name": "Brightness"
+		}
+	],
 	"animations": {
 		"items": [],
 		"subfolders": [

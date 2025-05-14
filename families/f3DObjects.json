@@ -6,6 +6,8 @@
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"3dBox"
+		"3dBox",
+		"3dObstacle1",
+		"3dCannon"
 	]
 }

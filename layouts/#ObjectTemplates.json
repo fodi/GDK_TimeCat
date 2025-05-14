@@ -495,7 +495,7 @@
 								"deceleration": 500,
 								"directions": "dir-8",
 								"set-angle": "no",
-								"allow-sliding": false,
+								"allow-sliding": true,
 								"default-controls": false,
 								"enabled": true
 							}
@@ -641,7 +641,7 @@
 					"type": "bbPlayer",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "1_Up",
+						"initial-animation": "1_Down",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -650,12 +650,28 @@
 					"sid": 750965238210234,
 					"tags": "",
 					"instanceVariables": {
-						"playerId": 0
+						"playerId": 0,
+						"deadEffect_Brightness": 140,
+						"deadEffectGrayscale": 85
 					},
 					"behaviors": {
 						"Tween": {
 							"properties": {
 								"enabled": true
+							}
+						}
+					},
+					"effects": {
+						"Grayscale": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0
+							}
+						},
+						"Brightness": {
+							"isEnabled": false,
+							"parameters": {
+								"brightness": 1
 							}
 						}
 					},
@@ -1995,8 +2011,14 @@
 					"uid": 40,
 					"sid": 601953918370568,
 					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
+					"instanceVariables": {
+						"animationFrame": 0
+					},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"ownData": {
 						"tilemapData": {
 							"width": 4,
@@ -2079,6 +2101,142 @@
 							1,
 							1
 						],
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "bbDecor",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 46,
+					"sid": 333387262637419,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 333387262637419,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"mesh": {
+						"cols": 2,
+						"rows": 2,
+						"points": [
+							[
+								{
+									"x": 0,
+									"y": 0.8,
+									"z": 32,
+									"u": 0,
+									"v": 0
+								},
+								{
+									"x": 1,
+									"y": 0.8,
+									"z": 32,
+									"u": 1,
+									"v": 0
+								}
+							],
+							[
+								{
+									"x": 0,
+									"y": 1,
+									"z": 0,
+									"u": 0,
+									"v": 1
+								},
+								{
+									"x": 1,
+									"y": 1,
+									"z": 0,
+									"u": 1,
+									"v": 1
+								}
+							]
+						]
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 144,
+						"y": 64,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.6875,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3dObstacle1",
+					"properties": {
+						"shape": "box",
+						"z-height": 12,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": false,
+						"face-bottom": true,
+						"z-tiling-factor": 1,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 47,
+					"sid": 863695023965939,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 863695023965939,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 192,
+						"y": 96,
+						"width": 12,
+						"height": 12,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
 						"zElevation": 0
 					}
 				},

@@ -143,6 +143,12 @@
 							"sid": 954492913769098
 						},
 						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 227468188170636,
+							"disabled": true
+						},
+						{
 							"customAction": "spawn",
 							"objectClass": "Tile",
 							"customActionObjectClass": "fTile",

@@ -199,9 +199,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "BRUSH_Ground",
+			"name": "BRUSH_Ground1",
 			"type": "string",
-			"initialValue": "Ground",
+			"initialValue": "Ground1",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -209,13 +209,37 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "BRUSH_Water",
+			"name": "BRUSH_Ground2",
 			"type": "string",
-			"initialValue": "Water",
+			"initialValue": "Ground2",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 826767545183828
+		},
+		{
+			"eventType": "comment",
+			"text": "Effects"
+		},
+		{
+			"eventType": "variable",
+			"name": "EFFECT_bbPlayer_Grayscale",
+			"type": "string",
+			"initialValue": "Grayscale",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 636420038736418
+		},
+		{
+			"eventType": "variable",
+			"name": "EFFECT_bbPlayer_Brightness",
+			"type": "string",
+			"initialValue": "Brightness",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 226079005543858
 		},
 		{
 			"eventType": "comment",
@@ -396,6 +420,16 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 139285848578632
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Player_HealthDrain",
+			"type": "string",
+			"initialValue": "pl_health_drain",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 432985155732953
 		},
 		{
 			"eventType": "variable",
@@ -1054,6 +1088,16 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 850779265358799
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_Basemap_Animate",
+			"type": "string",
+			"initialValue": "Basemap_Animate",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 440395894937401
 		},
 		{
 			"eventType": "group",

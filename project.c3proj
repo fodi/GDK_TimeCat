@@ -169,6 +169,20 @@
 		},
 		{
 			"type": "effect",
+			"id": "brightness",
+			"name": "Brightness",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "grayscale",
+			"name": "Grayscale",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
 			"id": "radialblur",
 			"name": "Radial blur",
 			"author": "Scirra",
@@ -192,7 +206,9 @@
 			"Particles",
 			"Selection",
 			"Basemap",
-			"Water"
+			"Water",
+			"bbDecor",
+			"3dObstacle1"
 		],
 		"subfolders": [
 			{
@@ -287,7 +303,8 @@
 			"fBillboards",
 			"f3DObjects",
 			"fShadows",
-			"fCannon"
+			"fCannon",
+			"f3DObstacles"
 		],
 		"subfolders": []
 	},
@@ -887,7 +904,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "35b",
+		"version": "36",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",
