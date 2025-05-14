@@ -21,13 +21,13 @@
 				{
 					"id": "create-object",
 					"objectClass": "System",
-					"sid": 186232422535179,
+					"sid": 806580820701891,
 					"parameters": {
 						"object-to-create": "Cannon",
 						"layer": "LAYER_Main",
 						"x": "midX",
 						"y": "midY",
-						"create-hierarchy": false,
+						"create-hierarchy": true,
 						"template-name": "\"\""
 					}
 				},

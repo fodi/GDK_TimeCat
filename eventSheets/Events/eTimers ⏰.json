@@ -14,7 +14,7 @@
 					"sid": 368694596564405,
 					"behaviorType": "Timer",
 					"parameters": {
-						"tag": "TIMER_Tile_Reveal"
+						"tag": "TIMER_Tile_Close"
 					}
 				},
 				{
@@ -30,22 +30,26 @@
 			"sid": 454457054152501,
 			"children": [
 				{
-					"eventType": "comment",
-					"text": "todo allow player to immediately continue turning tiles, at least after a pair"
-				},
-				{
-					"eventType": "variable",
-					"name": "healAmount",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 156694438858299
-				},
-				{
-					"eventType": "comment",
-					"text": "todo refactor"
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Tile",
+							"sid": 716484355461441,
+							"parameters": {
+								"unique-id": "Player.tileUID1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "close",
+							"objectClass": "Tile",
+							"customActionObjectClass": "fTile",
+							"sid": 256468709778806
+						}
+					],
+					"sid": 850100583965396
 				},
 				{
 					"eventType": "block",
@@ -53,178 +57,21 @@
 						{
 							"id": "pick-by-unique-id",
 							"objectClass": "Tile",
-							"sid": 139918683882070,
-							"parameters": {
-								"unique-id": "Player.tileUID1"
-							}
-						},
-						{
-							"id": "pick-by-unique-id",
-							"objectClass": "fTile",
-							"sid": 525576140582220,
+							"sid": 451585866593051,
 							"parameters": {
 								"unique-id": "Player.tileUID2"
 							}
 						}
 					],
-					"actions": [],
-					"sid": 771968055309229,
-					"children": [
+					"actions": [
 						{
-							"eventType": "comment",
-							"text": "If symbols match..."
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Tile",
-									"sid": 118492516254789,
-									"parameters": {
-										"instance-variable": "symbol",
-										"comparison": 0,
-										"value": "fTile.symbol"
-									}
-								}
-							],
-							"actions": [
-								{
-									"customAction": "remove",
-									"objectClass": "Tile",
-									"customActionObjectClass": "fTile",
-									"sid": 373883693563742
-								},
-								{
-									"customAction": "remove",
-									"objectClass": "fTile",
-									"sid": 442142979237708
-								},
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 353818488719457,
-									"parameters": {
-										"variable": "healAmount",
-										"value": "Player.R_Health_BonusOnPair"
-									}
-								}
-							],
-							"sid": 315455249506772,
-							"children": [
-								{
-									"eventType": "comment",
-									"text": "If symbol is an item..."
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-by-comparison",
-											"objectClass": "System",
-											"sid": 947589207699850,
-											"parameters": {
-												"object": "Tile",
-												"expression": "int(Tile.symbol)",
-												"comparison": 0,
-												"value": "0"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 619323921869795,
-									"children": [
-										{
-											"eventType": "comment",
-											"text": "If item is health, heal immediately"
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Tile",
-													"sid": 403577862978357,
-													"parameters": {
-														"instance-variable": "symbol",
-														"comparison": 0,
-														"value": "ITEM_Health"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "add-to-eventvar",
-													"objectClass": "System",
-													"sid": 107812024785209,
-													"parameters": {
-														"variable": "healAmount",
-														"value": "Player.R_Health_BonusOnHeal"
-													}
-												}
-											],
-											"sid": 737920009310871
-										},
-										{
-											"eventType": "comment",
-											"text": "Otherwise pick up item"
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 178670916917806
-												}
-											],
-											"actions": [
-												{
-													"customAction": "spawn",
-													"objectClass": "Box",
-													"sid": 573451306497234,
-													"parameters": [
-														"fTile.X",
-														"fTile.Y",
-														"fTile.symbol"
-													]
-												}
-											],
-											"sid": 572611703805464
-										}
-									]
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "If symbols don't match..."
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 908124380757705
-								}
-							],
-							"actions": [
-								{
-									"customAction": "close",
-									"objectClass": "Tile",
-									"customActionObjectClass": "fTile",
-									"sid": 770086172908413
-								},
-								{
-									"customAction": "close",
-									"objectClass": "fTile",
-									"sid": 152826367432732
-								}
-							],
-							"sid": 891388490963176
+							"customAction": "close",
+							"objectClass": "Tile",
+							"customActionObjectClass": "fTile",
+							"sid": 364559990204727
 						}
-					]
+					],
+					"sid": 233600067202867
 				},
 				{
 					"eventType": "block",
@@ -233,7 +80,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 547055268342069,
+							"sid": 997507963423812,
 							"parameters": {
 								"instance-variable": "tileUID1",
 								"value": "NOTHING"
@@ -242,41 +89,14 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 336909580984732,
+							"sid": 155399988889392,
 							"parameters": {
 								"instance-variable": "tileUID2",
 								"value": "NOTHING"
 							}
 						}
 					],
-					"sid": 449365403950433
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 412087641839098,
-							"parameters": {
-								"variable": "healAmount",
-								"comparison": 1,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"customAction": "changeHealth",
-							"objectClass": "Player",
-							"sid": 417291187056413,
-							"parameters": [
-								"healAmount",
-								"YES"
-							]
-						}
-					],
-					"sid": 253342996362382
+					"sid": 650097116534947
 				}
 			]
 		},
@@ -324,7 +144,7 @@
 					"sid": 723563679801714,
 					"behaviorType": "Timer",
 					"parameters": {
-						"tag": "TIMER_Box_OverlapCheck"
+						"tag": "TIMER_Box_FarCheck"
 					}
 				},
 				{
@@ -336,133 +156,8 @@
 					}
 				}
 			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "Box",
-					"sid": 942749576807253,
-					"disabled": true
-				}
-			],
-			"sid": 825971556518263,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Box",
-							"sid": 432251041106799,
-							"parameters": {
-								"object": "Tile"
-							},
-							"isInverted": true
-						},
-						{
-							"id": "pick-by-comparison",
-							"objectClass": "System",
-							"sid": 588665370561673,
-							"parameters": {
-								"object": "Box",
-								"expression": "distance(midX, midY, Box.X, Box.Y)",
-								"comparison": 4,
-								"value": "max(Cannon.Orbit.PrimaryRadius, Cannon.Orbit.SecondaryRadius)"
-							}
-						},
-						{
-							"id": "pick-children",
-							"objectClass": "Box",
-							"sid": 532752884598661,
-							"parameters": {
-								"child": "3dBox",
-								"which": "own"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "stop-timer",
-							"objectClass": "Box",
-							"sid": 420190677940960,
-							"behaviorType": "Timer",
-							"parameters": {
-								"tag": "TIMER_Box_OverlapCheck"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "Box",
-							"sid": 369576443904449,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-face-image",
-							"objectClass": "3dBox",
-							"sid": 836528410464860,
-							"parameters": {
-								"face": "front",
-								"image": "front"
-							}
-						},
-						{
-							"id": "set-face-image",
-							"objectClass": "3dBox",
-							"sid": 976045222827986,
-							"parameters": {
-								"face": "left",
-								"image": "left"
-							}
-						},
-						{
-							"id": "set-face-image",
-							"objectClass": "3dBox",
-							"sid": 383603306456261,
-							"parameters": {
-								"face": "right",
-								"image": "right"
-							}
-						},
-						{
-							"id": "set-face-image",
-							"objectClass": "3dBox",
-							"sid": 160099511269611,
-							"parameters": {
-								"face": "top",
-								"image": "top"
-							}
-						},
-						{
-							"id": "set-face-image",
-							"objectClass": "3dBox",
-							"sid": 511351743683947,
-							"parameters": {
-								"face": "bottom",
-								"image": "bottom"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "3dBox",
-							"sid": 107643412634812,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "TWEEN_3dBox_Disappear",
-								"property": "offsetOpacity",
-								"end-value": "0",
-								"time": "0.5",
-								"ease": "easeoutcubic",
-								"destroy-on-complete": "yes",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						}
-					],
-					"sid": 909883214796302
-				}
-			]
+			"actions": [],
+			"sid": 825971556518263
 		}
 	],
 	"sid": 750823255495774

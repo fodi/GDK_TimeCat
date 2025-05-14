@@ -9,7 +9,7 @@
 			"eventType": "variable",
 			"name": "R_ColumnCount",
 			"type": "number",
-			"initialValue": "6",
+			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -19,7 +19,7 @@
 			"eventType": "variable",
 			"name": "R_RowCount",
 			"type": "number",
-			"initialValue": "5",
+			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -78,6 +78,16 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 904475592420488
+		},
+		{
+			"eventType": "variable",
+			"name": "distanceFar",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 972787224426421
 		}
 	],
 	"sid": 756444675677784

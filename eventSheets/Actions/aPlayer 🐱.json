@@ -838,6 +838,10 @@
 							"sid": 765014128072215,
 							"children": [
 								{
+									"eventType": "comment",
+									"text": "If player is not waiting for tiles closing"
+								},
+								{
 									"eventType": "block",
 									"conditions": [
 										{
@@ -846,14 +850,14 @@
 											"sid": 665988943870155,
 											"behaviorType": "Timer",
 											"parameters": {
-												"tag": "TIMER_Tile_Reveal"
+												"tag": "TIMER_Tile_Close"
 											},
 											"isInverted": true
 										},
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "Player",
-											"sid": 292093838431810,
+											"sid": 715892902725538,
 											"parameters": {
 												"instance-variable": "health",
 												"comparison": 4,
@@ -867,10 +871,6 @@
 										{
 											"eventType": "comment",
 											"text": "Open new tile"
-										},
-										{
-											"eventType": "comment",
-											"text": "todo_maybe constantly show \"selected\" tile?"
 										},
 										{
 											"eventType": "block",
@@ -998,7 +998,7 @@
 										},
 										{
 											"eventType": "comment",
-											"text": "If player has two tiles open, start reveal timer"
+											"text": "If player has two tiles open, check them for matches"
 										},
 										{
 											"eventType": "block",
@@ -1026,15 +1026,9 @@
 											],
 											"actions": [
 												{
-													"id": "start-timer",
+													"customAction": "checkTiles",
 													"objectClass": "Player",
-													"sid": 241705611699762,
-													"behaviorType": "Timer",
-													"parameters": {
-														"duration": "C_Tile_Reveal_Time",
-														"type": "once",
-														"tag": "TIMER_Tile_Reveal"
-													}
+													"sid": 380845852197897
 												}
 											],
 											"sid": 714975650224233
@@ -1119,7 +1113,7 @@
 									"parameters": {
 										"duration": "Self.R_OverlapCheckTIme",
 										"type": "regular",
-										"tag": "TIMER_Box_OverlapCheck"
+										"tag": "TIMER_Box_FarCheck"
 									}
 								}
 							],
@@ -1151,6 +1145,289 @@
 						}
 					],
 					"sid": 694653583056779
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "checkTiles",
+			"objectClass": "Player",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 271357122283101,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "todo allow player to immediately continue turning tiles, at least after a pair"
+				},
+				{
+					"eventType": "variable",
+					"name": "healAmount",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 282041672747686
+				},
+				{
+					"eventType": "comment",
+					"text": "todo refactor"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Tile",
+							"sid": 115906198600461,
+							"parameters": {
+								"unique-id": "Player.tileUID1"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "fTile",
+							"sid": 487887627285496,
+							"parameters": {
+								"unique-id": "Player.tileUID2"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 914667370152696,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "If symbols match..."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Tile",
+									"sid": 444010377632060,
+									"parameters": {
+										"instance-variable": "symbol",
+										"comparison": 0,
+										"value": "fTile.symbol"
+									}
+								}
+							],
+							"actions": [
+								{
+									"customAction": "remove",
+									"objectClass": "Tile",
+									"customActionObjectClass": "fTile",
+									"sid": 610506249939683
+								},
+								{
+									"customAction": "remove",
+									"objectClass": "fTile",
+									"sid": 847277258622668
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 778835255933920,
+									"parameters": {
+										"variable": "healAmount",
+										"value": "Player.R_Health_BonusOnPair"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player",
+									"sid": 181145534061699,
+									"parameters": {
+										"instance-variable": "tileUID1",
+										"value": "NOTHING"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player",
+									"sid": 546557595528095,
+									"parameters": {
+										"instance-variable": "tileUID2",
+										"value": "NOTHING"
+									}
+								}
+							],
+							"sid": 671774862284893,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "If symbol is an item..."
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 321219722387016,
+											"parameters": {
+												"object": "Tile",
+												"expression": "int(Tile.symbol)",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 228569953273772,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "If item is health, heal immediately"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Tile",
+													"sid": 211905526062728,
+													"parameters": {
+														"instance-variable": "symbol",
+														"comparison": 0,
+														"value": "ITEM_Health"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 952205922533722,
+													"parameters": {
+														"variable": "healAmount",
+														"value": "Player.R_Health_BonusOnHeal"
+													}
+												}
+											],
+											"sid": 664699140082146
+										},
+										{
+											"eventType": "comment",
+											"text": "Otherwise pick up item"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 353242779660125
+												}
+											],
+											"actions": [
+												{
+													"customAction": "spawn",
+													"objectClass": "Box",
+													"sid": 329378041470016,
+													"parameters": [
+														"fTile.X",
+														"fTile.Y",
+														"fTile.symbol"
+													]
+												}
+											],
+											"sid": 295692662093343
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "If symbols don't match, start close timer"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 482617275684659
+								}
+							],
+							"actions": [
+								{
+									"id": "start-timer",
+									"objectClass": "Player",
+									"sid": 618439747426148,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "C_Tile_Reveal_Time",
+										"type": "once",
+										"tag": "TIMER_Tile_Close"
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "Tile",
+									"sid": 291780139570239,
+									"disabled": true,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "C_Tile_Reveal_Time",
+										"type": "once",
+										"tag": "TIMER_Tile_Close"
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "fTile",
+									"sid": 538840826866904,
+									"disabled": true,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "C_Tile_Reveal_Time",
+										"type": "once",
+										"tag": "TIMER_Tile_Close"
+									}
+								}
+							],
+							"sid": 515965583084604
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 237116541539317,
+							"parameters": {
+								"variable": "healAmount",
+								"comparison": 1,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "changeHealth",
+							"objectClass": "Player",
+							"sid": 429050405483691,
+							"parameters": [
+								"healAmount",
+								"YES"
+							]
+						}
+					],
+					"sid": 813979145568860
 				}
 			]
 		},
@@ -1250,7 +1527,7 @@
 							"sid": 685209602632978,
 							"behaviorType": "Timer",
 							"parameters": {
-								"tag": "TIMER_Tile_Reveal"
+								"tag": "TIMER_Tile_Close"
 							}
 						},
 						{

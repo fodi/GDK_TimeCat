@@ -109,7 +109,7 @@
 					"actions": [
 						{
 							"type": "comment",
-							"text": "Calculate mid point"
+							"text": "Cache level midpoint & calculate \"far\" distance"
 						},
 						{
 							"id": "set-eventvar-value",
@@ -127,6 +127,15 @@
 							"parameters": {
 								"variable": "midY",
 								"value": "R_RowCount * C_Tile_Size * 0.5"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 114204932624240,
+							"parameters": {
+								"variable": "distanceFar",
+								"value": "max(midX + C_Tile_Size * 2, midY + C_Tile_Size * 2)"
 							}
 						},
 						{

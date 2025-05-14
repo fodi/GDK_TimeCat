@@ -32,7 +32,13 @@
 			"sid": 336061020471067
 		}
 	],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 236236091657871
+		}
+	],
 	"effectTypes": [],
 	"members": [
 		"Tile"

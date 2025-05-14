@@ -231,7 +231,7 @@
 							],
 							"actions": [
 								{
-									"customAction": "activate",
+									"customAction": "onPlayerHit",
 									"objectClass": "Box",
 									"sid": 366487767284970,
 									"parameters": [
@@ -240,6 +240,43 @@
 								}
 							],
 							"sid": 387367243578375
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 919952535574546
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Box",
+									"sid": 160965312055842,
+									"parameters": {
+										"instance-variable": "carrierPlayerUID",
+										"comparison": 1,
+										"value": "Player.UID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"customAction": "onPlayerHit",
+									"objectClass": "Box",
+									"sid": 878827495299327,
+									"parameters": [
+										"Player.UID"
+									]
+								}
+							],
+							"sid": 655831819948262
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 942339313052663
 						}
 					]
 				}

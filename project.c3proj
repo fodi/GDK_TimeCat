@@ -154,7 +154,8 @@
 			"AimHelper",
 			"Box",
 			"UI_BlurbSF",
-			"CameraTarget"
+			"CameraTarget",
+			"3DShape"
 		],
 		"subfolders": [
 			{
@@ -432,7 +433,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "21",
+		"version": "22b",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

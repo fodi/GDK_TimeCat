@@ -434,257 +434,34 @@
 						"instance-variable": "pairingState",
 						"value": "PS_Paired"
 					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Symbol",
+					"sid": 253432446512259,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "Symbol",
+					"sid": 349321049200110,
+					"disabled": true,
+					"parameters": {
+						"opacity": "0"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "Symbol",
+					"sid": 349312330173428,
+					"parameters": {
+						"opacity": "Functions.Config_getNumber(PARAM_Symbol_Opacity)"
+					}
 				}
 			],
 			"sid": 364773611626042
-		},
-		{
-			"aceType": "action",
-			"aceName": "shuffleOld",
-			"objectClass": "fTile",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "custom-ace-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 902508103576580,
-			"children": [
-				{
-					"eventType": "comment",
-					"text": "todo limit distance of pairs"
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [],
-					"sid": 612837597975328,
-					"children": [
-						{
-							"eventType": "variable",
-							"name": "nextSymbol",
-							"type": "string",
-							"initialValue": "",
-							"comment": "",
-							"isStatic": false,
-							"isConstant": false,
-							"sid": 161316452633114
-						},
-						{
-							"eventType": "variable",
-							"name": "lastTileUID",
-							"type": "number",
-							"initialValue": "-1",
-							"comment": "",
-							"isStatic": false,
-							"isConstant": false,
-							"sid": 983562203176346
-						},
-						{
-							"eventType": "variable",
-							"name": "pairCount",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"isStatic": false,
-							"isConstant": false,
-							"sid": 610371495460944
-						},
-						{
-							"eventType": "variable",
-							"name": "tileIterator",
-							"type": "number",
-							"initialValue": "1",
-							"comment": "",
-							"isStatic": false,
-							"isConstant": false,
-							"sid": 289428699565000
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "for-each-ordered",
-									"objectClass": "System",
-									"sid": 718124810462173,
-									"parameters": {
-										"object": "fTile",
-										"expression": "fTile.randomId",
-										"order": "ascending"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 338961913560206,
-									"parameters": {
-										"variable": "lastTileUID",
-										"value": "fTile.UID"
-									}
-								}
-							],
-							"sid": 632978563855882,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 623178150455851,
-											"parameters": {
-												"first-value": "(loopindex + 1) % 2",
-												"comparison": 0,
-												"second-value": "1"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 951657865476381,
-											"parameters": {
-												"variable": "nextSymbol",
-												"value": "trim(tokenat(C_CSV_Symbols, pairCount % tokencount(C_CSV_Symbols, \",\") , \",\"))"
-											}
-										},
-										{
-											"id": "add-to-eventvar",
-											"objectClass": "System",
-											"sid": 578658692920355,
-											"parameters": {
-												"variable": "pairCount",
-												"value": "1"
-											}
-										},
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 801983798627929,
-											"disabled": true,
-											"parameters": {
-												"type": "log",
-												"message": "\"next symbol: \" & nextSymbol"
-											}
-										}
-									],
-									"sid": 197786479606376
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-children",
-											"objectClass": "fTile",
-											"sid": 135572230345492,
-											"parameters": {
-												"child": "Symbol",
-												"which": "own"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-instvar-value",
-											"objectClass": "fTile",
-											"sid": 263258785439584,
-											"parameters": {
-												"instance-variable": "symbol",
-												"value": "nextSymbol"
-											}
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "Symbol",
-											"sid": 363801916033716,
-											"parameters": {
-												"animation": "fTile.symbol",
-												"from": "beginning"
-											}
-										}
-									],
-									"sid": 989334330786785,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-animation-playing",
-													"objectClass": "Symbol",
-													"sid": 854963578149420,
-													"parameters": {
-														"animation": "fTile.symbol"
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [
-												{
-													"id": "log",
-													"objectClass": "Browser",
-													"sid": 446444001973245,
-													"parameters": {
-														"type": "error",
-														"message": "\"Unable to set symbol animation to \" & fTile.symbol"
-													}
-												}
-											],
-											"sid": 609101204832542
-										}
-									]
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 779414478354078,
-									"parameters": {
-										"first-value": "(R_ColumnCount * R_RowCount) % 2",
-										"comparison": 0,
-										"second-value": "1"
-									}
-								},
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "Tile",
-									"sid": 770108358895948,
-									"parameters": {
-										"unique-id": "lastTileUID"
-									}
-								}
-							],
-							"actions": [
-								{
-									"customAction": "remove",
-									"objectClass": "Tile",
-									"customActionObjectClass": "fTile",
-									"sid": 738291582807026
-								},
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 570025006869623,
-									"parameters": {
-										"type": "log",
-										"message": "\"Removing uneven tile #\" &Tile.UID"
-									}
-								}
-							],
-							"sid": 730738468038568
-						}
-					]
-				}
-			]
 		},
 		{
 			"aceType": "action",
@@ -743,11 +520,29 @@
 					],
 					"actions": [
 						{
-							"id": "set-visible",
+							"id": "stop-tweens",
 							"objectClass": "Symbol",
-							"sid": 674835412263795,
+							"sid": 718245273287454,
+							"behaviorType": "Tween",
 							"parameters": {
-								"visibility": "visible"
+								"tags": "TWEEN_Symbol_Opacity"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Symbol",
+							"sid": 402920633642429,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TWEEN_Symbol_Opacity",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "0.2",
+								"ease": "easeinquart",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
 							}
 						}
 					],
@@ -804,11 +599,47 @@
 					],
 					"actions": [
 						{
-							"id": "set-visible",
+							"id": "stop-tweens",
 							"objectClass": "Symbol",
-							"sid": 939353371098159,
+							"sid": 608319006067043,
+							"behaviorType": "Tween",
 							"parameters": {
-								"visibility": "invisible"
+								"tags": "TWEEN_Symbol_Opacity"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Symbol",
+							"sid": 326407234537377,
+							"disabled": true,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TWEEN_Symbol_Opacity",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "0.5",
+								"ease": "easeinquart",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Symbol",
+							"sid": 271160748055941,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TWEEN_Symbol_Opacity",
+								"property": "offsetOpacity",
+								"end-value": "Functions.Config_getNumber(PARAM_Symbol_Opacity)",
+								"time": "0.5",
+								"ease": "easeinquart",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
 							}
 						}
 					],
@@ -865,17 +696,37 @@
 					],
 					"actions": [
 						{
-							"id": "destroy",
+							"id": "stop-tweens",
 							"objectClass": "Symbol",
-							"sid": 641902556869757,
-							"disabled": true
+							"sid": 391618687697913,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TWEEN_Symbol_Opacity"
+							}
 						},
 						{
 							"id": "set-opacity",
 							"objectClass": "Symbol",
-							"sid": 250384068689123,
+							"sid": 860252419411402,
 							"parameters": {
-								"opacity": "10"
+								"opacity": "100"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Symbol",
+							"sid": 780755303380091,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TWEEN_Symbol_Opacity",
+								"property": "offsetOpacity",
+								"end-value": "20",
+								"time": "2",
+								"ease": "easeoutcubic",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
 							}
 						}
 					],

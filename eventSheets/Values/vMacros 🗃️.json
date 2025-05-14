@@ -381,6 +381,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "PARAM_Symbol_Opacity",
+			"type": "string",
+			"initialValue": "sy_opacity",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 215960619217258
+		},
+		{
+			"eventType": "variable",
 			"name": "PARAM_Projectile_SpawnTime_Max",
 			"type": "string",
 			"initialValue": "pr_spawn_time_max",
@@ -467,9 +477,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TIMER_Tile_Reveal",
+			"name": "TIMER_Tile_Close",
 			"type": "string",
-			"initialValue": "Tile_Reveal",
+			"initialValue": "Tile_Close",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -487,13 +497,17 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TIMER_Box_OverlapCheck",
+			"name": "TIMER_Box_FarCheck",
 			"type": "string",
-			"initialValue": "Box_OverlapCheck",
+			"initialValue": "Box_FarCheck",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 444546707221867
+		},
+		{
+			"eventType": "comment",
+			"text": "Tweens"
 		},
 		{
 			"eventType": "variable",
@@ -503,7 +517,7 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 715742646249808
+			"sid": 217402779635835
 		},
 		{
 			"eventType": "variable",
@@ -513,11 +527,7 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 327399160332522
-		},
-		{
-			"eventType": "comment",
-			"text": "Tweens"
+			"sid": 662971613269830
 		},
 		{
 			"eventType": "variable",
@@ -538,6 +548,16 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 166923722392594
+		},
+		{
+			"eventType": "variable",
+			"name": "TWEEN_Symbol_Opacity",
+			"type": "string",
+			"initialValue": "Symbol_Opacity",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 527541449130250
 		},
 		{
 			"eventType": "comment",
@@ -562,6 +582,36 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 455255730079436
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_Player_Shield",
+			"type": "string",
+			"initialValue": "Player_Shield",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 931190488621268
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_Player_Slow",
+			"type": "string",
+			"initialValue": "Player_Slow",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 919054884505233
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_Player_Sleep",
+			"type": "string",
+			"initialValue": "Player_Sleep",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 962501000002452
 		},
 		{
 			"eventType": "group",
