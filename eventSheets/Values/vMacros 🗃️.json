@@ -150,20 +150,6 @@
 			"sid": 542683229904901
 		},
 		{
-			"eventType": "comment",
-			"text": "todo disable/remove"
-		},
-		{
-			"eventType": "variable",
-			"name": "ANIM_WakingUp",
-			"type": "string",
-			"initialValue": "WakingUp",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 205569605942830
-		},
-		{
 			"eventType": "variable",
 			"name": "ANIM_Selection_Appearing",
 			"type": "string",
@@ -393,6 +379,266 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "PARAM_Cannon_Count_Init",
+			"type": "string",
+			"initialValue": "ca_count_init",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 763537527353326
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Cannon_Count_Max",
+			"type": "string",
+			"initialValue": "ca_count_max",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 561554562748521
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Cannon_Spawn_Time_Min",
+			"type": "string",
+			"initialValue": "ca_spawn_time_min",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 711890165889825
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Cannon_Spawn_Time_Max",
+			"type": "string",
+			"initialValue": "ca_spawn_time_max",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 340863881895441
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Cannon_Health",
+			"type": "string",
+			"initialValue": "ca_health",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 953911647832943
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Cannon_SpeedMax",
+			"type": "string",
+			"initialValue": "ca_speed_max",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 255130545824801
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Cannon_Acceleration",
+			"type": "string",
+			"initialValue": "ca_accel",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 173977398908460
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Item_Speed",
+			"type": "string",
+			"initialValue": "it_speed",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 648059534642081
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Item_Damage",
+			"type": "string",
+			"initialValue": "it_damage",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 245290324402291
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Item_Attack_Damage",
+			"type": "string",
+			"initialValue": "it_attack_damage",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 737712903252265
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Item_Shield_Time",
+			"type": "string",
+			"initialValue": "it_shield_time",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 936523431404028
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Item_Sleep_Time",
+			"type": "string",
+			"initialValue": "it_sleep_time",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 954379120455628
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Item_Slow_Time",
+			"type": "string",
+			"initialValue": "it_slow_time",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 703023718927878
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Item_Slow_Factor",
+			"type": "string",
+			"initialValue": "it_slow_factor",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 436306669711033
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Player_Health",
+			"type": "string",
+			"initialValue": "pl_health",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 425286381206037
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Player_HealthDrain",
+			"type": "string",
+			"initialValue": "pl_health_drain",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 450823389473841
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Player_HealPair",
+			"type": "string",
+			"initialValue": "pl_heal_pair",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 797483483926092
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Player_HealItem",
+			"type": "string",
+			"initialValue": "pl_heal_item",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 950146415904133
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Player_MovementSpeed",
+			"type": "string",
+			"initialValue": "pl_speed",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 848376540286770
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Player_MovementSpeed_Slow",
+			"type": "string",
+			"initialValue": "pl_speed_slow",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 290189144023306
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Projectile_Speed",
+			"type": "string",
+			"initialValue": "pr_speed",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 967968285608491
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Projectile_Speed_Increase",
+			"type": "string",
+			"initialValue": "pr_speed_increase",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 557718193628226
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Projectile_Speed_Max",
+			"type": "string",
+			"initialValue": "pr_speed_max",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 304010931494241
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Projectile_SpawnTime_Min",
+			"type": "string",
+			"initialValue": "pr_spawn_time_min",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 587831910880208
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Projectile_SpawnTime_Max",
+			"type": "string",
+			"initialValue": "pr_spawn_time_max",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 266495009910664
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Symbol_Opacity",
+			"type": "string",
+			"initialValue": "sy_opacity",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 698893818658444
+		},
+		{
+			"eventType": "variable",
 			"name": "PARAM_Tile_ColumnCount",
 			"type": "string",
 			"initialValue": "cols",
@@ -420,236 +666,6 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 747038811532456
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Player_Health",
-			"type": "string",
-			"initialValue": "pl_health",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 139285848578632
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Player_HealthDrain",
-			"type": "string",
-			"initialValue": "pl_health_drain",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 432985155732953
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Player_HealPair",
-			"type": "string",
-			"initialValue": "pl_heal_pair",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 329600246982367
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Player_HealItem",
-			"type": "string",
-			"initialValue": "pl_heal_item",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 810760313257007
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Player_MovementSpeed",
-			"type": "string",
-			"initialValue": "pl_speed",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 791893494000948
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Player_MovementSpeed_Slow",
-			"type": "string",
-			"initialValue": "pl_speed_slow",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 955150380487263
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Projectile_Speed",
-			"type": "string",
-			"initialValue": "pr_speed",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 319843517574204
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Projectile_Speed_Increase",
-			"type": "string",
-			"initialValue": "pr_speed_increase",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 912230401717198
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Projectile_Speed_Max",
-			"type": "string",
-			"initialValue": "pr_speed_max",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 177752015925903
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Projectile_SpawnTime_Min",
-			"type": "string",
-			"initialValue": "pr_spawn_time_min",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 770790732894441
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Projectile_SpawnTime_Max",
-			"type": "string",
-			"initialValue": "pr_spawn_time_max",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 866637635726075
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Symbol_Opacity",
-			"type": "string",
-			"initialValue": "sy_opacity",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 215960619217258
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Item_Speed",
-			"type": "string",
-			"initialValue": "it_speed",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 891620881695342
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Item_Damage",
-			"type": "string",
-			"initialValue": "it_damage",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 783673384779279
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Item_Attack_Damage",
-			"type": "string",
-			"initialValue": "it_attack_damage",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 147941018485016
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Item_Sleep_Time",
-			"type": "string",
-			"initialValue": "it_sleep_time",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 731388519736344
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Item_Slow_Time",
-			"type": "string",
-			"initialValue": "it_slow_time",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 682491670834599
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Item_Slow_Factor",
-			"type": "string",
-			"initialValue": "it_slow_factor",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 518256068660690
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Cannon_Count_Init",
-			"type": "string",
-			"initialValue": "ca_count_init",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 758828881434870
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Cannon_Count_Max",
-			"type": "string",
-			"initialValue": "ca_count_max",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 173533069686334
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Cannon_Spawn_Time_Min",
-			"type": "string",
-			"initialValue": "ca_spawn_time_min",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 721241107394744
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Cannon_Spawn_Time_Max",
-			"type": "string",
-			"initialValue": "ca_spawn_time_max",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 520363170521003
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Cannon_Health",
-			"type": "string",
-			"initialValue": "ca_health",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 307482267939812
 		},
 		{
 			"eventType": "comment",
@@ -938,26 +954,6 @@
 			"sid": 510069927719130
 		},
 		{
-			"eventType": "variable",
-			"name": "PARAM_Cannon_SpeedMax",
-			"type": "string",
-			"initialValue": "ca_speed_max",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 526209523460008
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Cannon_Acceleration",
-			"type": "string",
-			"initialValue": "ca_accel",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 780838244290188
-		},
-		{
 			"eventType": "comment",
 			"text": "Templates"
 		},
@@ -977,23 +973,13 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TIMER_Tile_Close",
+			"name": "TIMER_Basemap_Animate",
 			"type": "string",
-			"initialValue": "Tile_Close",
+			"initialValue": "Basemap_Animate",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 995737280135155
-		},
-		{
-			"eventType": "variable",
-			"name": "TIMER_Cannon_Shoot",
-			"type": "string",
-			"initialValue": "Cannon_Shoot",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 317722047196521
+			"sid": 471174952477802
 		},
 		{
 			"eventType": "variable",
@@ -1003,7 +989,67 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 444546707221867
+			"sid": 550898945458440
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_Cannon_Shoot",
+			"type": "string",
+			"initialValue": "Cannon_Shoot",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 285889370999148
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_Cannon_Spawn",
+			"type": "string",
+			"initialValue": "Cannon_Spawn",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 503516393565057
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_Cannon_CheckMaxSpeed",
+			"type": "string",
+			"initialValue": "Cannon_CheckMaxSpeed",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 264053325016035
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_Cannon_PostShoot",
+			"type": "string",
+			"initialValue": "Cannon_PostShoot",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 212305476656056
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_Level_EverySecond",
+			"type": "string",
+			"initialValue": "Level_EverySecond",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 404574786009235
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_Level_End",
+			"type": "string",
+			"initialValue": "Level_End",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 679381954568825
 		},
 		{
 			"eventType": "variable",
@@ -1014,16 +1060,6 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 773837568404503
-		},
-		{
-			"eventType": "variable",
-			"name": "TIMER_Cannon_Spawn",
-			"type": "string",
-			"initialValue": "Cannon_Spawn",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 674921099238246
 		},
 		{
 			"eventType": "variable",
@@ -1067,43 +1103,13 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TIMER_Level_EverySecond",
+			"name": "TIMER_Tile_Close",
 			"type": "string",
-			"initialValue": "Level_EverySecond",
+			"initialValue": "Tile_Close",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 139268643180940
-		},
-		{
-			"eventType": "variable",
-			"name": "TIMER_Cannon_CheckMaxSpeed",
-			"type": "string",
-			"initialValue": "Cannon_CheckMaxSpeed",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 371745106555812
-		},
-		{
-			"eventType": "variable",
-			"name": "TIMER_Basemap_Animate",
-			"type": "string",
-			"initialValue": "Basemap_Animate",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 596606921358655
-		},
-		{
-			"eventType": "variable",
-			"name": "TIMER_Level_End",
-			"type": "string",
-			"initialValue": "Level_End",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 116184784019582
+			"sid": 937432569353992
 		},
 		{
 			"eventType": "comment",
@@ -1111,9 +1117,39 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TWEEN_3dBox_Disappear",
+			"name": "TWEEN_3dCannon_Color",
 			"type": "string",
-			"initialValue": "3dBox_Disappear",
+			"initialValue": "3dCannon_Color",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 871368477337416
+		},
+		{
+			"eventType": "variable",
+			"name": "TWEEN_3dCannon_ZElevation_Spawn",
+			"type": "string",
+			"initialValue": "3dCannon_ZElevation_Spawn",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 158231385317105
+		},
+		{
+			"eventType": "variable",
+			"name": "TWEEN_Blurb_ZElevation",
+			"type": "string",
+			"initialValue": "Blurb_ZElevation",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 120572577612546
+		},
+		{
+			"eventType": "variable",
+			"name": "TWEEN_Item_Disappear",
+			"type": "string",
+			"initialValue": "Item_Disappear",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -1121,9 +1157,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TWEEN_3dBox_Appear",
+			"name": "TWEEN_Item_Appear",
 			"type": "string",
-			"initialValue": "3dBox_Appear",
+			"initialValue": "Item_Appear",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -1141,43 +1177,13 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TWEEN_Blurb_ZElevation",
-			"type": "string",
-			"initialValue": "Blurb_ZElevation",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 166923722392594
-		},
-		{
-			"eventType": "variable",
 			"name": "TWEEN_Symbol_Opacity",
 			"type": "string",
 			"initialValue": "Symbol_Opacity",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 527541449130250
-		},
-		{
-			"eventType": "variable",
-			"name": "TWEEN_3dCannon_Color",
-			"type": "string",
-			"initialValue": "3dCannon_Color",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 351751425261196
-		},
-		{
-			"eventType": "variable",
-			"name": "TWEEN_3dCannon_ZElevation_Spawn",
-			"type": "string",
-			"initialValue": "3dCannon_ZElevation_Spawn",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 484456712036399
+			"sid": 899546115659467
 		},
 		{
 			"eventType": "comment",

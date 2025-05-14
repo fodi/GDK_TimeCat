@@ -404,10 +404,6 @@
 					"conditions": [],
 					"actions": [
 						{
-							"type": "comment",
-							"text": "todo fade in"
-						},
-						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
 							"sid": 556208761587287,

@@ -55,10 +55,6 @@
 				{
 					"type": "comment",
 					"text": "todo make sure cannons don't spawn on top of / too near each other"
-				},
-				{
-					"type": "comment",
-					"text": "todo fix spawn position flash crap"
 				}
 			],
 			"sid": 435920396597194,
@@ -885,7 +881,7 @@
 					"actions": [
 						{
 							"type": "comment",
-							"text": "todo"
+							"text": "todo visuals"
 						},
 						{
 							"id": "destroy",

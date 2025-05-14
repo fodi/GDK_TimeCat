@@ -186,10 +186,6 @@
 							}
 						},
 						{
-							"type": "comment",
-							"text": "todo mn"
-						},
-						{
 							"id": "set-angle",
 							"objectClass": "fTile",
 							"sid": 940141557096974,

@@ -4,7 +4,7 @@
 		{
 			"aceType": "action",
 			"aceName": "spawn",
-			"objectClass": "Box",
+			"objectClass": "Item",
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
@@ -41,7 +41,7 @@
 					"objectClass": "System",
 					"sid": 128324909259821,
 					"parameters": {
-						"object-to-create": "Box",
+						"object-to-create": "Item",
 						"layer": "LAYER_Shadows",
 						"x": "x",
 						"y": "y",
@@ -51,7 +51,7 @@
 				},
 				{
 					"id": "set-solid-collision-filter",
-					"objectClass": "Box",
+					"objectClass": "Item",
 					"sid": 701894312110635,
 					"parameters": {
 						"mode": "exclusive",
@@ -60,7 +60,7 @@
 				},
 				{
 					"id": "set-instvar-value",
-					"objectClass": "Box",
+					"objectClass": "Item",
 					"sid": 654741773896637,
 					"parameters": {
 						"instance-variable": "itemType",
@@ -69,7 +69,7 @@
 				},
 				{
 					"id": "set-instvar-value",
-					"objectClass": "Box",
+					"objectClass": "Item",
 					"sid": 218372490768887,
 					"parameters": {
 						"instance-variable": "damage",
@@ -84,17 +84,7 @@
 					"conditions": [
 						{
 							"id": "pick-children",
-							"objectClass": "Box",
-							"sid": 926385918120813,
-							"disabled": true,
-							"parameters": {
-								"child": "3dBox",
-								"which": "own"
-							}
-						},
-						{
-							"id": "pick-children",
-							"objectClass": "Box",
+							"objectClass": "Item",
 							"sid": 324190126596710,
 							"parameters": {
 								"child": "bbItem",
@@ -105,29 +95,11 @@
 					"actions": [
 						{
 							"id": "tween-one-property",
-							"objectClass": "3dBox",
-							"sid": 493912097626071,
-							"disabled": true,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "TWEEN_3dBox_Appear",
-								"property": "offsetZElevation",
-								"end-value": "20",
-								"time": "1",
-								"ease": "easeoutback",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "tween-one-property",
 							"objectClass": "bbItem",
 							"sid": 550665157130665,
 							"behaviorType": "Tween",
 							"parameters": {
-								"tags": "TWEEN_3dBox_Appear",
+								"tags": "TWEEN_Item_Appear",
 								"property": "offsetZElevation",
 								"end-value": "16",
 								"time": "1",
@@ -166,58 +138,8 @@
 							],
 							"actions": [
 								{
-									"id": "set-face-object",
-									"objectClass": "3dBox",
-									"sid": 788703427955117,
-									"disabled": true,
-									"parameters": {
-										"face": "front",
-										"object": "txBoxProjectile"
-									}
-								},
-								{
-									"id": "set-face-object",
-									"objectClass": "3dBox",
-									"sid": 959874504521635,
-									"disabled": true,
-									"parameters": {
-										"face": "left",
-										"object": "txBoxProjectile"
-									}
-								},
-								{
-									"id": "set-face-object",
-									"objectClass": "3dBox",
-									"sid": 459165357385627,
-									"disabled": true,
-									"parameters": {
-										"face": "right",
-										"object": "txBoxProjectile"
-									}
-								},
-								{
-									"id": "set-face-object",
-									"objectClass": "3dBox",
-									"sid": 478065403745948,
-									"disabled": true,
-									"parameters": {
-										"face": "top",
-										"object": "txBoxProjectile"
-									}
-								},
-								{
-									"id": "set-face-object",
-									"objectClass": "3dBox",
-									"sid": 653901185712324,
-									"disabled": true,
-									"parameters": {
-										"face": "bottom",
-										"object": "txBoxProjectile"
-									}
-								},
-								{
 									"id": "set-instvar-value",
-									"objectClass": "Box",
+									"objectClass": "Item",
 									"sid": 958710616874271,
 									"parameters": {
 										"instance-variable": "damage",
@@ -226,227 +148,6 @@
 								}
 							],
 							"sid": 990302720483039
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 405248619164222,
-									"parameters": {
-										"variable": "item",
-										"comparison": 0,
-										"value": "IT_Shield"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-face-object",
-									"objectClass": "3dBox",
-									"sid": 173814505621767,
-									"disabled": true,
-									"parameters": {
-										"face": "front",
-										"object": "txBoxShield"
-									}
-								},
-								{
-									"id": "set-face-object",
-									"objectClass": "3dBox",
-									"sid": 701829882698841,
-									"disabled": true,
-									"parameters": {
-										"face": "left",
-										"object": "txBoxShield"
-									}
-								},
-								{
-									"id": "set-face-object",
-									"objectClass": "3dBox",
-									"sid": 853880174465167,
-									"disabled": true,
-									"parameters": {
-										"face": "right",
-										"object": "txBoxShield"
-									}
-								},
-								{
-									"id": "set-face-object",
-									"objectClass": "3dBox",
-									"sid": 915502577167587,
-									"disabled": true,
-									"parameters": {
-										"face": "top",
-										"object": "txBoxShield"
-									}
-								},
-								{
-									"id": "set-face-object",
-									"objectClass": "3dBox",
-									"sid": 928541476389699,
-									"disabled": true,
-									"parameters": {
-										"face": "bottom",
-										"object": "txBoxShield"
-									}
-								}
-							],
-							"sid": 113132061169349
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 399024140666700,
-									"parameters": {
-										"variable": "item",
-										"comparison": 0,
-										"value": "IT_Sleep"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-face-object",
-									"objectClass": "3dBox",
-									"sid": 157854385741128,
-									"disabled": true,
-									"parameters": {
-										"face": "front",
-										"object": "txBoxSleep"
-									}
-								},
-								{
-									"id": "set-face-object",
-									"objectClass": "3dBox",
-									"sid": 144457289340072,
-									"disabled": true,
-									"parameters": {
-										"face": "left",
-										"object": "txBoxSleep"
-									}
-								},
-								{
-									"id": "set-face-object",
-									"objectClass": "3dBox",
-									"sid": 257758676191584,
-									"disabled": true,
-									"parameters": {
-										"face": "right",
-										"object": "txBoxSleep"
-									}
-								},
-								{
-									"id": "set-face-object",
-									"objectClass": "3dBox",
-									"sid": 625343278049404,
-									"disabled": true,
-									"parameters": {
-										"face": "top",
-										"object": "txBoxSleep"
-									}
-								},
-								{
-									"id": "set-face-object",
-									"objectClass": "3dBox",
-									"sid": 588567881320191,
-									"disabled": true,
-									"parameters": {
-										"face": "bottom",
-										"object": "txBoxSleep"
-									}
-								}
-							],
-							"sid": 586096495188843
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 908492121115027,
-									"parameters": {
-										"variable": "item",
-										"comparison": 0,
-										"value": "IT_Slow"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-face-object",
-									"objectClass": "3dBox",
-									"sid": 593165015407329,
-									"disabled": true,
-									"parameters": {
-										"face": "front",
-										"object": "txBoxSlow"
-									}
-								},
-								{
-									"id": "set-face-object",
-									"objectClass": "3dBox",
-									"sid": 999237748338552,
-									"disabled": true,
-									"parameters": {
-										"face": "left",
-										"object": "txBoxSlow"
-									}
-								},
-								{
-									"id": "set-face-object",
-									"objectClass": "3dBox",
-									"sid": 872255924114579,
-									"disabled": true,
-									"parameters": {
-										"face": "right",
-										"object": "txBoxSlow"
-									}
-								},
-								{
-									"id": "set-face-object",
-									"objectClass": "3dBox",
-									"sid": 349729106939263,
-									"disabled": true,
-									"parameters": {
-										"face": "top",
-										"object": "txBoxSlow"
-									}
-								},
-								{
-									"id": "set-face-object",
-									"objectClass": "3dBox",
-									"sid": 925162116183537,
-									"disabled": true,
-									"parameters": {
-										"face": "bottom",
-										"object": "txBoxSlow"
-									}
-								}
-							],
-							"sid": 310495331615993
-						},
-						{
-							"bookmark": true,
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "3dBox",
-									"sid": 630905200509946,
-									"disabled": true,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 615957274240791
 						}
 					]
 				}
@@ -455,7 +156,7 @@
 		{
 			"aceType": "action",
 			"aceName": "onPlayerHit",
-			"objectClass": "Box",
+			"objectClass": "Item",
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
@@ -509,7 +210,7 @@
 							"parameters": {
 								"instance-variable": "carryingBoxUID",
 								"comparison": 0,
-								"value": "Box.UID"
+								"value": "Item.UID"
 							}
 						}
 					],
@@ -535,7 +236,7 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Box",
+							"objectClass": "Item",
 							"sid": 946658408982949,
 							"parameters": {
 								"instance-variable": "targetPlayerUID",
@@ -555,7 +256,7 @@
 					"actions": [
 						{
 							"id": "set-instvar-value",
-							"objectClass": "Box",
+							"objectClass": "Item",
 							"sid": 663356910786334,
 							"parameters": {
 								"instance-variable": "targetPlayerUID",
@@ -564,7 +265,7 @@
 						},
 						{
 							"customAction": "remove",
-							"objectClass": "Box",
+							"objectClass": "Item",
 							"sid": 478619969629749,
 							"parameters": [
 								"YES"
@@ -575,7 +276,7 @@
 							"objectClass": "Player",
 							"sid": 437832637241497,
 							"parameters": [
-								"Box.itemType"
+								"Item.itemType"
 							]
 						}
 					],
@@ -586,7 +287,7 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Box",
+									"objectClass": "Item",
 									"sid": 952134115743955,
 									"parameters": {
 										"instance-variable": "damage",
@@ -601,69 +302,13 @@
 									"objectClass": "Player",
 									"sid": 170077391461244,
 									"parameters": [
-										"-Box.damage",
+										"-Item.damage",
 										"YES",
 										"YES"
 									]
 								}
 							],
 							"sid": 698189212148797
-						},
-						{
-							"eventType": "comment",
-							"text": "todo? item: steal life -- also from nearby players while carrying a box?"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Box",
-									"sid": 870861274643767,
-									"parameters": {
-										"instance-variable": "itemType",
-										"comparison": 0,
-										"value": "IT_Projectile"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 453543338650154,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "todo MNs"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Box",
-									"sid": 922382827977163,
-									"parameters": {
-										"instance-variable": "itemType",
-										"comparison": 0,
-										"value": "IT_Shield"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "start-timer",
-									"objectClass": "Player",
-									"sid": 799840693297663,
-									"behaviorType": "Timer",
-									"parameters": {
-										"duration": "10",
-										"type": "once",
-										"tag": "TIMER_Player_Shield"
-									}
-								}
-							],
-							"sid": 207081659680602,
-							"disabled": true
 						}
 					]
 				}
@@ -672,7 +317,7 @@
 		{
 			"aceType": "action",
 			"aceName": "farCheck",
-			"objectClass": "Box",
+			"objectClass": "Item",
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
@@ -697,8 +342,8 @@
 							"objectClass": "System",
 							"sid": 721208734995620,
 							"parameters": {
-								"object": "Box",
-								"expression": "distance(midX, midY, Box.X, Box.Y)",
+								"object": "Item",
+								"expression": "distance(midX, midY, Item.X, Item.Y)",
 								"comparison": 4,
 								"value": "distanceFar"
 							}
@@ -707,7 +352,7 @@
 					"actions": [
 						{
 							"customAction": "remove",
-							"objectClass": "Box",
+							"objectClass": "Item",
 							"sid": 158427096607880,
 							"parameters": [
 								"NO"
@@ -721,7 +366,7 @@
 		{
 			"aceType": "action",
 			"aceName": "remove",
-			"objectClass": "Box",
+			"objectClass": "Item",
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
@@ -737,22 +382,11 @@
 				}
 			],
 			"eventType": "custom-ace-block",
-			"conditions": [
-				{
-					"id": "pick-children",
-					"objectClass": "Box",
-					"sid": 910697314629131,
-					"disabled": true,
-					"parameters": {
-						"child": "3dBox",
-						"which": "own"
-					}
-				}
-			],
+			"conditions": [],
 			"actions": [
 				{
 					"id": "stop-timer",
-					"objectClass": "Box",
+					"objectClass": "Item",
 					"sid": 638770165200731,
 					"behaviorType": "Timer",
 					"parameters": {
@@ -761,7 +395,7 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "Box",
+					"objectClass": "Item",
 					"sid": 145213199465830,
 					"parameters": {
 						"visibility": "invisible"
@@ -769,80 +403,12 @@
 				},
 				{
 					"type": "comment",
-					"text": "todo"
+					"text": "todo tween disappearance"
 				},
 				{
 					"id": "destroy",
-					"objectClass": "Box",
+					"objectClass": "Item",
 					"sid": 526365654620188
-				},
-				{
-					"id": "set-face-image",
-					"objectClass": "3dBox",
-					"sid": 919437639675124,
-					"disabled": true,
-					"parameters": {
-						"face": "front",
-						"image": "front"
-					}
-				},
-				{
-					"id": "set-face-image",
-					"objectClass": "3dBox",
-					"sid": 822810127192937,
-					"disabled": true,
-					"parameters": {
-						"face": "left",
-						"image": "left"
-					}
-				},
-				{
-					"id": "set-face-image",
-					"objectClass": "3dBox",
-					"sid": 675466362348237,
-					"disabled": true,
-					"parameters": {
-						"face": "right",
-						"image": "right"
-					}
-				},
-				{
-					"id": "set-face-image",
-					"objectClass": "3dBox",
-					"sid": 173593070660205,
-					"disabled": true,
-					"parameters": {
-						"face": "top",
-						"image": "top"
-					}
-				},
-				{
-					"id": "set-face-image",
-					"objectClass": "3dBox",
-					"sid": 797450096059839,
-					"disabled": true,
-					"parameters": {
-						"face": "bottom",
-						"image": "bottom"
-					}
-				},
-				{
-					"id": "tween-one-property",
-					"objectClass": "3dBox",
-					"sid": 458939172527559,
-					"disabled": true,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "TWEEN_3dBox_Disappear",
-						"property": "offsetOpacity",
-						"end-value": "0",
-						"time": "0.5",
-						"ease": "easeoutcubic",
-						"destroy-on-complete": "yes",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
 				}
 			],
 			"sid": 749560455039560,
@@ -864,7 +430,7 @@
 					"actions": [
 						{
 							"id": "set-enabled",
-							"objectClass": "Box",
+							"objectClass": "Item",
 							"sid": 911293383594171,
 							"behaviorType": "Bullet",
 							"parameters": {

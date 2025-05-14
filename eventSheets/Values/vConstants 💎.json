@@ -43,7 +43,7 @@
 			"eventType": "variable",
 			"name": "C_Cannon_TargetRotationLerpFactor",
 			"type": "number",
-			"initialValue": "0.1",
+			"initialValue": "0.05",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,

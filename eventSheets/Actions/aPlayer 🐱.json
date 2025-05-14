@@ -751,7 +751,7 @@
 											"objectClass": "Player",
 											"sid": 723255104943244,
 											"parameters": {
-												"child": "Box",
+												"child": "Item",
 												"which": "own"
 											}
 										}
@@ -759,7 +759,7 @@
 									"actions": [
 										{
 											"id": "set-position",
-											"objectClass": "Box",
+											"objectClass": "Item",
 											"sid": 627260830318683,
 											"parameters": {
 												"x": "Player.X + cos(anglelerp(angle(Player.X, Player.Y, Self.X, Self.Y), Player.currentAngle, 0.2)) * Player.R_Box_Distance",
@@ -768,7 +768,7 @@
 										},
 										{
 											"id": "set-angle",
-											"objectClass": "Box",
+											"objectClass": "Item",
 											"sid": 525203394453657,
 											"parameters": {
 												"angle": "anglelerp(Self.Angle, Player.currentAngle, 0.2)"
@@ -778,10 +778,6 @@
 									"sid": 257552961918341
 								}
 							]
-						},
-						{
-							"eventType": "comment",
-							"text": "todo_optimize updates"
 						},
 						{
 							"eventType": "block",
@@ -977,267 +973,290 @@
 							"children": [
 								{
 									"eventType": "comment",
-									"text": "If player is not aiming, reveal current tile if possible"
+									"text": "If player is not sleeping..."
 								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-instance-variable",
+											"id": "is-timer-running",
 											"objectClass": "Player",
-											"sid": 976635434049825,
+											"sid": 705658692930699,
+											"behaviorType": "Timer",
 											"parameters": {
-												"instance-variable": "IN_Aim",
-												"comparison": 0,
-												"value": "NO"
-											}
-										},
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Player",
-											"sid": 453971373624201,
-											"parameters": {
-												"instance-variable": "carryingBoxUID",
-												"comparison": 0,
-												"value": "NOTHING"
-											}
+												"tag": "TIMER_Player_Sleep"
+											},
+											"isInverted": true
 										}
 									],
 									"actions": [],
-									"sid": 111808895593936,
+									"sid": 871608826524591,
 									"children": [
 										{
 											"eventType": "comment",
-											"text": "If player is not waiting for tiles closing"
+											"text": "If player is not aiming, reveal current tile if possible"
 										},
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "is-timer-running",
+													"id": "compare-instance-variable",
 													"objectClass": "Player",
-													"sid": 190777344976539,
-													"behaviorType": "Timer",
+													"sid": 735967356260742,
 													"parameters": {
-														"tag": "TIMER_Tile_Close"
-													},
-													"isInverted": true
+														"instance-variable": "IN_Aim",
+														"comparison": 0,
+														"value": "NO"
+													}
 												},
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "Player",
-													"sid": 458647327061236,
+													"sid": 631850087744372,
 													"parameters": {
-														"instance-variable": "health",
-														"comparison": 4,
-														"value": "0"
+														"instance-variable": "carryingBoxUID",
+														"comparison": 0,
+														"value": "NOTHING"
 													}
 												}
 											],
 											"actions": [],
-											"sid": 362773114682863,
+											"sid": 436067713460666,
 											"children": [
 												{
 													"eventType": "comment",
-													"text": "Open new tile"
+													"text": "If player is not waiting for tiles closing"
 												},
 												{
 													"eventType": "block",
 													"conditions": [
 														{
-															"id": "is-animation-playing",
-															"objectClass": "Tile",
-															"sid": 109492819566986,
+															"id": "is-timer-running",
+															"objectClass": "Player",
+															"sid": 563853156393935,
+															"behaviorType": "Timer",
 															"parameters": {
-																"animation": "ANIM_Closed"
-															}
+																"tag": "TIMER_Tile_Close"
+															},
+															"isInverted": true
 														},
 														{
 															"id": "compare-instance-variable",
-															"objectClass": "Tile",
-															"sid": 817118710528103,
+															"objectClass": "Player",
+															"sid": 214049658022894,
 															"parameters": {
-																"instance-variable": "playerId",
-																"comparison": 0,
-																"value": "NOTHING"
-															}
-														},
-														{
-															"id": "pick-overlapping-point",
-															"objectClass": "System",
-															"sid": 791779806987572,
-															"parameters": {
-																"object": "Tile",
-																"x": "Player.X",
-																"y": "Player.Y"
-															}
-														},
-														{
-															"id": "pick-nearestfurthest",
-															"objectClass": "Tile",
-															"sid": 406213068455479,
-															"parameters": {
-																"which": "nearest",
-																"x": "Player.X",
-																"y": "Player.Y"
+																"instance-variable": "health",
+																"comparison": 4,
+																"value": "0"
 															}
 														}
 													],
 													"actions": [],
-													"sid": 790732193684268,
+													"sid": 538446156630335,
 													"children": [
 														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "compare-instance-variable",
-																	"objectClass": "Player",
-																	"sid": 312446735581557,
-																	"parameters": {
-																		"instance-variable": "tileUID1",
-																		"comparison": 0,
-																		"value": "NOTHING"
-																	}
-																}
-															],
-															"actions": [
-																{
-																	"id": "set-instvar-value",
-																	"objectClass": "Player",
-																	"sid": 929681673322567,
-																	"parameters": {
-																		"instance-variable": "tileUID1",
-																		"value": "Tile.UID"
-																	}
-																},
-																{
-																	"customAction": "open",
-																	"objectClass": "Tile",
-																	"customActionObjectClass": "fTile",
-																	"sid": 609629980659360,
-																	"parameters": [
-																		"Player.playerId"
-																	]
-																}
-															],
-															"sid": 448472723217719
+															"eventType": "comment",
+															"text": "Open new tile"
 														},
 														{
 															"eventType": "block",
 															"conditions": [
 																{
-																	"id": "else",
+																	"id": "is-animation-playing",
+																	"objectClass": "Tile",
+																	"sid": 303165590843667,
+																	"parameters": {
+																		"animation": "ANIM_Closed"
+																	}
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Tile",
+																	"sid": 456217366862965,
+																	"parameters": {
+																		"instance-variable": "playerId",
+																		"comparison": 0,
+																		"value": "NOTHING"
+																	}
+																},
+																{
+																	"id": "pick-overlapping-point",
 																	"objectClass": "System",
-																	"sid": 621827789704234
+																	"sid": 326060363881369,
+																	"parameters": {
+																		"object": "Tile",
+																		"x": "Player.X",
+																		"y": "Player.Y"
+																	}
+																},
+																{
+																	"id": "pick-nearestfurthest",
+																	"objectClass": "Tile",
+																	"sid": 601868817785289,
+																	"parameters": {
+																		"which": "nearest",
+																		"x": "Player.X",
+																		"y": "Player.Y"
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 867464333336554,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "compare-instance-variable",
+																			"objectClass": "Player",
+																			"sid": 842163916708639,
+																			"parameters": {
+																				"instance-variable": "tileUID1",
+																				"comparison": 0,
+																				"value": "NOTHING"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-instvar-value",
+																			"objectClass": "Player",
+																			"sid": 450420988002029,
+																			"parameters": {
+																				"instance-variable": "tileUID1",
+																				"value": "Tile.UID"
+																			}
+																		},
+																		{
+																			"customAction": "open",
+																			"objectClass": "Tile",
+																			"customActionObjectClass": "fTile",
+																			"sid": 864141373142790,
+																			"parameters": [
+																				"Player.playerId"
+																			]
+																		}
+																	],
+																	"sid": 867562293618011
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "else",
+																			"objectClass": "System",
+																			"sid": 919578309105265
+																		},
+																		{
+																			"id": "compare-instance-variable",
+																			"objectClass": "Player",
+																			"sid": 562635961554428,
+																			"parameters": {
+																				"instance-variable": "tileUID2",
+																				"comparison": 0,
+																				"value": "NOTHING"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-instvar-value",
+																			"objectClass": "Player",
+																			"sid": 722159273979407,
+																			"parameters": {
+																				"instance-variable": "tileUID2",
+																				"value": "Tile.UID"
+																			}
+																		},
+																		{
+																			"customAction": "open",
+																			"objectClass": "Tile",
+																			"customActionObjectClass": "fTile",
+																			"sid": 212289015211770,
+																			"parameters": [
+																				"Player.playerId"
+																			]
+																		}
+																	],
+																	"sid": 785367350873188
+																}
+															]
+														},
+														{
+															"eventType": "comment",
+															"text": "If player has two tiles open, check them for matches"
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Player",
+																	"sid": 140768531575764,
+																	"parameters": {
+																		"instance-variable": "tileUID1",
+																		"comparison": 1,
+																		"value": "NOTHING"
+																	}
 																},
 																{
 																	"id": "compare-instance-variable",
 																	"objectClass": "Player",
-																	"sid": 535357509194715,
+																	"sid": 262682020127078,
 																	"parameters": {
 																		"instance-variable": "tileUID2",
-																		"comparison": 0,
+																		"comparison": 1,
 																		"value": "NOTHING"
 																	}
 																}
 															],
 															"actions": [
 																{
-																	"id": "set-instvar-value",
+																	"customAction": "checkTiles",
 																	"objectClass": "Player",
-																	"sid": 149909310673921,
-																	"parameters": {
-																		"instance-variable": "tileUID2",
-																		"value": "Tile.UID"
-																	}
-																},
-																{
-																	"customAction": "open",
-																	"objectClass": "Tile",
-																	"customActionObjectClass": "fTile",
-																	"sid": 836897889210427,
-																	"parameters": [
-																		"Player.playerId"
-																	]
+																	"sid": 881010015914754
 																}
 															],
-															"sid": 144125130128244
+															"sid": 475121668932377
 														}
 													]
-												},
-												{
-													"eventType": "comment",
-													"text": "If player has two tiles open, check them for matches"
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-instance-variable",
-															"objectClass": "Player",
-															"sid": 377724408039667,
-															"parameters": {
-																"instance-variable": "tileUID1",
-																"comparison": 1,
-																"value": "NOTHING"
-															}
-														},
-														{
-															"id": "compare-instance-variable",
-															"objectClass": "Player",
-															"sid": 879084913341614,
-															"parameters": {
-																"instance-variable": "tileUID2",
-																"comparison": 1,
-																"value": "NOTHING"
-															}
-														}
-													],
-													"actions": [
-														{
-															"customAction": "checkTiles",
-															"objectClass": "Player",
-															"sid": 867874135325465
-														}
-													],
-													"sid": 639595947758871
 												}
-											]
-										}
-									],
-									"isOrBlock": true
-								},
-								{
-									"eventType": "comment",
-									"text": "If player is aiming, throw box"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 914299786937799
+											],
+											"isOrBlock": true
 										},
 										{
-											"id": "compare-instance-variable",
-											"objectClass": "Player",
-											"sid": 669033149766014,
-											"parameters": {
-												"instance-variable": "carryingBoxUID",
-												"comparison": 1,
-												"value": "NOTHING"
-											}
-										}
-									],
-									"actions": [
+											"eventType": "comment",
+											"text": "If player is aiming, throw box"
+										},
 										{
-											"customAction": "throwBox",
-											"objectClass": "Player",
-											"sid": 618832789928983
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 848115284840336
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Player",
+													"sid": 696917673239153,
+													"parameters": {
+														"instance-variable": "carryingBoxUID",
+														"comparison": 1,
+														"value": "NOTHING"
+													}
+												}
+											],
+											"actions": [
+												{
+													"customAction": "throwBox",
+													"objectClass": "Player",
+													"sid": 988977524724447
+												}
+											],
+											"sid": 543953587549646
 										}
-									],
-									"sid": 176047121358229
+									]
 								}
 							]
 						},
@@ -1316,7 +1335,7 @@
 		},
 		{
 			"aceType": "action",
-			"aceName": "carryBox",
+			"aceName": "pickupItem",
 			"objectClass": "Player",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -1330,8 +1349,53 @@
 			"sid": 395760252284608,
 			"children": [
 				{
+					"eventType": "comment",
+					"text": "If item is a shield, activate it immediately"
+				},
+				{
 					"eventType": "block",
-					"conditions": [],
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Item",
+							"sid": 548848027523916,
+							"parameters": {
+								"instance-variable": "itemType",
+								"comparison": 0,
+								"value": "IT_Shield"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Item",
+							"sid": 351082132189473
+						},
+						{
+							"customAction": "startEffect",
+							"objectClass": "Player",
+							"sid": 175028841820969,
+							"parameters": [
+								"IT_Shield"
+							]
+						}
+					],
+					"sid": 711026115490891
+				},
+				{
+					"eventType": "comment",
+					"text": "Otherwise, carry item"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 857648852216715
+						}
+					],
 					"actions": [
 						{
 							"id": "set-instvar-value",
@@ -1339,7 +1403,7 @@
 							"sid": 425895248063561,
 							"parameters": {
 								"instance-variable": "carryingBoxUID",
-								"value": "Box.UID"
+								"value": "Item.UID"
 							}
 						},
 						{
@@ -1347,7 +1411,7 @@
 							"objectClass": "Player",
 							"sid": 415504876138126,
 							"parameters": {
-								"child": "Box",
+								"child": "Item",
 								"transform-x": false,
 								"transform-y": false,
 								"transform-w": false,
@@ -1361,7 +1425,7 @@
 						},
 						{
 							"id": "set-instvar-value",
-							"objectClass": "Box",
+							"objectClass": "Item",
 							"sid": 395666864956450,
 							"parameters": {
 								"instance-variable": "lastCarrierPlayerUID",
@@ -1405,7 +1469,7 @@
 							"objectClass": "Player",
 							"sid": 206228324575013,
 							"parameters": {
-								"child": "Box",
+								"child": "Item",
 								"which": "own"
 							}
 						}
@@ -1427,7 +1491,7 @@
 							"objectClass": "Player",
 							"sid": 127068041341763,
 							"parameters": {
-								"child": "Box"
+								"child": "Item"
 							}
 						},
 						{
@@ -1441,7 +1505,7 @@
 						},
 						{
 							"id": "set-enabled",
-							"objectClass": "Box",
+							"objectClass": "Item",
 							"sid": 168917985229047,
 							"behaviorType": "Bullet",
 							"parameters": {
@@ -1450,7 +1514,7 @@
 						},
 						{
 							"id": "set-speed",
-							"objectClass": "Box",
+							"objectClass": "Item",
 							"sid": 323776512434456,
 							"behaviorType": "Bullet",
 							"parameters": {
@@ -1459,7 +1523,7 @@
 						},
 						{
 							"id": "start-timer",
-							"objectClass": "Box",
+							"objectClass": "Item",
 							"sid": 594154447449644,
 							"behaviorType": "Timer",
 							"parameters": {
@@ -1496,7 +1560,7 @@
 							"objectClass": "Player",
 							"sid": 918615409885672,
 							"parameters": {
-								"child": "Box",
+								"child": "Item",
 								"which": "own"
 							}
 						}
@@ -1504,12 +1568,12 @@
 					"actions": [
 						{
 							"id": "remove-from-parent",
-							"objectClass": "Box",
+							"objectClass": "Item",
 							"sid": 467752770123523
 						},
 						{
 							"id": "set-instvar-value",
-							"objectClass": "Box",
+							"objectClass": "Item",
 							"sid": 962843406088085,
 							"parameters": {
 								"instance-variable": "lastCarrierPlayerUID",
@@ -1518,7 +1582,7 @@
 						},
 						{
 							"id": "set-instvar-value",
-							"objectClass": "Box",
+							"objectClass": "Item",
 							"sid": 984867020818451,
 							"parameters": {
 								"instance-variable": "targetPlayerUID",
@@ -1729,7 +1793,7 @@
 											"actions": [
 												{
 													"customAction": "spawn",
-													"objectClass": "Box",
+													"objectClass": "Item",
 													"sid": 390936716904970,
 													"parameters": [
 														"fTile.X",
@@ -2313,7 +2377,7 @@
 									"actions": [
 										{
 											"type": "comment",
-											"text": "todo"
+											"text": "todo end screen tween / better visual"
 										},
 										{
 											"id": "start-timer",
@@ -2773,6 +2837,47 @@
 							"sid": 677930493949892
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 671689814878295,
+							"parameters": {
+								"variable": "itemType",
+								"comparison": 0,
+								"value": "IT_Shield"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "todo proper visuals"
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Player",
+							"sid": 184913873382235,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "Functions.Config_getNumber(PARAM_Item_Shield_Time)",
+								"type": "once",
+								"tag": "TIMER_Player_Shield"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "bbPlayer",
+							"sid": 270452603513628,
+							"parameters": {
+								"opacity": "40"
+							}
+						}
+					],
+					"sid": 782411368643358
 				}
 			]
 		},
@@ -2851,6 +2956,55 @@
 								}
 							],
 							"sid": 820694317166512
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 332495019670651,
+							"parameters": {
+								"variable": "itemType",
+								"comparison": 0,
+								"value": "IT_Shield"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "todo proper visuals"
+						}
+					],
+					"sid": 891978949658460,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "Player",
+									"sid": 176390794245374,
+									"parameters": {
+										"child": "bbPlayer",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "bbPlayer",
+									"sid": 529543506893888,
+									"parameters": {
+										"opacity": "100"
+									}
+								}
+							],
+							"sid": 425525461991079
 						}
 					]
 				}

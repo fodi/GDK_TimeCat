@@ -222,7 +222,7 @@
 			"Wall",
 			"Camera",
 			"AimHelper",
-			"Box",
+			"Item",
 			"CameraTargetSmooth",
 			"Particles",
 			"Selection",
@@ -273,10 +273,6 @@
 			},
 			{
 				"items": [
-					"txBoxSleep",
-					"txBoxSlow",
-					"txBoxShield",
-					"txBoxProjectile",
 					"txCannonIdle",
 					"txCannonAttacking"
 				],
@@ -295,7 +291,6 @@
 			},
 			{
 				"items": [
-					"3dBox",
 					"3dCannon"
 				],
 				"subfolders": [],
@@ -305,15 +300,6 @@
 	},
 	"autosaveData": null,
 	"containers": [
-		{
-			"members": [
-				"txBoxProjectile",
-				"txBoxShield",
-				"txBoxSleep",
-				"txBoxSlow",
-				"UI_Icons"
-			]
-		},
 		{
 			"members": [
 				"3dCannon",
@@ -934,7 +920,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "39e",
+		"version": "40c",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

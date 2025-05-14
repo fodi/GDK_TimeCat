@@ -308,7 +308,7 @@
 			"conditions": [
 				{
 					"id": "on-timer",
-					"objectClass": "Box",
+					"objectClass": "Item",
 					"sid": 723563679801714,
 					"behaviorType": "Timer",
 					"parameters": {
@@ -320,14 +320,14 @@
 					"objectClass": "System",
 					"sid": 665724771262034,
 					"parameters": {
-						"object": "Box"
+						"object": "Item"
 					}
 				}
 			],
 			"actions": [
 				{
 					"customAction": "farCheck",
-					"objectClass": "Box",
+					"objectClass": "Item",
 					"sid": 474970245810033
 				}
 			],
