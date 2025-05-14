@@ -15,6 +15,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Audio",
 			"name": "Audio",
 			"author": "Scirra",
@@ -205,7 +212,8 @@
 			{
 				"items": [
 					"ConfigURLParams",
-					"ConfigDefault"
+					"ConfigDefault",
+					"arrTilePositions"
 				],
 				"subfolders": [],
 				"name": "Data"
@@ -867,7 +875,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "29",
+		"version": "31",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

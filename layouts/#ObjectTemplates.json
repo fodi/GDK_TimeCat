@@ -188,7 +188,7 @@
 				{
 					"type": "Symbol",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Slow",
 						"initial-frame": 0,
 						"enable-collisions": false,

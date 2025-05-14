@@ -24,6 +24,13 @@
 					"initialValue": "0",
 					"comment": "",
 					"sid": 689592803654095
+				},
+				{
+					"name": "gapPercent",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "0-100",
+					"sid": 720271969617863
 				}
 			],
 			"eventType": "custom-ace-block",
@@ -31,6 +38,27 @@
 			"actions": [],
 			"sid": 189491113149965,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-size",
+							"objectClass": "arrTilePositions",
+							"sid": 468372524026815,
+							"parameters": {
+								"width": "0",
+								"height": "1",
+								"depth": "1"
+							}
+						}
+					],
+					"sid": 965513477199832
+				},
+				{
+					"eventType": "comment",
+					"text": "Store all tile positions in arrTilePositions"
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -57,14 +85,90 @@
 					],
 					"actions": [
 						{
+							"id": "push",
+							"objectClass": "arrTilePositions",
+							"sid": 204177248564328,
+							"parameters": {
+								"where": "back",
+								"value": "(loopindex(W_X) * C_Grid_Size + C_Grid_Size * 0.5) & \",\" & (loopindex(W_Y) * C_Grid_Size+ C_Grid_Size * 0.5)",
+								"axis": "x"
+							}
+						}
+					],
+					"sid": 969001197324120
+				},
+				{
+					"eventType": "comment",
+					"text": "Shuffle arrTilePositions array, removes some tiles if extra gaps are requested, and make sure tile count is odd (round down)"
+				},
+				{
+					"bookmark": true,
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "shuffle",
+							"objectClass": "arrTilePositions",
+							"sid": 722133496000260,
+							"parameters": {
+								"axis": "x"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 482823939604083,
+							"disabled": true,
+							"parameters": {
+								"type": "log",
+								"message": "\"Tiles before gaps: \" & arrTilePositions.Width"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "arrTilePositions",
+							"sid": 534723735469706,
+							"parameters": {
+								"width": "int(columns * rows * (100 - gapPercent) / 100 * 0.5) * 2",
+								"height": "1",
+								"depth": "1"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 680034763008842,
+							"disabled": true,
+							"parameters": {
+								"type": "log",
+								"message": "\"Tiles after gaps: \" & arrTilePositions.Width"
+							}
+						}
+					],
+					"sid": 574991855184994
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-element",
+							"objectClass": "arrTilePositions",
+							"sid": 811816085094005,
+							"parameters": {
+								"axes": "x"
+							}
+						}
+					],
+					"actions": [
+						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 155035407503568,
+							"sid": 233575664844063,
 							"parameters": {
 								"object-to-create": "fTile",
 								"layer": "LAYER_Main",
-								"x": "loopindex(W_X) * C_Grid_Size + C_Grid_Size * 0.5",
-								"y": "loopindex(W_Y) * C_Grid_Size+ C_Grid_Size * 0.5",
+								"x": "float(tokenat(arrTilePositions.CurValue, 0, \",\"))",
+								"y": "float(tokenat(arrTilePositions.CurValue, 1, \",\"))",
 								"create-hierarchy": true,
 								"template-name": "\"\""
 							}
@@ -76,7 +180,7 @@
 						{
 							"id": "set-position",
 							"objectClass": "fTile",
-							"sid": 266172736518675,
+							"sid": 406551297407535,
 							"parameters": {
 								"x": "Self.X + (random(0, (C_Grid_Size - C_Tile_Size - C_Grid_Padding_Min) * 0.5) * choose(-1, 1))",
 								"y": "Self.Y + (random(0, (C_Grid_Size - C_Tile_Size - C_Grid_Padding_Min) * 0.5) * choose(-1, 1))"
@@ -89,7 +193,7 @@
 						{
 							"id": "set-angle",
 							"objectClass": "fTile",
-							"sid": 941923389067541,
+							"sid": 940141557096974,
 							"parameters": {
 								"angle": "random(-C_Tile_Angle_Random, C_Tile_Angle_Random)"
 							}
@@ -97,7 +201,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "fTile",
-							"sid": 859439327691355,
+							"sid": 302937861414868,
 							"parameters": {
 								"instance-variable": "randomId",
 								"value": "random(0, 1)"
@@ -106,7 +210,7 @@
 						{
 							"id": "set-size",
 							"objectClass": "fTile",
-							"sid": 442076747654877,
+							"sid": 145875652396276,
 							"parameters": {
 								"width": "C_Tile_Size",
 								"height": "C_Tile_Size"
@@ -115,14 +219,14 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "fTile",
-							"sid": 899739641213334,
+							"sid": 544264342409808,
 							"parameters": {
 								"instance-variable": "pairingState",
 								"value": "PS_Unpaired"
 							}
 						}
 					],
-					"sid": 969001197324120
+					"sid": 184099180449526
 				}
 			]
 		},
@@ -150,16 +254,6 @@
 					"isStatic": false,
 					"isConstant": false,
 					"sid": 705522410314024
-				},
-				{
-					"eventType": "variable",
-					"name": "pairCount",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 562085562719195
 				},
 				{
 					"eventType": "block",
@@ -222,10 +316,10 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 411427369365110,
+									"sid": 479717456990657,
 									"parameters": {
 										"variable": "nextSymbol",
-										"value": "trim(tokenat(C_CSV_Symbols, pairCount % tokencount(C_CSV_Symbols, \",\") , \",\"))"
+										"value": "trim(tokenat(C_CSV_Symbols, pairsTotal % tokencount(C_CSV_Symbols, \",\") , \",\"))"
 									}
 								}
 							],
@@ -289,9 +383,9 @@
 										{
 											"id": "add-to-eventvar",
 											"objectClass": "System",
-											"sid": 287285305052273,
+											"sid": 997781393983724,
 											"parameters": {
-												"variable": "pairCount",
+												"variable": "pairsTotal",
 												"value": "1"
 											}
 										}
@@ -352,9 +446,9 @@
 										{
 											"id": "add-to-eventvar",
 											"objectClass": "System",
-											"sid": 703012716853252,
+											"sid": 323906622088419,
 											"parameters": {
-												"variable": "pairCount",
+												"variable": "pairsTotal",
 												"value": "1"
 											}
 										}
@@ -362,75 +456,6 @@
 									"sid": 453840347667793
 								}
 							]
-						}
-					]
-				},
-				{
-					"eventType": "comment",
-					"text": "Remove last odd tile"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Tile",
-							"sid": 288003912561881,
-							"parameters": {
-								"instance-variable": "pairingState",
-								"comparison": 0,
-								"value": "PS_Pairing"
-							}
-						}
-					],
-					"actions": [
-						{
-							"customAction": "remove",
-							"objectClass": "Tile",
-							"customActionObjectClass": "fTile",
-							"sid": 712111598474243
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "Tile",
-							"sid": 330350777886557,
-							"parameters": {
-								"frame-number": "Self.AnimationFrameCount - 1"
-							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 964230896960288,
-							"parameters": {
-								"type": "log",
-								"message": "\"Removing uneven tile #\" &Tile.UID"
-							}
-						}
-					],
-					"sid": 678843425255413,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-children",
-									"objectClass": "Tile",
-									"sid": 331559827069456,
-									"parameters": {
-										"child": "Symbol",
-										"which": "own"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "Symbol",
-									"sid": 612331511419696
-								}
-							],
-							"sid": 849495681621114
 						}
 					]
 				}

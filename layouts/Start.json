@@ -57,6 +57,18 @@
 			"sid": 974139589590134,
 			"tags": "",
 			"instanceVariables": {}
+		},
+		{
+			"type": "arrTilePositions",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 42,
+			"sid": 931170727665596,
+			"tags": "",
+			"instanceVariables": {}
 		}
 	],
 	"effectTypes": [],

@@ -361,7 +361,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "PARAM_Tile_GapCount",
+			"name": "PARAM_Tile_GapPercent",
 			"type": "string",
 			"initialValue": "gap_percent",
 			"comment": "",

@@ -141,10 +141,11 @@
 							"customAction": "spawn",
 							"objectClass": "Tile",
 							"customActionObjectClass": "fTile",
-							"sid": 175271121281402,
+							"sid": 429193771035228,
 							"parameters": [
 								"R_Level_Columns",
-								"R_Level_Rows"
+								"R_Level_Rows",
+								"int(Functions.Config_getNumber(PARAM_Tile_GapPercent))"
 							]
 						},
 						{
@@ -264,10 +265,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 349867396878748,
+							"sid": 173227627932922,
 							"parameters": {
 								"variable": "endText",
-								"value": "\"Time elapsed: \" & Functions.formatTime(timeElapsed) & newline & newline"
+								"value": "\"Time elapsed: \" & Functions.formatTime(timeElapsed) & newline & newline & \"Pairs found\" & newline"
 							}
 						}
 					],

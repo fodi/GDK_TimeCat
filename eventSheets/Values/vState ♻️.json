@@ -111,6 +111,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "pairsTotal",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 944226071766136
+		},
+		{
+			"eventType": "variable",
 			"name": "pairsFound",
 			"type": "number",
 			"initialValue": "0",

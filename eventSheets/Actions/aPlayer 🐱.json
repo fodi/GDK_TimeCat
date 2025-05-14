@@ -1592,11 +1592,11 @@
 										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 483469909068095,
+											"sid": 881356715882633,
 											"parameters": {
 												"variable": "pairsFound",
 												"comparison": 5,
-												"value": "int(R_Level_Rows * R_Level_Columns * 0.5)"
+												"value": "pairsTotal"
 											}
 										}
 									],
