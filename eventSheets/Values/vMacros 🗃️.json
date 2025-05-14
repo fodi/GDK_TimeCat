@@ -131,19 +131,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ANIM_Open",
+			"name": "ANIM_FadingOut",
 			"type": "string",
-			"initialValue": "Open",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 277597701410958
-		},
-		{
-			"eventType": "variable",
-			"name": "ANIM_Removed",
-			"type": "string",
-			"initialValue": "Removed",
+			"initialValue": "FadingOut",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -178,6 +168,36 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 205569605942830
+		},
+		{
+			"eventType": "variable",
+			"name": "ANIM_Selection_Appearing",
+			"type": "string",
+			"initialValue": "Appearing",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 587833827850006
+		},
+		{
+			"eventType": "variable",
+			"name": "ANIM_Selection_Disappearing",
+			"type": "string",
+			"initialValue": "Disappearing",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 499227530954365
+		},
+		{
+			"eventType": "variable",
+			"name": "ANIM_Selection_Connecting",
+			"type": "string",
+			"initialValue": "Connecting",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 914897034252219
 		},
 		{
 			"eventType": "comment",

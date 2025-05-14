@@ -3,7 +3,7 @@
 	"events": [
 		{
 			"eventType": "include",
-			"includeSheet": "_eAnimations 🎞️"
+			"includeSheet": "eAnimations 🎞️"
 		},
 		{
 			"eventType": "include",

@@ -59,14 +59,39 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 304057164749419,
+							"sid": 155035407503568,
 							"parameters": {
 								"object-to-create": "fTile",
 								"layer": "LAYER_Main",
-								"x": "loopindex(W_X) * C_Tile_Size + C_Tile_Size * 0.5",
-								"y": "loopindex(W_Y) * C_Tile_Size+ C_Tile_Size * 0.5",
+								"x": "loopindex(W_X) * C_Grid_Size + C_Grid_Size * 0.5",
+								"y": "loopindex(W_Y) * C_Grid_Size+ C_Grid_Size * 0.5",
 								"create-hierarchy": true,
 								"template-name": "\"\""
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Randomize tile position within grid"
+						},
+						{
+							"id": "set-position",
+							"objectClass": "fTile",
+							"sid": 266172736518675,
+							"parameters": {
+								"x": "Self.X + (random(0, (C_Grid_Size - C_Tile_Size - C_Grid_Padding_Min) * 0.5) * choose(-1, 1))",
+								"y": "Self.Y + (random(0, (C_Grid_Size - C_Tile_Size - C_Grid_Padding_Min) * 0.5) * choose(-1, 1))"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "todo mn"
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "fTile",
+							"sid": 941923389067541,
+							"parameters": {
+								"angle": "random(-C_Tile_Angle_Random, C_Tile_Angle_Random)"
 							}
 						},
 						{
@@ -81,7 +106,7 @@
 						{
 							"id": "set-size",
 							"objectClass": "fTile",
-							"sid": 719412709610135,
+							"sid": 442076747654877,
 							"parameters": {
 								"width": "C_Tile_Size",
 								"height": "C_Tile_Size"
@@ -366,6 +391,14 @@
 							"sid": 712111598474243
 						},
 						{
+							"id": "set-animation-frame",
+							"objectClass": "Tile",
+							"sid": 330350777886557,
+							"parameters": {
+								"frame-number": "Self.AnimationFrameCount - 1"
+							}
+						},
+						{
 							"id": "log",
 							"objectClass": "Browser",
 							"sid": 964230896960288,
@@ -472,15 +505,6 @@
 				{
 					"id": "set-opacity",
 					"objectClass": "Symbol",
-					"sid": 349321049200110,
-					"disabled": true,
-					"parameters": {
-						"opacity": "0"
-					}
-				},
-				{
-					"id": "set-opacity",
-					"objectClass": "Symbol",
 					"sid": 349312330173428,
 					"parameters": {
 						"opacity": "Functions.Config_getNumber(PARAM_Symbol_Opacity)"
@@ -520,12 +544,49 @@
 					}
 				},
 				{
-					"id": "set-animation",
+					"id": "spawn-another-object",
 					"objectClass": "fTile",
-					"sid": 471955610617762,
+					"sid": 490497652367063,
 					"parameters": {
-						"animation": "ANIM_Open & playerId",
-						"from": "beginning"
+						"object": "Selection",
+						"layer": "Self.LayerName",
+						"image-point": "0",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "Selection",
+					"sid": 805616645164804,
+					"parameters": {
+						"width": "C_Tile_Size",
+						"height": "C_Tile_Size"
+					}
+				},
+				{
+					"id": "set-default-color",
+					"objectClass": "Selection",
+					"sid": 210316103044511,
+					"parameters": {
+						"color": "int(trim(tokenat(C_CSV_ColorsInt, playerId, \",\")))"
+					}
+				},
+				{
+					"id": "add-child",
+					"objectClass": "fTile",
+					"sid": 294926303336652,
+					"parameters": {
+						"child": "Selection",
+						"transform-x": false,
+						"transform-y": false,
+						"transform-w": false,
+						"transform-h": false,
+						"transform-a": false,
+						"transform-o": false,
+						"transform-z-elevation": false,
+						"transform-visibility": false,
+						"destroy-with-parent": true
 					}
 				}
 			],
@@ -670,6 +731,32 @@
 						}
 					],
 					"sid": 590462676628338
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "fTile",
+							"sid": 327026390872941,
+							"parameters": {
+								"child": "Selection",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Selection",
+							"sid": 590548689309274,
+							"parameters": {
+								"animation": "ANIM_Selection_Disappearing",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 739207904164038
 				}
 			]
 		},
@@ -689,9 +776,9 @@
 				{
 					"id": "set-animation",
 					"objectClass": "fTile",
-					"sid": 518224157540364,
+					"sid": 134714124687229,
 					"parameters": {
-						"animation": "ANIM_Removed & (Self.playerId = NOTHING ? \"\" : fTile.playerId)",
+						"animation": "ANIM_FadingOut",
 						"from": "beginning"
 					}
 				},
@@ -741,12 +828,12 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "Symbol",
-							"sid": 780755303380091,
+							"sid": 720934239899099,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "TWEEN_Symbol_Opacity",
 								"property": "offsetOpacity",
-								"end-value": "20",
+								"end-value": "Functions.Config_getNumber(PARAM_Symbol_Opacity)",
 								"time": "2",
 								"ease": "easeoutcubic",
 								"destroy-on-complete": "no",
@@ -757,6 +844,32 @@
 						}
 					],
 					"sid": 323371826168423
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "fTile",
+							"sid": 536847552539695,
+							"parameters": {
+								"child": "Selection",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Selection",
+							"sid": 947583576664110,
+							"parameters": {
+								"animation": "ANIM_Selection_Connecting",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 914338399659779
 				}
 			]
 		}

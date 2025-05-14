@@ -13,9 +13,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "C_Tile_Size",
+			"name": "C_Grid_Size",
 			"type": "number",
-			"initialValue": "48",
+			"initialValue": "64",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -23,13 +23,73 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "C_Grid_Padding_Min",
+			"type": "number",
+			"initialValue": "4",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 387969663434336
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Tile_Size",
+			"type": "number",
+			"initialValue": "48",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 550158341894162
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Tile_Angle_Random",
+			"type": "number",
+			"initialValue": "4",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 167911202420558
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Level_Dimension_Min",
+			"type": "number",
+			"initialValue": "2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 425570844158046
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Level_Dimension_Max",
+			"type": "number",
+			"initialValue": "16",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 887913240686490
+		},
+		{
+			"eventType": "variable",
 			"name": "C_Tile_Pair_OptimalMaxDistance",
 			"type": "number",
-			"initialValue": "144",
+			"initialValue": "180",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 830933754513341
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Tile_Reveal_Time",
+			"type": "number",
+			"initialValue": "1.2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 969085168090015
 		},
 		{
 			"eventType": "variable",
@@ -40,16 +100,6 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 464612411215017
-		},
-		{
-			"eventType": "variable",
-			"name": "C_Tile_Reveal_Time",
-			"type": "number",
-			"initialValue": "1.2",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 469435592060815
 		},
 		{
 			"eventType": "variable",
@@ -73,6 +123,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "C_CSV_ColorsInt",
+			"type": "string",
+			"initialValue": "-281492157629439, -230622765294591, -47290777777151, -281487979082751, -172076187716607",
+			"comment": "White, Player1, Player2, Player3, Player4",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 563504081420290
+		},
+		{
+			"eventType": "variable",
 			"name": "C_CSV_Symbols",
 			"type": "string",
 			"initialValue": "1, 2, 3, 4, Projectile, Sleep, Slow, Shield, Health",
@@ -80,26 +140,6 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 797343426013108
-		},
-		{
-			"eventType": "variable",
-			"name": "C_Tile_Dimension_Min",
-			"type": "number",
-			"initialValue": "2",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 669486078398904
-		},
-		{
-			"eventType": "variable",
-			"name": "C_Tile_Dimension_Max",
-			"type": "number",
-			"initialValue": "16",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 983798085957370
 		},
 		{
 			"eventType": "variable",

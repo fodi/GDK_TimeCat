@@ -258,7 +258,7 @@
 						{
 							"id": "set-radius",
 							"objectClass": "Cannon",
-							"sid": 202904953935456,
+							"sid": 427388955302621,
 							"behaviorType": "Orbit",
 							"parameters": {
 								"primary": "distance(0, 0, midX, midY) + C_Tile_Size * 2",

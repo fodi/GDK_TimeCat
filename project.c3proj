@@ -92,6 +92,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Tilemap",
+			"name": "Tilemap",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "gamepad",
 			"name": "Gamepad",
 			"author": "Scirra",
@@ -122,6 +129,13 @@
 			"type": "behavior",
 			"id": "Orbit",
 			"name": "Orbit",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Rotate",
+			"name": "Rotate",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -163,7 +177,9 @@
 			"UI_BlurbSF",
 			"CameraTargetSmooth",
 			"Particles",
-			"TiledBackground"
+			"TiledBackground",
+			"Map",
+			"Selection"
 		],
 		"subfolders": [
 			{
@@ -271,7 +287,7 @@
 		"subfolders": [
 			{
 				"items": [
-					"_eAnimations 🎞️",
+					"eAnimations 🎞️",
 					"eCollisions 💥",
 					"eCreated ✨",
 					"eCycles ⏱️",
@@ -394,7 +410,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "28c",
+		"version": "29",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

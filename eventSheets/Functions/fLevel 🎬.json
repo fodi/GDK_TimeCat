@@ -71,7 +71,7 @@
 							"sid": 139245888955545,
 							"parameters": {
 								"variable": "R_Level_Rows",
-								"value": "clamp(int(Functions.Config_getNumber(PARAM_Tile_RowCount)), C_Tile_Dimension_Min, C_Tile_Dimension_Max)"
+								"value": "clamp(int(Functions.Config_getNumber(PARAM_Tile_RowCount)), C_Level_Dimension_Min, C_Level_Dimension_Max)"
 							}
 						},
 						{
@@ -80,7 +80,7 @@
 							"sid": 584776617241278,
 							"parameters": {
 								"variable": "R_Level_Columns",
-								"value": "clamp(int(Functions.Config_getNumber(PARAM_Tile_ColumnCount)), C_Tile_Dimension_Min, C_Tile_Dimension_Max)"
+								"value": "clamp(int(Functions.Config_getNumber(PARAM_Tile_ColumnCount)), C_Level_Dimension_Min, C_Level_Dimension_Max)"
 							}
 						},
 						{
@@ -102,7 +102,7 @@
 							"sid": 703069639011932,
 							"parameters": {
 								"variable": "midX",
-								"value": "R_Level_Columns * C_Tile_Size * 0.5"
+								"value": "R_Level_Columns * C_Grid_Size * 0.5"
 							}
 						},
 						{
@@ -111,7 +111,7 @@
 							"sid": 828775838793391,
 							"parameters": {
 								"variable": "midY",
-								"value": "R_Level_Rows * C_Tile_Size * 0.5"
+								"value": "R_Level_Rows * C_Grid_Size * 0.5"
 							}
 						},
 						{
@@ -120,7 +120,7 @@
 							"sid": 102436028624667,
 							"parameters": {
 								"variable": "distanceFar",
-								"value": "max(midX + C_Tile_Size * 2, midY + C_Tile_Size * 2)"
+								"value": "max(midX + C_Grid_Size * 2, midY + C_Grid_Size * 2)"
 							}
 						},
 						{
