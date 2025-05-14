@@ -67,6 +67,7 @@
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 203509029354875,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
 						"message": "\"projectile speed: \" & movementSpeed"

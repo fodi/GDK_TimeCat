@@ -235,6 +235,24 @@
 							}
 						},
 						{
+							"id": "set-instvar-value",
+							"objectClass": "Cannon",
+							"sid": 406698769783426,
+							"parameters": {
+								"instance-variable": "R_Acceleration",
+								"value": "Functions.Config_getNumber(PARAM_Cannon_Acceleration)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Cannon",
+							"sid": 778785234093272,
+							"parameters": {
+								"instance-variable": "R_Speed_Max",
+								"value": "Functions.Config_getNumber(PARAM_Cannon_SpeedMax)"
+							}
+						},
+						{
 							"type": "comment",
 							"text": "Initialize projectile spawner"
 						},
@@ -293,15 +311,9 @@
 							"sid": 795394196873268
 						},
 						{
-							"id": "start-timer",
+							"customAction": "startMoving",
 							"objectClass": "Cannon",
-							"sid": 507838794012651,
-							"behaviorType": "Timer",
-							"parameters": {
-								"duration": "0.1",
-								"type": "regular",
-								"tag": "TIMER_Cannon_CheckMaxSpeed"
-							}
+							"sid": 437806578770828
 						}
 					],
 					"sid": 810463059339353
@@ -468,6 +480,50 @@
 						}
 					],
 					"sid": 175363721439393
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "startMoving",
+			"objectClass": "Cannon",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 502112530341107,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-acceleration",
+							"objectClass": "Cannon",
+							"sid": 772188775822377,
+							"behaviorType": "Orbit",
+							"parameters": {
+								"acceleration": "Self.R_Acceleration"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Cannon",
+							"sid": 507838794012651,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "0.1",
+								"type": "regular",
+								"tag": "TIMER_Cannon_CheckMaxSpeed"
+							}
+						}
+					],
+					"sid": 470010014893638
 				}
 			]
 		},

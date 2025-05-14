@@ -169,6 +169,20 @@
 		},
 		{
 			"type": "effect",
+			"id": "blurhorizontal",
+			"name": "Blur horizontal",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "blurvertical",
+			"name": "Blur vertical",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
 			"id": "brightness",
 			"name": "Brightness",
 			"author": "Scirra",
@@ -304,7 +318,8 @@
 			"f3DObjects",
 			"fShadows",
 			"fCannon",
-			"f3DObstacles"
+			"f3DObstacles",
+			"fLights"
 		],
 		"subfolders": []
 	},
@@ -904,7 +919,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "36",
+		"version": "36c",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

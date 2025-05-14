@@ -303,12 +303,12 @@
 						{
 							"id": "pick-by-comparison",
 							"objectClass": "System",
-							"sid": 615509878312565,
+							"sid": 877647909829779,
 							"parameters": {
 								"object": "Cannon",
 								"expression": "Cannon.Orbit.Speed",
 								"comparison": 5,
-								"value": "20"
+								"value": "Cannon.R_Speed_Max"
 							}
 						}
 					],
@@ -320,6 +320,15 @@
 							"behaviorType": "Timer",
 							"parameters": {
 								"tag": "TIMER_Cannon_CheckMaxSpeed"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Cannon",
+							"sid": 345978052109766,
+							"behaviorType": "Orbit",
+							"parameters": {
+								"speed": "Self.R_Speed_Max"
 							}
 						},
 						{

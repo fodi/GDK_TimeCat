@@ -1,12 +1,11 @@
 {
-	"name": "fShadows",
+	"name": "fLights",
 	"plugin-id": "Sprite",
-	"sid": 577826048412167,
+	"sid": 200412681439563,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"Box",
-		"Player"
+		"Projectile"
 	]
 }

@@ -105,7 +105,6 @@
 			"sid": 820446053971430,
 			"children": [
 				{
-					"bookmark": true,
 					"eventType": "comment",
 					"text": "todo CA?"
 				},
@@ -410,10 +409,37 @@
 				{
 					"customAction": "remove",
 					"objectClass": "Box",
-					"sid": 449035902094566,
+					"sid": 175867567655683,
 					"parameters": [
 						"YES"
 					]
+				},
+				{
+					"type": "comment",
+					"text": "Stop & restart cannon movement"
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Cannon",
+					"sid": 417676870683877,
+					"behaviorType": "Orbit",
+					"parameters": {
+						"speed": "0"
+					}
+				},
+				{
+					"id": "set-acceleration",
+					"objectClass": "Cannon",
+					"sid": 121567118722999,
+					"behaviorType": "Orbit",
+					"parameters": {
+						"acceleration": "0"
+					}
+				},
+				{
+					"customAction": "startMoving",
+					"objectClass": "Cannon",
+					"sid": 607212674698199
 				}
 			],
 			"sid": 442998353580713,

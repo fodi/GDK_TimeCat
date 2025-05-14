@@ -349,6 +349,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "LAYER_Lights",
+			"type": "string",
+			"initialValue": "Lights",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 588222627223352
+		},
+		{
+			"eventType": "variable",
 			"name": "LAYER_UI",
 			"type": "string",
 			"initialValue": "UI",
@@ -430,6 +440,26 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 432985155732953
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Player_HealPair",
+			"type": "string",
+			"initialValue": "pl_heal_pair",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 329600246982367
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Player_HealItem",
+			"type": "string",
+			"initialValue": "pl_heal_item",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 810760313257007
 		},
 		{
 			"eventType": "variable",
@@ -864,6 +894,26 @@
 			"sid": 510069927719130
 		},
 		{
+			"eventType": "variable",
+			"name": "PARAM_Cannon_SpeedMax",
+			"type": "string",
+			"initialValue": "ca_speed_max",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 526209523460008
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Cannon_Acceleration",
+			"type": "string",
+			"initialValue": "ca_accel",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 780838244290188
+		},
+		{
 			"eventType": "comment",
 			"text": "Templates"
 		},
@@ -982,6 +1032,26 @@
 			"sid": 139268643180940
 		},
 		{
+			"eventType": "variable",
+			"name": "TIMER_Cannon_CheckMaxSpeed",
+			"type": "string",
+			"initialValue": "Cannon_CheckMaxSpeed",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 371745106555812
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_Basemap_Animate",
+			"type": "string",
+			"initialValue": "Basemap_Animate",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 596606921358655
+		},
+		{
 			"eventType": "comment",
 			"text": "Tweens"
 		},
@@ -1046,6 +1116,16 @@
 			"sid": 351751425261196
 		},
 		{
+			"eventType": "variable",
+			"name": "TWEEN_3dCannon_ZElevation_Spawn",
+			"type": "string",
+			"initialValue": "3dCannon_ZElevation_Spawn",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 484456712036399
+		},
+		{
 			"eventType": "comment",
 			"text": "Words"
 		},
@@ -1068,36 +1148,6 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 455255730079436
-		},
-		{
-			"eventType": "variable",
-			"name": "TWEEN_3dCannon_ZElevation_Spawn",
-			"type": "string",
-			"initialValue": "3dCannon_ZElevation_Spawn",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 630369319520007
-		},
-		{
-			"eventType": "variable",
-			"name": "TIMER_Cannon_CheckMaxSpeed",
-			"type": "string",
-			"initialValue": "Cannon_CheckMaxSpeed",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 850779265358799
-		},
-		{
-			"eventType": "variable",
-			"name": "TIMER_Basemap_Animate",
-			"type": "string",
-			"initialValue": "Basemap_Animate",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 440395894937401
 		},
 		{
 			"eventType": "group",

@@ -48,6 +48,27 @@
 			"conditions": [
 				{
 					"id": "on-created",
+					"objectClass": "fLights",
+					"sid": 457837505207041
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-layer",
+					"objectClass": "fLights",
+					"sid": 678903048938673,
+					"parameters": {
+						"layer": "LAYER_Lights"
+					}
+				}
+			],
+			"sid": 212294793796756
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
 					"objectClass": "f3DObjects",
 					"sid": 289583041979256
 				}

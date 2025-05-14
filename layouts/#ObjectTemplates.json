@@ -369,8 +369,20 @@
 						"RadialBlur": {
 							"isEnabled": true,
 							"parameters": {
-								"radius": 0.1,
-								"intensity": 10
+								"radius": 0.2,
+								"intensity": 0.8
+							}
+						},
+						"BlurHorizontal": {
+							"isEnabled": true,
+							"parameters": {
+								"intensity": 1
+							}
+						},
+						"BlurVertical": {
+							"isEnabled": true,
+							"parameters": {
+								"intensity": 1
 							}
 						}
 					},
@@ -439,11 +451,11 @@
 							0.996078431372549,
 							0.9647058823529412,
 							0.9647058823529412,
-							1
+							0.15
 						],
 						"angle": 0,
 						"zElevation": 0,
-						"blendMode": "destination-out"
+						"blendMode": "additive"
 					}
 				},
 				{
@@ -464,8 +476,8 @@
 						"R_Health_BonusOnHeal": 15,
 						"R_Box_MovementSpeed": 350,
 						"R_Box_Distance": 20,
-						"R_MovementSpeed_Normal": 110,
-						"R_MovementSpeed_Slow": 80,
+						"R_MovementSpeed_Normal": 0,
+						"R_MovementSpeed_Slow": 0,
 						"IN_Up": 0,
 						"IN_Down": 0,
 						"IN_Left": 0,
@@ -1357,6 +1369,8 @@
 						"R_Projectile_MovementSpeed": 150,
 						"R_Projectile_MovementSpeed_Increase": 20,
 						"R_Projectile_MovementSpeed_Max": 400,
+						"R_Acceleration": 0,
+						"R_Speed_Max": 0,
 						"R_Health_Max": 1,
 						"health": 0
 					},
@@ -1364,7 +1378,7 @@
 						"Orbit": {
 							"properties": {
 								"speed": 0,
-								"acceleration": 2,
+								"acceleration": 0,
 								"primary-axis": 100,
 								"secondary-axis": 100,
 								"offset-angle": 0,

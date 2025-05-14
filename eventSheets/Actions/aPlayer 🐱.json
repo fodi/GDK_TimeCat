@@ -40,6 +40,24 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
+							"sid": 942034872246473,
+							"parameters": {
+								"instance-variable": "R_Health_BonusOnPair",
+								"value": "Functions.Config_getNumber(PARAM_Player_HealPair)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 123777258069747,
+							"parameters": {
+								"instance-variable": "R_Health_BonusOnHeal",
+								"value": "Functions.Config_getNumber(PARAM_Player_HealItem)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
 							"sid": 408952610930772,
 							"parameters": {
 								"instance-variable": "R_MovementSpeed_Normal",
@@ -766,9 +784,9 @@
 								{
 									"id": "set-text",
 									"objectClass": "UI_TextSF",
-									"sid": 958917751724022,
+									"sid": 682337467089712,
 									"parameters": {
-										"text": "\"[color=#\" & trim(tokenat(C_CSV_ColorsHex, Player.playerId, \",\")) & \"][scale=0.25]Health[/scale]\" & newline & Functions.roundToDpPad(Player.health, 1)"
+										"text": "\"[color=#\" & trim(tokenat(C_CSV_ColorsHex, Player.playerId, \",\")) & \"][scale=0.25]Health[/scale]\" & newline & int(Player.health)"
 									}
 								}
 							],

@@ -39,6 +39,20 @@
 			"sid": 344653289956076
 		},
 		{
+			"name": "R_Acceleration",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 413459250991413
+		},
+		{
+			"name": "R_Speed_Max",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 486741056580510
+		},
+		{
 			"name": "R_Health_Max",
 			"type": "number",
 			"desc": "",
