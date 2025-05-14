@@ -32,6 +32,17 @@
 					"customAction": "tick",
 					"objectClass": "Camera",
 					"sid": 956245024598579
+				},
+				{
+					"id": "move-to-position",
+					"objectClass": "CameraTarget",
+					"sid": 817086063577289,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"x": "Camera.lookTargetX",
+						"y": "Camera.lookTargetY",
+						"mode": "direct"
+					}
 				}
 			],
 			"sid": 559613915501580,

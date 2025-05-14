@@ -178,7 +178,7 @@
 							1
 						],
 						"angle": 0,
-						"zElevation": -0.5
+						"zElevation": -1
 					}
 				},
 				{
@@ -246,7 +246,7 @@
 							1
 						],
 						"angle": 0,
-						"zElevation": 0
+						"zElevation": -0.5
 					}
 				},
 				{
@@ -364,9 +364,10 @@
 						"R_Health_Start": 30,
 						"R_Health_BonusOnPair": 8,
 						"R_Health_BonusOnHeal": 15,
-						"R_Box_MovementSpeed": 200,
+						"R_Box_MovementSpeed": 350,
 						"R_Box_Distance": 20,
-						"R_MovementSpeedMultiplier_Box": 0.7,
+						"R_MovementSpeed_Normal": 110,
+						"R_MovementSpeed_Slow": 80,
 						"currentAngle": 0,
 						"health": 1,
 						"IN_Up": 0,
@@ -386,7 +387,7 @@
 					"behaviors": {
 						"8Direction": {
 							"properties": {
-								"max-speed": 100,
+								"max-speed": 0,
 								"acceleration": 600,
 								"deceleration": 500,
 								"directions": "dir-8",
@@ -1132,7 +1133,7 @@
 					}
 				},
 				{
-					"type": "Camera",
+					"type": "CameraTarget",
 					"properties": {
 						"initially-visible": false,
 						"initial-animation": "Animation 1",
@@ -1140,33 +1141,53 @@
 						"enable-collisions": false,
 						"live-preview": false
 					},
-					"uid": 24,
-					"sid": 453823533597273,
+					"uid": 33,
+					"sid": 128168351857394,
 					"tags": "",
-					"instanceVariables": {
-						"R_ZElevationInit": 1300,
-						"R_YInit": 1300,
-						"R_FieldOfView": 10,
-						"R_SmoothingFactor": 5,
-						"lookTargetX": 0,
-						"lookTargetY": 0
-					},
+					"instanceVariables": {},
 					"behaviors": {
-						"8Direction": {
+						"MoveTo": {
 							"properties": {
 								"max-speed": 200,
-								"acceleration": 600,
-								"deceleration": 500,
-								"directions": "dir-8",
-								"set-angle": "no",
-								"allow-sliding": false,
-								"default-controls": false,
+								"acceleration": 100,
+								"deceleration": 100,
+								"rotate-speed": 0,
+								"set-angle": false,
+								"stop-on-solids": false,
 								"enabled": true
 							}
 						}
 					},
+					"sceneGraphData": {
+						"parent-uid": 24,
+						"uid": 33,
+						"flags": {
+							"x": false,
+							"y": false,
+							"z": false,
+							"w": false,
+							"h": false,
+							"a": false,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
 					"instanceFolderItem": {
-						"sid": 453823533597273,
+						"sid": 128168351857394,
 						"expanded": true,
 						"folderName": "",
 						"indexInFolder": -1,
@@ -1257,6 +1278,111 @@
 						],
 						"angle": 0,
 						"zElevation": 24
+					}
+				},
+				{
+					"type": "Camera",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 24,
+					"sid": 453823533597273,
+					"tags": "",
+					"instanceVariables": {
+						"R_ZElevationInit": 1300,
+						"R_YInit": 1300,
+						"R_FieldOfView": 10,
+						"R_SmoothingFactor": 5,
+						"lookTargetX": 0,
+						"lookTargetY": 0
+					},
+					"behaviors": {
+						"8Direction": {
+							"properties": {
+								"max-speed": 200,
+								"acceleration": 600,
+								"deceleration": 500,
+								"directions": "dir-8",
+								"set-angle": "no",
+								"allow-sliding": false,
+								"default-controls": false,
+								"enabled": true
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 24,
+						"children": [
+							{
+								"uid": 33,
+								"flags": {
+									"x": false,
+									"y": false,
+									"z": false,
+									"w": false,
+									"h": false,
+									"a": false,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 453823533597273,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 300,
+						"y": 132,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 50
 					}
 				}
 			],

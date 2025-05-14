@@ -1,0 +1,99 @@
+{
+	"name": "fConfig 📃",
+	"events": [
+		{
+			"functionName": "Config_getNumber",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "paramName",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 313045857507444
+				},
+				{
+					"name": "default",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 123966680024856
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 989674657250768,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-key",
+							"objectClass": "URLParams",
+							"sid": 394129202374248,
+							"parameters": {
+								"path": "paramName"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 617596883012473,
+							"parameters": {
+								"type": "log",
+								"message": "StringSub(\"[config] {0} = {1} (overridden from {2})\", paramName, URLParams.Get(paramName), default)"
+							}
+						},
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 307161544078674,
+							"parameters": {
+								"value": "float(URLParams.Get(paramName))"
+							}
+						}
+					],
+					"sid": 748280315230139
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 433522026961947
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 514698417246751,
+							"parameters": {
+								"type": "log",
+								"message": "StringSub(\"[config] {0} = {1} (default)\", paramName, default)"
+							}
+						},
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 503777903501907,
+							"parameters": {
+								"value": "default"
+							}
+						}
+					],
+					"sid": 121542529126312
+				}
+			]
+		}
+	],
+	"sid": 265364922852344
+}

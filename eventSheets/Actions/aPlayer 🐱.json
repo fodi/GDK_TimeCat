@@ -11,6 +11,7 @@
 			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
+			"bookmark": true,
 			"eventType": "custom-ace-block",
 			"conditions": [],
 			"actions": [
@@ -30,10 +31,37 @@
 				{
 					"id": "set-instvar-value",
 					"objectClass": "Player",
+					"sid": 736395753579762,
+					"parameters": {
+						"instance-variable": "R_MovementSpeed_Normal",
+						"value": "Functions.Config_getNumber(PARAM_Player_MovementSpeed, Self.R_MovementSpeed_Normal)"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player",
+					"sid": 600287989783951,
+					"parameters": {
+						"instance-variable": "R_MovementSpeed_Slow",
+						"value": "Functions.Config_getNumber(PARAM_Player_MovementSpeed_Slow, Self.R_MovementSpeed_Slow)"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player",
 					"sid": 699716346394056,
 					"parameters": {
 						"instance-variable": "health",
 						"value": "Self.R_Health_Start"
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "Player",
+					"sid": 887079740760311,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"max-speed": "Self.R_MovementSpeed_Normal"
 					}
 				},
 				{
@@ -302,19 +330,19 @@
 										{
 											"id": "set-vector-x",
 											"objectClass": "Player",
-											"sid": 973403295752238,
+											"sid": 625704026098929,
 											"behaviorType": "8Direction",
 											"parameters": {
-												"vector-x": "cos(Player.currentAngle) * Player.8Direction.MaxSpeed * (Player.boxUID = NOTHING ? 1 : Self.R_MovementSpeedMultiplier_Box)"
+												"vector-x": "cos(Player.currentAngle) * (Player.boxUID = NOTHING ? Player.8Direction.MaxSpeed : Self.R_MovementSpeed_Slow)"
 											}
 										},
 										{
 											"id": "set-vector-y",
 											"objectClass": "Player",
-											"sid": 631334579024780,
+											"sid": 638215614914894,
 											"behaviorType": "8Direction",
 											"parameters": {
-												"vector-y": "sin(Player.currentAngle) * Player.8Direction.MaxSpeed * (Player.boxUID = NOTHING ? 1 : Self.R_MovementSpeedMultiplier_Box)"
+												"vector-y": "sin(Player.currentAngle) * (Player.boxUID = NOTHING ? Player.8Direction.MaxSpeed : Self.R_MovementSpeed_Slow)"
 											}
 										}
 									],
@@ -526,10 +554,6 @@
 											"sid": 288993533767746
 										},
 										{
-											"eventType": "comment",
-											"text": "todo mn"
-										},
-										{
 											"eventType": "block",
 											"conditions": [
 												{
@@ -547,9 +571,9 @@
 												{
 													"id": "set-animation-speed",
 													"objectClass": "bbPlayer",
-													"sid": 755401967046812,
+													"sid": 579579844035625,
 													"parameters": {
-														"speed": "8"
+														"speed": "C_Player_AnimationSpeed"
 													}
 												}
 											],
@@ -568,9 +592,9 @@
 												{
 													"id": "set-animation-speed",
 													"objectClass": "bbPlayer",
-													"sid": 924550255515434,
+													"sid": 799942570803695,
 													"parameters": {
-														"speed": "8 * Player.R_MovementSpeedMultiplier_Box"
+														"speed": "C_Player_AnimationSpeed * (Player.R_MovementSpeed_Slow / Player.R_MovementSpeed_Normal)"
 													}
 												}
 											],
@@ -688,6 +712,65 @@
 		},
 		{
 			"aceType": "action",
+			"aceName": "spawn",
+			"objectClass": "Player",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "sourcePlayerId",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 239190733849133
+				}
+			],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 773717553376150,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 950569274520008,
+							"parameters": {
+								"object-to-create": "Player",
+								"layer": "LAYER_Player",
+								"x": "midX",
+								"y": "midY",
+								"create-hierarchy": true,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 745270294807430,
+							"parameters": {
+								"instance-variable": "playerId",
+								"value": "sourcePlayerId"
+							}
+						},
+						{
+							"customAction": "init",
+							"objectClass": "Player",
+							"sid": 778435541206457
+						}
+					],
+					"sid": 768383302968141
+				}
+			]
+		},
+		{
+			"aceType": "action",
 			"aceName": "onAction",
 			"objectClass": "Player",
 			"functionDescription": "",
@@ -781,6 +864,10 @@
 										{
 											"eventType": "comment",
 											"text": "Open new tile"
+										},
+										{
+											"eventType": "comment",
+											"text": "todo_maybe constantly show \"selected\" tile?"
 										},
 										{
 											"eventType": "block",
@@ -1050,53 +1137,17 @@
 							"sid": 970898995867014
 						}
 					],
-					"actions": [],
-					"sid": 694653583056779,
-					"children": [
+					"actions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-random-instance",
-									"objectClass": "System",
-									"sid": 786383835294095,
-									"parameters": {
-										"object": "Tile"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 345954270789600,
-									"parameters": {
-										"object-to-create": "Player",
-										"layer": "LAYER_Player",
-										"x": "Tile.X",
-										"y": "Tile.Y",
-										"create-hierarchy": true,
-										"template-name": "\"\""
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Player",
-									"sid": 535979190304462,
-									"parameters": {
-										"instance-variable": "playerId",
-										"value": "sourcePlayerId"
-									}
-								},
-								{
-									"customAction": "init",
-									"objectClass": "Player",
-									"sid": 580244041785290
-								}
-							],
-							"sid": 553422635175293
+							"customAction": "spawn",
+							"objectClass": "Player",
+							"sid": 750899929471340,
+							"parameters": [
+								"sourcePlayerId"
+							]
 						}
-					]
+					],
+					"sid": 694653583056779
 				}
 			]
 		},

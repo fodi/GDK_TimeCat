@@ -39,7 +39,14 @@
 			"sid": 904677452520242
 		},
 		{
-			"name": "R_MovementSpeedMultiplier_Box",
+			"name": "R_MovementSpeed_Normal",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 829497563946497
+		},
+		{
+			"name": "R_MovementSpeed_Slow",
 			"type": "number",
 			"desc": "",
 			"show": true,

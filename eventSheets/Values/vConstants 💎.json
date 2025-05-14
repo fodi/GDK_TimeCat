@@ -3,6 +3,16 @@
 	"events": [
 		{
 			"eventType": "variable",
+			"name": "C_Player_AnimationSpeed",
+			"type": "number",
+			"initialValue": "8",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 620692970965505
+		},
+		{
+			"eventType": "variable",
 			"name": "C_Tile_Size",
 			"type": "number",
 			"initialValue": "48",

@@ -307,6 +307,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "PARAM_Player_MovementSpeed_Slow",
+			"type": "string",
+			"initialValue": "pl_speed_slow",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 955150380487263
+		},
+		{
+			"eventType": "variable",
 			"name": "PARAM_Projectile_Speed",
 			"type": "string",
 			"initialValue": "pr_speed",
@@ -314,6 +324,40 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 319843517574204
+		},
+		{
+			"eventType": "comment",
+			"text": "todo"
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Projectile_Speed_Increase",
+			"type": "string",
+			"initialValue": "pr_speed_increase",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 416836950262845
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Projectile_SpawnTime_Min",
+			"type": "string",
+			"initialValue": "pr_spawn_time_min",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 770790732894441
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Projectile_SpawnTime_Max",
+			"type": "string",
+			"initialValue": "pr_spawn_time_max",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 884626165339527
 		},
 		{
 			"eventType": "comment",

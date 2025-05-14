@@ -123,10 +123,10 @@
 			"scaleRate": 1,
 			"forceOwnTexture": false,
 			"renderingMode": "3d",
-			"drawOrder": "z-order",
+			"drawOrder": "camera-distance",
 			"useRenderCells": false,
 			"blendMode": "normal",
-			"zElevation": 0,
+			"zElevation": 0.5,
 			"global": false
 		},
 		{

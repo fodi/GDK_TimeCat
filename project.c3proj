@@ -99,6 +99,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "MoveTo",
+			"name": "Move To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Orbit",
 			"name": "Orbit",
 			"author": "Scirra",
@@ -139,7 +146,8 @@
 			"Camera",
 			"AimHelper",
 			"Box",
-			"UI_BlurbSF"
+			"UI_BlurbSF",
+			"CameraTarget"
 		],
 		"subfolders": [
 			{
@@ -260,7 +268,8 @@
 					"fAudio 🎵",
 					"fLevel 🎬",
 					"_fUI 📟",
-					"fUtilities 🧰"
+					"fUtilities 🧰",
+					"fConfig 📃"
 				],
 				"subfolders": [],
 				"name": "Functions"
@@ -401,7 +410,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "19b",
+		"version": "20",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

@@ -17,13 +17,13 @@
 				{
 					"id": "create-object",
 					"objectClass": "System",
-					"sid": 113961342645837,
+					"sid": 331362440688918,
 					"parameters": {
 						"object-to-create": "Camera",
 						"layer": "LAYER_Player",
 						"x": "0",
 						"y": "0",
-						"create-hierarchy": false,
+						"create-hierarchy": true,
 						"template-name": "\"\""
 					}
 				},
@@ -87,7 +87,35 @@
 					}
 				}
 			],
-			"sid": 986035733445233
+			"sid": 986035733445233,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "Camera",
+							"sid": 587121128936861,
+							"parameters": {
+								"child": "CameraTarget",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "CameraTarget",
+							"sid": 315916648252093,
+							"parameters": {
+								"x": "Camera.lookTargetX",
+								"y": "Camera.lookTargetY"
+							}
+						}
+					],
+					"sid": 418819901467012
+				}
+			]
 		},
 		{
 			"aceType": "action",
@@ -197,7 +225,17 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [],
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "Camera",
+									"sid": 782009283954518,
+									"parameters": {
+										"child": "CameraTarget",
+										"which": "own"
+									}
+								}
+							],
 							"actions": [
 								{
 									"id": "set-instvar-value",
@@ -221,6 +259,7 @@
 									"id": "look-at-position",
 									"objectClass": "3DCamera",
 									"sid": 894462816221694,
+									"disabled": true,
 									"parameters": {
 										"cam-x": "Camera.X",
 										"cam-y": "Camera.Y",
@@ -228,6 +267,22 @@
 										"look-x": "Functions.expDecay(3DCamera.LookX, Camera.lookTargetX, Camera.R_SmoothingFactor)",
 										"look-y": "Functions.expDecay(3DCamera.LookY, Camera.lookTargetY, Camera.R_SmoothingFactor)",
 										"look-z": "0",
+										"up-x": "0",
+										"up-y": "0",
+										"up-z": "1"
+									}
+								},
+								{
+									"id": "look-at-position",
+									"objectClass": "3DCamera",
+									"sid": 501566046439374,
+									"parameters": {
+										"cam-x": "Camera.X",
+										"cam-y": "Camera.Y",
+										"cam-z": "Camera.ZElevation",
+										"look-x": "CameraTarget.X",
+										"look-y": "CameraTarget.Y",
+										"look-z": "CameraTarget.ZElevation",
 										"up-x": "0",
 										"up-y": "0",
 										"up-z": "1"
