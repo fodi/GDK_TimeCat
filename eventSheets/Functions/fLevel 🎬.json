@@ -102,7 +102,7 @@
 							"sid": 703069639011932,
 							"parameters": {
 								"variable": "midX",
-								"value": "R_Level_Columns * C_Grid_Size * 0.5"
+								"value": "R_Level_Columns * C_Level_Grid_Size * 0.5"
 							}
 						},
 						{
@@ -111,7 +111,7 @@
 							"sid": 828775838793391,
 							"parameters": {
 								"variable": "midY",
-								"value": "R_Level_Rows * C_Grid_Size * 0.5"
+								"value": "R_Level_Rows * C_Level_Grid_Size * 0.5"
 							}
 						},
 						{
@@ -120,7 +120,7 @@
 							"sid": 102436028624667,
 							"parameters": {
 								"variable": "distanceFar",
-								"value": "max(midX + C_Grid_Size * 2, midY + C_Grid_Size * 2)"
+								"value": "max(midX + C_Level_Grid_Size * 2, midY + C_Level_Grid_Size * 2)"
 							}
 						},
 						{
@@ -247,10 +247,13 @@
 					"behaviorType": "Timer"
 				},
 				{
-					"id": "stop-all-timers",
+					"id": "stop-timer",
 					"objectClass": "Cannon",
-					"sid": 483892121311914,
-					"behaviorType": "Timer"
+					"sid": 353772213496824,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "TIMER_Cannon_Shoot"
+					}
 				},
 				{
 					"id": "set-eventvar-value",
@@ -273,6 +276,50 @@
 			],
 			"sid": 710425574341323,
 			"children": [
+				{
+					"eventType": "comment",
+					"text": "Stop animation of non-dead players"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 844941692539561,
+							"parameters": {
+								"instance-variable": "isDead",
+								"comparison": 0,
+								"value": "NO"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "Player",
+							"sid": 969745171386853,
+							"parameters": {
+								"child": "bbPlayer",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "bbPlayer",
+							"sid": 104369632608245,
+							"parameters": {
+								"frame-number": "FRAME_Standing"
+							}
+						},
+						{
+							"id": "stop-animation",
+							"objectClass": "bbPlayer",
+							"sid": 719172974410111
+						}
+					],
+					"sid": 409412098680375
+				},
 				{
 					"eventType": "variable",
 					"name": "endText",
@@ -356,6 +403,10 @@
 					"eventType": "block",
 					"conditions": [],
 					"actions": [
+						{
+							"type": "comment",
+							"text": "todo fade in"
+						},
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",

@@ -2,6 +2,10 @@
 	"name": "vConstants 💎",
 	"events": [
 		{
+			"eventType": "comment",
+			"text": "Basemap"
+		},
+		{
 			"eventType": "variable",
 			"name": "C_Basemap_Water_Border",
 			"type": "number",
@@ -22,114 +26,8 @@
 			"sid": 622265509045914
 		},
 		{
-			"eventType": "variable",
-			"name": "C_Player_AnimationSpeed",
-			"type": "number",
-			"initialValue": "8",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 620692970965505
-		},
-		{
-			"eventType": "variable",
-			"name": "C_Grid_Size",
-			"type": "number",
-			"initialValue": "64",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 557039992155842
-		},
-		{
-			"eventType": "variable",
-			"name": "C_Grid_Padding_Min",
-			"type": "number",
-			"initialValue": "4",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 387969663434336
-		},
-		{
-			"eventType": "variable",
-			"name": "C_Tile_Size",
-			"type": "number",
-			"initialValue": "48",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 550158341894162
-		},
-		{
-			"eventType": "variable",
-			"name": "C_Tile_Angle_Random",
-			"type": "number",
-			"initialValue": "4",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 167911202420558
-		},
-		{
-			"eventType": "variable",
-			"name": "C_Level_Dimension_Min",
-			"type": "number",
-			"initialValue": "2",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 425570844158046
-		},
-		{
-			"eventType": "variable",
-			"name": "C_Level_Dimension_Max",
-			"type": "number",
-			"initialValue": "16",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 887913240686490
-		},
-		{
-			"eventType": "variable",
-			"name": "C_Tile_Pair_OptimalMaxDistance",
-			"type": "number",
-			"initialValue": "180",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 830933754513341
-		},
-		{
-			"eventType": "variable",
-			"name": "C_Tile_Reveal_Time",
-			"type": "number",
-			"initialValue": "1.2",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 969085168090015
-		},
-		{
-			"eventType": "variable",
-			"name": "C_Symbol_Variant_Count",
-			"type": "number",
-			"initialValue": "4",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 464612411215017
-		},
-		{
-			"eventType": "variable",
-			"name": "C_Wall_Thickness",
-			"type": "number",
-			"initialValue": "10",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 332425447323879
+			"eventType": "comment",
+			"text": "Cannon"
 		},
 		{
 			"eventType": "variable",
@@ -139,7 +37,133 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 734283160737737
+			"sid": 666162383870331
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Cannon_TargetRotationLerpFactor",
+			"type": "number",
+			"initialValue": "0.1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 645222248397563
+		},
+		{
+			"eventType": "comment",
+			"text": "Level"
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Level_Dimension_Min",
+			"type": "number",
+			"initialValue": "2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 515705824833669
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Level_Dimension_Max",
+			"type": "number",
+			"initialValue": "16",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 669822395114888
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Level_Grid_Size",
+			"type": "number",
+			"initialValue": "64",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 463206148758512
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Level_Grid_Padding_Min",
+			"type": "number",
+			"initialValue": "4",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 481243131293029
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Level_Tile_Size",
+			"type": "number",
+			"initialValue": "48",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 947364314065724
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Level_Tile_Angle_Random",
+			"type": "number",
+			"initialValue": "4",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 731082638757979
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Level_Tile_Pair_OptimalMaxDistance",
+			"type": "number",
+			"initialValue": "180",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 936580713134461
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Level_Tile_Reveal_Time",
+			"type": "number",
+			"initialValue": "1.2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 590401886581616
+		},
+		{
+			"eventType": "comment",
+			"text": "Symbol"
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Symbol_Variant_Count",
+			"type": "number",
+			"initialValue": "4",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 474217750415191
+		},
+		{
+			"eventType": "comment",
+			"text": "Wall"
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Wall_Thickness",
+			"type": "number",
+			"initialValue": "10",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 665181219788793
+		},
+		{
+			"eventType": "comment",
+			"text": "CSV stuff"
 		},
 		{
 			"eventType": "variable",
@@ -170,16 +194,6 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 797343426013108
-		},
-		{
-			"eventType": "variable",
-			"name": "C_Player_WakeTime",
-			"type": "number",
-			"initialValue": "0.5",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 466810201399189
 		}
 	],
 	"sid": 344291072955141

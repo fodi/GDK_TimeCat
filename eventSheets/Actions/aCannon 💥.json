@@ -290,14 +290,18 @@
 							"sid": 473121404867559,
 							"behaviorType": "Orbit",
 							"parameters": {
-								"primary": "distance(0, 0, midX, midY) + C_Tile_Size",
-								"secondary": "distance(0, 0, midX, midY) + C_Tile_Size"
+								"primary": "distance(0, 0, midX, midY) + C_Level_Tile_Size",
+								"secondary": "distance(0, 0, midX, midY) + C_Level_Tile_Size"
 							}
 						},
 						{
-							"customAction": "startShootTimer",
+							"id": "set-angle-toward-position",
 							"objectClass": "Cannon",
-							"sid": 795394196873268
+							"sid": 334562866280955,
+							"parameters": {
+								"x": "midX",
+								"y": "midY"
+							}
 						},
 						{
 							"customAction": "startMoving",
@@ -344,30 +348,51 @@
 							}
 						},
 						{
-							"type": "comment",
-							"text": "todo z height"
-						},
-						{
 							"id": "tween-one-property",
 							"objectClass": "3dCannon",
-							"sid": 344505137854007,
+							"sid": 315110095436119,
 							"behaviorType": "Tween",
 							"parameters": {
-								"tags": "\"ZElevation\"",
+								"tags": "TWEEN_3dCannon_ZElevation_Spawn",
 								"property": "offsetZElevation",
 								"end-value": "-4",
-								"time": "3",
-								"ease": "easeoutbounce",
+								"time": "random(Cannon.R_Shoot_Interval_Min, Cannon.R_Shoot_Interval_Max)",
+								"ease": "easeinoutcubic",
 								"destroy-on-complete": "no",
 								"loop": "no",
 								"ping-pong": "no",
 								"repeat-count": "1"
 							}
+						},
+						{
+							"type": "comment",
+							"text": "Cannon will start shoot timer after the spawn tween"
 						}
 					],
 					"sid": 584432900882151
 				}
 			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "onSpawnTweenFinished",
+			"objectClass": "Cannon",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"customAction": "startShootTimer",
+					"objectClass": "Cannon",
+					"sid": 795394196873268
+				}
+			],
+			"sid": 333420484024882
 		},
 		{
 			"aceType": "action",
@@ -422,6 +447,7 @@
 							"id": "log",
 							"objectClass": "Browser",
 							"sid": 818532730867310,
+							"disabled": true,
 							"parameters": {
 								"type": "log",
 								"message": "\"Cannon #\" & Cannon.UID & \" selected player \" & Player.playerId & \" as a target.\""
@@ -453,6 +479,7 @@
 							"id": "log",
 							"objectClass": "Browser",
 							"sid": 441603511270265,
+							"disabled": true,
 							"parameters": {
 								"type": "log",
 								"message": "\"Cannon #\" & Cannon.UID & \" couldn't select a target.\""
@@ -496,18 +523,9 @@
 						{
 							"id": "set-angle",
 							"objectClass": "Cannon",
-							"sid": 857593753919314,
-							"disabled": true,
+							"sid": 374951323522630,
 							"parameters": {
-								"angle": "Functions.expDecay(Self.Angle, angle(Self.X, Self.Y, Player.X, Player.Y), 3)"
-							}
-						},
-						{
-							"id": "set-angle",
-							"objectClass": "Cannon",
-							"sid": 486625057318393,
-							"parameters": {
-								"angle": "anglelerp(Self.Angle, angle(Self.X, Self.Y, Player.X, Player.Y), 1 - 0.05 ^ dt)"
+								"angle": "anglelerp(Self.Angle, angle(Self.X, Self.Y, Player.X, Player.Y), 1 - C_Cannon_TargetRotationLerpFactor ^ dt)"
 							}
 						}
 					],
@@ -526,9 +544,9 @@
 						{
 							"id": "set-angle",
 							"objectClass": "Cannon",
-							"sid": 992328626512037,
+							"sid": 914477740544457,
 							"parameters": {
-								"angle": "anglelerp(Self.Angle, angle(Self.X, Self.Y, midX, midY), 1 - 0.05 ^ dt)"
+								"angle": "anglelerp(Self.Angle, angle(Self.X, Self.Y, midX, midY), 1 - C_Cannon_TargetRotationLerpFactor ^ dt)"
 							}
 						}
 					],
@@ -555,25 +573,13 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player",
-							"sid": 757464214803311,
-							"disabled": true,
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 225651095393987,
 							"parameters": {
-								"instance-variable": "health",
-								"comparison": 4,
-								"value": "0"
-							}
-						},
-						{
-							"id": "pick-nearestfurthest",
-							"objectClass": "Player",
-							"sid": 901508114031172,
-							"disabled": true,
-							"parameters": {
-								"which": "furthest",
-								"x": "Cannon.X",
-								"y": "Cannon.Y"
+								"variable": "hasLevelEnded",
+								"comparison": 0,
+								"value": "NO"
 							}
 						},
 						{
@@ -802,7 +808,18 @@
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
-			"conditions": [],
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 868613660367008,
+					"parameters": {
+						"variable": "hasLevelEnded",
+						"comparison": 0,
+						"value": "NO"
+					}
+				}
+			],
 			"actions": [
 				{
 					"id": "start-timer",

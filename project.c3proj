@@ -228,7 +228,6 @@
 			"Selection",
 			"Basemap",
 			"Water",
-			"bbDecor",
 			"3dObstacle1"
 		],
 		"subfolders": [
@@ -287,7 +286,9 @@
 			{
 				"items": [
 					"bbPlayer",
-					"bbProjectile"
+					"bbProjectile",
+					"bbDecor",
+					"bbItem"
 				],
 				"subfolders": [],
 				"name": "Billboards"
@@ -933,7 +934,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "38d",
+		"version": "39e",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

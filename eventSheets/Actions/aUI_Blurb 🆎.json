@@ -44,10 +44,6 @@
 			"conditions": [],
 			"actions": [
 				{
-					"type": "comment",
-					"text": "todo_opt reuse existing blurb instead of spawning new?"
-				},
-				{
 					"id": "spawn-another-object",
 					"objectClass": "fBlurbSpawners",
 					"sid": 291184420006250,

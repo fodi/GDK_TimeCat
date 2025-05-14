@@ -4,11 +4,18 @@
 	"sid": 675982837152472,
 	"instanceVariables": [
 		{
-			"name": "R_Blurb_ZOffset",
+			"name": "R_Blurb_ZOffset_Normal",
 			"type": "number",
 			"desc": "",
 			"show": true,
 			"sid": 809770138691014
+		},
+		{
+			"name": "R_Blurb_ZOffset_Low",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 626390935884147
 		}
 	],
 	"behaviorTypes": [],

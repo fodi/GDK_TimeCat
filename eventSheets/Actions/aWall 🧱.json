@@ -35,7 +35,7 @@
 							"parameters": [
 								"midX",
 								"-C_Wall_Thickness * 0.5",
-								"R_Level_Columns * C_Grid_Size + C_Wall_Thickness * 2",
+								"R_Level_Columns * C_Level_Grid_Size + C_Wall_Thickness * 2",
 								"C_Wall_Thickness"
 							]
 						},
@@ -49,8 +49,8 @@
 							"sid": 947307769849625,
 							"parameters": [
 								"midX",
-								"R_Level_Rows * C_Grid_Size + C_Wall_Thickness * 0.5",
-								"R_Level_Columns * C_Grid_Size + C_Wall_Thickness * 2",
+								"R_Level_Rows * C_Level_Grid_Size + C_Wall_Thickness * 0.5",
+								"R_Level_Columns * C_Level_Grid_Size + C_Wall_Thickness * 2",
 								"C_Wall_Thickness"
 							]
 						},
@@ -66,7 +66,7 @@
 								"-C_Wall_Thickness * 0.5",
 								"midY",
 								"C_Wall_Thickness",
-								"R_Level_Rows * C_Grid_Size + C_Wall_Thickness * 2"
+								"R_Level_Rows * C_Level_Grid_Size + C_Wall_Thickness * 2"
 							]
 						},
 						{
@@ -78,10 +78,10 @@
 							"objectClass": "Wall",
 							"sid": 787830456411782,
 							"parameters": [
-								"R_Level_Columns * C_Grid_Size + C_Wall_Thickness * 0.5",
+								"R_Level_Columns * C_Level_Grid_Size + C_Wall_Thickness * 0.5",
 								"midY",
 								"C_Wall_Thickness",
-								"R_Level_Rows * C_Grid_Size + C_Wall_Thickness * 2"
+								"R_Level_Rows * C_Level_Grid_Size + C_Wall_Thickness * 2"
 							]
 						}
 					],

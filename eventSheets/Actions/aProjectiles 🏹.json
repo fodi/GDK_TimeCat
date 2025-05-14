@@ -71,15 +71,6 @@
 					}
 				},
 				{
-					"id": "set-solid-collision-filter",
-					"objectClass": "Projectile",
-					"sid": 353624804575017,
-					"parameters": {
-						"mode": "exclusive",
-						"tags": "SOLID_Player"
-					}
-				},
-				{
 					"id": "set-speed",
 					"objectClass": "Projectile",
 					"sid": 259534430416522,

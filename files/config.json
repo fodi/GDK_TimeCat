@@ -1,25 +1,39 @@
 {
-	"sy_opacity": 0,
 	"cols": 7,
 	"rows": 5,
-	"gap_percent": 30,
+	"gap_percent": 5,
+	
 	"pl_health": 300,
 	"pl_health_drain": 10,
 	"pl_heal_pair": 80,
 	"pl_heal_item": 150,
 	"pl_speed": 110,
 	"pl_speed_slow": 80,
+	
 	"pr_speed": 150,
 	"pr_speed_increase": 20,
 	"pr_speed_max": 400,
 	"pr_spawn_time_min": 2,
 	"pr_spawn_time_max": 4,
+	
+	"sy_opacity": 0,
+	"sy_ratio": 4,
+
 	"it_speed": 500,
 	"it_damage": 50,
+	
 	"it_attack_damage": 100,
+	"it_attack_ratio": 1,
+
+	"it_shield_ratio": 1,
+
 	"it_sleep_time": 5,
+	"it_sleep_ratio": 1,
+
 	"it_slow_time": 10,
+	"it_slow_ratio": 1,
 	"it_slow_factor": 0.5,
+
 	"ca_health": 100,
 	"ca_accel": 2,
 	"ca_speed_max": 20,

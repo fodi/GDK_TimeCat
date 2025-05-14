@@ -90,7 +90,7 @@
 							"sid": 204177248564328,
 							"parameters": {
 								"where": "back",
-								"value": "(loopindex(W_X) * C_Grid_Size + C_Grid_Size * 0.5) & \",\" & (loopindex(W_Y) * C_Grid_Size+ C_Grid_Size * 0.5)",
+								"value": "(loopindex(W_X) * C_Level_Grid_Size + C_Level_Grid_Size * 0.5) & \",\" & (loopindex(W_Y) * C_Level_Grid_Size+ C_Level_Grid_Size * 0.5)",
 								"axis": "x"
 							}
 						}
@@ -181,8 +181,8 @@
 							"objectClass": "fTile",
 							"sid": 406551297407535,
 							"parameters": {
-								"x": "Self.X + (random(0, (C_Grid_Size - C_Tile_Size - C_Grid_Padding_Min) * 0.5) * choose(-1, 1))",
-								"y": "Self.Y + (random(0, (C_Grid_Size - C_Tile_Size - C_Grid_Padding_Min) * 0.5) * choose(-1, 1))"
+								"x": "Self.X + (random(0, (C_Level_Grid_Size - C_Level_Tile_Size - C_Level_Grid_Padding_Min) * 0.5) * choose(-1, 1))",
+								"y": "Self.Y + (random(0, (C_Level_Grid_Size - C_Level_Tile_Size - C_Level_Grid_Padding_Min) * 0.5) * choose(-1, 1))"
 							}
 						},
 						{
@@ -194,7 +194,7 @@
 							"objectClass": "fTile",
 							"sid": 940141557096974,
 							"parameters": {
-								"angle": "random(-C_Tile_Angle_Random, C_Tile_Angle_Random)"
+								"angle": "random(-C_Level_Tile_Angle_Random, C_Level_Tile_Angle_Random)"
 							}
 						},
 						{
@@ -211,8 +211,8 @@
 							"objectClass": "fTile",
 							"sid": 145875652396276,
 							"parameters": {
-								"width": "C_Tile_Size",
-								"height": "C_Tile_Size"
+								"width": "C_Level_Tile_Size",
+								"height": "C_Level_Tile_Size"
 							}
 						},
 						{
@@ -246,8 +246,8 @@
 									"objectClass": "Symbol",
 									"sid": 526717356586237,
 									"parameters": {
-										"width": "C_Tile_Size",
-										"height": "C_Tile_Size"
+										"width": "C_Level_Tile_Size",
+										"height": "C_Level_Tile_Size"
 									}
 								}
 							],
@@ -413,7 +413,7 @@
 												"object": "Tile",
 												"expression": "distance(fTile.X, fTile.Y, Tile.X, Tile.Y)",
 												"comparison": 2,
-												"value": "C_Tile_Pair_OptimalMaxDistance"
+												"value": "C_Level_Tile_Pair_OptimalMaxDistance"
 											}
 										},
 										{
@@ -683,8 +683,8 @@
 							"objectClass": "Selection",
 							"sid": 917974084338432,
 							"parameters": {
-								"width": "C_Tile_Size",
-								"height": "C_Tile_Size"
+								"width": "C_Level_Tile_Size",
+								"height": "C_Level_Tile_Size"
 							}
 						},
 						{

@@ -86,8 +86,18 @@
 							"id": "pick-children",
 							"objectClass": "Box",
 							"sid": 926385918120813,
+							"disabled": true,
 							"parameters": {
 								"child": "3dBox",
+								"which": "own"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "Box",
+							"sid": 324190126596710,
+							"parameters": {
+								"child": "bbItem",
 								"which": "own"
 							}
 						}
@@ -97,6 +107,7 @@
 							"id": "tween-one-property",
 							"objectClass": "3dBox",
 							"sid": 493912097626071,
+							"disabled": true,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "TWEEN_3dBox_Appear",
@@ -108,6 +119,32 @@
 								"loop": "no",
 								"ping-pong": "no",
 								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "bbItem",
+							"sid": 550665157130665,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TWEEN_3dBox_Appear",
+								"property": "offsetZElevation",
+								"end-value": "16",
+								"time": "1",
+								"ease": "easeoutelastic",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "bbItem",
+							"sid": 446435173781702,
+							"parameters": {
+								"animation": "item",
+								"from": "beginning"
 							}
 						}
 					],
@@ -132,6 +169,7 @@
 									"id": "set-face-object",
 									"objectClass": "3dBox",
 									"sid": 788703427955117,
+									"disabled": true,
 									"parameters": {
 										"face": "front",
 										"object": "txBoxProjectile"
@@ -141,6 +179,7 @@
 									"id": "set-face-object",
 									"objectClass": "3dBox",
 									"sid": 959874504521635,
+									"disabled": true,
 									"parameters": {
 										"face": "left",
 										"object": "txBoxProjectile"
@@ -150,6 +189,7 @@
 									"id": "set-face-object",
 									"objectClass": "3dBox",
 									"sid": 459165357385627,
+									"disabled": true,
 									"parameters": {
 										"face": "right",
 										"object": "txBoxProjectile"
@@ -159,6 +199,7 @@
 									"id": "set-face-object",
 									"objectClass": "3dBox",
 									"sid": 478065403745948,
+									"disabled": true,
 									"parameters": {
 										"face": "top",
 										"object": "txBoxProjectile"
@@ -168,6 +209,7 @@
 									"id": "set-face-object",
 									"objectClass": "3dBox",
 									"sid": 653901185712324,
+									"disabled": true,
 									"parameters": {
 										"face": "bottom",
 										"object": "txBoxProjectile"
@@ -204,6 +246,7 @@
 									"id": "set-face-object",
 									"objectClass": "3dBox",
 									"sid": 173814505621767,
+									"disabled": true,
 									"parameters": {
 										"face": "front",
 										"object": "txBoxShield"
@@ -213,6 +256,7 @@
 									"id": "set-face-object",
 									"objectClass": "3dBox",
 									"sid": 701829882698841,
+									"disabled": true,
 									"parameters": {
 										"face": "left",
 										"object": "txBoxShield"
@@ -222,6 +266,7 @@
 									"id": "set-face-object",
 									"objectClass": "3dBox",
 									"sid": 853880174465167,
+									"disabled": true,
 									"parameters": {
 										"face": "right",
 										"object": "txBoxShield"
@@ -231,6 +276,7 @@
 									"id": "set-face-object",
 									"objectClass": "3dBox",
 									"sid": 915502577167587,
+									"disabled": true,
 									"parameters": {
 										"face": "top",
 										"object": "txBoxShield"
@@ -240,6 +286,7 @@
 									"id": "set-face-object",
 									"objectClass": "3dBox",
 									"sid": 928541476389699,
+									"disabled": true,
 									"parameters": {
 										"face": "bottom",
 										"object": "txBoxShield"
@@ -267,6 +314,7 @@
 									"id": "set-face-object",
 									"objectClass": "3dBox",
 									"sid": 157854385741128,
+									"disabled": true,
 									"parameters": {
 										"face": "front",
 										"object": "txBoxSleep"
@@ -276,6 +324,7 @@
 									"id": "set-face-object",
 									"objectClass": "3dBox",
 									"sid": 144457289340072,
+									"disabled": true,
 									"parameters": {
 										"face": "left",
 										"object": "txBoxSleep"
@@ -285,6 +334,7 @@
 									"id": "set-face-object",
 									"objectClass": "3dBox",
 									"sid": 257758676191584,
+									"disabled": true,
 									"parameters": {
 										"face": "right",
 										"object": "txBoxSleep"
@@ -294,6 +344,7 @@
 									"id": "set-face-object",
 									"objectClass": "3dBox",
 									"sid": 625343278049404,
+									"disabled": true,
 									"parameters": {
 										"face": "top",
 										"object": "txBoxSleep"
@@ -303,6 +354,7 @@
 									"id": "set-face-object",
 									"objectClass": "3dBox",
 									"sid": 588567881320191,
+									"disabled": true,
 									"parameters": {
 										"face": "bottom",
 										"object": "txBoxSleep"
@@ -330,6 +382,7 @@
 									"id": "set-face-object",
 									"objectClass": "3dBox",
 									"sid": 593165015407329,
+									"disabled": true,
 									"parameters": {
 										"face": "front",
 										"object": "txBoxSlow"
@@ -339,6 +392,7 @@
 									"id": "set-face-object",
 									"objectClass": "3dBox",
 									"sid": 999237748338552,
+									"disabled": true,
 									"parameters": {
 										"face": "left",
 										"object": "txBoxSlow"
@@ -348,6 +402,7 @@
 									"id": "set-face-object",
 									"objectClass": "3dBox",
 									"sid": 872255924114579,
+									"disabled": true,
 									"parameters": {
 										"face": "right",
 										"object": "txBoxSlow"
@@ -357,6 +412,7 @@
 									"id": "set-face-object",
 									"objectClass": "3dBox",
 									"sid": 349729106939263,
+									"disabled": true,
 									"parameters": {
 										"face": "top",
 										"object": "txBoxSlow"
@@ -366,6 +422,7 @@
 									"id": "set-face-object",
 									"objectClass": "3dBox",
 									"sid": 925162116183537,
+									"disabled": true,
 									"parameters": {
 										"face": "bottom",
 										"object": "txBoxSlow"
@@ -375,6 +432,7 @@
 							"sid": 310495331615993
 						},
 						{
+							"bookmark": true,
 							"eventType": "block",
 							"conditions": [],
 							"actions": [
@@ -382,6 +440,7 @@
 									"id": "set-visible",
 									"objectClass": "3dBox",
 									"sid": 630905200509946,
+									"disabled": true,
 									"parameters": {
 										"visibility": "visible"
 									}
@@ -683,6 +742,7 @@
 					"id": "pick-children",
 					"objectClass": "Box",
 					"sid": 910697314629131,
+					"disabled": true,
 					"parameters": {
 						"child": "3dBox",
 						"which": "own"
@@ -708,9 +768,19 @@
 					}
 				},
 				{
+					"type": "comment",
+					"text": "todo"
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Box",
+					"sid": 526365654620188
+				},
+				{
 					"id": "set-face-image",
 					"objectClass": "3dBox",
 					"sid": 919437639675124,
+					"disabled": true,
 					"parameters": {
 						"face": "front",
 						"image": "front"
@@ -720,6 +790,7 @@
 					"id": "set-face-image",
 					"objectClass": "3dBox",
 					"sid": 822810127192937,
+					"disabled": true,
 					"parameters": {
 						"face": "left",
 						"image": "left"
@@ -729,6 +800,7 @@
 					"id": "set-face-image",
 					"objectClass": "3dBox",
 					"sid": 675466362348237,
+					"disabled": true,
 					"parameters": {
 						"face": "right",
 						"image": "right"
@@ -738,6 +810,7 @@
 					"id": "set-face-image",
 					"objectClass": "3dBox",
 					"sid": 173593070660205,
+					"disabled": true,
 					"parameters": {
 						"face": "top",
 						"image": "top"
@@ -747,6 +820,7 @@
 					"id": "set-face-image",
 					"objectClass": "3dBox",
 					"sid": 797450096059839,
+					"disabled": true,
 					"parameters": {
 						"face": "bottom",
 						"image": "bottom"
@@ -756,6 +830,7 @@
 					"id": "tween-one-property",
 					"objectClass": "3dBox",
 					"sid": 458939172527559,
+					"disabled": true,
 					"behaviorType": "Tween",
 					"parameters": {
 						"tags": "TWEEN_3dBox_Disappear",

@@ -55,23 +55,8 @@
 					"sid": 934073728224177
 				}
 			],
-			"sid": 482483851413794
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-playing",
-					"objectClass": "3dCannon",
-					"sid": 632978291734677,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "TWEEN_3dCannon_ZElevation_Spawn"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 853407720485028
+			"sid": 482483851413794,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -126,6 +111,37 @@
 				}
 			],
 			"sid": 701792086990254
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tweens-finished",
+					"objectClass": "3dCannon",
+					"sid": 970391860457903,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "TWEEN_3dCannon_ZElevation_Spawn"
+					}
+				},
+				{
+					"id": "pick-parent",
+					"objectClass": "3dCannon",
+					"sid": 638089345007412,
+					"parameters": {
+						"parent": "Cannon",
+						"which": "own"
+					}
+				}
+			],
+			"actions": [
+				{
+					"customAction": "onSpawnTweenFinished",
+					"objectClass": "Cannon",
+					"sid": 635937490164971
+				}
+			],
+			"sid": 417283430561768
 		}
 	],
 	"sid": 858674299755667

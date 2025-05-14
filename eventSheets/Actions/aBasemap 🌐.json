@@ -21,8 +21,8 @@
 					"parameters": {
 						"object-to-create": "Basemap",
 						"layer": "LAYER_Main",
-						"x": "-(C_Grid_Size * C_Basemap_Ground_Border + C_Grid_Size * C_Basemap_Water_Border)",
-						"y": "-(C_Grid_Size * C_Basemap_Ground_Border + C_Grid_Size * C_Basemap_Water_Border)",
+						"x": "-(C_Level_Grid_Size * C_Basemap_Ground_Border + C_Level_Grid_Size * C_Basemap_Water_Border)",
+						"y": "-(C_Level_Grid_Size * C_Basemap_Ground_Border + C_Level_Grid_Size * C_Basemap_Water_Border)",
 						"create-hierarchy": true,
 						"template-name": "\"\""
 					}
@@ -51,8 +51,8 @@
 					"objectClass": "Basemap",
 					"sid": 120233365649329,
 					"parameters": {
-						"width": "(R_Level_Columns + C_Basemap_Ground_Border * 2 + C_Basemap_Water_Border * 2) * C_Grid_Size",
-						"height": "(R_Level_Rows + C_Basemap_Ground_Border * 2 + C_Basemap_Water_Border * 2) * C_Grid_Size"
+						"width": "(R_Level_Columns + C_Basemap_Ground_Border * 2 + C_Basemap_Water_Border * 2) * C_Level_Grid_Size",
+						"height": "(R_Level_Rows + C_Basemap_Ground_Border * 2 + C_Basemap_Water_Border * 2) * C_Level_Grid_Size"
 					}
 				},
 				{
@@ -83,6 +83,10 @@
 					"text": "todo use noise instead of random"
 				},
 				{
+					"eventType": "comment",
+					"text": "todo re-enable after assets"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -92,7 +96,7 @@
 							"parameters": {
 								"name": "W_X",
 								"start-index": "C_Basemap_Water_Border + C_Basemap_Ground_Border",
-								"end-index": "Basemap.Width / C_Grid_Size - C_Basemap_Water_Border - C_Basemap_Ground_Border - 2"
+								"end-index": "Basemap.Width / C_Level_Grid_Size - C_Basemap_Water_Border - C_Basemap_Ground_Border - 2"
 							}
 						},
 						{
@@ -102,12 +106,13 @@
 							"parameters": {
 								"name": "W_Y",
 								"start-index": "C_Basemap_Water_Border + C_Basemap_Ground_Border",
-								"end-index": "Basemap.Height / C_Grid_Size - C_Basemap_Water_Border -C_Basemap_Ground_Border - 2"
+								"end-index": "Basemap.Height / C_Level_Grid_Size - C_Basemap_Water_Border -C_Basemap_Ground_Border - 2"
 							}
 						}
 					],
 					"actions": [],
 					"sid": 416801256823075,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "comment",
@@ -137,8 +142,8 @@
 									"parameters": {
 										"object-to-create": "3dObstacle1",
 										"layer": "LAYER_Main",
-										"x": "Basemap.TileToPositionX(loopindex(W_X)) + random(0, C_Grid_Size)",
-										"y": "Basemap.TileToPositionY(loopindex(W_Y)) + random(0, C_Grid_Size)",
+										"x": "Basemap.TileToPositionX(loopindex(W_X)) + random(0, C_Level_Grid_Size)",
+										"y": "Basemap.TileToPositionY(loopindex(W_Y)) + random(0, C_Level_Grid_Size)",
 										"create-hierarchy": false,
 										"template-name": "\"\""
 									}
@@ -162,6 +167,7 @@
 								}
 							],
 							"sid": 999534924281563,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -223,6 +229,7 @@
 										}
 									],
 									"sid": 666866691919378,
+									"disabled": true,
 									"isOrBlock": true
 								}
 							]
@@ -251,8 +258,8 @@
 									"parameters": {
 										"object-to-create": "bbDecor",
 										"layer": "LAYER_Main",
-										"x": "Basemap.TileToPositionX(loopindex(W_X)) + random(0, C_Grid_Size)",
-										"y": "Basemap.TileToPositionY(loopindex(W_Y)) + random(0, C_Grid_Size)",
+										"x": "Basemap.TileToPositionX(loopindex(W_X)) + random(0, C_Level_Grid_Size)",
+										"y": "Basemap.TileToPositionY(loopindex(W_Y)) + random(0, C_Level_Grid_Size)",
 										"create-hierarchy": false,
 										"template-name": "\"\""
 									}
@@ -267,6 +274,7 @@
 								}
 							],
 							"sid": 583335893139299,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -328,6 +336,7 @@
 										}
 									],
 									"sid": 362019674868729,
+									"disabled": true,
 									"isOrBlock": true
 								}
 							]
@@ -361,7 +370,7 @@
 							"parameters": {
 								"name": "W_X",
 								"start-index": "C_Basemap_Water_Border",
-								"end-index": "Basemap.Width / C_Grid_Size - C_Basemap_Water_Border - 1"
+								"end-index": "Basemap.Width / C_Level_Grid_Size - C_Basemap_Water_Border - 1"
 							}
 						},
 						{
@@ -371,7 +380,7 @@
 							"parameters": {
 								"name": "W_Y",
 								"start-index": "C_Basemap_Water_Border",
-								"end-index": "Basemap.Height / C_Grid_Size - C_Basemap_Water_Border - 1"
+								"end-index": "Basemap.Height / C_Level_Grid_Size - C_Basemap_Water_Border - 1"
 							}
 						}
 					],

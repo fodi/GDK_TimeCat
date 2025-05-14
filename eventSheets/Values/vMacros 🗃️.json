@@ -1057,9 +1057,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TIMER_Player_WakingUp",
+			"name": "TIMER_Player_Sleep_Blurb",
 			"type": "string",
-			"initialValue": "Player_WakingUp",
+			"initialValue": "Player_Sleep_Blurb",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -1094,6 +1094,16 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 596606921358655
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_Level_End",
+			"type": "string",
+			"initialValue": "Level_End",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 116184784019582
 		},
 		{
 			"eventType": "comment",
@@ -1194,24 +1204,8 @@
 			"sid": 455255730079436
 		},
 		{
-			"eventType": "variable",
-			"name": "TIMER_Level_End",
-			"type": "string",
-			"initialValue": "Level_End",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 599197506098354
-		},
-		{
-			"eventType": "variable",
-			"name": "SOLID_Player",
-			"type": "string",
-			"initialValue": "Player",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 112031850189237
+			"eventType": "comment",
+			"text": "Unsorted"
 		},
 		{
 			"eventType": "group",

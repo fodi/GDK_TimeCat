@@ -25,6 +25,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 739350716568227
+		},
+		{
+			"name": "initAnimationSpeed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 699780347452330
 		}
 	],
 	"behaviorTypes": [

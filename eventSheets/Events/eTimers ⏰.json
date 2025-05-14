@@ -2,6 +2,10 @@
 	"name": "eTimers ⏰",
 	"events": [
 		{
+			"eventType": "comment",
+			"text": "Player"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -37,10 +41,72 @@
 				{
 					"id": "on-timer",
 					"objectClass": "Player",
+					"sid": 765668752213644,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "TIMER_Player_Slow"
+					}
+				},
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 651530937117833,
+					"parameters": {
+						"object": "Player"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 607797466365295,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "Player",
+							"sid": 387910092707000,
+							"parameters": {
+								"child": "Particles",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-rate",
+							"objectClass": "Particles",
+							"sid": 404554281953911,
+							"parameters": {
+								"rate": "0"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Particles",
+							"sid": 300033526657276,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "Particles.Timeout",
+								"type": "once",
+								"tag": "TIMER_Particles_Destroy"
+							}
+						}
+					],
+					"sid": 181037009272121
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "Player",
 					"sid": 322168718065793,
 					"behaviorType": "Timer",
 					"parameters": {
-						"tag": "TIMER_Player_WakingUp"
+						"tag": "TIMER_Player_Sleep_Blurb"
 					}
 				},
 				{
@@ -54,16 +120,68 @@
 			],
 			"actions": [
 				{
-					"customAction": "updateAnimation",
+					"customAction": "spawnBlurb",
 					"objectClass": "Player",
-					"sid": 914864994453676,
+					"customActionObjectClass": "fBlurbSpawners",
+					"sid": 664434996411964,
 					"parameters": [
-						"ANIM_WakingUp"
+						"\"zZz\"",
+						"Self.R_Blurb_ZOffset_Low",
+						"int(trim(tokenat(C_CSV_ColorsInt, 0, \",\")))",
+						"1.7"
 					]
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "Player",
+					"sid": 493388124235060,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "random(1.4, 2)",
+						"type": "once",
+						"tag": "TIMER_Player_Sleep_Blurb"
+					}
 				}
 			],
-			"sid": 289643315531853,
-			"disabled": true
+			"sid": 289643315531853
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "Player",
+					"sid": 245072411420822,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "TIMER_Player_Sleep"
+					}
+				},
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 958591880530749,
+					"parameters": {
+						"object": "Player"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-timer",
+					"objectClass": "Player",
+					"sid": 290121690572948,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "TIMER_Player_Sleep_Blurb"
+					}
+				}
+			],
+			"sid": 373951052428713
+		},
+		{
+			"eventType": "comment",
+			"text": "Cannon"
 		},
 		{
 			"eventType": "block",
@@ -105,6 +223,91 @@
 			"conditions": [
 				{
 					"id": "on-timer",
+					"objectClass": "Cannon",
+					"sid": 851019762092103,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "TIMER_Cannon_CheckMaxSpeed"
+					}
+				},
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 362965656635868,
+					"parameters": {
+						"object": "Cannon"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 922240342976189,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 319311198252082,
+							"parameters": {
+								"object": "Cannon",
+								"expression": "Cannon.Orbit.Speed",
+								"comparison": 5,
+								"value": "Cannon.R_Speed_Max"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-timer",
+							"objectClass": "Cannon",
+							"sid": 477906759339590,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "TIMER_Cannon_CheckMaxSpeed"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Cannon",
+							"sid": 684388477907491,
+							"behaviorType": "Orbit",
+							"parameters": {
+								"speed": "Self.R_Speed_Max"
+							}
+						},
+						{
+							"id": "set-acceleration",
+							"objectClass": "Cannon",
+							"sid": 159461102917086,
+							"behaviorType": "Orbit",
+							"parameters": {
+								"acceleration": "0"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 968238823839252,
+							"parameters": {
+								"type": "log",
+								"message": "\"Cannon #\" & Cannon.UID & \" reached max speed\""
+							}
+						}
+					],
+					"sid": 155281456437913
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Box"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
 					"objectClass": "Box",
 					"sid": 723563679801714,
 					"behaviorType": "Timer",
@@ -131,66 +334,34 @@
 			"sid": 825971556518263
 		},
 		{
+			"eventType": "comment",
+			"text": "Basemap"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
 					"id": "on-timer",
-					"objectClass": "Player",
-					"sid": 818778250639348,
+					"objectClass": "Basemap",
+					"sid": 172932349480795,
 					"behaviorType": "Timer",
 					"parameters": {
-						"tag": "TIMER_Player_Slow"
-					}
-				},
-				{
-					"id": "for-each",
-					"objectClass": "System",
-					"sid": 208333998775540,
-					"parameters": {
-						"object": "Player"
+						"tag": "TIMER_Basemap_Animate"
 					}
 				}
 			],
-			"actions": [],
-			"sid": 283946335044365,
-			"children": [
+			"actions": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-children",
-							"objectClass": "Player",
-							"sid": 434831718335799,
-							"parameters": {
-								"child": "Particles",
-								"which": "own"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-rate",
-							"objectClass": "Particles",
-							"sid": 105437882323998,
-							"parameters": {
-								"rate": "0"
-							}
-						},
-						{
-							"id": "start-timer",
-							"objectClass": "Particles",
-							"sid": 541631739703031,
-							"behaviorType": "Timer",
-							"parameters": {
-								"duration": "Particles.Timeout",
-								"type": "once",
-								"tag": "TIMER_Particles_Destroy"
-							}
-						}
-					],
-					"sid": 526082757910556
+					"customAction": "animate",
+					"objectClass": "Basemap",
+					"sid": 932924525502399
 				}
-			]
+			],
+			"sid": 451497678528545
+		},
+		{
+			"eventType": "comment",
+			"text": "Particles"
 		},
 		{
 			"eventType": "block",
@@ -198,7 +369,7 @@
 				{
 					"id": "on-timer",
 					"objectClass": "Particles",
-					"sid": 240875054009840,
+					"sid": 228780410162996,
 					"behaviorType": "Timer",
 					"parameters": {
 						"tag": "TIMER_Particles_Destroy"
@@ -209,10 +380,14 @@
 				{
 					"id": "destroy",
 					"objectClass": "Particles",
-					"sid": 350652340761977
+					"sid": 336199360686459
 				}
 			],
-			"sid": 155604917449979
+			"sid": 392042245225262
+		},
+		{
+			"eventType": "comment",
+			"text": "Global"
 		},
 		{
 			"eventType": "block",
@@ -278,111 +453,8 @@
 			"conditions": [
 				{
 					"id": "on-timer",
-					"objectClass": "Cannon",
-					"sid": 138985451798551,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "TIMER_Cannon_CheckMaxSpeed"
-					}
-				},
-				{
-					"id": "for-each",
-					"objectClass": "System",
-					"sid": 352560577415497,
-					"parameters": {
-						"object": "Cannon"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 653776367106014,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-comparison",
-							"objectClass": "System",
-							"sid": 877647909829779,
-							"parameters": {
-								"object": "Cannon",
-								"expression": "Cannon.Orbit.Speed",
-								"comparison": 5,
-								"value": "Cannon.R_Speed_Max"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "stop-timer",
-							"objectClass": "Cannon",
-							"sid": 490384820609948,
-							"behaviorType": "Timer",
-							"parameters": {
-								"tag": "TIMER_Cannon_CheckMaxSpeed"
-							}
-						},
-						{
-							"id": "set-speed",
-							"objectClass": "Cannon",
-							"sid": 345978052109766,
-							"behaviorType": "Orbit",
-							"parameters": {
-								"speed": "Self.R_Speed_Max"
-							}
-						},
-						{
-							"id": "set-acceleration",
-							"objectClass": "Cannon",
-							"sid": 880655568463280,
-							"behaviorType": "Orbit",
-							"parameters": {
-								"acceleration": "0"
-							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 991804282375172,
-							"parameters": {
-								"type": "log",
-								"message": "\"Cannon #\" & Cannon.UID & \" reached max speed\""
-							}
-						}
-					],
-					"sid": 672715526155151
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-timer",
-					"objectClass": "Basemap",
-					"sid": 264968978336509,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "TIMER_Basemap_Animate"
-					}
-				}
-			],
-			"actions": [
-				{
-					"customAction": "animate",
-					"objectClass": "Basemap",
-					"sid": 549695371164028
-				}
-			],
-			"sid": 997256967136019
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-timer",
 					"objectClass": "GlobalTimer",
-					"sid": 681256671764123,
+					"sid": 982606448127349,
 					"behaviorType": "Timer",
 					"parameters": {
 						"tag": "TIMER_Level_End"
@@ -392,10 +464,10 @@
 			"actions": [
 				{
 					"callFunction": "endLevel",
-					"sid": 342798405059891
+					"sid": 947505239421334
 				}
 			],
-			"sid": 708796848394119
+			"sid": 366469736129611
 		}
 	],
 	"sid": 750823255495774
