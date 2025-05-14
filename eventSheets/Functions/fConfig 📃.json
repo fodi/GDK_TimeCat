@@ -39,6 +39,7 @@
 							"id": "log",
 							"objectClass": "Browser",
 							"sid": 658469872244759,
+							"disabled": true,
 							"parameters": {
 								"type": "log",
 								"message": "StringSub(\"[config] {0} = {1} (overridden from {2})\", paramName, ConfigURLParams.Get(paramName), ConfigDefault.Get(paramName))"
@@ -69,6 +70,7 @@
 							"id": "log",
 							"objectClass": "Browser",
 							"sid": 717139025158779,
+							"disabled": true,
 							"parameters": {
 								"type": "log",
 								"message": "StringSub(\"[config] {0} = {1} (default)\", paramName, ConfigDefault.Get(paramName))"

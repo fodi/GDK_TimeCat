@@ -390,9 +390,9 @@
 						"tileUID1": -1,
 						"tileUID2": -1,
 						"playerId": 0,
-						"item": "",
 						"boxUID": -1,
 						"pairsFound": 0,
+						"isDead": 0,
 						"R_Blurb_ZOffset": 36
 					},
 					"behaviors": {
@@ -997,7 +997,7 @@
 					"tags": "",
 					"instanceVariables": {
 						"R_OverlapCheckTIme": 0.2,
-						"item": "",
+						"itemType": "",
 						"carrierPlayerUID": -1,
 						"targetPlayerUID": -1,
 						"damage": 0
@@ -1775,7 +1775,7 @@
 					"instanceVariables": {
 						"R_ZElevationInit": 1300,
 						"R_YInit": 1300,
-						"R_FieldOfView": 12,
+						"R_FieldOfView": 30,
 						"R_SmoothingFactor": 5,
 						"lookTargetX": 0,
 						"lookTargetY": 0

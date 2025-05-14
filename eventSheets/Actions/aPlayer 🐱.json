@@ -131,10 +131,21 @@
 							"id": "compare-instance-variable",
 							"objectClass": "Player",
 							"sid": 826549898224005,
+							"disabled": true,
 							"parameters": {
 								"instance-variable": "health",
 								"comparison": 4,
 								"value": "0"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 240124241017459,
+							"parameters": {
+								"instance-variable": "isDead",
+								"comparison": 0,
+								"value": "NO"
 							}
 						},
 						{
@@ -150,6 +161,7 @@
 							"id": "is-animation-playing",
 							"objectClass": "bbPlayer",
 							"sid": 209411219838413,
+							"disabled": true,
 							"parameters": {
 								"animation": "ANIM_Dead"
 							},
@@ -460,6 +472,7 @@
 											"id": "is-animation-playing",
 											"objectClass": "bbPlayer",
 											"sid": 847538530210751,
+											"disabled": true,
 											"parameters": {
 												"animation": "ANIM_Dead"
 											},
@@ -485,13 +498,12 @@
 											],
 											"actions": [
 												{
-													"id": "set-animation",
-													"objectClass": "bbPlayer",
-													"sid": 971861765746294,
-													"parameters": {
-														"animation": "Self.playerId & \"_\" & ANIM_Right",
-														"from": "beginning"
-													}
+													"customAction": "updateAnimation",
+													"objectClass": "Player",
+													"sid": 897983929342001,
+													"parameters": [
+														"ANIM_Right"
+													]
 												}
 											],
 											"sid": 291739462420396
@@ -517,13 +529,12 @@
 											],
 											"actions": [
 												{
-													"id": "set-animation",
-													"objectClass": "bbPlayer",
-													"sid": 565245743510011,
-													"parameters": {
-														"animation": "Self.playerId & \"_\" & ANIM_Left",
-														"from": "beginning"
-													}
+													"customAction": "updateAnimation",
+													"objectClass": "Player",
+													"sid": 382041627701308,
+													"parameters": [
+														"ANIM_Left"
+													]
 												}
 											],
 											"sid": 325695957391072
@@ -549,13 +560,12 @@
 											],
 											"actions": [
 												{
-													"id": "set-animation",
-													"objectClass": "bbPlayer",
-													"sid": 789534248668558,
-													"parameters": {
-														"animation": "Self.playerId & \"_\" & ANIM_Up",
-														"from": "beginning"
-													}
+													"customAction": "updateAnimation",
+													"objectClass": "Player",
+													"sid": 554875666301245,
+													"parameters": [
+														"ANIM_Up"
+													]
 												}
 											],
 											"sid": 984821317977437
@@ -581,13 +591,12 @@
 											],
 											"actions": [
 												{
-													"id": "set-animation",
-													"objectClass": "bbPlayer",
-													"sid": 593205128301847,
-													"parameters": {
-														"animation": "Self.playerId & \"_\" & ANIM_Down",
-														"from": "beginning"
-													}
+													"customAction": "updateAnimation",
+													"objectClass": "Player",
+													"sid": 725079240456858,
+													"parameters": [
+														"ANIM_Down"
+													]
 												}
 											],
 											"sid": 932828700550949
@@ -724,19 +733,18 @@
 							],
 							"actions": [
 								{
-									"id": "set-animation",
-									"objectClass": "bbPlayer",
-									"sid": 286467574484255,
-									"parameters": {
-										"animation": "Self.playerId & \"_\" & ANIM_Idle",
-										"from": "beginning"
-									}
-								},
-								{
 									"id": "stop",
 									"objectClass": "Player",
 									"sid": 587004288969840,
 									"behaviorType": "8Direction"
+								},
+								{
+									"customAction": "updateAnimation",
+									"objectClass": "Player",
+									"sid": 205876716614022,
+									"parameters": [
+										"ANIM_Idle"
+									]
 								}
 							],
 							"sid": 712603625655763
@@ -1408,7 +1416,7 @@
 													"parameters": {
 														"instance-variable": "symbol",
 														"comparison": 0,
-														"value": "ITEM_Health"
+														"value": "IT_Health"
 													}
 												}
 											],
@@ -1591,355 +1599,374 @@
 				}
 			],
 			"eventType": "custom-ace-block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player",
-					"sid": 296488847648050,
-					"disabled": true,
-					"parameters": {
-						"instance-variable": "health",
-						"comparison": 4,
-						"value": "0"
-					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 107532533529383,
-					"parameters": {
-						"variable": "amount",
-						"comparison": 1,
-						"value": "0"
-					}
-				},
-				{
-					"id": "pick-children",
-					"objectClass": "Player",
-					"sid": 560684962059390,
-					"parameters": {
-						"child": "bbPlayer",
-						"which": "own"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Player",
-					"sid": 597449286506615,
-					"parameters": {
-						"instance-variable": "health",
-						"value": "max(Self.health + amount, 0)"
-					}
-				}
-			],
+			"conditions": [],
+			"actions": [],
 			"sid": 876028868693683,
 			"children": [
-				{
-					"eventType": "comment",
-					"text": "If player is out of health, kill them"
-				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player",
-							"sid": 346650929755163,
+							"sid": 327557588605853,
 							"parameters": {
-								"instance-variable": "health",
+								"instance-variable": "isDead",
 								"comparison": 0,
+								"value": "NO"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 773203129610748,
+							"parameters": {
+								"variable": "amount",
+								"comparison": 1,
 								"value": "0"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "Player",
+							"sid": 141910721491267,
+							"parameters": {
+								"child": "bbPlayer",
+								"which": "own"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "stop-timer",
+							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 685209602632978,
-							"behaviorType": "Timer",
+							"sid": 574291861658071,
 							"parameters": {
-								"tag": "TIMER_Tile_Close"
-							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 204871752974923,
-							"parameters": {
-								"type": "log",
-								"message": "\"Player \" & Player.playerId & \" ran out of time.\""
-							}
-						},
-						{
-							"id": "set-animation",
-							"objectClass": "bbPlayer",
-							"sid": 729310302741841,
-							"parameters": {
-								"animation": "ANIM_Dead",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "stop",
-							"objectClass": "Player",
-							"sid": 315281770010920,
-							"disabled": true,
-							"behaviorType": "8Direction"
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "Player",
-							"sid": 408065325201841,
-							"behaviorType": "8Direction",
-							"parameters": {
-								"state": "disabled"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "Player",
-							"sid": 333659858183304,
-							"parameters": {
-								"visibility": "invisible"
+								"instance-variable": "health",
+								"value": "max(Self.health + amount, 0)"
 							}
 						}
 					],
-					"sid": 309837567595600,
+					"sid": 805586119650287,
 					"children": [
 						{
 							"eventType": "comment",
-							"text": "Close tiles opened by player"
+							"text": "If player is out of health, kill them"
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Tile",
-									"sid": 259874945030743,
+									"objectClass": "Player",
+									"sid": 967729235063675,
 									"parameters": {
-										"instance-variable": "playerId",
+										"instance-variable": "health",
 										"comparison": 0,
-										"value": "Player.playerId"
+										"value": "0"
 									}
 								}
 							],
 							"actions": [
 								{
-									"customAction": "close",
-									"objectClass": "Tile",
-									"customActionObjectClass": "fTile",
-									"sid": 988829506412354
+									"id": "stop-timer",
+									"objectClass": "Player",
+									"sid": 584735293532447,
+									"disabled": true,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "TIMER_Tile_Close"
+									}
+								},
+								{
+									"id": "stop-all-timers",
+									"objectClass": "Player",
+									"sid": 165312402361854,
+									"behaviorType": "Timer"
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 301099852662800,
+									"parameters": {
+										"type": "log",
+										"message": "\"Player \" & Player.playerId & \" ran out of time.\""
+									}
+								},
+								{
+									"customAction": "updateAnimation",
+									"objectClass": "Player",
+									"sid": 335316664388213,
+									"parameters": [
+										"ANIM_Dead"
+									]
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Player",
+									"sid": 973141152181811,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Player",
+									"sid": 464935520737221,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player",
+									"sid": 694427364425658,
+									"parameters": {
+										"instance-variable": "isDead",
+										"value": "YES"
+									}
 								}
 							],
-							"sid": 719144108931133
+							"sid": 696078194109802,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Close tiles opened by player"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Tile",
+											"sid": 192365626001959,
+											"parameters": {
+												"instance-variable": "playerId",
+												"comparison": 0,
+												"value": "Player.playerId"
+											}
+										}
+									],
+									"actions": [
+										{
+											"customAction": "close",
+											"objectClass": "Tile",
+											"customActionObjectClass": "fTile",
+											"sid": 745359442238477
+										}
+									],
+									"sid": 483595673687544
+								},
+								{
+									"eventType": "comment",
+									"text": "Remove box from player (so it can be picked up by others)"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "Player",
+											"sid": 267413859436160,
+											"parameters": {
+												"child": "Box",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "remove-from-parent",
+											"objectClass": "Box",
+											"sid": 926565569437107
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Box",
+											"sid": 569943464926341,
+											"parameters": {
+												"instance-variable": "carrierPlayerUID",
+												"value": "NOTHING"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Box",
+											"sid": 890959477436508,
+											"parameters": {
+												"instance-variable": "targetPlayerUID",
+												"value": "NOTHING"
+											}
+										}
+									],
+									"sid": 443655740833957
+								},
+								{
+									"eventType": "comment",
+									"text": "Check if there are any other non-dead players"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-all",
+											"objectClass": "System",
+											"sid": 852965188782884,
+											"parameters": {
+												"object": "Player"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Player",
+											"sid": 604236896194652,
+											"parameters": {
+												"instance-variable": "isDead",
+												"comparison": 0,
+												"value": "NO"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 435082830479427
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 255908445233527
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "endLevel",
+											"sid": 979852464736910
+										}
+									],
+									"sid": 373681461283394
+								}
+							]
 						},
 						{
 							"eventType": "comment",
-							"text": "Remove box from player (so it can be picked up by others)"
+							"text": "Otherwise, show heal / hurt effect if needed"
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "pick-children",
-									"objectClass": "Player",
-									"sid": 260584081928382,
-									"parameters": {
-										"child": "Box",
-										"which": "own"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "remove-from-parent",
-									"objectClass": "Box",
-									"sid": 956758235313920
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Box",
-									"sid": 512825058435004,
-									"parameters": {
-										"instance-variable": "carrierPlayerUID",
-										"value": "NOTHING"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Box",
-									"sid": 890072602152412,
-									"parameters": {
-										"instance-variable": "targetPlayerUID",
-										"value": "NOTHING"
-									}
-								}
-							],
-							"sid": 954145671940170
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-all",
+									"id": "else",
 									"objectClass": "System",
-									"sid": 640794417526362,
-									"parameters": {
-										"object": "Player"
-									}
+									"sid": 758337615578536
 								},
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "Player",
-									"sid": 639450579028348,
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 212714034772033,
 									"parameters": {
-										"instance-variable": "health",
-										"comparison": 4,
-										"value": "0"
+										"variable": "showEffect",
+										"comparison": 0,
+										"value": "YES"
 									}
 								}
 							],
 							"actions": [],
-							"sid": 380778809566618
-						},
-						{
-							"eventType": "block",
-							"conditions": [
+							"sid": 828999726862885,
+							"children": [
 								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 621669922865659
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "endLevel",
-									"sid": 760343666584603
-								}
-							],
-							"sid": 791747734511839
-						}
-					]
-				},
-				{
-					"eventType": "comment",
-					"text": "Otherwise, show heal / hurt effect if needed"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 323851579498259
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 933488069232212,
-							"parameters": {
-								"variable": "showEffect",
-								"comparison": 0,
-								"value": "YES"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 362370292717676,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "Heal player"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 735147876998696,
-									"parameters": {
-										"variable": "amount",
-										"comparison": 4,
-										"value": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 862403355241923,
-									"disabled": true,
-									"parameters": {
-										"type": "log",
-										"message": "\"Player healing: \" & amount"
-									}
+									"eventType": "comment",
+									"text": "Heal player"
 								},
 								{
-									"customAction": "spawnBlurb",
-									"objectClass": "Player",
-									"customActionObjectClass": "fBlurbSpawners",
-									"sid": 980919321368792,
-									"parameters": [
-										"\"+\" & roundToDp(amount, 1) & \" HP\"",
-										"Self.R_Blurb_ZOffset",
-										"rgbEx(0, 100, 0)",
-										"0.8"
-									]
-								}
-							],
-							"sid": 718974204095653
-						},
-						{
-							"eventType": "comment",
-							"text": "Damage player & start invincibility"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 323255316730658
-								}
-							],
-							"actions": [
-								{
-									"id": "tween-value",
-									"objectClass": "bbPlayer",
-									"sid": 445765062360582,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "TWEEN_Player_Hurt",
-										"start-value": "400",
-										"end-value": "0",
-										"time": "0.5",
-										"ease": "easeoutcubic",
-										"destroy-on-complete": "no",
-										"loop": "no",
-										"ping-pong": "no",
-										"repeat-count": "1"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 475213664926017,
+											"parameters": {
+												"variable": "amount",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 544203372826043,
+											"disabled": true,
+											"parameters": {
+												"type": "log",
+												"message": "\"Player healing: \" & amount"
+											}
+										},
+										{
+											"customAction": "spawnBlurb",
+											"objectClass": "Player",
+											"customActionObjectClass": "fBlurbSpawners",
+											"sid": 107363528385713,
+											"parameters": [
+												"\"+\" & roundToDp(amount, 1) & \" HP\"",
+												"Self.R_Blurb_ZOffset",
+												"rgbEx(0, 100, 0)",
+												"0.8"
+											]
+										}
+									],
+									"sid": 970924131013112
 								},
 								{
-									"customAction": "spawnBlurb",
-									"objectClass": "Player",
-									"customActionObjectClass": "fBlurbSpawners",
-									"sid": 829776826365532,
-									"parameters": [
-										"str(roundToDp(amount, 1)) & \" HP\"",
-										"Self.R_Blurb_ZOffset",
-										"rgbEx(100, 0, 0)",
-										"0.8"
-									]
+									"eventType": "comment",
+									"text": "Damage player & start invincibility"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 856461419485721
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-value",
+											"objectClass": "bbPlayer",
+											"sid": 957228685879615,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "TWEEN_Player_Hurt",
+												"start-value": "400",
+												"end-value": "0",
+												"time": "0.5",
+												"ease": "easeoutcubic",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										},
+										{
+											"customAction": "spawnBlurb",
+											"objectClass": "Player",
+											"customActionObjectClass": "fBlurbSpawners",
+											"sid": 716545082769088,
+											"parameters": [
+												"str(roundToDp(amount, 1)) & \" HP\"",
+												"Self.R_Blurb_ZOffset",
+												"rgbEx(100, 0, 0)",
+												"0.8"
+											]
+										}
+									],
+									"sid": 937613761076941
 								}
-							],
-							"sid": 276312573508081
+							]
 						}
 					]
 				}
@@ -2028,6 +2055,262 @@
 						}
 					],
 					"sid": 650097116534947
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "startEffect",
+			"objectClass": "Player",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "itemType",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 458212392066247
+				}
+			],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 125086337551078,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 513824044455216,
+							"parameters": {
+								"variable": "itemType",
+								"comparison": 0,
+								"value": "IT_Sleep"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "Player",
+							"sid": 487840665438905,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "Functions.Config_getNumber(PARAM_Item_Sleep_Time)",
+								"type": "once",
+								"tag": "TIMER_Player_Sleep"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Player",
+							"sid": 408474461151307,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "Functions.Config_getNumber(PARAM_Item_Sleep_Time) - C_Player_WakeTime",
+								"type": "once",
+								"tag": "TIMER_Player_WakingUp"
+							}
+						},
+						{
+							"customAction": "updateAnimation",
+							"objectClass": "Player",
+							"sid": 574620748116242,
+							"parameters": [
+								"ANIM_Sleeping"
+							]
+						}
+					],
+					"sid": 242113141302686
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 323094733363609,
+							"parameters": {
+								"variable": "itemType",
+								"comparison": 0,
+								"value": "IT_Slow"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "Player",
+							"sid": 182757126736893,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "Functions.Config_getNumber(PARAM_Item_Slow_Time)",
+								"type": "once",
+								"tag": "TIMER_Player_Slow"
+							}
+						}
+					],
+					"sid": 650699818577864,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "Player",
+									"sid": 575784273237517,
+									"parameters": {
+										"child": "Particles",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-rate",
+									"objectClass": "Particles",
+									"sid": 642395338870302,
+									"parameters": {
+										"rate": "0"
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "Particles",
+									"sid": 686998409429202,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "Particles.Timeout",
+										"type": "once",
+										"tag": "TIMER_Particles_Destroy"
+									}
+								}
+							],
+							"sid": 820694317166512
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Player",
+									"sid": 760134916024210,
+									"parameters": {
+										"object": "Particles",
+										"layer": "LAYER_Billboards",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "IT_Slow"
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "Player",
+									"sid": 154609494094139,
+									"parameters": {
+										"child": "Particles",
+										"transform-x": true,
+										"transform-y": true,
+										"transform-w": false,
+										"transform-h": false,
+										"transform-a": false,
+										"transform-o": false,
+										"transform-z-elevation": false,
+										"transform-visibility": false,
+										"destroy-with-parent": false
+									}
+								}
+							],
+							"sid": 677930493949892
+						}
+					]
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "updateAnimation",
+			"objectClass": "Player",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "animationName",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 961442772629077
+				}
+			],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 590559724811412,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 895449563551729,
+							"parameters": {
+								"instance-variable": "isDead",
+								"comparison": 0,
+								"value": "NO"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "Player",
+							"sid": 865024316998841,
+							"parameters": {
+								"child": "bbPlayer",
+								"which": "own"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "bbPlayer",
+							"sid": 797735980396482,
+							"parameters": {
+								"animation": "Self.playerId & \"_\" & animationName"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 120431472491068,
+							"disabled": true,
+							"parameters": {
+								"type": "log",
+								"message": "\"Setting animation of player #\" & Player.playerId & \" to \" & animationName"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "bbPlayer",
+							"sid": 700344016102452,
+							"parameters": {
+								"animation": "Self.playerId & \"_\" & animationName",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 437791455581839
 				}
 			]
 		}

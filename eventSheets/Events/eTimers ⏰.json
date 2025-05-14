@@ -36,6 +36,39 @@
 			"conditions": [
 				{
 					"id": "on-timer",
+					"objectClass": "Player",
+					"sid": 322168718065793,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "TIMER_Player_WakingUp"
+					}
+				},
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 208600536325795,
+					"parameters": {
+						"object": "Player"
+					}
+				}
+			],
+			"actions": [
+				{
+					"customAction": "updateAnimation",
+					"objectClass": "Player",
+					"sid": 914864994453676,
+					"parameters": [
+						"ANIM_WakingUp"
+					]
+				}
+			],
+			"sid": 289643315531853
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
 					"objectClass": "Cannon",
 					"sid": 601779891073436,
 					"behaviorType": "Timer",

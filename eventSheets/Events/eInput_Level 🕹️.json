@@ -2165,6 +2165,75 @@
 						}
 					],
 					"sid": 493835906592029
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 472175350096800,
+							"parameters": {
+								"key": 49
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 182740929594051,
+							"parameters": {
+								"instance-variable": "playerId",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "startEffect",
+							"objectClass": "Player",
+							"sid": 991327677168168,
+							"parameters": [
+								"IT_Sleep"
+							]
+						}
+					],
+					"sid": 971514204768969
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 838410236834453,
+							"parameters": {
+								"key": 50
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 700907474009004,
+							"parameters": {
+								"instance-variable": "playerId",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "changeHealth",
+							"objectClass": "Player",
+							"sid": 271520136794333,
+							"parameters": [
+								"-9999",
+								"1"
+							]
+						}
+					],
+					"sid": 371181748428740
 				}
 			],
 			"sid": 445167778018070

@@ -238,6 +238,7 @@
 											"id": "log",
 											"objectClass": "Browser",
 											"sid": 267040491146194,
+											"disabled": true,
 											"parameters": {
 												"type": "log",
 												"message": "\"Pairing within optimal distance: #\" & fTile.UID & \" & \" & Tile.UID"
@@ -300,6 +301,7 @@
 											"id": "log",
 											"objectClass": "Browser",
 											"sid": 809380356858369,
+											"disabled": true,
 											"parameters": {
 												"type": "log",
 												"message": "\"Pairing nearest: #\" & fTile.UID & \" & \" & Tile.UID"

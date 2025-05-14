@@ -137,13 +137,6 @@
 			"sid": 104638813909937
 		},
 		{
-			"name": "item",
-			"type": "string",
-			"desc": "",
-			"show": false,
-			"sid": 935226149773953
-		},
-		{
 			"name": "boxUID",
 			"type": "number",
 			"desc": "",
@@ -156,6 +149,13 @@
 			"desc": "",
 			"show": false,
 			"sid": 507827828610069
+		},
+		{
+			"name": "isDead",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 179699508222428
 		}
 	],
 	"behaviorTypes": [

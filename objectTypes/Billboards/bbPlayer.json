@@ -721,7 +721,7 @@
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 8
+				"speed": 6
 			},
 			{
 				"frames": [
@@ -747,6 +747,43 @@
 				"repeatCount": 1,
 				"repeatTo": 0,
 				"speed": 8
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8553447,
+						"collisionPoly": {
+							"points": [
+								0.3125,
+								0.09375,
+								0.6875,
+								0.09375,
+								0.6875,
+								1,
+								0.3125,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 175330487305705,
+				"name": "1_Dead",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
 			},
 			{
 				"frames": [
@@ -1319,6 +1356,43 @@
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
+						"imageSpriteId": 7178627,
+						"collisionPoly": {
+							"points": [
+								0.3125,
+								0.09375,
+								0.6875,
+								0.09375,
+								0.6875,
+								1,
+								0.3125,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 261895594336868,
+				"name": "2_Dead",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
 						"imageSpriteId": 4078155,
 						"collisionPoly": {
 							"points": [
@@ -1867,6 +1941,43 @@
 				"repeatCount": 1,
 				"repeatTo": 0,
 				"speed": 8
+			},
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 2825166,
+						"collisionPoly": {
+							"points": [
+								0.3125,
+								0.09375,
+								0.6875,
+								0.09375,
+								0.6875,
+								1,
+								0.3125,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 314325675871981,
+				"name": "3_Dead",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
 			},
 			{
 				"frames": [
@@ -2458,7 +2569,7 @@
 					}
 				],
 				"sid": 519158870719866,
-				"name": "Dead",
+				"name": "4_Dead",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

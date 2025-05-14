@@ -158,136 +158,144 @@
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
 			"conditions": [],
-			"actions": [
+			"actions": [],
+			"sid": 519383514606256,
+			"children": [
 				{
-					"type": "comment",
-					"text": "Override parameters if needed"
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Cannon",
-					"sid": 690211573832285,
-					"parameters": {
-						"instance-variable": "R_Projectile_MovementSpeed",
-						"value": "Functions.Config_getNumber(PARAM_Projectile_Speed)"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Cannon",
-					"sid": 266754995629713,
-					"parameters": {
-						"instance-variable": "R_Projectile_MovementSpeed_Increase",
-						"value": "Functions.Config_getNumber(PARAM_Projectile_Speed_Increase)"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Cannon",
-					"sid": 438581806872930,
-					"parameters": {
-						"instance-variable": "R_Projectile_MovementSpeed_Max",
-						"value": "Functions.Config_getNumber(PARAM_Projectile_Speed_Max)"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Cannon",
-					"sid": 681429461930306,
-					"parameters": {
-						"instance-variable": "R_Shoot_Interval_Min",
-						"value": "Functions.Config_getNumber(PARAM_Projectile_SpawnTime_Min)"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Cannon",
-					"sid": 473721105520821,
-					"parameters": {
-						"instance-variable": "R_Shoot_Interval_Max",
-						"value": "Functions.Config_getNumber(PARAM_Projectile_SpawnTime_Max)"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Cannon",
-					"sid": 424680946716791,
-					"parameters": {
-						"instance-variable": "R_Health_Max",
-						"value": "Functions.Config_getNumber(PARAM_Cannon_Health)"
-					}
-				},
-				{
-					"type": "comment",
-					"text": "Initialize projectile spawner"
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Cannon",
-					"sid": 318704262914376,
-					"parameters": {
-						"instance-variable": "health",
-						"value": "Self.R_Health_Max"
-					}
-				},
-				{
-					"id": "set-target",
-					"objectClass": "Cannon",
-					"sid": 809900119677547,
-					"behaviorType": "Orbit",
-					"parameters": {
-						"x": "midX",
-						"y": "midY"
-					}
-				},
-				{
-					"id": "set-rotation",
-					"objectClass": "Cannon",
-					"sid": 125703501558468,
-					"behaviorType": "Orbit",
-					"parameters": {
-						"angle": "random(0, 360)"
-					}
-				},
-				{
-					"id": "set-radius",
-					"objectClass": "Cannon",
-					"sid": 780200512576932,
-					"behaviorType": "Orbit",
-					"parameters": {
-						"primary": "midX + C_Tile_Size * 2",
-						"secondary": "midY + C_Tile_Size * 2"
-					}
-				},
-				{
-					"id": "set-speed",
-					"objectClass": "Cannon",
-					"sid": 715680477239772,
-					"behaviorType": "Orbit",
-					"parameters": {
-						"speed": "Self.Orbit.Speed * choose(-1, 1)"
-					}
-				},
-				{
-					"customAction": "startShootTimer",
-					"objectClass": "Cannon",
-					"sid": 578130863081581
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 629752088080533
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "Cannon",
-					"sid": 893351637958558,
-					"parameters": {
-						"visibility": "visible"
-					}
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Override parameters if needed"
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Cannon",
+							"sid": 657460902464411,
+							"parameters": {
+								"instance-variable": "R_Projectile_MovementSpeed",
+								"value": "Functions.Config_getNumber(PARAM_Projectile_Speed)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Cannon",
+							"sid": 889708255347274,
+							"parameters": {
+								"instance-variable": "R_Projectile_MovementSpeed_Increase",
+								"value": "Functions.Config_getNumber(PARAM_Projectile_Speed_Increase)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Cannon",
+							"sid": 307923832479006,
+							"parameters": {
+								"instance-variable": "R_Projectile_MovementSpeed_Max",
+								"value": "Functions.Config_getNumber(PARAM_Projectile_Speed_Max)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Cannon",
+							"sid": 115716986810886,
+							"parameters": {
+								"instance-variable": "R_Shoot_Interval_Min",
+								"value": "Functions.Config_getNumber(PARAM_Projectile_SpawnTime_Min)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Cannon",
+							"sid": 685966481005167,
+							"parameters": {
+								"instance-variable": "R_Shoot_Interval_Max",
+								"value": "Functions.Config_getNumber(PARAM_Projectile_SpawnTime_Max)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Cannon",
+							"sid": 539911240897390,
+							"parameters": {
+								"instance-variable": "R_Health_Max",
+								"value": "Functions.Config_getNumber(PARAM_Cannon_Health)"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Initialize projectile spawner"
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Cannon",
+							"sid": 693014011184497,
+							"parameters": {
+								"instance-variable": "health",
+								"value": "Self.R_Health_Max"
+							}
+						},
+						{
+							"id": "set-target",
+							"objectClass": "Cannon",
+							"sid": 893274077709060,
+							"behaviorType": "Orbit",
+							"parameters": {
+								"x": "midX",
+								"y": "midY"
+							}
+						},
+						{
+							"id": "set-rotation",
+							"objectClass": "Cannon",
+							"sid": 524731541822125,
+							"behaviorType": "Orbit",
+							"parameters": {
+								"angle": "random(0, 360)"
+							}
+						},
+						{
+							"id": "set-radius",
+							"objectClass": "Cannon",
+							"sid": 202904953935456,
+							"behaviorType": "Orbit",
+							"parameters": {
+								"primary": "distance(0, 0, midX, midY) + C_Tile_Size * 2",
+								"secondary": "distance(0, 0, midX, midY) + C_Tile_Size * 2"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Cannon",
+							"sid": 211388899428224,
+							"behaviorType": "Orbit",
+							"parameters": {
+								"speed": "Self.Orbit.Speed * choose(-1, 1)"
+							}
+						},
+						{
+							"customAction": "startShootTimer",
+							"objectClass": "Cannon",
+							"sid": 795394196873268
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 932883707559097
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Cannon",
+							"sid": 122835913059046,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 810463059339353
 				}
-			],
-			"sid": 519383514606256
+			]
 		},
 		{
 			"aceType": "action",
