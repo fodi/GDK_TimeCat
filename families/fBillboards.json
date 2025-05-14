@@ -1,0 +1,12 @@
+{
+	"name": "fBillboards",
+	"plugin-id": "Sprite",
+	"sid": 846931796139612,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"bbPlayer",
+		"bbProjectile"
+	]
+}

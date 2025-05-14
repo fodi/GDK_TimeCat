@@ -20,7 +20,7 @@
 					"sid": 331362440688918,
 					"parameters": {
 						"object-to-create": "Camera",
-						"layer": "LAYER_Player",
+						"layer": "LAYER_Shadows",
 						"x": "0",
 						"y": "0",
 						"create-hierarchy": true,

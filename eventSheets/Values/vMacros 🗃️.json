@@ -243,9 +243,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "LAYER_Player",
+			"name": "LAYER_Shadows",
 			"type": "string",
-			"initialValue": "Player",
+			"initialValue": "Shadows",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -260,6 +260,16 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 935922502294559
+		},
+		{
+			"eventType": "variable",
+			"name": "LAYER_Billboards",
+			"type": "string",
+			"initialValue": "Billboards",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 964460120114832
 		},
 		{
 			"eventType": "comment",

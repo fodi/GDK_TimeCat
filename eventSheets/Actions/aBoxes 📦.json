@@ -42,7 +42,7 @@
 					"sid": 128324909259821,
 					"parameters": {
 						"object-to-create": "Box",
-						"layer": "LAYER_Player",
+						"layer": "LAYER_Shadows",
 						"x": "x",
 						"y": "y",
 						"create-hierarchy": true,

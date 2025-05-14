@@ -228,7 +228,11 @@
 			"fTile",
 			"fPlayer",
 			"fBox",
-			"fBlurbSpawners"
+			"fBlurbSpawners",
+			"fBillboards",
+			"f3DObjects",
+			"fShadows",
+			"fCannon"
 		],
 		"subfolders": []
 	},
@@ -250,7 +254,7 @@
 				"items": [
 					"_eAnimations 🎞️",
 					"eCollisions 💥",
-					"_eCreated ✨",
+					"eCreated ✨",
 					"eCycles ⏱️",
 					"_eDestroyed 💀",
 					"_eMovement 🏃",
@@ -410,7 +414,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "21",
+		"version": "20d",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

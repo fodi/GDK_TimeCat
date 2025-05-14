@@ -1,0 +1,69 @@
+{
+	"name": "eCreated ✨",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "fBillboards",
+					"sid": 102930708536756
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-layer",
+					"objectClass": "fBillboards",
+					"sid": 713286415189828,
+					"parameters": {
+						"layer": "LAYER_Main"
+					}
+				}
+			],
+			"sid": 685157383383581
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "fShadows",
+					"sid": 995838435938766
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-layer",
+					"objectClass": "fShadows",
+					"sid": 254410258390907,
+					"parameters": {
+						"layer": "LAYER_Shadows"
+					}
+				}
+			],
+			"sid": 679643026608509
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "f3DObjects",
+					"sid": 289583041979256
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-layer",
+					"objectClass": "f3DObjects",
+					"sid": 617016775857921,
+					"parameters": {
+						"layer": "LAYER_Billboards"
+					}
+				}
+			],
+			"sid": 585306370954250
+		}
+	],
+	"sid": 397755584574739
+}

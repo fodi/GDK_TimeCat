@@ -1,0 +1,11 @@
+{
+	"name": "f3DObjects",
+	"plugin-id": "Shape3D",
+	"sid": 886296632840423,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"3dBox"
+	]
+}

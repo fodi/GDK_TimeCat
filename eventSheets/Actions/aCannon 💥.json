@@ -3,6 +3,40 @@
 	"events": [
 		{
 			"aceType": "action",
+			"aceName": "spawn",
+			"objectClass": "Cannon",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 186232422535179,
+					"parameters": {
+						"object-to-create": "Cannon",
+						"layer": "LAYER_Main",
+						"x": "midX",
+						"y": "midY",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"customAction": "init",
+					"objectClass": "Cannon",
+					"sid": 253427507074522
+				}
+			],
+			"sid": 435920396597194
+		},
+		{
+			"aceType": "action",
 			"aceName": "init",
 			"objectClass": "Cannon",
 			"functionDescription": "",
@@ -21,28 +55,46 @@
 				{
 					"id": "set-instvar-value",
 					"objectClass": "Cannon",
-					"sid": 992877707207748,
+					"sid": 623567811385542,
 					"parameters": {
 						"instance-variable": "R_Projectile_MovementSpeed",
-						"value": "int(Functions.Config_getNumber(PARAM_Projectile_Speed, Self.R_Projectile_MovementSpeed))"
+						"value": "Functions.Config_getNumber(PARAM_Projectile_Speed, Self.R_Projectile_MovementSpeed)"
 					}
 				},
 				{
 					"id": "set-instvar-value",
 					"objectClass": "Cannon",
-					"sid": 970128107637397,
+					"sid": 662547949796399,
+					"parameters": {
+						"instance-variable": "R_Projectile_MovementSpeed_Increase",
+						"value": "Functions.Config_getNumber(PARAM_Projectile_Speed_Increase, Self.R_Projectile_MovementSpeed_Increase)"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Cannon",
+					"sid": 107620201611199,
+					"parameters": {
+						"instance-variable": "R_Projectile_MovementSpeed_Max",
+						"value": "Functions.Config_getNumber(PARAM_Projectile_Speed_Max, Self.R_Projectile_MovementSpeed_Max)"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Cannon",
+					"sid": 258596534393957,
 					"parameters": {
 						"instance-variable": "R_Shoot_Interval_Min",
-						"value": "int(Functions.Config_getNumber(PARAM_Projectile_SpawnTime_Min, Self.R_Shoot_Interval_Min))"
+						"value": "Functions.Config_getNumber(PARAM_Projectile_SpawnTime_Min, Self.R_Shoot_Interval_Min)"
 					}
 				},
 				{
 					"id": "set-instvar-value",
 					"objectClass": "Cannon",
-					"sid": 234117722885026,
+					"sid": 738465996739016,
 					"parameters": {
 						"instance-variable": "R_Shoot_Interval_Max",
-						"value": "int(Functions.Config_getNumber(PARAM_Projectile_SpawnTime_Max, Self.R_Shoot_Interval_Max))"
+						"value": "Functions.Config_getNumber(PARAM_Projectile_SpawnTime_Max, Self.R_Shoot_Interval_Max)"
 					}
 				},
 				{
@@ -60,6 +112,15 @@
 					}
 				},
 				{
+					"id": "set-rotation",
+					"objectClass": "Cannon",
+					"sid": 125703501558468,
+					"behaviorType": "Orbit",
+					"parameters": {
+						"angle": "random(0, 360)"
+					}
+				},
+				{
 					"id": "set-radius",
 					"objectClass": "Cannon",
 					"sid": 780200512576932,
@@ -67,6 +128,15 @@
 					"parameters": {
 						"primary": "midX + C_Tile_Size * 2",
 						"secondary": "midY + C_Tile_Size * 2"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Cannon",
+					"sid": 715680477239772,
+					"behaviorType": "Orbit",
+					"parameters": {
+						"speed": "Self.Orbit.Speed * choose(-1, 1)"
 					}
 				},
 				{
@@ -145,14 +215,36 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Cannon",
-							"sid": 462411347746676,
+							"sid": 786603231463840,
 							"parameters": {
 								"instance-variable": "R_Projectile_MovementSpeed",
-								"value": "min(Self.R_Projectile_MovementSpeed + int(Functions.Config_getNumber(PARAM_Projectile_Speed_Increase, Self.R_Projectile_MovementSpeed)), int(Functions.Config_getNumber(PARAM_Projectile_Speed_Max, Self.R_Projectile_MovementSpeed)))"
+								"value": "min(Self.R_Projectile_MovementSpeed + Self.R_Projectile_MovementSpeed_Increase, Self.R_Projectile_MovementSpeed_Max)"
 							}
 						}
 					],
 					"sid": 692676499856425
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 127610369337241
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 504311610538907,
+							"parameters": {
+								"type": "log",
+								"message": "\"Cannon has no target\""
+							}
+						}
+					],
+					"sid": 175363721439393
 				}
 			]
 		},
@@ -182,40 +274,6 @@
 				}
 			],
 			"sid": 472290367645562
-		},
-		{
-			"aceType": "action",
-			"aceName": "spawn",
-			"objectClass": "Cannon",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "custom-ace-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 902939753953571,
-					"parameters": {
-						"object-to-create": "Cannon",
-						"layer": "LAYER_Main",
-						"x": "midX",
-						"y": "midY",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"customAction": "init",
-					"objectClass": "Cannon",
-					"sid": 344304806664953
-				}
-			],
-			"sid": 422900639285433
 		}
 	],
 	"sid": 414515668687685

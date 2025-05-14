@@ -25,6 +25,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 527085891265690
+		},
+		{
+			"name": "R_Projectile_MovementSpeed_Increase",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 990090152562559
+		},
+		{
+			"name": "R_Projectile_MovementSpeed_Max",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 829600088068402
 		}
 	],
 	"behaviorTypes": [

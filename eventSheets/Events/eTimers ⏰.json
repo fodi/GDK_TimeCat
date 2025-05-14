@@ -304,6 +304,15 @@
 					"sid": 507512664605177
 				},
 				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 617782999518295,
+					"parameters": {
+						"type": "log",
+						"message": "\"cannon shoot timer\""
+					}
+				},
+				{
 					"customAction": "startShootTimer",
 					"objectClass": "Cannon",
 					"sid": 587226946553301

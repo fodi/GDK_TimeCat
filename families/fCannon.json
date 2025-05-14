@@ -1,0 +1,11 @@
+{
+	"name": "fCannon",
+	"plugin-id": "Sprite",
+	"sid": 599891011961112,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Cannon"
+	]
+}

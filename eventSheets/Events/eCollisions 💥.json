@@ -273,6 +273,40 @@
 				}
 			],
 			"sid": 823790296874762
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Cannon",
+					"sid": 820556355119597,
+					"parameters": {
+						"object": "fCannon"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-speed",
+					"objectClass": "Cannon",
+					"sid": 834041421751103,
+					"behaviorType": "Orbit",
+					"parameters": {
+						"speed": "-Self.Orbit.Speed"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Cannon",
+					"sid": 910511038382573,
+					"behaviorType": "Orbit",
+					"parameters": {
+						"speed": "-Self.Orbit.Speed"
+					}
+				}
+			],
+			"sid": 879981744248505
 		}
 	],
 	"sid": 441405412204844

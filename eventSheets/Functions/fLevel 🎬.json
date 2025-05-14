@@ -158,6 +158,11 @@
 							"sid": 859350561082887
 						},
 						{
+							"customAction": "spawn",
+							"objectClass": "Cannon",
+							"sid": 490179268452867
+						},
+						{
 							"type": "comment",
 							"text": "Spawn walls"
 						},

@@ -746,7 +746,7 @@
 							"sid": 950569274520008,
 							"parameters": {
 								"object-to-create": "Player",
-								"layer": "LAYER_Player",
+								"layer": "LAYER_Shadows",
 								"x": "midX",
 								"y": "midY",
 								"create-hierarchy": true,

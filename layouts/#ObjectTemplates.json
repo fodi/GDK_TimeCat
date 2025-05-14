@@ -342,7 +342,7 @@
 							0,
 							0,
 							0,
-							0.25
+							1
 						],
 						"angle": 0,
 						"zElevation": 0
@@ -471,7 +471,7 @@
 							0,
 							0,
 							0,
-							0.25
+							1
 						],
 						"angle": 0,
 						"zElevation": 0
@@ -1071,7 +1071,7 @@
 							0,
 							0,
 							0,
-							0.25
+							1
 						],
 						"angle": 0,
 						"zElevation": 0
@@ -1227,7 +1227,9 @@
 					"instanceVariables": {
 						"R_Shoot_Interval_Min": 2,
 						"R_Shoot_Interval_Max": 4,
-						"R_Projectile_MovementSpeed": 150
+						"R_Projectile_MovementSpeed": 150,
+						"R_Projectile_MovementSpeed_Increase": 20,
+						"R_Projectile_MovementSpeed_Max": 400
 					},
 					"behaviors": {
 						"Orbit": {
