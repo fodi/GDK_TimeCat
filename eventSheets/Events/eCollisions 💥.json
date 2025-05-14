@@ -2,10 +2,6 @@
 	"name": "eCollisions 💥",
 	"events": [
 		{
-			"eventType": "comment",
-			"text": "Player + Projectile"
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -73,10 +69,6 @@
 					"sid": 848703835571815
 				}
 			]
-		},
-		{
-			"eventType": "comment",
-			"text": "Player + Box"
 		},
 		{
 			"eventType": "block",
@@ -285,10 +277,6 @@
 			]
 		},
 		{
-			"eventType": "comment",
-			"text": "Box + Projectile"
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -308,10 +296,6 @@
 				}
 			],
 			"sid": 823790296874762
-		},
-		{
-			"eventType": "comment",
-			"text": "Cannon + Cannon"
 		},
 		{
 			"eventType": "block",
@@ -346,10 +330,6 @@
 				}
 			],
 			"sid": 879981744248505
-		},
-		{
-			"eventType": "comment",
-			"text": "Box + Cannon"
 		},
 		{
 			"eventType": "block",

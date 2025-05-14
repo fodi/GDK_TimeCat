@@ -2165,40 +2165,6 @@
 						}
 					],
 					"sid": 493835906592029
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 472175350096800,
-							"parameters": {
-								"key": 49
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player",
-							"sid": 182740929594051,
-							"parameters": {
-								"instance-variable": "playerId",
-								"comparison": 0,
-								"value": "1"
-							}
-						}
-					],
-					"actions": [
-						{
-							"customAction": "startEffect",
-							"objectClass": "Player",
-							"sid": 991327677168168,
-							"parameters": [
-								"IT_Sleep"
-							]
-						}
-					],
-					"sid": 971514204768969
 				}
 			],
 			"sid": 445167778018070

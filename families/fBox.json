@@ -11,7 +11,7 @@
 			"sid": 408962874798054
 		},
 		{
-			"name": "itemType",
+			"name": "item",
 			"type": "string",
 			"desc": "",
 			"show": false,

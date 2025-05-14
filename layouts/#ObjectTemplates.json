@@ -390,6 +390,7 @@
 						"tileUID1": -1,
 						"tileUID2": -1,
 						"playerId": 0,
+						"item": "",
 						"boxUID": -1,
 						"pairsFound": 0,
 						"R_Blurb_ZOffset": 36
@@ -996,7 +997,7 @@
 					"tags": "",
 					"instanceVariables": {
 						"R_OverlapCheckTIme": 0.2,
-						"itemType": "",
+						"item": "",
 						"carrierPlayerUID": -1,
 						"targetPlayerUID": -1,
 						"damage": 0
