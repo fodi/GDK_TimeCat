@@ -64,6 +64,15 @@
 					}
 				},
 				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 203509029354875,
+					"parameters": {
+						"type": "log",
+						"message": "\"projectile speed: \" & movementSpeed"
+					}
+				},
+				{
 					"id": "set-speed",
 					"objectClass": "Projectile",
 					"sid": 259534430416522,

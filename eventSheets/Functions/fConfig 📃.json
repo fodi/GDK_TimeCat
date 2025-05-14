@@ -2,6 +2,10 @@
 	"name": "fConfig 📃",
 	"events": [
 		{
+			"eventType": "comment",
+			"text": "todo use json defaults instead of specified ones, can be source of config webapp"
+		},
+		{
 			"functionName": "Config_getNumber",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -15,13 +19,6 @@
 					"initialValue": "",
 					"comment": "",
 					"sid": 313045857507444
-				},
-				{
-					"name": "default",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"sid": 123966680024856
 				}
 			],
 			"eventType": "function-block",
@@ -34,7 +31,7 @@
 					"conditions": [
 						{
 							"id": "has-key",
-							"objectClass": "URLParams",
+							"objectClass": "ConfigURLParams",
 							"sid": 394129202374248,
 							"parameters": {
 								"path": "paramName"
@@ -45,10 +42,10 @@
 						{
 							"id": "log",
 							"objectClass": "Browser",
-							"sid": 617596883012473,
+							"sid": 658469872244759,
 							"parameters": {
 								"type": "log",
-								"message": "StringSub(\"[config] {0} = {1} (overridden from {2})\", paramName, URLParams.Get(paramName), default)"
+								"message": "StringSub(\"[config] {0} = {1} (overridden from {2})\", paramName, ConfigURLParams.Get(paramName), ConfigDefault.Get(paramName))"
 							}
 						},
 						{
@@ -56,7 +53,7 @@
 							"objectClass": "Functions",
 							"sid": 307161544078674,
 							"parameters": {
-								"value": "float(URLParams.Get(paramName))"
+								"value": "float(ConfigURLParams.Get(paramName))"
 							}
 						}
 					],
@@ -75,7 +72,100 @@
 						{
 							"id": "log",
 							"objectClass": "Browser",
-							"sid": 514698417246751,
+							"sid": 717139025158779,
+							"parameters": {
+								"type": "log",
+								"message": "StringSub(\"[config] {0} = {1} (default)\", paramName, ConfigDefault.Get(paramName))"
+							}
+						},
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 197049296236524,
+							"parameters": {
+								"value": "ConfigDefault.Get(paramName)"
+							}
+						}
+					],
+					"sid": 121542529126312
+				}
+			]
+		},
+		{
+			"functionName": "Config_getNumber_old",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "paramName",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 464560867504844
+				},
+				{
+					"name": "default",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 978113289703509
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 546397918740590,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-key",
+							"objectClass": "ConfigURLParams",
+							"sid": 541751136959847,
+							"parameters": {
+								"path": "paramName"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 493909655683602,
+							"parameters": {
+								"type": "log",
+								"message": "StringSub(\"[config] {0} = {1} (overridden from {2})\", paramName, ConfigURLParams.Get(paramName), default)"
+							}
+						},
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 733614269108034,
+							"parameters": {
+								"value": "float(ConfigURLParams.Get(paramName))"
+							}
+						}
+					],
+					"sid": 119937016879340
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 437970030182967
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 378509324664665,
 							"parameters": {
 								"type": "log",
 								"message": "StringSub(\"[config] {0} = {1} (default)\", paramName, default)"
@@ -84,13 +174,13 @@
 						{
 							"id": "set-function-return-value",
 							"objectClass": "Functions",
-							"sid": 503777903501907,
+							"sid": 702189161470347,
 							"parameters": {
 								"value": "default"
 							}
 						}
 					],
-					"sid": 121542529126312
+					"sid": 166779951216580
 				}
 			]
 		}

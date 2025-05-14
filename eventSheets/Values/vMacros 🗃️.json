@@ -161,6 +161,20 @@
 		},
 		{
 			"eventType": "comment",
+			"text": "Files"
+		},
+		{
+			"eventType": "variable",
+			"name": "FILE_Config",
+			"type": "string",
+			"initialValue": "Config",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 742036435504762
+		},
+		{
+			"eventType": "comment",
 			"text": "Frames"
 		},
 		{

@@ -43,10 +43,18 @@
 	"sid": 790219537226852,
 	"nonworld-instances": [
 		{
-			"type": "URLParams",
+			"type": "ConfigURLParams",
 			"properties": {},
 			"uid": 21,
 			"sid": 605675422554832,
+			"tags": "",
+			"instanceVariables": {}
+		},
+		{
+			"type": "ConfigDefault",
+			"properties": {},
+			"uid": 34,
+			"sid": 974139589590134,
 			"tags": "",
 			"instanceVariables": {}
 		}

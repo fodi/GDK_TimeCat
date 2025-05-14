@@ -45,7 +45,7 @@
 							"sid": 139245888955545,
 							"parameters": {
 								"variable": "R_RowCount",
-								"value": "clamp(int(Functions.Config_getNumber(PARAM_Tile_RowCount, R_RowCount)), C_Tile_Dimension_Min, C_Tile_Dimension_Max)"
+								"value": "clamp(int(Functions.Config_getNumber(PARAM_Tile_RowCount)), C_Tile_Dimension_Min, C_Tile_Dimension_Max)"
 							}
 						},
 						{
@@ -54,7 +54,7 @@
 							"sid": 584776617241278,
 							"parameters": {
 								"variable": "R_ColumnCount",
-								"value": "clamp(int(Functions.Config_getNumber(PARAM_Tile_ColumnCount, R_ColumnCount)), C_Tile_Dimension_Min, C_Tile_Dimension_Max)"
+								"value": "clamp(int(Functions.Config_getNumber(PARAM_Tile_ColumnCount)), C_Tile_Dimension_Min, C_Tile_Dimension_Max)"
 							}
 						},
 						{

@@ -2,6 +2,10 @@
 	"name": "eTimers ⏰",
 	"events": [
 		{
+			"eventType": "comment",
+			"text": "todo refactor everything to CAs"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -304,15 +308,6 @@
 					"sid": 507512664605177
 				},
 				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 617782999518295,
-					"parameters": {
-						"type": "log",
-						"message": "\"cannon shoot timer\""
-					}
-				},
-				{
 					"customAction": "startShootTimer",
 					"objectClass": "Cannon",
 					"sid": 587226946553301
@@ -362,6 +357,17 @@
 								"object": "Tile"
 							},
 							"isInverted": true
+						},
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 588665370561673,
+							"parameters": {
+								"object": "Box",
+								"expression": "distance(midX, midY, Box.X, Box.Y)",
+								"comparison": 4,
+								"value": "max(Cannon.Orbit.PrimaryRadius, Cannon.Orbit.SecondaryRadius)"
+							}
 						},
 						{
 							"id": "pick-children",

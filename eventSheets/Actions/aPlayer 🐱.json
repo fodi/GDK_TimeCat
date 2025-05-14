@@ -25,7 +25,7 @@
 					"sid": 862580686969775,
 					"parameters": {
 						"instance-variable": "R_Health_Start",
-						"value": "Functions.Config_getNumber(PARAM_Player_Health, Self.R_Health_Start)"
+						"value": "Functions.Config_getNumber(PARAM_Player_Health)"
 					}
 				},
 				{
@@ -34,7 +34,7 @@
 					"sid": 736395753579762,
 					"parameters": {
 						"instance-variable": "R_MovementSpeed_Normal",
-						"value": "Functions.Config_getNumber(PARAM_Player_MovementSpeed, Self.R_MovementSpeed_Normal)"
+						"value": "Functions.Config_getNumber(PARAM_Player_MovementSpeed)"
 					}
 				},
 				{
@@ -43,7 +43,7 @@
 					"sid": 600287989783951,
 					"parameters": {
 						"instance-variable": "R_MovementSpeed_Slow",
-						"value": "Functions.Config_getNumber(PARAM_Player_MovementSpeed_Slow, Self.R_MovementSpeed_Slow)"
+						"value": "Functions.Config_getNumber(PARAM_Player_MovementSpeed_Slow)"
 					}
 				},
 				{
@@ -52,7 +52,7 @@
 					"sid": 976554113834595,
 					"behaviorType": "8Direction",
 					"parameters": {
-						"max-speed": "Functions.Config_getNumber(PARAM_Player_MovementSpeed, Self.8Direction.MaxSpeed)"
+						"max-speed": "Functions.Config_getNumber(PARAM_Player_MovementSpeed)"
 					}
 				},
 				{

@@ -1,0 +1,14 @@
+{
+	"cols": 6,
+	"rows": 5,
+
+	"pl_health": 30,
+	"pl_speed": 110,
+	"pl_speed_slow": 80,
+	
+	"pr_speed": 150,
+	"pr_speed_increase": 20,
+	"pr_speed_max": 400,
+	"pr_spawn_time_min": 2,
+	"pr_spawn_time_max": 4
+}

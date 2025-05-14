@@ -143,6 +143,10 @@
 					"sid": 783112164049340
 				},
 				{
+					"eventType": "comment",
+					"text": "todo update even if there are no players"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{

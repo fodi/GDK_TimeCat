@@ -298,7 +298,7 @@
 				},
 				{
 					"id": "set-speed",
-					"objectClass": "Cannon",
+					"objectClass": "fCannon",
 					"sid": 910511038382573,
 					"behaviorType": "Orbit",
 					"parameters": {
@@ -307,6 +307,36 @@
 				}
 			],
 			"sid": 879981744248505
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Box",
+					"sid": 271263119721501,
+					"parameters": {
+						"object": "Cannon"
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "Box",
+					"sid": 811480670403065
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "todo"
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Cannon",
+					"sid": 984918656763460
+				}
+			],
+			"sid": 442998353580713
 		}
 	],
 	"sid": 441405412204844

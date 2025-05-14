@@ -4,55 +4,8 @@
 	"sid": 950378658485317,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
-	"instanceVariables": [
-		{
-			"name": "R_Shoot_Interval_Min",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 801474509514581
-		},
-		{
-			"name": "R_Shoot_Interval_Max",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 388143512509728
-		},
-		{
-			"name": "R_Projectile_MovementSpeed",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 527085891265690
-		},
-		{
-			"name": "R_Projectile_MovementSpeed_Increase",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 990090152562559
-		},
-		{
-			"name": "R_Projectile_MovementSpeed_Max",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 829600088068402
-		}
-	],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Orbit",
-			"name": "Orbit",
-			"sid": 560845004533714
-		},
-		{
-			"behaviorId": "Timer",
-			"name": "Timer",
-			"sid": 682323983802941
-		}
-	],
+	"instanceVariables": [],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [

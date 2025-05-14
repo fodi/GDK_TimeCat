@@ -19,7 +19,7 @@
 			"children": [
 				{
 					"eventType": "script",
-					"script": "const paramsString = window.location.search\nconst searchParams = new URLSearchParams(paramsString)\nconsole.log(searchParams)\nruntime.objects.URLParams.getFirstInstance().setJsonDataCopy(Object.fromEntries(searchParams))\n\n\n//runtime.objects.URLParams.getFirstInstance().setJsonString('{\"pr_speed\":50,\"pl_health\":25,\"pl_speed\":50,\"rows\":6,\"cols\":3}')\n"
+					"script": "const paramsString = window.location.search\nconst searchParams = new URLSearchParams(paramsString)\nconsole.log(searchParams)\nruntime.objects.ConfigURLParams.getFirstInstance().setJsonDataCopy(Object.fromEntries(searchParams))\n\n\n//runtime.objects.URLParams.getFirstInstance().setJsonString('{\"pr_speed\":50,\"pl_health\":25,\"pl_speed\":50,\"rows\":6,\"cols\":3}')\n"
 				},
 				{
 					"eventType": "block",
@@ -31,7 +31,29 @@
 							"sid": 138455190505938,
 							"parameters": {
 								"type": "log",
-								"message": "\"URL params: \" & URLParams.ToBeautifiedString"
+								"message": "\"URL params: \" & ConfigURLParams.ToBeautifiedString"
+							}
+						},
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 586983053044904,
+							"parameters": {
+								"tag": "FILE_Config",
+								"file": "config.json"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 650912336993774
+						},
+						{
+							"id": "parse",
+							"objectClass": "ConfigDefault",
+							"sid": 981808967733227,
+							"parameters": {
+								"data": "AJAX.LastData"
 							}
 						},
 						{

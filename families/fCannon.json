@@ -2,8 +2,55 @@
 	"name": "fCannon",
 	"plugin-id": "Sprite",
 	"sid": 599891011961112,
-	"instanceVariables": [],
-	"behaviorTypes": [],
+	"instanceVariables": [
+		{
+			"name": "R_Shoot_Interval_Min",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 957778004881152
+		},
+		{
+			"name": "R_Shoot_Interval_Max",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 226322933694449
+		},
+		{
+			"name": "R_Projectile_MovementSpeed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 862383009206075
+		},
+		{
+			"name": "R_Projectile_MovementSpeed_Increase",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 821792009695184
+		},
+		{
+			"name": "R_Projectile_MovementSpeed_Max",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 344653289956076
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Orbit",
+			"name": "Orbit",
+			"sid": 889026260418885
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 555312174819556
+		}
+	],
 	"effectTypes": [],
 	"members": [
 		"Cannon"

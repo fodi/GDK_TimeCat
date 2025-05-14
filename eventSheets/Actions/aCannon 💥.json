@@ -15,6 +15,10 @@
 			"conditions": [],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "todo make sure cannons don't spawn on top of / too near each other"
+				},
+				{
 					"id": "create-object",
 					"objectClass": "System",
 					"sid": 186232422535179,
@@ -55,46 +59,46 @@
 				{
 					"id": "set-instvar-value",
 					"objectClass": "Cannon",
-					"sid": 623567811385542,
+					"sid": 690211573832285,
 					"parameters": {
 						"instance-variable": "R_Projectile_MovementSpeed",
-						"value": "Functions.Config_getNumber(PARAM_Projectile_Speed, Self.R_Projectile_MovementSpeed)"
+						"value": "Functions.Config_getNumber(PARAM_Projectile_Speed)"
 					}
 				},
 				{
 					"id": "set-instvar-value",
 					"objectClass": "Cannon",
-					"sid": 662547949796399,
+					"sid": 266754995629713,
 					"parameters": {
 						"instance-variable": "R_Projectile_MovementSpeed_Increase",
-						"value": "Functions.Config_getNumber(PARAM_Projectile_Speed_Increase, Self.R_Projectile_MovementSpeed_Increase)"
+						"value": "Functions.Config_getNumber(PARAM_Projectile_Speed_Increase)"
 					}
 				},
 				{
 					"id": "set-instvar-value",
 					"objectClass": "Cannon",
-					"sid": 107620201611199,
+					"sid": 438581806872930,
 					"parameters": {
 						"instance-variable": "R_Projectile_MovementSpeed_Max",
-						"value": "Functions.Config_getNumber(PARAM_Projectile_Speed_Max, Self.R_Projectile_MovementSpeed_Max)"
+						"value": "Functions.Config_getNumber(PARAM_Projectile_Speed_Max)"
 					}
 				},
 				{
 					"id": "set-instvar-value",
 					"objectClass": "Cannon",
-					"sid": 258596534393957,
+					"sid": 681429461930306,
 					"parameters": {
 						"instance-variable": "R_Shoot_Interval_Min",
-						"value": "Functions.Config_getNumber(PARAM_Projectile_SpawnTime_Min, Self.R_Shoot_Interval_Min)"
+						"value": "Functions.Config_getNumber(PARAM_Projectile_SpawnTime_Min)"
 					}
 				},
 				{
 					"id": "set-instvar-value",
 					"objectClass": "Cannon",
-					"sid": 738465996739016,
+					"sid": 473721105520821,
 					"parameters": {
 						"instance-variable": "R_Shoot_Interval_Max",
-						"value": "Functions.Config_getNumber(PARAM_Projectile_SpawnTime_Max, Self.R_Shoot_Interval_Max)"
+						"value": "Functions.Config_getNumber(PARAM_Projectile_SpawnTime_Max)"
 					}
 				},
 				{
@@ -203,7 +207,7 @@
 						{
 							"customAction": "spawn",
 							"objectClass": "Projectile",
-							"sid": 324919261797599,
+							"sid": 196987873204044,
 							"parameters": [
 								"Cannon.X",
 								"Cannon.Y",
@@ -215,7 +219,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Cannon",
-							"sid": 786603231463840,
+							"sid": 157928397321412,
 							"parameters": {
 								"instance-variable": "R_Projectile_MovementSpeed",
 								"value": "min(Self.R_Projectile_MovementSpeed + Self.R_Projectile_MovementSpeed_Increase, Self.R_Projectile_MovementSpeed_Max)"
@@ -264,7 +268,7 @@
 				{
 					"id": "start-timer",
 					"objectClass": "Cannon",
-					"sid": 708566742116305,
+					"sid": 520434317754823,
 					"behaviorType": "Timer",
 					"parameters": {
 						"duration": "random(Self.R_Shoot_Interval_Min, Self.R_Shoot_Interval_Max)",
