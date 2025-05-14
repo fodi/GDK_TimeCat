@@ -1,0 +1,19 @@
+{
+	"name": "fBlurbSpawners",
+	"plugin-id": "Sprite",
+	"sid": 675982837152472,
+	"instanceVariables": [
+		{
+			"name": "R_Blurb_ZOffset",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 809770138691014
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Player"
+	]
+}

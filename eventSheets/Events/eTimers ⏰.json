@@ -27,6 +27,20 @@
 			"children": [
 				{
 					"eventType": "comment",
+					"text": "todo allow player to immediately continue turning tiles, at least after a pair"
+				},
+				{
+					"eventType": "variable",
+					"name": "healAmount",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 156694438858299
+				},
+				{
+					"eventType": "comment",
 					"text": "todo refactor"
 				},
 				{
@@ -83,13 +97,13 @@
 									"sid": 442142979237708
 								},
 								{
-									"customAction": "changeHealth",
-									"objectClass": "Player",
-									"sid": 534637622254336,
-									"parameters": [
-										"Self.R_Health_BonusOnPair",
-										"YES"
-									]
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 353818488719457,
+									"parameters": {
+										"variable": "healAmount",
+										"value": "Player.R_Health_BonusOnPair"
+									}
 								}
 							],
 							"sid": 315455249506772,
@@ -136,13 +150,13 @@
 											],
 											"actions": [
 												{
-													"customAction": "changeHealth",
-													"objectClass": "Player",
-													"sid": 468073674070935,
-													"parameters": [
-														"Self.R_Health_BonusOnHeal",
-														"YES"
-													]
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 107812024785209,
+													"parameters": {
+														"variable": "healAmount",
+														"value": "Player.R_Health_BonusOnHeal"
+													}
 												}
 											],
 											"sid": 737920009310871
@@ -161,16 +175,6 @@
 												}
 											],
 											"actions": [
-												{
-													"id": "set-instvar-value",
-													"objectClass": "Player",
-													"sid": 252212968672863,
-													"disabled": true,
-													"parameters": {
-														"instance-variable": "item",
-														"value": "Tile.symbol"
-													}
-												},
 												{
 													"customAction": "spawn",
 													"objectClass": "Box",
@@ -242,6 +246,33 @@
 						}
 					],
 					"sid": 449365403950433
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 412087641839098,
+							"parameters": {
+								"variable": "healAmount",
+								"comparison": 1,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "changeHealth",
+							"objectClass": "Player",
+							"sid": 417291187056413,
+							"parameters": [
+								"healAmount",
+								"YES"
+							]
+						}
+					],
+					"sid": 253342996362382
 				}
 			]
 		},
@@ -463,10 +494,6 @@
 								"ping-pong": "no",
 								"repeat-count": "1"
 							}
-						},
-						{
-							"type": "comment",
-							"text": "todo destroy box after tween"
 						}
 					],
 					"sid": 909883214796302

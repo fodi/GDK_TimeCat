@@ -86,6 +86,44 @@
 						}
 					],
 					"sid": 417440196871966
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 357624256446258,
+							"parameters": {
+								"object": "UI_BlurbSF"
+							}
+						},
+						{
+							"id": "pick-parent",
+							"objectClass": "UI_BlurbSF",
+							"sid": 267774022347085,
+							"parameters": {
+								"parent": "fBlurbSpawners",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "todo tick CA"
+						},
+						{
+							"id": "set-position",
+							"objectClass": "UI_BlurbSF",
+							"sid": 331654069432828,
+							"parameters": {
+								"x": "3DCamera.LayerToLayerX(LAYER_Main, LAYER_UI, fBlurbSpawners.X, fBlurbSpawners.Y, fBlurbSpawners.ZElevation + Self.zOffset + Self.Tween.Value(TWEEN_Blurb_ZElevation))",
+								"y": "3DCamera.LayerToLayerY(LAYER_Main, LAYER_UI, fBlurbSpawners.X, fBlurbSpawners.Y, fBlurbSpawners.ZElevation + Self.zOffset + Self.Tween.Value(TWEEN_Blurb_ZElevation))"
+							}
+						}
+					],
+					"sid": 153240553284412
 				}
 			]
 		}

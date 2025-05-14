@@ -3,7 +3,7 @@
 	"events": [
 		{
 			"aceType": "action",
-			"aceName": "init",
+			"aceName": "spawn",
 			"objectClass": "Camera",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -14,6 +14,19 @@
 			"eventType": "custom-ace-block",
 			"conditions": [],
 			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 113961342645837,
+					"parameters": {
+						"object-to-create": "Camera",
+						"layer": "LAYER_Player",
+						"x": "0",
+						"y": "0",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
 				{
 					"id": "set-z-elevation",
 					"objectClass": "Camera",

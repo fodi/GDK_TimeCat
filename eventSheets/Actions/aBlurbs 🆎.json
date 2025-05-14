@@ -1,0 +1,166 @@
+{
+	"name": "aBlurbs 🆎",
+	"events": [
+		{
+			"aceType": "action",
+			"aceName": "spawnBlurb",
+			"objectClass": "fBlurbSpawners",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "text",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 365365789450923
+				},
+				{
+					"name": "zOffset",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 549617152192766
+				},
+				{
+					"name": "color",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 410983597997050
+				},
+				{
+					"name": "timeout",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 136467557346615
+				}
+			],
+			"bookmark": true,
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "todo reuse existing blurb instead of spawning new?"
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "fBlurbSpawners",
+					"sid": 250546677864067,
+					"parameters": {
+						"object": "UI_BlurbSF",
+						"layer": "LAYER_UI",
+						"image-point": "0",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "add-child",
+					"objectClass": "fBlurbSpawners",
+					"sid": 837834810684121,
+					"parameters": {
+						"child": "UI_BlurbSF",
+						"transform-x": false,
+						"transform-y": false,
+						"transform-w": false,
+						"transform-h": false,
+						"transform-a": false,
+						"transform-o": false,
+						"transform-z-elevation": false,
+						"transform-visibility": false,
+						"destroy-with-parent": false
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "UI_BlurbSF",
+					"sid": 180052001296445,
+					"parameters": {
+						"x": "3DCamera.LayerToLayerX(LAYER_Main, LAYER_UI, fBlurbSpawners.X, fBlurbSpawners.Y, fBlurbSpawners.ZElevation + zOffset)",
+						"y": "3DCamera.LayerToLayerY(LAYER_Main, LAYER_UI, fBlurbSpawners.X, fBlurbSpawners.Y, fBlurbSpawners.ZElevation + zOffset)"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "UI_BlurbSF",
+					"sid": 857425136121389,
+					"parameters": {
+						"instance-variable": "zOffset",
+						"value": "zOffset"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "UI_BlurbSF",
+					"sid": 993333285044255,
+					"parameters": {
+						"text": "text"
+					}
+				},
+				{
+					"id": "set-default-color",
+					"objectClass": "UI_BlurbSF",
+					"sid": 860291009236576,
+					"parameters": {
+						"color": "color"
+					}
+				}
+			],
+			"sid": 139394632728859,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 974876873597759,
+							"parameters": {
+								"variable": "timeout",
+								"comparison": 1,
+								"value": "NOTHING"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-all-tweens",
+							"objectClass": "UI_BlurbSF",
+							"sid": 996636167660986,
+							"behaviorType": "Tween"
+						},
+						{
+							"type": "comment",
+							"text": "todo mn"
+						},
+						{
+							"id": "tween-value",
+							"objectClass": "UI_BlurbSF",
+							"sid": 779318493767626,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TWEEN_Blurb_ZElevation",
+								"start-value": "0",
+								"end-value": "20",
+								"time": "timeout",
+								"ease": "easeoutcubic",
+								"destroy-on-complete": "yes",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 372915145562447
+				}
+			]
+		}
+	],
+	"sid": 691411136386094
+}

@@ -1,0 +1,49 @@
+{
+	"name": "UI_BlurbSF",
+	"plugin-id": "Spritefont2",
+	"sid": 315167922879308,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "billboardUID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 281171363833732
+		},
+		{
+			"name": "zOffset",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 423250488138160
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 168406623480634
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 661004318296771
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 570,
+		"height": 150,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 6138676,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

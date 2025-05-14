@@ -480,6 +480,16 @@
 			"sid": 455255730079436
 		},
 		{
+			"eventType": "variable",
+			"name": "TWEEN_Blurb_ZElevation",
+			"type": "string",
+			"initialValue": "Blurb_ZElevation",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 280260084331283
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Templates",

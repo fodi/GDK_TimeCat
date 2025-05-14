@@ -281,17 +281,6 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "Player",
-											"sid": 159002640591846,
-											"disabled": true,
-											"parameters": {
-												"instance-variable": "item",
-												"comparison": 0,
-												"value": "EMPTY"
-											}
-										},
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Player",
 											"sid": 168827600750044,
 											"parameters": {
 												"instance-variable": "boxUID",
@@ -339,17 +328,6 @@
 											"id": "else",
 											"objectClass": "System",
 											"sid": 879128929761642
-										},
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Player",
-											"sid": 782706921688947,
-											"disabled": true,
-											"parameters": {
-												"instance-variable": "item",
-												"comparison": 1,
-												"value": "EMPTY"
-											}
 										},
 										{
 											"id": "compare-instance-variable",
@@ -522,17 +500,6 @@
 														"instance-variable": "IN_Aiming",
 														"comparison": 0,
 														"value": "YES"
-													}
-												},
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Player",
-													"sid": 834670439233722,
-													"disabled": true,
-													"parameters": {
-														"instance-variable": "item",
-														"comparison": 1,
-														"value": "EMPTY"
 													}
 												},
 												{
@@ -937,7 +904,7 @@
 						},
 						{
 							"eventType": "comment",
-							"text": "If player is aiming, use item if possbile"
+							"text": "If player is aiming, throw box"
 						},
 						{
 							"eventType": "block",
@@ -950,118 +917,72 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Player",
-									"sid": 892161468727487,
-									"disabled": true,
-									"parameters": {
-										"instance-variable": "item",
-										"comparison": 1,
-										"value": "EMPTY"
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Player",
 									"sid": 981807215619431,
 									"parameters": {
 										"instance-variable": "boxUID",
 										"comparison": 1,
 										"value": "NOTHING"
 									}
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "Player",
+									"sid": 379802514388812,
+									"parameters": {
+										"child": "Box",
+										"which": "own"
+									}
 								}
 							],
 							"actions": [
 								{
+									"id": "remove-child",
+									"objectClass": "Player",
+									"sid": 346264454419824,
+									"parameters": {
+										"child": "Box"
+									}
+								},
+								{
 									"id": "set-instvar-value",
 									"objectClass": "Player",
-									"sid": 424602465234278,
-									"disabled": true,
+									"sid": 721228671435756,
 									"parameters": {
-										"instance-variable": "item",
-										"value": "EMPTY"
+										"instance-variable": "boxUID",
+										"value": "NOTHING"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Box",
+									"sid": 534110799352279,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "Box",
+									"sid": 717504598752654,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "Player.R_Box_MovementSpeed"
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "Box",
+									"sid": 942938668608241,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "Self.R_OverlapCheckTIme",
+										"type": "regular",
+										"tag": "TIMER_Box_OverlapCheck"
 									}
 								}
 							],
-							"sid": 212683500043919,
-							"children": [
-								{
-									"eventType": "comment",
-									"text": "Throw box"
-								},
-								{
-									"bookmark": true,
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-children",
-											"objectClass": "Player",
-											"sid": 263175788885093,
-											"parameters": {
-												"child": "Box",
-												"which": "own"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "remove-child",
-											"objectClass": "Player",
-											"sid": 204036427886144,
-											"parameters": {
-												"child": "Box"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 177917872828221,
-											"parameters": {
-												"instance-variable": "boxUID",
-												"value": "NOTHING"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 568929053150069,
-											"disabled": true,
-											"parameters": {
-												"instance-variable": "item",
-												"value": "EMPTY"
-											}
-										},
-										{
-											"id": "set-enabled",
-											"objectClass": "Box",
-											"sid": 377748977412266,
-											"behaviorType": "Bullet",
-											"parameters": {
-												"state": "enabled"
-											}
-										},
-										{
-											"id": "set-speed",
-											"objectClass": "Box",
-											"sid": 548569200860011,
-											"behaviorType": "Bullet",
-											"parameters": {
-												"speed": "Player.R_Box_MovementSpeed"
-											}
-										},
-										{
-											"id": "start-timer",
-											"objectClass": "Box",
-											"sid": 818817585717180,
-											"behaviorType": "Timer",
-											"parameters": {
-												"duration": "Self.R_OverlapCheckTIme",
-												"type": "regular",
-												"tag": "TIMER_Box_OverlapCheck"
-											}
-										}
-									],
-									"sid": 866672794691107
-								}
-							]
+							"sid": 212683500043919
 						}
 					]
 				},
@@ -1167,6 +1088,16 @@
 					}
 				},
 				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 107532533529383,
+					"parameters": {
+						"variable": "amount",
+						"comparison": 1,
+						"value": "0"
+					}
+				},
+				{
 					"id": "pick-children",
 					"objectClass": "Player",
 					"sid": 560684962059390,
@@ -1250,6 +1181,14 @@
 							"parameters": {
 								"state": "disabled"
 							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Player",
+							"sid": 333659858183304,
+							"parameters": {
+								"visibility": "invisible"
+							}
 						}
 					],
 					"sid": 309837567595600,
@@ -1315,6 +1254,7 @@
 							"text": "Heal player"
 						},
 						{
+							"bookmark": true,
 							"eventType": "block",
 							"conditions": [
 								{
@@ -1339,8 +1279,16 @@
 									}
 								},
 								{
-									"type": "comment",
-									"text": "todo"
+									"customAction": "spawnBlurb",
+									"objectClass": "Player",
+									"customActionObjectClass": "fBlurbSpawners",
+									"sid": 980919321368792,
+									"parameters": [
+										"\"+\" & roundToDp(amount, 1) & \" HP\"",
+										"Self.R_Blurb_ZOffset",
+										"rgbEx(0, 100, 0)",
+										"0.8"
+									]
 								}
 							],
 							"sid": 718974204095653
@@ -1379,6 +1327,18 @@
 										"ping-pong": "no",
 										"repeat-count": "1"
 									}
+								},
+								{
+									"customAction": "spawnBlurb",
+									"objectClass": "Player",
+									"customActionObjectClass": "fBlurbSpawners",
+									"sid": 829776826365532,
+									"parameters": [
+										"str(roundToDp(amount, 1)) & \" HP\"",
+										"Self.R_Blurb_ZOffset",
+										"rgbEx(100, 0, 0)",
+										"0.8"
+									]
 								}
 							],
 							"sid": 276312573508081

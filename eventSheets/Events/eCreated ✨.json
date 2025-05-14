@@ -18,25 +18,6 @@
 				}
 			],
 			"sid": 568192669933317
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-created",
-					"objectClass": "Camera",
-					"sid": 576686082588978
-				}
-			],
-			"actions": [
-				{
-					"customAction": "init",
-					"objectClass": "Camera",
-					"sid": 346507670821043
-				}
-			],
-			"sid": 810826302446132,
-			"disabled": true
 		}
 	],
 	"sid": 397755584574739

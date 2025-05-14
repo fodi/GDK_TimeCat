@@ -154,7 +154,7 @@
 							}
 						},
 						{
-							"customAction": "init",
+							"customAction": "spawn",
 							"objectClass": "Camera",
 							"sid": 297026343364497
 						},

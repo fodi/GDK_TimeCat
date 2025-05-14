@@ -200,16 +200,6 @@
 									}
 								},
 								{
-									"id": "set-instvar-value",
-									"objectClass": "Player",
-									"sid": 840439681769265,
-									"disabled": true,
-									"parameters": {
-										"instance-variable": "item",
-										"value": "Box.item"
-									}
-								},
-								{
 									"id": "add-child",
 									"objectClass": "Player",
 									"sid": 418530184467040,
@@ -299,6 +289,26 @@
 					]
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Projectile",
+					"sid": 337949399572760,
+					"parameters": {
+						"object": "Box"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "todo"
+				}
+			],
+			"sid": 823790296874762
 		}
 	],
 	"sid": 441405412204844
