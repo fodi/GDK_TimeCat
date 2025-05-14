@@ -57,6 +57,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Shape3D",
 			"name": "3D shape",
 			"author": "Scirra",
@@ -155,7 +162,8 @@
 			"Box",
 			"UI_BlurbSF",
 			"CameraTargetSmooth",
-			"3DShape"
+			"3DShape",
+			"Particles"
 		],
 		"subfolders": [
 			{
@@ -433,7 +441,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "23c",
+		"version": "24",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

@@ -603,7 +603,8 @@
 									}
 								}
 							],
-							"sid": 207081659680602
+							"sid": 207081659680602,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -632,7 +633,36 @@
 									}
 								}
 							],
-							"sid": 156267485113814
+							"sid": 156267485113814,
+							"children": [
+								{
+									"bookmark": true,
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "Player",
+											"sid": 366207692041249,
+											"parameters": {
+												"child": "bbPlayer",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "bbPlayer",
+											"sid": 710956113921787,
+											"parameters": {
+												"animation": "Self.playerId & \"_\" & ANIM_Sleeping",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 592289582547790
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -661,7 +691,81 @@
 									}
 								}
 							],
-							"sid": 268051316456127
+							"sid": 268051316456127,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "Player",
+											"sid": 575784273237517,
+											"parameters": {
+												"child": "Particles",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-rate",
+											"objectClass": "Particles",
+											"sid": 642395338870302,
+											"parameters": {
+												"rate": "0"
+											}
+										},
+										{
+											"id": "start-timer",
+											"objectClass": "Particles",
+											"sid": 686998409429202,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "Particles.Timeout",
+												"type": "once",
+												"tag": "TIMER_Particles_Destroy"
+											}
+										}
+									],
+									"sid": 820694317166512
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 760134916024210,
+											"parameters": {
+												"object": "Particles",
+												"layer": "LAYER_Billboards",
+												"image-point": "0",
+												"create-hierarchy": false,
+												"template-name": "ITEM_Slow"
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "Player",
+											"sid": 154609494094139,
+											"parameters": {
+												"child": "Particles",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-w": false,
+												"transform-h": false,
+												"transform-a": false,
+												"transform-o": false,
+												"transform-z-elevation": false,
+												"transform-visibility": false,
+												"destroy-with-parent": false
+											}
+										}
+									],
+									"sid": 677930493949892
+								}
+							]
 						}
 					]
 				}

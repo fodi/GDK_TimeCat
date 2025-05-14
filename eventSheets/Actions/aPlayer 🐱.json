@@ -143,6 +143,16 @@
 								"animation": "ANIM_Dead"
 							},
 							"isInverted": true
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "Player",
+							"sid": 793745068391165,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "TIMER_Player_Sleep"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [],
@@ -279,8 +289,56 @@
 							"sid": 139295342290383,
 							"children": [
 								{
-									"eventType": "comment",
-									"text": "todo_rewrite"
+									"eventType": "variable",
+									"name": "movementSpeed",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 411889378951970
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 275226204554323,
+											"parameters": {
+												"variable": "movementSpeed",
+												"value": "Player.boxUID = NOTHING ? Player.R_MovementSpeed_Normal : Player.R_MovementSpeed_Slow"
+											}
+										}
+									],
+									"sid": 501389870085249
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-timer-running",
+											"objectClass": "Player",
+											"sid": 712385379382034,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "TIMER_Player_Slow"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 285849795330522,
+											"parameters": {
+												"variable": "movementSpeed",
+												"value": "movementSpeed * 0.5"
+											}
+										}
+									],
+									"sid": 624846891236573
 								},
 								{
 									"eventType": "block",
@@ -288,54 +346,60 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "Player",
-											"sid": 302217134191941,
+											"sid": 976816320477846,
 											"parameters": {
-												"instance-variable": "IN_Aiming",
-												"comparison": 0,
-												"value": "NO"
+												"instance-variable": "boxUID",
+												"comparison": 1,
+												"value": "NOTHING"
 											}
 										},
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "Player",
-											"sid": 168827600750044,
+											"sid": 573415404448133,
 											"parameters": {
-												"instance-variable": "boxUID",
+												"instance-variable": "IN_Aiming",
 												"comparison": 0,
-												"value": "NOTHING"
+												"value": "YES"
 											}
 										}
 									],
 									"actions": [
 										{
-											"customAction": "changeHealth",
-											"objectClass": "Player",
-											"sid": 150894438652358,
-											"parameters": [
-												"-dt",
-												"NO"
-											]
-										},
-										{
-											"id": "set-vector-x",
-											"objectClass": "Player",
-											"sid": 625704026098929,
-											"behaviorType": "8Direction",
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 944400654913004,
 											"parameters": {
-												"vector-x": "cos(Player.currentAngle) * (Player.boxUID = NOTHING ? Player.8Direction.MaxSpeed : Self.R_MovementSpeed_Slow)"
-											}
-										},
-										{
-											"id": "set-vector-y",
-											"objectClass": "Player",
-											"sid": 638215614914894,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"vector-y": "sin(Player.currentAngle) * (Player.boxUID = NOTHING ? Player.8Direction.MaxSpeed : Self.R_MovementSpeed_Slow)"
+												"variable": "movementSpeed",
+												"value": "0"
 											}
 										}
 									],
-									"sid": 109788125646221,
+									"sid": 898618923276718
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 480494782915338,
+											"parameters": {
+												"variable": "movementSpeed",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "stop",
+											"objectClass": "Player",
+											"sid": 578899809042025,
+											"behaviorType": "8Direction"
+										}
+									],
+									"sid": 472215867323356,
 									"isOrBlock": true
 								},
 								{
@@ -344,28 +408,39 @@
 										{
 											"id": "else",
 											"objectClass": "System",
-											"sid": 879128929761642
-										},
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Player",
-											"sid": 994102200514632,
-											"parameters": {
-												"instance-variable": "boxUID",
-												"comparison": 1,
-												"value": "NOTHING"
-											}
+											"sid": 581557522671983
 										}
 									],
 									"actions": [
 										{
-											"id": "stop",
+											"customAction": "changeHealth",
 											"objectClass": "Player",
-											"sid": 140520251437444,
-											"behaviorType": "8Direction"
+											"sid": 905402753981820,
+											"parameters": [
+												"-dt",
+												"NO"
+											]
+										},
+										{
+											"id": "set-vector-x",
+											"objectClass": "Player",
+											"sid": 288633457561355,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"vector-x": "cos(Player.currentAngle) * movementSpeed"
+											}
+										},
+										{
+											"id": "set-vector-y",
+											"objectClass": "Player",
+											"sid": 109657793964345,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"vector-y": "sin(Player.currentAngle) * movementSpeed"
+											}
 										}
 									],
-									"sid": 836317633492823
+									"sid": 816096761717073
 								},
 								{
 									"eventType": "block",

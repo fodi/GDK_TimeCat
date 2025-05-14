@@ -160,6 +160,16 @@
 			"sid": 488962984099819
 		},
 		{
+			"eventType": "variable",
+			"name": "ANIM_Sleeping",
+			"type": "string",
+			"initialValue": "Sleeping",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 542683229904901
+		},
+		{
 			"eventType": "comment",
 			"text": "Files"
 		},
@@ -504,6 +514,16 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 444546707221867
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_Particles_Destroy",
+			"type": "string",
+			"initialValue": "Particles_Destroy",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 773837568404503
 		},
 		{
 			"eventType": "comment",
