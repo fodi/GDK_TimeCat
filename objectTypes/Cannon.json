@@ -6,18 +6,25 @@
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [
 		{
-			"name": "R_Spawn_Interval_Min",
+			"name": "R_Shoot_Interval_Min",
 			"type": "number",
 			"desc": "",
 			"show": true,
 			"sid": 801474509514581
 		},
 		{
-			"name": "R_Spawn_Interval_Max",
+			"name": "R_Shoot_Interval_Max",
 			"type": "number",
 			"desc": "",
 			"show": true,
 			"sid": 388143512509728
+		},
+		{
+			"name": "R_Projectile_MovementSpeed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 527085891265690
 		}
 	],
 	"behaviorTypes": [
@@ -47,6 +54,42 @@
 						"exportQuality": 0.8,
 						"fileType": "image/png",
 						"imageSpriteId": 6986831,
+						"collisionPoly": {
+							"points": [
+								0.375,
+								0,
+								0.625,
+								0,
+								0.78125,
+								0.0625,
+								0.9375,
+								0.21875,
+								1,
+								0.375,
+								1,
+								0.625,
+								0.9375,
+								0.78125,
+								0.78125,
+								0.9375,
+								0.625,
+								1,
+								0.375,
+								1,
+								0.21875,
+								0.9375,
+								0.0625,
+								0.78125,
+								0,
+								0.625,
+								0,
+								0.375,
+								0.0625,
+								0.21875,
+								0.21875,
+								0.0625
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""

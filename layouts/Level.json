@@ -39,67 +39,7 @@
 			"name": "Player",
 			"overriden": 0,
 			"subLayers": [],
-			"instances": [
-				{
-					"type": "Cannon",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 15,
-					"sid": 464524216542257,
-					"tags": "",
-					"instanceVariables": {
-						"R_Spawn_Interval_Min": 2,
-						"R_Spawn_Interval_Max": 4
-					},
-					"behaviors": {
-						"Orbit": {
-							"properties": {
-								"speed": 50,
-								"acceleration": 0,
-								"primary-axis": 500,
-								"secondary-axis": 300,
-								"offset-angle": 0,
-								"match-rotation": true,
-								"enabled": true,
-								"live-preview": false
-							}
-						},
-						"Timer": {
-							"properties": {}
-						}
-					},
-					"instanceFolderItem": {
-						"sid": 464524216542257,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 320,
-						"y": 180,
-						"width": 32,
-						"height": 32,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				}
-			],
+			"instances": [],
 			"sid": 561570858330997,
 			"effectTypes": [],
 			"isInitiallyVisible": true,

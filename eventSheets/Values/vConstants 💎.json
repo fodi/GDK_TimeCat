@@ -80,6 +80,26 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 797343426013108
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Tile_Dimension_Min",
+			"type": "number",
+			"initialValue": "2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 669486078398904
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Tile_Dimension_Max",
+			"type": "number",
+			"initialValue": "16",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 983798085957370
 		}
 	],
 	"sid": 344291072955141

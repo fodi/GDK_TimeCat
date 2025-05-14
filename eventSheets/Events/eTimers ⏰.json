@@ -285,7 +285,7 @@
 					"sid": 601779891073436,
 					"behaviorType": "Timer",
 					"parameters": {
-						"tag": "TIMER_Projectile_Spawn"
+						"tag": "TIMER_Cannon_Shoot"
 					}
 				},
 				{
@@ -299,68 +299,17 @@
 			],
 			"actions": [
 				{
-					"id": "start-timer",
+					"customAction": "shoot",
 					"objectClass": "Cannon",
-					"sid": 481236610415525,
-					"behaviorType": "Timer",
-					"parameters": {
-						"duration": "random(Self.R_Spawn_Interval_Min, Self.R_Spawn_Interval_Max)",
-						"type": "once",
-						"tag": "TIMER_Projectile_Spawn"
-					}
+					"sid": 507512664605177
+				},
+				{
+					"customAction": "startShootTimer",
+					"objectClass": "Cannon",
+					"sid": 587226946553301
 				}
 			],
-			"sid": 285412513229668,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player",
-							"sid": 757464214803311,
-							"parameters": {
-								"instance-variable": "health",
-								"comparison": 4,
-								"value": "0"
-							}
-						},
-						{
-							"id": "pick-nearestfurthest",
-							"objectClass": "Player",
-							"sid": 901508114031172,
-							"parameters": {
-								"which": "furthest",
-								"x": "Cannon.X",
-								"y": "Cannon.Y"
-							}
-						}
-					],
-					"actions": [
-						{
-							"customAction": "spawn",
-							"objectClass": "Projectile",
-							"sid": 875655215829534,
-							"parameters": [
-								"Cannon.X",
-								"Cannon.Y",
-								"Player.X",
-								"Player.Y"
-							]
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 393027637305962,
-							"parameters": {
-								"variable": "R_Projectile_MovementSpeed",
-								"value": "min(R_Projectile_MovementSpeed + 10, 300)"
-							}
-						}
-					],
-					"sid": 692676499856425
-				}
-			]
+			"sid": 285412513229668
 		},
 		{
 			"eventType": "block",

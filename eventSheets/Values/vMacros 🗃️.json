@@ -326,10 +326,6 @@
 			"sid": 319843517574204
 		},
 		{
-			"eventType": "comment",
-			"text": "todo"
-		},
-		{
 			"eventType": "variable",
 			"name": "PARAM_Projectile_Speed_Increase",
 			"type": "string",
@@ -337,7 +333,17 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 416836950262845
+			"sid": 912230401717198
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Projectile_Speed_Max",
+			"type": "string",
+			"initialValue": "pr_speed_max",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 177752015925903
 		},
 		{
 			"eventType": "variable",
@@ -447,9 +453,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TIMER_Projectile_Spawn",
+			"name": "TIMER_Cannon_Shoot",
 			"type": "string",
-			"initialValue": "Projectile_Spawn",
+			"initialValue": "Cannon_Shoot",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -500,6 +506,16 @@
 			"sid": 637902590537184
 		},
 		{
+			"eventType": "variable",
+			"name": "TWEEN_Blurb_ZElevation",
+			"type": "string",
+			"initialValue": "Blurb_ZElevation",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 166923722392594
+		},
+		{
 			"eventType": "comment",
 			"text": "Words"
 		},
@@ -522,16 +538,6 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 455255730079436
-		},
-		{
-			"eventType": "variable",
-			"name": "TWEEN_Blurb_ZElevation",
-			"type": "string",
-			"initialValue": "Blurb_ZElevation",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 280260084331283
 		},
 		{
 			"eventType": "group",

@@ -165,7 +165,6 @@
 									"id": "compare-eventvar",
 									"objectClass": "System",
 									"sid": 405248619164222,
-									"breakpoint": true,
 									"parameters": {
 										"variable": "item",
 										"comparison": 0,

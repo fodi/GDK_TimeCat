@@ -17,7 +17,7 @@
 			"actions": [
 				{
 					"type": "comment",
-					"text": "Override max health"
+					"text": "Overrides"
 				},
 				{
 					"id": "set-instvar-value",
@@ -47,6 +47,19 @@
 					}
 				},
 				{
+					"id": "set-max-speed",
+					"objectClass": "Player",
+					"sid": 976554113834595,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"max-speed": "Functions.Config_getNumber(PARAM_Player_MovementSpeed, Self.8Direction.MaxSpeed)"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Initialize "
+				},
+				{
 					"id": "set-instvar-value",
 					"objectClass": "Player",
 					"sid": 699716346394056,
@@ -67,15 +80,6 @@
 				{
 					"type": "comment",
 					"text": "Override max movement speed"
-				},
-				{
-					"id": "set-max-speed",
-					"objectClass": "Player",
-					"sid": 815484045892867,
-					"behaviorType": "8Direction",
-					"parameters": {
-						"max-speed": "Functions.Config_getNumber(PARAM_Player_MovementSpeed, Self.8Direction.MaxSpeed)"
-					}
 				}
 			],
 			"sid": 846445072912984,
@@ -130,7 +134,6 @@
 							"id": "compare-instance-variable",
 							"objectClass": "Player",
 							"sid": 826549898224005,
-							"disabled": true,
 							"parameters": {
 								"instance-variable": "health",
 								"comparison": 4,

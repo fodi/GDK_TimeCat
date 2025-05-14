@@ -1,0 +1,222 @@
+{
+	"name": "aCannon 💥",
+	"events": [
+		{
+			"aceType": "action",
+			"aceName": "init",
+			"objectClass": "Cannon",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Override parameters if needed"
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Cannon",
+					"sid": 992877707207748,
+					"parameters": {
+						"instance-variable": "R_Projectile_MovementSpeed",
+						"value": "int(Functions.Config_getNumber(PARAM_Projectile_Speed, Self.R_Projectile_MovementSpeed))"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Cannon",
+					"sid": 970128107637397,
+					"parameters": {
+						"instance-variable": "R_Shoot_Interval_Min",
+						"value": "int(Functions.Config_getNumber(PARAM_Projectile_SpawnTime_Min, Self.R_Shoot_Interval_Min))"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Cannon",
+					"sid": 234117722885026,
+					"parameters": {
+						"instance-variable": "R_Shoot_Interval_Max",
+						"value": "int(Functions.Config_getNumber(PARAM_Projectile_SpawnTime_Max, Self.R_Shoot_Interval_Max))"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Initialize projectile spawner"
+				},
+				{
+					"id": "set-target",
+					"objectClass": "Cannon",
+					"sid": 809900119677547,
+					"behaviorType": "Orbit",
+					"parameters": {
+						"x": "midX",
+						"y": "midY"
+					}
+				},
+				{
+					"id": "set-radius",
+					"objectClass": "Cannon",
+					"sid": 780200512576932,
+					"behaviorType": "Orbit",
+					"parameters": {
+						"primary": "midX + C_Tile_Size * 2",
+						"secondary": "midY + C_Tile_Size * 2"
+					}
+				},
+				{
+					"customAction": "startShootTimer",
+					"objectClass": "Cannon",
+					"sid": 578130863081581
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 629752088080533
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Cannon",
+					"sid": 893351637958558,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 519383514606256
+		},
+		{
+			"aceType": "action",
+			"aceName": "shoot",
+			"objectClass": "Cannon",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 173883774634553,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 757464214803311,
+							"parameters": {
+								"instance-variable": "health",
+								"comparison": 4,
+								"value": "0"
+							}
+						},
+						{
+							"id": "pick-nearestfurthest",
+							"objectClass": "Player",
+							"sid": 901508114031172,
+							"parameters": {
+								"which": "furthest",
+								"x": "Cannon.X",
+								"y": "Cannon.Y"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "spawn",
+							"objectClass": "Projectile",
+							"sid": 324919261797599,
+							"parameters": [
+								"Cannon.X",
+								"Cannon.Y",
+								"Player.X",
+								"Player.Y",
+								"Cannon.R_Projectile_MovementSpeed"
+							]
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Cannon",
+							"sid": 462411347746676,
+							"parameters": {
+								"instance-variable": "R_Projectile_MovementSpeed",
+								"value": "min(Self.R_Projectile_MovementSpeed + int(Functions.Config_getNumber(PARAM_Projectile_Speed_Increase, Self.R_Projectile_MovementSpeed)), int(Functions.Config_getNumber(PARAM_Projectile_Speed_Max, Self.R_Projectile_MovementSpeed)))"
+							}
+						}
+					],
+					"sid": 692676499856425
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "startShootTimer",
+			"objectClass": "Cannon",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "start-timer",
+					"objectClass": "Cannon",
+					"sid": 708566742116305,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "random(Self.R_Shoot_Interval_Min, Self.R_Shoot_Interval_Max)",
+						"type": "once",
+						"tag": "TIMER_Cannon_Shoot"
+					}
+				}
+			],
+			"sid": 472290367645562
+		},
+		{
+			"aceType": "action",
+			"aceName": "spawn",
+			"objectClass": "Cannon",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 902939753953571,
+					"parameters": {
+						"object-to-create": "Cannon",
+						"layer": "LAYER_Main",
+						"x": "midX",
+						"y": "midY",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"customAction": "init",
+					"objectClass": "Cannon",
+					"sid": 344304806664953
+				}
+			],
+			"sid": 422900639285433
+		}
+	],
+	"sid": 414515668687685
+}

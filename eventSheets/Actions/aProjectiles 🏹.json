@@ -38,6 +38,13 @@
 					"initialValue": "0",
 					"comment": "",
 					"sid": 619585863374468
+				},
+				{
+					"name": "movementSpeed",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 522499249080531
 				}
 			],
 			"eventType": "custom-ace-block",
@@ -59,10 +66,10 @@
 				{
 					"id": "set-speed",
 					"objectClass": "Projectile",
-					"sid": 885476692747359,
+					"sid": 259534430416522,
 					"behaviorType": "Bullet",
 					"parameters": {
-						"speed": "R_Projectile_MovementSpeed"
+						"speed": "movementSpeed"
 					}
 				},
 				{

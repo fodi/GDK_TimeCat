@@ -42,28 +42,19 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 321930760054318,
-							"parameters": {
-								"variable": "R_Projectile_MovementSpeed",
-								"value": "int(Functions.Config_getNumber(PARAM_Projectile_Speed, R_Projectile_MovementSpeed))"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 319653908552222,
+							"sid": 139245888955545,
 							"parameters": {
 								"variable": "R_RowCount",
-								"value": "int(Functions.Config_getNumber(PARAM_Tile_RowCount, R_RowCount))"
+								"value": "clamp(int(Functions.Config_getNumber(PARAM_Tile_RowCount, R_RowCount)), C_Tile_Dimension_Min, C_Tile_Dimension_Max)"
 							}
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 461182895992343,
+							"sid": 584776617241278,
 							"parameters": {
 								"variable": "R_ColumnCount",
-								"value": "int(Functions.Config_getNumber(PARAM_Tile_ColumnCount, R_ColumnCount))"
+								"value": "clamp(int(Functions.Config_getNumber(PARAM_Tile_ColumnCount, R_ColumnCount)), C_Tile_Dimension_Min, C_Tile_Dimension_Max)"
 							}
 						},
 						{
@@ -159,27 +150,12 @@
 						},
 						{
 							"type": "comment",
-							"text": "Initialize projectile spawner"
+							"text": "Spawn cannon"
 						},
 						{
-							"id": "set-target",
+							"customAction": "spawn",
 							"objectClass": "Cannon",
-							"sid": 809900119677547,
-							"behaviorType": "Orbit",
-							"parameters": {
-								"x": "midX",
-								"y": "midY"
-							}
-						},
-						{
-							"id": "set-radius",
-							"objectClass": "Cannon",
-							"sid": 780200512576932,
-							"behaviorType": "Orbit",
-							"parameters": {
-								"primary": "midX + C_Tile_Size * 2",
-								"secondary": "midY + C_Tile_Size * 2"
-							}
+							"sid": 859350561082887
 						},
 						{
 							"type": "comment",
