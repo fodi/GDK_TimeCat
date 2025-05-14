@@ -231,7 +231,9 @@
 					"txBoxSleep",
 					"txBoxSlow",
 					"txBoxShield",
-					"txBoxProjectile"
+					"txBoxProjectile",
+					"txCannonIdle",
+					"txCannonAttacking"
 				],
 				"subfolders": [],
 				"name": "Textures"
@@ -262,6 +264,8 @@
 				"txBoxShield",
 				"txBoxSleep",
 				"txBoxSlow",
+				"txCannonAttacking",
+				"txCannonIdle",
 				"UI_Icons"
 			]
 		}
@@ -875,7 +879,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "32c",
+		"version": "33",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

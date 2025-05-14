@@ -305,6 +305,32 @@
 						}
 					],
 					"sid": 810463059339353
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "Cannon",
+							"sid": 153214093981769,
+							"parameters": {
+								"child": "3dCannon",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-face-object",
+							"objectClass": "3dCannon",
+							"sid": 584776906794173,
+							"parameters": {
+								"face": "bottom",
+								"object": "txCannonIdle"
+							}
+						}
+					],
+					"sid": 584432900882151
 				}
 			]
 		},

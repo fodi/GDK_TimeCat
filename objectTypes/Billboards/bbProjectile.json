@@ -195,7 +195,7 @@
 				],
 				"sid": 602727110380375,
 				"name": "Energy",
-				"isLooping": false,
+				"isLooping": true,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,

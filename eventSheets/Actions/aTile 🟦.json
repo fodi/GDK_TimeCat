@@ -225,7 +225,35 @@
 							}
 						}
 					],
-					"sid": 184099180449526
+					"sid": 184099180449526,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "fTile",
+									"sid": 715821340317446,
+									"parameters": {
+										"child": "Symbol",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "Symbol",
+									"sid": 526717356586237,
+									"parameters": {
+										"width": "C_Tile_Size",
+										"height": "C_Tile_Size"
+									}
+								}
+							],
+							"sid": 348344614883283
+						}
+					]
 				}
 			]
 		},
@@ -667,18 +695,26 @@
 								{
 									"id": "tween-one-property",
 									"objectClass": "Symbol",
-									"sid": 138432211037674,
+									"sid": 962446174644403,
 									"behaviorType": "Tween",
 									"parameters": {
 										"tags": "TWEEN_Symbol_Opacity",
 										"property": "offsetOpacity",
 										"end-value": "100",
-										"time": "0.2",
+										"time": "0.1",
 										"ease": "easeinquart",
 										"destroy-on-complete": "no",
 										"loop": "no",
 										"ping-pong": "no",
 										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Symbol",
+									"sid": 484589270499802,
+									"parameters": {
+										"frame-number": "0"
 									}
 								}
 							],
