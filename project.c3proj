@@ -185,8 +185,8 @@
 			"CameraTargetSmooth",
 			"Particles",
 			"TiledBackground",
-			"Map",
-			"Selection"
+			"Selection",
+			"Basemap"
 		],
 		"subfolders": [
 			{
@@ -343,7 +343,8 @@
 					"aCamera 🎥",
 					"aBoxes 📦",
 					"aBlurbs 🆎",
-					"aUI 📟"
+					"aUI 📟",
+					"aBasemap 🌐"
 				],
 				"subfolders": [],
 				"name": "Actions"
@@ -879,7 +880,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "33",
+		"version": "34",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

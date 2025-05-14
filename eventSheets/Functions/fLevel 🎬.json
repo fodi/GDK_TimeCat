@@ -139,6 +139,11 @@
 						},
 						{
 							"customAction": "spawn",
+							"objectClass": "Basemap",
+							"sid": 954492913769098
+						},
+						{
+							"customAction": "spawn",
 							"objectClass": "Tile",
 							"customActionObjectClass": "fTile",
 							"sid": 536946566765191,

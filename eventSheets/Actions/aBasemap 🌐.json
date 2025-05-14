@@ -1,0 +1,92 @@
+{
+	"name": "aBasemap 🌐",
+	"events": [
+		{
+			"aceType": "action",
+			"aceName": "spawn",
+			"objectClass": "Basemap",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 849524657614002,
+					"parameters": {
+						"object-to-create": "Basemap",
+						"layer": "LAYER_Main",
+						"x": "-C_Grid_Size",
+						"y": "-C_Grid_Size",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-z-elevation",
+					"objectClass": "Basemap",
+					"sid": 697074394732729,
+					"parameters": {
+						"z": "-1"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "Basemap",
+					"sid": 860003019487169,
+					"parameters": {
+						"width": "(R_Level_Columns + 2) * C_Grid_Size",
+						"height": "(R_Level_Rows + 2) * C_Grid_Size"
+					}
+				}
+			],
+			"sid": 235751073228539,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 122791888216457,
+							"parameters": {
+								"name": "W_X",
+								"start-index": "0",
+								"end-index": "Basemap.Width / C_Grid_Size - 1"
+							}
+						},
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 983347725070377,
+							"parameters": {
+								"name": "W_Y",
+								"start-index": "0",
+								"end-index": "Basemap.Height / C_Grid_Size - 1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-tile-with-brush-by-name",
+							"objectClass": "Basemap",
+							"sid": 699651837237803,
+							"parameters": {
+								"tile-x": "loopindex(W_X)",
+								"tile-y": "loopindex(W_Y)",
+								"brush": "BRUSH_Ground"
+							}
+						}
+					],
+					"sid": 802618042721106
+				}
+			]
+		}
+	],
+	"sid": 536593058551067
+}

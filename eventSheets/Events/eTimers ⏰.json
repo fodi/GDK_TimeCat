@@ -62,7 +62,8 @@
 					]
 				}
 			],
-			"sid": 289643315531853
+			"sid": 289643315531853,
+			"disabled": true
 		},
 		{
 			"eventType": "block",

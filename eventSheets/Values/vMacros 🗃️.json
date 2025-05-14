@@ -71,16 +71,6 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ANIM_Idle",
-			"type": "string",
-			"initialValue": "Idle",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 343566434682814
-		},
-		{
-			"eventType": "variable",
 			"name": "ANIM_Up",
 			"type": "string",
 			"initialValue": "Up",
@@ -160,6 +150,10 @@
 			"sid": 542683229904901
 		},
 		{
+			"eventType": "comment",
+			"text": "todo disable/remove"
+		},
+		{
 			"eventType": "variable",
 			"name": "ANIM_WakingUp",
 			"type": "string",
@@ -198,6 +192,20 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 914897034252219
+		},
+		{
+			"eventType": "comment",
+			"text": "Brushes"
+		},
+		{
+			"eventType": "variable",
+			"name": "BRUSH_Ground",
+			"type": "string",
+			"initialValue": "Ground",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 916737835835405
 		},
 		{
 			"eventType": "comment",

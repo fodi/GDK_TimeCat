@@ -5,67 +5,7 @@
 			"name": "Main",
 			"overriden": 0,
 			"subLayers": [],
-			"instances": [
-				{
-					"type": "Map",
-					"properties": {
-						"initially-visible": false,
-						"tile-width": 64,
-						"tile-height": 64,
-						"tile-x-offset": 0,
-						"tile-y-offset": 0,
-						"tile-x-spacing": 0,
-						"tile-y-spacing": 0,
-						"tile-x-drawing-offset": 0,
-						"tile-y-drawing-offset": 0,
-						"drawing-mode": "top-to-right"
-					},
-					"uid": 40,
-					"sid": 125169873174883,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"ownData": {
-						"tilemapData": {
-							"width": 10,
-							"height": 6,
-							"max-width": 20,
-							"max-height": 15,
-							"data": "31,4x37,43,0,45,7x0,32,4x19,44,9x0,32,4x19,44,9x0,32,4x19,44,9x0,32,4x19,44,9x0,32,4x19,44,9x0,32,4x19,44,9x0,32,4x19,44,9x0,32,4x19,44,9x0,33,4x39,45,9x0,45,17x0,2x45,10x0,45,0,2x45,11x0,2x45,2x0,45,14x0,45,85x0"
-						},
-						"tile-width": 64,
-						"tile-height": 64,
-						"tile-x-offset": 0,
-						"tile-y-offset": 0,
-						"tile-x-spacing": 0,
-						"tile-y-spacing": 0
-					},
-					"instanceFolderItem": {
-						"sid": 125169873174883,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 768,
-						"y": 0,
-						"width": 640,
-						"height": 384,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"zElevation": 0
-					}
-				}
-			],
+			"instances": [],
 			"sid": 399883108368287,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
@@ -78,9 +18,9 @@
 				1
 			],
 			"backgroundColor": [
-				0.3686274509803922,
-				0.3686274509803922,
-				0.3686274509803922,
+				0.1607843137254902,
+				0.7137254901960784,
+				0.9647058823529412,
 				1
 			],
 			"isTransparent": false,

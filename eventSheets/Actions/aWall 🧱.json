@@ -25,6 +25,10 @@
 					"conditions": [],
 					"actions": [
 						{
+							"type": "comment",
+							"text": "North"
+						},
+						{
 							"customAction": "spawn",
 							"objectClass": "Wall",
 							"sid": 787370498151398,
@@ -34,6 +38,10 @@
 								"R_Level_Columns * C_Grid_Size + C_Wall_Thickness * 2",
 								"C_Wall_Thickness"
 							]
+						},
+						{
+							"type": "comment",
+							"text": "South"
 						},
 						{
 							"customAction": "spawn",
@@ -47,6 +55,10 @@
 							]
 						},
 						{
+							"type": "comment",
+							"text": "West"
+						},
+						{
 							"customAction": "spawn",
 							"objectClass": "Wall",
 							"sid": 960927756203816,
@@ -56,6 +68,10 @@
 								"C_Wall_Thickness",
 								"R_Level_Rows * C_Grid_Size + C_Wall_Thickness * 2"
 							]
+						},
+						{
+							"type": "comment",
+							"text": "East"
 						},
 						{
 							"customAction": "spawn",
