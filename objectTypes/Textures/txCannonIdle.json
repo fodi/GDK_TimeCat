@@ -13,56 +13,104 @@
 				"frames": [
 					{
 						"width": 64,
-						"height": 64,
+						"height": 112,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 0.2857142857142857,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 6303468,
+						"imageSpriteId": 4393643,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								1,
+								0,
+								1,
+								0.5714285714285714,
+								0,
+								0.5714285714285714
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					},
 					{
 						"width": 64,
-						"height": 64,
+						"height": 112,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 0.2857142857142857,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 6574341,
+						"imageSpriteId": 877509,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								1,
+								0,
+								1,
+								0.5714285714285714,
+								0,
+								0.5714285714285714
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					},
 					{
 						"width": 64,
-						"height": 64,
+						"height": 112,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 0.2857142857142857,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 3918435,
+						"imageSpriteId": 7799680,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								1,
+								0,
+								1,
+								0.5714285714285714,
+								0,
+								0.5714285714285714
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					},
 					{
 						"width": 64,
-						"height": 64,
+						"height": 112,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 0.2857142857142857,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 8641965,
+						"imageSpriteId": 351962,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								1,
+								0,
+								1,
+								0.5714285714285714,
+								0,
+								0.5714285714285714
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""

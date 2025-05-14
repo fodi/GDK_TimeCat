@@ -32,6 +32,15 @@
 					"id": "destroy",
 					"objectClass": "Projectile",
 					"sid": 876574991497227
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 173204966581156,
+					"parameters": {
+						"type": "log",
+						"message": "\"player vs projectile\""
+					}
 				}
 			],
 			"sid": 569478695533574,
@@ -106,11 +115,7 @@
 			"children": [
 				{
 					"eventType": "comment",
-					"text": "todo CA?"
-				},
-				{
-					"eventType": "comment",
-					"text": "If the box is on the ground, ready to be picked up"
+					"text": "A (previously) carried box hits another player"
 				},
 				{
 					"eventType": "block",
@@ -118,88 +123,39 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Box",
-							"sid": 888224725946542,
+							"sid": 567305030346269,
 							"parameters": {
-								"instance-variable": "carrierPlayerUID",
-								"comparison": 0,
+								"instance-variable": "lastCarrierPlayerUID",
+								"comparison": 1,
 								"value": "NOTHING"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Box",
+							"sid": 700076625495284,
+							"parameters": {
+								"instance-variable": "lastCarrierPlayerUID",
+								"comparison": 1,
+								"value": "Player.UID"
 							}
 						}
 					],
-					"actions": [],
-					"sid": 872781635328812,
-					"children": [
+					"actions": [
 						{
-							"eventType": "comment",
-							"text": "If the colliding player is not carrying a box yet, pick up this one"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Player",
-									"sid": 815047066581030,
-									"parameters": {
-										"instance-variable": "boxUID",
-										"comparison": 0,
-										"value": "NOTHING"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Player",
-									"sid": 544114614894415,
-									"parameters": {
-										"instance-variable": "boxUID",
-										"value": "Box.UID"
-									}
-								},
-								{
-									"id": "add-child",
-									"objectClass": "Player",
-									"sid": 418530184467040,
-									"parameters": {
-										"child": "Box",
-										"transform-x": false,
-										"transform-y": false,
-										"transform-w": false,
-										"transform-h": false,
-										"transform-a": false,
-										"transform-o": false,
-										"transform-z-elevation": false,
-										"transform-visibility": false,
-										"destroy-with-parent": true
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Box",
-									"sid": 133937434739160,
-									"parameters": {
-										"instance-variable": "carrierPlayerUID",
-										"value": "Player.UID"
-									}
-								},
-								{
-									"callFunction": "playSound",
-									"sid": 102424207324748,
-									"parameters": [
-										"SFX_Player_Box_Pickup",
-										"1",
-										"0"
-									]
-								}
-							],
-							"sid": 462906727967071
+							"customAction": "onPlayerHit",
+							"objectClass": "Box",
+							"sid": 235802581682082,
+							"parameters": [
+								"Player.UID"
+							]
 						}
-					]
+					],
+					"sid": 657091044556624
 				},
 				{
 					"eventType": "comment",
-					"text": "If the box already belongs to a player"
+					"text": "Picking up a box"
 				},
 				{
 					"eventType": "block",
@@ -207,98 +163,27 @@
 						{
 							"id": "else",
 							"objectClass": "System",
-							"sid": 643096230017692
+							"sid": 765509090422871
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 150530598847333,
+							"parameters": {
+								"instance-variable": "carryingBoxUID",
+								"comparison": 0,
+								"value": "NOTHING"
+							}
 						}
 					],
-					"actions": [],
-					"sid": 579585032873157,
-					"children": [
+					"actions": [
 						{
-							"eventType": "comment",
-							"text": "If the box hits another player"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-speed",
-									"objectClass": "Box",
-									"sid": 299324332966301,
-									"behaviorType": "Bullet",
-									"parameters": {
-										"comparison": 4,
-										"speed": "0"
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Box",
-									"sid": 615293819572892,
-									"parameters": {
-										"instance-variable": "carrierPlayerUID",
-										"comparison": 1,
-										"value": "Player.UID"
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Box",
-									"sid": 447106090526748,
-									"parameters": {
-										"instance-variable": "targetPlayerUID",
-										"comparison": 0,
-										"value": "NOTHING"
-									}
-								}
-							],
-							"actions": [
-								{
-									"customAction": "onPlayerHit",
-									"objectClass": "Box",
-									"sid": 366487767284970,
-									"parameters": [
-										"Player.UID"
-									]
-								}
-							],
-							"sid": 387367243578375
-						},
-						{
-							"eventType": "comment",
-							"text": "If"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 919952535574546
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Box",
-									"sid": 160965312055842,
-									"parameters": {
-										"instance-variable": "carrierPlayerUID",
-										"comparison": 1,
-										"value": "Player.UID"
-									}
-								}
-							],
-							"actions": [
-								{
-									"customAction": "onPlayerHit",
-									"objectClass": "Box",
-									"sid": 878827495299327,
-									"parameters": [
-										"Player.UID"
-									]
-								}
-							],
-							"sid": 655831819948262
+							"customAction": "carryBox",
+							"objectClass": "Player",
+							"sid": 363599000050974
 						}
-					]
+					],
+					"sid": 906580957467785
 				}
 			]
 		},
@@ -463,7 +348,7 @@
 							"objectClass": "Player",
 							"sid": 142703911398793,
 							"parameters": {
-								"instance-variable": "boxUID",
+								"instance-variable": "carryingBoxUID",
 								"value": "NOTHING"
 							}
 						},

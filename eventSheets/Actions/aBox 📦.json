@@ -50,6 +50,15 @@
 					}
 				},
 				{
+					"id": "set-solid-collision-filter",
+					"objectClass": "Box",
+					"sid": 701894312110635,
+					"parameters": {
+						"mode": "exclusive",
+						"tags": "SOLID_Obstacle & \" \" &SOLID_Wall"
+					}
+				},
+				{
 					"id": "set-instvar-value",
 					"objectClass": "Box",
 					"sid": 654741773896637,
@@ -439,7 +448,7 @@
 							"objectClass": "Player",
 							"sid": 417519179093379,
 							"parameters": {
-								"instance-variable": "boxUID",
+								"instance-variable": "carryingBoxUID",
 								"comparison": 0,
 								"value": "Box.UID"
 							}
@@ -451,7 +460,7 @@
 							"objectClass": "Player",
 							"sid": 862364841000416,
 							"parameters": {
-								"instance-variable": "boxUID",
+								"instance-variable": "carryingBoxUID",
 								"value": "NOTHING"
 							}
 						}

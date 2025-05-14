@@ -45,6 +45,13 @@
 					"initialValue": "0",
 					"comment": "",
 					"sid": 522499249080531
+				},
+				{
+					"name": "cannonAngle",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 297542659930192
 				}
 			],
 			"eventType": "custom-ace-block",
@@ -64,13 +71,12 @@
 					}
 				},
 				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 203509029354875,
-					"disabled": true,
+					"id": "set-solid-collision-filter",
+					"objectClass": "Projectile",
+					"sid": 353624804575017,
 					"parameters": {
-						"type": "log",
-						"message": "\"projectile speed: \" & movementSpeed"
+						"mode": "exclusive",
+						"tags": "SOLID_Player"
 					}
 				},
 				{
@@ -86,9 +92,18 @@
 					"id": "set-angle-toward-position",
 					"objectClass": "Projectile",
 					"sid": 472224366039007,
+					"disabled": true,
 					"parameters": {
 						"x": "targetX",
 						"y": "targetY"
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "Projectile",
+					"sid": 339337646198502,
+					"parameters": {
+						"angle": "cannonAngle"
 					}
 				}
 			],

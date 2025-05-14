@@ -130,7 +130,7 @@
 			"sid": 104638813909937
 		},
 		{
-			"name": "boxUID",
+			"name": "carryingBoxUID",
 			"type": "number",
 			"desc": "",
 			"show": false,
@@ -154,7 +154,7 @@
 			"name": "currentAngle",
 			"type": "number",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 933990457185816
 		},
 		{

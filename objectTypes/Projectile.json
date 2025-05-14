@@ -11,6 +11,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 657103350544509
+		},
+		{
+			"name": "targetPlayerId",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 424259872999354
 		}
 	],
 	"behaviorTypes": [
@@ -39,46 +46,9 @@
 			{
 				"frames": [
 					{
-						"width": 34,
-						"height": 10,
-						"originX": 0,
-						"originY": 0.5,
-						"originalSource": "",
-						"exportFormat": "lossless",
-						"exportQuality": 0.8,
-						"fileType": "image/png",
-						"imageSpriteId": 1302589,
-						"collisionPoly": {
-							"points": [
-								0.058823529411764705,
-								0.2,
-								0.9117647058823529,
-								0.2,
-								0.9117647058823529,
-								0.8,
-								0.058823529411764705,
-								0.8
-							]
-						},
-						"useCollisionPoly": true,
-						"duration": 1,
-						"tag": ""
-					}
-				],
-				"sid": 510808708481060,
-				"name": "Arrow",
-				"isLooping": false,
-				"isPingPong": false,
-				"repeatCount": 1,
-				"repeatTo": 0,
-				"speed": 5
-			},
-			{
-				"frames": [
-					{
 						"width": 32,
 						"height": 32,
-						"originX": 0,
+						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
@@ -102,7 +72,7 @@
 					{
 						"width": 32,
 						"height": 32,
-						"originX": 0,
+						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
@@ -126,7 +96,7 @@
 					{
 						"width": 32,
 						"height": 32,
-						"originX": 0,
+						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
@@ -150,7 +120,7 @@
 					{
 						"width": 32,
 						"height": 32,
-						"originX": 0,
+						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
@@ -174,7 +144,7 @@
 					{
 						"width": 32,
 						"height": 32,
-						"originX": 0,
+						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
@@ -198,7 +168,7 @@
 					{
 						"width": 32,
 						"height": 32,
-						"originX": 0,
+						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",

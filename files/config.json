@@ -14,6 +14,7 @@
 	"pr_speed_max": 400,
 	"pr_spawn_time_min": 2,
 	"pr_spawn_time_max": 4,
+	"it_speed": 500,
 	"it_damage": 50,
 	"it_attack_damage": 100,
 	"it_sleep_time": 5,

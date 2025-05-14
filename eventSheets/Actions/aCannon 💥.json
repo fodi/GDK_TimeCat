@@ -137,17 +137,6 @@
 							}
 						},
 						{
-							"callFunction": "playSoundAt",
-							"sid": 987182644903882,
-							"parameters": [
-								"Cannon.X",
-								"Cannon.Y",
-								"SFX_Cannon_Spawn",
-								"1",
-								"NO"
-							]
-						},
-						{
 							"customAction": "init",
 							"objectClass": "Cannon",
 							"sid": 808091721845568
@@ -176,6 +165,17 @@
 					"eventType": "block",
 					"conditions": [],
 					"actions": [
+						{
+							"callFunction": "playSoundAt",
+							"sid": 481383697754875,
+							"parameters": [
+								"Cannon.X",
+								"Cannon.Y",
+								"SFX_Cannon_Spawn",
+								"1",
+								"NO"
+							]
+						},
 						{
 							"type": "comment",
 							"text": "Override parameters if needed"
@@ -295,17 +295,6 @@
 							}
 						},
 						{
-							"id": "set-radius",
-							"objectClass": "Cannon",
-							"sid": 346185206583608,
-							"disabled": true,
-							"behaviorType": "Orbit",
-							"parameters": {
-								"primary": "(distance(0, 0, midX, midY) + C_Tile_Size * 2) * 0.5",
-								"secondary": "(distance(0, 0, midX, midY) + C_Tile_Size * 2) * 0.5"
-							}
-						},
-						{
 							"customAction": "startShootTimer",
 							"objectClass": "Cannon",
 							"sid": 795394196873268
@@ -314,6 +303,11 @@
 							"customAction": "startMoving",
 							"objectClass": "Cannon",
 							"sid": 437806578770828
+						},
+						{
+							"customAction": "selectTarget",
+							"objectClass": "Cannon",
+							"sid": 311017688225980
 						}
 					],
 					"sid": 810463059339353
@@ -335,43 +329,34 @@
 						{
 							"id": "set-face-object",
 							"objectClass": "3dCannon",
-							"sid": 584776906794173,
+							"sid": 569528377612698,
 							"parameters": {
-								"face": "bottom",
+								"face": "right",
 								"object": "txCannonIdle"
 							}
 						},
 						{
-							"id": "set-opacity",
+							"id": "set-z-elevation",
 							"objectClass": "3dCannon",
-							"sid": 818551646326965,
-							"disabled": true,
+							"sid": 630659613799772,
 							"parameters": {
-								"opacity": "0"
+								"z": "-Self.ZHeight - 3"
 							}
 						},
 						{
 							"type": "comment",
-							"text": "todo macro, mn"
-						},
-						{
-							"id": "set-z-elevation",
-							"objectClass": "3dCannon",
-							"sid": 135155721488443,
-							"parameters": {
-								"z": "-Self.ZHeight - 1"
-							}
+							"text": "todo z height"
 						},
 						{
 							"id": "tween-one-property",
 							"objectClass": "3dCannon",
-							"sid": 117850340924268,
+							"sid": 344505137854007,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"ZElevation\"",
 								"property": "offsetZElevation",
-								"end-value": "0",
-								"time": "4",
+								"end-value": "-4",
+								"time": "3",
 								"ease": "easeoutbounce",
 								"destroy-on-complete": "no",
 								"loop": "no",
@@ -386,7 +371,174 @@
 		},
 		{
 			"aceType": "action",
-			"aceName": "shoot",
+			"aceName": "selectTarget",
+			"objectClass": "Cannon",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 131260329623665,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 989117274216236,
+							"parameters": {
+								"instance-variable": "isDead",
+								"comparison": 0,
+								"value": "NO"
+							}
+						},
+						{
+							"id": "pick-nearestfurthest",
+							"objectClass": "Player",
+							"sid": 492415219486085,
+							"parameters": {
+								"which": "nearest",
+								"x": "Cannon.X",
+								"y": "Cannon.Y"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Cannon",
+							"sid": 830571715829877,
+							"parameters": {
+								"instance-variable": "targetPlayerId",
+								"value": "Player.playerId"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 818532730867310,
+							"parameters": {
+								"type": "log",
+								"message": "\"Cannon #\" & Cannon.UID & \" selected player \" & Player.playerId & \" as a target.\""
+							}
+						}
+					],
+					"sid": 678812993783150
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 163523841496399
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Cannon",
+							"sid": 622829968178242,
+							"parameters": {
+								"instance-variable": "targetPlayerId",
+								"value": "NOTHING"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 441603511270265,
+							"parameters": {
+								"type": "log",
+								"message": "\"Cannon #\" & Cannon.UID & \" couldn't select a target.\""
+							}
+						}
+					],
+					"sid": 381067891100985
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "tick",
+			"objectClass": "Cannon",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 761034600587050,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 392218757345059,
+							"parameters": {
+								"instance-variable": "playerId",
+								"comparison": 0,
+								"value": "Cannon.targetPlayerId"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle",
+							"objectClass": "Cannon",
+							"sid": 857593753919314,
+							"disabled": true,
+							"parameters": {
+								"angle": "Functions.expDecay(Self.Angle, angle(Self.X, Self.Y, Player.X, Player.Y), 3)"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Cannon",
+							"sid": 486625057318393,
+							"parameters": {
+								"angle": "anglelerp(Self.Angle, angle(Self.X, Self.Y, Player.X, Player.Y), 1 - 0.05 ^ dt)"
+							}
+						}
+					],
+					"sid": 443324917969824
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 183404404266808
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle",
+							"objectClass": "Cannon",
+							"sid": 992328626512037,
+							"parameters": {
+								"angle": "anglelerp(Self.Angle, angle(Self.X, Self.Y, midX, midY), 1 - 0.05 ^ dt)"
+							}
+						}
+					],
+					"sid": 554864348649137
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "startAttack",
 			"objectClass": "Cannon",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -406,6 +558,7 @@
 							"id": "compare-instance-variable",
 							"objectClass": "Player",
 							"sid": 757464214803311,
+							"disabled": true,
 							"parameters": {
 								"instance-variable": "health",
 								"comparison": 4,
@@ -416,38 +569,102 @@
 							"id": "pick-nearestfurthest",
 							"objectClass": "Player",
 							"sid": 901508114031172,
+							"disabled": true,
 							"parameters": {
 								"which": "furthest",
 								"x": "Cannon.X",
 								"y": "Cannon.Y"
 							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 525829410518078,
+							"parameters": {
+								"instance-variable": "playerId",
+								"comparison": 0,
+								"value": "Cannon.targetPlayerId"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 316928572243280,
+							"parameters": {
+								"instance-variable": "isDead",
+								"comparison": 0,
+								"value": "NO"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "Cannon",
+							"sid": 953854222915404,
+							"parameters": {
+								"child": "3dCannon",
+								"which": "own"
+							}
 						}
 					],
 					"actions": [
 						{
+							"type": "comment",
+							"text": "Switch to attack animation"
+						},
+						{
+							"id": "set-face-object",
+							"objectClass": "3dCannon",
+							"sid": 186714767488714,
+							"parameters": {
+								"face": "right",
+								"object": "txCannonAttacking"
+							}
+						},
+						{
+							"id": "start-animation",
+							"objectClass": "txCannonAttacking",
+							"sid": 719207736695324,
+							"parameters": {
+								"from": "beginning"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Wait until the attack animation's end"
+						},
+						{
+							"type": "comment",
+							"text": "todo use timer instead"
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 408456443530698,
+							"parameters": {
+								"seconds": "(txCannonAttacking.AnimationFrameCount + 1) / txCannonAttacking.AnimationSpeed",
+								"use-timescale": true
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Shoot projectile"
+						},
+						{
 							"customAction": "spawn",
 							"objectClass": "Projectile",
-							"sid": 196987873204044,
+							"sid": 777326250923389,
 							"parameters": [
 								"Cannon.X",
 								"Cannon.Y",
 								"Player.X",
 								"Player.Y",
-								"Cannon.R_Projectile_MovementSpeed"
+								"Cannon.R_Projectile_MovementSpeed",
+								"Cannon.Angle"
 							]
 						},
 						{
-							"id": "set-instvar-value",
-							"objectClass": "Cannon",
-							"sid": 157928397321412,
-							"parameters": {
-								"instance-variable": "R_Projectile_MovementSpeed",
-								"value": "min(Self.R_Projectile_MovementSpeed + Self.R_Projectile_MovementSpeed_Increase, Self.R_Projectile_MovementSpeed_Max)"
-							}
-						},
-						{
 							"callFunction": "playSoundAt",
-							"sid": 599817348518414,
+							"sid": 609759240160443,
 							"parameters": [
 								"Cannon.X",
 								"Cannon.Y",
@@ -455,6 +672,41 @@
 								"4",
 								"NO"
 							]
+						},
+						{
+							"type": "comment",
+							"text": "Increase next projectile movement speed rule"
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Cannon",
+							"sid": 704468354196762,
+							"parameters": {
+								"instance-variable": "R_Projectile_MovementSpeed",
+								"value": "min(Self.R_Projectile_MovementSpeed + Self.R_Projectile_MovementSpeed_Increase, Self.R_Projectile_MovementSpeed_Max)"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Wait for a bit, then switch back to idle animation & choose new target"
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 347987157925351,
+							"parameters": {
+								"seconds": "5 / txCannonAttacking.AnimationSpeed",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-face-object",
+							"objectClass": "3dCannon",
+							"sid": 939875235008034,
+							"parameters": {
+								"face": "right",
+								"object": "txCannonIdle"
+							}
 						}
 					],
 					"sid": 692676499856425
@@ -472,14 +724,26 @@
 						{
 							"id": "log",
 							"objectClass": "Browser",
-							"sid": 504311610538907,
+							"sid": 857718295864939,
 							"parameters": {
 								"type": "log",
-								"message": "\"Cannon has no target\""
+								"message": "\"Cannon has no target, skipping attack\""
 							}
 						}
 					],
 					"sid": 175363721439393
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"customAction": "selectTarget",
+							"objectClass": "Cannon",
+							"sid": 882342515170356
+						}
+					],
+					"sid": 293072857693510
 				}
 			]
 		},

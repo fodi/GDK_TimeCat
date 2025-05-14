@@ -29,6 +29,15 @@
 							"text": "Overrides"
 						},
 						{
+							"id": "set-solid-collision-filter",
+							"objectClass": "Player",
+							"sid": 876223557924203,
+							"parameters": {
+								"mode": "exclusive",
+								"tags": "SOLID_Box"
+							}
+						},
+						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
 							"sid": 321717557408034,
@@ -71,6 +80,15 @@
 							"parameters": {
 								"instance-variable": "R_MovementSpeed_Slow",
 								"value": "Functions.Config_getNumber(PARAM_Player_MovementSpeed_Slow)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 836214863750847,
+							"parameters": {
+								"instance-variable": "R_Box_MovementSpeed",
+								"value": "Functions.Config_getNumber(PARAM_Item_Speed)"
 							}
 						},
 						{
@@ -506,7 +524,7 @@
 													"sid": 714247914525777,
 													"parameters": {
 														"variable": "movementSpeed",
-														"value": "Player.boxUID = NOTHING ? Player.R_MovementSpeed_Normal : Player.R_MovementSpeed_Slow"
+														"value": "Player.carryingBoxUID = NOTHING ? Player.R_MovementSpeed_Normal : Player.R_MovementSpeed_Slow"
 													}
 												}
 											],
@@ -631,7 +649,7 @@
 													"objectClass": "Player",
 													"sid": 438115036615129,
 													"parameters": {
-														"instance-variable": "boxUID",
+														"instance-variable": "carryingBoxUID",
 														"comparison": 0,
 														"value": "NOTHING"
 													}
@@ -970,7 +988,7 @@
 											"objectClass": "Player",
 											"sid": 453971373624201,
 											"parameters": {
-												"instance-variable": "boxUID",
+												"instance-variable": "carryingBoxUID",
 												"comparison": 0,
 												"value": "NOTHING"
 											}
@@ -1197,78 +1215,17 @@
 											"objectClass": "Player",
 											"sid": 669033149766014,
 											"parameters": {
-												"instance-variable": "boxUID",
+												"instance-variable": "carryingBoxUID",
 												"comparison": 1,
 												"value": "NOTHING"
-											}
-										},
-										{
-											"id": "pick-children",
-											"objectClass": "Player",
-											"sid": 507822679436072,
-											"parameters": {
-												"child": "Box",
-												"which": "own"
 											}
 										}
 									],
 									"actions": [
 										{
-											"callFunction": "playSoundAt",
-											"sid": 674062608972525,
-											"parameters": [
-												"Cannon.X",
-												"Cannon.Y",
-												"SFX_Player_Box_Throw",
-												"4",
-												"NO"
-											]
-										},
-										{
-											"id": "remove-child",
+											"customAction": "throwBox",
 											"objectClass": "Player",
-											"sid": 204207431993616,
-											"parameters": {
-												"child": "Box"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 427213169046777,
-											"parameters": {
-												"instance-variable": "boxUID",
-												"value": "NOTHING"
-											}
-										},
-										{
-											"id": "set-enabled",
-											"objectClass": "Box",
-											"sid": 277994546434290,
-											"behaviorType": "Bullet",
-											"parameters": {
-												"state": "enabled"
-											}
-										},
-										{
-											"id": "set-speed",
-											"objectClass": "Box",
-											"sid": 670842074844383,
-											"behaviorType": "Bullet",
-											"parameters": {
-												"speed": "Player.R_Box_MovementSpeed"
-											}
-										},
-										{
-											"id": "start-timer",
-											"objectClass": "Box",
-											"sid": 290877799690657,
-											"behaviorType": "Timer",
-											"parameters": {
-												"duration": "Self.R_OverlapCheckTIme",
-												"type": "regular",
-												"tag": "TIMER_Box_FarCheck"
-											}
+											"sid": 618832789928983
 										}
 									],
 									"sid": 176047121358229
@@ -1345,6 +1302,230 @@
 			]
 		},
 		{
+			"eventType": "comment",
+			"text": "Box stuff"
+		},
+		{
+			"aceType": "action",
+			"aceName": "carryBox",
+			"objectClass": "Player",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": true,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 395760252284608,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 425895248063561,
+							"parameters": {
+								"instance-variable": "carryingBoxUID",
+								"value": "Box.UID"
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "Player",
+							"sid": 415504876138126,
+							"parameters": {
+								"child": "Box",
+								"transform-x": false,
+								"transform-y": false,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-o": false,
+								"transform-z-elevation": false,
+								"transform-visibility": false,
+								"destroy-with-parent": true
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Box",
+							"sid": 395666864956450,
+							"parameters": {
+								"instance-variable": "lastCarrierPlayerUID",
+								"value": "Player.UID"
+							}
+						},
+						{
+							"callFunction": "playSound",
+							"sid": 104532709324616,
+							"parameters": [
+								"SFX_Player_Box_Pickup",
+								"1",
+								"0"
+							]
+						}
+					],
+					"sid": 504734074582892
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "throwBox",
+			"objectClass": "Player",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 719648725278038,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "Player",
+							"sid": 206228324575013,
+							"parameters": {
+								"child": "Box",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "playSoundAt",
+							"sid": 637153857120686,
+							"parameters": [
+								"Cannon.X",
+								"Cannon.Y",
+								"SFX_Player_Box_Throw",
+								"4",
+								"NO"
+							]
+						},
+						{
+							"id": "remove-child",
+							"objectClass": "Player",
+							"sid": 127068041341763,
+							"parameters": {
+								"child": "Box"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 171439620220022,
+							"parameters": {
+								"instance-variable": "carryingBoxUID",
+								"value": "NOTHING"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Box",
+							"sid": 168917985229047,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Box",
+							"sid": 323776512434456,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "Player.R_Box_MovementSpeed"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Box",
+							"sid": 594154447449644,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "Self.R_OverlapCheckTIme",
+								"type": "regular",
+								"tag": "TIMER_Box_FarCheck"
+							}
+						}
+					],
+					"sid": 364475465270101
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "dropBox",
+			"objectClass": "Player",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 710168992571907,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "Player",
+							"sid": 918615409885672,
+							"parameters": {
+								"child": "Box",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "remove-from-parent",
+							"objectClass": "Box",
+							"sid": 467752770123523
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Box",
+							"sid": 962843406088085,
+							"parameters": {
+								"instance-variable": "lastCarrierPlayerUID",
+								"value": "NOTHING"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Box",
+							"sid": 984867020818451,
+							"parameters": {
+								"instance-variable": "targetPlayerUID",
+								"value": "NOTHING"
+							}
+						}
+					],
+					"sid": 228385467253041
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Tile stuff"
+		},
+		{
 			"aceType": "action",
 			"aceName": "checkTiles",
 			"objectClass": "Player",
@@ -1357,7 +1538,7 @@
 			"eventType": "custom-ace-block",
 			"conditions": [],
 			"actions": [],
-			"sid": 271357122283101,
+			"sid": 652761628873981,
 			"children": [
 				{
 					"eventType": "variable",
@@ -1367,7 +1548,7 @@
 					"comment": "",
 					"isStatic": false,
 					"isConstant": false,
-					"sid": 282041672747686
+					"sid": 517200534884052
 				},
 				{
 					"eventType": "block",
@@ -1375,7 +1556,7 @@
 						{
 							"id": "pick-by-unique-id",
 							"objectClass": "Tile",
-							"sid": 115906198600461,
+							"sid": 593429071878571,
 							"parameters": {
 								"unique-id": "Player.tileUID1"
 							}
@@ -1383,14 +1564,14 @@
 						{
 							"id": "pick-by-unique-id",
 							"objectClass": "fTile",
-							"sid": 487887627285496,
+							"sid": 983620038330125,
 							"parameters": {
 								"unique-id": "Player.tileUID2"
 							}
 						}
 					],
 					"actions": [],
-					"sid": 914667370152696,
+					"sid": 742144660105788,
 					"children": [
 						{
 							"eventType": "comment",
@@ -1402,7 +1583,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Tile",
-									"sid": 444010377632060,
+									"sid": 467235990685646,
 									"parameters": {
 										"instance-variable": "symbol",
 										"comparison": 0,
@@ -1415,17 +1596,17 @@
 									"customAction": "remove",
 									"objectClass": "Tile",
 									"customActionObjectClass": "fTile",
-									"sid": 610506249939683
+									"sid": 199815627977266
 								},
 								{
 									"customAction": "remove",
 									"objectClass": "fTile",
-									"sid": 847277258622668
+									"sid": 705330117688820
 								},
 								{
 									"id": "add-to-instvar",
 									"objectClass": "Player",
-									"sid": 140197894115624,
+									"sid": 905719370899026,
 									"parameters": {
 										"instance-variable": "pairsFound",
 										"value": "1"
@@ -1434,7 +1615,7 @@
 								{
 									"id": "add-to-eventvar",
 									"objectClass": "System",
-									"sid": 151236500655693,
+									"sid": 105439399465929,
 									"parameters": {
 										"variable": "pairsFound",
 										"value": "1"
@@ -1443,7 +1624,7 @@
 								{
 									"id": "add-to-eventvar",
 									"objectClass": "System",
-									"sid": 778835255933920,
+									"sid": 702103901844003,
 									"parameters": {
 										"variable": "healAmount",
 										"value": "Player.R_Health_BonusOnPair"
@@ -1452,7 +1633,7 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "Player",
-									"sid": 181145534061699,
+									"sid": 750347857802633,
 									"parameters": {
 										"instance-variable": "tileUID1",
 										"value": "NOTHING"
@@ -1461,14 +1642,14 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "Player",
-									"sid": 546557595528095,
+									"sid": 148957599118805,
 									"parameters": {
 										"instance-variable": "tileUID2",
 										"value": "NOTHING"
 									}
 								}
 							],
-							"sid": 671774862284893,
+							"sid": 331913504050552,
 							"children": [
 								{
 									"eventType": "comment",
@@ -1480,7 +1661,7 @@
 										{
 											"id": "pick-by-comparison",
 											"objectClass": "System",
-											"sid": 321219722387016,
+											"sid": 192010513132901,
 											"parameters": {
 												"object": "Tile",
 												"expression": "int(Tile.symbol)",
@@ -1490,7 +1671,7 @@
 										}
 									],
 									"actions": [],
-									"sid": 228569953273772,
+									"sid": 680551157009061,
 									"children": [
 										{
 											"eventType": "comment",
@@ -1502,7 +1683,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "Tile",
-													"sid": 211905526062728,
+													"sid": 815345701243545,
 													"parameters": {
 														"instance-variable": "symbol",
 														"comparison": 0,
@@ -1514,14 +1695,14 @@
 												{
 													"id": "add-to-eventvar",
 													"objectClass": "System",
-													"sid": 952205922533722,
+													"sid": 517983607065842,
 													"parameters": {
 														"variable": "healAmount",
 														"value": "Player.R_Health_BonusOnHeal"
 													}
 												}
 											],
-											"sid": 664699140082146
+											"sid": 715509362391144
 										},
 										{
 											"eventType": "comment",
@@ -1533,14 +1714,14 @@
 												{
 													"id": "else",
 													"objectClass": "System",
-													"sid": 353242779660125
+													"sid": 579842598767855
 												}
 											],
 											"actions": [
 												{
 													"customAction": "spawn",
 													"objectClass": "Box",
-													"sid": 329378041470016,
+													"sid": 390936716904970,
 													"parameters": [
 														"fTile.X",
 														"fTile.Y",
@@ -1549,7 +1730,7 @@
 												},
 												{
 													"callFunction": "playSoundAt",
-													"sid": 296178413922393,
+													"sid": 785792667888651,
 													"parameters": [
 														"fTile.X",
 														"fTile.Y",
@@ -1559,7 +1740,7 @@
 													]
 												}
 											],
-											"sid": 295692662093343
+											"sid": 458766444359342
 										}
 									]
 								},
@@ -1573,13 +1754,13 @@
 										{
 											"id": "else",
 											"objectClass": "System",
-											"sid": 286484873808070
+											"sid": 221297847586570
 										}
 									],
 									"actions": [
 										{
 											"callFunction": "playSoundAt",
-											"sid": 596742013105906,
+											"sid": 693100409288379,
 											"parameters": [
 												"fTile.X",
 												"fTile.Y",
@@ -1589,7 +1770,7 @@
 											]
 										}
 									],
-									"sid": 126097389903810
+									"sid": 409286047168312
 								},
 								{
 									"eventType": "comment",
@@ -1601,7 +1782,7 @@
 										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 881356715882633,
+											"sid": 415779806278498,
 											"parameters": {
 												"variable": "pairsFound",
 												"comparison": 5,
@@ -1612,10 +1793,10 @@
 									"actions": [
 										{
 											"callFunction": "endLevel",
-											"sid": 994755527730502
+											"sid": 184632958770140
 										}
 									],
-									"sid": 834295830116317
+									"sid": 695205783575005
 								}
 							]
 						},
@@ -1629,14 +1810,14 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 482617275684659
+									"sid": 492198735328478
 								}
 							],
 							"actions": [
 								{
 									"id": "start-timer",
 									"objectClass": "Player",
-									"sid": 618439747426148,
+									"sid": 504646049316520,
 									"behaviorType": "Timer",
 									"parameters": {
 										"duration": "C_Tile_Reveal_Time",
@@ -1647,7 +1828,7 @@
 								{
 									"id": "start-timer",
 									"objectClass": "Tile",
-									"sid": 291780139570239,
+									"sid": 396259917630243,
 									"disabled": true,
 									"behaviorType": "Timer",
 									"parameters": {
@@ -1659,7 +1840,7 @@
 								{
 									"id": "start-timer",
 									"objectClass": "fTile",
-									"sid": 538840826866904,
+									"sid": 576396369018676,
 									"disabled": true,
 									"behaviorType": "Timer",
 									"parameters": {
@@ -1669,7 +1850,7 @@
 									}
 								}
 							],
-							"sid": 515965583084604
+							"sid": 536670383641855
 						}
 					]
 				},
@@ -1679,7 +1860,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 237116541539317,
+							"sid": 371571134750086,
 							"parameters": {
 								"variable": "healAmount",
 								"comparison": 1,
@@ -1691,7 +1872,7 @@
 						{
 							"customAction": "changeHealth",
 							"objectClass": "Player",
-							"sid": 198131085194200,
+							"sid": 407161638508778,
 							"parameters": [
 								"healAmount",
 								"YES",
@@ -1699,9 +1880,99 @@
 							]
 						}
 					],
-					"sid": 813979145568860
+					"sid": 341926860040998
 				}
 			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "closeTiles",
+			"objectClass": "Player",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 169227278591106,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Tile",
+							"sid": 206213680717430,
+							"parameters": {
+								"unique-id": "Player.tileUID1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "close",
+							"objectClass": "Tile",
+							"customActionObjectClass": "fTile",
+							"sid": 200594529368379
+						}
+					],
+					"sid": 244074729132260
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Tile",
+							"sid": 724684145430095,
+							"parameters": {
+								"unique-id": "Player.tileUID2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "close",
+							"objectClass": "Tile",
+							"customActionObjectClass": "fTile",
+							"sid": 192199852485580
+						}
+					],
+					"sid": 885137069108072
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 187885169977645,
+							"parameters": {
+								"instance-variable": "tileUID1",
+								"value": "NOTHING"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 510125189165639,
+							"parameters": {
+								"instance-variable": "tileUID2",
+								"value": "NOTHING"
+							}
+						}
+					],
+					"sid": 249653070959543
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Other stuff"
 		},
 		{
 			"aceType": "action",
@@ -1738,7 +2009,7 @@
 			"eventType": "custom-ace-block",
 			"conditions": [],
 			"actions": [],
-			"sid": 876028868693683,
+			"sid": 679599495384132,
 			"children": [
 				{
 					"eventType": "block",
@@ -1746,7 +2017,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player",
-							"sid": 327557588605853,
+							"sid": 997386479264315,
 							"parameters": {
 								"instance-variable": "isDead",
 								"comparison": 0,
@@ -1756,7 +2027,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 773203129610748,
+							"sid": 430648308777195,
 							"parameters": {
 								"variable": "amount",
 								"comparison": 1,
@@ -1766,7 +2037,7 @@
 						{
 							"id": "pick-children",
 							"objectClass": "Player",
-							"sid": 141910721491267,
+							"sid": 462083242804137,
 							"parameters": {
 								"child": "bbPlayer",
 								"which": "own"
@@ -1777,14 +2048,14 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 574291861658071,
+							"sid": 494911016395833,
 							"parameters": {
 								"instance-variable": "health",
 								"value": "max(Self.health + amount, 0)"
 							}
 						}
 					],
-					"sid": 805586119650287,
+					"sid": 100739081188628,
 					"children": [
 						{
 							"eventType": "comment",
@@ -1796,7 +2067,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Player",
-									"sid": 967729235063675,
+									"sid": 416916863303288,
 									"parameters": {
 										"instance-variable": "health",
 										"comparison": 0,
@@ -1806,18 +2077,8 @@
 							],
 							"actions": [
 								{
-									"id": "stop-timer",
-									"objectClass": "Player",
-									"sid": 584735293532447,
-									"disabled": true,
-									"behaviorType": "Timer",
-									"parameters": {
-										"tag": "TIMER_Tile_Close"
-									}
-								},
-								{
 									"callFunction": "playSoundAt",
-									"sid": 540507342436482,
+									"sid": 856046614559317,
 									"parameters": [
 										"Player.X",
 										"Player.Y",
@@ -1829,13 +2090,13 @@
 								{
 									"id": "stop-all-timers",
 									"objectClass": "Player",
-									"sid": 165312402361854,
+									"sid": 544571309419146,
 									"behaviorType": "Timer"
 								},
 								{
 									"id": "log",
 									"objectClass": "Browser",
-									"sid": 301099852662800,
+									"sid": 656132188262378,
 									"parameters": {
 										"type": "log",
 										"message": "\"Player \" & Player.playerId & \" ran out of time.\""
@@ -1844,7 +2105,7 @@
 								{
 									"customAction": "updateAnimation",
 									"objectClass": "Player",
-									"sid": 335316664388213,
+									"sid": 244425633916456,
 									"disabled": true,
 									"parameters": [
 										"ANIM_Dead"
@@ -1853,7 +2114,7 @@
 								{
 									"id": "set-enabled",
 									"objectClass": "Player",
-									"sid": 973141152181811,
+									"sid": 333772378347661,
 									"behaviorType": "8Direction",
 									"parameters": {
 										"state": "disabled"
@@ -1862,7 +2123,7 @@
 								{
 									"id": "set-visible",
 									"objectClass": "Player",
-									"sid": 464935520737221,
+									"sid": 462649183377368,
 									"parameters": {
 										"visibility": "invisible"
 									}
@@ -1870,7 +2131,7 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "Player",
-									"sid": 694427364425658,
+									"sid": 391459641101377,
 									"parameters": {
 										"instance-variable": "isDead",
 										"value": "YES"
@@ -1879,12 +2140,21 @@
 								{
 									"id": "stop-animation",
 									"objectClass": "bbPlayer",
-									"sid": 402250402643853
+									"sid": 835606367600556
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Player",
+									"sid": 195330008784308,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "enabled"
+									}
 								},
 								{
 									"id": "set-effect-enabled",
 									"objectClass": "bbPlayer",
-									"sid": 288444274820710,
+									"sid": 622867666716658,
 									"parameters": {
 										"mode": "enable",
 										"effect": "EFFECT_bbPlayer_Brightness"
@@ -1893,7 +2163,7 @@
 								{
 									"id": "tween-value",
 									"objectClass": "bbPlayer",
-									"sid": 413866086495375,
+									"sid": 649509933546590,
 									"behaviorType": "Tween",
 									"parameters": {
 										"tags": "EFFECT_bbPlayer_Brightness",
@@ -1910,7 +2180,7 @@
 								{
 									"id": "set-effect-enabled",
 									"objectClass": "bbPlayer",
-									"sid": 510780384699047,
+									"sid": 912843252273703,
 									"parameters": {
 										"mode": "enable",
 										"effect": "EFFECT_bbPlayer_Grayscale"
@@ -1919,7 +2189,7 @@
 								{
 									"id": "tween-value",
 									"objectClass": "bbPlayer",
-									"sid": 838147450971128,
+									"sid": 631379625887428,
 									"behaviorType": "Tween",
 									"parameters": {
 										"tags": "EFFECT_bbPlayer_Grayscale",
@@ -1934,12 +2204,25 @@
 									}
 								},
 								{
-									"customAction": "removeBox",
+									"customAction": "stopEffect",
 									"objectClass": "Player",
-									"sid": 839839649040842
+									"sid": 536223289030675,
+									"parameters": [
+										"IT_Slow"
+									]
+								},
+								{
+									"customAction": "dropBox",
+									"objectClass": "Player",
+									"sid": 488875189295671
+								},
+								{
+									"customAction": "closeTiles",
+									"objectClass": "Player",
+									"sid": 567233146528589
 								}
 							],
-							"sid": 696078194109802,
+							"sid": 415999299938242,
 							"children": [
 								{
 									"eventType": "comment",
@@ -1951,7 +2234,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "Tile",
-											"sid": 192365626001959,
+											"sid": 299787830822094,
 											"parameters": {
 												"instance-variable": "playerId",
 												"comparison": 0,
@@ -1964,10 +2247,10 @@
 											"customAction": "close",
 											"objectClass": "Tile",
 											"customActionObjectClass": "fTile",
-											"sid": 745359442238477
+											"sid": 645426339561807
 										}
 									],
-									"sid": 483595673687544
+									"sid": 524835867595784
 								},
 								{
 									"eventType": "comment",
@@ -1983,7 +2266,7 @@
 										{
 											"id": "pick-all",
 											"objectClass": "System",
-											"sid": 852965188782884,
+											"sid": 717715543761903,
 											"parameters": {
 												"object": "Player"
 											}
@@ -1991,7 +2274,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "Player",
-											"sid": 604236896194652,
+											"sid": 229826902980081,
 											"parameters": {
 												"instance-variable": "isDead",
 												"comparison": 0,
@@ -2000,7 +2283,7 @@
 										}
 									],
 									"actions": [],
-									"sid": 435082830479427
+									"sid": 608650389134550
 								},
 								{
 									"eventType": "block",
@@ -2008,7 +2291,7 @@
 										{
 											"id": "else",
 											"objectClass": "System",
-											"sid": 255908445233527
+											"sid": 196142279555072
 										}
 									],
 									"actions": [
@@ -2017,20 +2300,18 @@
 											"text": "todo"
 										},
 										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 552083041615477,
+											"id": "start-timer",
+											"objectClass": "GlobalTimer",
+											"sid": 881069296924578,
+											"behaviorType": "Timer",
 											"parameters": {
-												"seconds": "2",
-												"use-timescale": true
+												"duration": "2",
+												"type": "once",
+												"tag": "TIMER_Level_End"
 											}
-										},
-										{
-											"callFunction": "endLevel",
-											"sid": 979852464736910
 										}
 									],
-									"sid": 373681461283394
+									"sid": 278480393535518
 								}
 							]
 						},
@@ -2044,11 +2325,11 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 758337615578536
+									"sid": 523770926375521
 								}
 							],
 							"actions": [],
-							"sid": 828999726862885,
+							"sid": 271648815404425,
 							"children": [
 								{
 									"eventType": "comment",
@@ -2060,7 +2341,7 @@
 										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 367123911441553,
+											"sid": 710652612539852,
 											"parameters": {
 												"variable": "amount",
 												"comparison": 4,
@@ -2072,7 +2353,7 @@
 										{
 											"id": "log",
 											"objectClass": "Browser",
-											"sid": 702213241185155,
+											"sid": 394468162396868,
 											"disabled": true,
 											"parameters": {
 												"type": "log",
@@ -2080,7 +2361,7 @@
 											}
 										}
 									],
-									"sid": 441298887542454,
+									"sid": 699634497553844,
 									"children": [
 										{
 											"eventType": "block",
@@ -2088,7 +2369,7 @@
 												{
 													"id": "compare-eventvar",
 													"objectClass": "System",
-													"sid": 205556970991645,
+													"sid": 108217085736774,
 													"parameters": {
 														"variable": "withVisual",
 														"comparison": 0,
@@ -2101,7 +2382,7 @@
 													"customAction": "spawnBlurb",
 													"objectClass": "Player",
 													"customActionObjectClass": "fBlurbSpawners",
-													"sid": 105407526784630,
+													"sid": 361555141627767,
 													"parameters": [
 														"\"+\" & roundToDp(amount, 1) & \" HP\"",
 														"Self.R_Blurb_ZOffset",
@@ -2110,7 +2391,7 @@
 													]
 												}
 											],
-											"sid": 925580011800668
+											"sid": 898300867443071
 										},
 										{
 											"eventType": "block",
@@ -2118,7 +2399,7 @@
 												{
 													"id": "compare-eventvar",
 													"objectClass": "System",
-													"sid": 590414564636526,
+													"sid": 120312886880933,
 													"parameters": {
 														"variable": "withAudio",
 														"comparison": 0,
@@ -2127,7 +2408,7 @@
 												}
 											],
 											"actions": [],
-											"sid": 704714736328741,
+											"sid": 828829026669812,
 											"children": [
 												{
 													"eventType": "comment",
@@ -2139,7 +2420,7 @@
 														{
 															"id": "compare-eventvar",
 															"objectClass": "System",
-															"sid": 359273419115885,
+															"sid": 219402433516892,
 															"parameters": {
 																"variable": "amount",
 																"comparison": 4,
@@ -2150,7 +2431,7 @@
 													"actions": [
 														{
 															"callFunction": "playSoundAt",
-															"sid": 120844195377124,
+															"sid": 190488551052471,
 															"parameters": [
 																"Player.X",
 																"Player.Y",
@@ -2160,7 +2441,7 @@
 															]
 														}
 													],
-													"sid": 456321609126089
+													"sid": 730942515776635
 												},
 												{
 													"eventType": "comment",
@@ -2172,13 +2453,13 @@
 														{
 															"id": "else",
 															"objectClass": "System",
-															"sid": 200536049241896
+															"sid": 405890453017118
 														}
 													],
 													"actions": [
 														{
 															"callFunction": "playSoundAt",
-															"sid": 567467725170363,
+															"sid": 216825904674285,
 															"parameters": [
 																"Player.X",
 																"Player.Y",
@@ -2188,7 +2469,7 @@
 															]
 														}
 													],
-													"sid": 670579422108555
+													"sid": 613701513345718
 												}
 											]
 										}
@@ -2204,12 +2485,12 @@
 										{
 											"id": "else",
 											"objectClass": "System",
-											"sid": 681706711315649
+											"sid": 848057074496057
 										},
 										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 366574826359886,
+											"sid": 492239580407641,
 											"parameters": {
 												"variable": "amount",
 												"comparison": 2,
@@ -2218,7 +2499,7 @@
 										}
 									],
 									"actions": [],
-									"sid": 339131046921965,
+									"sid": 787231110362930,
 									"children": [
 										{
 											"eventType": "block",
@@ -2226,7 +2507,7 @@
 												{
 													"id": "compare-eventvar",
 													"objectClass": "System",
-													"sid": 759969072814681,
+													"sid": 822790930667943,
 													"parameters": {
 														"variable": "withVisual",
 														"comparison": 0,
@@ -2238,7 +2519,7 @@
 												{
 													"id": "tween-value",
 													"objectClass": "bbPlayer",
-													"sid": 313587269940289,
+													"sid": 348152996357335,
 													"behaviorType": "Tween",
 													"parameters": {
 														"tags": "TWEEN_Player_Hurt",
@@ -2256,7 +2537,7 @@
 													"customAction": "spawnBlurb",
 													"objectClass": "Player",
 													"customActionObjectClass": "fBlurbSpawners",
-													"sid": 106892411860645,
+													"sid": 787188787224703,
 													"parameters": [
 														"str(roundToDp(amount, 1)) & \" HP\"",
 														"Self.R_Blurb_ZOffset",
@@ -2265,7 +2546,7 @@
 													]
 												}
 											],
-											"sid": 383220370776839
+											"sid": 383738985671081
 										},
 										{
 											"eventType": "block",
@@ -2273,7 +2554,7 @@
 												{
 													"id": "compare-eventvar",
 													"objectClass": "System",
-													"sid": 631983889268585,
+													"sid": 807254491162532,
 													"parameters": {
 														"variable": "withAudio",
 														"comparison": 0,
@@ -2284,7 +2565,7 @@
 											"actions": [
 												{
 													"callFunction": "playSoundAt",
-													"sid": 979762829351844,
+													"sid": 204390567313330,
 													"parameters": [
 														"Player.X",
 														"Player.Y",
@@ -2294,156 +2575,13 @@
 													]
 												}
 											],
-											"sid": 724703805395080
+											"sid": 614700014238128
 										}
 									]
 								}
 							]
 						}
 					]
-				}
-			]
-		},
-		{
-			"aceType": "action",
-			"aceName": "removeBox",
-			"objectClass": "Player",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "custom-ace-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 593731873888407,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-children",
-							"objectClass": "Player",
-							"sid": 267413859436160,
-							"parameters": {
-								"child": "Box",
-								"which": "own"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "remove-from-parent",
-							"objectClass": "Box",
-							"sid": 926565569437107
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Box",
-							"sid": 569943464926341,
-							"parameters": {
-								"instance-variable": "carrierPlayerUID",
-								"value": "NOTHING"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Box",
-							"sid": 890959477436508,
-							"parameters": {
-								"instance-variable": "targetPlayerUID",
-								"value": "NOTHING"
-							}
-						}
-					],
-					"sid": 443655740833957
-				}
-			]
-		},
-		{
-			"aceType": "action",
-			"aceName": "closeTiles",
-			"objectClass": "Player",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "custom-ace-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 323014139554089,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-unique-id",
-							"objectClass": "Tile",
-							"sid": 716484355461441,
-							"parameters": {
-								"unique-id": "Player.tileUID1"
-							}
-						}
-					],
-					"actions": [
-						{
-							"customAction": "close",
-							"objectClass": "Tile",
-							"customActionObjectClass": "fTile",
-							"sid": 256468709778806
-						}
-					],
-					"sid": 850100583965396
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-unique-id",
-							"objectClass": "Tile",
-							"sid": 451585866593051,
-							"parameters": {
-								"unique-id": "Player.tileUID2"
-							}
-						}
-					],
-					"actions": [
-						{
-							"customAction": "close",
-							"objectClass": "Tile",
-							"customActionObjectClass": "fTile",
-							"sid": 364559990204727
-						}
-					],
-					"sid": 233600067202867
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Player",
-							"sid": 997507963423812,
-							"parameters": {
-								"instance-variable": "tileUID1",
-								"value": "NOTHING"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Player",
-							"sid": 155399988889392,
-							"parameters": {
-								"instance-variable": "tileUID2",
-								"value": "NOTHING"
-							}
-						}
-					],
-					"sid": 650097116534947
 				}
 			]
 		},
@@ -2526,6 +2664,11 @@
 							"parameters": [
 								"ANIM_Sleeping"
 							]
+						},
+						{
+							"customAction": "dropBox",
+							"objectClass": "Player",
+							"sid": 541010517275494
 						}
 					],
 					"sid": 242113141302686
@@ -2566,9 +2709,97 @@
 								"type": "once",
 								"tag": "TIMER_Player_Slow"
 							}
+						},
+						{
+							"customAction": "stopEffect",
+							"objectClass": "Player",
+							"sid": 371459249541492,
+							"parameters": [
+								"IT_Slow"
+							]
 						}
 					],
 					"sid": 650699818577864,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Player",
+									"sid": 760134916024210,
+									"parameters": {
+										"object": "Particles",
+										"layer": "LAYER_Billboards",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "IT_Slow"
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "Player",
+									"sid": 154609494094139,
+									"parameters": {
+										"child": "Particles",
+										"transform-x": true,
+										"transform-y": true,
+										"transform-w": false,
+										"transform-h": false,
+										"transform-a": false,
+										"transform-o": false,
+										"transform-z-elevation": false,
+										"transform-visibility": false,
+										"destroy-with-parent": false
+									}
+								}
+							],
+							"sid": 677930493949892
+						}
+					]
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "stopEffect",
+			"objectClass": "Player",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "itemType",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 844941604477456
+				}
+			],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 310597528991255,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 913705566466042,
+							"parameters": {
+								"variable": "itemType",
+								"comparison": 0,
+								"value": "IT_Slow"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 933374685221176,
 					"children": [
 						{
 							"eventType": "block",
@@ -2605,42 +2836,6 @@
 								}
 							],
 							"sid": 820694317166512
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "spawn-another-object",
-									"objectClass": "Player",
-									"sid": 760134916024210,
-									"parameters": {
-										"object": "Particles",
-										"layer": "LAYER_Billboards",
-										"image-point": "0",
-										"create-hierarchy": false,
-										"template-name": "IT_Slow"
-									}
-								},
-								{
-									"id": "add-child",
-									"objectClass": "Player",
-									"sid": 154609494094139,
-									"parameters": {
-										"child": "Particles",
-										"transform-x": true,
-										"transform-y": true,
-										"transform-w": false,
-										"transform-h": false,
-										"transform-a": false,
-										"transform-o": false,
-										"transform-z-elevation": false,
-										"transform-visibility": false,
-										"destroy-with-parent": false
-									}
-								}
-							],
-							"sid": 677930493949892
 						}
 					]
 				}

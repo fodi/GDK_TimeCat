@@ -113,6 +113,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Anchor",
+			"name": "Anchor",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Bullet",
 			"name": "Bullet",
 			"author": "Scirra",
@@ -303,9 +310,14 @@
 				"txBoxShield",
 				"txBoxSleep",
 				"txBoxSlow",
-				"txCannonAttacking",
-				"txCannonIdle",
 				"UI_Icons"
+			]
+		},
+		{
+			"members": [
+				"3dCannon",
+				"txCannonAttacking",
+				"txCannonIdle"
 			]
 		}
 	],
@@ -384,7 +396,8 @@
 					"aCamera 🎥",
 					"aBox 📦",
 					"aUI_Blurb 🆎",
-					"aBasemap 🌐"
+					"aBasemap 🌐",
+					"aUI_TextSF 🔠"
 				],
 				"subfolders": [],
 				"name": "Actions"
@@ -920,7 +933,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "37c",
+		"version": "38d",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",
@@ -930,7 +943,7 @@
 		"zAxisScale": "regular",
 		"fov": 0.7853981633974483,
 		"useLoaderLayout": false,
-		"fullscreenMode": "letterbox-scale",
+		"fullscreenMode": "scale-outer",
 		"fullscreenQuality": "high",
 		"viewportFit": "auto",
 		"backgroundColor": [

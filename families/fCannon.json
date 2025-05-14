@@ -65,6 +65,13 @@
 			"desc": "",
 			"show": false,
 			"sid": 729759180186462
+		},
+		{
+			"name": "targetPlayerId",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 270890927268867
 		}
 	],
 	"behaviorTypes": [

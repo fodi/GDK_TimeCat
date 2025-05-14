@@ -88,7 +88,7 @@
 			],
 			"actions": [
 				{
-					"customAction": "shoot",
+					"customAction": "startAttack",
 					"objectClass": "Cannon",
 					"sid": 507512664605177
 				},
@@ -375,6 +375,27 @@
 				}
 			],
 			"sid": 997256967136019
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "GlobalTimer",
+					"sid": 681256671764123,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "TIMER_Level_End"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "endLevel",
+					"sid": 342798405059891
+				}
+			],
+			"sid": 708796848394119
 		}
 	],
 	"sid": 750823255495774

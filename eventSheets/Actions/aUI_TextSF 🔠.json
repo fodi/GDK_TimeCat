@@ -1,0 +1,54 @@
+{
+	"name": "aUI_TextSF 🔠",
+	"events": [
+		{
+			"aceType": "action",
+			"aceName": "tick",
+			"objectClass": "UI_TextSF",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 278302117043741,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UI_TextSF",
+							"sid": 778199589577168,
+							"parameters": {
+								"instance-variable": "role",
+								"comparison": 0,
+								"value": "ROLE_DevLog"
+							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "UI_TextSF",
+							"sid": 187657466254755
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UI_TextSF",
+							"sid": 670481936881243,
+							"parameters": {
+								"text": "\"Camera @ \" & round(Camera.X) & \", \" & round(Camera.Y) & \", \" & round(Camera.ZElevation) & \" | FoV: \" & Camera.R_FieldOfView & newline & \nFunctions.getDevInfo(\", \")"
+							}
+						}
+					],
+					"sid": 916679967059463
+				}
+			]
+		}
+	],
+	"sid": 545270863845734
+}

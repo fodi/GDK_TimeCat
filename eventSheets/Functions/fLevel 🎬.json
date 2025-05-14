@@ -234,10 +234,23 @@
 					"id": "stop-timer",
 					"objectClass": "GlobalTimer",
 					"sid": 899846945515774,
+					"disabled": true,
 					"behaviorType": "Timer",
 					"parameters": {
 						"tag": "TIMER_Level_EverySecond"
 					}
+				},
+				{
+					"id": "stop-all-timers",
+					"objectClass": "GlobalTimer",
+					"sid": 137957579539954,
+					"behaviorType": "Timer"
+				},
+				{
+					"id": "stop-all-timers",
+					"objectClass": "Cannon",
+					"sid": 483892121311914,
+					"behaviorType": "Timer"
 				},
 				{
 					"id": "set-eventvar-value",
@@ -252,6 +265,7 @@
 					"id": "set-time-scale",
 					"objectClass": "System",
 					"sid": 496335927040394,
+					"disabled": true,
 					"parameters": {
 						"time-scale": "0"
 					}
@@ -327,10 +341,6 @@
 						}
 					],
 					"actions": [
-						{
-							"type": "comment",
-							"text": "todo"
-						},
 						{
 							"id": "set-text",
 							"objectClass": "UI_TextSF",

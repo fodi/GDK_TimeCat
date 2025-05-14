@@ -3,11 +3,7 @@
 	"events": [
 		{
 			"eventType": "comment",
-			"text": "todo WASD, Shift, Space"
-		},
-		{
-			"eventType": "comment",
-			"text": "todo Gamepad 3"
+			"text": "Player 1\nWASD, Shift, Space\nGamepad 3"
 		},
 		{
 			"eventType": "block",
@@ -447,15 +443,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Arrows + Numpad 0 /"
-		},
-		{
-			"eventType": "comment",
-			"text": "Arrows + Mouse"
-		},
-		{
-			"eventType": "comment",
-			"text": "Gamepad 4"
+			"text": "Player 2\nArrows + Numpad 0 /\nArrows + Mouse\nGamepad 4"
 		},
 		{
 			"eventType": "block",
@@ -1022,7 +1010,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "todo Gamepad 1"
+			"text": "Player 3\nGamepad 1"
 		},
 		{
 			"eventType": "block",
@@ -1413,7 +1401,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "todo Gamepad 2"
+			"text": "Player 4\nGamepad 2"
 		},
 		{
 			"eventType": "block",
@@ -2358,19 +2346,27 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 838410236834453,
+							"sid": 437816134685363,
 							"parameters": {
-								"key": 50
+								"key": 75
 							}
 						},
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player",
-							"sid": 700907474009004,
+							"sid": 855600046693790,
 							"parameters": {
-								"instance-variable": "playerId",
+								"instance-variable": "isDead",
 								"comparison": 0,
-								"value": "1"
+								"value": "NO"
+							}
+						},
+						{
+							"id": "pick-random-instance",
+							"objectClass": "System",
+							"sid": 632917510115609,
+							"parameters": {
+								"object": "Player"
 							}
 						}
 					],
@@ -2408,6 +2404,108 @@
 						}
 					],
 					"sid": 441412843541502
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 316866570100567,
+							"parameters": {
+								"key": 75
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UI_TextSF",
+							"sid": 395990741384482,
+							"parameters": {
+								"instance-variable": "role",
+								"comparison": 0,
+								"value": "ROLE_DevLog"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "UI_TextSF",
+							"sid": 749335446940444,
+							"parameters": {
+								"visibility": "toggle"
+							}
+						}
+					],
+					"sid": 498650836902158
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 163334350888591,
+							"parameters": {
+								"key": 189
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 229450609732912,
+							"parameters": {
+								"variable": "isPaused",
+								"comparison": 0,
+								"value": "NO"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 188302687972153,
+							"parameters": {
+								"time-scale": "0.3"
+							}
+						}
+					],
+					"sid": 829424935116990
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-released",
+							"objectClass": "Keyboard",
+							"sid": 715148581528390,
+							"parameters": {
+								"key": 189
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 363789091725690,
+							"parameters": {
+								"variable": "isPaused",
+								"comparison": 0,
+								"value": "NO"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 246405193411116,
+							"parameters": {
+								"time-scale": "1"
+							}
+						}
+					],
+					"sid": 277463322850566
 				}
 			],
 			"sid": 445167778018070

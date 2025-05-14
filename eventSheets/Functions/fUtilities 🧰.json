@@ -45,9 +45,9 @@
 						{
 							"id": "request-fullscreen",
 							"objectClass": "Browser",
-							"sid": 332860445881325,
+							"sid": 696771955502062,
 							"parameters": {
-								"mode": "stretch-letterbox-scale",
+								"mode": "stretch-scale-outer",
 								"navigation-ui": "hide"
 							}
 						}

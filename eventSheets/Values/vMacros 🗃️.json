@@ -543,6 +543,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "PARAM_Item_Speed",
+			"type": "string",
+			"initialValue": "it_speed",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 891620881695342
+		},
+		{
+			"eventType": "variable",
 			"name": "PARAM_Item_Damage",
 			"type": "string",
 			"initialValue": "it_damage",
@@ -708,6 +718,40 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 514423711778769
+		},
+		{
+			"eventType": "comment",
+			"text": "Solids"
+		},
+		{
+			"eventType": "variable",
+			"name": "SOLID_Wall",
+			"type": "string",
+			"initialValue": "Wall",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 881706490350339
+		},
+		{
+			"eventType": "variable",
+			"name": "SOLID_Box",
+			"type": "string",
+			"initialValue": "Box",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 135511166481294
+		},
+		{
+			"eventType": "variable",
+			"name": "SOLID_Obstacle",
+			"type": "string",
+			"initialValue": "Obstacle",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 333465739855186
 		},
 		{
 			"eventType": "comment",
@@ -1148,6 +1192,26 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 455255730079436
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_Level_End",
+			"type": "string",
+			"initialValue": "Level_End",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 599197506098354
+		},
+		{
+			"eventType": "variable",
+			"name": "SOLID_Player",
+			"type": "string",
+			"initialValue": "Player",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 112031850189237
 		},
 		{
 			"eventType": "group",

@@ -37,36 +37,15 @@
 					"customAction": "tick",
 					"objectClass": "UI_BlurbSF",
 					"sid": 617896229175985
+				},
+				{
+					"customAction": "tick",
+					"objectClass": "UI_TextSF",
+					"sid": 263542475998482
 				}
 			],
 			"sid": 559613915501580,
 			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "UI_TextSF",
-							"sid": 778199589577168,
-							"parameters": {
-								"instance-variable": "role",
-								"comparison": 0,
-								"value": "ROLE_DevLog"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "UI_TextSF",
-							"sid": 670481936881243,
-							"parameters": {
-								"text": "\"Camera @ \" & round(Camera.X) & \", \" & round(Camera.Y) & \", \" & round(Camera.ZElevation) & \" | FoV: \" & Camera.R_FieldOfView & newline & \nFunctions.getDevInfo(\", \")"
-							}
-						}
-					],
-					"sid": 916679967059463
-				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -87,6 +66,27 @@
 						}
 					],
 					"sid": 832504992604495
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 361701297864707,
+							"parameters": {
+								"object": "Cannon"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "tick",
+							"objectClass": "Cannon",
+							"sid": 594641830660276
+						}
+					],
+					"sid": 108925331269662
 				}
 			]
 		}
