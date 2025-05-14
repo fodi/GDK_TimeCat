@@ -142,17 +142,6 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Player",
-									"sid": 372691805325459,
-									"disabled": true,
-									"parameters": {
-										"instance-variable": "health",
-										"comparison": 4,
-										"value": "0"
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Player",
 									"sid": 747039579730448,
 									"parameters": {
 										"instance-variable": "isDead",
@@ -170,16 +159,6 @@
 									}
 								},
 								{
-									"id": "is-animation-playing",
-									"objectClass": "bbPlayer",
-									"sid": 413975238737824,
-									"disabled": true,
-									"parameters": {
-										"animation": "ANIM_Dead"
-									},
-									"isInverted": true
-								},
-								{
 									"id": "is-timer-running",
 									"objectClass": "Player",
 									"sid": 425733675334449,
@@ -194,14 +173,8 @@
 							"sid": 565595879900194,
 							"children": [
 								{
-									"eventType": "variable",
-									"name": "isAngleSet",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 951814263071994
+									"eventType": "comment",
+									"text": "Handle digital movement"
 								},
 								{
 									"eventType": "block",
@@ -209,7 +182,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "Player",
-											"sid": 409576558485601,
+											"sid": 203156690897941,
 											"parameters": {
 												"instance-variable": "IN_Up",
 												"comparison": 0,
@@ -219,7 +192,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "Player",
-											"sid": 485648798996397,
+											"sid": 492325711733329,
 											"parameters": {
 												"instance-variable": "IN_Down",
 												"comparison": 0,
@@ -229,7 +202,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "Player",
-											"sid": 104221411854494,
+											"sid": 798679687648059,
 											"parameters": {
 												"instance-variable": "IN_Left",
 												"comparison": 0,
@@ -239,7 +212,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "Player",
-											"sid": 675212484693412,
+											"sid": 548088366531169,
 											"parameters": {
 												"instance-variable": "IN_Right",
 												"comparison": 0,
@@ -251,24 +224,28 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "Player",
-											"sid": 936303840919624,
+											"sid": 758025289573903,
 											"parameters": {
-												"instance-variable": "currentAngle",
-												"value": "angle(0, 0, Player.IN_Right - Player.IN_Left, Player.IN_Down - Player.IN_Up)"
+												"instance-variable": "IN_Move",
+												"value": "YES"
 											}
 										},
 										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 161961637042517,
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 499330644360394,
 											"parameters": {
-												"variable": "isAngleSet",
-												"value": "YES"
+												"instance-variable": "IN_Move_Angle",
+												"value": "angle(0, 0, Player.IN_Right - Player.IN_Left, Player.IN_Down - Player.IN_Up)"
 											}
 										}
 									],
-									"sid": 484466971574918,
+									"sid": 151547628573832,
 									"isOrBlock": true
+								},
+								{
+									"eventType": "comment",
+									"text": "Update player's current angle variable if player is moving or aiming (otherwise, keep last value)"
 								},
 								{
 									"eventType": "block",
@@ -276,9 +253,9 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "Player",
-											"sid": 624090008050062,
+											"sid": 570176993187359,
 											"parameters": {
-												"instance-variable": "IN_Analog_Active",
+												"instance-variable": "IN_Move",
 												"comparison": 0,
 												"value": "YES"
 											}
@@ -288,19 +265,10 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "Player",
-											"sid": 442035497959394,
+											"sid": 165546471867728,
 											"parameters": {
 												"instance-variable": "currentAngle",
-												"value": "Player.IN_Analog_Angle"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 515043099353073,
-											"parameters": {
-												"variable": "isAngleSet",
-												"value": "YES"
+												"value": "Player.IN_Move_Angle"
 											}
 										}
 									],
@@ -310,11 +278,180 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-eventvar",
+											"id": "else",
 											"objectClass": "System",
-											"sid": 640752627510149,
+											"sid": 826910594556217
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Player",
+											"sid": 111100411726404,
 											"parameters": {
-												"variable": "isAngleSet",
+												"instance-variable": "IN_Aim",
+												"comparison": 0,
+												"value": "YES"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 263228608253627,
+											"parameters": {
+												"instance-variable": "currentAngle",
+												"value": "Player.IN_Aim_Angle"
+											}
+										}
+									],
+									"sid": 956668401045789
+								},
+								{
+									"eventType": "comment",
+									"text": "Switch animation according to player aim/movement angle"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-between-angles",
+											"objectClass": "System",
+											"sid": 758770063574639,
+											"parameters": {
+												"angle": "Player.currentAngle",
+												"first-angle": "-60",
+												"second-angle": "60"
+											}
+										}
+									],
+									"actions": [
+										{
+											"customAction": "updateAnimation",
+											"objectClass": "Player",
+											"sid": 838508592014433,
+											"parameters": [
+												"ANIM_Right"
+											]
+										}
+									],
+									"sid": 915501844255090
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 831911820288685
+										},
+										{
+											"id": "is-between-angles",
+											"objectClass": "System",
+											"sid": 822189485544097,
+											"parameters": {
+												"angle": "Player.currentAngle",
+												"first-angle": "120",
+												"second-angle": "240"
+											}
+										}
+									],
+									"actions": [
+										{
+											"customAction": "updateAnimation",
+											"objectClass": "Player",
+											"sid": 830805725487852,
+											"parameters": [
+												"ANIM_Left"
+											]
+										}
+									],
+									"sid": 549894984114399
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 384224403397944
+										},
+										{
+											"id": "is-between-angles",
+											"objectClass": "System",
+											"sid": 979477917939749,
+											"parameters": {
+												"angle": "Player.currentAngle",
+												"first-angle": "240",
+												"second-angle": "300"
+											}
+										}
+									],
+									"actions": [
+										{
+											"customAction": "updateAnimation",
+											"objectClass": "Player",
+											"sid": 919023260779651,
+											"parameters": [
+												"ANIM_Up"
+											]
+										}
+									],
+									"sid": 630016437971469
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 491513802910329
+										},
+										{
+											"id": "is-between-angles",
+											"objectClass": "System",
+											"sid": 314930774818609,
+											"parameters": {
+												"angle": "Player.currentAngle",
+												"first-angle": "60",
+												"second-angle": "120"
+											}
+										}
+									],
+									"actions": [
+										{
+											"customAction": "updateAnimation",
+											"objectClass": "Player",
+											"sid": 213105470600174,
+											"parameters": [
+												"ANIM_Down"
+											]
+										}
+									],
+									"sid": 639238783630891
+								},
+								{
+									"eventType": "comment",
+									"text": "Do movement if needed"
+								},
+								{
+									"eventType": "variable",
+									"name": "movementSpeed",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 226228531536649
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Player",
+											"sid": 522652247351482,
+											"parameters": {
+												"instance-variable": "IN_Move",
 												"comparison": 0,
 												"value": "YES"
 											}
@@ -324,14 +461,8 @@
 									"sid": 668689675771412,
 									"children": [
 										{
-											"eventType": "variable",
-											"name": "movementSpeed",
-											"type": "number",
-											"initialValue": "0",
-											"comment": "",
-											"isStatic": false,
-											"isConstant": false,
-											"sid": 200300711090841
+											"eventType": "comment",
+											"text": "Calculate movement speed: normal / carrying + additional slow effect if needed"
 										},
 										{
 											"eventType": "block",
@@ -376,24 +507,18 @@
 											"sid": 141143617397989
 										},
 										{
+											"eventType": "comment",
+											"text": "If player is aiming, set movement speed to 0"
+										},
+										{
 											"eventType": "block",
 											"conditions": [
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "Player",
-													"sid": 837307229186093,
+													"sid": 571170445687444,
 													"parameters": {
-														"instance-variable": "boxUID",
-														"comparison": 1,
-														"value": "NOTHING"
-													}
-												},
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Player",
-													"sid": 232927822595885,
-													"parameters": {
-														"instance-variable": "IN_Aiming",
+														"instance-variable": "IN_Aim",
 														"comparison": 0,
 														"value": "YES"
 													}
@@ -403,14 +528,18 @@
 												{
 													"id": "set-eventvar-value",
 													"objectClass": "System",
-													"sid": 542910055370933,
+													"sid": 671533407268831,
 													"parameters": {
 														"variable": "movementSpeed",
 														"value": "0"
 													}
 												}
 											],
-											"sid": 382198620070387
+											"sid": 195706109012047
+										},
+										{
+											"eventType": "comment",
+											"text": "Move player and damage them with dt"
 										},
 										{
 											"eventType": "block",
@@ -418,32 +547,12 @@
 												{
 													"id": "compare-eventvar",
 													"objectClass": "System",
-													"sid": 933660947568631,
+													"sid": 186000139339094,
 													"parameters": {
 														"variable": "movementSpeed",
-														"comparison": 0,
+														"comparison": 1,
 														"value": "0"
 													}
-												}
-											],
-											"actions": [
-												{
-													"id": "stop",
-													"objectClass": "Player",
-													"sid": 805357376128990,
-													"behaviorType": "8Direction"
-												}
-											],
-											"sid": 211397552233900,
-											"isOrBlock": true
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 777189531269641
 												}
 											],
 											"actions": [
@@ -463,7 +572,7 @@
 													"sid": 900785635261042,
 													"behaviorType": "8Direction",
 													"parameters": {
-														"vector-x": "cos(Player.currentAngle) * movementSpeed"
+														"vector-x": "cos(Player.IN_Move_Angle) * movementSpeed"
 													}
 												},
 												{
@@ -472,295 +581,142 @@
 													"sid": 459433880576684,
 													"behaviorType": "8Direction",
 													"parameters": {
-														"vector-y": "sin(Player.currentAngle) * movementSpeed"
+														"vector-y": "sin(Player.IN_Move_Angle) * movementSpeed"
 													}
 												}
 											],
 											"sid": 431832818834294
 										},
 										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-animation-playing",
-													"objectClass": "bbPlayer",
-													"sid": 957200669061159,
-													"disabled": true,
-													"parameters": {
-														"animation": "ANIM_Dead"
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [],
-											"sid": 257356779192910,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "is-between-angles",
-															"objectClass": "System",
-															"sid": 613626381406093,
-															"parameters": {
-																"angle": "Player.currentAngle",
-																"first-angle": "-60",
-																"second-angle": "60"
-															}
-														}
-													],
-													"actions": [
-														{
-															"customAction": "updateAnimation",
-															"objectClass": "Player",
-															"sid": 714974745330763,
-															"parameters": [
-																"ANIM_Right"
-															]
-														}
-													],
-													"sid": 903147533397039
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "else",
-															"objectClass": "System",
-															"sid": 896428054107938
-														},
-														{
-															"id": "is-between-angles",
-															"objectClass": "System",
-															"sid": 531107668759610,
-															"parameters": {
-																"angle": "Player.currentAngle",
-																"first-angle": "180-60",
-																"second-angle": "180+60"
-															}
-														}
-													],
-													"actions": [
-														{
-															"customAction": "updateAnimation",
-															"objectClass": "Player",
-															"sid": 208934437316888,
-															"parameters": [
-																"ANIM_Left"
-															]
-														}
-													],
-													"sid": 943192945401131
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "else",
-															"objectClass": "System",
-															"sid": 690058618099574
-														},
-														{
-															"id": "is-between-angles",
-															"objectClass": "System",
-															"sid": 744279947065113,
-															"parameters": {
-																"angle": "Player.currentAngle",
-																"first-angle": "270-30",
-																"second-angle": "270+30"
-															}
-														}
-													],
-													"actions": [
-														{
-															"customAction": "updateAnimation",
-															"objectClass": "Player",
-															"sid": 539765617883272,
-															"parameters": [
-																"ANIM_Up"
-															]
-														}
-													],
-													"sid": 809410930139583
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "else",
-															"objectClass": "System",
-															"sid": 392324580585801
-														},
-														{
-															"id": "is-between-angles",
-															"objectClass": "System",
-															"sid": 517108097970291,
-															"parameters": {
-																"angle": "Player.currentAngle",
-																"first-angle": "90-30",
-																"second-angle": "90+30"
-															}
-														}
-													],
-													"actions": [
-														{
-															"customAction": "updateAnimation",
-															"objectClass": "Player",
-															"sid": 924184392700715,
-															"parameters": [
-																"ANIM_Down"
-															]
-														}
-													],
-													"sid": 664723481744835
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-instance-variable",
-															"objectClass": "Player",
-															"sid": 876794595264171,
-															"parameters": {
-																"instance-variable": "IN_Aiming",
-																"comparison": 0,
-																"value": "YES"
-															}
-														},
-														{
-															"id": "compare-instance-variable",
-															"objectClass": "Player",
-															"sid": 550157712441098,
-															"parameters": {
-																"instance-variable": "boxUID",
-																"comparison": 1,
-																"value": "NOTHING"
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "set-animation-frame",
-															"objectClass": "bbPlayer",
-															"sid": 735901019085528,
-															"parameters": {
-																"frame-number": "FRAME_Standing"
-															}
-														}
-													],
-													"sid": 896493639441810
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-instance-variable",
-															"objectClass": "Player",
-															"sid": 407637706740351,
-															"parameters": {
-																"instance-variable": "boxUID",
-																"comparison": 0,
-																"value": "NOTHING"
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "set-animation-speed",
-															"objectClass": "bbPlayer",
-															"sid": 845655327731311,
-															"parameters": {
-																"speed": "C_Player_AnimationSpeed"
-															}
-														}
-													],
-													"sid": 510599139933685
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "else",
-															"objectClass": "System",
-															"sid": 836290583833363
-														}
-													],
-													"actions": [
-														{
-															"id": "set-animation-speed",
-															"objectClass": "bbPlayer",
-															"sid": 481918654422046,
-															"parameters": {
-																"speed": "C_Player_AnimationSpeed * (Player.R_MovementSpeed_Slow / Player.R_MovementSpeed_Normal)"
-															}
-														}
-													],
-													"sid": 827474586449880
-												}
-											]
+											"eventType": "comment",
+											"text": "If player is not carrying a box, use normal animation speed"
 										},
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "pick-children",
+													"id": "compare-instance-variable",
 													"objectClass": "Player",
-													"sid": 776252049260809,
+													"sid": 438115036615129,
 													"parameters": {
-														"child": "Box",
-														"which": "own"
+														"instance-variable": "boxUID",
+														"comparison": 0,
+														"value": "NOTHING"
 													}
 												}
 											],
 											"actions": [
 												{
-													"id": "set-position",
-													"objectClass": "Box",
-													"sid": 797018564223908,
+													"id": "set-animation-speed",
+													"objectClass": "bbPlayer",
+													"sid": 617513023531715,
 													"parameters": {
-														"x": "Player.X + cos(anglelerp(angle(Player.X, Player.Y, Self.X, Self.Y), Player.currentAngle, 0.2)) * Player.R_Box_Distance",
-														"y": "Player.Y + sin(anglelerp(angle(Player.X, Player.Y, Self.X, Self.Y), Player.currentAngle, 0.2)) * Player.R_Box_Distance"
-													}
-												},
-												{
-													"id": "set-angle",
-													"objectClass": "Box",
-													"sid": 336487324450871,
-													"parameters": {
-														"angle": "anglelerp(Self.Angle, Player.currentAngle, 0.2)"
+														"speed": "C_Player_AnimationSpeed"
 													}
 												}
 											],
-											"sid": 596586329134140
+											"sid": 310912418169011
+										},
+										{
+											"eventType": "comment",
+											"text": "If player is carrying a box, use slowed down animation speed"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 716913166347913
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-speed",
+													"objectClass": "bbPlayer",
+													"sid": 164242738441361,
+													"parameters": {
+														"speed": "C_Player_AnimationSpeed * (Player.R_MovementSpeed_Slow / Player.R_MovementSpeed_Normal)"
+													}
+												}
+											],
+											"sid": 928367888274778
 										}
 									]
+								},
+								{
+									"eventType": "comment",
+									"text": "If player is not moving, stop & switch to standing frame"
 								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "else",
+											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 786394346600592
+											"sid": 705180349057804,
+											"parameters": {
+												"variable": "movementSpeed",
+												"comparison": 0,
+												"value": "0"
+											}
 										}
 									],
 									"actions": [
 										{
 											"id": "stop",
 											"objectClass": "Player",
-											"sid": 412820055560394,
+											"sid": 374355007786071,
 											"behaviorType": "8Direction"
 										},
 										{
-											"customAction": "updateAnimation",
-											"objectClass": "Player",
-											"sid": 502835973216786,
-											"parameters": [
-												"ANIM_Idle"
-											]
+											"id": "set-animation-frame",
+											"objectClass": "bbPlayer",
+											"sid": 315124838529181,
+											"parameters": {
+												"frame-number": "FRAME_Standing"
+											}
 										}
 									],
-									"sid": 532983809505416
+									"sid": 705863366586606
+								},
+								{
+									"eventType": "comment",
+									"text": "If player has a box, update it's position & angle"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "Player",
+											"sid": 723255104943244,
+											"parameters": {
+												"child": "Box",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "Box",
+											"sid": 627260830318683,
+											"parameters": {
+												"x": "Player.X + cos(anglelerp(angle(Player.X, Player.Y, Self.X, Self.Y), Player.currentAngle, 0.2)) * Player.R_Box_Distance",
+												"y": "Player.Y + sin(anglelerp(angle(Player.X, Player.Y, Self.X, Self.Y), Player.currentAngle, 0.2)) * Player.R_Box_Distance"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Box",
+											"sid": 525203394453657,
+											"parameters": {
+												"angle": "anglelerp(Self.Angle, Player.currentAngle, 0.2)"
+											}
+										}
+									],
+									"sid": 257552961918341
 								}
 							]
 						},
@@ -960,11 +916,21 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "Player",
-											"sid": 448142513833777,
+											"sid": 976635434049825,
 											"parameters": {
-												"instance-variable": "IN_Aiming",
+												"instance-variable": "IN_Aim",
 												"comparison": 0,
 												"value": "NO"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Player",
+											"sid": 453971373624201,
+											"parameters": {
+												"instance-variable": "boxUID",
+												"comparison": 0,
+												"value": "NOTHING"
 											}
 										}
 									],
@@ -1169,7 +1135,8 @@
 												}
 											]
 										}
-									]
+									],
+									"isOrBlock": true
 								},
 								{
 									"eventType": "comment",
@@ -1328,6 +1295,488 @@
 										}
 									],
 									"sid": 457716652070211
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "onAction_test_todoRemove",
+			"objectClass": "Player",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "sourcePlayerId",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 727959400368586
+				},
+				{
+					"name": "reveal",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 496479420636709
+				},
+				{
+					"name": "throw",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 859809251534356
+				}
+			],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 606721238675611,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 561604780375059,
+							"parameters": {
+								"variable": "hasLevelEnded",
+								"comparison": 0,
+								"value": "NO"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 881065173642350,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "If player is already in the game..."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 569736929068379,
+									"parameters": {
+										"instance-variable": "playerId",
+										"comparison": 0,
+										"value": "sourcePlayerId"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 552984924728277,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "If player is not aiming, reveal current tile if possible"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Player",
+											"sid": 113113788589610,
+											"disabled": true,
+											"parameters": {
+												"instance-variable": "IN_Aiming_todoRemove",
+												"comparison": 0,
+												"value": "NO"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 709010473303849,
+											"parameters": {
+												"variable": "reveal",
+												"comparison": 0,
+												"value": "YES"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 529649720427290,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "If player is not waiting for tiles closing"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-timer-running",
+													"objectClass": "Player",
+													"sid": 690933066821050,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "TIMER_Tile_Close"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Player",
+													"sid": 807178000748250,
+													"parameters": {
+														"instance-variable": "health",
+														"comparison": 4,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 924320719748854,
+											"children": [
+												{
+													"eventType": "comment",
+													"text": "Open new tile"
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Tile",
+															"sid": 255164554602396,
+															"parameters": {
+																"animation": "ANIM_Closed"
+															}
+														},
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "Tile",
+															"sid": 540596669079591,
+															"parameters": {
+																"instance-variable": "playerId",
+																"comparison": 0,
+																"value": "NOTHING"
+															}
+														},
+														{
+															"id": "pick-overlapping-point",
+															"objectClass": "System",
+															"sid": 137084942280269,
+															"parameters": {
+																"object": "Tile",
+																"x": "Player.X",
+																"y": "Player.Y"
+															}
+														},
+														{
+															"id": "pick-nearestfurthest",
+															"objectClass": "Tile",
+															"sid": 579043267815205,
+															"parameters": {
+																"which": "nearest",
+																"x": "Player.X",
+																"y": "Player.Y"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 923930691599800,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Player",
+																	"sid": 473955089563984,
+																	"parameters": {
+																		"instance-variable": "tileUID1",
+																		"comparison": 0,
+																		"value": "NOTHING"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "Player",
+																	"sid": 523126616331611,
+																	"parameters": {
+																		"instance-variable": "tileUID1",
+																		"value": "Tile.UID"
+																	}
+																},
+																{
+																	"customAction": "open",
+																	"objectClass": "Tile",
+																	"customActionObjectClass": "fTile",
+																	"sid": 925327125153512,
+																	"parameters": [
+																		"Player.playerId"
+																	]
+																}
+															],
+															"sid": 465090437947019
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 149819937538793
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Player",
+																	"sid": 539941809502308,
+																	"parameters": {
+																		"instance-variable": "tileUID2",
+																		"comparison": 0,
+																		"value": "NOTHING"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "Player",
+																	"sid": 885319181543482,
+																	"parameters": {
+																		"instance-variable": "tileUID2",
+																		"value": "Tile.UID"
+																	}
+																},
+																{
+																	"customAction": "open",
+																	"objectClass": "Tile",
+																	"customActionObjectClass": "fTile",
+																	"sid": 103297696474556,
+																	"parameters": [
+																		"Player.playerId"
+																	]
+																}
+															],
+															"sid": 327474171125052
+														}
+													]
+												},
+												{
+													"eventType": "comment",
+													"text": "If player has two tiles open, check them for matches"
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "Player",
+															"sid": 131581363579734,
+															"parameters": {
+																"instance-variable": "tileUID1",
+																"comparison": 1,
+																"value": "NOTHING"
+															}
+														},
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "Player",
+															"sid": 841001642667954,
+															"parameters": {
+																"instance-variable": "tileUID2",
+																"comparison": 1,
+																"value": "NOTHING"
+															}
+														}
+													],
+													"actions": [
+														{
+															"customAction": "checkTiles",
+															"objectClass": "Player",
+															"sid": 127497033321482
+														}
+													],
+													"sid": 232413546235510
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "If player is aiming, throw box"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 186082025266502,
+											"disabled": true
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 434170667910194,
+											"parameters": {
+												"variable": "throw",
+												"comparison": 0,
+												"value": "YES"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Player",
+											"sid": 435373003178999,
+											"parameters": {
+												"instance-variable": "boxUID",
+												"comparison": 1,
+												"value": "NOTHING"
+											}
+										},
+										{
+											"id": "pick-children",
+											"objectClass": "Player",
+											"sid": 834883071027863,
+											"parameters": {
+												"child": "Box",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "playSoundAt",
+											"sid": 252067511859087,
+											"parameters": [
+												"Cannon.X",
+												"Cannon.Y",
+												"SFX_Player_Box_Throw",
+												"4",
+												"NO"
+											]
+										},
+										{
+											"id": "remove-child",
+											"objectClass": "Player",
+											"sid": 491119152664821,
+											"parameters": {
+												"child": "Box"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 783619446444714,
+											"parameters": {
+												"instance-variable": "boxUID",
+												"value": "NOTHING"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "Box",
+											"sid": 836620181653792,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"state": "enabled"
+											}
+										},
+										{
+											"id": "set-speed",
+											"objectClass": "Box",
+											"sid": 270425235560542,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"speed": "Player.R_Box_MovementSpeed"
+											}
+										},
+										{
+											"id": "start-timer",
+											"objectClass": "Box",
+											"sid": 943452773430122,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "Self.R_OverlapCheckTIme",
+												"type": "regular",
+												"tag": "TIMER_Box_FarCheck"
+											}
+										}
+									],
+									"sid": 213372334382695
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "If player is not in the game yet, spawn them"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 896506299151968
+								}
+							],
+							"actions": [],
+							"sid": 646701036443106,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-all",
+											"objectClass": "System",
+											"sid": 385312629313365,
+											"parameters": {
+												"object": "Player"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 550064510087839
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 111101359394663
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "startLevel",
+											"sid": 967420526709378
+										}
+									],
+									"sid": 301617567503601
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"customAction": "spawn",
+											"objectClass": "Player",
+											"sid": 587144146032255,
+											"parameters": [
+												"sourcePlayerId"
+											]
+										}
+									],
+									"sid": 474734743907356
 								}
 							]
 						}
@@ -2602,11 +3051,11 @@
 						{
 							"id": "log",
 							"objectClass": "Browser",
-							"sid": 120431472491068,
+							"sid": 122305314122008,
 							"disabled": true,
 							"parameters": {
 								"type": "log",
-								"message": "\"Setting animation of player #\" & Player.playerId & \" to \" & animationName"
+								"message": "\"Setting animation of player #\" & Player.playerId & \" to \" & (Player.playerId & \"_\" & animationName)"
 							}
 						},
 						{

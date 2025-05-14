@@ -53,20 +53,6 @@
 			"sid": 862585347344414
 		},
 		{
-			"name": "currentAngle",
-			"type": "number",
-			"desc": "",
-			"show": false,
-			"sid": 424292893614227
-		},
-		{
-			"name": "health",
-			"type": "number",
-			"desc": "",
-			"show": false,
-			"sid": 285032409429373
-		},
-		{
 			"name": "IN_Up",
 			"type": "number",
 			"desc": "",
@@ -95,25 +81,32 @@
 			"sid": 494493892347955
 		},
 		{
-			"name": "IN_Analog_Active",
+			"name": "IN_Analog_Active_todoRemove",
 			"type": "number",
 			"desc": "",
 			"show": false,
 			"sid": 483565425952214
 		},
 		{
-			"name": "IN_Analog_Angle",
+			"name": "IN_Analog_Angle_todoRemove",
 			"type": "number",
 			"desc": "",
 			"show": false,
 			"sid": 767403585288806
 		},
 		{
-			"name": "IN_Aiming",
+			"name": "IN_Aiming_todoRemove",
 			"type": "number",
 			"desc": "",
 			"show": false,
 			"sid": 499103422601942
+		},
+		{
+			"name": "health",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 285032409429373
 		},
 		{
 			"name": "tileUID1",
@@ -156,6 +149,41 @@
 			"desc": "",
 			"show": false,
 			"sid": 179699508222428
+		},
+		{
+			"name": "currentAngle",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 933990457185816
+		},
+		{
+			"name": "IN_Move",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 335003792566386
+		},
+		{
+			"name": "IN_Move_Angle",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 424292893614227
+		},
+		{
+			"name": "IN_Aim",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 832694599926834
+		},
+		{
+			"name": "IN_Aim_Angle",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 269239335039642
 		}
 	],
 	"behaviorTypes": [

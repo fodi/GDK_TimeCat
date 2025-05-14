@@ -102,7 +102,6 @@
 					"text": "Shuffle arrTilePositions array, removes some tiles if extra gaps are requested, and make sure tile count is odd (round down)"
 				},
 				{
-					"bookmark": true,
 					"eventType": "block",
 					"conditions": [],
 					"actions": [

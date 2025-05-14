@@ -128,6 +128,16 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 679000192043879
+		},
+		{
+			"eventType": "variable",
+			"name": "useMouseAim",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 232588228690011
 		}
 	],
 	"sid": 756444675677784

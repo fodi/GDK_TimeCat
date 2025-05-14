@@ -105,12 +105,13 @@
 			"sid": 820446053971430,
 			"children": [
 				{
+					"bookmark": true,
 					"eventType": "comment",
-					"text": "todo CA"
+					"text": "todo CA?"
 				},
 				{
 					"eventType": "comment",
-					"text": "If box hasn't been picked up..."
+					"text": "If the box is on the ground, ready to be picked up"
 				},
 				{
 					"eventType": "block",
@@ -131,7 +132,7 @@
 					"children": [
 						{
 							"eventType": "comment",
-							"text": "Assign it to current player, if they don't have a box yet"
+							"text": "If the colliding player is not carrying a box yet, pick up this one"
 						},
 						{
 							"eventType": "block",
@@ -199,7 +200,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "If box has been picked up..."
+					"text": "If the box already belongs to a player"
 				},
 				{
 					"eventType": "block",
@@ -215,7 +216,7 @@
 					"children": [
 						{
 							"eventType": "comment",
-							"text": "If a moving box collides with a player other than the carrier and has no target yet. activate"
+							"text": "If the box hits another player"
 						},
 						{
 							"eventType": "block",
@@ -262,6 +263,10 @@
 								}
 							],
 							"sid": 387367243578375
+						},
+						{
+							"eventType": "comment",
+							"text": "If"
 						},
 						{
 							"eventType": "block",
@@ -411,7 +416,40 @@
 					]
 				}
 			],
-			"sid": 442998353580713
+			"sid": 442998353580713,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-parent",
+							"objectClass": "Box",
+							"sid": 841995550896338,
+							"parameters": {
+								"parent": "Player",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 142703911398793,
+							"parameters": {
+								"instance-variable": "boxUID",
+								"value": "NOTHING"
+							}
+						},
+						{
+							"id": "remove-from-parent",
+							"objectClass": "Box",
+							"sid": 490725011358599
+						}
+					],
+					"sid": 563861360343114
+				}
+			]
 		}
 	],
 	"sid": 441405412204844

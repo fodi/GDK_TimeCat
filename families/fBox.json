@@ -35,7 +35,7 @@
 			"name": "damage",
 			"type": "number",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 292248555083151
 		}
 	],

@@ -406,10 +406,6 @@
 			"conditions": [],
 			"actions": [
 				{
-					"type": "comment",
-					"text": "todo"
-				},
-				{
 					"id": "log",
 					"objectClass": "Browser",
 					"sid": 755793850722771,
@@ -497,12 +493,6 @@
 								"instance-variable": "targetPlayerUID",
 								"value": "Player.UID"
 							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "Box",
-							"sid": 335428335328852,
-							"disabled": true
 						},
 						{
 							"customAction": "remove",
@@ -606,12 +596,6 @@
 							],
 							"sid": 207081659680602,
 							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 758358683116172
 						}
 					]
 				}

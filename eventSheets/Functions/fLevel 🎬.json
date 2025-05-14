@@ -141,11 +141,11 @@
 							"customAction": "spawn",
 							"objectClass": "Tile",
 							"customActionObjectClass": "fTile",
-							"sid": 429193771035228,
+							"sid": 536946566765191,
 							"parameters": [
 								"R_Level_Columns",
 								"R_Level_Rows",
-								"int(Functions.Config_getNumber(PARAM_Tile_GapPercent))"
+								"clamp(int(Functions.Config_getNumber(PARAM_Tile_GapPercent)), 0, 100)"
 							]
 						},
 						{
