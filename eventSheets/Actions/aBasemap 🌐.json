@@ -17,13 +17,13 @@
 				{
 					"id": "create-object",
 					"objectClass": "System",
-					"sid": 849524657614002,
+					"sid": 316711022158292,
 					"parameters": {
 						"object-to-create": "Basemap",
 						"layer": "LAYER_Main",
-						"x": "-C_Grid_Size",
-						"y": "-C_Grid_Size",
-						"create-hierarchy": false,
+						"x": "-(C_Grid_Size * C_Basemap_Ground_Border + C_Grid_Size * C_Basemap_Water_Border)",
+						"y": "-(C_Grid_Size * C_Basemap_Ground_Border + C_Grid_Size * C_Basemap_Water_Border)",
+						"create-hierarchy": true,
 						"template-name": "\"\""
 					}
 				},
@@ -36,12 +36,23 @@
 					}
 				},
 				{
+					"id": "erase-tile-range",
+					"objectClass": "Basemap",
+					"sid": 562472132364405,
+					"parameters": {
+						"tile-x": "0",
+						"tile-y": "0",
+						"width": "Self.TileWidth",
+						"height": "Self.TileHeight"
+					}
+				},
+				{
 					"id": "set-size",
 					"objectClass": "Basemap",
-					"sid": 860003019487169,
+					"sid": 120233365649329,
 					"parameters": {
-						"width": "(R_Level_Columns + 2) * C_Grid_Size",
-						"height": "(R_Level_Rows + 2) * C_Grid_Size"
+						"width": "(R_Level_Columns + C_Basemap_Ground_Border * 2 + C_Basemap_Water_Border * 2) * C_Grid_Size",
+						"height": "(R_Level_Rows + C_Basemap_Ground_Border * 2 + C_Basemap_Water_Border * 2) * C_Grid_Size"
 					}
 				}
 			],
@@ -75,7 +86,66 @@
 						{
 							"id": "set-tile-with-brush-by-name",
 							"objectClass": "Basemap",
-							"sid": 699651837237803,
+							"sid": 640470829005797,
+							"parameters": {
+								"tile-x": "loopindex(W_X)",
+								"tile-y": "loopindex(W_Y)",
+								"brush": "BRUSH_Water"
+							}
+						}
+					],
+					"sid": 802618042721106,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 806928960782790,
+									"parameters": {
+										"first-value": "loopindex(W_X)",
+										"comparison": 5,
+										"second-value": "C_Basemap_Water_Border"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 922637464673467,
+							"disabled": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 770140389311953,
+							"parameters": {
+								"name": "W_X",
+								"start-index": "C_Basemap_Water_Border",
+								"end-index": "Basemap.Width / C_Grid_Size - C_Basemap_Water_Border - 1"
+							}
+						},
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 906620945314508,
+							"parameters": {
+								"name": "W_Y",
+								"start-index": "C_Basemap_Water_Border",
+								"end-index": "Basemap.Height / C_Grid_Size - C_Basemap_Water_Border - 1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-tile-with-brush-by-name",
+							"objectClass": "Basemap",
+							"sid": 155781427274082,
 							"parameters": {
 								"tile-x": "loopindex(W_X)",
 								"tile-y": "loopindex(W_Y)",
@@ -83,7 +153,7 @@
 							}
 						}
 					],
-					"sid": 802618042721106
+					"sid": 549202650268104
 				}
 			]
 		}

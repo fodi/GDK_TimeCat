@@ -166,6 +166,13 @@
 			"name": "Solid",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "radialblur",
+			"name": "Radial blur",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "yvkam1laji5",
@@ -181,12 +188,11 @@
 			"Camera",
 			"AimHelper",
 			"Box",
-			"UI_BlurbSF",
 			"CameraTargetSmooth",
 			"Particles",
-			"TiledBackground",
 			"Selection",
-			"Basemap"
+			"Basemap",
+			"Water"
 		],
 		"subfolders": [
 			{
@@ -221,7 +227,9 @@
 			{
 				"items": [
 					"UI_TextSF",
-					"UI_Icons"
+					"UI_Icons",
+					"UI_BlurbSF",
+					"UI_Rectangle"
 				],
 				"subfolders": [],
 				"name": "UI"
@@ -341,9 +349,8 @@
 					"aWall 🧱",
 					"aProjectiles 🏹",
 					"aCamera 🎥",
-					"aBoxes 📦",
-					"aBlurbs 🆎",
-					"aUI 📟",
+					"aBox 📦",
+					"aUI_Blurb 🆎",
 					"aBasemap 🌐"
 				],
 				"subfolders": [],
@@ -880,7 +887,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "34",
+		"version": "35b",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

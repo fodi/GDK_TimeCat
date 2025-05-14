@@ -2347,6 +2347,27 @@
 						}
 					],
 					"sid": 371181748428740
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 771545407855813,
+							"parameters": {
+								"key": 67
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "spawn",
+							"objectClass": "Cannon",
+							"sid": 669848438950926
+						}
+					],
+					"sid": 441412843541502
 				}
 			],
 			"sid": 445167778018070

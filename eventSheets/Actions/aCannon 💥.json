@@ -269,20 +269,22 @@
 						{
 							"id": "set-radius",
 							"objectClass": "Cannon",
-							"sid": 427388955302621,
+							"sid": 473121404867559,
 							"behaviorType": "Orbit",
 							"parameters": {
-								"primary": "distance(0, 0, midX, midY) + C_Tile_Size * 2",
-								"secondary": "distance(0, 0, midX, midY) + C_Tile_Size * 2"
+								"primary": "distance(0, 0, midX, midY) + C_Tile_Size",
+								"secondary": "distance(0, 0, midX, midY) + C_Tile_Size"
 							}
 						},
 						{
-							"id": "set-speed",
+							"id": "set-radius",
 							"objectClass": "Cannon",
-							"sid": 211388899428224,
+							"sid": 346185206583608,
+							"disabled": true,
 							"behaviorType": "Orbit",
 							"parameters": {
-								"speed": "Self.Orbit.Speed * choose(-1, 1)"
+								"primary": "(distance(0, 0, midX, midY) + C_Tile_Size * 2) * 0.5",
+								"secondary": "(distance(0, 0, midX, midY) + C_Tile_Size * 2) * 0.5"
 							}
 						},
 						{
@@ -291,16 +293,14 @@
 							"sid": 795394196873268
 						},
 						{
-							"id": "wait-for-previous-actions",
-							"objectClass": "System",
-							"sid": 932883707559097
-						},
-						{
-							"id": "set-visible",
+							"id": "start-timer",
 							"objectClass": "Cannon",
-							"sid": 122835913059046,
+							"sid": 507838794012651,
+							"behaviorType": "Timer",
 							"parameters": {
-								"visibility": "visible"
+								"duration": "0.1",
+								"type": "regular",
+								"tag": "TIMER_Cannon_CheckMaxSpeed"
 							}
 						}
 					],
@@ -327,6 +327,44 @@
 							"parameters": {
 								"face": "bottom",
 								"object": "txCannonIdle"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "3dCannon",
+							"sid": 818551646326965,
+							"disabled": true,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "todo macro, mn"
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "3dCannon",
+							"sid": 135155721488443,
+							"parameters": {
+								"z": "-Self.ZHeight - 1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "3dCannon",
+							"sid": 117850340924268,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"ZElevation\"",
+								"property": "offsetZElevation",
+								"end-value": "0",
+								"time": "4",
+								"ease": "easeoutbounce",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
 							}
 						}
 					],

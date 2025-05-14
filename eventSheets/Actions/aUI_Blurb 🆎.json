@@ -1,5 +1,5 @@
 {
-	"name": "aBlurbs 🆎",
+	"name": "aUI_Blurb 🆎",
 	"events": [
 		{
 			"aceType": "action",
@@ -50,7 +50,7 @@
 				{
 					"id": "spawn-another-object",
 					"objectClass": "fBlurbSpawners",
-					"sid": 250546677864067,
+					"sid": 291184420006250,
 					"parameters": {
 						"object": "UI_BlurbSF",
 						"layer": "LAYER_UI",
@@ -62,7 +62,7 @@
 				{
 					"id": "add-child",
 					"objectClass": "fBlurbSpawners",
-					"sid": 837834810684121,
+					"sid": 148535323194424,
 					"parameters": {
 						"child": "UI_BlurbSF",
 						"transform-x": false,
@@ -79,7 +79,7 @@
 				{
 					"id": "set-position",
 					"objectClass": "UI_BlurbSF",
-					"sid": 180052001296445,
+					"sid": 727526645882203,
 					"parameters": {
 						"x": "3DCamera.LayerToLayerX(LAYER_Main, LAYER_UI, fBlurbSpawners.X, fBlurbSpawners.Y, fBlurbSpawners.ZElevation + zOffset)",
 						"y": "3DCamera.LayerToLayerY(LAYER_Main, LAYER_UI, fBlurbSpawners.X, fBlurbSpawners.Y, fBlurbSpawners.ZElevation + zOffset)"
@@ -88,7 +88,7 @@
 				{
 					"id": "set-instvar-value",
 					"objectClass": "UI_BlurbSF",
-					"sid": 857425136121389,
+					"sid": 632339675692710,
 					"parameters": {
 						"instance-variable": "zOffset",
 						"value": "zOffset"
@@ -97,7 +97,7 @@
 				{
 					"id": "set-text",
 					"objectClass": "UI_BlurbSF",
-					"sid": 993333285044255,
+					"sid": 823141791090779,
 					"parameters": {
 						"text": "text"
 					}
@@ -105,13 +105,13 @@
 				{
 					"id": "set-default-color",
 					"objectClass": "UI_BlurbSF",
-					"sid": 860291009236576,
+					"sid": 386098576715476,
 					"parameters": {
 						"color": "color"
 					}
 				}
 			],
-			"sid": 139394632728859,
+			"sid": 847981087869354,
 			"children": [
 				{
 					"eventType": "block",
@@ -119,7 +119,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 974876873597759,
+							"sid": 632966267421832,
 							"parameters": {
 								"variable": "timeout",
 								"comparison": 1,
@@ -131,7 +131,7 @@
 						{
 							"id": "stop-all-tweens",
 							"objectClass": "UI_BlurbSF",
-							"sid": 996636167660986,
+							"sid": 383085180131784,
 							"behaviorType": "Tween"
 						},
 						{
@@ -141,7 +141,7 @@
 						{
 							"id": "tween-value",
 							"objectClass": "UI_BlurbSF",
-							"sid": 779318493767626,
+							"sid": 527576642426798,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "TWEEN_Blurb_ZElevation",
@@ -156,10 +156,45 @@
 							}
 						}
 					],
-					"sid": 372915145562447
+					"sid": 136883358079026
 				}
 			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "tick",
+			"objectClass": "UI_BlurbSF",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [
+				{
+					"id": "pick-parent",
+					"objectClass": "UI_BlurbSF",
+					"sid": 267774022347085,
+					"parameters": {
+						"parent": "fBlurbSpawners",
+						"which": "own"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "UI_BlurbSF",
+					"sid": 331654069432828,
+					"parameters": {
+						"x": "3DCamera.LayerToLayerX(LAYER_Main, LAYER_UI, fBlurbSpawners.X, fBlurbSpawners.Y, fBlurbSpawners.ZElevation + Self.zOffset + Self.Tween.Value(TWEEN_Blurb_ZElevation))",
+						"y": "3DCamera.LayerToLayerY(LAYER_Main, LAYER_UI, fBlurbSpawners.X, fBlurbSpawners.Y, fBlurbSpawners.ZElevation + Self.zOffset + Self.Tween.Value(TWEEN_Blurb_ZElevation))"
+					}
+				}
+			],
+			"sid": 436070593979391
 		}
 	],
-	"sid": 691411136386094
+	"sid": 397804274889758
 }

@@ -56,6 +56,22 @@
 				}
 			],
 			"sid": 482483851413794
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-playing",
+					"objectClass": "3dCannon",
+					"sid": 632978291734677,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "TWEEN_3dCannon_ZElevation_Spawn"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 853407720485028
 		}
 	],
 	"sid": 858674299755667

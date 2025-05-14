@@ -3,6 +3,26 @@
 	"events": [
 		{
 			"eventType": "variable",
+			"name": "C_Basemap_Water_Border",
+			"type": "number",
+			"initialValue": "6",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 507013929071787
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Basemap_Ground_Border",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 622265509045914
+		},
+		{
+			"eventType": "variable",
 			"name": "C_Player_AnimationSpeed",
 			"type": "number",
 			"initialValue": "8",

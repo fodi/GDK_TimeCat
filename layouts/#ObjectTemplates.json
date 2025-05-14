@@ -260,6 +260,84 @@
 					}
 				},
 				{
+					"type": "Water",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
+					},
+					"uid": 45,
+					"sid": 647605630339063,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 40,
+						"uid": 45,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 647605630339063,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 0,
+						"y": 360,
+						"width": 272,
+						"height": 272,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "Projectile",
 					"properties": {
 						"initially-visible": true,
@@ -284,6 +362,15 @@
 								"set-angle": true,
 								"step": false,
 								"enabled": true
+							}
+						}
+					},
+					"effects": {
+						"RadialBlur": {
+							"isEnabled": true,
+							"parameters": {
+								"radius": 0.1,
+								"intensity": 10
 							}
 						}
 					},
@@ -356,7 +443,7 @@
 						],
 						"angle": 0,
 						"zElevation": 0,
-						"blendMode": "additive"
+						"blendMode": "destination-out"
 					}
 				},
 				{
@@ -1130,6 +1217,13 @@
 							}
 						}
 					},
+					"instanceFolderItem": {
+						"sid": 640583245407372,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -1253,8 +1347,8 @@
 					"behaviors": {
 						"Orbit": {
 							"properties": {
-								"speed": 20,
-								"acceleration": 0,
+								"speed": 0,
+								"acceleration": 2,
 								"primary-axis": 100,
 								"secondary-axis": 100,
 								"offset-angle": 0,
@@ -1276,9 +1370,9 @@
 								"flags": {
 									"x": true,
 									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
+									"z": false,
+									"w": false,
+									"h": false,
 									"a": true,
 									"o": false,
 									"v": false,
@@ -1375,9 +1469,9 @@
 						"flags": {
 							"x": true,
 							"y": true,
-							"z": true,
-							"w": true,
-							"h": true,
+							"z": false,
+							"w": false,
+							"h": false,
 							"a": true,
 							"o": false,
 							"v": false,
@@ -1388,8 +1482,8 @@
 							"transformX": 0,
 							"transformY": 0,
 							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
+							"transformW": 2.220446049250313e-16,
+							"transformH": 2.220446049250313e-16,
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
@@ -1918,6 +2012,51 @@
 						"tile-x-spacing": 0,
 						"tile-y-spacing": 0
 					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 40,
+						"children": [
+							{
+								"uid": 45,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
 					"instanceFolderItem": {
 						"sid": 601953918370568,
 						"expanded": true,
@@ -2148,7 +2287,141 @@
 		}
 	],
 	"scene-graphs-folder-root": {
-		"items": [],
+		"items": [
+			{
+				"sid": 375535735700021,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 919295171424457,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 117359225502778,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 602784574947435,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 718305286398615,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 659697957369555,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 258423114158906,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 459530494670070,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 757815409252607,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 782206709989855,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 413020137349645,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 640583245407372,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 703641896788226,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 119510804584476,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 517136803105126,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 443441534028524,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 296856928410894,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 601953918370568,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			},
+			{
+				"sid": 453823533597273,
+				"expanded": true,
+				"folderName": "",
+				"indexInFolder": -1,
+				"folderNestingLevel": -1
+			}
+		],
 		"subfolders": []
 	},
 	"sid": 281279063636915,

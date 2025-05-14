@@ -20,7 +20,12 @@
 			"sid": 777921220276169
 		}
 	],
-	"effectTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "radialblur",
+			"name": "RadialBlur"
+		}
+	],
 	"animations": {
 		"items": [
 			{

@@ -272,6 +272,78 @@
 				}
 			],
 			"sid": 591729364365293
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "Cannon",
+					"sid": 138985451798551,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "TIMER_Cannon_CheckMaxSpeed"
+					}
+				},
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 352560577415497,
+					"parameters": {
+						"object": "Cannon"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 653776367106014,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 615509878312565,
+							"parameters": {
+								"object": "Cannon",
+								"expression": "Cannon.Orbit.Speed",
+								"comparison": 5,
+								"value": "20"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-timer",
+							"objectClass": "Cannon",
+							"sid": 490384820609948,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "TIMER_Cannon_CheckMaxSpeed"
+							}
+						},
+						{
+							"id": "set-acceleration",
+							"objectClass": "Cannon",
+							"sid": 880655568463280,
+							"behaviorType": "Orbit",
+							"parameters": {
+								"acceleration": "0"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 991804282375172,
+							"parameters": {
+								"type": "log",
+								"message": "\"Cannon #\" & Cannon.UID & \" reached max speed\""
+							}
+						}
+					],
+					"sid": 672715526155151
+				}
+			]
 		}
 	],
 	"sid": 750823255495774

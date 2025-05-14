@@ -208,6 +208,16 @@
 			"sid": 916737835835405
 		},
 		{
+			"eventType": "variable",
+			"name": "BRUSH_Water",
+			"type": "string",
+			"initialValue": "Water",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 826767545183828
+		},
+		{
 			"eventType": "comment",
 			"text": "Files"
 		},
@@ -1024,6 +1034,26 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 455255730079436
+		},
+		{
+			"eventType": "variable",
+			"name": "TWEEN_3dCannon_ZElevation_Spawn",
+			"type": "string",
+			"initialValue": "3dCannon_ZElevation_Spawn",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 630369319520007
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_Cannon_CheckMaxSpeed",
+			"type": "string",
+			"initialValue": "Cannon_CheckMaxSpeed",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 850779265358799
 		},
 		{
 			"eventType": "group",
