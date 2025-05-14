@@ -302,19 +302,19 @@
 										{
 											"id": "set-vector-x",
 											"objectClass": "Player",
-											"sid": 329807980566485,
+											"sid": 973403295752238,
 											"behaviorType": "8Direction",
 											"parameters": {
-												"vector-x": "cos(Player.currentAngle) * Player.8Direction.MaxSpeed"
+												"vector-x": "cos(Player.currentAngle) * Player.8Direction.MaxSpeed * (Player.boxUID = NOTHING ? 1 : Self.R_MovementSpeedMultiplier_Box)"
 											}
 										},
 										{
 											"id": "set-vector-y",
 											"objectClass": "Player",
-											"sid": 884081668497974,
+											"sid": 631334579024780,
 											"behaviorType": "8Direction",
 											"parameters": {
-												"vector-y": "sin(Player.currentAngle) * Player.8Direction.MaxSpeed"
+												"vector-y": "sin(Player.currentAngle) * Player.8Direction.MaxSpeed * (Player.boxUID = NOTHING ? 1 : Self.R_MovementSpeedMultiplier_Box)"
 											}
 										}
 									],
@@ -524,6 +524,57 @@
 												}
 											],
 											"sid": 288993533767746
+										},
+										{
+											"eventType": "comment",
+											"text": "todo mn"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Player",
+													"sid": 919908435980146,
+													"parameters": {
+														"instance-variable": "boxUID",
+														"comparison": 0,
+														"value": "NOTHING"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-speed",
+													"objectClass": "bbPlayer",
+													"sid": 755401967046812,
+													"parameters": {
+														"speed": "8"
+													}
+												}
+											],
+											"sid": 525187392535540
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 482334798760011
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-speed",
+													"objectClass": "bbPlayer",
+													"sid": 924550255515434,
+													"parameters": {
+														"speed": "8 * Player.R_MovementSpeedMultiplier_Box"
+													}
+												}
+											],
+											"sid": 530733578311947
 										}
 									]
 								},

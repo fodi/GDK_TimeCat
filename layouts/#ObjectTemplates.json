@@ -366,6 +366,7 @@
 						"R_Health_BonusOnHeal": 15,
 						"R_Box_MovementSpeed": 200,
 						"R_Box_Distance": 20,
+						"R_MovementSpeedMultiplier_Box": 0.7,
 						"currentAngle": 0,
 						"health": 1,
 						"IN_Up": 0,
