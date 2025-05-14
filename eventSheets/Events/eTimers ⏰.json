@@ -179,6 +179,65 @@
 				}
 			],
 			"sid": 155604917449979
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "GlobalTimer",
+					"sid": 125135880580677,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "TIMER_Cannon_Spawn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "start-timer",
+					"objectClass": "GlobalTimer",
+					"sid": 374891194834193,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "random(Functions.Config_getNumber(PARAM_Cannon_Spawn_Time_Min), Functions.Config_getNumber(PARAM_Cannon_Spawn_Time_Max))",
+						"type": "once",
+						"tag": "TIMER_Cannon_Spawn"
+					}
+				},
+				{
+					"customAction": "spawn",
+					"objectClass": "Cannon",
+					"sid": 355258362113647
+				}
+			],
+			"sid": 847622964754267
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "GlobalTimer",
+					"sid": 639673916960817,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "TIMER_Level_EverySecond"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 343899294385808,
+					"parameters": {
+						"variable": "timeElapsed",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 591729364365293
 		}
 	],
 	"sid": 750823255495774

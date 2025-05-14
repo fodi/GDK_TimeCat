@@ -287,6 +287,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "LAYER_UI_GameOver",
+			"type": "string",
+			"initialValue": "UI_GameOver",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 549838325396802
+		},
+		{
+			"eventType": "variable",
 			"name": "LAYER_Billboards",
 			"type": "string",
 			"initialValue": "Billboards",
@@ -410,6 +420,106 @@
 			"sid": 215960619217258
 		},
 		{
+			"eventType": "variable",
+			"name": "PARAM_Item_Damage",
+			"type": "string",
+			"initialValue": "it_damage",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 783673384779279
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Item_Attack_Damage",
+			"type": "string",
+			"initialValue": "it_attack_damage",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 147941018485016
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Item_Sleep_Time",
+			"type": "string",
+			"initialValue": "it_sleep_time",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 731388519736344
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Item_Slow_Time",
+			"type": "string",
+			"initialValue": "it_slow_time",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 682491670834599
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Item_Slow_Factor",
+			"type": "string",
+			"initialValue": "it_slow_factor",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 518256068660690
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Cannon_Count_Init",
+			"type": "string",
+			"initialValue": "ca_count_init",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 758828881434870
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Cannon_Count_Max",
+			"type": "string",
+			"initialValue": "ca_count_max",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 173533069686334
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Cannon_Spawn_Time_Min",
+			"type": "string",
+			"initialValue": "ca_spawn_time_min",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 721241107394744
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Cannon_Spawn_Time_Max",
+			"type": "string",
+			"initialValue": "ca_spawn_time_max",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 520363170521003
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Cannon_Health",
+			"type": "string",
+			"initialValue": "ca_health",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 307482267939812
+		},
+		{
 			"eventType": "comment",
 			"text": "Pairing states"
 		},
@@ -456,6 +566,16 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 156931187970375
+		},
+		{
+			"eventType": "variable",
+			"name": "ROLE_GameOver",
+			"type": "string",
+			"initialValue": "GameOver",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 203099835527276
 		},
 		{
 			"eventType": "variable",
@@ -526,6 +646,56 @@
 			"sid": 773837568404503
 		},
 		{
+			"eventType": "variable",
+			"name": "TIMER_Cannon_Spawn",
+			"type": "string",
+			"initialValue": "Cannon_Spawn",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 674921099238246
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_Player_Shield",
+			"type": "string",
+			"initialValue": "Player_Shield",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 547347713129738
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_Player_Slow",
+			"type": "string",
+			"initialValue": "Player_Slow",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 872691933444823
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_Player_Sleep",
+			"type": "string",
+			"initialValue": "Player_Sleep",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 106702307862027
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_Level_EverySecond",
+			"type": "string",
+			"initialValue": "Level_EverySecond",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 139268643180940
+		},
+		{
 			"eventType": "comment",
 			"text": "Tweens"
 		},
@@ -580,6 +750,16 @@
 			"sid": 527541449130250
 		},
 		{
+			"eventType": "variable",
+			"name": "TWEEN_3dCannon_Color",
+			"type": "string",
+			"initialValue": "3dCannon_Color",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 351751425261196
+		},
+		{
 			"eventType": "comment",
 			"text": "Words"
 		},
@@ -602,36 +782,6 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 455255730079436
-		},
-		{
-			"eventType": "variable",
-			"name": "TIMER_Player_Shield",
-			"type": "string",
-			"initialValue": "Player_Shield",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 931190488621268
-		},
-		{
-			"eventType": "variable",
-			"name": "TIMER_Player_Slow",
-			"type": "string",
-			"initialValue": "Player_Slow",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 919054884505233
-		},
-		{
-			"eventType": "variable",
-			"name": "TIMER_Player_Sleep",
-			"type": "string",
-			"initialValue": "Player_Sleep",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 962501000002452
 		},
 		{
 			"eventType": "group",

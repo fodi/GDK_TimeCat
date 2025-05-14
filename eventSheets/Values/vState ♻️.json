@@ -88,6 +88,36 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 972787224426421
+		},
+		{
+			"eventType": "variable",
+			"name": "timeElapsed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 275290397187573
+		},
+		{
+			"eventType": "variable",
+			"name": "hasLevelEnded",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 131553537735336
+		},
+		{
+			"eventType": "variable",
+			"name": "pairsFound",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 679000192043879
 		}
 	],
 	"sid": 756444675677784

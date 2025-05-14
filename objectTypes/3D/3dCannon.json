@@ -1,11 +1,17 @@
 {
-	"name": "3DShape",
+	"name": "3dCannon",
 	"plugin-id": "Shape3D",
 	"sid": 201635352672738,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 447897419262482
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [

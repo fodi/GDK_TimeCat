@@ -13,19 +13,31 @@
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
 			"conditions": [],
-			"actions": [
+			"actions": [],
+			"sid": 799452279524543,
+			"children": [
 				{
-					"customAction": "spawn",
-					"objectClass": "Cannon",
-					"sid": 971046621174622
-				},
-				{
-					"customAction": "spawn",
-					"objectClass": "Cannon",
-					"sid": 954967491777036
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "repeat",
+							"objectClass": "System",
+							"sid": 968358049106647,
+							"parameters": {
+								"count": "Functions.Config_getNumber(PARAM_Cannon_Count_Init)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "spawn",
+							"objectClass": "Cannon",
+							"sid": 221999060392936
+						}
+					],
+					"sid": 296294398056226
 				}
-			],
-			"sid": 799452279524543
+			]
 		},
 		{
 			"aceType": "action",
@@ -45,25 +57,94 @@
 					"text": "todo make sure cannons don't spawn on top of / too near each other"
 				},
 				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 806580820701891,
-					"parameters": {
-						"object-to-create": "Cannon",
-						"layer": "LAYER_Main",
-						"x": "midX",
-						"y": "midY",
-						"create-hierarchy": true,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"customAction": "init",
-					"objectClass": "Cannon",
-					"sid": 253427507074522
+					"type": "comment",
+					"text": "todo fix spawn position flash crap"
 				}
 			],
-			"sid": 435920396597194
+			"sid": 435920396597194,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "cannonCount",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 747314110742028
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-all",
+							"objectClass": "System",
+							"sid": 559544847403718,
+							"parameters": {
+								"object": "Cannon"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Cannon",
+							"sid": 970669870398454,
+							"parameters": {
+								"instance-variable": "health",
+								"comparison": 4,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 232041345314384,
+							"parameters": {
+								"variable": "cannonCount",
+								"value": "Cannon.PickedCount"
+							}
+						}
+					],
+					"sid": 988071772823657
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 698108850538855,
+							"parameters": {
+								"variable": "cannonCount",
+								"comparison": 2,
+								"value": "Functions.Config_getNumber(PARAM_Cannon_Count_Max)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 573811177175989,
+							"parameters": {
+								"object-to-create": "Cannon",
+								"layer": "LAYER_Main",
+								"x": "midX",
+								"y": "midY",
+								"create-hierarchy": true,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"customAction": "init",
+							"objectClass": "Cannon",
+							"sid": 808091721845568
+						}
+					],
+					"sid": 151165711030697
+				}
+			]
 		},
 		{
 			"aceType": "action",
@@ -128,8 +209,26 @@
 					}
 				},
 				{
+					"id": "set-instvar-value",
+					"objectClass": "Cannon",
+					"sid": 424680946716791,
+					"parameters": {
+						"instance-variable": "R_Health_Max",
+						"value": "Functions.Config_getNumber(PARAM_Cannon_Health)"
+					}
+				},
+				{
 					"type": "comment",
 					"text": "Initialize projectile spawner"
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Cannon",
+					"sid": 318704262914376,
+					"parameters": {
+						"instance-variable": "health",
+						"value": "Self.R_Health_Max"
+					}
 				},
 				{
 					"id": "set-target",
@@ -354,6 +453,10 @@
 					],
 					"actions": [
 						{
+							"type": "comment",
+							"text": "todo"
+						},
+						{
 							"id": "destroy",
 							"objectClass": "Cannon",
 							"sid": 282781054080346
@@ -374,13 +477,64 @@
 					"sid": 935722509976253,
 					"children": [
 						{
-							"eventType": "comment",
-							"text": "todo damage (/heal) effect"
-						},
-						{
 							"eventType": "block",
-							"conditions": [],
-							"actions": [],
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 810118055815569,
+									"parameters": {
+										"variable": "amount",
+										"comparison": 2,
+										"value": "0"
+									}
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "Cannon",
+									"sid": 400515157905422,
+									"parameters": {
+										"child": "3dCannon",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-tweens",
+									"objectClass": "3dCannon",
+									"sid": 439861624941983,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "TWEEN_3dCannon_Color"
+									}
+								},
+								{
+									"id": "set-default-color",
+									"objectClass": "3dCannon",
+									"sid": 847311774761830,
+									"parameters": {
+										"color": "rgbEx(100, 0, 0)"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "3dCannon",
+									"sid": 477122417862364,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "TWEEN_3dCannon_Color",
+										"property": "offsetColor",
+										"end-value": "rgbEx(100, 100, 100)",
+										"time": "1",
+										"ease": "easeoutcubic",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
 							"sid": 407026718417487
 						}
 					]

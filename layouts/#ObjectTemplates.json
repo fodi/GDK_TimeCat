@@ -392,6 +392,7 @@
 						"playerId": 0,
 						"item": "",
 						"boxUID": -1,
+						"pairsFound": 0,
 						"R_Blurb_ZOffset": 36
 					},
 					"behaviors": {
@@ -1333,7 +1334,7 @@
 					}
 				},
 				{
-					"type": "3DShape",
+					"type": "3dCannon",
 					"properties": {
 						"shape": "box",
 						"z-height": 32,
@@ -1356,7 +1357,13 @@
 					"sid": 502404143425560,
 					"tags": "",
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"sceneGraphData": {
 						"parent-uid": 15,
 						"uid": 36,

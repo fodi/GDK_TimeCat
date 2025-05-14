@@ -162,8 +162,8 @@
 			"Box",
 			"UI_BlurbSF",
 			"CameraTargetSmooth",
-			"3DShape",
-			"Particles"
+			"Particles",
+			"TiledBackground"
 		],
 		"subfolders": [
 			{
@@ -222,7 +222,8 @@
 			},
 			{
 				"items": [
-					"3dBox"
+					"3dBox",
+					"3dCannon"
 				],
 				"subfolders": [],
 				"name": "3D"
@@ -354,59 +355,11 @@
 		"icon": {
 			"items": [
 				{
-					"name": "icon-16.png",
-					"type": "image/png",
-					"sid": 709870290183983,
-					"icon-info": {
-						"purpose": "app-icon"
-					}
-				},
-				{
-					"name": "icon-32.png",
-					"type": "image/png",
-					"sid": 962804187293751,
-					"icon-info": {
-						"purpose": "app-icon"
-					}
-				},
-				{
 					"name": "icon-64.png",
 					"type": "image/png",
 					"sid": 258681379999604,
 					"icon-info": {
 						"purpose": "app-icon"
-					}
-				},
-				{
-					"name": "icon-256.png",
-					"type": "image/png",
-					"sid": 202624918624652,
-					"icon-info": {
-						"purpose": "app-icon"
-					}
-				},
-				{
-					"name": "icon-128.png",
-					"type": "image/png",
-					"sid": 855281270015712,
-					"icon-info": {
-						"purpose": "app-icon"
-					}
-				},
-				{
-					"name": "icon-512.png",
-					"type": "image/png",
-					"sid": 229543303023142,
-					"icon-info": {
-						"purpose": "app-icon"
-					}
-				},
-				{
-					"name": "loading-logo.png",
-					"type": "image/png",
-					"sid": 885257710353898,
-					"icon-info": {
-						"purpose": "loading-logo"
 					}
 				}
 			],
@@ -441,7 +394,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "24",
+		"version": "25b",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

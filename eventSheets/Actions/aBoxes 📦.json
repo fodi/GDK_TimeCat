@@ -59,16 +59,12 @@
 					}
 				},
 				{
-					"type": "comment",
-					"text": "todo mn"
-				},
-				{
 					"id": "set-instvar-value",
 					"objectClass": "Box",
-					"sid": 867058627364059,
+					"sid": 218372490768887,
 					"parameters": {
 						"instance-variable": "damage",
-						"value": "5"
+						"value": "Functions.Config_getNumber(PARAM_Item_Damage)"
 					}
 				}
 			],
@@ -169,16 +165,12 @@
 									}
 								},
 								{
-									"type": "comment",
-									"text": "todo mn"
-								},
-								{
 									"id": "set-instvar-value",
 									"objectClass": "Box",
-									"sid": 209635289887366,
+									"sid": 958710616874271,
 									"parameters": {
 										"instance-variable": "damage",
-										"value": "10"
+										"value": "Functions.Config_getNumber(PARAM_Item_Attack_Damage)"
 									}
 								}
 							],
@@ -624,10 +616,10 @@
 								{
 									"id": "start-timer",
 									"objectClass": "Player",
-									"sid": 194511386962810,
+									"sid": 487840665438905,
 									"behaviorType": "Timer",
 									"parameters": {
-										"duration": "5",
+										"duration": "Functions.Config_getNumber(PARAM_Item_Sleep_Time)",
 										"type": "once",
 										"tag": "TIMER_Player_Sleep"
 									}
@@ -682,10 +674,10 @@
 								{
 									"id": "start-timer",
 									"objectClass": "Player",
-									"sid": 350219890837590,
+									"sid": 739482993766983,
 									"behaviorType": "Timer",
 									"parameters": {
-										"duration": "10",
+										"duration": "Functions.Config_getNumber(PARAM_Item_Slow_Time)",
 										"type": "once",
 										"tag": "TIMER_Player_Slow"
 									}

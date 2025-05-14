@@ -149,6 +149,13 @@
 			"desc": "",
 			"show": false,
 			"sid": 381609793924041
+		},
+		{
+			"name": "pairsFound",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 507827828610069
 		}
 	],
 	"behaviorTypes": [

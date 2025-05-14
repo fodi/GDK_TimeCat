@@ -166,9 +166,176 @@
 							"objectClass": "Tile",
 							"customActionObjectClass": "fTile",
 							"sid": 720023268420973
+						},
+						{
+							"type": "comment",
+							"text": "Start timers"
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "GlobalTimer",
+							"sid": 222924243848901,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "random(Functions.Config_getNumber(PARAM_Cannon_Spawn_Time_Min), Functions.Config_getNumber(PARAM_Cannon_Spawn_Time_Max))",
+								"type": "once",
+								"tag": "TIMER_Cannon_Spawn"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "GlobalTimer",
+							"sid": 574351446425913,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1",
+								"type": "regular",
+								"tag": "TIMER_Level_EverySecond"
+							}
 						}
 					],
 					"sid": 700019727002712
+				}
+			]
+		},
+		{
+			"functionName": "endLevel",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "stop-timer",
+					"objectClass": "GlobalTimer",
+					"sid": 899846945515774,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "TIMER_Level_EverySecond"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 321930704939205,
+					"parameters": {
+						"variable": "hasLevelEnded",
+						"value": "YES"
+					}
+				},
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 496335927040394,
+					"parameters": {
+						"time-scale": "0"
+					}
+				}
+			],
+			"sid": 710425574341323,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "endText",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 775163012593881
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 349867396878748,
+							"parameters": {
+								"variable": "endText",
+								"value": "\"Time elapsed: \" & Functions.formatTime(timeElapsed) & newline & newline"
+							}
+						}
+					],
+					"sid": 555812566849330
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-ordered",
+							"objectClass": "System",
+							"sid": 407413745834233,
+							"parameters": {
+								"object": "Player",
+								"expression": "Player.pairsFound",
+								"order": "descending"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 304807696791597,
+							"parameters": {
+								"variable": "endText",
+								"value": "\"[color=#\" & trim(tokenat(C_CSV_ColorsHex, Player.playerId, \",\")) & \"]Player \" & Player.playerId & \":[/color] \" & Player.pairsFound & newline"
+							}
+						}
+					],
+					"sid": 199608784540189
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UI_TextSF",
+							"sid": 400769599467986,
+							"parameters": {
+								"instance-variable": "role",
+								"comparison": 0,
+								"value": "ROLE_GameOver"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "todo"
+						},
+						{
+							"id": "set-text",
+							"objectClass": "UI_TextSF",
+							"sid": 139952572118531,
+							"parameters": {
+								"text": "endText"
+							}
+						}
+					],
+					"sid": 458263492062037
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 556208761587287,
+							"parameters": {
+								"layer": "LAYER_UI_GameOver",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 903516170251227
 				}
 			]
 		},
@@ -181,7 +348,18 @@
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
-			"conditions": [],
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 261601930527017,
+					"parameters": {
+						"variable": "hasLevelEnded",
+						"comparison": 0,
+						"value": "NO"
+					}
+				}
+			],
 			"actions": [],
 			"sid": 809940863427421,
 			"children": [

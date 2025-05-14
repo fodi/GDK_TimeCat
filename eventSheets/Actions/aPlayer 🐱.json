@@ -109,7 +109,18 @@
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
-			"conditions": [],
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 198587989691971,
+					"parameters": {
+						"variable": "hasLevelEnded",
+						"comparison": 0,
+						"value": "NO"
+					}
+				}
+			],
 			"actions": [],
 			"sid": 608725959345493,
 			"children": [
@@ -331,10 +342,10 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 285849795330522,
+											"sid": 874564765458371,
 											"parameters": {
 												"variable": "movementSpeed",
-												"value": "movementSpeed * 0.5"
+												"value": "movementSpeed * Functions.Config_getNumber(PARAM_Item_Slow_Factor)"
 											}
 										}
 									],
@@ -793,7 +804,18 @@
 				}
 			],
 			"eventType": "custom-ace-block",
-			"conditions": [],
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 687433810899252,
+					"parameters": {
+						"variable": "hasLevelEnded",
+						"comparison": 0,
+						"value": "NO"
+					}
+				}
+			],
 			"actions": [],
 			"sid": 773717553376150,
 			"children": [
@@ -852,7 +874,18 @@
 				}
 			],
 			"eventType": "custom-ace-block",
-			"conditions": [],
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 582613880441401,
+					"parameters": {
+						"variable": "hasLevelEnded",
+						"comparison": 0,
+						"value": "NO"
+					}
+				}
+			],
 			"actions": [],
 			"sid": 234693284807956,
 			"children": [
@@ -1292,6 +1325,24 @@
 									"sid": 847277258622668
 								},
 								{
+									"id": "add-to-instvar",
+									"objectClass": "Player",
+									"sid": 140197894115624,
+									"parameters": {
+										"instance-variable": "pairsFound",
+										"value": "1"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 151236500655693,
+									"parameters": {
+										"variable": "pairsFound",
+										"value": "1"
+									}
+								},
+								{
 									"id": "add-to-eventvar",
 									"objectClass": "System",
 									"sid": 778835255933920,
@@ -1402,6 +1453,32 @@
 											"sid": 295692662093343
 										}
 									]
+								},
+								{
+									"eventType": "comment",
+									"text": "Check win condition"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 483469909068095,
+											"parameters": {
+												"variable": "pairsFound",
+												"comparison": 5,
+												"value": "int(R_Level_Rows * R_Level_Columns * 0.5)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "endLevel",
+											"sid": 994755527730502
+										}
+									],
+									"sid": 834295830116317
 								}
 							]
 						},
@@ -1703,6 +1780,48 @@
 								}
 							],
 							"sid": 954145671940170
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-all",
+									"objectClass": "System",
+									"sid": 640794417526362,
+									"parameters": {
+										"object": "Player"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 639450579028348,
+									"parameters": {
+										"instance-variable": "health",
+										"comparison": 4,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 380778809566618
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 621669922865659
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "endLevel",
+									"sid": 760343666584603
+								}
+							],
+							"sid": 791747734511839
 						}
 					]
 				},

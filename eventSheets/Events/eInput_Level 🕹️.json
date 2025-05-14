@@ -1715,6 +1715,23 @@
 					"behaviorType": "Timer"
 				},
 				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 213296774503755,
+					"parameters": {
+						"layer": "LAYER_UI_GameOver",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 319500797492351,
+					"parameters": {
+						"time-scale": "1"
+					}
+				},
+				{
 					"id": "restart-layout",
 					"objectClass": "System",
 					"sid": 519485851427841
@@ -2071,6 +2088,26 @@
 						}
 					],
 					"sid": 534131565185211
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 315801862150686,
+							"parameters": {
+								"key": 78
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "endLevel",
+							"sid": 937869845440389
+						}
+					],
+					"sid": 493835906592029
 				}
 			],
 			"sid": 445167778018070
