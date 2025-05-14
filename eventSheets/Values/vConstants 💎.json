@@ -100,6 +100,16 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 983798085957370
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Player_WakeTime",
+			"type": "number",
+			"initialValue": "0.5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 466810201399189
 		}
 	],
 	"sid": 344291072955141

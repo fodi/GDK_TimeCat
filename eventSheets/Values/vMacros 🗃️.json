@@ -170,6 +170,16 @@
 			"sid": 542683229904901
 		},
 		{
+			"eventType": "variable",
+			"name": "ANIM_WakingUp",
+			"type": "string",
+			"initialValue": "WakingUp",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 205569605942830
+		},
+		{
 			"eventType": "comment",
 			"text": "Files"
 		},
@@ -199,11 +209,11 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Items"
+			"text": "Item types"
 		},
 		{
 			"eventType": "variable",
-			"name": "ITEM_Slow",
+			"name": "IT_Slow",
 			"type": "string",
 			"initialValue": "Slow",
 			"comment": "",
@@ -213,7 +223,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ITEM_Sleep",
+			"name": "IT_Sleep",
 			"type": "string",
 			"initialValue": "Sleep",
 			"comment": "",
@@ -223,7 +233,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ITEM_Projectile",
+			"name": "IT_Projectile",
 			"type": "string",
 			"initialValue": "Projectile",
 			"comment": "",
@@ -233,7 +243,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ITEM_Shield",
+			"name": "IT_Shield",
 			"type": "string",
 			"initialValue": "Shield",
 			"comment": "",
@@ -243,7 +253,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ITEM_Health",
+			"name": "IT_Health",
 			"type": "string",
 			"initialValue": "Health",
 			"comment": "",
@@ -684,6 +694,16 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 106702307862027
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_Player_WakingUp",
+			"type": "string",
+			"initialValue": "Player_WakingUp",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 918313254762803
 		},
 		{
 			"eventType": "variable",

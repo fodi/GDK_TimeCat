@@ -54,6 +54,14 @@
 					"parameters": {
 						"key": 76
 					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 629847900983781,
+					"parameters": {
+						"key": 96
+					}
 				}
 			],
 			"actions": [
@@ -550,6 +558,14 @@
 							}
 						},
 						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 418976394067786,
+							"parameters": {
+								"key": 101
+							}
+						},
+						{
 							"id": "is-button-down",
 							"objectClass": "Gamepad",
 							"sid": 119554428827493,
@@ -634,6 +650,14 @@
 							}
 						},
 						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 396963815011779,
+							"parameters": {
+								"key": 104
+							}
+						},
+						{
 							"id": "is-button-down",
 							"objectClass": "Gamepad",
 							"sid": 583799623085636,
@@ -688,6 +712,14 @@
 							"sid": 175809400797312,
 							"parameters": {
 								"key": 40
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 142338019132153,
+							"parameters": {
+								"key": 98
 							}
 						},
 						{
@@ -748,6 +780,14 @@
 							}
 						},
 						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 557432604637499,
+							"parameters": {
+								"key": 100
+							}
+						},
+						{
 							"id": "is-button-down",
 							"objectClass": "Gamepad",
 							"sid": 152229071176545,
@@ -802,6 +842,14 @@
 							"sid": 549695194616060,
 							"parameters": {
 								"key": 39
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 437451303601120,
+							"parameters": {
+								"key": 102
 							}
 						},
 						{
@@ -1864,7 +1912,8 @@
 							}
 						}
 					],
-					"sid": 349815076857173
+					"sid": 349815076857173,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -1888,7 +1937,8 @@
 							}
 						}
 					],
-					"sid": 813145669667060
+					"sid": 813145669667060,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -1913,7 +1963,8 @@
 							}
 						}
 					],
-					"sid": 181569761256367
+					"sid": 181569761256367,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -1938,7 +1989,8 @@
 							}
 						}
 					],
-					"sid": 981083144871587
+					"sid": 981083144871587,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -1963,7 +2015,8 @@
 							}
 						}
 					],
-					"sid": 667294599852306
+					"sid": 667294599852306,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -1988,7 +2041,8 @@
 							}
 						}
 					],
-					"sid": 207890546441287
+					"sid": 207890546441287,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -2013,7 +2067,8 @@
 							}
 						}
 					],
-					"sid": 375526865816699
+					"sid": 375526865816699,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -2038,7 +2093,8 @@
 							}
 						}
 					],
-					"sid": 764929391571421
+					"sid": 764929391571421,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -2062,7 +2118,8 @@
 							}
 						}
 					],
-					"sid": 285712576902914
+					"sid": 285712576902914,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -2108,6 +2165,40 @@
 						}
 					],
 					"sid": 493835906592029
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 472175350096800,
+							"parameters": {
+								"key": 49
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 182740929594051,
+							"parameters": {
+								"instance-variable": "playerId",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "startEffect",
+							"objectClass": "Player",
+							"sid": 991327677168168,
+							"parameters": [
+								"IT_Sleep"
+							]
+						}
+					],
+					"sid": 971514204768969
 				}
 			],
 			"sid": 445167778018070

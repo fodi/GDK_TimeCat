@@ -54,7 +54,7 @@
 					"objectClass": "Box",
 					"sid": 654741773896637,
 					"parameters": {
-						"instance-variable": "item",
+						"instance-variable": "itemType",
 						"value": "item"
 					}
 				},
@@ -114,7 +114,7 @@
 									"parameters": {
 										"variable": "item",
 										"comparison": 0,
-										"value": "ITEM_Projectile"
+										"value": "IT_Projectile"
 									}
 								}
 							],
@@ -186,7 +186,7 @@
 									"parameters": {
 										"variable": "item",
 										"comparison": 0,
-										"value": "ITEM_Shield"
+										"value": "IT_Shield"
 									}
 								}
 							],
@@ -249,7 +249,7 @@
 									"parameters": {
 										"variable": "item",
 										"comparison": 0,
-										"value": "ITEM_Sleep"
+										"value": "IT_Sleep"
 									}
 								}
 							],
@@ -312,7 +312,7 @@
 									"parameters": {
 										"variable": "item",
 										"comparison": 0,
-										"value": "ITEM_Slow"
+										"value": "IT_Slow"
 									}
 								}
 							],
@@ -511,6 +511,14 @@
 							"parameters": [
 								"YES"
 							]
+						},
+						{
+							"customAction": "startEffect",
+							"objectClass": "Player",
+							"sid": 437832637241497,
+							"parameters": [
+								"Box.itemType"
+							]
 						}
 					],
 					"sid": 467141412402916,
@@ -554,9 +562,9 @@
 									"objectClass": "Box",
 									"sid": 870861274643767,
 									"parameters": {
-										"instance-variable": "item",
+										"instance-variable": "itemType",
 										"comparison": 0,
-										"value": "ITEM_Projectile"
+										"value": "IT_Projectile"
 									}
 								}
 							],
@@ -576,9 +584,9 @@
 									"objectClass": "Box",
 									"sid": 922382827977163,
 									"parameters": {
-										"instance-variable": "item",
+										"instance-variable": "itemType",
 										"comparison": 0,
-										"value": "ITEM_Shield"
+										"value": "IT_Shield"
 									}
 								}
 							],
@@ -600,164 +608,9 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Box",
-									"sid": 865899989494124,
-									"parameters": {
-										"instance-variable": "item",
-										"comparison": 0,
-										"value": "ITEM_Sleep"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "start-timer",
-									"objectClass": "Player",
-									"sid": 487840665438905,
-									"behaviorType": "Timer",
-									"parameters": {
-										"duration": "Functions.Config_getNumber(PARAM_Item_Sleep_Time)",
-										"type": "once",
-										"tag": "TIMER_Player_Sleep"
-									}
-								}
-							],
-							"sid": 156267485113814,
-							"children": [
-								{
-									"bookmark": true,
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-children",
-											"objectClass": "Player",
-											"sid": 366207692041249,
-											"parameters": {
-												"child": "bbPlayer",
-												"which": "own"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-animation",
-											"objectClass": "bbPlayer",
-											"sid": 710956113921787,
-											"parameters": {
-												"animation": "Self.playerId & \"_\" & ANIM_Sleeping",
-												"from": "beginning"
-											}
-										}
-									],
-									"sid": 592289582547790
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Box",
-									"sid": 812063049960700,
-									"parameters": {
-										"instance-variable": "item",
-										"comparison": 0,
-										"value": "ITEM_Slow"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "start-timer",
-									"objectClass": "Player",
-									"sid": 739482993766983,
-									"behaviorType": "Timer",
-									"parameters": {
-										"duration": "Functions.Config_getNumber(PARAM_Item_Slow_Time)",
-										"type": "once",
-										"tag": "TIMER_Player_Slow"
-									}
-								}
-							],
-							"sid": 268051316456127,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-children",
-											"objectClass": "Player",
-											"sid": 575784273237517,
-											"parameters": {
-												"child": "Particles",
-												"which": "own"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-rate",
-											"objectClass": "Particles",
-											"sid": 642395338870302,
-											"parameters": {
-												"rate": "0"
-											}
-										},
-										{
-											"id": "start-timer",
-											"objectClass": "Particles",
-											"sid": 686998409429202,
-											"behaviorType": "Timer",
-											"parameters": {
-												"duration": "Particles.Timeout",
-												"type": "once",
-												"tag": "TIMER_Particles_Destroy"
-											}
-										}
-									],
-									"sid": 820694317166512
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "spawn-another-object",
-											"objectClass": "Player",
-											"sid": 760134916024210,
-											"parameters": {
-												"object": "Particles",
-												"layer": "LAYER_Billboards",
-												"image-point": "0",
-												"create-hierarchy": false,
-												"template-name": "ITEM_Slow"
-											}
-										},
-										{
-											"id": "add-child",
-											"objectClass": "Player",
-											"sid": 154609494094139,
-											"parameters": {
-												"child": "Particles",
-												"transform-x": true,
-												"transform-y": true,
-												"transform-w": false,
-												"transform-h": false,
-												"transform-a": false,
-												"transform-o": false,
-												"transform-z-elevation": false,
-												"transform-visibility": false,
-												"destroy-with-parent": false
-											}
-										}
-									],
-									"sid": 677930493949892
-								}
-							]
+							"conditions": [],
+							"actions": [],
+							"sid": 758358683116172
 						}
 					]
 				}
