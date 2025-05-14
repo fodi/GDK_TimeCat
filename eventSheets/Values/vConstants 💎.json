@@ -113,6 +113,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "C_Cannon_FirstSpawnDelay",
+			"type": "number",
+			"initialValue": "2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 734283160737737
+		},
+		{
+			"eventType": "variable",
 			"name": "C_CSV_ColorsHex",
 			"type": "string",
 			"initialValue": "ffffff, d1030a, 2baf2b, ffc107, 9c27b0",

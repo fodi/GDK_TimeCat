@@ -63,10 +63,11 @@
 						{
 							"customAction": "changeHealth",
 							"objectClass": "Player",
-							"sid": 392710178517158,
+							"sid": 747585360356948,
 							"parameters": [
 								"-Projectile.R_Damage",
-								"1"
+								"YES",
+								"YES"
 							]
 						}
 					],
@@ -103,6 +104,10 @@
 			"actions": [],
 			"sid": 820446053971430,
 			"children": [
+				{
+					"eventType": "comment",
+					"text": "todo CA"
+				},
 				{
 					"eventType": "comment",
 					"text": "If box hasn't been picked up..."
@@ -177,6 +182,15 @@
 										"instance-variable": "carrierPlayerUID",
 										"value": "Player.UID"
 									}
+								},
+								{
+									"callFunction": "playSound",
+									"sid": 102424207324748,
+									"parameters": [
+										"SFX_Player_Box_Pickup",
+										"1",
+										"0"
+									]
 								}
 							],
 							"sid": 462906727967071
@@ -305,6 +319,17 @@
 					"id": "destroy",
 					"objectClass": "Projectile",
 					"sid": 113610349786662
+				},
+				{
+					"callFunction": "playSoundAt",
+					"sid": 492698710024327,
+					"parameters": [
+						"Cannon.X",
+						"Cannon.Y",
+						"SFX_Collision_Box_Projectile",
+						"4",
+						"NO"
+					]
 				}
 			],
 			"sid": 823790296874762

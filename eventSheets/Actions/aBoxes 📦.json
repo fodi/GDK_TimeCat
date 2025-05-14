@@ -541,10 +541,11 @@
 								{
 									"customAction": "changeHealth",
 									"objectClass": "Player",
-									"sid": 980244485224060,
+									"sid": 170077391461244,
 									"parameters": [
 										"-Box.damage",
-										"1"
+										"YES",
+										"YES"
 									]
 								}
 							],
@@ -552,7 +553,7 @@
 						},
 						{
 							"eventType": "comment",
-							"text": "todo? item: steal life"
+							"text": "todo? item: steal life -- also from nearby players while carrying a box?"
 						},
 						{
 							"eventType": "block",

@@ -344,7 +344,464 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "Cannon_Destroyed1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 224891083730916,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Cannon_Destroyed2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 157182219836361,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Cannon_Destroyed3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 428320562008788,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Cannon_Destroyed4.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 681430749223531,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Cannon_Fire1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 338164988078164,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Cannon_Fire2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 334141969338386,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Cannon_Fire3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 772392065223979,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Cannon_Fire4.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 699682297062703,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Cannon_Spawn.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 898381990527217,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Collision_Box_Cannon1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 877521561531266,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Collision_Box_Cannon2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 516795857982691,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Collision_Box_Cannon3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 968342978707622,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Collision_Box_Cannon4.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 976598324518921,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Collision_Box_Projectile1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 635641095601996,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Collision_Box_Projectile2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 140336160666640,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Collision_Box_Projectile3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 796886262491859,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Collision_Box_Projectile4.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 919039108923432,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Box_Pickup1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 658086171037430,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Box_Pickup2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 612901618228487,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Box_Pickup3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 485898878932734,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Box_Pickup4.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 226826019971318,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Box_Throw1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 631751702923613,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Box_Throw2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 708086284344217,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Box_Throw3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 771267620695920,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Box_Throw4.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 786954338474810,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Damaged1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 375479867453926,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Damaged2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 874486689199937,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Damaged3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 285377877031000,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Damaged4.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 764749917875216,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Dead.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 768839672716157,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Healing_Big1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 329446222622870,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Healing_Big2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 628502295261547,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Healing_Big3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 425357654782650,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Healing_Big4.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 520699710921644,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Sleeping.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 935929748523248,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Slowing.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 431975800686660,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Spawning.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 330285549098821,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Pair_Item1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 434316770822872,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Pair_Item2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 271810847087454,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Pair_Item3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 641999605456751,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Pair_Item4.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 499852091022858,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Pair_Symbol1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 542307003677709,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Pair_Symbol2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 226048445353536,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Pair_Symbol3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 544275031496623,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Pair_Symbol4.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 761523480164869,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Healing_Small4.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 172851907154454,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Healing_Small1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 606064319771537,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Healing_Small2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 153488866377771,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Healing_Small3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 604472450195280,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Tile_Closing4.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 814032762155203,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Tile_Opening1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 656691909423052,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Tile_Opening2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 269446536736032,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Tile_Opening3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 835113648668553,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Tile_Opening4.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 749895984918778,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Tile_Closing1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 597724636114257,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Tile_Closing2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 665218798426560,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Tile_Closing3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 480925436833358,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {

@@ -361,6 +361,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "PARAM_Tile_GapCount",
+			"type": "string",
+			"initialValue": "gap_percent",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 747038811532456
+		},
+		{
+			"eventType": "variable",
 			"name": "PARAM_Player_Health",
 			"type": "string",
 			"initialValue": "pl_health",
@@ -616,6 +626,190 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 514423711778769
+		},
+		{
+			"eventType": "comment",
+			"text": "Sound effects"
+		},
+		{
+			"eventType": "variable",
+			"name": "SFX_Cannon_Destroyed",
+			"type": "string",
+			"initialValue": "Cannon_Destroyed",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 972943402395253
+		},
+		{
+			"eventType": "variable",
+			"name": "SFX_Cannon_Fire",
+			"type": "string",
+			"initialValue": "Cannon_Fire",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 797009961771013
+		},
+		{
+			"eventType": "variable",
+			"name": "SFX_Cannon_Spawn",
+			"type": "string",
+			"initialValue": "Cannon_Spawn",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 564463832658011
+		},
+		{
+			"eventType": "variable",
+			"name": "SFX_Collision_Box_Cannon",
+			"type": "string",
+			"initialValue": "Collision_Box_Cannon",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 543814030123111
+		},
+		{
+			"eventType": "variable",
+			"name": "SFX_Collision_Box_Projectile",
+			"type": "string",
+			"initialValue": "Collision_Box_Projectile",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 610766130635343
+		},
+		{
+			"eventType": "variable",
+			"name": "SFX_Player_Box_Pickup",
+			"type": "string",
+			"initialValue": "Player_Box_Pickup",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 255193282247154
+		},
+		{
+			"eventType": "variable",
+			"name": "SFX_Player_Box_Throw",
+			"type": "string",
+			"initialValue": "Player_Box_Throw",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 218024976592861
+		},
+		{
+			"eventType": "variable",
+			"name": "SFX_Player_Damaged",
+			"type": "string",
+			"initialValue": "Player_Damaged",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 790374251976168
+		},
+		{
+			"eventType": "variable",
+			"name": "SFX_Player_Dead",
+			"type": "string",
+			"initialValue": "Player_Dead",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 257374083424659
+		},
+		{
+			"eventType": "variable",
+			"name": "SFX_Player_Healing_Big",
+			"type": "string",
+			"initialValue": "Player_Healing_Big",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 842834553660822
+		},
+		{
+			"eventType": "variable",
+			"name": "SFX_Player_Healing_Small",
+			"type": "string",
+			"initialValue": "Player_Healing_Small",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 916983446569447
+		},
+		{
+			"eventType": "variable",
+			"name": "SFX_Player_Pair_Item",
+			"type": "string",
+			"initialValue": "Player_Pair_Item",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 267641918841034
+		},
+		{
+			"eventType": "variable",
+			"name": "SFX_Player_Pair_Symbol",
+			"type": "string",
+			"initialValue": "Player_Pair_Symbol",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 811062584772001
+		},
+		{
+			"eventType": "variable",
+			"name": "SFX_Player_Sleeping",
+			"type": "string",
+			"initialValue": "Player_Sleeping",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 334817723746499
+		},
+		{
+			"eventType": "variable",
+			"name": "SFX_Player_Slowing",
+			"type": "string",
+			"initialValue": "Player_Slowing",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 350973225517746
+		},
+		{
+			"eventType": "variable",
+			"name": "SFX_Player_Spawning",
+			"type": "string",
+			"initialValue": "Player_Spawning",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 900764245114188
+		},
+		{
+			"eventType": "variable",
+			"name": "SFX_Tile_Closing",
+			"type": "string",
+			"initialValue": "Tile_Closing",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 308157796134482
+		},
+		{
+			"eventType": "variable",
+			"name": "SFX_Tile_Opening",
+			"type": "string",
+			"initialValue": "Tile_Opening",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 510069927719130
 		},
 		{
 			"eventType": "comment",

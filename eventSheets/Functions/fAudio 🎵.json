@@ -127,6 +127,256 @@
 					"sid": 490284697843428
 				}
 			]
+		},
+		{
+			"functionName": "playSound",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "soundName",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 433102797705291
+				},
+				{
+					"name": "variationCount",
+					"type": "number",
+					"initialValue": "1",
+					"comment": "",
+					"sid": 873129837696211
+				},
+				{
+					"name": "debounce",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 145113539790640
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 499044112798543,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "variationSuffix",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 140540514076635
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 489526499640844,
+							"parameters": {
+								"variable": "variationCount",
+								"comparison": 4,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 612289525475408,
+							"parameters": {
+								"variable": "variationSuffix",
+								"value": "int(random(1, variationCount))"
+							}
+						}
+					],
+					"sid": 918590584154546
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 130010681721031,
+							"parameters": {
+								"variable": "debounce",
+								"comparison": 0,
+								"value": "NO"
+							}
+						},
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 352632497039231,
+							"parameters": {
+								"tag": "soundName"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 330650572938992,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "soundName & variationSuffix",
+								"loop": "not-looping",
+								"volume": "-5",
+								"stereo-pan": "0",
+								"tag-optional": "AUDIO_SFX & \" \" & soundName"
+							}
+						}
+					],
+					"sid": 678598635266234,
+					"isOrBlock": true
+				}
+			]
+		},
+		{
+			"functionName": "playSoundAt",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "x",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 406713074551695
+				},
+				{
+					"name": "y",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 861547529331027
+				},
+				{
+					"name": "soundName",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 888183313004158
+				},
+				{
+					"name": "variationCount",
+					"type": "number",
+					"initialValue": "1",
+					"comment": "",
+					"sid": 518679955377312
+				},
+				{
+					"name": "debounce",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 465846441172296
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 706239808608895,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "variationSuffix",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 137624692586425
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 862204304631678,
+							"parameters": {
+								"variable": "variationCount",
+								"comparison": 4,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 856863007231830,
+							"parameters": {
+								"variable": "variationSuffix",
+								"value": "int(random(1, variationCount))"
+							}
+						}
+					],
+					"sid": 247231243838192
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 731434390654520,
+							"parameters": {
+								"variable": "debounce",
+								"comparison": 0,
+								"value": "NO"
+							}
+						},
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 786057966624537,
+							"parameters": {
+								"tag": "soundName"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play-at-position-by-name",
+							"objectClass": "Audio",
+							"sid": 174619725746205,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "soundName & variationSuffix",
+								"loop": "not-looping",
+								"volume": "-5",
+								"x": "x",
+								"y": "y",
+								"z": "0",
+								"angle": "0",
+								"inner-angle": "360",
+								"outer-angle": "360",
+								"outer-gain": "0",
+								"tag-optional": "AUDIO_SFX & \" \" & soundName"
+							}
+						}
+					],
+					"sid": 746611325463855,
+					"isOrBlock": true
+				}
+			]
 		}
 	],
 	"sid": 581452474749190

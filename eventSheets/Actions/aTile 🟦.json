@@ -270,7 +270,7 @@
 											}
 										},
 										{
-											"customAction": "setSymbolForPair",
+											"customAction": "setSymbol",
 											"objectClass": "fTile",
 											"sid": 244033545762734,
 											"parameters": [
@@ -278,7 +278,7 @@
 											]
 										},
 										{
-											"customAction": "setSymbolForPair",
+											"customAction": "setSymbol",
 											"objectClass": "Tile",
 											"customActionObjectClass": "fTile",
 											"sid": 597548531917019,
@@ -333,7 +333,7 @@
 											}
 										},
 										{
-											"customAction": "setSymbolForPair",
+											"customAction": "setSymbol",
 											"objectClass": "fTile",
 											"sid": 826821341216751,
 											"parameters": [
@@ -341,7 +341,7 @@
 											]
 										},
 										{
-											"customAction": "setSymbolForPair",
+											"customAction": "setSymbol",
 											"objectClass": "Tile",
 											"customActionObjectClass": "fTile",
 											"sid": 601960478553627,
@@ -438,7 +438,7 @@
 		},
 		{
 			"aceType": "action",
-			"aceName": "setSymbolForPair",
+			"aceName": "setSymbol",
 			"objectClass": "fTile",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -455,63 +455,71 @@
 				}
 			],
 			"eventType": "custom-ace-block",
-			"conditions": [
+			"conditions": [],
+			"actions": [],
+			"sid": 364773611626042,
+			"children": [
 				{
-					"id": "pick-children",
-					"objectClass": "fTile",
-					"sid": 995579524449036,
-					"parameters": {
-						"child": "Symbol",
-						"which": "own"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "fTile",
+							"sid": 263956421796238,
+							"parameters": {
+								"child": "Symbol",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fTile",
+							"sid": 479971664122816,
+							"parameters": {
+								"instance-variable": "symbol",
+								"value": "newSymbol"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Symbol",
+							"sid": 470949729799045,
+							"parameters": {
+								"animation": "newSymbol",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fTile",
+							"sid": 948916382663629,
+							"parameters": {
+								"instance-variable": "pairingState",
+								"value": "PS_Paired"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Symbol",
+							"sid": 779414136993381,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Symbol",
+							"sid": 659780578682181,
+							"parameters": {
+								"opacity": "Functions.Config_getNumber(PARAM_Symbol_Opacity)"
+							}
+						}
+					],
+					"sid": 477071793514635
 				}
-			],
-			"actions": [
-				{
-					"id": "set-instvar-value",
-					"objectClass": "fTile",
-					"sid": 445008403033105,
-					"parameters": {
-						"instance-variable": "symbol",
-						"value": "newSymbol"
-					}
-				},
-				{
-					"id": "set-animation",
-					"objectClass": "Symbol",
-					"sid": 376193497352210,
-					"parameters": {
-						"animation": "newSymbol",
-						"from": "beginning"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "fTile",
-					"sid": 214432201564850,
-					"parameters": {
-						"instance-variable": "pairingState",
-						"value": "PS_Paired"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "Symbol",
-					"sid": 253432446512259,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-opacity",
-					"objectClass": "Symbol",
-					"sid": 349312330173428,
-					"parameters": {
-						"opacity": "Functions.Config_getNumber(PARAM_Symbol_Opacity)"
-					}
-				}
-			],
-			"sid": 364773611626042
+			]
 		},
 		{
 			"aceType": "action",
@@ -533,107 +541,126 @@
 			],
 			"eventType": "custom-ace-block",
 			"conditions": [],
-			"actions": [
-				{
-					"id": "set-instvar-value",
-					"objectClass": "fTile",
-					"sid": 593892206092195,
-					"parameters": {
-						"instance-variable": "playerId",
-						"value": "playerId"
-					}
-				},
-				{
-					"id": "spawn-another-object",
-					"objectClass": "fTile",
-					"sid": 490497652367063,
-					"parameters": {
-						"object": "Selection",
-						"layer": "Self.LayerName",
-						"image-point": "0",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-size",
-					"objectClass": "Selection",
-					"sid": 805616645164804,
-					"parameters": {
-						"width": "C_Tile_Size",
-						"height": "C_Tile_Size"
-					}
-				},
-				{
-					"id": "set-default-color",
-					"objectClass": "Selection",
-					"sid": 210316103044511,
-					"parameters": {
-						"color": "int(trim(tokenat(C_CSV_ColorsInt, playerId, \",\")))"
-					}
-				},
-				{
-					"id": "add-child",
-					"objectClass": "fTile",
-					"sid": 294926303336652,
-					"parameters": {
-						"child": "Selection",
-						"transform-x": false,
-						"transform-y": false,
-						"transform-w": false,
-						"transform-h": false,
-						"transform-a": false,
-						"transform-o": false,
-						"transform-z-elevation": false,
-						"transform-visibility": false,
-						"destroy-with-parent": true
-					}
-				}
-			],
+			"actions": [],
 			"sid": 355697437670729,
 			"children": [
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-children",
-							"objectClass": "fTile",
-							"sid": 212358282078961,
-							"parameters": {
-								"child": "Symbol",
-								"which": "own"
-							}
-						}
-					],
+					"conditions": [],
 					"actions": [
 						{
-							"id": "stop-tweens",
-							"objectClass": "Symbol",
-							"sid": 718245273287454,
-							"behaviorType": "Tween",
+							"callFunction": "playSoundAt",
+							"sid": 829272970049207,
+							"parameters": [
+								"fTile.X",
+								"fTile.Y",
+								"SFX_Tile_Opening",
+								"4",
+								"YES"
+							]
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fTile",
+							"sid": 190517741306419,
 							"parameters": {
-								"tags": "TWEEN_Symbol_Opacity"
+								"instance-variable": "playerId",
+								"value": "playerId"
 							}
 						},
 						{
-							"id": "tween-one-property",
-							"objectClass": "Symbol",
-							"sid": 402920633642429,
-							"behaviorType": "Tween",
+							"id": "spawn-another-object",
+							"objectClass": "fTile",
+							"sid": 280285669655295,
 							"parameters": {
-								"tags": "TWEEN_Symbol_Opacity",
-								"property": "offsetOpacity",
-								"end-value": "100",
-								"time": "0.2",
-								"ease": "easeinquart",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
+								"object": "Selection",
+								"layer": "Self.LayerName",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "Selection",
+							"sid": 917974084338432,
+							"parameters": {
+								"width": "C_Tile_Size",
+								"height": "C_Tile_Size"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "Selection",
+							"sid": 381392959767863,
+							"parameters": {
+								"color": "int(trim(tokenat(C_CSV_ColorsInt, playerId, \",\")))"
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "fTile",
+							"sid": 269611443614432,
+							"parameters": {
+								"child": "Selection",
+								"transform-x": false,
+								"transform-y": false,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-o": false,
+								"transform-z-elevation": false,
+								"transform-visibility": false,
+								"destroy-with-parent": true
 							}
 						}
 					],
-					"sid": 304014183915826
+					"sid": 710655910111384,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "fTile",
+									"sid": 529852650895305,
+									"parameters": {
+										"child": "Symbol",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-tweens",
+									"objectClass": "Symbol",
+									"sid": 553946366729258,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "TWEEN_Symbol_Opacity"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "Symbol",
+									"sid": 138432211037674,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "TWEEN_Symbol_Opacity",
+										"property": "offsetOpacity",
+										"end-value": "100",
+										"time": "0.2",
+										"ease": "easeinquart",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 823748167407604
+						}
+					]
 				}
 			]
 		},
@@ -649,28 +676,45 @@
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
 			"conditions": [],
-			"actions": [
-				{
-					"id": "set-animation",
-					"objectClass": "fTile",
-					"sid": 837962934735914,
-					"parameters": {
-						"animation": "ANIM_Closed",
-						"from": "beginning"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "fTile",
-					"sid": 505946996748934,
-					"parameters": {
-						"instance-variable": "playerId",
-						"value": "NOTHING"
-					}
-				}
-			],
+			"actions": [],
 			"sid": 314290759961667,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "playSoundAt",
+							"sid": 190893951805810,
+							"parameters": [
+								"fTile.X",
+								"fTile.Y",
+								"SFX_Tile_Closing",
+								"4",
+								"YES"
+							]
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "fTile",
+							"sid": 932757053142308,
+							"parameters": {
+								"animation": "ANIM_Closed",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fTile",
+							"sid": 413287771914128,
+							"parameters": {
+								"instance-variable": "playerId",
+								"value": "NOTHING"
+							}
+						}
+					],
+					"sid": 816532705994817
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -772,28 +816,34 @@
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
 			"conditions": [],
-			"actions": [
-				{
-					"id": "set-animation",
-					"objectClass": "fTile",
-					"sid": 134714124687229,
-					"parameters": {
-						"animation": "ANIM_FadingOut",
-						"from": "beginning"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "fTile",
-					"sid": 229762724106863,
-					"parameters": {
-						"instance-variable": "playerId",
-						"value": "NOTHING"
-					}
-				}
-			],
+			"actions": [],
 			"sid": 460507058834829,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "fTile",
+							"sid": 125946783659131,
+							"parameters": {
+								"animation": "ANIM_FadingOut",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fTile",
+							"sid": 701604347360136,
+							"parameters": {
+								"instance-variable": "playerId",
+								"value": "NOTHING"
+							}
+						}
+					],
+					"sid": 998660207643736
+				},
 				{
 					"eventType": "block",
 					"conditions": [

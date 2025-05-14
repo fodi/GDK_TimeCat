@@ -137,6 +137,17 @@
 							}
 						},
 						{
+							"callFunction": "playSoundAt",
+							"sid": 987182644903882,
+							"parameters": [
+								"Cannon.X",
+								"Cannon.Y",
+								"SFX_Cannon_Spawn",
+								"1",
+								"NO"
+							]
+						},
+						{
 							"customAction": "init",
 							"objectClass": "Cannon",
 							"sid": 808091721845568
@@ -357,6 +368,17 @@
 								"instance-variable": "R_Projectile_MovementSpeed",
 								"value": "min(Self.R_Projectile_MovementSpeed + Self.R_Projectile_MovementSpeed_Increase, Self.R_Projectile_MovementSpeed_Max)"
 							}
+						},
+						{
+							"callFunction": "playSoundAt",
+							"sid": 599817348518414,
+							"parameters": [
+								"Cannon.X",
+								"Cannon.Y",
+								"SFX_Cannon_Fire",
+								"4",
+								"NO"
+							]
 						}
 					],
 					"sid": 692676499856425
@@ -468,6 +490,17 @@
 							"id": "destroy",
 							"objectClass": "Cannon",
 							"sid": 282781054080346
+						},
+						{
+							"callFunction": "playSoundAt",
+							"sid": 532155970255575,
+							"parameters": [
+								"Cannon.X",
+								"Cannon.Y",
+								"SFX_Cannon_Destroyed",
+								"4",
+								"NO"
+							]
 						}
 					],
 					"sid": 235621981839580
@@ -541,6 +574,17 @@
 										"ping-pong": "no",
 										"repeat-count": "1"
 									}
+								},
+								{
+									"callFunction": "playSoundAt",
+									"sid": 241019643296043,
+									"parameters": [
+										"Cannon.X",
+										"Cannon.Y",
+										"SFX_Collision_Box_Cannon",
+										"4",
+										"NO"
+									]
 								}
 							],
 							"sid": 407026718417487

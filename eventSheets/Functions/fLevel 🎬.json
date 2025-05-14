@@ -134,11 +134,6 @@
 						},
 						{
 							"customAction": "spawnAll",
-							"objectClass": "Cannon",
-							"sid": 581324787671773
-						},
-						{
-							"customAction": "spawnAll",
 							"objectClass": "Wall",
 							"sid": 655584556435110
 						},
@@ -166,37 +161,51 @@
 							"objectClass": "Tile",
 							"customActionObjectClass": "fTile",
 							"sid": 720023268420973
-						},
-						{
-							"type": "comment",
-							"text": "Start timers"
-						},
-						{
-							"id": "start-timer",
-							"objectClass": "GlobalTimer",
-							"sid": 222924243848901,
-							"behaviorType": "Timer",
-							"parameters": {
-								"duration": "random(Functions.Config_getNumber(PARAM_Cannon_Spawn_Time_Min), Functions.Config_getNumber(PARAM_Cannon_Spawn_Time_Max))",
-								"type": "once",
-								"tag": "TIMER_Cannon_Spawn"
-							}
-						},
-						{
-							"id": "start-timer",
-							"objectClass": "GlobalTimer",
-							"sid": 574351446425913,
-							"behaviorType": "Timer",
-							"parameters": {
-								"duration": "1",
-								"type": "regular",
-								"tag": "TIMER_Level_EverySecond"
-							}
 						}
 					],
 					"sid": 700019727002712
 				}
 			]
+		},
+		{
+			"functionName": "startLevel",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Start timers"
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "GlobalTimer",
+					"sid": 970543763221190,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "C_Cannon_FirstSpawnDelay",
+						"type": "once",
+						"tag": "TIMER_Cannon_Spawn"
+					}
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "GlobalTimer",
+					"sid": 588765737489399,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "1",
+						"type": "regular",
+						"tag": "TIMER_Level_EverySecond"
+					}
+				}
+			],
+			"sid": 411310852850741
 		},
 		{
 			"functionName": "endLevel",

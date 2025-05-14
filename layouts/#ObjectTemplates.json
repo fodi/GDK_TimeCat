@@ -189,7 +189,7 @@
 					"type": "Symbol",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "1",
+						"initial-animation": "Slow",
 						"initial-frame": 0,
 						"enable-collisions": false,
 						"live-preview": false
@@ -245,8 +245,8 @@
 					"world": {
 						"x": 40,
 						"y": 40,
-						"width": 24,
-						"height": 24,
+						"width": 32,
+						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

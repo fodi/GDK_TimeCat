@@ -2137,10 +2137,11 @@
 						{
 							"customAction": "changeHealth",
 							"objectClass": "Player",
-							"sid": 262651930357409,
+							"sid": 628177427952531,
 							"parameters": [
 								"5",
-								"1"
+								"YES",
+								"YES"
 							]
 						}
 					],
@@ -2226,10 +2227,11 @@
 						{
 							"customAction": "changeHealth",
 							"objectClass": "Player",
-							"sid": 271520136794333,
+							"sid": 774264035652525,
 							"parameters": [
 								"-9999",
-								"1"
+								"YES",
+								"YES"
 							]
 						}
 					],

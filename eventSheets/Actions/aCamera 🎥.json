@@ -111,6 +111,14 @@
 								"x": "Camera.lookTargetX",
 								"y": "Camera.lookTargetY"
 							}
+						},
+						{
+							"id": "set-listener-object",
+							"objectClass": "Audio",
+							"sid": 262033932030225,
+							"parameters": {
+								"object": "CameraTargetSmooth"
+							}
 						}
 					],
 					"sid": 418819901467012
