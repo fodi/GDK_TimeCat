@@ -165,6 +165,7 @@
 									"id": "compare-eventvar",
 									"objectClass": "System",
 									"sid": 405248619164222,
+									"breakpoint": true,
 									"parameters": {
 										"variable": "item",
 										"comparison": 0,
@@ -385,57 +386,104 @@
 				}
 			],
 			"eventType": "custom-ace-block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Box",
-					"sid": 964979276064499,
-					"parameters": {
-						"instance-variable": "targetPlayerUID",
-						"comparison": 0,
-						"value": "NOTHING"
-					}
-				},
-				{
-					"id": "pick-by-unique-id",
-					"objectClass": "Player",
-					"sid": 661219347208230,
-					"parameters": {
-						"unique-id": "targetPlayerUID"
-					}
-				}
-			],
+			"conditions": [],
 			"actions": [
 				{
 					"type": "comment",
 					"text": "todo"
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Box",
-					"sid": 750050549503752,
-					"parameters": {
-						"instance-variable": "targetPlayerUID",
-						"value": "Player.UID"
-					}
-				},
-				{
-					"customAction": "changeHealth",
-					"objectClass": "Player",
-					"sid": 298413827127733,
-					"parameters": [
-						"-10",
-						"1"
-					]
-				},
-				{
-					"id": "destroy",
-					"objectClass": "Box",
-					"sid": 342668187680926,
-					"breakpoint": true
 				}
 			],
-			"sid": 829199685530026
+			"sid": 829199685530026,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Remove box from player"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 417519179093379,
+							"parameters": {
+								"instance-variable": "boxUID",
+								"comparison": 0,
+								"value": "Box.UID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 862364841000416,
+							"parameters": {
+								"instance-variable": "boxUID",
+								"value": "NOTHING"
+							}
+						}
+					],
+					"sid": 905192819342045
+				},
+				{
+					"eventType": "comment",
+					"text": "Hit target with box"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Box",
+							"sid": 946658408982949,
+							"parameters": {
+								"instance-variable": "targetPlayerUID",
+								"comparison": 0,
+								"value": "NOTHING"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Player",
+							"sid": 190760161557061,
+							"parameters": {
+								"unique-id": "targetPlayerUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Box",
+							"sid": 663356910786334,
+							"parameters": {
+								"instance-variable": "targetPlayerUID",
+								"value": "Player.UID"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "todo"
+						},
+						{
+							"customAction": "changeHealth",
+							"objectClass": "Player",
+							"sid": 944681087055905,
+							"parameters": [
+								"-10",
+								"1"
+							]
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Box",
+							"sid": 335428335328852
+						}
+					],
+					"sid": 467141412402916
+				}
+			]
 		}
 	],
 	"sid": 390916670704356

@@ -1220,6 +1220,50 @@
 								}
 							],
 							"sid": 719144108931133
+						},
+						{
+							"eventType": "comment",
+							"text": "Remove box from player (so it can be picked up by others)"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "Player",
+									"sid": 260584081928382,
+									"parameters": {
+										"child": "Box",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "remove-from-parent",
+									"objectClass": "Box",
+									"sid": 956758235313920
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Box",
+									"sid": 512825058435004,
+									"parameters": {
+										"instance-variable": "carrierPlayerUID",
+										"value": "NOTHING"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Box",
+									"sid": 890072602152412,
+									"parameters": {
+										"instance-variable": "targetPlayerUID",
+										"value": "NOTHING"
+									}
+								}
+							],
+							"sid": 954145671940170
 						}
 					]
 				},
@@ -1254,7 +1298,6 @@
 							"text": "Heal player"
 						},
 						{
-							"bookmark": true,
 							"eventType": "block",
 							"conditions": [
 								{

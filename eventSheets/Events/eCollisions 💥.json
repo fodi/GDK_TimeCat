@@ -6,71 +6,6 @@
 			"conditions": [
 				{
 					"id": "on-collision-with-another-object",
-					"objectClass": "bbPlayer",
-					"sid": 757745250825698,
-					"parameters": {
-						"object": "Projectile"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "Projectile",
-					"sid": 329803771692140
-				}
-			],
-			"sid": 536663966245672,
-			"disabled": true,
-			"children": [
-				{
-					"eventType": "comment",
-					"text": "If player is not invincible, damage them"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-parent",
-							"objectClass": "bbPlayer",
-							"sid": 431181030112072,
-							"parameters": {
-								"parent": "Player",
-								"which": "own"
-							}
-						},
-						{
-							"id": "is-playing",
-							"objectClass": "bbPlayer",
-							"sid": 346134263528405,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "TWEEN_Player_Hurt"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"customAction": "changeHealth",
-							"objectClass": "Player",
-							"sid": 594558821778495,
-							"parameters": [
-								"-Projectile.R_Damage",
-								"1"
-							]
-						}
-					],
-					"sid": 443642061666678,
-					"disabled": true
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-collision-with-another-object",
 					"objectClass": "Player",
 					"sid": 262858438598313,
 					"parameters": {
@@ -144,6 +79,16 @@
 					"sid": 887450830041875,
 					"parameters": {
 						"object": "Box"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player",
+					"sid": 683470593278381,
+					"parameters": {
+						"instance-variable": "health",
+						"comparison": 4,
+						"value": "0"
 					}
 				}
 			],
@@ -248,11 +193,21 @@
 					"children": [
 						{
 							"eventType": "comment",
-							"text": "If box collides with a player other than the carrier and has no target yet. activate"
+							"text": "If a moving box collides with a player other than the carrier and has no target yet. activate"
 						},
 						{
 							"eventType": "block",
 							"conditions": [
+								{
+									"id": "compare-speed",
+									"objectClass": "Box",
+									"sid": 299324332966301,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"comparison": 4,
+										"speed": "0"
+									}
+								},
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Box",
@@ -295,17 +250,26 @@
 			"conditions": [
 				{
 					"id": "on-collision-with-another-object",
-					"objectClass": "Projectile",
-					"sid": 337949399572760,
+					"objectClass": "Box",
+					"sid": 972824945446061,
 					"parameters": {
-						"object": "Box"
+						"object": "Projectile"
 					}
 				}
 			],
 			"actions": [
 				{
 					"type": "comment",
-					"text": "todo"
+					"text": "? todo_maybe buff item while player is holding it"
+				},
+				{
+					"type": "comment",
+					"text": "todo other stuff"
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Projectile",
+					"sid": 113610349786662
 				}
 			],
 			"sid": 823790296874762

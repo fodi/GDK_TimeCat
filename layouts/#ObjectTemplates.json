@@ -10,7 +10,7 @@
 					"type": "3dBox",
 					"properties": {
 						"shape": "box",
-						"z-height": 12,
+						"z-height": 14,
 						"initially-visible": false,
 						"face-back": false,
 						"face-front": true,
@@ -77,8 +77,8 @@
 					"world": {
 						"x": 240,
 						"y": 96,
-						"width": 12,
-						"height": 12,
+						"width": 14,
+						"height": 14,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -1061,8 +1061,8 @@
 					"world": {
 						"x": 240,
 						"y": 96,
-						"width": 12,
-						"height": 12,
+						"width": 14,
+						"height": 14,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
