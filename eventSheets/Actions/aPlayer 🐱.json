@@ -784,9 +784,9 @@
 								{
 									"id": "set-text",
 									"objectClass": "UI_TextSF",
-									"sid": 682337467089712,
+									"sid": 717147827210016,
 									"parameters": {
-										"text": "\"[color=#\" & trim(tokenat(C_CSV_ColorsHex, Player.playerId, \",\")) & \"][scale=0.25]Health[/scale]\" & newline & int(Player.health)"
+										"text": "\"[color=#\" & trim(tokenat(C_CSV_ColorsHex, Player.playerId, \",\")) & \"][scale=0.25]HEALTH[/scale]\" & newline & int(Player.health)"
 									}
 								}
 							],
@@ -1877,6 +1877,20 @@
 									}
 								},
 								{
+									"id": "stop-animation",
+									"objectClass": "bbPlayer",
+									"sid": 402250402643853
+								},
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "bbPlayer",
+									"sid": 288444274820710,
+									"parameters": {
+										"mode": "enable",
+										"effect": "EFFECT_bbPlayer_Brightness"
+									}
+								},
+								{
 									"id": "tween-value",
 									"objectClass": "bbPlayer",
 									"sid": 413866086495375,
@@ -1891,6 +1905,15 @@
 										"loop": "no",
 										"ping-pong": "no",
 										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "bbPlayer",
+									"sid": 510780384699047,
+									"parameters": {
+										"mode": "enable",
+										"effect": "EFFECT_bbPlayer_Grayscale"
 									}
 								},
 								{
@@ -1909,6 +1932,11 @@
 										"ping-pong": "no",
 										"repeat-count": "1"
 									}
+								},
+								{
+									"customAction": "removeBox",
+									"objectClass": "Player",
+									"sid": 839839649040842
 								}
 							],
 							"sid": 696078194109802,
@@ -1944,46 +1972,6 @@
 								{
 									"eventType": "comment",
 									"text": "Remove box from player (so it can be picked up by others)"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-children",
-											"objectClass": "Player",
-											"sid": 267413859436160,
-											"parameters": {
-												"child": "Box",
-												"which": "own"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "remove-from-parent",
-											"objectClass": "Box",
-											"sid": 926565569437107
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Box",
-											"sid": 569943464926341,
-											"parameters": {
-												"instance-variable": "carrierPlayerUID",
-												"value": "NOTHING"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Box",
-											"sid": 890959477436508,
-											"parameters": {
-												"instance-variable": "targetPlayerUID",
-												"value": "NOTHING"
-											}
-										}
-									],
-									"sid": 443655740833957
 								},
 								{
 									"eventType": "comment",
@@ -2313,6 +2301,63 @@
 							]
 						}
 					]
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "removeBox",
+			"objectClass": "Player",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 593731873888407,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "Player",
+							"sid": 267413859436160,
+							"parameters": {
+								"child": "Box",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "remove-from-parent",
+							"objectClass": "Box",
+							"sid": 926565569437107
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Box",
+							"sid": 569943464926341,
+							"parameters": {
+								"instance-variable": "carrierPlayerUID",
+								"value": "NOTHING"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Box",
+							"sid": 890959477436508,
+							"parameters": {
+								"instance-variable": "targetPlayerUID",
+								"value": "NOTHING"
+							}
+						}
+					],
+					"sid": 443655740833957
 				}
 			]
 		},

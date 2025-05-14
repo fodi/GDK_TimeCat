@@ -154,7 +154,7 @@
 						"scale": 0.2,
 						"character-spacing": 0,
 						"line-height": 0,
-						"horizontal-alignment": "left",
+						"horizontal-alignment": "center",
 						"vertical-alignment": "bottom",
 						"wrapping": "word",
 						"initially-visible": true,
@@ -208,7 +208,7 @@
 					"locked": false,
 					"world": {
 						"x": 10,
-						"y": 150,
+						"y": 158,
 						"width": 620,
 						"height": 200,
 						"originX": 0,
@@ -270,16 +270,16 @@
 				{
 					"type": "UI_TextSF",
 					"properties": {
-						"text": "[scale=0.3][color=#d1030a]JOIN[/color]\nÄ «»",
+						"text": "[scale=0.25][color=#d1030a]JOIN[/color][/scale]\nÄ «»",
 						"enable-bbcode": true,
 						"character-width": 30,
 						"character-height": 30,
 						"character-set": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~Ä«»Ł",
 						"spacing-data": "[[12,\" \"],[24,\"!\\\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\"]]",
-						"scale": 0.5,
+						"scale": 0.4,
 						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
+						"line-height": 1,
+						"horizontal-alignment": "left",
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
@@ -304,9 +304,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 230,
-						"y": 0,
-						"width": 90,
+						"x": 44,
+						"y": 10,
+						"width": 64,
 						"height": 30,
 						"originX": 0,
 						"originY": 0,
@@ -323,16 +323,16 @@
 				{
 					"type": "UI_TextSF",
 					"properties": {
-						"text": "[scale=0.3][color=#2baf2b]JOIN[/color]\nÄ Ł",
+						"text": "[scale=0.25][color=#2baf2b]JOIN[/color][/scale]\nÄ Ł",
 						"enable-bbcode": true,
 						"character-width": 30,
 						"character-height": 30,
 						"character-set": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~Ä«»Ł",
 						"spacing-data": "[[12,\" \"],[24,\"!\\\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\"]]",
-						"scale": 0.5,
+						"scale": 0.4,
 						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
+						"line-height": 1,
+						"horizontal-alignment": "right",
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
@@ -357,9 +357,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 320,
-						"y": 0,
-						"width": 90,
+						"x": 532,
+						"y": 10,
+						"width": 64,
 						"height": 30,
 						"originX": 0,
 						"originY": 0,
@@ -376,16 +376,16 @@
 				{
 					"type": "UI_TextSF",
 					"properties": {
-						"text": "[scale=0.3][color=#ffc107]JOIN[/color]\nÄ",
+						"text": "[scale=0.25][color=#ffc107]JOIN[/color][/scale]\nÄ",
 						"enable-bbcode": true,
 						"character-width": 30,
 						"character-height": 30,
 						"character-set": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~Ä«»Ł",
 						"spacing-data": "[[12,\" \"],[24,\"!\\\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\"]]",
-						"scale": 0.5,
+						"scale": 0.4,
 						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
+						"line-height": 1,
+						"horizontal-alignment": "left",
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
@@ -410,9 +410,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 140,
-						"y": 0,
-						"width": 90,
+						"x": 44,
+						"y": 322,
+						"width": 64,
 						"height": 30,
 						"originX": 0,
 						"originY": 0,
@@ -429,16 +429,16 @@
 				{
 					"type": "UI_TextSF",
 					"properties": {
-						"text": "[scale=0.3][color=#9c27b0]JOIN[/color]\nÄ",
+						"text": "[scale=0.25][color=#9c27b0]JOIN[/color][/scale]\nÄ",
 						"enable-bbcode": true,
 						"character-width": 30,
 						"character-height": 30,
 						"character-set": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~Ä«»Ł",
 						"spacing-data": "[[12,\" \"],[24,\"!\\\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\"]]",
-						"scale": 0.5,
+						"scale": 0.4,
 						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
+						"line-height": 1,
+						"horizontal-alignment": "right",
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
@@ -463,12 +463,172 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 410,
-						"y": 0,
-						"width": 90,
+						"x": 532,
+						"y": 322,
+						"width": 64,
 						"height": 30,
 						"originX": 0,
 						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UI_Images",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Players",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 48,
+					"sid": 413678160918218,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 413678160918218,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 24,
+						"y": 24,
+						"width": 35,
+						"height": 35,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UI_Images",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Players",
+						"initial-frame": 1,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 49,
+					"sid": 144239580205818,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 144239580205818,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 616,
+						"y": 24,
+						"width": 35,
+						"height": 35,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UI_Images",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Players",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 50,
+					"sid": 278331386383714,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 278331386383714,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 24,
+						"y": 336,
+						"width": 35,
+						"height": 35,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UI_Images",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Players",
+						"initial-frame": 3,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 51,
+					"sid": 467856491145831,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 467856491145831,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 616,
+						"y": 336,
+						"width": 35,
+						"height": 35,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,

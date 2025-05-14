@@ -2244,19 +2244,59 @@
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 534131565185211,
+					"children": [
 						{
-							"customAction": "changeHealth",
-							"objectClass": "Player",
-							"sid": 628177427952531,
-							"parameters": [
-								"5",
-								"YES",
-								"YES"
-							]
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 623042786198422,
+									"parameters": {
+										"key": 16
+									}
+								}
+							],
+							"actions": [
+								{
+									"customAction": "changeHealth",
+									"objectClass": "Player",
+									"sid": 101095062808219,
+									"parameters": [
+										"100",
+										"YES",
+										"YES"
+									]
+								}
+							],
+							"sid": 667711142532795
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 233255705759614
+								}
+							],
+							"actions": [
+								{
+									"customAction": "changeHealth",
+									"objectClass": "Player",
+									"sid": 628177427952531,
+									"parameters": [
+										"5",
+										"YES",
+										"YES"
+									]
+								}
+							],
+							"sid": 108090257441285
 						}
-					],
-					"sid": 534131565185211
+					]
 				},
 				{
 					"eventType": "block",

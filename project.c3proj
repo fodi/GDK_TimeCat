@@ -259,7 +259,8 @@
 					"UI_TextSF",
 					"UI_Icons",
 					"UI_BlurbSF",
-					"UI_Rectangle"
+					"UI_Rectangle",
+					"UI_Images"
 				],
 				"subfolders": [],
 				"name": "UI"
@@ -919,7 +920,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "36c",
+		"version": "37c",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",
