@@ -998,7 +998,8 @@
 						"R_OverlapCheckTIme": 0.2,
 						"item": "",
 						"carrierPlayerUID": -1,
-						"targetPlayerUID": -1
+						"targetPlayerUID": -1,
+						"damage": 0
 					},
 					"behaviors": {
 						"Bullet": {
@@ -1143,7 +1144,7 @@
 					}
 				},
 				{
-					"type": "CameraTarget",
+					"type": "CameraTargetSmooth",
 					"properties": {
 						"initially-visible": false,
 						"initial-animation": "Animation 1",
@@ -1239,7 +1240,9 @@
 						"R_Shoot_Interval_Max": 6,
 						"R_Projectile_MovementSpeed": 150,
 						"R_Projectile_MovementSpeed_Increase": 20,
-						"R_Projectile_MovementSpeed_Max": 400
+						"R_Projectile_MovementSpeed_Max": 400,
+						"R_Health_Max": 1,
+						"health": 0
 					},
 					"behaviors": {
 						"Orbit": {

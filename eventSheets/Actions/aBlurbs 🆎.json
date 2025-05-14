@@ -45,7 +45,7 @@
 			"actions": [
 				{
 					"type": "comment",
-					"text": "todo reuse existing blurb instead of spawning new?"
+					"text": "todo_opt reuse existing blurb instead of spawning new?"
 				},
 				{
 					"id": "spawn-another-object",

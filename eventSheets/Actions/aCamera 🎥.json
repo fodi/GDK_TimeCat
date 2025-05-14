@@ -97,7 +97,7 @@
 							"objectClass": "Camera",
 							"sid": 587121128936861,
 							"parameters": {
-								"child": "CameraTarget",
+								"child": "CameraTargetSmooth",
 								"which": "own"
 							}
 						}
@@ -105,7 +105,7 @@
 					"actions": [
 						{
 							"id": "set-position",
-							"objectClass": "CameraTarget",
+							"objectClass": "CameraTargetSmooth",
 							"sid": 315916648252093,
 							"parameters": {
 								"x": "Camera.lookTargetX",
@@ -129,7 +129,19 @@
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"id": "move-to-position",
+					"objectClass": "CameraTargetSmooth",
+					"sid": 817086063577289,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"x": "Camera.lookTargetX",
+						"y": "Camera.lookTargetY",
+						"mode": "direct"
+					}
+				}
+			],
 			"sid": 584541642494638,
 			"children": [
 				{
@@ -141,10 +153,6 @@
 					"isStatic": false,
 					"isConstant": false,
 					"sid": 783112164049340
-				},
-				{
-					"eventType": "comment",
-					"text": "todo update even if there are no players"
 				},
 				{
 					"eventType": "block",
@@ -235,7 +243,7 @@
 									"objectClass": "Camera",
 									"sid": 782009283954518,
 									"parameters": {
-										"child": "CameraTarget",
+										"child": "CameraTargetSmooth",
 										"which": "own"
 									}
 								}
@@ -258,52 +266,128 @@
 										"instance-variable": "lookTargetY",
 										"value": "playerYSum / playerCount"
 									}
-								},
-								{
-									"id": "look-at-position",
-									"objectClass": "3DCamera",
-									"sid": 894462816221694,
-									"disabled": true,
-									"parameters": {
-										"cam-x": "Camera.X",
-										"cam-y": "Camera.Y",
-										"cam-z": "Camera.ZElevation",
-										"look-x": "Functions.expDecay(3DCamera.LookX, Camera.lookTargetX, Camera.R_SmoothingFactor)",
-										"look-y": "Functions.expDecay(3DCamera.LookY, Camera.lookTargetY, Camera.R_SmoothingFactor)",
-										"look-z": "0",
-										"up-x": "0",
-										"up-y": "0",
-										"up-z": "1"
-									}
-								},
-								{
-									"id": "look-at-position",
-									"objectClass": "3DCamera",
-									"sid": 501566046439374,
-									"parameters": {
-										"cam-x": "Camera.X",
-										"cam-y": "Camera.Y",
-										"cam-z": "Camera.ZElevation",
-										"look-x": "CameraTarget.X",
-										"look-y": "CameraTarget.Y",
-										"look-z": "CameraTarget.ZElevation",
-										"up-x": "0",
-										"up-y": "0",
-										"up-z": "1"
-									}
-								},
-								{
-									"id": "set-field-of-view",
-									"objectClass": "3DCamera",
-									"sid": 197440384738089,
-									"parameters": {
-										"fov": "Camera.R_FieldOfView"
-									}
 								}
 							],
 							"sid": 303733081738012
+						},
+						{
+							"eventType": "comment",
+							"text": "todo mn / maybe use MoveTo on camera too"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "Camera",
+									"sid": 357264625926651,
+									"parameters": {
+										"comparison": 2,
+										"x-co-ordinate": "Camera.lookTargetX - 100"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-x",
+									"objectClass": "Camera",
+									"sid": 857721525929831,
+									"parameters": {
+										"x": "Functions.expDecay(Self.X, Self.lookTargetX - 100, 5)"
+									}
+								}
+							],
+							"sid": 554122175899753
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "Camera",
+									"sid": 601307846231743,
+									"parameters": {
+										"comparison": 4,
+										"x-co-ordinate": "Camera.lookTargetX + 100"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-x",
+									"objectClass": "Camera",
+									"sid": 254173439138667,
+									"parameters": {
+										"x": "Functions.expDecay(Self.X, Self.lookTargetX + 100, 5)"
+									}
+								}
+							],
+							"sid": 370049057508964
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-y",
+									"objectClass": "Camera",
+									"sid": 779195130940290,
+									"parameters": {
+										"y": "Functions.expDecay(Self.Y, Self.lookTargetY + Self.R_YInit, 5)"
+									}
+								}
+							],
+							"sid": 590176531726579
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "look-at-position",
+							"objectClass": "3DCamera",
+							"sid": 993435486498227,
+							"disabled": true,
+							"parameters": {
+								"cam-x": "Camera.X",
+								"cam-y": "Camera.Y",
+								"cam-z": "Camera.ZElevation",
+								"look-x": "Functions.expDecay(3DCamera.LookX, Camera.lookTargetX, Camera.R_SmoothingFactor)",
+								"look-y": "Functions.expDecay(3DCamera.LookY, Camera.lookTargetY, Camera.R_SmoothingFactor)",
+								"look-z": "0",
+								"up-x": "0",
+								"up-y": "0",
+								"up-z": "1"
+							}
+						},
+						{
+							"id": "look-at-position",
+							"objectClass": "3DCamera",
+							"sid": 686768156316486,
+							"parameters": {
+								"cam-x": "Camera.X",
+								"cam-y": "Camera.Y",
+								"cam-z": "Camera.ZElevation",
+								"look-x": "CameraTargetSmooth.X",
+								"look-y": "CameraTargetSmooth.Y",
+								"look-z": "CameraTargetSmooth.ZElevation",
+								"up-x": "0",
+								"up-y": "0",
+								"up-z": "1"
+							}
+						},
+						{
+							"id": "set-field-of-view",
+							"objectClass": "3DCamera",
+							"sid": 291910530311444,
+							"parameters": {
+								"fov": "Camera.R_FieldOfView"
+							}
+						}
+					],
+					"sid": 897674794790431
 				}
 			]
 		}

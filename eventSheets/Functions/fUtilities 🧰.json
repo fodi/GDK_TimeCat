@@ -223,7 +223,9 @@
 			"actions": [
 				{
 					"type": "script",
-					"script": "runtime.setReturnValue(runtime.objects[localVars[\"name\"]] ? 1 : 0)"
+					"script": [
+						"runtime.setReturnValue(runtime.objects[localVars[\"name\"]] ? 1 : 0)"
+					]
 				}
 			],
 			"sid": 985779994453727
@@ -294,17 +296,26 @@
 				{
 					"type": "comment",
 					"text": "based on https://www.youtube.com/watch?v=LSNQuFEDOyQ"
-				},
-				{
-					"id": "set-function-return-value",
-					"objectClass": "Functions",
-					"sid": 643918058300636,
-					"parameters": {
-						"value": "to + (from - to) * exp(-decay * dt)"
-					}
 				}
 			],
-			"sid": 135747702409854
+			"sid": 135747702409854,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 880282940666285,
+							"parameters": {
+								"value": "to + (from - to) * exp(-decay * dt)"
+							}
+						}
+					],
+					"sid": 351123785643453
+				}
+			]
 		},
 		{
 			"functionName": "hex2color",
@@ -328,15 +339,6 @@
 				{
 					"type": "comment",
 					"text": "Function by R0J0hound https://www.construct.net/en/forum/construct-3/how-do-i-8/hex-colour-values-code-179603"
-				},
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 223438399487418,
-					"parameters": {
-						"variable": "hex",
-						"value": "left(\"000000\", max(0, 6-len(hex)))"
-					}
 				}
 			],
 			"sid": 180752882577265,
@@ -355,6 +357,15 @@
 					"eventType": "block",
 					"conditions": [],
 					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 393199643174450,
+							"parameters": {
+								"variable": "hex",
+								"value": "left(\"000000\", max(0, 6-len(hex)))"
+							}
+						},
 						{
 							"id": "set-function-return-value",
 							"objectClass": "Functions",
@@ -538,6 +549,43 @@
 				}
 			],
 			"sid": 562801702725526
+		},
+		{
+			"functionName": "roundToDpPad",
+			"functionDescription": "Round to decimal points with padded decimals",
+			"functionCategory": "",
+			"functionReturnType": "string",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "value",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 673921336084401
+				},
+				{
+					"name": "padding",
+					"type": "number",
+					"initialValue": "1",
+					"comment": "",
+					"sid": 593859976377036
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-function-return-value",
+					"objectClass": "Functions",
+					"sid": 258924691791325,
+					"parameters": {
+						"value": "int(value) & \".\" & zeropad(\n  int(\n    (value - int(value)) * padding * 10\n  )\n, padding)"
+					}
+				}
+			],
+			"sid": 678950212873952
 		}
 	],
 	"sid": 622480337843055

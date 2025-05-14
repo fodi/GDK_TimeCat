@@ -37,6 +37,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 344653289956076
+		},
+		{
+			"name": "R_Health_Max",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 140754666415763
+		},
+		{
+			"name": "health",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 729759180186462
 		}
 	],
 	"behaviorTypes": [

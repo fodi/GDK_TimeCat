@@ -3,6 +3,78 @@
 	"events": [
 		{
 			"aceType": "action",
+			"aceName": "spawnAll",
+			"objectClass": "Wall",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 470342704248425,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Spawn four walls at level bounds"
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"customAction": "spawn",
+							"objectClass": "Wall",
+							"sid": 787370498151398,
+							"parameters": [
+								"midX",
+								"-C_Wall_Thickness * 0.5",
+								"R_Level_Columns * C_Tile_Size + C_Wall_Thickness * 2",
+								"C_Wall_Thickness"
+							]
+						},
+						{
+							"customAction": "spawn",
+							"objectClass": "Wall",
+							"sid": 947307769849625,
+							"parameters": [
+								"midX",
+								"R_Level_Rows * C_Tile_Size + C_Wall_Thickness * 0.5",
+								"R_Level_Columns * C_Tile_Size + C_Wall_Thickness * 2",
+								"C_Wall_Thickness"
+							]
+						},
+						{
+							"customAction": "spawn",
+							"objectClass": "Wall",
+							"sid": 960927756203816,
+							"parameters": [
+								"-C_Wall_Thickness * 0.5",
+								"midY",
+								"C_Wall_Thickness",
+								"R_Level_Rows * C_Tile_Size + C_Wall_Thickness * 2"
+							]
+						},
+						{
+							"customAction": "spawn",
+							"objectClass": "Wall",
+							"sid": 787830456411782,
+							"parameters": [
+								"R_Level_Columns * C_Tile_Size + C_Wall_Thickness * 0.5",
+								"midY",
+								"C_Wall_Thickness",
+								"R_Level_Rows * C_Tile_Size + C_Wall_Thickness * 2"
+							]
+						}
+					],
+					"sid": 357043979579730
+				}
+			]
+		},
+		{
+			"aceType": "action",
 			"aceName": "spawn",
 			"objectClass": "Wall",
 			"functionDescription": "",

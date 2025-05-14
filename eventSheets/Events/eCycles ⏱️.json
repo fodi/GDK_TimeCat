@@ -34,22 +34,38 @@
 					"sid": 956245024598579
 				},
 				{
-					"id": "move-to-position",
-					"objectClass": "CameraTarget",
-					"sid": 817086063577289,
-					"behaviorType": "MoveTo",
-					"parameters": {
-						"x": "Camera.lookTargetX",
-						"y": "Camera.lookTargetY",
-						"mode": "direct"
-					}
+					"customAction": "tick",
+					"objectClass": "UI_BlurbSF",
+					"sid": 617896229175985
 				}
 			],
 			"sid": 559613915501580,
 			"children": [
 				{
-					"eventType": "comment",
-					"text": "tick all players"
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UI_TextSF",
+							"sid": 778199589577168,
+							"parameters": {
+								"instance-variable": "role",
+								"comparison": 0,
+								"value": "ROLE_DevLog"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UI_TextSF",
+							"sid": 670481936881243,
+							"parameters": {
+								"text": "\"Camera @ \" & round(Camera.X) & \", \" & round(Camera.Y) & \", \" & round(Camera.ZElevation) & \" | FoV: \" & Camera.R_FieldOfView & newline & \nFunctions.getDevInfo(\", \")"
+							}
+						}
+					],
+					"sid": 916679967059463
 				},
 				{
 					"eventType": "block",
@@ -67,74 +83,10 @@
 						{
 							"customAction": "tick",
 							"objectClass": "Player",
-							"sid": 936314989633155
+							"sid": 843651056754948
 						}
 					],
 					"sid": 832504992604495
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "UI_TextSF",
-							"sid": 593958022226840,
-							"parameters": {
-								"instance-variable": "role",
-								"comparison": 0,
-								"value": "ROLE_DevLog"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "UI_TextSF",
-							"sid": 397491524173782,
-							"parameters": {
-								"text": "\"Camera @ \" & round(Camera.X) & \", \" & round(Camera.Y) & \", \" & round(Camera.ZElevation) & \" | FoV: \" & Camera.R_FieldOfView & newline & \nFunctions.getDevInfo(\", \")"
-							}
-						}
-					],
-					"sid": 417440196871966
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for-each",
-							"objectClass": "System",
-							"sid": 357624256446258,
-							"parameters": {
-								"object": "UI_BlurbSF"
-							}
-						},
-						{
-							"id": "pick-parent",
-							"objectClass": "UI_BlurbSF",
-							"sid": 267774022347085,
-							"parameters": {
-								"parent": "fBlurbSpawners",
-								"which": "own"
-							}
-						}
-					],
-					"actions": [
-						{
-							"type": "comment",
-							"text": "todo tick CA"
-						},
-						{
-							"id": "set-position",
-							"objectClass": "UI_BlurbSF",
-							"sid": 331654069432828,
-							"parameters": {
-								"x": "3DCamera.LayerToLayerX(LAYER_Main, LAYER_UI, fBlurbSpawners.X, fBlurbSpawners.Y, fBlurbSpawners.ZElevation + Self.zOffset + Self.Tween.Value(TWEEN_Blurb_ZElevation))",
-								"y": "3DCamera.LayerToLayerY(LAYER_Main, LAYER_UI, fBlurbSpawners.X, fBlurbSpawners.Y, fBlurbSpawners.ZElevation + Self.zOffset + Self.Tween.Value(TWEEN_Blurb_ZElevation))"
-							}
-						}
-					],
-					"sid": 153240553284412
 				}
 			]
 		}

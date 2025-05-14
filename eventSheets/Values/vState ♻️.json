@@ -3,11 +3,11 @@
 	"events": [
 		{
 			"eventType": "comment",
-			"text": "Rules (can be overridden)"
+			"text": "Level rules"
 		},
 		{
 			"eventType": "variable",
-			"name": "R_ColumnCount",
+			"name": "R_Level_Columns",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",
@@ -17,7 +17,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "R_RowCount",
+			"name": "R_Level_Rows",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",

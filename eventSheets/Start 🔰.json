@@ -19,7 +19,16 @@
 			"children": [
 				{
 					"eventType": "script",
-					"script": "const paramsString = window.location.search\nconst searchParams = new URLSearchParams(paramsString)\nconsole.log(searchParams)\nruntime.objects.ConfigURLParams.getFirstInstance().setJsonDataCopy(Object.fromEntries(searchParams))\n\n\n//runtime.objects.URLParams.getFirstInstance().setJsonString('{\"pr_speed\":50,\"pl_health\":25,\"pl_speed\":50,\"rows\":6,\"cols\":3}')\n"
+					"script": [
+						"const paramsString = window.location.search",
+						"const searchParams = new URLSearchParams(paramsString)",
+						"console.log(searchParams)",
+						"runtime.objects.ConfigURLParams.getFirstInstance().setJsonDataCopy(Object.fromEntries(searchParams))",
+						"",
+						"",
+						"//runtime.objects.URLParams.getFirstInstance().setJsonString('{\"pr_speed\":50,\"pl_health\":25,\"pl_speed\":50,\"rows\":6,\"cols\":3}')",
+						""
+					]
 				},
 				{
 					"eventType": "block",

@@ -12,14 +12,14 @@
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
-					"name": "columnCount",
+					"name": "columns",
 					"type": "number",
 					"initialValue": "0",
 					"comment": "",
 					"sid": 718533506202646
 				},
 				{
-					"name": "rowCount",
+					"name": "rows",
 					"type": "number",
 					"initialValue": "0",
 					"comment": "",
@@ -32,10 +32,6 @@
 			"sid": 189491113149965,
 			"children": [
 				{
-					"eventType": "comment",
-					"text": "todo check for odd row*column count"
-				},
-				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -45,7 +41,7 @@
 							"parameters": {
 								"name": "W_X",
 								"start-index": "0",
-								"end-index": "columnCOunt - 1"
+								"end-index": "columns - 1"
 							}
 						},
 						{
@@ -55,7 +51,7 @@
 							"parameters": {
 								"name": "W_Y",
 								"start-index": "0",
-								"end-index": "rowCount - 1"
+								"end-index": "rows - 1"
 							}
 						}
 					],
@@ -148,7 +144,7 @@
 							"objectClass": "System",
 							"sid": 906627507301000,
 							"parameters": {
-								"count": "ceil(R_ColumnCount * R_RowCount * 0.5)"
+								"count": "ceil(R_Level_Columns * R_Level_Rows * 0.5)"
 							}
 						},
 						{
@@ -343,6 +339,10 @@
 					]
 				},
 				{
+					"eventType": "comment",
+					"text": "Remove last odd tile"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -373,7 +373,31 @@
 							}
 						}
 					],
-					"sid": 678843425255413
+					"sid": 678843425255413,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "Tile",
+									"sid": 331559827069456,
+									"parameters": {
+										"child": "Symbol",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Symbol",
+									"sid": 612331511419696
+								}
+							],
+							"sid": 849495681621114
+						}
+					]
 				}
 			]
 		},

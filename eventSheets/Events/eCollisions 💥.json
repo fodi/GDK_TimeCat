@@ -271,12 +271,6 @@
 								}
 							],
 							"sid": 655831819948262
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 942339313052663
 						}
 					]
 				}
@@ -295,14 +289,6 @@
 				}
 			],
 			"actions": [
-				{
-					"type": "comment",
-					"text": "? todo_maybe buff item while player is holding it"
-				},
-				{
-					"type": "comment",
-					"text": "todo other stuff"
-				},
 				{
 					"id": "destroy",
 					"objectClass": "Projectile",
@@ -364,13 +350,20 @@
 			],
 			"actions": [
 				{
-					"type": "comment",
-					"text": "todo"
+					"customAction": "changeHealth",
+					"objectClass": "Cannon",
+					"sid": 667512032398163,
+					"parameters": [
+						"-Box.damage"
+					]
 				},
 				{
-					"id": "destroy",
-					"objectClass": "Cannon",
-					"sid": 984918656763460
+					"customAction": "remove",
+					"objectClass": "Box",
+					"sid": 449035902094566,
+					"parameters": [
+						"YES"
+					]
 				}
 			],
 			"sid": 442998353580713

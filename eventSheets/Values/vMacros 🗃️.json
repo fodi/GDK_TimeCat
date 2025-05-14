@@ -381,6 +381,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "PARAM_Projectile_SpawnTime_Max",
+			"type": "string",
+			"initialValue": "pr_spawn_time_max",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 866637635726075
+		},
+		{
+			"eventType": "variable",
 			"name": "PARAM_Symbol_Opacity",
 			"type": "string",
 			"initialValue": "sy_opacity",
@@ -388,16 +398,6 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 215960619217258
-		},
-		{
-			"eventType": "variable",
-			"name": "PARAM_Projectile_SpawnTime_Max",
-			"type": "string",
-			"initialValue": "pr_spawn_time_max",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 884626165339527
 		},
 		{
 			"eventType": "comment",

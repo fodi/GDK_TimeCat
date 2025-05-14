@@ -11,7 +11,6 @@
 			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
-			"bookmark": true,
 			"eventType": "custom-ace-block",
 			"conditions": [],
 			"actions": [
@@ -47,15 +46,6 @@
 					}
 				},
 				{
-					"id": "set-max-speed",
-					"objectClass": "Player",
-					"sid": 976554113834595,
-					"behaviorType": "8Direction",
-					"parameters": {
-						"max-speed": "Functions.Config_getNumber(PARAM_Player_MovementSpeed)"
-					}
-				},
-				{
 					"type": "comment",
 					"text": "Initialize "
 				},
@@ -76,10 +66,6 @@
 					"parameters": {
 						"max-speed": "Self.R_MovementSpeed_Normal"
 					}
-				},
-				{
-					"type": "comment",
-					"text": "Override max movement speed"
 				}
 			],
 			"sid": 846445072912984,
@@ -294,7 +280,7 @@
 							"children": [
 								{
 									"eventType": "comment",
-									"text": "todo maybe rewrite a bit"
+									"text": "todo_rewrite"
 								},
 								{
 									"eventType": "block",
@@ -673,7 +659,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "todo optimize updates"
+					"text": "todo_optimize updates"
 				},
 				{
 					"eventType": "block",
@@ -703,9 +689,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "UI_TextSF",
-							"sid": 508113949884363,
+							"sid": 599875192231666,
 							"parameters": {
-								"text": "\"[color=#\" & trim(tokenat(C_CSV_ColorsHex, Player.playerId, \",\")) & \"][scale=0.25]Health[/scale]\" & newline & roundToDp(Player.health, 1)"
+								"text": "\"[color=#\" & trim(tokenat(C_CSV_ColorsHex, Player.playerId, \",\")) & \"][scale=0.25]Health[/scale]\" & newline & Functions.roundToDpPad(Player.health, 1)"
 							}
 						}
 					],
@@ -1163,10 +1149,6 @@
 			"actions": [],
 			"sid": 271357122283101,
 			"children": [
-				{
-					"eventType": "comment",
-					"text": "todo allow player to immediately continue turning tiles, at least after a pair"
-				},
 				{
 					"eventType": "variable",
 					"name": "healAmount",
@@ -1698,6 +1680,7 @@
 									"id": "log",
 									"objectClass": "Browser",
 									"sid": 862403355241923,
+									"disabled": true,
 									"parameters": {
 										"type": "log",
 										"message": "\"Player healing: \" & amount"
@@ -1733,10 +1716,6 @@
 							],
 							"actions": [
 								{
-									"type": "comment",
-									"text": "todo use separate timer / other effect?"
-								},
-								{
 									"id": "tween-value",
 									"objectClass": "bbPlayer",
 									"sid": 445765062360582,
@@ -1769,6 +1748,92 @@
 							"sid": 276312573508081
 						}
 					]
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "closeTiles",
+			"objectClass": "Player",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 323014139554089,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Tile",
+							"sid": 716484355461441,
+							"parameters": {
+								"unique-id": "Player.tileUID1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "close",
+							"objectClass": "Tile",
+							"customActionObjectClass": "fTile",
+							"sid": 256468709778806
+						}
+					],
+					"sid": 850100583965396
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Tile",
+							"sid": 451585866593051,
+							"parameters": {
+								"unique-id": "Player.tileUID2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "close",
+							"objectClass": "Tile",
+							"customActionObjectClass": "fTile",
+							"sid": 364559990204727
+						}
+					],
+					"sid": 233600067202867
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 997507963423812,
+							"parameters": {
+								"instance-variable": "tileUID1",
+								"value": "NOTHING"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 155399988889392,
+							"parameters": {
+								"instance-variable": "tileUID2",
+								"value": "NOTHING"
+							}
+						}
+					],
+					"sid": 650097116534947
 				}
 			]
 		}

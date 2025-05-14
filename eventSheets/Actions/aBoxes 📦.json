@@ -57,6 +57,19 @@
 						"instance-variable": "item",
 						"value": "item"
 					}
+				},
+				{
+					"type": "comment",
+					"text": "todo mn"
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Box",
+					"sid": 867058627364059,
+					"parameters": {
+						"instance-variable": "damage",
+						"value": "5"
+					}
 				}
 			],
 			"sid": 319187247191167,
@@ -153,6 +166,19 @@
 									"parameters": {
 										"face": "bottom",
 										"object": "txBoxProjectile"
+									}
+								},
+								{
+									"type": "comment",
+									"text": "todo mn"
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Box",
+									"sid": 209635289887366,
+									"parameters": {
+										"instance-variable": "damage",
+										"value": "10"
 									}
 								}
 							],
@@ -449,10 +475,6 @@
 					"text": "Hit target with box"
 				},
 				{
-					"eventType": "comment",
-					"text": "todo MNs"
-				},
-				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -485,22 +507,53 @@
 							}
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 494658990031172,
-							"parameters": {
-								"variable": "healthChange",
-								"value": "-5"
-							}
-						},
-						{
 							"id": "destroy",
 							"objectClass": "Box",
-							"sid": 335428335328852
+							"sid": 335428335328852,
+							"disabled": true
+						},
+						{
+							"customAction": "remove",
+							"objectClass": "Box",
+							"sid": 478619969629749,
+							"parameters": [
+								"YES"
+							]
 						}
 					],
 					"sid": 467141412402916,
 					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Box",
+									"sid": 952134115743955,
+									"parameters": {
+										"instance-variable": "damage",
+										"comparison": 1,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"customAction": "changeHealth",
+									"objectClass": "Player",
+									"sid": 980244485224060,
+									"parameters": [
+										"-Box.damage",
+										"1"
+									]
+								}
+							],
+							"sid": 698189212148797
+						},
+						{
+							"eventType": "comment",
+							"text": "todo? item: steal life"
+						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -515,18 +568,13 @@
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "subtract-from-eventvar",
-									"objectClass": "System",
-									"sid": 250227885546743,
-									"parameters": {
-										"variable": "healthChange",
-										"value": "5"
-									}
-								}
-							],
-							"sid": 453543338650154
+							"actions": [],
+							"sid": 453543338650154,
+							"disabled": true
+						},
+						{
+							"eventType": "comment",
+							"text": "todo MNs"
 						},
 						{
 							"eventType": "block",
@@ -616,41 +664,6 @@
 							"sid": 268051316456127
 						}
 					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-unique-id",
-							"objectClass": "Player",
-							"sid": 945062289617946,
-							"parameters": {
-								"unique-id": "hitPlayerUID"
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 599260514533288,
-							"parameters": {
-								"variable": "healthChange",
-								"comparison": 1,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"customAction": "changeHealth",
-							"objectClass": "Player",
-							"sid": 394963568558611,
-							"parameters": [
-								"healthChange",
-								"1"
-							]
-						}
-					],
-					"sid": 498569856088046
 				}
 			]
 		},
@@ -666,26 +679,17 @@
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Fade out & destroy boxes after they are far away"
+				}
+			],
 			"sid": 623953325643464,
 			"children": [
 				{
-					"eventType": "comment",
-					"text": "Fade out & destroy boxes after they are far away"
-				},
-				{
 					"eventType": "block",
 					"conditions": [
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Box",
-							"sid": 432251041106799,
-							"disabled": true,
-							"parameters": {
-								"object": "Tile"
-							},
-							"isInverted": true
-						},
 						{
 							"id": "pick-by-comparison",
 							"objectClass": "System",
@@ -696,99 +700,161 @@
 								"comparison": 4,
 								"value": "distanceFar"
 							}
-						},
+						}
+					],
+					"actions": [
 						{
-							"id": "pick-children",
+							"customAction": "remove",
 							"objectClass": "Box",
-							"sid": 532752884598661,
+							"sid": 158427096607880,
+							"parameters": [
+								"NO"
+							]
+						}
+					],
+					"sid": 909883214796302
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "remove",
+			"objectClass": "Box",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "stop",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 533690192460884
+				}
+			],
+			"eventType": "custom-ace-block",
+			"conditions": [
+				{
+					"id": "pick-children",
+					"objectClass": "Box",
+					"sid": 910697314629131,
+					"parameters": {
+						"child": "3dBox",
+						"which": "own"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-timer",
+					"objectClass": "Box",
+					"sid": 638770165200731,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "TIMER_Box_FarCheck"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Box",
+					"sid": 145213199465830,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-face-image",
+					"objectClass": "3dBox",
+					"sid": 919437639675124,
+					"parameters": {
+						"face": "front",
+						"image": "front"
+					}
+				},
+				{
+					"id": "set-face-image",
+					"objectClass": "3dBox",
+					"sid": 822810127192937,
+					"parameters": {
+						"face": "left",
+						"image": "left"
+					}
+				},
+				{
+					"id": "set-face-image",
+					"objectClass": "3dBox",
+					"sid": 675466362348237,
+					"parameters": {
+						"face": "right",
+						"image": "right"
+					}
+				},
+				{
+					"id": "set-face-image",
+					"objectClass": "3dBox",
+					"sid": 173593070660205,
+					"parameters": {
+						"face": "top",
+						"image": "top"
+					}
+				},
+				{
+					"id": "set-face-image",
+					"objectClass": "3dBox",
+					"sid": 797450096059839,
+					"parameters": {
+						"face": "bottom",
+						"image": "bottom"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "3dBox",
+					"sid": 458939172527559,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "TWEEN_3dBox_Disappear",
+						"property": "offsetOpacity",
+						"end-value": "0",
+						"time": "0.5",
+						"ease": "easeoutcubic",
+						"destroy-on-complete": "yes",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				}
+			],
+			"sid": 749560455039560,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 748531769675062,
 							"parameters": {
-								"child": "3dBox",
-								"which": "own"
+								"variable": "stop",
+								"comparison": 0,
+								"value": "YES"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "stop-timer",
+							"id": "set-enabled",
 							"objectClass": "Box",
-							"sid": 420190677940960,
-							"behaviorType": "Timer",
+							"sid": 911293383594171,
+							"behaviorType": "Bullet",
 							"parameters": {
-								"tag": "TIMER_Box_FarCheck"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "Box",
-							"sid": 369576443904449,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-face-image",
-							"objectClass": "3dBox",
-							"sid": 836528410464860,
-							"parameters": {
-								"face": "front",
-								"image": "front"
-							}
-						},
-						{
-							"id": "set-face-image",
-							"objectClass": "3dBox",
-							"sid": 976045222827986,
-							"parameters": {
-								"face": "left",
-								"image": "left"
-							}
-						},
-						{
-							"id": "set-face-image",
-							"objectClass": "3dBox",
-							"sid": 383603306456261,
-							"parameters": {
-								"face": "right",
-								"image": "right"
-							}
-						},
-						{
-							"id": "set-face-image",
-							"objectClass": "3dBox",
-							"sid": 160099511269611,
-							"parameters": {
-								"face": "top",
-								"image": "top"
-							}
-						},
-						{
-							"id": "set-face-image",
-							"objectClass": "3dBox",
-							"sid": 511351743683947,
-							"parameters": {
-								"face": "bottom",
-								"image": "bottom"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "3dBox",
-							"sid": 107643412634812,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "TWEEN_3dBox_Disappear",
-								"property": "offsetOpacity",
-								"end-value": "0",
-								"time": "0.5",
-								"ease": "easeoutcubic",
-								"destroy-on-complete": "yes",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
+								"state": "disabled"
 							}
 						}
 					],
-					"sid": 909883214796302
+					"sid": 216659110152130
 				}
 			]
 		}

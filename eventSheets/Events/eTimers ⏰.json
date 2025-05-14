@@ -2,10 +2,6 @@
 	"name": "eTimers ⏰",
 	"events": [
 		{
-			"eventType": "comment",
-			"text": "todo refactor everything to CAs"
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -26,79 +22,14 @@
 					}
 				}
 			],
-			"actions": [],
-			"sid": 454457054152501,
-			"children": [
+			"actions": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-unique-id",
-							"objectClass": "Tile",
-							"sid": 716484355461441,
-							"parameters": {
-								"unique-id": "Player.tileUID1"
-							}
-						}
-					],
-					"actions": [
-						{
-							"customAction": "close",
-							"objectClass": "Tile",
-							"customActionObjectClass": "fTile",
-							"sid": 256468709778806
-						}
-					],
-					"sid": 850100583965396
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-unique-id",
-							"objectClass": "Tile",
-							"sid": 451585866593051,
-							"parameters": {
-								"unique-id": "Player.tileUID2"
-							}
-						}
-					],
-					"actions": [
-						{
-							"customAction": "close",
-							"objectClass": "Tile",
-							"customActionObjectClass": "fTile",
-							"sid": 364559990204727
-						}
-					],
-					"sid": 233600067202867
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Player",
-							"sid": 997507963423812,
-							"parameters": {
-								"instance-variable": "tileUID1",
-								"value": "NOTHING"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Player",
-							"sid": 155399988889392,
-							"parameters": {
-								"instance-variable": "tileUID2",
-								"value": "NOTHING"
-							}
-						}
-					],
-					"sid": 650097116534947
+					"customAction": "closeTiles",
+					"objectClass": "Player",
+					"sid": 188374690230328
 				}
-			]
+			],
+			"sid": 454457054152501
 		},
 		{
 			"eventType": "block",
@@ -156,7 +87,13 @@
 					}
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"customAction": "farCheck",
+					"objectClass": "Box",
+					"sid": 474970245810033
+				}
+			],
 			"sid": 825971556518263
 		}
 	],

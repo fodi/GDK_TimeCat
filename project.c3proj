@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 42402,
+	"savedWithRelease": 43202,
 	"name": "TimeCat",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -154,7 +154,7 @@
 			"AimHelper",
 			"Box",
 			"UI_BlurbSF",
-			"CameraTarget",
+			"CameraTargetSmooth",
 			"3DShape"
 		],
 		"subfolders": [
@@ -281,7 +281,6 @@
 				"items": [
 					"fAudio 🎵",
 					"fLevel 🎬",
-					"_fUI 📟",
 					"fUtilities 🧰",
 					"fConfig 📃"
 				],
@@ -306,7 +305,8 @@
 					"aProjectiles 🏹",
 					"aCamera 🎥",
 					"aBoxes 📦",
-					"aBlurbs 🆎"
+					"aBlurbs 🆎",
+					"aUI 📟"
 				],
 				"subfolders": [],
 				"name": "Actions"
@@ -433,7 +433,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "22b",
+		"version": "23c",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

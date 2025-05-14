@@ -30,6 +30,13 @@
 			"desc": "",
 			"show": false,
 			"sid": 301020115337774
+		},
+		{
+			"name": "damage",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 292248555083151
 		}
 	],
 	"behaviorTypes": [

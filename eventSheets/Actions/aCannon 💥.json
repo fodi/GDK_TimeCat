@@ -3,6 +3,32 @@
 	"events": [
 		{
 			"aceType": "action",
+			"aceName": "spawnAll",
+			"objectClass": "Cannon",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"customAction": "spawn",
+					"objectClass": "Cannon",
+					"sid": 971046621174622
+				},
+				{
+					"customAction": "spawn",
+					"objectClass": "Cannon",
+					"sid": 954967491777036
+				}
+			],
+			"sid": 799452279524543
+		},
+		{
+			"aceType": "action",
 			"aceName": "spawn",
 			"objectClass": "Cannon",
 			"functionDescription": "",
@@ -278,6 +304,88 @@
 				}
 			],
 			"sid": 472290367645562
+		},
+		{
+			"aceType": "action",
+			"aceName": "changeHealth",
+			"objectClass": "Cannon",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "amount",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 275319688986470
+				}
+			],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Cannon",
+					"sid": 188319742178471,
+					"parameters": {
+						"instance-variable": "health",
+						"value": "clamp(Self.health + amount, 0, Self.R_Health_Max)"
+					}
+				}
+			],
+			"sid": 724590973381787,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Cannon",
+							"sid": 803213270746986,
+							"parameters": {
+								"instance-variable": "health",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Cannon",
+							"sid": 282781054080346
+						}
+					],
+					"sid": 235621981839580
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 127337758506651
+						}
+					],
+					"actions": [],
+					"sid": 935722509976253,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "todo damage (/heal) effect"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 407026718417487
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 414515668687685

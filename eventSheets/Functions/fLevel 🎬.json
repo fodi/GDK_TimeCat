@@ -16,6 +16,32 @@
 			"children": [
 				{
 					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 290790031571504,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"#ObjectTemplates\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 965472588350010,
+							"parameters": {
+								"layout": "Level"
+							}
+						}
+					],
+					"sid": 697939848357861
+				},
+				{
+					"eventType": "block",
 					"conditions": [],
 					"actions": [
 						{
@@ -44,7 +70,7 @@
 							"objectClass": "System",
 							"sid": 139245888955545,
 							"parameters": {
-								"variable": "R_RowCount",
+								"variable": "R_Level_Rows",
 								"value": "clamp(int(Functions.Config_getNumber(PARAM_Tile_RowCount)), C_Tile_Dimension_Min, C_Tile_Dimension_Max)"
 							}
 						},
@@ -53,7 +79,7 @@
 							"objectClass": "System",
 							"sid": 584776617241278,
 							"parameters": {
-								"variable": "R_ColumnCount",
+								"variable": "R_Level_Columns",
 								"value": "clamp(int(Functions.Config_getNumber(PARAM_Tile_ColumnCount)), C_Tile_Dimension_Min, C_Tile_Dimension_Max)"
 							}
 						},
@@ -63,50 +89,9 @@
 							"sid": 802792626626156,
 							"parameters": {
 								"type": "log",
-								"message": "R_RowCount & \" rows, \" & R_ColumnCount & \" columns will be generated\""
+								"message": "R_Level_Rows & \" rows, \" & R_Level_Columns & \" columns will be generated\""
 							}
-						}
-					],
-					"sid": 700019727002712
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 634387291176249,
-							"parameters": {
-								"first-value": "LayoutName",
-								"comparison": 0,
-								"second-value": "\"#ObjectTemplates\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 948102782152673,
-							"parameters": {
-								"layout": "Level"
-							}
-						}
-					],
-					"sid": 393157524293096
-				},
-				{
-					"eventType": "comment",
-					"text": "generate level"
-				},
-				{
-					"eventType": "comment",
-					"text": "todo refactor to tile CA?"
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
+						},
 						{
 							"type": "comment",
 							"text": "Cache level midpoint & calculate \"far\" distance"
@@ -114,25 +99,25 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 595980340741436,
+							"sid": 703069639011932,
 							"parameters": {
 								"variable": "midX",
-								"value": "R_ColumnCount * C_Tile_Size * 0.5"
+								"value": "R_Level_Columns * C_Tile_Size * 0.5"
 							}
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 924100075291172,
+							"sid": 828775838793391,
 							"parameters": {
 								"variable": "midY",
-								"value": "R_RowCount * C_Tile_Size * 0.5"
+								"value": "R_Level_Rows * C_Tile_Size * 0.5"
 							}
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 114204932624240,
+							"sid": 102436028624667,
 							"parameters": {
 								"variable": "distanceFar",
 								"value": "max(midX + C_Tile_Size * 2, midY + C_Tile_Size * 2)"
@@ -140,112 +125,50 @@
 						},
 						{
 							"type": "comment",
-							"text": "Initialize camera"
-						},
-						{
-							"id": "scroll-to-position",
-							"objectClass": "System",
-							"sid": 887541148419426,
-							"disabled": true,
-							"parameters": {
-								"x": "midX",
-								"y": "midY"
-							}
+							"text": "Spawn stuff"
 						},
 						{
 							"customAction": "spawn",
 							"objectClass": "Camera",
-							"sid": 297026343364497
+							"sid": 948272544472166
 						},
 						{
-							"type": "comment",
-							"text": "Spawn cannon"
-						},
-						{
-							"customAction": "spawn",
+							"customAction": "spawnAll",
 							"objectClass": "Cannon",
-							"sid": 859350561082887
+							"sid": 581324787671773
 						},
 						{
-							"customAction": "spawn",
-							"objectClass": "Cannon",
-							"sid": 490179268452867
-						},
-						{
-							"type": "comment",
-							"text": "Spawn walls"
-						},
-						{
-							"customAction": "spawn",
+							"customAction": "spawnAll",
 							"objectClass": "Wall",
-							"sid": 203683154469368,
-							"parameters": [
-								"midX",
-								"-C_Wall_Thickness * 0.5",
-								"R_ColumnCount * C_Tile_Size + C_Wall_Thickness * 2",
-								"C_Wall_Thickness"
-							]
-						},
-						{
-							"customAction": "spawn",
-							"objectClass": "Wall",
-							"sid": 677597991395643,
-							"parameters": [
-								"midX",
-								"R_RowCount * C_Tile_Size + C_Wall_Thickness * 0.5",
-								"R_ColumnCount * C_Tile_Size + C_Wall_Thickness * 2",
-								"C_Wall_Thickness"
-							]
-						},
-						{
-							"customAction": "spawn",
-							"objectClass": "Wall",
-							"sid": 860693048021886,
-							"parameters": [
-								"-C_Wall_Thickness * 0.5",
-								"midY",
-								"C_Wall_Thickness",
-								"R_RowCount * C_Tile_Size + C_Wall_Thickness * 2"
-							]
-						},
-						{
-							"customAction": "spawn",
-							"objectClass": "Wall",
-							"sid": 256415988791608,
-							"parameters": [
-								"R_ColumnCount * C_Tile_Size + C_Wall_Thickness * 0.5",
-								"midY",
-								"C_Wall_Thickness",
-								"R_RowCount * C_Tile_Size + C_Wall_Thickness * 2"
-							]
-						},
-						{
-							"type": "comment",
-							"text": "Spawn & shuffle tiles"
+							"sid": 655584556435110
 						},
 						{
 							"customAction": "spawn",
 							"objectClass": "Tile",
 							"customActionObjectClass": "fTile",
-							"sid": 362116919101284,
+							"sid": 175271121281402,
 							"parameters": [
-								"R_ColumnCount",
-								"R_RowCount"
+								"R_Level_Columns",
+								"R_Level_Rows"
 							]
+						},
+						{
+							"type": "comment",
+							"text": "Shuffle tiles"
 						},
 						{
 							"id": "wait-for-previous-actions",
 							"objectClass": "System",
-							"sid": 281457647486578
+							"sid": 504839884268299
 						},
 						{
 							"customAction": "shuffle",
 							"objectClass": "Tile",
 							"customActionObjectClass": "fTile",
-							"sid": 443776734082262
+							"sid": 720023268420973
 						}
 					],
-					"sid": 715456803686391
+					"sid": 700019727002712
 				}
 			]
 		},

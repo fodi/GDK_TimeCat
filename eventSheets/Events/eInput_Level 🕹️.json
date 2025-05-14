@@ -1789,7 +1789,7 @@
 			"children": [
 				{
 					"eventType": "comment",
-					"text": "todo prod: disable"
+					"text": "todo_prod: disable"
 				},
 				{
 					"eventType": "block",
@@ -2046,6 +2046,31 @@
 						}
 					],
 					"sid": 285712576902914
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 271239190509787,
+							"parameters": {
+								"key": 72
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "changeHealth",
+							"objectClass": "Player",
+							"sid": 262651930357409,
+							"parameters": [
+								"5",
+								"1"
+							]
+						}
+					],
+					"sid": 534131565185211
 				}
 			],
 			"sid": 445167778018070
