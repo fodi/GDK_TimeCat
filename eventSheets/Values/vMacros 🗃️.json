@@ -1192,6 +1192,16 @@
 			"sid": 937432569353992
 		},
 		{
+			"eventType": "variable",
+			"name": "TIMER_Projectile_Check_Distance",
+			"type": "string",
+			"initialValue": "Projectile_Check_Distance",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 539557331492116
+		},
+		{
 			"eventType": "comment",
 			"text": "Tweens"
 		},
@@ -1308,6 +1318,16 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 455255730079436
+		},
+		{
+			"eventType": "variable",
+			"name": "LAYER_UI_QR",
+			"type": "string",
+			"initialValue": "UI_QR",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 252911102619475
 		},
 		{
 			"eventType": "comment",

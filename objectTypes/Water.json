@@ -6,7 +6,12 @@
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
 	"behaviorTypes": [],
-	"effectTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "warpobject",
+			"name": "WarpObject"
+		}
+	],
 	"image": {
 		"width": 64,
 		"height": 64,

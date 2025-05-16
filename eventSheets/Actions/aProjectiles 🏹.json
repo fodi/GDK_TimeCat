@@ -105,6 +105,17 @@
 					"parameters": {
 						"angle": "cannonAngle"
 					}
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "Projectile",
+					"sid": 502356918535686,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "1",
+						"type": "regular",
+						"tag": "TIMER_Projectile_Check_Distance"
+					}
 				}
 			],
 			"sid": 883292258865159

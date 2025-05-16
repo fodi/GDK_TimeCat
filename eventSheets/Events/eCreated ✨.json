@@ -102,6 +102,27 @@
 				}
 			],
 			"sid": 989455830182692
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "UI_QRCode",
+					"sid": 480827166085021
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "UI_QRCode",
+					"sid": 910196789777427,
+					"parameters": {
+						"text": "Browser.URL"
+					}
+				}
+			],
+			"sid": 578342114602252
 		}
 	],
 	"sid": 397755584574739

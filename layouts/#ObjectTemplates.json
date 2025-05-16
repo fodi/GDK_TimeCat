@@ -310,6 +310,19 @@
 					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
+					"effects": {
+						"WarpObject": {
+							"isEnabled": true,
+							"parameters": {
+								"x-frequency": 5,
+								"y-frequency": 5,
+								"x-amplitude": 5,
+								"y-amplitude": 5,
+								"x-speed": 0.02,
+								"y-speed": 0.02
+							}
+						}
+					},
 					"sceneGraphData": {
 						"parent-uid": 40,
 						"uid": 45,
@@ -348,7 +361,7 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 0,
+						"x": 8,
 						"y": 360,
 						"width": 272,
 						"height": 272,
@@ -391,6 +404,9 @@
 								"step": false,
 								"enabled": true
 							}
+						},
+						"Timer": {
+							"properties": {}
 						}
 					},
 					"effects": {
@@ -816,7 +832,7 @@
 					}
 				},
 				{
-					"type": "Loader",
+					"type": "UI_Loader",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -1908,7 +1924,7 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 8,
+						"x": 16,
 						"y": 368,
 						"width": 256,
 						"height": 256,
@@ -2293,7 +2309,7 @@
 					"instanceVariables": {
 						"R_ZElevationInit": 1300,
 						"R_YInit": 1300,
-						"R_FieldOfView": 12,
+						"R_FieldOfView": 14,
 						"R_SmoothingFactor": 5,
 						"lookTargetX": 0,
 						"lookTargetY": 0

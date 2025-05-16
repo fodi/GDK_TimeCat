@@ -119,6 +119,13 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "qrcode",
+			"name": "QR code",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Anchor",
 			"name": "Anchor",
@@ -215,30 +222,31 @@
 			"name": "Radial blur",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "warpobject",
+			"name": "Warp object",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "yvkam1laji5",
 	"objectTypes": {
 		"items": [
 			"Player",
-			"Loader",
 			"Tile",
 			"Symbol",
 			"Projectile",
 			"Cannon",
 			"Wall",
 			"Camera",
-			"AimHelper",
 			"Item",
 			"CameraTargetSmooth",
 			"Particles",
 			"Selection",
 			"Basemap",
-			"Water",
-			"3dObstacle1",
-			"3dIsland",
-			"txIslandSide",
-			"txIslandTop"
+			"Water"
 		],
 		"subfolders": [
 			{
@@ -277,7 +285,9 @@
 					"UI_Icons",
 					"UI_BlurbSF",
 					"UI_Rectangle",
-					"UI_Images"
+					"UI_Images",
+					"UI_QRCode",
+					"UI_Loader"
 				],
 				"subfolders": [],
 				"name": "UI"
@@ -285,7 +295,9 @@
 			{
 				"items": [
 					"txCannonIdle",
-					"txCannonAttacking"
+					"txCannonAttacking",
+					"txIslandSide",
+					"txIslandTop"
 				],
 				"subfolders": [],
 				"name": "Textures"
@@ -302,7 +314,9 @@
 			},
 			{
 				"items": [
-					"3dCannon"
+					"3dCannon",
+					"3dIsland",
+					"3dObstacle1"
 				],
 				"subfolders": [],
 				"name": "3D"
@@ -938,7 +952,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "42e",
+		"version": "43c",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

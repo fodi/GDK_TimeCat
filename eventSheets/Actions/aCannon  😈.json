@@ -585,17 +585,64 @@
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 658240828157026,
+							"children": [
 								{
-									"id": "set-angle",
-									"objectClass": "Cannon",
-									"sid": 467094092746058,
-									"parameters": {
-										"angle": "anglelerp(Self.Angle, angle(Self.X, Self.Y, Player.X, Player.Y), 1 - C_Cannon_TargetRotationLerpFactor ^ dt)"
-									}
+									"eventType": "comment",
+									"text": "Look directly at player if within X degrees"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-within-angle",
+											"objectClass": "Cannon",
+											"sid": 702633982711541,
+											"parameters": {
+												"within": "3",
+												"angle": "angle(Self.X, Self.Y, Player.X, Player.Y)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-angle",
+											"objectClass": "Cannon",
+											"sid": 240215662633031,
+											"parameters": {
+												"angle": "angle(Self.X, Self.Y, Player.X, Player.Y)"
+											}
+										}
+									],
+									"sid": 253804009265206
+								},
+								{
+									"eventType": "comment",
+									"text": "Lerp angle toward player"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 570150117872616
+										}
+									],
+									"actions": [
+										{
+											"id": "set-angle",
+											"objectClass": "Cannon",
+											"sid": 119966305788335,
+											"parameters": {
+												"angle": "anglelerp(Self.Angle, angle(Self.X, Self.Y, Player.X, Player.Y), 1 - C_Cannon_TargetRotationLerpFactor ^ dt)"
+											}
+										}
+									],
+									"sid": 354202783094584
 								}
-							],
-							"sid": 658240828157026
+							]
 						},
 						{
 							"eventType": "block",

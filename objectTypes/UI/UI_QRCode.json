@@ -1,0 +1,10 @@
+{
+	"name": "UI_QRCode",
+	"plugin-id": "qrcode",
+	"sid": 662519234473734,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

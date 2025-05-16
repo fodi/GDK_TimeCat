@@ -505,6 +505,46 @@
 				}
 			],
 			"sid": 497168656763740
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "Projectile",
+					"sid": 110705523105698,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "TIMER_Projectile_Check_Distance"
+					}
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Projectile",
+					"sid": 546720046374448,
+					"parameters": {
+						"object": "Water"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 294439713690390,
+					"parameters": {
+						"type": "log",
+						"message": "\"Destroying far away projectile #\" & Projectile.UID"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Projectile",
+					"sid": 865479466841684
+				}
+			],
+			"sid": 465329642550252
 		}
 	],
 	"sid": 750823255495774

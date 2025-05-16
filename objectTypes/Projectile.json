@@ -25,6 +25,11 @@
 			"behaviorId": "Bullet",
 			"name": "Bullet",
 			"sid": 777921220276169
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 228475636601661
 		}
 	],
 	"effectTypes": [

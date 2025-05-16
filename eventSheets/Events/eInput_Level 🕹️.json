@@ -873,7 +873,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Player 3 (yellow)\n\nGamepad 1\nMouse"
+			"text": "Player 3 (yellow)\n\nGamepad 2\nMouse"
 		},
 		{
 			"eventType": "block",
@@ -941,9 +941,9 @@
 				{
 					"id": "on-button-pressed",
 					"objectClass": "Gamepad",
-					"sid": 450046776930636,
+					"sid": 978614868382774,
 					"parameters": {
-						"gamepad": "0",
+						"gamepad": "1",
 						"button": "button-a"
 					}
 				}
@@ -997,36 +997,36 @@
 						{
 							"id": "is-button-down",
 							"objectClass": "Gamepad",
-							"sid": 825846029022821,
+							"sid": 832275298599706,
 							"parameters": {
-								"gamepad": "0",
+								"gamepad": "1",
 								"button": "left-shoulder-trigger"
 							}
 						},
 						{
 							"id": "is-button-down",
 							"objectClass": "Gamepad",
-							"sid": 290190091365757,
+							"sid": 721001838432510,
 							"parameters": {
-								"gamepad": "0",
+								"gamepad": "1",
 								"button": "right-shoulder-trigger"
 							}
 						},
 						{
 							"id": "is-button-down",
 							"objectClass": "Gamepad",
-							"sid": 875890043638564,
+							"sid": 210969429458763,
 							"parameters": {
-								"gamepad": "0",
+								"gamepad": "1",
 								"button": "left-shoulder-button"
 							}
 						},
 						{
 							"id": "is-button-down",
 							"objectClass": "Gamepad",
-							"sid": 164555541675057,
+							"sid": 188704124017807,
 							"parameters": {
-								"gamepad": "0",
+								"gamepad": "1",
 								"button": "right-shoulder-button"
 							}
 						}
@@ -1073,9 +1073,9 @@
 						{
 							"id": "is-button-down",
 							"objectClass": "Gamepad",
-							"sid": 888693030849201,
+							"sid": 400083300498820,
 							"parameters": {
-								"gamepad": "0",
+								"gamepad": "1",
 								"button": "d-pad-up"
 							}
 						}
@@ -1122,9 +1122,9 @@
 						{
 							"id": "is-button-down",
 							"objectClass": "Gamepad",
-							"sid": 307809042318362,
+							"sid": 850424830350133,
 							"parameters": {
-								"gamepad": "0",
+								"gamepad": "1",
 								"button": "d-pad-down"
 							}
 						}
@@ -1171,9 +1171,9 @@
 						{
 							"id": "is-button-down",
 							"objectClass": "Gamepad",
-							"sid": 566944498377333,
+							"sid": 907469656648289,
 							"parameters": {
-								"gamepad": "0",
+								"gamepad": "1",
 								"button": "d-pad-left"
 							}
 						}
@@ -1220,9 +1220,9 @@
 						{
 							"id": "is-button-down",
 							"objectClass": "Gamepad",
-							"sid": 265821149006555,
+							"sid": 905414143747798,
 							"parameters": {
-								"gamepad": "0",
+								"gamepad": "1",
 								"button": "d-pad-right"
 							}
 						}
@@ -1269,9 +1269,9 @@
 						{
 							"id": "compare-axis",
 							"objectClass": "Gamepad",
-							"sid": 198978971610862,
+							"sid": 566081365927798,
 							"parameters": {
-								"gamepad": "0",
+								"gamepad": "1",
 								"axis": "left-analog-x-axis",
 								"comparison": 1,
 								"value": "0"
@@ -1280,9 +1280,9 @@
 						{
 							"id": "compare-axis",
 							"objectClass": "Gamepad",
-							"sid": 936093424841676,
+							"sid": 813592122774704,
 							"parameters": {
-								"gamepad": "0",
+								"gamepad": "1",
 								"axis": "left-analog-y-axis",
 								"comparison": 1,
 								"value": "0"
@@ -1302,10 +1302,10 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 311057334684696,
+							"sid": 428828385976286,
 							"parameters": {
 								"instance-variable": "IN_Move_Angle",
-								"value": "angle(0, 0, Gamepad.Axis(0, 0), Gamepad.Axis(0, 1))"
+								"value": "angle(0, 0, Gamepad.Axis(1, 0), Gamepad.Axis(1, 1))"
 							}
 						}
 					],
@@ -1332,79 +1332,27 @@
 							}
 						}
 					],
-					"sid": 193418687961464
-				},
-				{
-					"eventType": "comment",
-					"text": "Mouse as fallback"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
+					"sid": 193418687961464,
+					"children": [
 						{
-							"id": "mouse-button-is-down",
-							"objectClass": "Mouse",
-							"sid": 847820155999165,
-							"parameters": {
-								"mouse-button": "left"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Player",
-							"sid": 343461606665686,
-							"parameters": {
-								"instance-variable": "IN_Move",
-								"value": "YES"
-							}
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 338497853681116
 						},
 						{
-							"id": "set-instvar-value",
-							"objectClass": "Player",
-							"sid": 479328744449553,
-							"parameters": {
-								"instance-variable": "IN_Move_Angle",
-								"value": "angle(Player.X, Player.Y, Mouse.X, Mouse.Y)"
-							}
-						}
-					],
-					"sid": 741115492517489
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 626772044020294
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Player",
-							"sid": 305664331602997,
-							"parameters": {
-								"instance-variable": "IN_Move",
-								"value": "NO"
-							}
-						}
-					],
-					"sid": 876623070584926,
-					"children": [
+							"eventType": "comment",
+							"text": "Mouse as fallback"
+						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 307009879267540,
+									"id": "mouse-button-is-down",
+									"objectClass": "Mouse",
+									"sid": 488453443651099,
 									"parameters": {
-										"variable": "useMouseAim",
-										"comparison": 0,
-										"value": "YES"
+										"mouse-button": "left"
 									}
 								}
 							],
@@ -1412,32 +1360,92 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "Player",
-									"sid": 639168678845713,
+									"sid": 717066505367374,
 									"parameters": {
-										"instance-variable": "IN_Aim",
+										"instance-variable": "IN_Move",
 										"value": "YES"
 									}
 								},
 								{
 									"id": "set-instvar-value",
 									"objectClass": "Player",
-									"sid": 585924281980891,
+									"sid": 209450268025334,
 									"parameters": {
-										"instance-variable": "IN_Aim_Angle",
+										"instance-variable": "IN_Move_Angle",
 										"value": "angle(Player.X, Player.Y, Mouse.X, Mouse.Y)"
 									}
-								},
+								}
+							],
+							"sid": 448870527769426
+						},
+						{
+							"eventType": "block",
+							"conditions": [
 								{
-									"id": "set-eventvar-value",
+									"id": "else",
 									"objectClass": "System",
-									"sid": 796613450781863,
+									"sid": 115186699396847
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player",
+									"sid": 575946505804444,
 									"parameters": {
-										"variable": "useMouseAim",
+										"instance-variable": "IN_Move",
 										"value": "NO"
 									}
 								}
 							],
-							"sid": 188122737652419
+							"sid": 190427489634666,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 507948603785191,
+											"parameters": {
+												"variable": "useMouseAim",
+												"comparison": 0,
+												"value": "YES"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 398219970023890,
+											"parameters": {
+												"instance-variable": "IN_Aim",
+												"value": "YES"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 421745435918507,
+											"parameters": {
+												"instance-variable": "IN_Aim_Angle",
+												"value": "angle(Player.X, Player.Y, Mouse.X, Mouse.Y)"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 704840250419444,
+											"parameters": {
+												"variable": "useMouseAim",
+												"value": "NO"
+											}
+										}
+									],
+									"sid": 870275649809600
+								}
+							]
 						}
 					]
 				}
@@ -1445,7 +1453,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Player 4 (purple)\n\nGamepad 2"
+			"text": "Player 4 (purple)\n\nGamepad 1"
 		},
 		{
 			"eventType": "block",
@@ -1453,9 +1461,9 @@
 				{
 					"id": "on-button-pressed",
 					"objectClass": "Gamepad",
-					"sid": 919692419073421,
+					"sid": 511817317481468,
 					"parameters": {
-						"gamepad": "1",
+						"gamepad": "0",
 						"button": "button-a"
 					}
 				}
@@ -1495,36 +1503,36 @@
 						{
 							"id": "is-button-down",
 							"objectClass": "Gamepad",
-							"sid": 668975578771372,
+							"sid": 635177878637630,
 							"parameters": {
-								"gamepad": "1",
+								"gamepad": "0",
 								"button": "left-shoulder-trigger"
 							}
 						},
 						{
 							"id": "is-button-down",
 							"objectClass": "Gamepad",
-							"sid": 291329662239422,
+							"sid": 388145435527748,
 							"parameters": {
-								"gamepad": "1",
+								"gamepad": "0",
 								"button": "right-shoulder-trigger"
 							}
 						},
 						{
 							"id": "is-button-down",
 							"objectClass": "Gamepad",
-							"sid": 657842729448024,
+							"sid": 390496304924087,
 							"parameters": {
-								"gamepad": "1",
+								"gamepad": "0",
 								"button": "left-shoulder-button"
 							}
 						},
 						{
 							"id": "is-button-down",
 							"objectClass": "Gamepad",
-							"sid": 493644551622337,
+							"sid": 647501459923153,
 							"parameters": {
-								"gamepad": "1",
+								"gamepad": "0",
 								"button": "right-shoulder-button"
 							}
 						}
@@ -1569,11 +1577,82 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 347006032133604,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "left-analog-x-axis",
+								"comparison": 1,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 886562533812361,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "left-analog-y-axis",
+								"comparison": 1,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 457307727407193,
+							"parameters": {
+								"instance-variable": "IN_Move",
+								"value": "YES"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 996210817311897,
+							"parameters": {
+								"instance-variable": "IN_Move_Angle",
+								"value": "angle(0, 0, Gamepad.Axis(0, 0), Gamepad.Axis(0, 1))"
+							}
+						}
+					],
+					"sid": 279934706714375,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 210745652951834
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 977484166789299,
+							"parameters": {
+								"instance-variable": "IN_Move",
+								"value": "NO"
+							}
+						}
+					],
+					"sid": 760122420650749
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "is-button-down",
 							"objectClass": "Gamepad",
-							"sid": 201235787543655,
+							"sid": 584091539194488,
 							"parameters": {
-								"gamepad": "1",
+								"gamepad": "0",
 								"button": "d-pad-up"
 							}
 						}
@@ -1620,9 +1699,9 @@
 						{
 							"id": "is-button-down",
 							"objectClass": "Gamepad",
-							"sid": 747241551775720,
+							"sid": 994804035068680,
 							"parameters": {
-								"gamepad": "1",
+								"gamepad": "0",
 								"button": "d-pad-down"
 							}
 						}
@@ -1669,9 +1748,9 @@
 						{
 							"id": "is-button-down",
 							"objectClass": "Gamepad",
-							"sid": 406640539015864,
+							"sid": 328912174770895,
 							"parameters": {
-								"gamepad": "1",
+								"gamepad": "0",
 								"button": "d-pad-left"
 							}
 						}
@@ -1718,9 +1797,9 @@
 						{
 							"id": "is-button-down",
 							"objectClass": "Gamepad",
-							"sid": 923395160958843,
+							"sid": 454861278924841,
 							"parameters": {
-								"gamepad": "1",
+								"gamepad": "0",
 								"button": "d-pad-right"
 							}
 						}
@@ -1760,77 +1839,6 @@
 						}
 					],
 					"sid": 125303583789474
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-axis",
-							"objectClass": "Gamepad",
-							"sid": 274721819223264,
-							"parameters": {
-								"gamepad": "1",
-								"axis": "left-analog-x-axis",
-								"comparison": 1,
-								"value": "0"
-							}
-						},
-						{
-							"id": "compare-axis",
-							"objectClass": "Gamepad",
-							"sid": 490479737878020,
-							"parameters": {
-								"gamepad": "1",
-								"axis": "left-analog-y-axis",
-								"comparison": 1,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Player",
-							"sid": 356207842714901,
-							"parameters": {
-								"instance-variable": "IN_Move",
-								"value": "YES"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Player",
-							"sid": 367936754716042,
-							"parameters": {
-								"instance-variable": "IN_Move_Angle",
-								"value": "angle(0, 0, Gamepad.Axis(1, 0), Gamepad.Axis(1, 1))"
-							}
-						}
-					],
-					"sid": 204746531167670,
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 931442402003542
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Player",
-							"sid": 150542715213171,
-							"parameters": {
-								"instance-variable": "IN_Move",
-								"value": "NO"
-							}
-						}
-					],
-					"sid": 550668327651209
 				}
 			]
 		},
@@ -2482,6 +2490,70 @@
 						}
 					],
 					"sid": 498650836902158
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 379507295647369,
+							"parameters": {
+								"key": 85
+							}
+						}
+					],
+					"actions": [],
+					"sid": 231674627209143,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 360369328273080,
+									"parameters": {
+										"layer": "LAYER_UI_QR"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 784498051289746,
+									"parameters": {
+										"layer": "LAYER_UI_QR",
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 297014862329978
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 948118497739430
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 692093513995555,
+									"parameters": {
+										"layer": "LAYER_UI_QR",
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 396189293770175
+						}
+					]
 				},
 				{
 					"eventType": "block",

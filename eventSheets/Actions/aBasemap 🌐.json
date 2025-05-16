@@ -2,56 +2,6 @@
 	"name": "aBasemap 🌐",
 	"events": [
 		{
-			"eventType": "variable",
-			"name": "waveHeight",
-			"type": "number",
-			"initialValue": "40",
-			"comment": "height of the waves",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 744231378618286
-		},
-		{
-			"eventType": "variable",
-			"name": "waveScale",
-			"type": "number",
-			"initialValue": "5",
-			"comment": "low value = less wave. large value = many small waves",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 125176036770197
-		},
-		{
-			"eventType": "variable",
-			"name": "waveScrollSpeed",
-			"type": "number",
-			"initialValue": "25",
-			"comment": "how fast the waves should scroll",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 843440935441647
-		},
-		{
-			"eventType": "variable",
-			"name": "pixelStepPerPoint",
-			"type": "number",
-			"initialValue": "100",
-			"comment": "low number leads to more mesh points and smoother waves BUT WORSE PERFORMANCE",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 627639058946721
-		},
-		{
-			"eventType": "variable",
-			"name": "currentScroll",
-			"type": "number",
-			"initialValue": "1",
-			"comment": "only for runtime",
-			"isStatic": true,
-			"isConstant": false,
-			"sid": 909480018620775
-		},
-		{
 			"aceType": "action",
 			"aceName": "spawn",
 			"objectClass": "Basemap",
@@ -198,7 +148,6 @@
 							],
 							"actions": [],
 							"sid": 673410822071584,
-							"disabled": true,
 							"children": [
 								{
 									"eventType": "comment",
@@ -253,7 +202,6 @@
 										}
 									],
 									"sid": 547305550994020,
-									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -315,7 +263,6 @@
 												}
 											],
 											"sid": 928156945208031,
-											"disabled": true,
 											"isOrBlock": true
 										}
 									]
@@ -360,7 +307,6 @@
 										}
 									],
 									"sid": 532224098858578,
-									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -422,46 +368,11 @@
 												}
 											],
 											"sid": 373428879563003,
-											"disabled": true,
 											"isOrBlock": true
 										}
 									]
 								}
 							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-children",
-									"objectClass": "Basemap",
-									"sid": 232200403044665,
-									"parameters": {
-										"child": "Water",
-										"which": "own"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-mesh-size",
-									"objectClass": "Water",
-									"sid": 637491935101146,
-									"parameters": {
-										"cols": "int(water.Width/pixelStepPerPoint)",
-										"rows": "int(water.Height/pixelStepPerPoint)"
-									}
-								},
-								{
-									"id": "set-z-elevation",
-									"objectClass": "Water",
-									"sid": 623707821309337,
-									"parameters": {
-										"z": "Self.ZElevation - waveHeight"
-									}
-								}
-							],
-							"sid": 134313334618773
 						}
 					]
 				}
@@ -535,100 +446,6 @@
 						}
 					],
 					"sid": 494677077175158
-				}
-			]
-		},
-		{
-			"aceType": "action",
-			"aceName": "tick",
-			"objectClass": "Basemap",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "custom-ace-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 247928747589769,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 274528046864894,
-							"parameters": {
-								"variable": "currentScroll",
-								"value": "waveScrollSpeed*dt"
-							}
-						}
-					],
-					"sid": 846023404183787
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-children",
-							"objectClass": "Basemap",
-							"sid": 976971874294805,
-							"parameters": {
-								"child": "Water",
-								"which": "own"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 777322475154837,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "for",
-									"objectClass": "System",
-									"sid": 446335432700250,
-									"parameters": {
-										"name": "W_X",
-										"start-index": "0",
-										"end-index": "water.MeshColumns"
-									}
-								},
-								{
-									"id": "for",
-									"objectClass": "System",
-									"sid": 263348910722743,
-									"parameters": {
-										"name": "W_Y",
-										"start-index": "0",
-										"end-index": "water.MeshRows"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-mesh-point",
-									"objectClass": "Water",
-									"sid": 761946042689811,
-									"parameters": {
-										"col": "loopindex(W_X)",
-										"row": "loopindex(W_Y)",
-										"mode": "relative",
-										"posx": "0",
-										"posy": "0",
-										"z-elevation": "AdvancedRandom.Classic2d(currentScroll+loopindex(W_Y)*pixelStepPerPoint*waveScale,currentScroll+loopindex(W_X)*pixelStepPerPoint*waveScale)*waveHeight",
-										"texx": "0",
-										"texy": "0"
-									}
-								}
-							],
-							"sid": 868747967389098
-						}
-					]
 				}
 			]
 		}

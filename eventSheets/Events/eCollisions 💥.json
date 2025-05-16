@@ -42,11 +42,36 @@
 			"children": [
 				{
 					"eventType": "comment",
+					"text": "If player is sleeping, do nothing"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-timer-running",
+							"objectClass": "Player",
+							"sid": 671435894151249,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "TIMER_Player_Sleep"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 955430814014931
+				},
+				{
+					"eventType": "comment",
 					"text": "If shield is active, deflect projectile"
 				},
 				{
 					"eventType": "block",
 					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 568412633650547
+						},
 						{
 							"id": "is-timer-running",
 							"objectClass": "Player",
@@ -82,7 +107,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "If shield is not active and player is not hurting (invincible), damage them and destroy projectile"
+					"text": "If player is not sleeping or shielding, destroy projectile"
 				},
 				{
 					"eventType": "block",
@@ -100,16 +125,6 @@
 								"child": "bbPlayer",
 								"which": "own"
 							}
-						},
-						{
-							"id": "is-playing",
-							"objectClass": "bbPlayer",
-							"sid": 847189294861507,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "TWEEN_Player_Hurt"
-							},
-							"isInverted": true
 						}
 					],
 					"actions": [
@@ -117,19 +132,43 @@
 							"id": "destroy",
 							"objectClass": "Projectile",
 							"sid": 110107631039347
-						},
-						{
-							"customAction": "changeHealth",
-							"objectClass": "Player",
-							"sid": 747585360356948,
-							"parameters": [
-								"-Projectile.R_Damage",
-								"YES",
-								"YES"
-							]
 						}
 					],
-					"sid": 848703835571815
+					"sid": 848703835571815,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "If player is not already being damaged, damage them"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-playing",
+									"objectClass": "bbPlayer",
+									"sid": 338068904611292,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "TWEEN_Player_Hurt"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"customAction": "changeHealth",
+									"objectClass": "Player",
+									"sid": 429123063564477,
+									"parameters": [
+										"-Projectile.R_Damage",
+										"YES",
+										"YES"
+									]
+								}
+							],
+							"sid": 694951997498462
+						}
+					]
 				}
 			]
 		},
@@ -235,7 +274,7 @@
 						},
 						{
 							"eventType": "comment",
-							"text": "Otherwise, hit player"
+							"text": "Otherwise, hit player if they are not sleeping"
 						},
 						{
 							"eventType": "block",
@@ -243,7 +282,17 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 797803546549679
+									"sid": 730122912166470
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "Player",
+									"sid": 127978984592569,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "TIMER_Player_Sleep"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
@@ -296,7 +345,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Box + Projectile"
+			"text": "Item + Projectile"
 		},
 		{
 			"eventType": "block",
