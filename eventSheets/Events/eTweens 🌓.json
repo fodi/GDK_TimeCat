@@ -110,6 +110,112 @@
 				}
 			],
 			"sid": 417283430561768
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tweens-finished",
+					"objectClass": "Cannon",
+					"sid": 442113074731417,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "TWEEN_Cannon_Opacity_Appear"
+					}
+				},
+				{
+					"id": "pick-children",
+					"objectClass": "Cannon",
+					"sid": 731177526938175,
+					"parameters": {
+						"child": "3dCannon",
+						"which": "own"
+					}
+				}
+			],
+			"actions": [
+				{
+					"customAction": "startMoving",
+					"objectClass": "Cannon",
+					"sid": 437806578770828
+				},
+				{
+					"customAction": "selectTarget",
+					"objectClass": "Cannon",
+					"sid": 311017688225980
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "3dCannon",
+					"sid": 150709294738110,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "TWEEN_3dCannon_ZElevation_Spawn",
+						"property": "offsetZElevation",
+						"end-value": "12",
+						"time": "Cannon.R_Shoot_Interval_Min",
+						"ease": "easeoutsine",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				}
+			],
+			"sid": 987676784152033
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-playing",
+					"objectClass": "3dCannon",
+					"sid": 532084453473807,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "TWEEN_3dCannon_ZElevation_Spawn"
+					}
+				},
+				{
+					"id": "compare-z-elevation",
+					"objectClass": "3dCannon",
+					"sid": 238643315308862,
+					"parameters": {
+						"which": "z-elevation",
+						"comparison": 5,
+						"z-elevation": "Basemap.ZElevation"
+					}
+				},
+				{
+					"id": "pick-parent",
+					"objectClass": "3dCannon",
+					"sid": 381357262441893,
+					"parameters": {
+						"parent": "Cannon",
+						"which": "own"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Cannon",
+					"sid": 683953884341667,
+					"parameters": {
+						"animation": "ANIM_Shadow",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "move-to-layer",
+					"objectClass": "Cannon",
+					"sid": 267962812664877,
+					"parameters": {
+						"layer": "LAYER_Shadows"
+					}
+				}
+			],
+			"sid": 370174305111993
 		}
 	],
 	"sid": 858674299755667

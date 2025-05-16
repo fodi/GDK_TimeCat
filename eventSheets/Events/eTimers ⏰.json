@@ -127,7 +127,7 @@
 					"parameters": [
 						"\"zZz\"",
 						"Self.R_Blurb_ZOffset_Low",
-						"int(trim(tokenat(C_CSV_ColorsInt, 0, \",\")))",
+						"int(trim(tokenat(C_CSV_Colors_Int, 0, \",\")))",
 						"1.7"
 					]
 				},
@@ -468,6 +468,39 @@
 				}
 			],
 			"sid": 366469736129611
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "Player",
+					"sid": 419871603023438,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "TIMER_Player_Shield"
+					}
+				},
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 212919828785921,
+					"parameters": {
+						"object": "Player"
+					}
+				}
+			],
+			"actions": [
+				{
+					"customAction": "stopEffect",
+					"objectClass": "Player",
+					"sid": 326575440396527,
+					"parameters": [
+						"IT_Shield"
+					]
+				}
+			],
+			"sid": 497168656763740
 		}
 	],
 	"sid": 750823255495774

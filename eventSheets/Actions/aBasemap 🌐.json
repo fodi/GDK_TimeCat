@@ -17,6 +17,36 @@
 				{
 					"id": "create-object",
 					"objectClass": "System",
+					"sid": 144924698954862,
+					"parameters": {
+						"object-to-create": "3dIsland",
+						"layer": "LAYER_Main",
+						"x": "midX",
+						"y": "midY",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "3dIsland",
+					"sid": 999257139450070,
+					"parameters": {
+						"width": "R_Level_Columns * C_Level_Grid_Size",
+						"height": "R_Level_Rows * C_Level_Grid_Size"
+					}
+				},
+				{
+					"id": "set-z-elevation",
+					"objectClass": "3dIsland",
+					"sid": 813149382904549,
+					"parameters": {
+						"z": "- Self.ZHeight - 1.5"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
 					"sid": 316711022158292,
 					"parameters": {
 						"object-to-create": "Basemap",
@@ -30,9 +60,9 @@
 				{
 					"id": "set-z-elevation",
 					"objectClass": "Basemap",
-					"sid": 697074394732729,
+					"sid": 518911617190348,
 					"parameters": {
-						"z": "-1"
+						"z": "3dIsland.ZElevation"
 					}
 				},
 				{

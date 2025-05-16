@@ -1,7 +1,7 @@
 {
-	"name": "Water",
+	"name": "txIslandTop",
 	"plugin-id": "TiledBg",
-	"sid": 736984035957457,
+	"sid": 602138203612419,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
@@ -16,7 +16,7 @@
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
 		"fileType": "image/png",
-		"imageSpriteId": 789792,
+		"imageSpriteId": 8619971,
 		"useCollisionPoly": true,
 		"tag": ""
 	}

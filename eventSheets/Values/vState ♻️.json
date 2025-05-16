@@ -26,8 +26,28 @@
 			"sid": 637780812707639
 		},
 		{
+			"eventType": "variable",
+			"name": "R_Level_Tile_Reveal_Time",
+			"type": "number",
+			"initialValue": "1.2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 210484776277000
+		},
+		{
 			"eventType": "comment",
 			"text": "State"
+		},
+		{
+			"eventType": "variable",
+			"name": "playerCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 209174663557284
 		},
 		{
 			"eventType": "variable",

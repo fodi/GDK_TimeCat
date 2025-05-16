@@ -805,11 +805,15 @@
 							],
 							"actions": [
 								{
+									"type": "comment",
+									"text": "todo alignment"
+								},
+								{
 									"id": "set-text",
 									"objectClass": "UI_TextSF",
-									"sid": 717147827210016,
+									"sid": 462218139269352,
 									"parameters": {
-										"text": "\"[color=#\" & trim(tokenat(C_CSV_ColorsHex, Player.playerId, \",\")) & \"][scale=0.25]HEALTH[/scale]\" & newline & int(Player.health)"
+										"text": "\"[color=#\" & trim(tokenat(C_CSV_Colors_Hex, Player.playerId, \",\")) & \"][scale=0.4]HEALTH[/scale]\" & newline & int(Player.health)"
 									}
 								}
 							],
@@ -857,6 +861,15 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 450132910785256,
+							"parameters": {
+								"variable": "playerCount",
+								"value": "1"
+							}
+						},
 						{
 							"callFunction": "playSoundAt",
 							"sid": 931726268797243,
@@ -1249,7 +1262,7 @@
 											],
 											"actions": [
 												{
-													"customAction": "throwBox",
+													"customAction": "throwItem",
 													"objectClass": "Player",
 													"sid": 988977524724447
 												}
@@ -1448,7 +1461,7 @@
 		},
 		{
 			"aceType": "action",
-			"aceName": "throwBox",
+			"aceName": "throwItem",
 			"objectClass": "Player",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -1539,7 +1552,7 @@
 		},
 		{
 			"aceType": "action",
-			"aceName": "dropBox",
+			"aceName": "dropItem",
 			"objectClass": "Player",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -1900,7 +1913,7 @@
 									"sid": 504646049316520,
 									"behaviorType": "Timer",
 									"parameters": {
-										"duration": "C_Level_Tile_Reveal_Time",
+										"duration": "R_Level_Tile_Reveal_Time",
 										"type": "once",
 										"tag": "TIMER_Tile_Close"
 									}
@@ -1912,7 +1925,7 @@
 									"disabled": true,
 									"behaviorType": "Timer",
 									"parameters": {
-										"duration": "C_Level_Tile_Reveal_Time",
+										"duration": "R_Level_Tile_Reveal_Time",
 										"type": "once",
 										"tag": "TIMER_Tile_Close"
 									}
@@ -1924,7 +1937,7 @@
 									"disabled": true,
 									"behaviorType": "Timer",
 									"parameters": {
-										"duration": "C_Level_Tile_Reveal_Time",
+										"duration": "R_Level_Tile_Reveal_Time",
 										"type": "once",
 										"tag": "TIMER_Tile_Close"
 									}
@@ -2292,7 +2305,7 @@
 									]
 								},
 								{
-									"customAction": "dropBox",
+									"customAction": "dropItem",
 									"objectClass": "Player",
 									"sid": 488875189295671
 								},
@@ -2363,7 +2376,58 @@
 										}
 									],
 									"actions": [],
-									"sid": 608650389134550
+									"sid": 608650389134550,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 576333507374980,
+													"parameters": {
+														"variable": "playerCount",
+														"comparison": 4,
+														"value": "1"
+													}
+												},
+												{
+													"id": "pick-by-comparison",
+													"objectClass": "System",
+													"sid": 317140335031940,
+													"parameters": {
+														"object": "Player",
+														"expression": "Player.PickedCount",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "start-timer",
+													"objectClass": "GlobalTimer",
+													"sid": 717804894968199,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "2",
+														"type": "once",
+														"tag": "TIMER_Level_End"
+													}
+												},
+												{
+													"id": "log",
+													"objectClass": "Browser",
+													"sid": 247085531607276,
+													"parameters": {
+														"type": "log",
+														"message": "\"Multiplayer last man standing\""
+													}
+												}
+											],
+											"sid": 463349754843508
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -2734,7 +2798,7 @@
 							]
 						},
 						{
-							"customAction": "dropBox",
+							"customAction": "dropItem",
 							"objectClass": "Player",
 							"sid": 541010517275494
 						},
@@ -2867,17 +2931,36 @@
 								"type": "once",
 								"tag": "TIMER_Player_Shield"
 							}
-						},
-						{
-							"id": "set-opacity",
-							"objectClass": "bbPlayer",
-							"sid": 270452603513628,
-							"parameters": {
-								"opacity": "40"
-							}
 						}
 					],
-					"sid": 782411368643358
+					"sid": 782411368643358,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "Player",
+									"sid": 757313966158226,
+									"parameters": {
+										"child": "bbPlayer",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "bbPlayer",
+									"sid": 100936660964197,
+									"parameters": {
+										"opacity": "40"
+									}
+								}
+							],
+							"sid": 662831899164036
+						}
+					]
 				}
 			]
 		},

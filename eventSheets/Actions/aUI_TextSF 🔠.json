@@ -48,6 +48,49 @@
 					"sid": 916679967059463
 				}
 			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "init",
+			"objectClass": "UI_TextSF",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 393753129951466,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UI_TextSF",
+							"sid": 954110601453250,
+							"parameters": {
+								"instance-variable": "role",
+								"comparison": 0,
+								"value": "ROLE_Title"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UI_TextSF",
+							"sid": 664961869659522,
+							"parameters": {
+								"text": "Functions.Config_getString(PARAM_Title)"
+							}
+						}
+					],
+					"sid": 268156217198112
+				}
+			]
 		}
 	],
 	"sid": 545270863845734

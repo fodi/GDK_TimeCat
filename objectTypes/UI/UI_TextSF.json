@@ -30,14 +30,14 @@
 	"effectTypes": [],
 	"image": {
 		"width": 570,
-		"height": 180,
+		"height": 210,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
 		"fileType": "image/png",
-		"imageSpriteId": 6590166,
+		"imageSpriteId": 3420215,
 		"useCollisionPoly": true,
 		"tag": ""
 	}

@@ -688,7 +688,7 @@
 							"objectClass": "Selection",
 							"sid": 381392959767863,
 							"parameters": {
-								"color": "int(trim(tokenat(C_CSV_ColorsInt, playerId, \",\")))"
+								"color": "int(trim(tokenat(C_CSV_Colors_Int, playerId, \",\")))"
 							}
 						},
 						{
@@ -752,9 +752,19 @@
 									}
 								},
 								{
+									"id": "set-animation",
+									"objectClass": "Symbol",
+									"sid": 257589244022569,
+									"disabled": true,
+									"parameters": {
+										"animation": "Self.AnimationName",
+										"from": "beginning"
+									}
+								},
+								{
 									"id": "set-animation-frame",
 									"objectClass": "Symbol",
-									"sid": 484589270499802,
+									"sid": 641771061588698,
 									"parameters": {
 										"frame-number": "0"
 									}

@@ -1,22 +1,22 @@
 {
-	"name": "Water",
+	"name": "txIslandSide",
 	"plugin-id": "TiledBg",
-	"sid": 736984035957457,
+	"sid": 949152302917710,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {
-		"width": 64,
-		"height": 64,
+		"width": 16,
+		"height": 16,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
 		"fileType": "image/png",
-		"imageSpriteId": 789792,
+		"imageSpriteId": 5490368,
 		"useCollisionPoly": true,
 		"tag": ""
 	}

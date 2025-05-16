@@ -149,8 +149,8 @@
 						"enable-bbcode": true,
 						"character-width": 30,
 						"character-height": 30,
-						"character-set": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~Ä«»Ł",
-						"spacing-data": "[[12,\" \"],[24,\"!\\\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\"]]",
+						"character-set": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZÍÉÁŰŐÚÖÜÓ[\\]^_`abcdefghijklmnopqrstuvwxyzíéáűőúöüó{|}~Ä«»Ł",
+						"spacing-data": "[[12,\" \"],[24,\"!\\\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZÍÉÁÚÓÚÖÜÓ[\\]^_`abcdefghijklmnopqrstuvwxyzíéáúóúöüó{|}~Ä«»\"],[15,\"Ł\"]]",
 						"scale": 0.2,
 						"character-spacing": 0,
 						"line-height": 0,
@@ -280,13 +280,13 @@
 				{
 					"type": "UI_TextSF",
 					"properties": {
-						"text": "[scale=0.25][color=#d1030a]JOIN[/color][/scale]\nÄ «»",
+						"text": "[scale=0.4][color=#d1030a]JOIN[/color][/scale]\nÄ «»",
 						"enable-bbcode": true,
 						"character-width": 30,
 						"character-height": 30,
-						"character-set": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~Ä«»Ł",
-						"spacing-data": "[[12,\" \"],[24,\"!\\\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\"]]",
-						"scale": 0.4,
+						"character-set": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZÍÉÁŰŐÚÖÜÓ[\\]^_`abcdefghijklmnopqrstuvwxyzíéáűőúöüó{|}~Ä«»Ł",
+						"spacing-data": "[[12,\" \"],[24,\"!\\\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZÍÉÁÚÓÚÖÜÓ[\\]^_`abcdefghijklmnopqrstuvwxyzíéáúóúöüó{|}~Ä«»\"],[15,\"Ł\"]]",
+						"scale": 0.7,
 						"character-spacing": 0,
 						"line-height": 1,
 						"horizontal-alignment": "left",
@@ -324,10 +324,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 44,
-						"y": 10,
-						"width": 64,
-						"height": 30,
+						"x": 58,
+						"y": 8,
+						"width": 96,
+						"height": 42,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -343,13 +343,13 @@
 				{
 					"type": "UI_TextSF",
 					"properties": {
-						"text": "[scale=0.25][color=#2baf2b]JOIN[/color][/scale]\nÄ Ł",
+						"text": "[scale=0.4][color=#2baf2b]JOIN[/color][/scale]\nÄ Ł",
 						"enable-bbcode": true,
 						"character-width": 30,
 						"character-height": 30,
-						"character-set": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~Ä«»Ł",
-						"spacing-data": "[[12,\" \"],[24,\"!\\\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\"]]",
-						"scale": 0.4,
+						"character-set": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZÍÉÁŰŐÚÖÜÓ[\\]^_`abcdefghijklmnopqrstuvwxyzíéáűőúöüó{|}~Ä«»Ł",
+						"spacing-data": "[[12,\" \"],[24,\"!\\\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZÍÉÁÚÓÚÖÜÓ[\\]^_`abcdefghijklmnopqrstuvwxyzíéáúóúöüó{|}~Ä«»\"],[15,\"Ł\"]]",
+						"scale": 0.7,
 						"character-spacing": 0,
 						"line-height": 1,
 						"horizontal-alignment": "right",
@@ -387,10 +387,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 532,
-						"y": 10,
-						"width": 64,
-						"height": 30,
+						"x": 486,
+						"y": 8,
+						"width": 96,
+						"height": 42,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -399,20 +399,20 @@
 							1,
 							1
 						],
-						"angle": 6.2816300984800915,
+						"angle": 0,
 						"zElevation": 0
 					}
 				},
 				{
 					"type": "UI_TextSF",
 					"properties": {
-						"text": "[scale=0.25][color=#ffc107]JOIN[/color][/scale]\nÄ",
+						"text": "[scale=0.4][color=#ffc107]JOIN[/color][/scale]\nÄ",
 						"enable-bbcode": true,
 						"character-width": 30,
 						"character-height": 30,
-						"character-set": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~Ä«»Ł",
-						"spacing-data": "[[12,\" \"],[24,\"!\\\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\"]]",
-						"scale": 0.4,
+						"character-set": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZÍÉÁŰŐÚÖÜÓ[\\]^_`abcdefghijklmnopqrstuvwxyzíéáűőúöüó{|}~Ä«»Ł",
+						"spacing-data": "[[12,\" \"],[24,\"!\\\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZÍÉÁÚÓÚÖÜÓ[\\]^_`abcdefghijklmnopqrstuvwxyzíéáúóúöüó{|}~Ä«»\"],[15,\"Ł\"]]",
+						"scale": 0.7,
 						"character-spacing": 0,
 						"line-height": 1,
 						"horizontal-alignment": "left",
@@ -450,10 +450,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 44,
-						"y": 322,
-						"width": 64,
-						"height": 30,
+						"x": 58,
+						"y": 314,
+						"width": 96,
+						"height": 42,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -469,13 +469,13 @@
 				{
 					"type": "UI_TextSF",
 					"properties": {
-						"text": "[scale=0.25][color=#9c27b0]JOIN[/color][/scale]\nÄ",
+						"text": "[scale=0.4][color=#9c27b0]JOIN[/color][/scale]\nÄ",
 						"enable-bbcode": true,
 						"character-width": 30,
 						"character-height": 30,
-						"character-set": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~Ä«»Ł",
-						"spacing-data": "[[12,\" \"],[24,\"!\\\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\"]]",
-						"scale": 0.4,
+						"character-set": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZÍÉÁŰŐÚÖÜÓ[\\]^_`abcdefghijklmnopqrstuvwxyzíéáűőúöüó{|}~Ä«»Ł",
+						"spacing-data": "[[12,\" \"],[24,\"!\\\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZÍÉÁÚÓÚÖÜÓ[\\]^_`abcdefghijklmnopqrstuvwxyzíéáúóúöüó{|}~Ä«»\"],[15,\"Ł\"]]",
+						"scale": 0.7,
 						"character-spacing": 0,
 						"line-height": 1,
 						"horizontal-alignment": "right",
@@ -513,10 +513,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 532,
-						"y": 322,
-						"width": 64,
-						"height": 30,
+						"x": 486,
+						"y": 314,
+						"width": 96,
+						"height": 42,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -563,10 +563,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 24,
-						"y": 24,
-						"width": 35,
-						"height": 35,
+						"x": 28,
+						"y": 28,
+						"width": 50,
+						"height": 50,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -613,10 +613,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 616,
-						"y": 24,
-						"width": 35,
-						"height": 35,
+						"x": 612,
+						"y": 28,
+						"width": 50,
+						"height": 50,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -663,10 +663,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 24,
-						"y": 336,
-						"width": 35,
-						"height": 35,
+						"x": 28,
+						"y": 332,
+						"width": 50,
+						"height": 50,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -713,12 +713,75 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 616,
-						"y": 336,
-						"width": 35,
-						"height": 35,
+						"x": 612,
+						"y": 332,
+						"width": 50,
+						"height": 50,
 						"originX": 0.5,
 						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UI_TextSF",
+					"properties": {
+						"text": "TimeCat",
+						"enable-bbcode": false,
+						"character-width": 30,
+						"character-height": 30,
+						"character-set": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZÍÉÁŰŐÚÖÜÓ[\\]^_`abcdefghijklmnopqrstuvwxyzíéáűőúöüó{|}~Ä«»Ł",
+						"spacing-data": "[[12,\" \"],[24,\"!\\\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZÍÉÁÚÓÚÖÜÓ[\\]^_`abcdefghijklmnopqrstuvwxyzíéáúóúöüó{|}~Ä«»\"],[15,\"Ł\"]]",
+						"scale": 0.6,
+						"character-spacing": 0,
+						"line-height": 1,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top",
+						"read-aloud": false
+					},
+					"uid": 30,
+					"sid": 568952448329204,
+					"tags": "",
+					"instanceVariables": {
+						"role": "Title",
+						"paramNumber": 0
+					},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "window-left",
+								"top-edge": "window-top",
+								"right-edge": "window-right",
+								"bottom-edge": "none",
+								"enabled": true
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 568952448329204,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 320,
+						"y": 0,
+						"width": 380,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0,
 						"color": [
 							1,
 							1,
@@ -831,9 +894,9 @@
 						"enable-bbcode": true,
 						"character-width": 30,
 						"character-height": 30,
-						"character-set": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~Ä«»Ł",
-						"spacing-data": "[[12,\" \"],[24,\"!\\\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\"]]",
-						"scale": 0.6,
+						"character-set": " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZÍÉÁŰŐÚÖÜÓ[\\]^_`abcdefghijklmnopqrstuvwxyzíéáűőúöüó{|}~Ä«»Ł",
+						"spacing-data": "[[12,\" \"],[24,\"!\\\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZÍÉÁÚÓÚÖÜÓ[\\]^_`abcdefghijklmnopqrstuvwxyzíéáúóúöüó{|}~Ä«»\"],[15,\"Ł\"]]",
+						"scale": 0.9,
 						"character-spacing": 0,
 						"line-height": 5,
 						"horizontal-alignment": "center",

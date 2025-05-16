@@ -124,16 +124,6 @@
 			"sid": 936580713134461
 		},
 		{
-			"eventType": "variable",
-			"name": "C_Level_Tile_Reveal_Time",
-			"type": "number",
-			"initialValue": "1.2",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 590401886581616
-		},
-		{
 			"eventType": "comment",
 			"text": "Symbol"
 		},
@@ -167,20 +157,30 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "C_CSV_ColorsHex",
+			"name": "C_CSV_Colors_Hex",
 			"type": "string",
 			"initialValue": "ffffff, d1030a, 2baf2b, ffc107, 9c27b0",
-			"comment": "White, Player1, Player2, Player3, Player4",
+			"comment": "White, P1, P2, P3, P4",
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 884061419103597
 		},
 		{
 			"eventType": "variable",
-			"name": "C_CSV_ColorsInt",
+			"name": "C_CSV_Colors_Name",
+			"type": "string",
+			"initialValue": "White, Red, Green, Yellow, Purple",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 314281280545286
+		},
+		{
+			"eventType": "variable",
+			"name": "C_CSV_Colors_Int",
 			"type": "string",
 			"initialValue": "-281492157629439, -230622765294591, -47290777777151, -281487979082751, -172076187716607",
-			"comment": "White, Player1, Player2, Player3, Player4",
+			"comment": "White, P1, P2, P3, P4",
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 563504081420290
@@ -193,7 +193,7 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 797343426013108
+			"sid": 109261336951240
 		}
 	],
 	"sid": 344291072955141

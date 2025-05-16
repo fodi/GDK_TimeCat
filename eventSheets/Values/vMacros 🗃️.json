@@ -180,6 +180,16 @@
 			"sid": 914897034252219
 		},
 		{
+			"eventType": "variable",
+			"name": "ANIM_Shadow",
+			"type": "string",
+			"initialValue": "Shadow",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 943050264515622
+		},
+		{
 			"eventType": "comment",
 			"text": "Brushes"
 		},
@@ -579,6 +589,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "PARAM_Projectile_Damage",
+			"type": "string",
+			"initialValue": "pr_damage",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 849614646009099
+		},
+		{
+			"eventType": "variable",
 			"name": "PARAM_Projectile_Speed",
 			"type": "string",
 			"initialValue": "pr_speed",
@@ -659,6 +679,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "PARAM_Tile_Time",
+			"type": "string",
+			"initialValue": "tile_time",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 627760721146803
+		},
+		{
+			"eventType": "variable",
 			"name": "PARAM_Tile_GapPercent",
 			"type": "string",
 			"initialValue": "gap_percent",
@@ -666,6 +696,16 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 747038811532456
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Title",
+			"type": "string",
+			"initialValue": "title",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 643450029745927
 		},
 		{
 			"eventType": "comment",
@@ -1147,6 +1187,26 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "TWEEN_Cannon_Opacity_Appear",
+			"type": "string",
+			"initialValue": "Cannon_Opacity_Appear",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 137091869576052
+		},
+		{
+			"eventType": "variable",
+			"name": "TWEEN_Cannon_Color_Appear",
+			"type": "string",
+			"initialValue": "Cannon_Color_Appear",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 752635108876203
+		},
+		{
+			"eventType": "variable",
 			"name": "TWEEN_Item_Disappear",
 			"type": "string",
 			"initialValue": "Item_Disappear",
@@ -1208,6 +1268,16 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 455255730079436
+		},
+		{
+			"eventType": "variable",
+			"name": "ROLE_Title",
+			"type": "string",
+			"initialValue": "Title",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 990054503604811
 		},
 		{
 			"eventType": "comment",

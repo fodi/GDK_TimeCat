@@ -88,6 +88,94 @@
 					"sid": 121542529126312
 				}
 			]
+		},
+		{
+			"functionName": "Config_getString",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "string",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "paramName",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 980854096505515
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 403396410492465,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-key",
+							"objectClass": "ConfigURLParams",
+							"sid": 911861987535003,
+							"parameters": {
+								"path": "paramName"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 271249172492080,
+							"disabled": true,
+							"parameters": {
+								"type": "log",
+								"message": "StringSub(\"[config] {0} = {1} (overridden from {2})\", paramName, ConfigURLParams.Get(paramName), ConfigDefault.Get(paramName))"
+							}
+						},
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 256832287519644,
+							"parameters": {
+								"value": "ConfigURLParams.Get(paramName)"
+							}
+						}
+					],
+					"sid": 633139453285915
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 363673204603457
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 918295966732191,
+							"disabled": true,
+							"parameters": {
+								"type": "log",
+								"message": "StringSub(\"[config] {0} = {1} (default)\", paramName, ConfigDefault.Get(paramName))"
+							}
+						},
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 447371487069203,
+							"parameters": {
+								"value": "ConfigDefault.Get(paramName)"
+							}
+						}
+					],
+					"sid": 974512911452792
+				}
+			]
 		}
 	],
 	"sid": 265364922852344

@@ -84,6 +84,15 @@
 							}
 						},
 						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 323236367236017,
+							"parameters": {
+								"variable": "R_Level_Tile_Reveal_Time",
+								"value": "Functions.Config_getNumber(PARAM_Tile_Time)"
+							}
+						},
+						{
 							"id": "log",
 							"objectClass": "Browser",
 							"sid": 802792626626156,
@@ -337,16 +346,17 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 173227627932922,
+							"sid": 450238355523297,
 							"parameters": {
 								"variable": "endText",
-								"value": "\"Time elapsed: \" & Functions.formatTime(timeElapsed) & newline & newline & \"Pairs found\" & newline"
+								"value": "\"Pairs found\" & newline"
 							}
 						}
 					],
 					"sid": 555812566849330
 				},
 				{
+					"bookmark": true,
 					"eventType": "block",
 					"conditions": [
 						{
@@ -364,10 +374,10 @@
 						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
-							"sid": 304807696791597,
+							"sid": 405239570301289,
 							"parameters": {
 								"variable": "endText",
-								"value": "\"[color=#\" & trim(tokenat(C_CSV_ColorsHex, Player.playerId, \",\")) & \"]Player \" & Player.playerId & \":[/color] \" & Player.pairsFound & newline"
+								"value": "\"[color=#\" & trim(tokenat(C_CSV_Colors_Hex, Player.playerId, \",\")) & \"]\" & trim(tokenat(C_CSV_Colors_Name, Player.playerId, \",\")) & \" TimeCat:[/color] \" & zeropad(Player.pairsFound, len(str(R_Level_Rows * R_Level_Columns))) & newline"
 							}
 						}
 					],
@@ -391,9 +401,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "UI_TextSF",
-							"sid": 139952572118531,
+							"sid": 497988573733932,
 							"parameters": {
-								"text": "endText"
+								"text": "newline & \"Time elapsed: \" & Functions.formatTime(timeElapsed) & newline & newline & endText"
 							}
 						}
 					],

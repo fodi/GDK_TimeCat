@@ -1,5 +1,5 @@
 {
-	"name": "aCannon 💥",
+	"name": "aCannon  😈",
 	"events": [
 		{
 			"aceType": "action",
@@ -250,7 +250,15 @@
 						},
 						{
 							"type": "comment",
-							"text": "Initialize projectile spawner"
+							"text": "Initialize cannon"
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "Cannon",
+							"sid": 405827425000822,
+							"parameters": {
+								"z": "Basemap.ZElevation + 1"
+							}
 						},
 						{
 							"id": "set-instvar-value",
@@ -291,6 +299,28 @@
 							}
 						},
 						{
+							"type": "comment",
+							"text": "blergh"
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 209800582663752,
+							"parameters": {
+								"seconds": "dt * 2",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Cannon",
+							"sid": 788984529409744,
+							"parameters": {
+								"instance-variable": "isInitialized",
+								"value": "YES"
+							}
+						},
+						{
 							"id": "set-angle-toward-position",
 							"objectClass": "Cannon",
 							"sid": 334562866280955,
@@ -298,16 +328,6 @@
 								"x": "midX",
 								"y": "midY"
 							}
-						},
-						{
-							"customAction": "startMoving",
-							"objectClass": "Cannon",
-							"sid": 437806578770828
-						},
-						{
-							"customAction": "selectTarget",
-							"objectClass": "Cannon",
-							"sid": 311017688225980
 						}
 					],
 					"sid": 810463059339353
@@ -338,22 +358,59 @@
 						{
 							"id": "set-z-elevation",
 							"objectClass": "3dCannon",
-							"sid": 630659613799772,
+							"sid": 895956433178046,
 							"parameters": {
-								"z": "-Self.ZHeight - 3"
+								"z": "Basemap.ZElevation -Self.ZHeight - 1"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "todo mn"
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Cannon",
+							"sid": 437139202844022,
+							"parameters": {
+								"opacity": "0"
 							}
 						},
 						{
 							"id": "tween-one-property",
-							"objectClass": "3dCannon",
-							"sid": 315110095436119,
+							"objectClass": "Cannon",
+							"sid": 358847798517241,
 							"behaviorType": "Tween",
 							"parameters": {
-								"tags": "TWEEN_3dCannon_ZElevation_Spawn",
-								"property": "offsetZElevation",
-								"end-value": "-4",
-								"time": "random(Cannon.R_Shoot_Interval_Min, Cannon.R_Shoot_Interval_Max)",
-								"ease": "easeinoutcubic",
+								"tags": "TWEEN_Cannon_Opacity_Appear",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "Cannon",
+							"sid": 309651747805196,
+							"parameters": {
+								"color": "rgbEx(0, 0, 0)"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Cannon",
+							"sid": 832270928635404,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TWEEN_Cannon_Color_Appear",
+								"property": "offsetColor",
+								"end-value": "rgbEx(100, 100, 100)",
+								"time": "1",
+								"ease": "default",
 								"destroy-on-complete": "no",
 								"loop": "no",
 								"ping-pong": "no",
@@ -506,47 +563,66 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Player",
-							"sid": 392218757345059,
+							"objectClass": "Cannon",
+							"sid": 619499824376016,
 							"parameters": {
-								"instance-variable": "playerId",
+								"instance-variable": "isInitialized",
 								"comparison": 0,
-								"value": "Cannon.targetPlayerId"
+								"value": "YES"
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 355396723561282,
+					"children": [
 						{
-							"id": "set-angle",
-							"objectClass": "Cannon",
-							"sid": 374951323522630,
-							"parameters": {
-								"angle": "anglelerp(Self.Angle, angle(Self.X, Self.Y, Player.X, Player.Y), 1 - C_Cannon_TargetRotationLerpFactor ^ dt)"
-							}
-						}
-					],
-					"sid": 443324917969824
-				},
-				{
-					"eventType": "block",
-					"conditions": [
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 937202320495370,
+									"parameters": {
+										"instance-variable": "playerId",
+										"comparison": 0,
+										"value": "Cannon.targetPlayerId"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "Cannon",
+									"sid": 467094092746058,
+									"parameters": {
+										"angle": "anglelerp(Self.Angle, angle(Self.X, Self.Y, Player.X, Player.Y), 1 - C_Cannon_TargetRotationLerpFactor ^ dt)"
+									}
+								}
+							],
+							"sid": 658240828157026
+						},
 						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 183404404266808
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 281064007591271
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "Cannon",
+									"sid": 892586921617854,
+									"parameters": {
+										"angle": "anglelerp(Self.Angle, angle(Self.X, Self.Y, midX, midY), 1 - C_Cannon_TargetRotationLerpFactor ^ dt)"
+									}
+								}
+							],
+							"sid": 573089056638156
 						}
-					],
-					"actions": [
-						{
-							"id": "set-angle",
-							"objectClass": "Cannon",
-							"sid": 914477740544457,
-							"parameters": {
-								"angle": "anglelerp(Self.Angle, angle(Self.X, Self.Y, midX, midY), 1 - C_Cannon_TargetRotationLerpFactor ^ dt)"
-							}
-						}
-					],
-					"sid": 554864348649137
+					]
 				}
 			]
 		},
@@ -804,32 +880,40 @@
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
-			"conditions": [
+			"conditions": [],
+			"actions": [],
+			"sid": 472290367645562,
+			"children": [
 				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 868613660367008,
-					"parameters": {
-						"variable": "hasLevelEnded",
-						"comparison": 0,
-						"value": "NO"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 883593618929358,
+							"parameters": {
+								"variable": "hasLevelEnded",
+								"comparison": 0,
+								"value": "NO"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "Cannon",
+							"sid": 597017978541607,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "random(Self.R_Shoot_Interval_Min, Self.R_Shoot_Interval_Max)",
+								"type": "once",
+								"tag": "TIMER_Cannon_Shoot"
+							}
+						}
+					],
+					"sid": 524467050311132
 				}
-			],
-			"actions": [
-				{
-					"id": "start-timer",
-					"objectClass": "Cannon",
-					"sid": 520434317754823,
-					"behaviorType": "Timer",
-					"parameters": {
-						"duration": "random(Self.R_Shoot_Interval_Min, Self.R_Shoot_Interval_Max)",
-						"type": "once",
-						"tag": "TIMER_Cannon_Shoot"
-					}
-				}
-			],
-			"sid": 472290367645562
+			]
 		},
 		{
 			"aceType": "action",

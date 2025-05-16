@@ -228,7 +228,10 @@
 			"Selection",
 			"Basemap",
 			"Water",
-			"3dObstacle1"
+			"3dObstacle1",
+			"3dIsland",
+			"txIslandSide",
+			"txIslandTop"
 		],
 		"subfolders": [
 			{
@@ -306,6 +309,13 @@
 				"txCannonAttacking",
 				"txCannonIdle"
 			]
+		},
+		{
+			"members": [
+				"txIslandSide",
+				"txIslandTop",
+				"UI_Icons"
+			]
 		}
 	],
 	"families": {
@@ -377,7 +387,7 @@
 				"items": [
 					"aPlayer 🐱",
 					"aTile 🟦",
-					"aCannon 💥",
+					"aCannon  😈",
 					"aWall 🧱",
 					"aProjectiles 🏹",
 					"aCamera 🎥",
@@ -920,7 +930,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "40c",
+		"version": "41f",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

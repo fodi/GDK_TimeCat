@@ -294,7 +294,16 @@
 				{
 					"id": "destroy",
 					"objectClass": "Projectile",
-					"sid": 113610349786662
+					"sid": 113610349786662,
+					"disabled": true
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "Projectile",
+					"sid": 495721162677032,
+					"parameters": {
+						"angle": "Self.Angle + 180"
+					}
 				},
 				{
 					"callFunction": "playSoundAt",

@@ -400,10 +400,10 @@
 				],
 				"sid": 946109324828903,
 				"name": "Slow",
-				"isLooping": false,
+				"isLooping": true,
 				"isPingPong": false,
 				"repeatCount": 1,
-				"repeatTo": 0,
+				"repeatTo": 7,
 				"speed": 10
 			},
 			{

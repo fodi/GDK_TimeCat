@@ -154,7 +154,7 @@
 			"children": [
 				{
 					"eventType": "variable",
-					"name": "playerCount",
+					"name": "playerCount_",
 					"type": "number",
 					"initialValue": "0",
 					"comment": "",
@@ -182,7 +182,7 @@
 							"objectClass": "System",
 							"sid": 907274617862551,
 							"parameters": {
-								"variable": "playerCount",
+								"variable": "playerCount_",
 								"value": "Player.PickedCount"
 							}
 						}
@@ -263,7 +263,7 @@
 									"sid": 840822005176086,
 									"parameters": {
 										"instance-variable": "lookTargetX",
-										"value": "playerXSum / playerCount"
+										"value": "playerXSum / playerCount_"
 									}
 								},
 								{
@@ -272,7 +272,7 @@
 									"sid": 127367201068491,
 									"parameters": {
 										"instance-variable": "lookTargetY",
-										"value": "playerYSum / playerCount"
+										"value": "playerYSum / playerCount_"
 									}
 								}
 							],

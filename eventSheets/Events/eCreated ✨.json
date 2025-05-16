@@ -84,6 +84,24 @@
 				}
 			],
 			"sid": 585306370954250
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "UI_TextSF",
+					"sid": 353009348882194
+				}
+			],
+			"actions": [
+				{
+					"customAction": "init",
+					"objectClass": "UI_TextSF",
+					"sid": 326823682011443
+				}
+			],
+			"sid": 989455830182692
 		}
 	],
 	"sid": 397755584574739
