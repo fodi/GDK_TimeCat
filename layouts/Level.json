@@ -280,7 +280,7 @@
 				{
 					"type": "UI_TextSF",
 					"properties": {
-						"text": "[scale=0.4][color=#d1030a]JOIN[/color][/scale]\nÄ «»",
+						"text": "[scale=0.4][color=#d1030a]JOIN[/color][/scale]\nÄ",
 						"enable-bbcode": true,
 						"character-width": 30,
 						"character-height": 30,
@@ -343,7 +343,7 @@
 				{
 					"type": "UI_TextSF",
 					"properties": {
-						"text": "[scale=0.4][color=#2baf2b]JOIN[/color][/scale]\nÄ Ł",
+						"text": "[scale=0.4][color=#2baf2b]JOIN[/color][/scale]\nÄ",
 						"enable-bbcode": true,
 						"character-width": 30,
 						"character-height": 30,
