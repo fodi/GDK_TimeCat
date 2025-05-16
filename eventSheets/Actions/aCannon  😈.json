@@ -416,10 +416,6 @@
 								"ping-pong": "no",
 								"repeat-count": "1"
 							}
-						},
-						{
-							"type": "comment",
-							"text": "Cannon will start shoot timer after the spawn tween"
 						}
 					],
 					"sid": 584432900882151

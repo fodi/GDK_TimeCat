@@ -52,7 +52,7 @@
 							"sid": 942034872246473,
 							"parameters": {
 								"instance-variable": "R_Health_BonusOnPair",
-								"value": "Functions.Config_getNumber(PARAM_Player_HealPair)"
+								"value": "Functions.Config_getNumber(PARAM_Player_Heal_Pair)"
 							}
 						},
 						{
@@ -61,7 +61,7 @@
 							"sid": 123777258069747,
 							"parameters": {
 								"instance-variable": "R_Health_BonusOnHeal",
-								"value": "Functions.Config_getNumber(PARAM_Player_HealItem)"
+								"value": "Functions.Config_getNumber(PARAM_Player_Heal_Item)"
 							}
 						},
 						{
@@ -301,6 +301,14 @@
 									],
 									"sid": 151547628573832,
 									"isOrBlock": true
+								},
+								{
+									"eventType": "comment",
+									"text": "todo fix bug when pressing keyboard aim button sets angle of player even if no angle is specified using keys (regression due to mouse aim)"
+								},
+								{
+									"eventType": "comment",
+									"text": "todo IN_Mouse, use \"mouse moved\" timer to keep it \"active\""
 								},
 								{
 									"eventType": "comment",
@@ -620,7 +628,7 @@
 													"objectClass": "Player",
 													"sid": 788180434508353,
 													"parameters": [
-														"-dt * Functions.Config_getNumber(PARAM_Player_HealthDrain)",
+														"-dt * Functions.Config_getNumber(PARAM_Player_Health_Drain)",
 														"NO",
 														"NO"
 													]
@@ -811,9 +819,9 @@
 								{
 									"id": "set-text",
 									"objectClass": "UI_TextSF",
-									"sid": 462218139269352,
+									"sid": 657500018950138,
 									"parameters": {
-										"text": "\"[color=#\" & trim(tokenat(C_CSV_Colors_Hex, Player.playerId, \",\")) & \"][scale=0.4]HEALTH[/scale]\" & newline & int(Player.health)"
+										"text": "\"[color=#\" & trim(tokenat(C_CSV_Colors_Hex, Player.playerId, \",\")) & \"][scale=0.4]TIME[/scale]\" & newline & int(Player.health)"
 									}
 								}
 							],
@@ -2217,6 +2225,7 @@
 									"id": "set-visible",
 									"objectClass": "Player",
 									"sid": 462649183377368,
+									"disabled": true,
 									"parameters": {
 										"visibility": "invisible"
 									}
@@ -2526,9 +2535,9 @@
 													"customAction": "spawnBlurb",
 													"objectClass": "Player",
 													"customActionObjectClass": "fBlurbSpawners",
-													"sid": 361555141627767,
+													"sid": 225509981813296,
 													"parameters": [
-														"\"+\" & roundToDp(amount, 1) & \" HP\"",
+														"\"+\" & roundToDp(amount, 1) & \" sec\"",
 														"Self.R_Blurb_ZOffset_Normal",
 														"rgbEx(0, 100, 0)",
 														"0.8"
@@ -2681,9 +2690,9 @@
 													"customAction": "spawnBlurb",
 													"objectClass": "Player",
 													"customActionObjectClass": "fBlurbSpawners",
-													"sid": 787188787224703,
+													"sid": 628456655928874,
 													"parameters": [
-														"str(roundToDp(amount, 1)) & \" HP\"",
+														"str(roundToDp(amount, 1)) & \" sec\"",
 														"Self.R_Blurb_ZOffset_Normal",
 														"rgbEx(100, 0, 0)",
 														"0.8"

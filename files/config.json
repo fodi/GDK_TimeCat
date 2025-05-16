@@ -5,14 +5,15 @@
 	"gap_percent": 15,
 	"tile_time": 0.8,
 	
-	"pl_health": 450,
-	"pl_health_drain": 10,
-	"pl_heal_pair": 80,
-	"pl_heal_item": 150,
+	"pl_health": 45,
+	"pl_health_low": 10,
+	"pl_health_drain": 1,
+	"pl_heal_pair": 8,
+	"pl_heal_item": 15,
 	"pl_speed": 110,
 	"pl_speed_slow": 80,
 	
-	"pr_damage": 50,
+	"pr_damage": 5,
 	"pr_speed": 150,
 	"pr_speed_increase": 20,
 	"pr_speed_max": 600,
@@ -23,22 +24,22 @@
 	"sy_ratio": 4,	
 
 	"it_speed": 500,
-	"it_damage": 50,
+	"it_damage": 5,
 	
-	"it_attack_damage": 100,
+	"it_attack_damage": 10,
 	"it_attack_ratio": 1,
 
-	"it_shield_time": 5,
+	"it_shield_time": 8,
 	"it_shield_ratio": 1,
 
 	"it_sleep_time": 5,
 	"it_sleep_ratio": 1,
 
-	"it_slow_time": 10,
+	"it_slow_time": 8,
 	"it_slow_ratio": 1,
 	"it_slow_factor": 0.5,
 
-	"ca_health": 50,
+	"ca_health": 5,
 	"ca_accel": 2,
 	"ca_speed_max": 20,
 	"ca_count_init": 2,

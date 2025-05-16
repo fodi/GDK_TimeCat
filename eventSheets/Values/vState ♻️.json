@@ -158,6 +158,16 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 232588228690011
+		},
+		{
+			"eventType": "variable",
+			"name": "R_Level_Tile_Pair_OptimalMaxDistance",
+			"type": "number",
+			"initialValue": "160",
+			"comment": "todo param",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 806092782867721
 		}
 	],
 	"sid": 756444675677784

@@ -42,6 +42,11 @@
 					"customAction": "tick",
 					"objectClass": "UI_TextSF",
 					"sid": 263542475998482
+				},
+				{
+					"customAction": "tick",
+					"objectClass": "Basemap",
+					"sid": 171465815587458
 				}
 			],
 			"sid": 559613915501580,

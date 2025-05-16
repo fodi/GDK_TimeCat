@@ -331,29 +331,23 @@
 				},
 				{
 					"eventType": "variable",
-					"name": "endText",
+					"name": "listPlayers",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 666367931482954
+				},
+				{
+					"eventType": "variable",
+					"name": "listPairs",
 					"type": "string",
 					"initialValue": "",
 					"comment": "",
 					"isStatic": false,
 					"isConstant": false,
 					"sid": 775163012593881
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 450238355523297,
-							"parameters": {
-								"variable": "endText",
-								"value": "\"Pairs found\" & newline"
-							}
-						}
-					],
-					"sid": 555812566849330
 				},
 				{
 					"bookmark": true,
@@ -374,10 +368,19 @@
 						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
-							"sid": 405239570301289,
+							"sid": 845560198879629,
 							"parameters": {
-								"variable": "endText",
-								"value": "\"[color=#\" & trim(tokenat(C_CSV_Colors_Hex, Player.playerId, \",\")) & \"]\" & trim(tokenat(C_CSV_Colors_Name, Player.playerId, \",\")) & \" TimeCat:[/color] \" & zeropad(Player.pairsFound, len(str(R_Level_Rows * R_Level_Columns))) & newline"
+								"variable": "listPlayers",
+								"value": "\"[color=#\" & trim(tokenat(C_CSV_Colors_Hex, Player.playerId, \",\")) & \"]\" & trim(tokenat(C_CSV_Colors_Name, Player.playerId, \",\")) & \" TimeCat:[/color] \" & newline"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 232304720988205,
+							"parameters": {
+								"variable": "listPairs",
+								"value": "\"[color=#\" & trim(tokenat(C_CSV_Colors_Hex, Player.playerId, \",\")) & \"]\" & zeropad(Player.pairsFound, len(str(R_Level_Rows * R_Level_Columns))) & \"[/color] \" & newline\n"
 							}
 						}
 					],
@@ -389,11 +392,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "UI_TextSF",
-							"sid": 400769599467986,
+							"sid": 583517689119900,
 							"parameters": {
 								"instance-variable": "role",
 								"comparison": 0,
-								"value": "ROLE_GameOver"
+								"value": "ROLE_GameOver_Players"
 							}
 						}
 					],
@@ -401,13 +404,65 @@
 						{
 							"id": "set-text",
 							"objectClass": "UI_TextSF",
-							"sid": 497988573733932,
+							"sid": 517862874485078,
 							"parameters": {
-								"text": "newline & \"Time elapsed: \" & Functions.formatTime(timeElapsed) & newline & newline & endText"
+								"text": "listPlayers"
 							}
 						}
 					],
 					"sid": 458263492062037
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UI_TextSF",
+							"sid": 720490650279945,
+							"parameters": {
+								"instance-variable": "role",
+								"comparison": 0,
+								"value": "ROLE_GameOver_Pairs"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UI_TextSF",
+							"sid": 100689758043285,
+							"parameters": {
+								"text": "listPairs"
+							}
+						}
+					],
+					"sid": 276471871339799
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UI_TextSF",
+							"sid": 820968273788433,
+							"parameters": {
+								"instance-variable": "role",
+								"comparison": 0,
+								"value": "ROLE_GameOver_Time"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UI_TextSF",
+							"sid": 435881924516295,
+							"parameters": {
+								"text": "\"Time elapsed: \" & Functions.formatTime(timeElapsed)"
+							}
+						}
+					],
+					"sid": 599669916820556
 				},
 				{
 					"eventType": "block",
@@ -420,6 +475,24 @@
 							"parameters": {
 								"layer": "LAYER_UI_GameOver",
 								"visibility": "visible"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 583062071862387,
+							"parameters": {
+								"type": "log",
+								"message": "listPlayers & \"x\""
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 129180944495415,
+							"parameters": {
+								"type": "log",
+								"message": "listPairs & \"x\""
 							}
 						}
 					],

@@ -15,6 +15,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "AdvancedRandom",
+			"name": "Advanced Random",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Arr",
 			"name": "Array",
 			"author": "Scirra",
@@ -240,7 +247,8 @@
 					"GlobalTimer",
 					"3DCamera",
 					"Audio",
-					"AJAX"
+					"AJAX",
+					"AdvancedRandom"
 				],
 				"subfolders": [],
 				"name": "Utilities"
@@ -930,7 +938,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "41f",
+		"version": "42e",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

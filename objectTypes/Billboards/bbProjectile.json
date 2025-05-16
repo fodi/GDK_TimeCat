@@ -21,16 +21,6 @@
 						"exportQuality": 0.8,
 						"fileType": "image/png",
 						"imageSpriteId": 5351287,
-						"collisionPoly": {
-							"points": [
-								0.8125,
-								0.375,
-								0.8125,
-								0.625,
-								0.125,
-								0.5
-							]
-						},
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
@@ -45,16 +35,6 @@
 						"exportQuality": 0.8,
 						"fileType": "image/png",
 						"imageSpriteId": 336858,
-						"collisionPoly": {
-							"points": [
-								0.8125,
-								0.375,
-								0.8125,
-								0.625,
-								0.125,
-								0.5
-							]
-						},
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
@@ -69,16 +49,6 @@
 						"exportQuality": 0.8,
 						"fileType": "image/png",
 						"imageSpriteId": 6170002,
-						"collisionPoly": {
-							"points": [
-								0.8125,
-								0.375,
-								0.8125,
-								0.625,
-								0.125,
-								0.5
-							]
-						},
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
@@ -93,16 +63,6 @@
 						"exportQuality": 0.8,
 						"fileType": "image/png",
 						"imageSpriteId": 4623483,
-						"collisionPoly": {
-							"points": [
-								0.8125,
-								0.375,
-								0.8125,
-								0.625,
-								0.125,
-								0.5
-							]
-						},
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
@@ -117,16 +77,6 @@
 						"exportQuality": 0.8,
 						"fileType": "image/png",
 						"imageSpriteId": 6359207,
-						"collisionPoly": {
-							"points": [
-								0.8125,
-								0.375,
-								0.8125,
-								0.625,
-								0.125,
-								0.5
-							]
-						},
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
@@ -141,16 +91,6 @@
 						"exportQuality": 0.8,
 						"fileType": "image/png",
 						"imageSpriteId": 5239253,
-						"collisionPoly": {
-							"points": [
-								0.8125,
-								0.375,
-								0.8125,
-								0.625,
-								0.125,
-								0.5
-							]
-						},
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""

@@ -539,7 +539,17 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "PARAM_Player_HealthDrain",
+			"name": "PARAM_Player_Health_Low",
+			"type": "string",
+			"initialValue": "pl_health_low",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 190549552704715
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Player_Health_Drain",
 			"type": "string",
 			"initialValue": "pl_health_drain",
 			"comment": "",
@@ -549,7 +559,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "PARAM_Player_HealPair",
+			"name": "PARAM_Player_Heal_Pair",
 			"type": "string",
 			"initialValue": "pl_heal_pair",
 			"comment": "",
@@ -559,7 +569,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "PARAM_Player_HealItem",
+			"name": "PARAM_Player_Heal_Item",
 			"type": "string",
 			"initialValue": "pl_heal_item",
 			"comment": "",
@@ -757,13 +767,33 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ROLE_GameOver",
+			"name": "ROLE_GameOver_Players",
 			"type": "string",
-			"initialValue": "GameOver",
+			"initialValue": "GameOver_Players",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 203099835527276
+		},
+		{
+			"eventType": "variable",
+			"name": "ROLE_GameOver_Pairs",
+			"type": "string",
+			"initialValue": "GameOver_Pairs",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 654997959773362
+		},
+		{
+			"eventType": "variable",
+			"name": "ROLE_GameOver_Time",
+			"type": "string",
+			"initialValue": "GameOver_Time",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 988612439594611
 		},
 		{
 			"eventType": "variable",
@@ -774,6 +804,16 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 514423711778769
+		},
+		{
+			"eventType": "variable",
+			"name": "ROLE_Title",
+			"type": "string",
+			"initialValue": "Title",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 383731448807114
 		},
 		{
 			"eventType": "comment",
@@ -1268,16 +1308,6 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 455255730079436
-		},
-		{
-			"eventType": "variable",
-			"name": "ROLE_Title",
-			"type": "string",
-			"initialValue": "Title",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 990054503604811
 		},
 		{
 			"eventType": "comment",

@@ -151,8 +151,8 @@
 									"x": true,
 									"y": true,
 									"z": false,
-									"w": false,
-									"h": false,
+									"w": true,
+									"h": true,
 									"a": false,
 									"o": false,
 									"v": false,
@@ -239,8 +239,8 @@
 							"x": true,
 							"y": true,
 							"z": false,
-							"w": false,
-							"h": false,
+							"w": true,
+							"h": true,
 							"a": false,
 							"o": false,
 							"v": false,
@@ -272,8 +272,8 @@
 					"world": {
 						"x": 40,
 						"y": 40,
-						"width": 64,
-						"height": 64,
+						"width": 56,
+						"height": 56,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -614,7 +614,7 @@
 						"x": 208,
 						"y": 64,
 						"width": 24,
-						"height": 8,
+						"height": 24,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -993,8 +993,8 @@
 					"world": {
 						"x": 240,
 						"y": 96,
-						"width": 24,
-						"height": 24,
+						"width": 30,
+						"height": 30,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -2216,7 +2216,7 @@
 						"initially-visible": true,
 						"initial-animation": "Energy",
 						"initial-frame": 0,
-						"enable-collisions": true,
+						"enable-collisions": false,
 						"live-preview": false
 					},
 					"uid": 25,
@@ -2275,7 +2275,7 @@
 							1
 						],
 						"angle": 0,
-						"zElevation": 16
+						"zElevation": 20
 					}
 				},
 				{

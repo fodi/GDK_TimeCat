@@ -62,9 +62,19 @@
 							"id": "set-angle-of-motion",
 							"objectClass": "Projectile",
 							"sid": 610293374758599,
+							"disabled": true,
 							"behaviorType": "Bullet",
 							"parameters": {
 								"angle": "Self.Angle + 180"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "Projectile",
+							"sid": 144350775627947,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "angle(Player.X, Player.Y, Projectile.X, Projectile.Y)"
 							}
 						}
 					],
@@ -205,9 +215,19 @@
 									"id": "set-angle-of-motion",
 									"objectClass": "Item",
 									"sid": 229698196328943,
+									"disabled": true,
 									"behaviorType": "Bullet",
 									"parameters": {
 										"angle": "Self.Angle + 180"
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "Item",
+									"sid": 563190783235774,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "angle(Player.X, Player.Y, Item.X, Item.Y)"
 									}
 								}
 							],
@@ -301,8 +321,17 @@
 					"id": "set-angle",
 					"objectClass": "Projectile",
 					"sid": 495721162677032,
+					"disabled": true,
 					"parameters": {
 						"angle": "Self.Angle + 180"
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "Projectile",
+					"sid": 996804695352019,
+					"parameters": {
+						"angle": "angle(Item.X, Item.Y, Projectile.X, Projectile.Y)"
 					}
 				},
 				{

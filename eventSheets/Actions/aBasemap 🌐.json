@@ -2,6 +2,56 @@
 	"name": "aBasemap 🌐",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "waveHeight",
+			"type": "number",
+			"initialValue": "40",
+			"comment": "height of the waves",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 744231378618286
+		},
+		{
+			"eventType": "variable",
+			"name": "waveScale",
+			"type": "number",
+			"initialValue": "5",
+			"comment": "low value = less wave. large value = many small waves",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 125176036770197
+		},
+		{
+			"eventType": "variable",
+			"name": "waveScrollSpeed",
+			"type": "number",
+			"initialValue": "25",
+			"comment": "how fast the waves should scroll",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 843440935441647
+		},
+		{
+			"eventType": "variable",
+			"name": "pixelStepPerPoint",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "low number leads to more mesh points and smoother waves BUT WORSE PERFORMANCE",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 627639058946721
+		},
+		{
+			"eventType": "variable",
+			"name": "currentScroll",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "only for runtime",
+			"isStatic": true,
+			"isConstant": false,
+			"sid": 909480018620775
+		},
+		{
 			"aceType": "action",
 			"aceName": "spawn",
 			"objectClass": "Basemap",
@@ -13,363 +63,405 @@
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
 			"conditions": [],
-			"actions": [
-				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 144924698954862,
-					"parameters": {
-						"object-to-create": "3dIsland",
-						"layer": "LAYER_Main",
-						"x": "midX",
-						"y": "midY",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-size",
-					"objectClass": "3dIsland",
-					"sid": 999257139450070,
-					"parameters": {
-						"width": "R_Level_Columns * C_Level_Grid_Size",
-						"height": "R_Level_Rows * C_Level_Grid_Size"
-					}
-				},
-				{
-					"id": "set-z-elevation",
-					"objectClass": "3dIsland",
-					"sid": 813149382904549,
-					"parameters": {
-						"z": "- Self.ZHeight - 1.5"
-					}
-				},
-				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 316711022158292,
-					"parameters": {
-						"object-to-create": "Basemap",
-						"layer": "LAYER_Main",
-						"x": "-(C_Level_Grid_Size * C_Basemap_Ground_Border + C_Level_Grid_Size * C_Basemap_Water_Border)",
-						"y": "-(C_Level_Grid_Size * C_Basemap_Ground_Border + C_Level_Grid_Size * C_Basemap_Water_Border)",
-						"create-hierarchy": true,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-z-elevation",
-					"objectClass": "Basemap",
-					"sid": 518911617190348,
-					"parameters": {
-						"z": "3dIsland.ZElevation"
-					}
-				},
-				{
-					"id": "erase-tile-range",
-					"objectClass": "Basemap",
-					"sid": 562472132364405,
-					"parameters": {
-						"tile-x": "0",
-						"tile-y": "0",
-						"width": "Self.TileWidth",
-						"height": "Self.TileHeight"
-					}
-				},
-				{
-					"id": "set-size",
-					"objectClass": "Basemap",
-					"sid": 120233365649329,
-					"parameters": {
-						"width": "(R_Level_Columns + C_Basemap_Ground_Border * 2 + C_Basemap_Water_Border * 2) * C_Level_Grid_Size",
-						"height": "(R_Level_Rows + C_Basemap_Ground_Border * 2 + C_Basemap_Water_Border * 2) * C_Level_Grid_Size"
-					}
-				},
-				{
-					"customAction": "animate",
-					"objectClass": "Basemap",
-					"sid": 223582080540917
-				},
-				{
-					"id": "start-timer",
-					"objectClass": "Basemap",
-					"sid": 921746812368904,
-					"behaviorType": "Timer",
-					"parameters": {
-						"duration": "0.7",
-						"type": "regular",
-						"tag": "TIMER_Basemap_Animate"
-					}
-				}
-			],
+			"actions": [],
 			"sid": 235751073228539,
 			"children": [
 				{
-					"eventType": "comment",
-					"text": "Spawn decorations & obstacles"
-				},
-				{
-					"eventType": "comment",
-					"text": "todo use noise instead of random"
-				},
-				{
-					"eventType": "comment",
-					"text": "todo re-enable after assets"
-				},
-				{
 					"eventType": "block",
-					"conditions": [
+					"conditions": [],
+					"actions": [
 						{
-							"id": "for",
+							"id": "create-object",
 							"objectClass": "System",
-							"sid": 106784245397693,
+							"sid": 387041241793500,
 							"parameters": {
-								"name": "W_X",
-								"start-index": "C_Basemap_Water_Border + C_Basemap_Ground_Border",
-								"end-index": "Basemap.Width / C_Level_Grid_Size - C_Basemap_Water_Border - C_Basemap_Ground_Border - 2"
+								"object-to-create": "3dIsland",
+								"layer": "LAYER_Main",
+								"x": "midX",
+								"y": "midY",
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						},
 						{
-							"id": "for",
-							"objectClass": "System",
-							"sid": 116536683101495,
+							"id": "set-size",
+							"objectClass": "3dIsland",
+							"sid": 254412891170235,
 							"parameters": {
-								"name": "W_Y",
-								"start-index": "C_Basemap_Water_Border + C_Basemap_Ground_Border",
-								"end-index": "Basemap.Height / C_Level_Grid_Size - C_Basemap_Water_Border -C_Basemap_Ground_Border - 2"
+								"width": "R_Level_Columns * C_Level_Grid_Size",
+								"height": "R_Level_Rows * C_Level_Grid_Size"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "3dIsland",
+							"sid": 234220207332348,
+							"parameters": {
+								"z": "- Self.ZHeight - 1.5"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 524716891573835,
+							"parameters": {
+								"object-to-create": "Basemap",
+								"layer": "LAYER_Main",
+								"x": "-(C_Level_Grid_Size * C_Basemap_Ground_Border + C_Level_Grid_Size * C_Basemap_Water_Border)",
+								"y": "-(C_Level_Grid_Size * C_Basemap_Ground_Border + C_Level_Grid_Size * C_Basemap_Water_Border)",
+								"create-hierarchy": true,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "Basemap",
+							"sid": 726197248474709,
+							"parameters": {
+								"z": "3dIsland.ZElevation"
+							}
+						},
+						{
+							"id": "erase-tile-range",
+							"objectClass": "Basemap",
+							"sid": 587625436128459,
+							"parameters": {
+								"tile-x": "0",
+								"tile-y": "0",
+								"width": "Self.TileWidth",
+								"height": "Self.TileHeight"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "Basemap",
+							"sid": 531731621802143,
+							"parameters": {
+								"width": "(R_Level_Columns + C_Basemap_Ground_Border * 2 + C_Basemap_Water_Border * 2) * C_Level_Grid_Size",
+								"height": "(R_Level_Rows + C_Basemap_Ground_Border * 2 + C_Basemap_Water_Border * 2) * C_Level_Grid_Size"
+							}
+						},
+						{
+							"customAction": "animate",
+							"objectClass": "Basemap",
+							"sid": 981937884232003
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Basemap",
+							"sid": 664257435024294,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "0.7",
+								"type": "regular",
+								"tag": "TIMER_Basemap_Animate"
 							}
 						}
 					],
-					"actions": [],
-					"sid": 416801256823075,
-					"disabled": true,
+					"sid": 564664264904270,
 					"children": [
 						{
 							"eventType": "comment",
-							"text": "todo MNs"
+							"text": "Spawn decorations & obstacles"
 						},
 						{
 							"eventType": "comment",
-							"text": "Spawn obstacles"
+							"text": "todo use noise instead of random"
+						},
+						{
+							"eventType": "comment",
+							"text": "todo re-enable after assets"
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "repeat",
+									"id": "for",
 									"objectClass": "System",
-									"sid": 737565484897546,
+									"sid": 802909803266074,
 									"parameters": {
-										"count": "int(random(0, 2))"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 907098130621568,
-									"parameters": {
-										"object-to-create": "3dObstacle1",
-										"layer": "LAYER_Main",
-										"x": "Basemap.TileToPositionX(loopindex(W_X)) + random(0, C_Level_Grid_Size)",
-										"y": "Basemap.TileToPositionY(loopindex(W_Y)) + random(0, C_Level_Grid_Size)",
-										"create-hierarchy": false,
-										"template-name": "\"\""
+										"name": "W_X",
+										"start-index": "C_Basemap_Water_Border + C_Basemap_Ground_Border",
+										"end-index": "Basemap.Width / C_Level_Grid_Size - C_Basemap_Water_Border - C_Basemap_Ground_Border - 2"
 									}
 								},
 								{
-									"id": "set-angle",
-									"objectClass": "3dObstacle1",
-									"sid": 751198962276685,
+									"id": "for",
+									"objectClass": "System",
+									"sid": 435194794462435,
 									"parameters": {
-										"angle": "random(-20, 20)"
-									}
-								},
-								{
-									"id": "set-angle",
-									"objectClass": "3dObstacle1",
-									"sid": 187704137844798,
-									"disabled": true,
-									"parameters": {
-										"angle": "int(random(0, 3)) * random(8, 10) * choose(-1, 1)"
+										"name": "W_Y",
+										"start-index": "C_Basemap_Water_Border + C_Basemap_Ground_Border",
+										"end-index": "Basemap.Height / C_Level_Grid_Size - C_Basemap_Water_Border -C_Basemap_Ground_Border - 2"
 									}
 								}
 							],
-							"sid": 999534924281563,
+							"actions": [],
+							"sid": 673410822071584,
 							"disabled": true,
 							"children": [
+								{
+									"eventType": "comment",
+									"text": "todo MNs"
+								},
+								{
+									"eventType": "comment",
+									"text": "Spawn obstacles"
+								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "3dObstacle1",
-											"sid": 332454965212189,
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 488482427391480,
 											"parameters": {
-												"object": "f3DObstacles"
-											}
-										},
-										{
-											"id": "is-overlapping-at-offset",
-											"objectClass": "3dObstacle1",
-											"sid": 852885091582141,
-											"parameters": {
-												"object": "f3DObstacles",
-												"offset-x": "-Self.Width",
-												"offset-y": "0"
-											}
-										},
-										{
-											"id": "is-overlapping-at-offset",
-											"objectClass": "3dObstacle1",
-											"sid": 195164383968020,
-											"parameters": {
-												"object": "f3DObstacles",
-												"offset-x": "Self.Width",
-												"offset-y": "0"
-											}
-										},
-										{
-											"id": "is-overlapping-at-offset",
-											"objectClass": "3dObstacle1",
-											"sid": 608912198927113,
-											"parameters": {
-												"object": "f3DObstacles",
-												"offset-x": "0",
-												"offset-y": "-Self.Height"
-											}
-										},
-										{
-											"id": "is-overlapping-at-offset",
-											"objectClass": "3dObstacle1",
-											"sid": 556132425036768,
-											"parameters": {
-												"object": "f3DObstacles",
-												"offset-x": "0",
-												"offset-y": "Self.Height"
+												"count": "int(random(0, 2))"
 											}
 										}
 									],
 									"actions": [
 										{
-											"id": "destroy",
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 519641455721595,
+											"parameters": {
+												"object-to-create": "3dObstacle1",
+												"layer": "LAYER_Main",
+												"x": "Basemap.TileToPositionX(loopindex(W_X)) + random(0, C_Level_Grid_Size)",
+												"y": "Basemap.TileToPositionY(loopindex(W_Y)) + random(0, C_Level_Grid_Size)",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-angle",
 											"objectClass": "3dObstacle1",
-											"sid": 861942623920395
+											"sid": 776544171446487,
+											"parameters": {
+												"angle": "random(-20, 20)"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "3dObstacle1",
+											"sid": 314680222807721,
+											"disabled": true,
+											"parameters": {
+												"angle": "int(random(0, 3)) * random(8, 10) * choose(-1, 1)"
+											}
 										}
 									],
-									"sid": 666866691919378,
+									"sid": 547305550994020,
 									"disabled": true,
-									"isOrBlock": true
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "3dObstacle1",
+													"sid": 935291036803671,
+													"parameters": {
+														"object": "f3DObstacles"
+													}
+												},
+												{
+													"id": "is-overlapping-at-offset",
+													"objectClass": "3dObstacle1",
+													"sid": 302045837345836,
+													"parameters": {
+														"object": "f3DObstacles",
+														"offset-x": "-Self.Width",
+														"offset-y": "0"
+													}
+												},
+												{
+													"id": "is-overlapping-at-offset",
+													"objectClass": "3dObstacle1",
+													"sid": 176614929476369,
+													"parameters": {
+														"object": "f3DObstacles",
+														"offset-x": "Self.Width",
+														"offset-y": "0"
+													}
+												},
+												{
+													"id": "is-overlapping-at-offset",
+													"objectClass": "3dObstacle1",
+													"sid": 815864249793881,
+													"parameters": {
+														"object": "f3DObstacles",
+														"offset-x": "0",
+														"offset-y": "-Self.Height"
+													}
+												},
+												{
+													"id": "is-overlapping-at-offset",
+													"objectClass": "3dObstacle1",
+													"sid": 205168280371658,
+													"parameters": {
+														"object": "f3DObstacles",
+														"offset-x": "0",
+														"offset-y": "Self.Height"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "3dObstacle1",
+													"sid": 354572093823850
+												}
+											],
+											"sid": 928156945208031,
+											"disabled": true,
+											"isOrBlock": true
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "Spawn decorations"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 220943403222077,
+											"parameters": {
+												"count": "int(random(2, 4))"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 583255538637854,
+											"parameters": {
+												"object-to-create": "bbDecor",
+												"layer": "LAYER_Main",
+												"x": "Basemap.TileToPositionX(loopindex(W_X)) + random(0, C_Level_Grid_Size)",
+												"y": "Basemap.TileToPositionY(loopindex(W_Y)) + random(0, C_Level_Grid_Size)",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "bbDecor",
+											"sid": 114575253685958,
+											"parameters": {
+												"frame-number": "int(random(0, Self.AnimationFrameCount))"
+											}
+										}
+									],
+									"sid": 532224098858578,
+									"disabled": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "bbDecor",
+													"sid": 240021610919746,
+													"parameters": {
+														"object": "fBillboards"
+													}
+												},
+												{
+													"id": "is-overlapping-at-offset",
+													"objectClass": "bbDecor",
+													"sid": 630894291554036,
+													"parameters": {
+														"object": "fBillboards",
+														"offset-x": "-Self.Width",
+														"offset-y": "0"
+													}
+												},
+												{
+													"id": "is-overlapping-at-offset",
+													"objectClass": "bbDecor",
+													"sid": 878155152663506,
+													"parameters": {
+														"object": "fBillboards",
+														"offset-x": "Self.Width",
+														"offset-y": "0"
+													}
+												},
+												{
+													"id": "is-overlapping-at-offset",
+													"objectClass": "bbDecor",
+													"sid": 501710510118569,
+													"parameters": {
+														"object": "fBillboards",
+														"offset-x": "0",
+														"offset-y": "-Self.Height"
+													}
+												},
+												{
+													"id": "is-overlapping-at-offset",
+													"objectClass": "bbDecor",
+													"sid": 671107034228319,
+													"parameters": {
+														"object": "fBillboards",
+														"offset-x": "0",
+														"offset-y": "Self.Height * 3"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "bbDecor",
+													"sid": 948414144993081
+												}
+											],
+											"sid": 373428879563003,
+											"disabled": true,
+											"isOrBlock": true
+										}
+									]
 								}
 							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Spawn decorations"
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "repeat",
-									"objectClass": "System",
-									"sid": 425580008101628,
+									"id": "pick-children",
+									"objectClass": "Basemap",
+									"sid": 232200403044665,
 									"parameters": {
-										"count": "int(random(2, 4))"
+										"child": "Water",
+										"which": "own"
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 911380415082992,
+									"id": "set-mesh-size",
+									"objectClass": "Water",
+									"sid": 637491935101146,
 									"parameters": {
-										"object-to-create": "bbDecor",
-										"layer": "LAYER_Main",
-										"x": "Basemap.TileToPositionX(loopindex(W_X)) + random(0, C_Level_Grid_Size)",
-										"y": "Basemap.TileToPositionY(loopindex(W_Y)) + random(0, C_Level_Grid_Size)",
-										"create-hierarchy": false,
-										"template-name": "\"\""
+										"cols": "int(water.Width/pixelStepPerPoint)",
+										"rows": "int(water.Height/pixelStepPerPoint)"
 									}
 								},
 								{
-									"id": "set-animation-frame",
-									"objectClass": "bbDecor",
-									"sid": 995031116677521,
+									"id": "set-z-elevation",
+									"objectClass": "Water",
+									"sid": 623707821309337,
 									"parameters": {
-										"frame-number": "int(random(0, Self.AnimationFrameCount))"
+										"z": "Self.ZElevation - waveHeight"
 									}
 								}
 							],
-							"sid": 583335893139299,
-							"disabled": true,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "bbDecor",
-											"sid": 645486394431135,
-											"parameters": {
-												"object": "fBillboards"
-											}
-										},
-										{
-											"id": "is-overlapping-at-offset",
-											"objectClass": "bbDecor",
-											"sid": 827347211781878,
-											"parameters": {
-												"object": "fBillboards",
-												"offset-x": "-Self.Width",
-												"offset-y": "0"
-											}
-										},
-										{
-											"id": "is-overlapping-at-offset",
-											"objectClass": "bbDecor",
-											"sid": 922934189092811,
-											"parameters": {
-												"object": "fBillboards",
-												"offset-x": "Self.Width",
-												"offset-y": "0"
-											}
-										},
-										{
-											"id": "is-overlapping-at-offset",
-											"objectClass": "bbDecor",
-											"sid": 773890920174556,
-											"parameters": {
-												"object": "fBillboards",
-												"offset-x": "0",
-												"offset-y": "-Self.Height"
-											}
-										},
-										{
-											"id": "is-overlapping-at-offset",
-											"objectClass": "bbDecor",
-											"sid": 293317804174363,
-											"parameters": {
-												"object": "fBillboards",
-												"offset-x": "0",
-												"offset-y": "Self.Height * 3"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "destroy",
-											"objectClass": "bbDecor",
-											"sid": 118950829400185
-										}
-									],
-									"sid": 362019674868729,
-									"disabled": true,
-									"isOrBlock": true
-								}
-							]
+							"sid": 134313334618773
 						}
 					]
 				}
@@ -443,6 +535,100 @@
 						}
 					],
 					"sid": 494677077175158
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "tick",
+			"objectClass": "Basemap",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 247928747589769,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 274528046864894,
+							"parameters": {
+								"variable": "currentScroll",
+								"value": "waveScrollSpeed*dt"
+							}
+						}
+					],
+					"sid": 846023404183787
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "Basemap",
+							"sid": 976971874294805,
+							"parameters": {
+								"child": "Water",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 777322475154837,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 446335432700250,
+									"parameters": {
+										"name": "W_X",
+										"start-index": "0",
+										"end-index": "water.MeshColumns"
+									}
+								},
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 263348910722743,
+									"parameters": {
+										"name": "W_Y",
+										"start-index": "0",
+										"end-index": "water.MeshRows"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mesh-point",
+									"objectClass": "Water",
+									"sid": 761946042689811,
+									"parameters": {
+										"col": "loopindex(W_X)",
+										"row": "loopindex(W_Y)",
+										"mode": "relative",
+										"posx": "0",
+										"posy": "0",
+										"z-elevation": "AdvancedRandom.Classic2d(currentScroll+loopindex(W_Y)*pixelStepPerPoint*waveScale,currentScroll+loopindex(W_X)*pixelStepPerPoint*waveScale)*waveHeight",
+										"texx": "0",
+										"texy": "0"
+									}
+								}
+							],
+							"sid": 868747967389098
+						}
+					]
 				}
 			]
 		}

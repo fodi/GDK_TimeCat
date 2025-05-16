@@ -247,7 +247,8 @@
 									}
 								}
 							],
-							"sid": 348344614883283
+							"sid": 348344614883283,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -409,7 +410,7 @@
 												"object": "Tile",
 												"expression": "distance(fTile.X, fTile.Y, Tile.X, Tile.Y)",
 												"comparison": 2,
-												"value": "C_Level_Tile_Pair_OptimalMaxDistance"
+												"value": "R_Level_Tile_Pair_OptimalMaxDistance"
 											}
 										},
 										{

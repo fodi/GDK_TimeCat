@@ -184,6 +184,10 @@
 			"text": "Cannon"
 		},
 		{
+			"eventType": "comment",
+			"text": "todo CAs"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
