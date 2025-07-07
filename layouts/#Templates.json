@@ -1190,7 +1190,8 @@
 						"R_Health_Max": 1,
 						"health": 0,
 						"targetPlayerId": -1,
-						"isInitialized": 0
+						"isInitialized": 0,
+						"isDead": 0
 					},
 					"behaviors": {
 						"Orbit": {
