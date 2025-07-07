@@ -259,7 +259,7 @@
 							"children": [
 								{
 									"eventType": "comment",
-									"text": "Handle digital movement"
+									"text": "Handle digital movement (as fallback from analog)"
 								},
 								{
 									"eventType": "block",
@@ -267,66 +267,105 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "Player",
-											"sid": 203156690897941,
+											"sid": 722522865501921,
 											"parameters": {
-												"instance-variable": "IN_Up",
+												"instance-variable": "IN_Angle_Set",
 												"comparison": 0,
-												"value": "YES"
-											}
-										},
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Player",
-											"sid": 492325711733329,
-											"parameters": {
-												"instance-variable": "IN_Down",
-												"comparison": 0,
-												"value": "YES"
-											}
-										},
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Player",
-											"sid": 798679687648059,
-											"parameters": {
-												"instance-variable": "IN_Left",
-												"comparison": 0,
-												"value": "YES"
-											}
-										},
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Player",
-											"sid": 548088366531169,
-											"parameters": {
-												"instance-variable": "IN_Right",
-												"comparison": 0,
-												"value": "YES"
+												"value": "NO"
 											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 396147886758664,
+									"children": [
 										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 758025289573903,
-											"parameters": {
-												"instance-variable": "IN_Move",
-												"value": "YES"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 499330644360394,
-											"parameters": {
-												"instance-variable": "IN_Move_Angle",
-												"value": "angle(0, 0, Player.IN_Right - Player.IN_Left, Player.IN_Down - Player.IN_Up)"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Player",
+													"sid": 684141802438815,
+													"parameters": {
+														"instance-variable": "IN_Up",
+														"comparison": 0,
+														"value": "YES"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Player",
+													"sid": 250200166622830,
+													"parameters": {
+														"instance-variable": "IN_Down",
+														"comparison": 0,
+														"value": "YES"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Player",
+													"sid": 827916850621681,
+													"parameters": {
+														"instance-variable": "IN_Left",
+														"comparison": 0,
+														"value": "YES"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Player",
+													"sid": 622598803756799,
+													"parameters": {
+														"instance-variable": "IN_Right",
+														"comparison": 0,
+														"value": "YES"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Player",
+													"sid": 741733854931498,
+													"disabled": true,
+													"parameters": {
+														"instance-variable": "OLD_IN_Move",
+														"value": "YES"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Player",
+													"sid": 911775251006399,
+													"disabled": true,
+													"parameters": {
+														"instance-variable": "OLD_IN_Move_Angle",
+														"value": "angle(0, 0, Player.IN_Right - Player.IN_Left, Player.IN_Down - Player.IN_Up)"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Player",
+													"sid": 331270912895181,
+													"parameters": {
+														"instance-variable": "IN_Angle",
+														"value": "angle(0, 0, Player.IN_Right - Player.IN_Left, Player.IN_Down - Player.IN_Up)"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Player",
+													"sid": 681429009081753,
+													"parameters": {
+														"instance-variable": "IN_Angle_Set",
+														"value": "YES"
+													}
+												}
+											],
+											"sid": 963413303766194,
+											"isOrBlock": true
 										}
-									],
-									"sid": 151547628573832,
-									"isOrBlock": true
+									]
 								},
 								{
 									"eventType": "comment",
@@ -348,7 +387,7 @@
 											"objectClass": "Player",
 											"sid": 570176993187359,
 											"parameters": {
-												"instance-variable": "IN_Move",
+												"instance-variable": "OLD_IN_Move",
 												"comparison": 0,
 												"value": "YES"
 											}
@@ -361,11 +400,12 @@
 											"sid": 165546471867728,
 											"parameters": {
 												"instance-variable": "currentAngle",
-												"value": "Player.IN_Move_Angle"
+												"value": "Player.OLD_IN_Move_Angle"
 											}
 										}
 									],
-									"sid": 273981736477435
+									"sid": 273981736477435,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -380,7 +420,7 @@
 											"objectClass": "Player",
 											"sid": 111100411726404,
 											"parameters": {
-												"instance-variable": "IN_Aim",
+												"instance-variable": "OLD_IN_Aim",
 												"comparison": 0,
 												"value": "YES"
 											}
@@ -393,11 +433,12 @@
 											"sid": 263228608253627,
 											"parameters": {
 												"instance-variable": "currentAngle",
-												"value": "Player.IN_Aim_Angle"
+												"value": "Player.OLD_IN_Aim_Angle"
 											}
 										}
 									],
-									"sid": 956668401045789
+									"sid": 956668401045789,
+									"disabled": true
 								},
 								{
 									"eventType": "comment",
@@ -410,8 +451,19 @@
 											"id": "is-between-angles",
 											"objectClass": "System",
 											"sid": 758770063574639,
+											"disabled": true,
 											"parameters": {
 												"angle": "Player.currentAngle",
+												"first-angle": "-60",
+												"second-angle": "60"
+											}
+										},
+										{
+											"id": "is-between-angles",
+											"objectClass": "System",
+											"sid": 724467282309729,
+											"parameters": {
+												"angle": "Player.IN_Angle",
 												"first-angle": "-60",
 												"second-angle": "60"
 											}
@@ -441,8 +493,19 @@
 											"id": "is-between-angles",
 											"objectClass": "System",
 											"sid": 822189485544097,
+											"disabled": true,
 											"parameters": {
 												"angle": "Player.currentAngle",
+												"first-angle": "120",
+												"second-angle": "240"
+											}
+										},
+										{
+											"id": "is-between-angles",
+											"objectClass": "System",
+											"sid": 393162732934288,
+											"parameters": {
+												"angle": "Player.IN_Angle",
 												"first-angle": "120",
 												"second-angle": "240"
 											}
@@ -472,8 +535,19 @@
 											"id": "is-between-angles",
 											"objectClass": "System",
 											"sid": 979477917939749,
+											"disabled": true,
 											"parameters": {
 												"angle": "Player.currentAngle",
+												"first-angle": "240",
+												"second-angle": "300"
+											}
+										},
+										{
+											"id": "is-between-angles",
+											"objectClass": "System",
+											"sid": 405890387665582,
+											"parameters": {
+												"angle": "Player.IN_Angle",
 												"first-angle": "240",
 												"second-angle": "300"
 											}
@@ -503,8 +577,19 @@
 											"id": "is-between-angles",
 											"objectClass": "System",
 											"sid": 314930774818609,
+											"disabled": true,
 											"parameters": {
 												"angle": "Player.currentAngle",
+												"first-angle": "60",
+												"second-angle": "120"
+											}
+										},
+										{
+											"id": "is-between-angles",
+											"objectClass": "System",
+											"sid": 199492318854929,
+											"parameters": {
+												"angle": "Player.IN_Angle",
 												"first-angle": "60",
 												"second-angle": "120"
 											}
@@ -537,14 +622,39 @@
 									"sid": 226228531536649
 								},
 								{
+									"eventType": "comment",
+									"text": "If player is pressing walk, move"
+								},
+								{
 									"eventType": "block",
 									"conditions": [
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "Player",
 											"sid": 522652247351482,
+											"disabled": true,
 											"parameters": {
-												"instance-variable": "IN_Move",
+												"instance-variable": "OLD_IN_Move",
+												"comparison": 0,
+												"value": "YES"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Player",
+											"sid": 122002388317811,
+											"parameters": {
+												"instance-variable": "IN_Walk",
+												"comparison": 0,
+												"value": "YES"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Player",
+											"sid": 717359268998142,
+											"parameters": {
+												"instance-variable": "IN_Angle_Set",
 												"comparison": 0,
 												"value": "YES"
 											}
@@ -611,7 +721,7 @@
 													"objectClass": "Player",
 													"sid": 571170445687444,
 													"parameters": {
-														"instance-variable": "IN_Aim",
+														"instance-variable": "OLD_IN_Aim",
 														"comparison": 0,
 														"value": "YES"
 													}
@@ -663,18 +773,38 @@
 													"id": "set-vector-x",
 													"objectClass": "Player",
 													"sid": 900785635261042,
+													"disabled": true,
 													"behaviorType": "8Direction",
 													"parameters": {
-														"vector-x": "cos(Player.IN_Move_Angle) * movementSpeed"
+														"vector-x": "cos(Player.OLD_IN_Move_Angle) * movementSpeed"
 													}
 												},
 												{
 													"id": "set-vector-y",
 													"objectClass": "Player",
 													"sid": 459433880576684,
+													"disabled": true,
 													"behaviorType": "8Direction",
 													"parameters": {
-														"vector-y": "sin(Player.IN_Move_Angle) * movementSpeed"
+														"vector-y": "sin(Player.OLD_IN_Move_Angle) * movementSpeed"
+													}
+												},
+												{
+													"id": "set-vector-x",
+													"objectClass": "Player",
+													"sid": 549573411752225,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"vector-x": "cos(Player.IN_Angle) * movementSpeed"
+													}
+												},
+												{
+													"id": "set-vector-y",
+													"objectClass": "Player",
+													"sid": 497799203636915,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"vector-y": "sin(Player.IN_Angle) * movementSpeed"
 													}
 												}
 											],
@@ -795,9 +925,19 @@
 											"id": "set-position",
 											"objectClass": "Item",
 											"sid": 627260830318683,
+											"disabled": true,
 											"parameters": {
 												"x": "Player.X + cos(anglelerp(angle(Player.X, Player.Y, Self.X, Self.Y), Player.currentAngle, 0.2)) * Player.R_Box_Distance",
 												"y": "Player.Y + sin(anglelerp(angle(Player.X, Player.Y, Self.X, Self.Y), Player.currentAngle, 0.2)) * Player.R_Box_Distance"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "Item",
+											"sid": 158259397893020,
+											"parameters": {
+												"x": "Player.X + cos(anglelerp(angle(Player.X, Player.Y, Self.X, Self.Y), Player.IN_Angle, 0.2)) * Player.R_Box_Distance",
+												"y": "Player.Y + sin(anglelerp(angle(Player.X, Player.Y, Self.X, Self.Y), Player.IN_Angle, 0.2)) * Player.R_Box_Distance"
 											}
 										},
 										{
@@ -806,6 +946,14 @@
 											"sid": 525203394453657,
 											"parameters": {
 												"angle": "anglelerp(Self.Angle, Player.currentAngle, 0.2)"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Item",
+											"sid": 731783770948764,
+											"parameters": {
+												"angle": "anglelerp(Self.Angle, Player.IN_Angle, 0.2)"
 											}
 										}
 									],
@@ -1050,8 +1198,9 @@
 													"id": "compare-instance-variable",
 													"objectClass": "Player",
 													"sid": 735967356260742,
+													"disabled": true,
 													"parameters": {
-														"instance-variable": "IN_Aim",
+														"instance-variable": "OLD_IN_Aim",
 														"comparison": 0,
 														"value": "NO"
 													}

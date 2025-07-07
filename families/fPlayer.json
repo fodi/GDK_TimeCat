@@ -158,32 +158,53 @@
 			"sid": 933990457185816
 		},
 		{
-			"name": "IN_Move",
+			"name": "OLD_IN_Move",
 			"type": "number",
 			"desc": "",
 			"show": false,
 			"sid": 335003792566386
 		},
 		{
-			"name": "IN_Move_Angle",
+			"name": "OLD_IN_Move_Angle",
 			"type": "number",
 			"desc": "",
 			"show": false,
 			"sid": 424292893614227
 		},
 		{
-			"name": "IN_Aim",
+			"name": "OLD_IN_Aim",
 			"type": "number",
 			"desc": "",
 			"show": false,
 			"sid": 832694599926834
 		},
 		{
-			"name": "IN_Aim_Angle",
+			"name": "OLD_IN_Aim_Angle",
 			"type": "number",
 			"desc": "",
 			"show": false,
 			"sid": 269239335039642
+		},
+		{
+			"name": "IN_Angle_Set",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 468544594680557
+		},
+		{
+			"name": "IN_Angle",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 280417189005417
+		},
+		{
+			"name": "IN_Walk",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 972912773690266
 		}
 	],
 	"behaviorTypes": [

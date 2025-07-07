@@ -1018,7 +1018,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "53b",
+		"version": "53-p1-input-experiment",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

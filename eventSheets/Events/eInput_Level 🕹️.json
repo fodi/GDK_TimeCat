@@ -53,7 +53,17 @@
 					}
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player",
+					"sid": 922351100272585,
+					"parameters": {
+						"instance-variable": "IN_Angle_Set",
+						"value": "NO"
+					}
+				}
+			],
 			"sid": 320679594348019,
 			"children": [
 				{
@@ -62,7 +72,7 @@
 						{
 							"id": "key-is-down",
 							"objectClass": "Keyboard",
-							"sid": 224109460955231,
+							"sid": 975445860201459,
 							"parameters": {
 								"key": 16
 							}
@@ -109,9 +119,28 @@
 							"id": "set-instvar-value",
 							"objectClass": "Player",
 							"sid": 906657481907230,
+							"disabled": true,
 							"parameters": {
-								"instance-variable": "IN_Aim",
+								"instance-variable": "OLD_IN_Aim",
 								"value": "YES"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 964105021010692,
+							"parameters": {
+								"instance-variable": "IN_Walk",
+								"value": "YES"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 622248994606641,
+							"parameters": {
+								"type": "log",
+								"message": "\"walk\""
 							}
 						}
 					],
@@ -132,8 +161,18 @@
 							"id": "set-instvar-value",
 							"objectClass": "Player",
 							"sid": 658375548368012,
+							"disabled": true,
 							"parameters": {
-								"instance-variable": "IN_Aim",
+								"instance-variable": "OLD_IN_Aim",
+								"value": "NO"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 360234392369856,
+							"parameters": {
+								"instance-variable": "IN_Walk",
 								"value": "NO"
 							}
 						}
@@ -399,8 +438,9 @@
 							"id": "set-instvar-value",
 							"objectClass": "Player",
 							"sid": 377010960151886,
+							"disabled": true,
 							"parameters": {
-								"instance-variable": "IN_Move",
+								"instance-variable": "OLD_IN_Move",
 								"value": "YES"
 							}
 						},
@@ -408,8 +448,28 @@
 							"id": "set-instvar-value",
 							"objectClass": "Player",
 							"sid": 592076219641157,
+							"disabled": true,
 							"parameters": {
-								"instance-variable": "IN_Move_Angle",
+								"instance-variable": "OLD_IN_Move_Angle",
+								"value": "angle(0, 0, Gamepad.Axis(2, 0), Gamepad.Axis(2, 1))"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 998661867981315,
+							"breakpoint": true,
+							"parameters": {
+								"instance-variable": "IN_Angle_Set",
+								"value": "YES"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 910864486823599,
+							"parameters": {
+								"instance-variable": "IN_Angle",
 								"value": "angle(0, 0, Gamepad.Axis(2, 0), Gamepad.Axis(2, 1))"
 							}
 						}
@@ -432,12 +492,13 @@
 							"objectClass": "Player",
 							"sid": 844733398970768,
 							"parameters": {
-								"instance-variable": "IN_Move",
+								"instance-variable": "OLD_IN_Move",
 								"value": "NO"
 							}
 						}
 					],
-					"sid": 231025660976177
+					"sid": 231025660976177,
+					"disabled": true
 				}
 			]
 		},
@@ -477,6 +538,7 @@
 				}
 			],
 			"sid": 378431901609489,
+			"disabled": true,
 			"isOrBlock": true
 		},
 		{
@@ -495,6 +557,7 @@
 			],
 			"actions": [],
 			"sid": 233531171270017,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -550,12 +613,13 @@
 							"objectClass": "Player",
 							"sid": 316793595600592,
 							"parameters": {
-								"instance-variable": "IN_Aim",
+								"instance-variable": "OLD_IN_Aim",
 								"value": "YES"
 							}
 						}
 					],
 					"sid": 669017018074261,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -573,12 +637,13 @@
 							"objectClass": "Player",
 							"sid": 216171428644071,
 							"parameters": {
-								"instance-variable": "IN_Aim",
+								"instance-variable": "OLD_IN_Aim",
 								"value": "NO"
 							}
 						}
 					],
-					"sid": 696524978870844
+					"sid": 696524978870844,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -613,6 +678,7 @@
 						}
 					],
 					"sid": 422995841293229,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -635,7 +701,8 @@
 							}
 						}
 					],
-					"sid": 778681479356353
+					"sid": 778681479356353,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -670,6 +737,7 @@
 						}
 					],
 					"sid": 850614651293543,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -692,7 +760,8 @@
 							}
 						}
 					],
-					"sid": 194884815624022
+					"sid": 194884815624022,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -727,6 +796,7 @@
 						}
 					],
 					"sid": 232380924225629,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -749,7 +819,8 @@
 							}
 						}
 					],
-					"sid": 985654002826987
+					"sid": 985654002826987,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -784,6 +855,7 @@
 						}
 					],
 					"sid": 712322307736833,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -806,7 +878,8 @@
 							}
 						}
 					],
-					"sid": 242547054147036
+					"sid": 242547054147036,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -840,7 +913,7 @@
 							"objectClass": "Player",
 							"sid": 265996771758035,
 							"parameters": {
-								"instance-variable": "IN_Move",
+								"instance-variable": "OLD_IN_Move",
 								"value": "YES"
 							}
 						},
@@ -849,12 +922,13 @@
 							"objectClass": "Player",
 							"sid": 712000365310993,
 							"parameters": {
-								"instance-variable": "IN_Move_Angle",
+								"instance-variable": "OLD_IN_Move_Angle",
 								"value": "angle(0, 0, Gamepad.Axis(3, 0), Gamepad.Axis(3, 1))"
 							}
 						}
 					],
 					"sid": 919255600428288,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -872,12 +946,13 @@
 							"objectClass": "Player",
 							"sid": 581669829422477,
 							"parameters": {
-								"instance-variable": "IN_Move",
+								"instance-variable": "OLD_IN_Move",
 								"value": "NO"
 							}
 						}
 					],
-					"sid": 506618635702655
+					"sid": 506618635702655,
+					"disabled": true
 				}
 			]
 		},
@@ -908,7 +983,8 @@
 					]
 				}
 			],
-			"sid": 966356632513790
+			"sid": 966356632513790,
+			"disabled": true
 		},
 		{
 			"eventType": "comment",
@@ -943,7 +1019,8 @@
 					}
 				}
 			],
-			"sid": 668230309337832
+			"sid": 668230309337832,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -968,7 +1045,8 @@
 					]
 				}
 			],
-			"sid": 736781427561208
+			"sid": 736781427561208,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -990,12 +1068,13 @@
 					"objectClass": "Player",
 					"sid": 431041185839643,
 					"parameters": {
-						"instance-variable": "IN_Aim",
+						"instance-variable": "OLD_IN_Aim",
 						"value": "NO"
 					}
 				}
 			],
 			"sid": 711691434643337,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "comment",
@@ -1047,12 +1126,13 @@
 							"objectClass": "Player",
 							"sid": 249034201711830,
 							"parameters": {
-								"instance-variable": "IN_Aim",
+								"instance-variable": "OLD_IN_Aim",
 								"value": "YES"
 							}
 						}
 					],
 					"sid": 810748177881169,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -1070,12 +1150,13 @@
 							"objectClass": "Player",
 							"sid": 987047194600718,
 							"parameters": {
-								"instance-variable": "IN_Aim",
+								"instance-variable": "OLD_IN_Aim",
 								"value": "NO"
 							}
 						}
 					],
-					"sid": 577903556794215
+					"sid": 577903556794215,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -1102,6 +1183,7 @@
 						}
 					],
 					"sid": 504506100957920,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -1124,7 +1206,8 @@
 							}
 						}
 					],
-					"sid": 459635965882726
+					"sid": 459635965882726,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -1151,6 +1234,7 @@
 						}
 					],
 					"sid": 650997448399289,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -1173,7 +1257,8 @@
 							}
 						}
 					],
-					"sid": 393791835660202
+					"sid": 393791835660202,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -1200,6 +1285,7 @@
 						}
 					],
 					"sid": 633161858261366,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -1222,7 +1308,8 @@
 							}
 						}
 					],
-					"sid": 464438810411894
+					"sid": 464438810411894,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -1249,6 +1336,7 @@
 						}
 					],
 					"sid": 860558257395266,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -1271,7 +1359,8 @@
 							}
 						}
 					],
-					"sid": 107650564337911
+					"sid": 107650564337911,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -1305,7 +1394,7 @@
 							"objectClass": "Player",
 							"sid": 970796013673632,
 							"parameters": {
-								"instance-variable": "IN_Move",
+								"instance-variable": "OLD_IN_Move",
 								"value": "YES"
 							}
 						},
@@ -1314,12 +1403,13 @@
 							"objectClass": "Player",
 							"sid": 428828385976286,
 							"parameters": {
-								"instance-variable": "IN_Move_Angle",
+								"instance-variable": "OLD_IN_Move_Angle",
 								"value": "angle(0, 0, Gamepad.Axis(1, 0), Gamepad.Axis(1, 1))"
 							}
 						}
 					],
 					"sid": 693580280340980,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -1337,18 +1427,20 @@
 							"objectClass": "Player",
 							"sid": 832724672758404,
 							"parameters": {
-								"instance-variable": "IN_Move",
+								"instance-variable": "OLD_IN_Move",
 								"value": "NO"
 							}
 						}
 					],
 					"sid": 193418687961464,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [],
 							"actions": [],
-							"sid": 338497853681116
+							"sid": 338497853681116,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -1372,7 +1464,7 @@
 									"objectClass": "Player",
 									"sid": 717066505367374,
 									"parameters": {
-										"instance-variable": "IN_Move",
+										"instance-variable": "OLD_IN_Move",
 										"value": "YES"
 									}
 								},
@@ -1381,12 +1473,13 @@
 									"objectClass": "Player",
 									"sid": 209450268025334,
 									"parameters": {
-										"instance-variable": "IN_Move_Angle",
+										"instance-variable": "OLD_IN_Move_Angle",
 										"value": "angle(Player.X, Player.Y, Mouse.X, Mouse.Y)"
 									}
 								}
 							],
-							"sid": 448870527769426
+							"sid": 448870527769426,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -1403,12 +1496,13 @@
 									"objectClass": "Player",
 									"sid": 575946505804444,
 									"parameters": {
-										"instance-variable": "IN_Move",
+										"instance-variable": "OLD_IN_Move",
 										"value": "NO"
 									}
 								}
 							],
 							"sid": 190427489634666,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -1430,7 +1524,7 @@
 											"objectClass": "Player",
 											"sid": 398219970023890,
 											"parameters": {
-												"instance-variable": "IN_Aim",
+												"instance-variable": "OLD_IN_Aim",
 												"value": "YES"
 											}
 										},
@@ -1439,7 +1533,7 @@
 											"objectClass": "Player",
 											"sid": 421745435918507,
 											"parameters": {
-												"instance-variable": "IN_Aim_Angle",
+												"instance-variable": "OLD_IN_Aim_Angle",
 												"value": "angle(Player.X, Player.Y, Mouse.X, Mouse.Y)"
 											}
 										},
@@ -1453,7 +1547,8 @@
 											}
 										}
 									],
-									"sid": 870275649809600
+									"sid": 870275649809600,
+									"disabled": true
 								}
 							]
 						}
@@ -1488,7 +1583,8 @@
 					]
 				}
 			],
-			"sid": 739179388133777
+			"sid": 739179388133777,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -1506,6 +1602,7 @@
 			],
 			"actions": [],
 			"sid": 761561037902944,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -1553,12 +1650,13 @@
 							"objectClass": "Player",
 							"sid": 742251646851245,
 							"parameters": {
-								"instance-variable": "IN_Aim",
+								"instance-variable": "OLD_IN_Aim",
 								"value": "YES"
 							}
 						}
 					],
 					"sid": 289664878877774,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -1576,12 +1674,13 @@
 							"objectClass": "Player",
 							"sid": 991470647067397,
 							"parameters": {
-								"instance-variable": "IN_Aim",
+								"instance-variable": "OLD_IN_Aim",
 								"value": "NO"
 							}
 						}
 					],
-					"sid": 235069517524762
+					"sid": 235069517524762,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -1615,7 +1714,7 @@
 							"objectClass": "Player",
 							"sid": 457307727407193,
 							"parameters": {
-								"instance-variable": "IN_Move",
+								"instance-variable": "OLD_IN_Move",
 								"value": "YES"
 							}
 						},
@@ -1624,12 +1723,13 @@
 							"objectClass": "Player",
 							"sid": 996210817311897,
 							"parameters": {
-								"instance-variable": "IN_Move_Angle",
+								"instance-variable": "OLD_IN_Move_Angle",
 								"value": "angle(0, 0, Gamepad.Axis(0, 0), Gamepad.Axis(0, 1))"
 							}
 						}
 					],
 					"sid": 279934706714375,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -1647,12 +1747,13 @@
 							"objectClass": "Player",
 							"sid": 977484166789299,
 							"parameters": {
-								"instance-variable": "IN_Move",
+								"instance-variable": "OLD_IN_Move",
 								"value": "NO"
 							}
 						}
 					],
-					"sid": 760122420650749
+					"sid": 760122420650749,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -1679,6 +1780,7 @@
 						}
 					],
 					"sid": 601530177878137,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -1701,7 +1803,8 @@
 							}
 						}
 					],
-					"sid": 931456468997817
+					"sid": 931456468997817,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -1728,6 +1831,7 @@
 						}
 					],
 					"sid": 336509329116661,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -1750,7 +1854,8 @@
 							}
 						}
 					],
-					"sid": 342149287985377
+					"sid": 342149287985377,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -1777,6 +1882,7 @@
 						}
 					],
 					"sid": 207679921156821,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -1799,7 +1905,8 @@
 							}
 						}
 					],
-					"sid": 551158164786227
+					"sid": 551158164786227,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -1826,6 +1933,7 @@
 						}
 					],
 					"sid": 271182805088953,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -1848,7 +1956,8 @@
 							}
 						}
 					],
-					"sid": 125303583789474
+					"sid": 125303583789474,
+					"disabled": true
 				}
 			]
 		},
