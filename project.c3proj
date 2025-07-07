@@ -906,6 +906,14 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "BGM2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 170551896864839,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
@@ -940,6 +948,14 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "chill8x8.json",
+					"type": "application/json",
+					"sid": 953299071395584,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
@@ -960,7 +976,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "46e",
+		"version": "47b",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

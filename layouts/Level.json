@@ -129,7 +129,7 @@
 			"parallaxX": 1,
 			"parallaxY": 1,
 			"scaleRate": 1,
-			"forceOwnTexture": false,
+			"forceOwnTexture": true,
 			"renderingMode": "3d",
 			"drawOrder": "z-order",
 			"useRenderCells": false,
@@ -325,7 +325,7 @@
 					"locked": false,
 					"world": {
 						"x": 58,
-						"y": 8,
+						"y": 312,
 						"width": 96,
 						"height": 42,
 						"originX": 0,
@@ -388,7 +388,7 @@
 					"locked": false,
 					"world": {
 						"x": 486,
-						"y": 8,
+						"y": 312,
 						"width": 96,
 						"height": 42,
 						"originX": 0,
@@ -451,7 +451,7 @@
 					"locked": false,
 					"world": {
 						"x": 58,
-						"y": 314,
+						"y": 10,
 						"width": 96,
 						"height": 42,
 						"originX": 0,
@@ -514,7 +514,7 @@
 					"locked": false,
 					"world": {
 						"x": 486,
-						"y": 314,
+						"y": 10,
 						"width": 96,
 						"height": 42,
 						"originX": 0,
@@ -564,7 +564,7 @@
 					"locked": false,
 					"world": {
 						"x": 28,
-						"y": 28,
+						"y": 332,
 						"width": 50,
 						"height": 50,
 						"originX": 0.5,
@@ -614,7 +614,7 @@
 					"locked": false,
 					"world": {
 						"x": 612,
-						"y": 28,
+						"y": 332,
 						"width": 50,
 						"height": 50,
 						"originX": 0.5,
@@ -664,7 +664,7 @@
 					"locked": false,
 					"world": {
 						"x": 28,
-						"y": 332,
+						"y": 28,
 						"width": 50,
 						"height": 50,
 						"originX": 0.5,
@@ -714,7 +714,7 @@
 					"locked": false,
 					"world": {
 						"x": 612,
-						"y": 332,
+						"y": 28,
 						"width": 50,
 						"height": 50,
 						"originX": 0.5,

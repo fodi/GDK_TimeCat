@@ -30,6 +30,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 336061020471067
+		},
+		{
+			"name": "pairPart",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 418855113475572
 		}
 	],
 	"behaviorTypes": [

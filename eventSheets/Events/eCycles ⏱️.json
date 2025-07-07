@@ -100,43 +100,150 @@
 					"parameters": {
 						"interval-seconds": "1"
 					}
-				},
-				{
-					"id": "compare-speed",
-					"objectClass": "Projectile",
-					"sid": 515621393769522,
-					"behaviorType": "Bullet",
-					"parameters": {
-						"comparison": 2,
-						"speed": "Functions.Config_getNumber(PARAM_Projectile_Speed)"
-					}
-				},
-				{
-					"id": "for-each",
-					"objectClass": "System",
-					"sid": 312614325674228,
-					"parameters": {
-						"object": "Projectile"
-					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 543687280009060,
+			"children": [
 				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 605319846136395,
-					"parameters": {
-						"type": "log",
-						"message": "\"Destroyed slow projectile #\" & Projectile.UID"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-speed",
+							"objectClass": "Projectile",
+							"sid": 732371276013801,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"comparison": 2,
+								"speed": "Functions.Config_getNumber(PARAM_Projectile_Speed)"
+							}
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 824346904181355,
+							"parameters": {
+								"object": "Projectile"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 765432337799581,
+							"parameters": {
+								"type": "log",
+								"message": "\"Destroyed slow projectile #\" & Projectile.UID"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Projectile",
+							"sid": 223990715377594
+						}
+					],
+					"sid": 978455720021485
 				},
 				{
-					"id": "destroy",
-					"objectClass": "Projectile",
-					"sid": 980489658674257
+					"eventType": "variable",
+					"name": "closedTileCount",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 967556537745959
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "fTile",
+							"sid": 600680380938861,
+							"parameters": {
+								"animation": "ANIM_Closed"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 485280790565171,
+							"disabled": true,
+							"parameters": {
+								"first-value": "fTile.Count",
+								"comparison": 0,
+								"second-value": "fTile.PickedCount"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 590152893221588,
+							"parameters": {
+								"variable": "closedTileCount",
+								"value": "fTile.PickedCount"
+							}
+						}
+					],
+					"sid": 479576356212174,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "fTile",
+									"sid": 364644169024328,
+									"parameters": {
+										"instance-variable": "pairPart",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 586874281267869,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 833212873228535,
+											"parameters": {
+												"variable": "closedTileCount",
+												"comparison": 0,
+												"value": "fTile.PickedCount"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 234799444157990,
+											"parameters": {
+												"type": "log",
+												"message": "\"Draw\""
+											}
+										},
+										{
+											"callFunction": "endLevel",
+											"sid": 805420832314579
+										}
+									],
+									"sid": 722577979894331
+								}
+							]
+						}
+					]
 				}
-			],
-			"sid": 543687280009060
+			]
 		}
 	],
 	"sid": 918958308783690

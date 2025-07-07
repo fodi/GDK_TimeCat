@@ -69,14 +69,14 @@
 								{
 									"x": 0,
 									"y": 0.8,
-									"z": 32,
+									"z": 28,
 									"u": 0,
 									"v": 0
 								},
 								{
 									"x": 1,
 									"y": 0.8,
-									"z": 32,
+									"z": 28,
 									"u": 1,
 									"v": 0
 								}
@@ -104,8 +104,8 @@
 					"world": {
 						"x": 240,
 						"y": 96,
-						"width": 32,
-						"height": 32,
+						"width": 28,
+						"height": 28,
 						"originX": 0.5,
 						"originY": 1,
 						"color": [
@@ -134,7 +134,8 @@
 						"symbol": "",
 						"randomId": 0,
 						"playerId": -1,
-						"pairingState": ""
+						"pairingState": "",
+						"pairPart": 0
 					},
 					"behaviors": {
 						"Timer": {
@@ -1010,8 +1011,8 @@
 					"world": {
 						"x": 240,
 						"y": 96,
-						"width": 30,
-						"height": 30,
+						"width": 26,
+						"height": 26,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

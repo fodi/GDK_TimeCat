@@ -605,6 +605,13 @@
 					"initialValue": "-1",
 					"comment": "",
 					"sid": 814452404358572
+				},
+				{
+					"name": "pairPart",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 584410147530567
 				}
 			],
 			"eventType": "custom-ace-block",
@@ -653,6 +660,15 @@
 							"parameters": {
 								"instance-variable": "playerId",
 								"value": "playerId"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fTile",
+							"sid": 807890293206640,
+							"parameters": {
+								"instance-variable": "pairPart",
+								"value": "pairPart"
 							}
 						},
 						{
@@ -815,6 +831,15 @@
 							"parameters": {
 								"instance-variable": "playerId",
 								"value": "NOTHING"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fTile",
+							"sid": 672689818021272,
+							"parameters": {
+								"instance-variable": "pairPart",
+								"value": "0"
 							}
 						}
 					],

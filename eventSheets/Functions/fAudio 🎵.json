@@ -11,98 +11,45 @@
 			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 608633797087521,
-					"parameters": {
-						"variable": "isMusicEnabled",
-						"value": "isMusicEnabled = 1 ? 0 : 1"
-					}
-				}
-			],
+			"actions": [],
 			"sid": 413284577371563,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 446463055208462,
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 487484611837761,
 							"parameters": {
-								"variable": "isMusicEnabled",
-								"comparison": 0,
-								"value": "YES"
+								"tag": "AUDIO_BGM & 1"
 							}
 						}
 					],
-					"actions": [],
-					"sid": 534780771391040,
-					"children": [
+					"actions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 860521475356719,
-									"parameters": {
-										"variable": "hasMusicStarted",
-										"comparison": 0,
-										"value": "NO"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "play",
-									"objectClass": "Audio",
-									"sid": 830233530569793,
-									"parameters": {
-										"audio-file": "BGM1",
-										"loop": "looping",
-										"volume": "-10",
-										"stereo-pan": "0",
-										"tag-optional": "AUDIO_BGM"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 299039873365839,
-									"parameters": {
-										"variable": "hasMusicStarted",
-										"value": "YES"
-									}
-								}
-							],
-							"sid": 321252440288847
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 220059977585946,
+							"parameters": {
+								"tag": "AUDIO_BGM & 1"
+							}
 						},
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 925168588162181
-								}
-							],
-							"actions": [
-								{
-									"id": "set-paused",
-									"objectClass": "Audio",
-									"sid": 268676536798807,
-									"parameters": {
-										"tag": "AUDIO_BGM",
-										"state": "resume"
-									}
-								}
-							],
-							"sid": 293622789611371
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 430019536985124,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "AUDIO_BGM & 2",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "AUDIO_BGM & 2"
+							}
 						}
-					]
+					],
+					"sid": 366745168534280
 				},
 				{
 					"eventType": "block",
@@ -110,21 +57,54 @@
 						{
 							"id": "else",
 							"objectClass": "System",
-							"sid": 839732414961503
+							"sid": 799104007241426
+						},
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 647342442202349,
+							"parameters": {
+								"tag": "AUDIO_BGM & 2"
+							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-paused",
+							"id": "stop",
 							"objectClass": "Audio",
-							"sid": 297390380040415,
+							"sid": 460275323310371,
 							"parameters": {
-								"tag": "AUDIO_BGM",
-								"state": "pause"
+								"tag": "AUDIO_BGM & 2"
 							}
 						}
 					],
-					"sid": 490284697843428
+					"sid": 975962786210986
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 904564527445203
+						}
+					],
+					"actions": [
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 304594744140307,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "AUDIO_BGM & 1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "AUDIO_BGM & 1"
+							}
+						}
+					],
+					"sid": 670528655171200
 				}
 			]
 		},

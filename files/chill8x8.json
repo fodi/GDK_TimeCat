@@ -1,8 +1,8 @@
 {
 	"title": "TimeCat",
-	"cols": 9,
-	"rows": 9,
-	"gap_percent": 10,
+	"cols": 8,
+	"rows": 8,
+	"gap_percent": 0,
 	"tile_time": 0.8,
 
 	"pl_health": 45,
@@ -10,8 +10,8 @@
 	"pl_health_drain": 1,
 	"pl_heal_pair": 5,
 	"pl_heal_item": 15,
-	"pl_speed": 150,
-	"pl_speed_slow": 100,
+	"pl_speed": 110,
+	"pl_speed_slow": 80,
 	
 	"pr_damage": 5,
 	"pr_speed": 150,
