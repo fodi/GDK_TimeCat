@@ -1380,16 +1380,6 @@
 			"sid": 880234762066787
 		},
 		{
-			"eventType": "variable",
-			"name": "TWEEN_Tile_Remove",
-			"type": "string",
-			"initialValue": "Tile_Remove",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 939713478607264
-		},
-		{
 			"eventType": "comment",
 			"text": "Unsorted"
 		},

@@ -122,7 +122,7 @@
 					"type": "Tile",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "1",
+						"initial-animation": "Closed",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -135,17 +135,11 @@
 						"randomId": 0,
 						"playerId": -1,
 						"pairingState": "",
-						"pairPart": 0,
-						"isOpen": 0
+						"pairPart": 0
 					},
 					"behaviors": {
 						"Timer": {
 							"properties": {}
-						},
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
 						}
 					},
 					"sceneGraphData": {

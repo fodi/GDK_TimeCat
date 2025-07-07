@@ -1086,19 +1086,8 @@
 																	"id": "is-animation-playing",
 																	"objectClass": "Tile",
 																	"sid": 303165590843667,
-																	"disabled": true,
 																	"parameters": {
 																		"animation": "ANIM_Closed"
-																	}
-																},
-																{
-																	"id": "compare-instance-variable",
-																	"objectClass": "Tile",
-																	"sid": 647570332578530,
-																	"parameters": {
-																		"instance-variable": "isOpen",
-																		"comparison": 0,
-																		"value": "NO"
 																	}
 																},
 																{
