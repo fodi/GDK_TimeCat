@@ -186,6 +186,15 @@
 							}
 						},
 						{
+							"id": "set-animation",
+							"objectClass": "fTile",
+							"sid": 643343210584834,
+							"parameters": {
+								"animation": "str(int(random(1, 4)))",
+								"from": "beginning"
+							}
+						},
+						{
 							"id": "set-angle",
 							"objectClass": "fTile",
 							"sid": 940141557096974,
@@ -626,8 +635,19 @@
 							"id": "is-animation-playing",
 							"objectClass": "fTile",
 							"sid": 789577521854274,
+							"disabled": true,
 							"parameters": {
 								"animation": "ANIM_Closed"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "fTile",
+							"sid": 944739618761165,
+							"parameters": {
+								"instance-variable": "isOpen",
+								"comparison": 0,
+								"value": "NO"
 							}
 						},
 						{
@@ -669,6 +689,15 @@
 							"parameters": {
 								"instance-variable": "pairPart",
 								"value": "pairPart"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fTile",
+							"sid": 740141320332403,
+							"parameters": {
+								"instance-variable": "isOpen",
+								"value": "YES"
 							}
 						},
 						{
@@ -819,9 +848,19 @@
 							"id": "set-animation",
 							"objectClass": "fTile",
 							"sid": 932757053142308,
+							"disabled": true,
 							"parameters": {
 								"animation": "ANIM_Closed",
 								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "fTile",
+							"sid": 386023510176499,
+							"parameters": {
+								"instance-variable": "isOpen",
+								"value": "NO"
 							}
 						},
 						{
@@ -957,6 +996,7 @@
 							"id": "set-animation",
 							"objectClass": "fTile",
 							"sid": 125946783659131,
+							"disabled": true,
 							"parameters": {
 								"animation": "ANIM_FadingOut",
 								"from": "beginning"
@@ -969,6 +1009,23 @@
 							"parameters": {
 								"instance-variable": "playerId",
 								"value": "NOTHING"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "fTile",
+							"sid": 844786869842335,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TWEEN_Tile_Remove",
+								"property": "offsetColor",
+								"end-value": "rgbEx(50, 50, 50)",
+								"time": "0.5",
+								"ease": "easeoutcubic",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
 							}
 						}
 					],

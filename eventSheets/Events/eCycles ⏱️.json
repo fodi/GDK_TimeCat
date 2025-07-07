@@ -162,8 +162,19 @@
 							"id": "is-animation-playing",
 							"objectClass": "fTile",
 							"sid": 600680380938861,
+							"disabled": true,
 							"parameters": {
 								"animation": "ANIM_Closed"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "fTile",
+							"sid": 664910765048440,
+							"parameters": {
+								"instance-variable": "isOpen",
+								"comparison": 0,
+								"value": "NO"
 							}
 						},
 						{

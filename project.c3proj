@@ -293,7 +293,7 @@
 					"UI_Icons",
 					"UI_BlurbSF",
 					"UI_Rectangle",
-					"UI_Images",
+					"UI_Player_Images",
 					"UI_QRCode",
 					"UI_Loader"
 				],
@@ -976,7 +976,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "47b",
+		"version": "48",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

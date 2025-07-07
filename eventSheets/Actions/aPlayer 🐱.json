@@ -1086,8 +1086,19 @@
 																	"id": "is-animation-playing",
 																	"objectClass": "Tile",
 																	"sid": 303165590843667,
+																	"disabled": true,
 																	"parameters": {
 																		"animation": "ANIM_Closed"
+																	}
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Tile",
+																	"sid": 647570332578530,
+																	"parameters": {
+																		"instance-variable": "isOpen",
+																		"comparison": 0,
+																		"value": "NO"
 																	}
 																},
 																{
@@ -1636,6 +1647,269 @@
 		},
 		{
 			"aceType": "action",
+			"aceName": "updateAllUI",
+			"objectClass": "Player",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 300504480980967,
+					"parameters": {
+						"type": "log",
+						"message": "\"running\""
+					}
+				}
+			],
+			"sid": 697072847581354,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-all",
+							"objectClass": "System",
+							"sid": 371413499745188,
+							"parameters": {
+								"object": "Player"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 855548863126634,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 510239156477011,
+									"parameters": {
+										"instance-variable": "isDead",
+										"comparison": 0,
+										"value": "NO"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 605181661124671,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "mostPairsFound",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 873345386521702
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-highestlowest",
+											"objectClass": "Player",
+											"sid": 415684528550334,
+											"parameters": {
+												"which": "highest",
+												"instance-variable": "pairsFound"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 862316394670604,
+											"parameters": {
+												"variable": "mostPairsFound",
+												"value": "Player.pairsFound"
+											}
+										}
+									],
+									"sid": 798867264310771
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 454584382368691,
+											"parameters": {
+												"object": "UI_Player_Images"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Player",
+											"sid": 146175427237543,
+											"parameters": {
+												"instance-variable": "playerId",
+												"comparison": 0,
+												"value": "int(UI_Player_Images.AnimationName)"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 236769136905345,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 808662218910894,
+													"parameters": {
+														"variable": "mostPairsFound",
+														"comparison": 4,
+														"value": "0"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Player",
+													"sid": 842505470281487,
+													"parameters": {
+														"instance-variable": "pairsFound",
+														"comparison": 0,
+														"value": "mostPairsFound"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "UI_Player_Images",
+													"sid": 671280089705578,
+													"parameters": {
+														"frame-number": "FRAME_Crown"
+													}
+												},
+												{
+													"id": "log",
+													"objectClass": "Browser",
+													"sid": 185672365777580,
+													"parameters": {
+														"type": "log",
+														"message": "\"Crowned: \" & Player.playerId"
+													}
+												}
+											],
+											"sid": 579100649633899
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 622132677271213
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "UI_Player_Images",
+													"sid": 422480398412637,
+													"parameters": {
+														"frame-number": "FRAME_Default"
+													}
+												},
+												{
+													"id": "log",
+													"objectClass": "Browser",
+													"sid": 662077281386014,
+													"parameters": {
+														"type": "log",
+														"message": "\"Default: \" & Player.playerId"
+													}
+												}
+											],
+											"sid": 557605592864148
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 344590897051507,
+									"parameters": {
+										"instance-variable": "isDead",
+										"comparison": 0,
+										"value": "YES"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 676095064097105,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 782548564007889,
+											"parameters": {
+												"object": "UI_Player_Images"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Player",
+											"sid": 699077172407466,
+											"parameters": {
+												"instance-variable": "playerId",
+												"comparison": 0,
+												"value": "int(UI_Player_Images.AnimationName)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "UI_Player_Images",
+											"sid": 154673106657516,
+											"parameters": {
+												"frame-number": "FRAME_Dead"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 999156376781790,
+											"parameters": {
+												"type": "log",
+												"message": "\"Dead: \" & Player.playerId"
+											}
+										}
+									],
+									"sid": 657989751927893
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"aceType": "action",
 			"aceName": "checkTiles",
 			"objectClass": "Player",
 			"functionDescription": "",
@@ -1756,6 +2030,11 @@
 										"instance-variable": "tileUID2",
 										"value": "NOTHING"
 									}
+								},
+								{
+									"customAction": "updateAllUI",
+									"objectClass": "Player",
+									"sid": 383951635869944
 								}
 							],
 							"sid": 331913504050552,
@@ -1913,6 +2192,12 @@
 										}
 									],
 									"sid": 695205783575005
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 514901680573173
 								}
 							]
 						},
@@ -2337,6 +2622,11 @@
 									"customAction": "closeTiles",
 									"objectClass": "Player",
 									"sid": 567233146528589
+								},
+								{
+									"customAction": "updateAllUI",
+									"objectClass": "Player",
+									"sid": 544930562424087
 								}
 							],
 							"sid": 415999299938242,

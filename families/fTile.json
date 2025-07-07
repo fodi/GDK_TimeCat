@@ -37,6 +37,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 418855113475572
+		},
+		{
+			"name": "isOpen",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 569661342374410
 		}
 	],
 	"behaviorTypes": [
@@ -44,6 +51,11 @@
 			"behaviorId": "Timer",
 			"name": "Timer",
 			"sid": 236236091657871
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 136933655160541
 		}
 	],
 	"effectTypes": [],

@@ -263,7 +263,27 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 334149204190333
+			"sid": 534673908025833
+		},
+		{
+			"eventType": "variable",
+			"name": "FRAME_Default",
+			"type": "string",
+			"initialValue": "Default",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 478361399872696
+		},
+		{
+			"eventType": "variable",
+			"name": "FRAME_Crown",
+			"type": "string",
+			"initialValue": "Crown",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 961188045231867
 		},
 		{
 			"eventType": "comment",
@@ -1348,6 +1368,26 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 252911102619475
+		},
+		{
+			"eventType": "variable",
+			"name": "FRAME_Dead",
+			"type": "string",
+			"initialValue": "Dead",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 880234762066787
+		},
+		{
+			"eventType": "variable",
+			"name": "TWEEN_Tile_Remove",
+			"type": "string",
+			"initialValue": "Tile_Remove",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 939713478607264
 		},
 		{
 			"eventType": "comment",

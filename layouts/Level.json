@@ -530,10 +530,10 @@
 					}
 				},
 				{
-					"type": "UI_Images",
+					"type": "UI_Player_Images",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Players",
+						"initial-animation": "1",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -580,11 +580,11 @@
 					}
 				},
 				{
-					"type": "UI_Images",
+					"type": "UI_Player_Images",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Players",
-						"initial-frame": 1,
+						"initial-animation": "2",
+						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
@@ -630,11 +630,11 @@
 					}
 				},
 				{
-					"type": "UI_Images",
+					"type": "UI_Player_Images",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Players",
-						"initial-frame": 2,
+						"initial-animation": "3",
+						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
@@ -680,11 +680,11 @@
 					}
 				},
 				{
-					"type": "UI_Images",
+					"type": "UI_Player_Images",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Players",
-						"initial-frame": 3,
+						"initial-animation": "4",
+						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
