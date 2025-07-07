@@ -101,9 +101,63 @@
 							"parameters": {
 								"angle": "angle(Player.X, Player.Y, Projectile.X, Projectile.Y)"
 							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Projectile",
+							"sid": 633029659876551,
+							"parameters": {
+								"instance-variable": "hasBounced",
+								"value": "YES"
+							}
 						}
 					],
 					"sid": 434726947866257
+				},
+				{
+					"eventType": "comment",
+					"text": "If player is dead, deflect projectile"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 873518249524976
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 525751555540447,
+							"parameters": {
+								"instance-variable": "isDead",
+								"comparison": 0,
+								"value": "YES"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "Projectile",
+							"sid": 791473841098568,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "angle(Player.X, Player.Y, Projectile.X, Projectile.Y)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Projectile",
+							"sid": 658977712916146,
+							"parameters": {
+								"instance-variable": "hasBounced",
+								"value": "YES"
+							}
+						}
+					],
+					"sid": 984195664934550
 				},
 				{
 					"eventType": "comment",
@@ -268,6 +322,15 @@
 									"parameters": {
 										"angle": "angle(Player.X, Player.Y, Item.X, Item.Y)"
 									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Projectile",
+									"sid": 922435845946192,
+									"parameters": {
+										"instance-variable": "hasBounced",
+										"value": "YES"
+									}
 								}
 							],
 							"sid": 262754130635738
@@ -345,7 +408,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Item + Projectile"
+			"text": "Item + Projectile (deflect)"
 		},
 		{
 			"eventType": "block",
@@ -379,8 +442,27 @@
 					"id": "set-angle",
 					"objectClass": "Projectile",
 					"sid": 996804695352019,
+					"disabled": true,
 					"parameters": {
 						"angle": "angle(Item.X, Item.Y, Projectile.X, Projectile.Y)"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "Projectile",
+					"sid": 341964545923344,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "angle(Item.X, Item.Y, Projectile.X, Projectile.Y)"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Projectile",
+					"sid": 360434335754949,
+					"parameters": {
+						"instance-variable": "hasBounced",
+						"value": "YES"
 					}
 				},
 				{
@@ -437,7 +519,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Box + Cannon"
+			"text": "Item + Cannon"
 		},
 		{
 			"eventType": "block",
@@ -458,14 +540,6 @@
 			],
 			"actions": [
 				{
-					"customAction": "changeHealth",
-					"objectClass": "Cannon",
-					"sid": 667512032398163,
-					"parameters": [
-						"-Item.damage"
-					]
-				},
-				{
 					"customAction": "remove",
 					"objectClass": "Item",
 					"sid": 175867567655683,
@@ -474,31 +548,12 @@
 					]
 				},
 				{
-					"type": "comment",
-					"text": "Stop & restart cannon movement"
-				},
-				{
-					"id": "set-speed",
+					"customAction": "hit",
 					"objectClass": "Cannon",
-					"sid": 417676870683877,
-					"behaviorType": "Orbit",
-					"parameters": {
-						"speed": "0"
-					}
-				},
-				{
-					"id": "set-acceleration",
-					"objectClass": "Cannon",
-					"sid": 121567118722999,
-					"behaviorType": "Orbit",
-					"parameters": {
-						"acceleration": "0"
-					}
-				},
-				{
-					"customAction": "startMoving",
-					"objectClass": "Cannon",
-					"sid": 607212674698199
+					"sid": 744880831051018,
+					"parameters": [
+						"Item.damage"
+					]
 				}
 			],
 			"sid": 442998353580713,
@@ -535,6 +590,49 @@
 					"sid": 563861360343114
 				}
 			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Cannon + Projectile that has bounced"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Cannon",
+					"sid": 759077313466472,
+					"parameters": {
+						"object": "Projectile"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Projectile",
+					"sid": 963364709066529,
+					"parameters": {
+						"instance-variable": "hasBounced",
+						"comparison": 0,
+						"value": "YES"
+					}
+				}
+			],
+			"actions": [
+				{
+					"customAction": "hit",
+					"objectClass": "Cannon",
+					"sid": 240675697087209,
+					"parameters": [
+						"Projectile.R_Damage"
+					]
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Projectile",
+					"sid": 274685401095826
+				}
+			],
+			"sid": 158747799349680
 		}
 	],
 	"sid": 441405412204844

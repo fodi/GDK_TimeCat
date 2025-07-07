@@ -2354,6 +2354,31 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
+							"sid": 727963022201849,
+							"parameters": {
+								"key": 88
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-url",
+							"objectClass": "Browser",
+							"sid": 584663788824118,
+							"parameters": {
+								"url": "\"https://kiosk.gamedevklub.hu\"",
+								"target": "self"
+							}
+						}
+					],
+					"sid": 998626234078314
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
 							"sid": 315801862150686,
 							"parameters": {
 								"key": 78

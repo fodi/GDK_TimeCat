@@ -9,7 +9,7 @@
 			"eventType": "variable",
 			"name": "C_Basemap_Water_Border",
 			"type": "number",
-			"initialValue": "6",
+			"initialValue": "12",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,

@@ -89,6 +89,54 @@
 					"sid": 108925331269662
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 577846906525691,
+					"parameters": {
+						"interval-seconds": "1"
+					}
+				},
+				{
+					"id": "compare-speed",
+					"objectClass": "Projectile",
+					"sid": 515621393769522,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"comparison": 2,
+						"speed": "Functions.Config_getNumber(PARAM_Projectile_Speed)"
+					}
+				},
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 312614325674228,
+					"parameters": {
+						"object": "Projectile"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 605319846136395,
+					"parameters": {
+						"type": "log",
+						"message": "\"Destroyed slow projectile #\" & Projectile.UID"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Projectile",
+					"sid": 980489658674257
+				}
+			],
+			"sid": 543687280009060
 		}
 	],
 	"sid": 918958308783690

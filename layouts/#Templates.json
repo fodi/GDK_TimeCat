@@ -391,7 +391,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"R_Damage": 1,
-						"targetPlayerId": -1
+						"targetPlayerId": -1,
+						"hasBounced": 0
 					},
 					"behaviors": {
 						"Bullet": {
@@ -2021,7 +2022,7 @@
 					"type": "3dObstacle1",
 					"properties": {
 						"shape": "box",
-						"z-height": 12,
+						"z-height": 14,
 						"initially-visible": true,
 						"face-back": false,
 						"face-front": true,
@@ -2061,8 +2062,8 @@
 					"world": {
 						"x": 192,
 						"y": 96,
-						"width": 12,
-						"height": 12,
+						"width": 14,
+						"height": 14,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
