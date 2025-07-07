@@ -491,7 +491,7 @@
 					"parameters": [
 						"Cannon.X",
 						"Cannon.Y",
-						"SFX_Collision_Box_Projectile",
+						"SFX_Collision_Item_Projectile",
 						"4",
 						"NO"
 					]

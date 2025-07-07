@@ -1,46 +1,6 @@
 {
-	"name": "vMacros 🗃️",
+	"name": "vNames 🗃️",
 	"events": [
-		{
-			"eventType": "variable",
-			"name": "EMPTY",
-			"type": "string",
-			"initialValue": "",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 494901615415078
-		},
-		{
-			"eventType": "variable",
-			"name": "NOTHING",
-			"type": "number",
-			"initialValue": "-1",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 995028409310032
-		},
-		{
-			"eventType": "variable",
-			"name": "NO",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 346906574628140
-		},
-		{
-			"eventType": "variable",
-			"name": "YES",
-			"type": "number",
-			"initialValue": "1",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 499582822760795
-		},
 		{
 			"eventType": "comment",
 			"text": "Audio"
@@ -243,9 +203,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "FILE_Config",
+			"name": "FILE_Rules",
 			"type": "string",
-			"initialValue": "Config",
+			"initialValue": "Rules",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -891,9 +851,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "SOLID_Box",
+			"name": "SOLID_Item",
 			"type": "string",
-			"initialValue": "Box",
+			"initialValue": "Item",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -945,9 +905,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "SFX_Collision_Box_Cannon",
+			"name": "SFX_Collision_Item_Cannon",
 			"type": "string",
-			"initialValue": "Collision_Box_Cannon",
+			"initialValue": "Collision_Item_Cannon",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -955,9 +915,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "SFX_Collision_Box_Projectile",
+			"name": "SFX_Collision_Item_Projectile",
 			"type": "string",
-			"initialValue": "Collision_Box_Projectile",
+			"initialValue": "Collision_Item_Projectile",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -965,9 +925,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "SFX_Player_Box_Pickup",
+			"name": "SFX_Player_Item_Pickup",
 			"type": "string",
-			"initialValue": "Player_Box_Pickup",
+			"initialValue": "Player_Item_Pickup",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -975,9 +935,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "SFX_Player_Box_Throw",
+			"name": "SFX_Player_Item_Throw",
 			"type": "string",
-			"initialValue": "Player_Box_Throw",
+			"initialValue": "Player_Item_Throw",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -1123,9 +1083,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TIMER_Box_FarCheck",
+			"name": "TIMER_Item_FarCheck",
 			"type": "string",
-			"initialValue": "Box_FarCheck",
+			"initialValue": "Item_FarCheck",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,

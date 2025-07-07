@@ -24,7 +24,7 @@
 							"objectClass": "System",
 							"sid": 968358049106647,
 							"parameters": {
-								"count": "Functions.Config_getNumber(PARAM_Cannon_Count_Init)"
+								"count": "Functions.Rules_getNumber(PARAM_Cannon_Count_Init)"
 							}
 						}
 					],
@@ -114,7 +114,7 @@
 							"parameters": {
 								"variable": "cannonCount",
 								"comparison": 2,
-								"value": "Functions.Config_getNumber(PARAM_Cannon_Count_Max)"
+								"value": "Functions.Rules_getNumber(PARAM_Cannon_Count_Max)"
 							}
 						}
 					],
@@ -182,7 +182,7 @@
 							"sid": 657460902464411,
 							"parameters": {
 								"instance-variable": "R_Projectile_MovementSpeed",
-								"value": "Functions.Config_getNumber(PARAM_Projectile_Speed)"
+								"value": "Functions.Rules_getNumber(PARAM_Projectile_Speed)"
 							}
 						},
 						{
@@ -191,7 +191,7 @@
 							"sid": 889708255347274,
 							"parameters": {
 								"instance-variable": "R_Projectile_MovementSpeed_Increase",
-								"value": "Functions.Config_getNumber(PARAM_Projectile_Speed_Increase)"
+								"value": "Functions.Rules_getNumber(PARAM_Projectile_Speed_Increase)"
 							}
 						},
 						{
@@ -200,7 +200,7 @@
 							"sid": 307923832479006,
 							"parameters": {
 								"instance-variable": "R_Projectile_MovementSpeed_Max",
-								"value": "Functions.Config_getNumber(PARAM_Projectile_Speed_Max)"
+								"value": "Functions.Rules_getNumber(PARAM_Projectile_Speed_Max)"
 							}
 						},
 						{
@@ -209,7 +209,7 @@
 							"sid": 115716986810886,
 							"parameters": {
 								"instance-variable": "R_Shoot_Interval_Min",
-								"value": "Functions.Config_getNumber(PARAM_Projectile_SpawnTime_Min)"
+								"value": "Functions.Rules_getNumber(PARAM_Projectile_SpawnTime_Min)"
 							}
 						},
 						{
@@ -218,7 +218,7 @@
 							"sid": 685966481005167,
 							"parameters": {
 								"instance-variable": "R_Shoot_Interval_Max",
-								"value": "Functions.Config_getNumber(PARAM_Projectile_SpawnTime_Max)"
+								"value": "Functions.Rules_getNumber(PARAM_Projectile_SpawnTime_Max)"
 							}
 						},
 						{
@@ -227,7 +227,7 @@
 							"sid": 539911240897390,
 							"parameters": {
 								"instance-variable": "R_Health_Max",
-								"value": "Functions.Config_getNumber(PARAM_Cannon_Health)"
+								"value": "Functions.Rules_getNumber(PARAM_Cannon_Health)"
 							}
 						},
 						{
@@ -236,7 +236,7 @@
 							"sid": 406698769783426,
 							"parameters": {
 								"instance-variable": "R_Acceleration",
-								"value": "Functions.Config_getNumber(PARAM_Cannon_Acceleration)"
+								"value": "Functions.Rules_getNumber(PARAM_Cannon_Acceleration)"
 							}
 						},
 						{
@@ -245,7 +245,7 @@
 							"sid": 778785234093272,
 							"parameters": {
 								"instance-variable": "R_Speed_Max",
-								"value": "Functions.Config_getNumber(PARAM_Cannon_SpeedMax)"
+								"value": "Functions.Rules_getNumber(PARAM_Cannon_SpeedMax)"
 							}
 						},
 						{
@@ -1152,7 +1152,7 @@
 									"parameters": [
 										"Cannon.X",
 										"Cannon.Y",
-										"SFX_Collision_Box_Cannon",
+										"SFX_Collision_Item_Cannon",
 										"4",
 										"NO"
 									]

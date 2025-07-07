@@ -63,7 +63,7 @@
 						},
 						{
 							"type": "comment",
-							"text": "Rule overrides from config (with fallback to default)"
+							"text": "Rule overrides (with fallback to default)"
 						},
 						{
 							"id": "set-eventvar-value",
@@ -71,7 +71,7 @@
 							"sid": 139245888955545,
 							"parameters": {
 								"variable": "R_Level_Rows",
-								"value": "clamp(int(Functions.Config_getNumber(PARAM_Tile_RowCount)), C_Level_Dimension_Min, C_Level_Dimension_Max)"
+								"value": "clamp(int(Functions.Rules_getNumber(PARAM_Tile_RowCount)), C_Level_Dimension_Min, C_Level_Dimension_Max)"
 							}
 						},
 						{
@@ -80,7 +80,7 @@
 							"sid": 584776617241278,
 							"parameters": {
 								"variable": "R_Level_Columns",
-								"value": "clamp(int(Functions.Config_getNumber(PARAM_Tile_ColumnCount)), C_Level_Dimension_Min, C_Level_Dimension_Max)"
+								"value": "clamp(int(Functions.Rules_getNumber(PARAM_Tile_ColumnCount)), C_Level_Dimension_Min, C_Level_Dimension_Max)"
 							}
 						},
 						{
@@ -89,7 +89,7 @@
 							"sid": 323236367236017,
 							"parameters": {
 								"variable": "R_Level_Tile_Reveal_Time",
-								"value": "Functions.Config_getNumber(PARAM_Tile_Time)"
+								"value": "Functions.Rules_getNumber(PARAM_Tile_Time)"
 							}
 						},
 						{
@@ -165,7 +165,7 @@
 							"parameters": [
 								"R_Level_Columns",
 								"R_Level_Rows",
-								"clamp(int(Functions.Config_getNumber(PARAM_Tile_GapPercent)), 0, 100)"
+								"clamp(int(Functions.Rules_getNumber(PARAM_Tile_GapPercent)), 0, 100)"
 							]
 						},
 						{

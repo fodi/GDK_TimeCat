@@ -93,7 +93,7 @@
 							"objectClass": "UI_TextSF",
 							"sid": 664961869659522,
 							"parameters": {
-								"text": "Functions.Config_getString(PARAM_Title)"
+								"text": "Functions.Rules_getString(PARAM_Title)"
 							}
 						}
 					],

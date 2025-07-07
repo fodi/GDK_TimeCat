@@ -589,7 +589,7 @@
 							"objectClass": "Symbol",
 							"sid": 659780578682181,
 							"parameters": {
-								"opacity": "Functions.Config_getNumber(PARAM_Symbol_Opacity)"
+								"opacity": "Functions.Rules_getNumber(PARAM_Symbol_Opacity)"
 							}
 						}
 					],
@@ -902,7 +902,7 @@
 							"parameters": {
 								"tags": "TWEEN_Symbol_Opacity",
 								"property": "offsetOpacity",
-								"end-value": "Functions.Config_getNumber(PARAM_Symbol_Opacity)",
+								"end-value": "Functions.Rules_getNumber(PARAM_Symbol_Opacity)",
 								"time": "0.5",
 								"ease": "easeinquart",
 								"destroy-on-complete": "no",
@@ -1048,7 +1048,7 @@
 							"parameters": {
 								"tags": "TWEEN_Symbol_Opacity",
 								"property": "offsetOpacity",
-								"end-value": "Functions.Config_getNumber(PARAM_Symbol_Opacity)",
+								"end-value": "Functions.Rules_getNumber(PARAM_Symbol_Opacity)",
 								"time": "2",
 								"ease": "easeoutcubic",
 								"destroy-on-complete": "no",

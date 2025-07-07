@@ -1,12 +1,16 @@
 {
-	"name": "fConfig 📃",
+	"name": "fOverrides 📃",
 	"events": [
 		{
 			"eventType": "comment",
-			"text": "todo load default config, put override json on top"
+			"text": "load default rules, put override on top"
 		},
 		{
-			"functionName": "Config_getNumber",
+			"eventType": "comment",
+			"text": "todo convert to CA"
+		},
+		{
+			"functionName": "Rules_getNumber",
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "number",
@@ -31,7 +35,7 @@
 					"conditions": [
 						{
 							"id": "has-key",
-							"objectClass": "ConfigURLParams",
+							"objectClass": "jOverrides",
 							"sid": 394129202374248,
 							"parameters": {
 								"path": "paramName"
@@ -46,7 +50,7 @@
 							"disabled": true,
 							"parameters": {
 								"type": "log",
-								"message": "StringSub(\"[config] {0} = {1} (overridden from {2})\", paramName, ConfigURLParams.Get(paramName), ConfigDefault.Get(paramName))"
+								"message": "StringSub(\"[config] {0} = {1} (overridden from {2})\", paramName, jOverrides.Get(paramName), jRules.Get(paramName))"
 							}
 						},
 						{
@@ -54,7 +58,7 @@
 							"objectClass": "Functions",
 							"sid": 307161544078674,
 							"parameters": {
-								"value": "float(ConfigURLParams.Get(paramName))"
+								"value": "float(jOverrides.Get(paramName))"
 							}
 						}
 					],
@@ -77,7 +81,7 @@
 							"disabled": true,
 							"parameters": {
 								"type": "log",
-								"message": "StringSub(\"[config] {0} = {1} (default)\", paramName, ConfigDefault.Get(paramName))"
+								"message": "StringSub(\"[config] {0} = {1} (default)\", paramName, jRules.Get(paramName))"
 							}
 						},
 						{
@@ -85,7 +89,7 @@
 							"objectClass": "Functions",
 							"sid": 197049296236524,
 							"parameters": {
-								"value": "ConfigDefault.Get(paramName)"
+								"value": "jRules.Get(paramName)"
 							}
 						}
 					],
@@ -94,7 +98,7 @@
 			]
 		},
 		{
-			"functionName": "Config_getString",
+			"functionName": "Rules_getString",
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "string",
@@ -119,7 +123,7 @@
 					"conditions": [
 						{
 							"id": "has-key",
-							"objectClass": "ConfigURLParams",
+							"objectClass": "jOverrides",
 							"sid": 911861987535003,
 							"parameters": {
 								"path": "paramName"
@@ -134,7 +138,7 @@
 							"disabled": true,
 							"parameters": {
 								"type": "log",
-								"message": "StringSub(\"[config] {0} = {1} (overridden from {2})\", paramName, ConfigURLParams.Get(paramName), ConfigDefault.Get(paramName))"
+								"message": "StringSub(\"[config] {0} = {1} (overridden from {2})\", paramName, jOverrides.Get(paramName), jRules.Get(paramName))"
 							}
 						},
 						{
@@ -142,7 +146,7 @@
 							"objectClass": "Functions",
 							"sid": 256832287519644,
 							"parameters": {
-								"value": "ConfigURLParams.Get(paramName)"
+								"value": "jOverrides.Get(paramName)"
 							}
 						}
 					],
@@ -165,7 +169,7 @@
 							"disabled": true,
 							"parameters": {
 								"type": "log",
-								"message": "StringSub(\"[config] {0} = {1} (default)\", paramName, ConfigDefault.Get(paramName))"
+								"message": "StringSub(\"[config] {0} = {1} (default)\", paramName, jRules.Get(paramName))"
 							}
 						},
 						{
@@ -173,7 +177,7 @@
 							"objectClass": "Functions",
 							"sid": 447371487069203,
 							"parameters": {
-								"value": "ConfigDefault.Get(paramName)"
+								"value": "jRules.Get(paramName)"
 							}
 						}
 					],

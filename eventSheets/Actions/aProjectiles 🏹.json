@@ -76,7 +76,7 @@
 					"sid": 822595332126830,
 					"parameters": {
 						"instance-variable": "R_Damage",
-						"value": "Functions.Config_getNumber(PARAM_Projectile_Damage)"
+						"value": "Functions.Rules_getNumber(PARAM_Projectile_Damage)"
 					}
 				},
 				{

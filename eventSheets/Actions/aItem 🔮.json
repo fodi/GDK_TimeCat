@@ -73,7 +73,7 @@
 					"sid": 218372490768887,
 					"parameters": {
 						"instance-variable": "damage",
-						"value": "Functions.Config_getNumber(PARAM_Item_Damage)"
+						"value": "Functions.Rules_getNumber(PARAM_Item_Damage)"
 					}
 				}
 			],
@@ -143,7 +143,7 @@
 									"sid": 958710616874271,
 									"parameters": {
 										"instance-variable": "damage",
-										"value": "Functions.Config_getNumber(PARAM_Item_Attack_Damage)"
+										"value": "Functions.Rules_getNumber(PARAM_Item_Attack_Damage)"
 									}
 								}
 							],
@@ -177,10 +177,11 @@
 				{
 					"id": "log",
 					"objectClass": "Browser",
-					"sid": 755793850722771,
+					"sid": 853075987724733,
+					"disabled": true,
 					"parameters": {
 						"type": "log",
-						"message": "\"Box hit player #\" & hitPlayerUID"
+						"message": "\"Item hit player #\" & hitPlayerUID"
 					}
 				}
 			],
@@ -198,7 +199,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Remove box from player"
+					"text": "Remove item from player"
 				},
 				{
 					"eventType": "block",
@@ -229,7 +230,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Hit target with box"
+					"text": "Hit target with item"
 				},
 				{
 					"eventType": "block",
@@ -329,7 +330,7 @@
 			"actions": [
 				{
 					"type": "comment",
-					"text": "Fade out & destroy boxes after they are far away"
+					"text": "Check if an item is too far to hit anything"
 				}
 			],
 			"sid": 623953325643464,
@@ -385,26 +386,54 @@
 			"conditions": [],
 			"actions": [
 				{
-					"id": "set-instvar-value",
-					"objectClass": "Item",
-					"sid": 335548788919233,
-					"parameters": {
-						"instance-variable": "isDestroyed",
-						"value": "YES"
-					}
-				},
-				{
-					"id": "stop-timer",
-					"objectClass": "Item",
-					"sid": 638770165200731,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "TIMER_Box_FarCheck"
-					}
+					"type": "comment",
+					"text": "Fade out & destroy item"
 				}
 			],
 			"sid": 749560455039560,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Item",
+							"sid": 770327229458635,
+							"parameters": {
+								"instance-variable": "isDestroyed",
+								"value": "YES"
+							}
+						},
+						{
+							"id": "stop-timer",
+							"objectClass": "Item",
+							"sid": 204588848102143,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "TIMER_Item_FarCheck"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Item",
+							"sid": 747304040997057,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "C_Item_FadeOut_Time",
+								"ease": "easeoutquint",
+								"destroy-on-complete": "yes",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 243431453739827
+				},
 				{
 					"eventType": "block",
 					"conditions": [

@@ -30,7 +30,7 @@
 							"sid": 876223557924203,
 							"parameters": {
 								"mode": "exclusive",
-								"tags": "SOLID_Box"
+								"tags": "SOLID_Item"
 							}
 						},
 						{
@@ -39,7 +39,7 @@
 							"sid": 321717557408034,
 							"parameters": {
 								"instance-variable": "R_Health_Start",
-								"value": "Functions.Config_getNumber(PARAM_Player_Health)"
+								"value": "Functions.Rules_getNumber(PARAM_Player_Health)"
 							}
 						},
 						{
@@ -48,7 +48,7 @@
 							"sid": 942034872246473,
 							"parameters": {
 								"instance-variable": "R_Health_BonusOnPair",
-								"value": "Functions.Config_getNumber(PARAM_Player_Heal_Pair)"
+								"value": "Functions.Rules_getNumber(PARAM_Player_Heal_Pair)"
 							}
 						},
 						{
@@ -57,7 +57,7 @@
 							"sid": 123777258069747,
 							"parameters": {
 								"instance-variable": "R_Health_BonusOnHeal",
-								"value": "Functions.Config_getNumber(PARAM_Player_Heal_Item)"
+								"value": "Functions.Rules_getNumber(PARAM_Player_Heal_Item)"
 							}
 						},
 						{
@@ -66,7 +66,7 @@
 							"sid": 408952610930772,
 							"parameters": {
 								"instance-variable": "R_MovementSpeed_Normal",
-								"value": "Functions.Config_getNumber(PARAM_Player_MovementSpeed)"
+								"value": "Functions.Rules_getNumber(PARAM_Player_MovementSpeed)"
 							}
 						},
 						{
@@ -75,7 +75,7 @@
 							"sid": 586549727729621,
 							"parameters": {
 								"instance-variable": "R_MovementSpeed_Slow",
-								"value": "Functions.Config_getNumber(PARAM_Player_MovementSpeed_Slow)"
+								"value": "Functions.Rules_getNumber(PARAM_Player_MovementSpeed_Slow)"
 							}
 						},
 						{
@@ -84,7 +84,7 @@
 							"sid": 836214863750847,
 							"parameters": {
 								"instance-variable": "R_Item_MovementSpeed",
-								"value": "Functions.Config_getNumber(PARAM_Item_Speed)"
+								"value": "Functions.Rules_getNumber(PARAM_Item_Speed)"
 							}
 						},
 						{
@@ -589,7 +589,7 @@
 													"sid": 409235339234797,
 													"parameters": {
 														"variable": "movementSpeed",
-														"value": "movementSpeed * Functions.Config_getNumber(PARAM_Item_Slow_Factor)"
+														"value": "movementSpeed * Functions.Rules_getNumber(PARAM_Item_Slow_Factor)"
 													}
 												}
 											],
@@ -650,7 +650,7 @@
 													"objectClass": "Player",
 													"sid": 788180434508353,
 													"parameters": [
-														"-dt * Functions.Config_getNumber(PARAM_Player_Health_Drain)",
+														"-dt * Functions.Rules_getNumber(PARAM_Player_Health_Drain)",
 														"NO",
 														"NO"
 													]
@@ -678,7 +678,7 @@
 										},
 										{
 											"eventType": "comment",
-											"text": "If player is not carrying a box, use normal animation speed"
+											"text": "If player is not carrying an item, use normal animation speed"
 										},
 										{
 											"eventType": "block",
@@ -708,7 +708,7 @@
 										},
 										{
 											"eventType": "comment",
-											"text": "If player is carrying a box, use slowed down animation speed"
+											"text": "If player is carrying an item, use slowed down animation speed"
 										},
 										{
 											"eventType": "block",
@@ -771,7 +771,7 @@
 								},
 								{
 									"eventType": "comment",
-									"text": "If player has a box, update it's position & angle"
+									"text": "If player has an item, update it's position & angle"
 								},
 								{
 									"eventType": "block",
@@ -783,6 +783,16 @@
 											"parameters": {
 												"child": "Item",
 												"which": "own"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Item",
+											"sid": 409016330638557,
+											"parameters": {
+												"instance-variable": "isDestroyed",
+												"comparison": 0,
+												"value": "NO"
 											}
 										}
 									],
@@ -1267,7 +1277,7 @@
 										},
 										{
 											"eventType": "comment",
-											"text": "If player is aiming, throw box"
+											"text": "If player is aiming, throw item"
 										},
 										{
 											"eventType": "block",
@@ -1372,7 +1382,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Box stuff"
+			"text": "Item CAs"
 		},
 		{
 			"aceType": "action",
@@ -1477,7 +1487,7 @@
 							"callFunction": "playSound",
 							"sid": 104532709324616,
 							"parameters": [
-								"SFX_Player_Box_Pickup",
+								"SFX_Player_Item_Pickup",
 								"1",
 								"0"
 							]
@@ -1522,7 +1532,7 @@
 							"parameters": [
 								"Cannon.X",
 								"Cannon.Y",
-								"SFX_Player_Box_Throw",
+								"SFX_Player_Item_Throw",
 								"4",
 								"NO"
 							]
@@ -1570,7 +1580,7 @@
 							"parameters": {
 								"duration": "Self.R_OverlapCheckTIme",
 								"type": "regular",
-								"tag": "TIMER_Box_FarCheck"
+								"tag": "TIMER_Item_FarCheck"
 							}
 						}
 					],
@@ -3073,7 +3083,7 @@
 											"parameters": {
 												"instance-variable": "health",
 												"comparison": 2,
-												"value": "Functions.Config_getNumber(PARAM_Player_Health_Low)"
+												"value": "Functions.Rules_getNumber(PARAM_Player_Health_Low)"
 											}
 										}
 									],
@@ -3171,7 +3181,7 @@
 							"sid": 487840665438905,
 							"behaviorType": "Timer",
 							"parameters": {
-								"duration": "Functions.Config_getNumber(PARAM_Item_Sleep_Time)",
+								"duration": "Functions.Rules_getNumber(PARAM_Item_Sleep_Time)",
 								"type": "once",
 								"tag": "TIMER_Player_Sleep"
 							}
@@ -3235,7 +3245,7 @@
 							"sid": 182757126736893,
 							"behaviorType": "Timer",
 							"parameters": {
-								"duration": "Functions.Config_getNumber(PARAM_Item_Slow_Time)",
+								"duration": "Functions.Rules_getNumber(PARAM_Item_Slow_Time)",
 								"type": "once",
 								"tag": "TIMER_Player_Slow"
 							}
@@ -3310,7 +3320,7 @@
 							"sid": 184913873382235,
 							"behaviorType": "Timer",
 							"parameters": {
-								"duration": "Functions.Config_getNumber(PARAM_Item_Shield_Time)",
+								"duration": "Functions.Rules_getNumber(PARAM_Item_Shield_Time)",
 								"type": "once",
 								"tag": "TIMER_Player_Shield"
 							}

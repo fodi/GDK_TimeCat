@@ -912,7 +912,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "todo fix bug where throwing box is not always possible because player is not in aiming mode"
+			"text": "todo fix bug where throwing item is not always possible because player is not in aiming mode"
 		},
 		{
 			"eventType": "block",

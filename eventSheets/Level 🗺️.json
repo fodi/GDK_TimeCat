@@ -19,23 +19,11 @@
 		},
 		{
 			"eventType": "include",
-			"includeSheet": "_eDestroyed 💀"
-		},
-		{
-			"eventType": "include",
 			"includeSheet": "eInput_Global 🔘"
 		},
 		{
 			"eventType": "include",
 			"includeSheet": "eInput_Level 🕹️"
-		},
-		{
-			"eventType": "include",
-			"includeSheet": "_eMovement 🏃"
-		},
-		{
-			"eventType": "include",
-			"includeSheet": "_eSignals 📡"
 		},
 		{
 			"eventType": "include",

@@ -68,7 +68,7 @@
 					"sid": 292154585702051,
 					"parameters": {
 						"instance-variable": "isMovementEnabled",
-						"value": "Functions.Config_getNumber(PARAM_Camera_Movement)"
+						"value": "Functions.Rules_getNumber(PARAM_Camera_Movement)"
 					}
 				},
 				{
@@ -77,7 +77,7 @@
 					"sid": 602389473227973,
 					"parameters": {
 						"instance-variable": "isRotationEnabled",
-						"value": "Functions.Config_getNumber(PARAM_Camera_Rotation)"
+						"value": "Functions.Rules_getNumber(PARAM_Camera_Rotation)"
 					}
 				},
 				{

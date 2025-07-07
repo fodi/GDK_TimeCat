@@ -1,0 +1,46 @@
+{
+	"name": "vPrimitives 🍞",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "EMPTY",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 690954017069938
+		},
+		{
+			"eventType": "variable",
+			"name": "NOTHING",
+			"type": "number",
+			"initialValue": "-1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 845860890811930
+		},
+		{
+			"eventType": "variable",
+			"name": "NO",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 461697262232296
+		},
+		{
+			"eventType": "variable",
+			"name": "YES",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 360652774259531
+		}
+	],
+	"sid": 366441789310355
+}

@@ -24,7 +24,7 @@
 						"const paramsString = window.location.search",
 						"const searchParams = new URLSearchParams(paramsString)",
 						"console.log(searchParams)",
-						"runtime.objects.ConfigURLParams.getFirstInstance().setJsonDataCopy(Object.fromEntries(searchParams))"
+						"runtime.objects.jOverrides.getFirstInstance().setJsonDataCopy(Object.fromEntries(searchParams))"
 					]
 				},
 				{
@@ -37,7 +37,7 @@
 							"sid": 138455190505938,
 							"parameters": {
 								"type": "log",
-								"message": "\"URL params: \" & ConfigURLParams.ToBeautifiedString"
+								"message": "\"URL params: \" & jOverrides.ToBeautifiedString"
 							}
 						},
 						{
@@ -45,7 +45,7 @@
 							"objectClass": "AJAX",
 							"sid": 208937577866667,
 							"parameters": {
-								"tag": "FILE_Config",
+								"tag": "FILE_Rules",
 								"file": "original.json"
 							}
 						},
@@ -56,7 +56,7 @@
 						},
 						{
 							"id": "parse",
-							"objectClass": "ConfigDefault",
+							"objectClass": "jRules",
 							"sid": 981808967733227,
 							"parameters": {
 								"data": "AJAX.LastData"

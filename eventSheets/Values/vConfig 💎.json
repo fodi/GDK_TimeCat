@@ -1,5 +1,5 @@
 {
-	"name": "vConstants 💎",
+	"name": "vConfig 💎",
 	"events": [
 		{
 			"eventType": "comment",
@@ -68,6 +68,20 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 315576412319058
+		},
+		{
+			"eventType": "comment",
+			"text": "Items"
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Item_FadeOut_Time",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 952914525610942
 		},
 		{
 			"eventType": "comment",

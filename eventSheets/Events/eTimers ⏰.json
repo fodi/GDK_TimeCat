@@ -250,7 +250,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Box"
+			"text": "Item"
 		},
 		{
 			"eventType": "block",
@@ -261,7 +261,7 @@
 					"sid": 723563679801714,
 					"behaviorType": "Timer",
 					"parameters": {
-						"tag": "TIMER_Box_FarCheck"
+						"tag": "TIMER_Item_FarCheck"
 					}
 				},
 				{
@@ -358,7 +358,7 @@
 					"sid": 374891194834193,
 					"behaviorType": "Timer",
 					"parameters": {
-						"duration": "random(Functions.Config_getNumber(PARAM_Cannon_Spawn_Time_Min), Functions.Config_getNumber(PARAM_Cannon_Spawn_Time_Max))",
+						"duration": "random(Functions.Rules_getNumber(PARAM_Cannon_Spawn_Time_Min), Functions.Rules_getNumber(PARAM_Cannon_Spawn_Time_Max))",
 						"type": "once",
 						"tag": "TIMER_Cannon_Spawn"
 					}
