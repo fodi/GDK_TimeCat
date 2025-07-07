@@ -1588,9 +1588,21 @@
 					],
 					"actions": [
 						{
-							"id": "remove-from-parent",
-							"objectClass": "Item",
-							"sid": 467752770123523
+							"id": "set-instvar-value",
+							"objectClass": "Player",
+							"sid": 519853144423502,
+							"parameters": {
+								"instance-variable": "carryingBoxUID",
+								"value": "NOTHING"
+							}
+						},
+						{
+							"id": "remove-child",
+							"objectClass": "Player",
+							"sid": 455959713232267,
+							"parameters": {
+								"child": "Item"
+							}
 						},
 						{
 							"id": "set-instvar-value",
@@ -2945,6 +2957,346 @@
 					"sid": 782411368643358,
 					"children": [
 						{
+							"eventType": "comment",
+							"text": "If player does not have shield child objects, spawn them"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "Player",
+									"sid": 449535542868123,
+									"parameters": {
+										"child": "Shield",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 927706568665373,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-playing",
+											"objectClass": "Shield",
+											"sid": 581207352076197,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "TWEEN_Shield_Disappear"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "stop-tweens",
+											"objectClass": "Shield",
+											"sid": 423499892090022,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "TWEEN_Shield_Disappear"
+											}
+										},
+										{
+											"id": "tween-two-properties",
+											"objectClass": "Shield",
+											"sid": 668279533705843,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "TWEEN_Shield_Appear",
+												"property": "size",
+												"end-x": "C_Shield_Size_Max",
+												"end-y": "C_Shield_Size_Max",
+												"time": "C_Shield_Tween_Time",
+												"ease": "easeoutsine",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 978948185421799
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 884127050019906
+								}
+							],
+							"actions": [],
+							"sid": 439234276748508,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 266179321549292,
+											"parameters": {
+												"object": "Shield",
+												"layer": "LAYER_Main",
+												"image-point": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "Player",
+											"sid": 637302573740000,
+											"parameters": {
+												"child": "Shield",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-w": false,
+												"transform-h": false,
+												"transform-a": false,
+												"transform-o": false,
+												"transform-z-elevation": false,
+												"transform-visibility": false,
+												"destroy-with-parent": true
+											}
+										},
+										{
+											"id": "set-cycle-position",
+											"objectClass": "Shield",
+											"sid": 534970605130396,
+											"behaviorType": "Sine",
+											"parameters": {
+												"cycle-position": "0"
+											}
+										},
+										{
+											"id": "set-z-elevation",
+											"objectClass": "Shield",
+											"sid": 225073222559358,
+											"parameters": {
+												"z": "Player.Width * 0.5"
+											}
+										},
+										{
+											"id": "update-initial-state",
+											"objectClass": "Shield",
+											"sid": 689902237534542,
+											"behaviorType": "Sine"
+										},
+										{
+											"id": "set-size",
+											"objectClass": "Shield",
+											"sid": 407340385470406,
+											"parameters": {
+												"width": "0",
+												"height": "0"
+											}
+										},
+										{
+											"id": "tween-two-properties",
+											"objectClass": "Shield",
+											"sid": 645994091580182,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "TWEEN_Shield_Appear",
+												"property": "size",
+												"end-x": "C_Shield_Size_Max",
+												"end-y": "C_Shield_Size_Max",
+												"time": "C_Shield_Tween_Time",
+												"ease": "easeoutsine",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 561397186958420
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 958091942741907,
+											"parameters": {
+												"object": "Shield",
+												"layer": "LAYER_Main",
+												"image-point": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "Player",
+											"sid": 138529345170872,
+											"parameters": {
+												"child": "Shield",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-w": false,
+												"transform-h": false,
+												"transform-a": false,
+												"transform-o": false,
+												"transform-z-elevation": false,
+												"transform-visibility": false,
+												"destroy-with-parent": true
+											}
+										},
+										{
+											"id": "set-cycle-position",
+											"objectClass": "Shield",
+											"sid": 793196191467356,
+											"disabled": true,
+											"behaviorType": "Sine",
+											"parameters": {
+												"cycle-position": "0.05"
+											}
+										},
+										{
+											"id": "set-z-elevation",
+											"objectClass": "Shield",
+											"sid": 161029051281874,
+											"parameters": {
+												"z": "Player.Width * 0.5 + C_Shield_ZOffset"
+											}
+										},
+										{
+											"id": "update-initial-state",
+											"objectClass": "Shield",
+											"sid": 635056172946982,
+											"behaviorType": "Sine"
+										},
+										{
+											"id": "set-size",
+											"objectClass": "Shield",
+											"sid": 433648916025496,
+											"parameters": {
+												"width": "0",
+												"height": "0"
+											}
+										},
+										{
+											"id": "tween-two-properties",
+											"objectClass": "Shield",
+											"sid": 882830893550601,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "TWEEN_Shield_Appear",
+												"property": "size",
+												"end-x": "C_Shield_Size_Max",
+												"end-y": "C_Shield_Size_Max",
+												"time": "C_Shield_Tween_Time",
+												"ease": "easeoutsine",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 337870593875131
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 485148918301261,
+											"parameters": {
+												"object": "Shield",
+												"layer": "LAYER_Main",
+												"image-point": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "Player",
+											"sid": 534365514386227,
+											"parameters": {
+												"child": "Shield",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-w": false,
+												"transform-h": false,
+												"transform-a": false,
+												"transform-o": false,
+												"transform-z-elevation": false,
+												"transform-visibility": false,
+												"destroy-with-parent": true
+											}
+										},
+										{
+											"id": "set-cycle-position",
+											"objectClass": "Shield",
+											"sid": 476075599929523,
+											"disabled": true,
+											"behaviorType": "Sine",
+											"parameters": {
+												"cycle-position": "0.1"
+											}
+										},
+										{
+											"id": "set-z-elevation",
+											"objectClass": "Shield",
+											"sid": 234025747367105,
+											"parameters": {
+												"z": "Player.Width * 0.5 + C_Shield_ZOffset * 2"
+											}
+										},
+										{
+											"id": "update-initial-state",
+											"objectClass": "Shield",
+											"sid": 270978396513144,
+											"behaviorType": "Sine"
+										},
+										{
+											"id": "set-size",
+											"objectClass": "Shield",
+											"sid": 666153018819363,
+											"parameters": {
+												"width": "0",
+												"height": "0"
+											}
+										},
+										{
+											"id": "tween-two-properties",
+											"objectClass": "Shield",
+											"sid": 561336806581300,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "TWEEN_Shield_Appear",
+												"property": "size",
+												"end-x": "C_Shield_Size_Max",
+												"end-y": "C_Shield_Size_Max",
+												"time": "C_Shield_Tween_Time",
+												"ease": "easeoutsine",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 335275221511769
+								}
+							]
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -2967,7 +3319,8 @@
 									}
 								}
 							],
-							"sid": 662831899164036
+							"sid": 662831899164036,
+							"disabled": true
 						}
 					]
 				}
@@ -3065,14 +3418,44 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"type": "comment",
-							"text": "todo proper visuals"
-						}
-					],
+					"actions": [],
 					"sid": 891978949658460,
 					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "Player",
+									"sid": 248069357765959,
+									"parameters": {
+										"child": "Shield",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "Shield",
+									"sid": 497148004244689,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "TWEEN_Shield_Disappear",
+										"property": "size",
+										"end-x": "0",
+										"end-y": "0",
+										"time": "C_Shield_Tween_Time",
+										"ease": "easeoutcubic",
+										"destroy-on-complete": "yes",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 905595172143201
+						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -3096,7 +3479,8 @@
 									}
 								}
 							],
-							"sid": 425525461991079
+							"sid": 425525461991079,
+							"disabled": true
 						}
 					]
 				}

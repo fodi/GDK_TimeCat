@@ -169,6 +169,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Timer",
 			"name": "Timer",
 			"author": "Scirra",
@@ -246,7 +253,8 @@
 			"Particles",
 			"Selection",
 			"Basemap",
-			"Water"
+			"Water",
+			"Shield"
 		],
 		"subfolders": [
 			{
@@ -359,7 +367,7 @@
 		"items": [
 			"Start",
 			"Level",
-			"#ObjectTemplates"
+			"#Templates"
 		],
 		"subfolders": []
 	},
@@ -952,7 +960,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "44c",
+		"version": "45d",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

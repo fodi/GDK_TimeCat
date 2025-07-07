@@ -1296,6 +1296,26 @@
 			"sid": 899546115659467
 		},
 		{
+			"eventType": "variable",
+			"name": "TWEEN_Shield_Appear",
+			"type": "string",
+			"initialValue": "Shield_Appear",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 731607491294590
+		},
+		{
+			"eventType": "variable",
+			"name": "TWEEN_Shield_Disappear",
+			"type": "string",
+			"initialValue": "Shield_Disappear",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 221134702150182
+		},
+		{
 			"eventType": "comment",
 			"text": "Words"
 		},

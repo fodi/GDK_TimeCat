@@ -123,6 +123,27 @@
 				}
 			],
 			"sid": 578342114602252
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Shield",
+					"sid": 700413918508985
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-layer",
+					"objectClass": "Shield",
+					"sid": 808815629835394,
+					"parameters": {
+						"layer": "LAYER_Main"
+					}
+				}
+			],
+			"sid": 772241769387817
 		}
 	],
 	"sid": 397755584574739

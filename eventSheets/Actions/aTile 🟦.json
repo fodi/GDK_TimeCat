@@ -224,33 +224,6 @@
 					"sid": 184099180449526,
 					"children": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-children",
-									"objectClass": "fTile",
-									"sid": 715821340317446,
-									"parameters": {
-										"child": "Symbol",
-										"which": "own"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-size",
-									"objectClass": "Symbol",
-									"sid": 526717356586237,
-									"parameters": {
-										"width": "C_Level_Tile_Size",
-										"height": "C_Level_Tile_Size"
-									}
-								}
-							],
-							"sid": 348344614883283,
-							"disabled": true
-						},
-						{
 							"eventType": "comment",
 							"text": "Destroy overlapping decorations & obstacles"
 						},
@@ -641,7 +614,26 @@
 			"children": [
 				{
 					"eventType": "block",
-					"conditions": [],
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "fTile",
+							"sid": 789577521854274,
+							"parameters": {
+								"animation": "ANIM_Closed"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "fTile",
+							"sid": 846159196679241,
+							"parameters": {
+								"instance-variable": "playerId",
+								"comparison": 0,
+								"value": "NOTHING"
+							}
+						}
+					],
 					"actions": [
 						{
 							"callFunction": "playSoundAt",

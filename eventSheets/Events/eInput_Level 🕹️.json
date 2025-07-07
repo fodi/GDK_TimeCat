@@ -449,6 +449,15 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 766260539903957,
+					"parameters": {
+						"gamepad": "3",
+						"button": "button-a"
+					}
+				},
+				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
 					"sid": 850850711665604,
@@ -467,7 +476,8 @@
 					]
 				}
 			],
-			"sid": 378431901609489
+			"sid": 378431901609489,
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
@@ -837,10 +847,10 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Player",
-							"sid": 482205344419867,
+							"sid": 712000365310993,
 							"parameters": {
 								"instance-variable": "IN_Move_Angle",
-								"value": "angle(0, 0, Gamepad.Axis(2, 0), Gamepad.Axis(2, 1))"
+								"value": "angle(0, 0, Gamepad.Axis(3, 0), Gamepad.Axis(3, 1))"
 							}
 						}
 					],
@@ -2391,6 +2401,40 @@
 						}
 					],
 					"sid": 971514204768969
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 907015543371770,
+							"parameters": {
+								"key": 50
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 992914321330330,
+							"parameters": {
+								"instance-variable": "playerId",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "startEffect",
+							"objectClass": "Player",
+							"sid": 904493575332135,
+							"parameters": [
+								"IT_Shield"
+							]
+						}
+					],
+					"sid": 749649414615612
 				},
 				{
 					"eventType": "block",

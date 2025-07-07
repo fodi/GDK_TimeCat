@@ -115,6 +115,40 @@
 		},
 		{
 			"eventType": "comment",
+			"text": "Shield"
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Shield_Size_Max",
+			"type": "number",
+			"initialValue": "32",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 296117554028736
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Shield_ZOffset",
+			"type": "number",
+			"initialValue": "8",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 605773003936095
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Shield_Tween_Time",
+			"type": "number",
+			"initialValue": "0.9",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 726912553687414
+		},
+		{
+			"eventType": "comment",
 			"text": "Symbol"
 		},
 		{
