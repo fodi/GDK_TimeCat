@@ -2296,6 +2296,7 @@
 					],
 					"actions": [],
 					"sid": 534131565185211,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -2321,7 +2322,8 @@
 									]
 								}
 							],
-							"sid": 667711142532795
+							"sid": 667711142532795,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -2344,7 +2346,8 @@
 									]
 								}
 							],
-							"sid": 108090257441285
+							"sid": 108090257441285,
+							"disabled": true
 						}
 					]
 				},
@@ -2357,6 +2360,14 @@
 							"sid": 727963022201849,
 							"parameters": {
 								"key": 88
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 698140645146743,
+							"parameters": {
+								"key": 16
 							}
 						}
 					],
@@ -2391,7 +2402,8 @@
 							"sid": 937869845440389
 						}
 					],
-					"sid": 493835906592029
+					"sid": 493835906592029,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -2425,7 +2437,8 @@
 							]
 						}
 					],
-					"sid": 971514204768969
+					"sid": 971514204768969,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -2459,7 +2472,8 @@
 							]
 						}
 					],
-					"sid": 749649414615612
+					"sid": 749649414615612,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -2503,7 +2517,8 @@
 							]
 						}
 					],
-					"sid": 371181748428740
+					"sid": 371181748428740,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -2524,7 +2539,8 @@
 							"sid": 669848438950926
 						}
 					],
-					"sid": 441412843541502
+					"sid": 441412843541502,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -2535,6 +2551,14 @@
 							"sid": 346948316364105,
 							"parameters": {
 								"key": 76
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 804848140485083,
+							"parameters": {
+								"key": 16
 							}
 						},
 						{
@@ -2569,6 +2593,14 @@
 							"sid": 379507295647369,
 							"parameters": {
 								"key": 85
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 871028714044175,
+							"parameters": {
+								"key": 16
 							}
 						}
 					],
@@ -2656,7 +2688,8 @@
 							}
 						}
 					],
-					"sid": 829424935116990
+					"sid": 829424935116990,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -2690,7 +2723,8 @@
 							}
 						}
 					],
-					"sid": 277463322850566
+					"sid": 277463322850566,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -2711,7 +2745,8 @@
 							"sid": 587751235186866
 						}
 					],
-					"sid": 587716798404923
+					"sid": 587716798404923,
+					"disabled": true
 				}
 			],
 			"sid": 445167778018070

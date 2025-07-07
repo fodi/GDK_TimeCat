@@ -1,7 +1,7 @@
 {
-	"title": "TimeCat",
-	"cols": 2,
-	"rows": 3,
+	"title": "TimeCat Chill 4x4",
+	"cols": 4,
+	"rows": 4,
 	"gap_percent": 0,
 	"tile_time": 0.8,
 
@@ -10,8 +10,8 @@
 	"pl_health_drain": 1,
 	"pl_heal_pair": 5,
 	"pl_heal_item": 15,
-	"pl_speed": 150,
-	"pl_speed_slow": 100,
+	"pl_speed": 110,
+	"pl_speed_slow": 80,
 	
 	"pr_damage": 5,
 	"pr_speed": 150,

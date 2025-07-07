@@ -942,7 +942,7 @@
 		"general": {
 			"items": [
 				{
-					"name": "config.json",
+					"name": "horizontal.json",
 					"type": "application/json",
 					"sid": 167444612399373,
 					"file-info": {
@@ -953,6 +953,22 @@
 					"name": "chill8x8.json",
 					"type": "application/json",
 					"sid": 953299071395584,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "original.json",
+					"type": "application/json",
+					"sid": 589134096989479,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "chill4x4.json",
+					"type": "application/json",
+					"sid": 588113533712858,
 					"file-info": {
 						"purpose": "none"
 					}
@@ -976,7 +992,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "48",
+		"version": "49d",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

@@ -177,6 +177,14 @@
 							"text": "Randomize tile position within grid"
 						},
 						{
+							"id": "set-animation-frame",
+							"objectClass": "fTile",
+							"sid": 753744262707491,
+							"parameters": {
+								"frame-number": "int(random(0, Self.AnimationFrameCount))"
+							}
+						},
+						{
 							"id": "set-position",
 							"objectClass": "fTile",
 							"sid": 406551297407535,
@@ -950,16 +958,43 @@
 			"sid": 460507058834829,
 			"children": [
 				{
+					"eventType": "variable",
+					"name": "frameNumber",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 798882347299590
+				},
+				{
 					"eventType": "block",
 					"conditions": [],
 					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 706589483571367,
+							"parameters": {
+								"variable": "frameNumber",
+								"value": "fTile.AnimationFrame"
+							}
+						},
 						{
 							"id": "set-animation",
 							"objectClass": "fTile",
 							"sid": 125946783659131,
 							"parameters": {
-								"animation": "ANIM_FadingOut",
+								"animation": "ANIM_Removed",
 								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "fTile",
+							"sid": 232842926536952,
+							"parameters": {
+								"frame-number": "frameNumber"
 							}
 						},
 						{

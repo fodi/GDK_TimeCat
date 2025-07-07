@@ -1,8 +1,8 @@
 {
-	"title": "TimeCat Chill 8x8",
-	"cols": 8,
-	"rows": 8,
-	"gap_percent": 0,
+	"title": "TimeCat Original",
+	"cols": 9,
+	"rows": 7,
+	"gap_percent": 15,
 	"tile_time": 0.8,
 
 	"pl_health": 45,
@@ -10,8 +10,8 @@
 	"pl_health_drain": 1,
 	"pl_heal_pair": 5,
 	"pl_heal_item": 15,
-	"pl_speed": 110,
-	"pl_speed_slow": 80,
+	"pl_speed": 130,
+	"pl_speed_slow": 90,
 	
 	"pr_damage": 5,
 	"pr_speed": 150,
@@ -43,7 +43,7 @@
 	"ca_accel": 2,
 	"ca_speed_max": 20,
 	"ca_count_init": 2,
-	"ca_count_max": 0,
+	"ca_count_max": 40,
 	"ca_spawn_time_min": 15,
 	"ca_spawn_time_max": 20
 }

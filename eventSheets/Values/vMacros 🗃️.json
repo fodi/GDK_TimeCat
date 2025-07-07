@@ -121,9 +121,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ANIM_FadingOut",
+			"name": "ANIM_Removed",
 			"type": "string",
-			"initialValue": "FadingOut",
+			"initialValue": "Removed",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
