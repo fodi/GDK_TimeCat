@@ -96,7 +96,7 @@
 						"imageSpriteId": 1972426,
 						"useCollisionPoly": true,
 						"duration": 1,
-						"tag": "Dead"
+						"tag": "Default"
 					},
 					{
 						"width": 70,

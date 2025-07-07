@@ -592,6 +592,21 @@
 									"d": true,
 									"sm": "normal"
 								}
+							},
+							{
+								"uid": 73,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": false,
+									"h": false,
+									"a": false,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
 							}
 						],
 						"flags": {
@@ -692,137 +707,6 @@
 						"height": 30,
 						"originX": 0.5,
 						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "bbPlayer",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "1_Down",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 22,
-					"sid": 750965238210234,
-					"tags": "",
-					"instanceVariables": {
-						"playerId": 0,
-						"deadEffect_Brightness": 140,
-						"deadEffectGrayscale": 85,
-						"initAnimationSpeed": 0
-					},
-					"behaviors": {
-						"Tween": {
-							"properties": {
-								"enabled": true
-							}
-						}
-					},
-					"effects": {
-						"Grayscale": {
-							"isEnabled": false,
-							"parameters": {
-								"intensity": 0
-							}
-						},
-						"Brightness": {
-							"isEnabled": false,
-							"parameters": {
-								"brightness": 1
-							}
-						}
-					},
-					"sceneGraphData": {
-						"parent-uid": 7,
-						"uid": 22,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": false,
-							"h": false,
-							"a": false,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 2.220446049250313e-16,
-							"transformH": 2.220446049250313e-16,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"instanceFolderItem": {
-						"sid": 750965238210234,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
-					},
-					"mesh": {
-						"cols": 2,
-						"rows": 2,
-						"points": [
-							[
-								{
-									"x": 0,
-									"y": 1,
-									"z": 48,
-									"u": 0,
-									"v": 0
-								},
-								{
-									"x": 1,
-									"y": 1,
-									"z": 48,
-									"u": 1,
-									"v": 0
-								}
-							],
-							[
-								{
-									"x": 0,
-									"y": 1,
-									"z": 0,
-									"u": 0,
-									"v": 1
-								},
-								{
-									"x": 1,
-									"y": 1,
-									"z": 0,
-									"u": 1,
-									"v": 1
-								}
-							]
-						]
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 208,
-						"y": 64,
-						"width": 32,
-						"height": 32,
-						"originX": 0.5,
-						"originY": 1,
 						"color": [
 							1,
 							1,
@@ -2230,6 +2114,137 @@
 					}
 				},
 				{
+					"type": "bbPlayer",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "1_Down",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 22,
+					"sid": 750965238210234,
+					"tags": "",
+					"instanceVariables": {
+						"playerId": 0,
+						"deadEffect_Brightness": 140,
+						"deadEffectGrayscale": 85,
+						"initAnimationSpeed": 0
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"effects": {
+						"Grayscale": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0
+							}
+						},
+						"Brightness": {
+							"isEnabled": false,
+							"parameters": {
+								"brightness": 1
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": 7,
+						"uid": 22,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": false,
+							"h": false,
+							"a": false,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 2.220446049250313e-16,
+							"transformH": 2.220446049250313e-16,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 750965238210234,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"mesh": {
+						"cols": 2,
+						"rows": 2,
+						"points": [
+							[
+								{
+									"x": 0,
+									"y": 1,
+									"z": 48,
+									"u": 0,
+									"v": 0
+								},
+								{
+									"x": 1,
+									"y": 1,
+									"z": 48,
+									"u": 1,
+									"v": 0
+								}
+							],
+							[
+								{
+									"x": 0,
+									"y": 1,
+									"z": 0,
+									"u": 0,
+									"v": 1
+								},
+								{
+									"x": 1,
+									"y": 1,
+									"z": 0,
+									"u": 1,
+									"v": 1
+								}
+							]
+						]
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 208,
+						"y": 64,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "Shield",
 					"properties": {
 						"initially-visible": true,
@@ -2372,10 +2387,12 @@
 					"instanceVariables": {
 						"R_ZElevationInit": 1300,
 						"R_YInit": 1300,
-						"R_FieldOfView": 14,
+						"R_FieldOfView": 18,
 						"R_SmoothingFactor": 5,
 						"lookTargetX": 0,
-						"lookTargetY": 0
+						"lookTargetY": 0,
+						"lookTargetOffsetX": 0,
+						"lookTargetOffsetY": 0
 					},
 					"behaviors": {
 						"8Direction": {
@@ -2452,6 +2469,112 @@
 						"height": 32,
 						"originX": 0.5,
 						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 50
+					}
+				},
+				{
+					"type": "bbAlert",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 73,
+					"sid": 574221979023541,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 7,
+						"uid": 73,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": false,
+							"h": false,
+							"a": false,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 574221979023541,
+						"expanded": true,
+						"folderName": "",
+						"indexInFolder": -1,
+						"folderNestingLevel": -1
+					},
+					"mesh": {
+						"cols": 2,
+						"rows": 2,
+						"points": [
+							[
+								{
+									"x": 0,
+									"y": 0.7,
+									"z": 16,
+									"u": 0,
+									"v": 0
+								},
+								{
+									"x": 1,
+									"y": 0.7,
+									"z": 16,
+									"u": 1,
+									"v": 0
+								}
+							],
+							[
+								{
+									"x": 0,
+									"y": 1,
+									"z": 0,
+									"u": 0,
+									"v": 1
+								},
+								{
+									"x": 1,
+									"y": 1,
+									"z": 0,
+									"u": 1,
+									"v": 1
+								}
+							]
+						]
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 208,
+						"y": 62,
+						"width": 15,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 1,
 						"color": [
 							1,
 							1,

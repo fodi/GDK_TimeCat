@@ -46,6 +46,20 @@
 			"desc": "",
 			"show": false,
 			"sid": 260788731107287
+		},
+		{
+			"name": "lookTargetOffsetX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 632220722618603
+		},
+		{
+			"name": "lookTargetOffsetY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 993657596533286
 		}
 	],
 	"behaviorTypes": [

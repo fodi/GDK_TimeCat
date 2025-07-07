@@ -47,6 +47,34 @@
 		},
 		{
 			"eventType": "comment",
+			"text": "Camera rules"
+		},
+		{
+			"eventType": "comment",
+			"text": "todo put ivs here or move gvs to ivs"
+		},
+		{
+			"eventType": "variable",
+			"name": "R_Camera_Movement",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 162625931678998
+		},
+		{
+			"eventType": "variable",
+			"name": "R_Camera_Rotation",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 610382334094281
+		},
+		{
+			"eventType": "comment",
 			"text": "State"
 		},
 		{

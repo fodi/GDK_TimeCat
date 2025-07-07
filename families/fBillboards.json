@@ -9,6 +9,7 @@
 		"bbPlayer",
 		"bbProjectile",
 		"bbDecor",
-		"bbItem"
+		"bbItem",
+		"bbAlert"
 	]
 }

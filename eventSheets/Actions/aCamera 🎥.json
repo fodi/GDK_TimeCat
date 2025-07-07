@@ -119,6 +119,24 @@
 							"parameters": {
 								"object": "CameraTargetSmooth"
 							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Camera",
+							"sid": 349076621656838,
+							"parameters": {
+								"instance-variable": "lookTargetOffsetX",
+								"value": "Self.X - CameraTargetSmooth.X"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Camera",
+							"sid": 176204534489995,
+							"parameters": {
+								"instance-variable": "lookTargetOffsetY",
+								"value": "Self.Y - CameraTargetSmooth.Y"
+							}
 						}
 					],
 					"sid": 418819901467012
@@ -136,7 +154,18 @@
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
-			"conditions": [],
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 975192984778600,
+					"parameters": {
+						"variable": "R_Camera_Movement",
+						"comparison": 0,
+						"value": "YES"
+					}
+				}
+			],
 			"actions": [
 				{
 					"id": "move-to-position",
@@ -286,66 +315,107 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-x",
-									"objectClass": "Camera",
-									"sid": 357264625926651,
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 253884622148940,
 									"parameters": {
-										"comparison": 2,
-										"x-co-ordinate": "Camera.lookTargetX - 100"
+										"variable": "R_Camera_Rotation",
+										"comparison": 0,
+										"value": "YES"
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 437020346469483,
+							"children": [
 								{
-									"id": "set-x",
-									"objectClass": "Camera",
-									"sid": 857721525929831,
-									"parameters": {
-										"x": "Functions.expDecay(Self.X, Self.lookTargetX - 100, 5)"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-x",
+											"objectClass": "Camera",
+											"sid": 980785533892561,
+											"parameters": {
+												"comparison": 2,
+												"x-co-ordinate": "Camera.lookTargetX - 100"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-x",
+											"objectClass": "Camera",
+											"sid": 687669309282707,
+											"parameters": {
+												"x": "Functions.expDecay(Self.X, Self.lookTargetX - 100, 5)"
+											}
+										}
+									],
+									"sid": 459400420912860
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-x",
+											"objectClass": "Camera",
+											"sid": 738687042935791,
+											"parameters": {
+												"comparison": 4,
+												"x-co-ordinate": "Camera.lookTargetX + 100"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-x",
+											"objectClass": "Camera",
+											"sid": 302680714434521,
+											"parameters": {
+												"x": "Functions.expDecay(Self.X, Self.lookTargetX + 100, 5)"
+											}
+										}
+									],
+									"sid": 164161325231369
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-y",
+											"objectClass": "Camera",
+											"sid": 859034555669993,
+											"parameters": {
+												"y": "Functions.expDecay(Self.Y, Self.lookTargetY + Self.R_YInit, 5)"
+											}
+										}
+									],
+									"sid": 877246920063883
 								}
-							],
-							"sid": 554122175899753
+							]
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-x",
-									"objectClass": "Camera",
-									"sid": 601307846231743,
-									"parameters": {
-										"comparison": 4,
-										"x-co-ordinate": "Camera.lookTargetX + 100"
-									}
+									"id": "else",
+									"objectClass": "System",
+									"sid": 913641936614468
 								}
 							],
 							"actions": [
 								{
-									"id": "set-x",
+									"id": "set-position",
 									"objectClass": "Camera",
-									"sid": 254173439138667,
+									"sid": 450766490389139,
 									"parameters": {
-										"x": "Functions.expDecay(Self.X, Self.lookTargetX + 100, 5)"
+										"x": "CameraTargetSmooth.X + Camera.lookTargetOffsetX",
+										"y": "CameraTargetSmooth.Y + Camera.lookTargetOffsetY"
 									}
 								}
 							],
-							"sid": 370049057508964
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "set-y",
-									"objectClass": "Camera",
-									"sid": 779195130940290,
-									"parameters": {
-										"y": "Functions.expDecay(Self.Y, Self.lookTargetY + Self.R_YInit, 5)"
-									}
-								}
-							],
-							"sid": 590176531726579
+							"sid": 898621486711318
 						}
 					]
 				},

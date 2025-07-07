@@ -50,6 +50,26 @@
 			"sid": 645222248397563
 		},
 		{
+			"eventType": "variable",
+			"name": "C_Cannon_Tween_Time_Appear",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 662315714836460
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Cannon_ZElevation_Moving",
+			"type": "number",
+			"initialValue": "16",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 315576412319058
+		},
+		{
 			"eventType": "comment",
 			"text": "Level"
 		},

@@ -2,6 +2,10 @@
 	"name": "fConfig 📃",
 	"events": [
 		{
+			"eventType": "comment",
+			"text": "todo load default config, put override json on top"
+		},
+		{
 			"functionName": "Config_getNumber",
 			"functionDescription": "",
 			"functionCategory": "",

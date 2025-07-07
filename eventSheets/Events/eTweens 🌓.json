@@ -145,18 +145,14 @@
 					"sid": 311017688225980
 				},
 				{
-					"type": "comment",
-					"text": "todo mn"
-				},
-				{
 					"id": "tween-one-property",
 					"objectClass": "3dCannon",
-					"sid": 473775981632893,
+					"sid": 586465030844448,
 					"behaviorType": "Tween",
 					"parameters": {
 						"tags": "TWEEN_3dCannon_ZElevation_Appear",
 						"property": "offsetZElevation",
-						"end-value": "16",
+						"end-value": "C_Cannon_ZElevation_Moving",
 						"time": "Cannon.R_Shoot_Interval_Min",
 						"ease": "easeoutsine",
 						"destroy-on-complete": "no",

@@ -93,6 +93,24 @@
 							}
 						},
 						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 539466571565600,
+							"parameters": {
+								"variable": "R_Camera_Movement",
+								"value": "Functions.Config_getNumber(PARAM_Camera_Movement)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 950628846480020,
+							"parameters": {
+								"variable": "R_Camera_Rotation",
+								"value": "Functions.Config_getNumber(PARAM_Camera_Rotation)"
+							}
+						},
+						{
 							"id": "log",
 							"objectClass": "Browser",
 							"sid": 802792626626156,
@@ -350,7 +368,6 @@
 					"sid": 775163012593881
 				},
 				{
-					"bookmark": true,
 					"eventType": "block",
 					"conditions": [
 						{

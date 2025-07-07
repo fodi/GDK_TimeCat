@@ -409,6 +409,26 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "PARAM_Camera_Rotation",
+			"type": "string",
+			"initialValue": "cam_rotate",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 198970920543712
+		},
+		{
+			"eventType": "variable",
+			"name": "PARAM_Camera_Movement",
+			"type": "string",
+			"initialValue": "cam_move",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 801471436698109
+		},
+		{
+			"eventType": "variable",
 			"name": "PARAM_Cannon_Count_Init",
 			"type": "string",
 			"initialValue": "ca_count_init",

@@ -262,7 +262,8 @@
 			"Basemap",
 			"Water",
 			"Shield",
-			"SVGPicture"
+			"SVGPicture",
+			"bbAlert"
 		],
 		"subfolders": [
 			{
@@ -432,7 +433,8 @@
 					"aBox 📦",
 					"aUI_Blurb 🆎",
 					"aBasemap 🌐",
-					"aUI_TextSF 🔠"
+					"aUI_TextSF 🔠",
+					"aUI_Player_Images 😶"
 				],
 				"subfolders": [],
 				"name": "Actions"
@@ -988,6 +990,14 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "gamerweekend2.json",
+					"type": "application/json",
+					"sid": 174914363783056,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
@@ -1008,7 +1018,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "52",
+		"version": "53b",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

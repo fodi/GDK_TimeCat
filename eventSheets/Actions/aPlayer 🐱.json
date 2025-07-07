@@ -150,6 +150,32 @@
 						}
 					],
 					"sid": 713148674116131
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "Player",
+							"sid": 917212175785080,
+							"parameters": {
+								"child": "bbAlert",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "bbAlert",
+							"sid": 349604358746726,
+							"parameters": {
+								"animation": "str(Player.playerId)",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 598366990222191
 				}
 			]
 		},
@@ -1125,7 +1151,6 @@
 															"sid": 867464333336554,
 															"children": [
 																{
-																	"bookmark": true,
 																	"eventType": "block",
 																	"conditions": [
 																		{
@@ -2021,9 +2046,9 @@
 									}
 								},
 								{
-									"customAction": "updateAllUI",
-									"objectClass": "Player",
-									"sid": 383951635869944
+									"customAction": "update",
+									"objectClass": "UI_Player_Images",
+									"sid": 407916394311184
 								}
 							],
 							"sid": 331913504050552,
@@ -2432,6 +2457,15 @@
 								"child": "bbPlayer",
 								"which": "own"
 							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "Player",
+							"sid": 802696065229270,
+							"parameters": {
+								"child": "bbAlert",
+								"which": "own"
+							}
 						}
 					],
 					"actions": [
@@ -2613,9 +2647,9 @@
 									"sid": 567233146528589
 								},
 								{
-									"customAction": "updateAllUI",
-									"objectClass": "Player",
-									"sid": 544930562424087
+									"customAction": "update",
+									"objectClass": "UI_Player_Images",
+									"sid": 836573501761776
 								}
 							],
 							"sid": 415999299938242,
@@ -2650,7 +2684,7 @@
 								},
 								{
 									"eventType": "comment",
-									"text": "Remove box from player (so it can be picked up by others)"
+									"text": "Remove item from player (so it can be picked up by others)"
 								},
 								{
 									"eventType": "comment",
@@ -2764,7 +2798,7 @@
 						},
 						{
 							"eventType": "comment",
-							"text": "Otherwise, heal / damage"
+							"text": "If player is still alive, show heal / damage effects if requested"
 						},
 						{
 							"eventType": "block",
@@ -2796,18 +2830,7 @@
 											}
 										}
 									],
-									"actions": [
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 394468162396868,
-											"disabled": true,
-											"parameters": {
-												"type": "log",
-												"message": "\"Player healing: \" & amount"
-											}
-										}
-									],
+									"actions": [],
 									"sid": 699634497553844,
 									"children": [
 										{
@@ -3025,6 +3048,53 @@
 											"sid": 614700014238128
 										}
 									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Player",
+											"sid": 486907199205164,
+											"parameters": {
+												"instance-variable": "health",
+												"comparison": 2,
+												"value": "Functions.Config_getNumber(PARAM_Player_Health_Low)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "bbAlert",
+											"sid": 903223965361272,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 362056675618156
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 620626807175206
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "bbAlert",
+											"sid": 128909717668511,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										}
+									],
+									"sid": 831695831648213
 								}
 							]
 						}

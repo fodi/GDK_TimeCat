@@ -364,10 +364,6 @@
 							}
 						},
 						{
-							"type": "comment",
-							"text": "todo mn"
-						},
-						{
 							"id": "set-opacity",
 							"objectClass": "Cannon",
 							"sid": 437139202844022,
@@ -378,13 +374,13 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "Cannon",
-							"sid": 358847798517241,
+							"sid": 705645838395672,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "TWEEN_Cannon_Opacity_Appear",
 								"property": "offsetOpacity",
 								"end-value": "100",
-								"time": "1",
+								"time": "C_Cannon_Tween_Time_Appear",
 								"ease": "default",
 								"destroy-on-complete": "no",
 								"loop": "no",
@@ -403,13 +399,13 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "Cannon",
-							"sid": 832270928635404,
+							"sid": 248544768318622,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "TWEEN_Cannon_Color_Appear",
 								"property": "offsetColor",
 								"end-value": "rgbEx(100, 100, 100)",
-								"time": "1",
+								"time": "C_Cannon_Tween_Time_Appear",
 								"ease": "default",
 								"destroy-on-complete": "no",
 								"loop": "no",

@@ -2713,28 +2713,6 @@
 					],
 					"sid": 277463322850566,
 					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 408259561649854,
-							"parameters": {
-								"key": 84
-							}
-						}
-					],
-					"actions": [
-						{
-							"customAction": "updateAllUI",
-							"objectClass": "Player",
-							"sid": 587751235186866
-						}
-					],
-					"sid": 587716798404923,
-					"disabled": true
 				}
 			],
 			"sid": 445167778018070
