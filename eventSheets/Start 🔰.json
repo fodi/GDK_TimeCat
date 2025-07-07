@@ -3,7 +3,7 @@
 	"events": [
 		{
 			"eventType": "include",
-			"includeSheet": "eInput_Global 🔘"
+			"includeSheet": "_eSignals 📡"
 		},
 		{
 			"eventType": "block",
@@ -23,7 +23,11 @@
 						"const paramsString = window.location.search",
 						"const searchParams = new URLSearchParams(paramsString)",
 						"console.log(searchParams)",
-						"runtime.objects.ConfigURLParams.getFirstInstance().setJsonDataCopy(Object.fromEntries(searchParams))"
+						"runtime.objects.ConfigURLParams.getFirstInstance().setJsonDataCopy(Object.fromEntries(searchParams))",
+						"",
+						"",
+						"//runtime.objects.URLParams.getFirstInstance().setJsonString('{\"pr_speed\":50,\"pl_health\":25,\"pl_speed\":50,\"rows\":6,\"cols\":3}')",
+						""
 					]
 				},
 				{
@@ -42,10 +46,10 @@
 						{
 							"id": "request-project-file",
 							"objectClass": "AJAX",
-							"sid": 208937577866667,
+							"sid": 586983053044904,
 							"parameters": {
 								"tag": "FILE_Config",
-								"file": "original.json"
+								"file": "horizontal.json"
 							}
 						},
 						{
@@ -60,89 +64,19 @@
 							"parameters": {
 								"data": "AJAX.LastData"
 							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 416103780050053,
+							"parameters": {
+								"layout": "Level"
+							}
 						}
 					],
 					"sid": 109565956019444
 				}
 			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 306861812081110,
-					"parameters": {
-						"key": 32
-					}
-				},
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 647703696752862,
-					"parameters": {
-						"key": 96
-					}
-				},
-				{
-					"id": "on-button-pressed",
-					"objectClass": "Gamepad",
-					"sid": 511226128380053,
-					"parameters": {
-						"gamepad": "0",
-						"button": "button-a"
-					}
-				},
-				{
-					"id": "on-button-pressed",
-					"objectClass": "Gamepad",
-					"sid": 789244389869487,
-					"parameters": {
-						"gamepad": "1",
-						"button": "button-a"
-					}
-				},
-				{
-					"id": "on-button-pressed",
-					"objectClass": "Gamepad",
-					"sid": 832143231582130,
-					"parameters": {
-						"gamepad": "2",
-						"button": "button-a"
-					}
-				},
-				{
-					"id": "on-button-pressed",
-					"objectClass": "Gamepad",
-					"sid": 905191312258514,
-					"parameters": {
-						"gamepad": "3",
-						"button": "button-a"
-					}
-				},
-				{
-					"id": "on-click",
-					"objectClass": "Mouse",
-					"sid": 440559963327838,
-					"parameters": {
-						"mouse-button": "right",
-						"click-type": "clicked"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 938530118249506,
-					"parameters": {
-						"layout": "Level"
-					}
-				}
-			],
-			"sid": 758246558053576,
-			"isOrBlock": true
 		}
 	],
 	"sid": 685083030481328

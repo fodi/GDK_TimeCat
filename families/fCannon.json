@@ -79,13 +79,6 @@
 			"desc": "",
 			"show": true,
 			"sid": 875140272312357
-		},
-		{
-			"name": "isDead",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 483989726324836
 		}
 	],
 	"behaviorTypes": [

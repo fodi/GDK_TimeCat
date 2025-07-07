@@ -699,16 +699,6 @@
 						},
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Cannon",
-							"sid": 833008553468194,
-							"parameters": {
-								"instance-variable": "isDead",
-								"comparison": 0,
-								"value": "NO"
-							}
-						},
-						{
-							"id": "compare-instance-variable",
 							"objectClass": "Player",
 							"sid": 525829410518078,
 							"parameters": {
@@ -949,16 +939,6 @@
 								"comparison": 0,
 								"value": "NO"
 							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Cannon",
-							"sid": 576496749911701,
-							"parameters": {
-								"instance-variable": "isDead",
-								"comparison": 0,
-								"value": "NO"
-							}
 						}
 					],
 					"actions": [
@@ -1027,28 +1007,13 @@
 					],
 					"actions": [
 						{
+							"type": "comment",
+							"text": "todo visuals"
+						},
+						{
 							"id": "destroy",
 							"objectClass": "Cannon",
-							"sid": 282781054080346,
-							"disabled": true
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Cannon",
-							"sid": 394933017341468,
-							"parameters": {
-								"instance-variable": "isDead",
-								"value": "YES"
-							}
-						},
-						{
-							"id": "set-speed",
-							"objectClass": "Cannon",
-							"sid": 584096254530030,
-							"behaviorType": "Orbit",
-							"parameters": {
-								"speed": "0"
-							}
+							"sid": 282781054080346
 						},
 						{
 							"callFunction": "playSoundAt",
@@ -1062,43 +1027,7 @@
 							]
 						}
 					],
-					"sid": 235621981839580,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-children",
-									"objectClass": "Cannon",
-									"sid": 661827657876167,
-									"parameters": {
-										"child": "3dCannon",
-										"which": "own"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "tween-one-property",
-									"objectClass": "3dCannon",
-									"sid": 310570650222912,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "TWEEN_3dCannon_ZElevation_Disappear",
-										"property": "offsetZElevation",
-										"end-value": "Basemap.ZElevation -Self.ZHeight - 1",
-										"time": "Cannon.R_Shoot_Interval_Min",
-										"ease": "easeincubic",
-										"destroy-on-complete": "no",
-										"loop": "no",
-										"ping-pong": "no",
-										"repeat-count": "1"
-									}
-								}
-							],
-							"sid": 986799975683720
-						}
-					]
+					"sid": 235621981839580
 				},
 				{
 					"eventType": "block",

@@ -89,7 +89,7 @@
 					"sid": 970391860457903,
 					"behaviorType": "Tween",
 					"parameters": {
-						"tags": "TWEEN_3dCannon_ZElevation_Appear"
+						"tags": "TWEEN_3dCannon_ZElevation_Spawn"
 					}
 				},
 				{
@@ -154,7 +154,7 @@
 					"sid": 473775981632893,
 					"behaviorType": "Tween",
 					"parameters": {
-						"tags": "TWEEN_3dCannon_ZElevation_Appear",
+						"tags": "TWEEN_3dCannon_ZElevation_Spawn",
 						"property": "offsetZElevation",
 						"end-value": "16",
 						"time": "Cannon.R_Shoot_Interval_Min",
@@ -177,7 +177,7 @@
 					"sid": 532084453473807,
 					"behaviorType": "Tween",
 					"parameters": {
-						"tags": "TWEEN_3dCannon_ZElevation_Appear"
+						"tags": "TWEEN_3dCannon_ZElevation_Spawn"
 					}
 				},
 				{
@@ -220,37 +220,6 @@
 				}
 			],
 			"sid": 370174305111993
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-tweens-finished",
-					"objectClass": "3dCannon",
-					"sid": 586639887661776,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "TWEEN_3dCannon_ZElevation_Disappear"
-					}
-				},
-				{
-					"id": "pick-parent",
-					"objectClass": "3dCannon",
-					"sid": 867652756620055,
-					"parameters": {
-						"parent": "Cannon",
-						"which": "own"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "Cannon",
-					"sid": 379923198049340
-				}
-			],
-			"sid": 375666354103985
 		}
 	],
 	"sid": 858674299755667

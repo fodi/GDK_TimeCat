@@ -2353,6 +2353,39 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
+							"sid": 727963022201849,
+							"parameters": {
+								"key": 88
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 698140645146743,
+							"parameters": {
+								"key": 16
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-url",
+							"objectClass": "Browser",
+							"sid": 584663788824118,
+							"parameters": {
+								"url": "\"https://kiosk.gamedevklub.hu\"",
+								"target": "self"
+							}
+						}
+					],
+					"sid": 998626234078314
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
 							"sid": 315801862150686,
 							"parameters": {
 								"key": 78
@@ -2503,31 +2536,6 @@
 						}
 					],
 					"sid": 441412843541502,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 353236203173895,
-							"parameters": {
-								"key": 86
-							}
-						}
-					],
-					"actions": [
-						{
-							"customAction": "changeHealth",
-							"objectClass": "Cannon",
-							"sid": 886150575278373,
-							"parameters": [
-								"-100"
-							]
-						}
-					],
-					"sid": 432412239125156,
 					"disabled": true
 				},
 				{

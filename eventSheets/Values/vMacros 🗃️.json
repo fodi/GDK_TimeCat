@@ -1237,23 +1237,13 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TWEEN_3dCannon_ZElevation_Appear",
+			"name": "TWEEN_3dCannon_ZElevation_Spawn",
 			"type": "string",
-			"initialValue": "3dCannon_ZElevation_Appear",
+			"initialValue": "3dCannon_ZElevation_Spawn",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 158231385317105
-		},
-		{
-			"eventType": "variable",
-			"name": "TWEEN_3dCannon_ZElevation_Disappear",
-			"type": "string",
-			"initialValue": "3dCannon_ZElevation_Disppear",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 567922231300661
 		},
 		{
 			"eventType": "variable",
