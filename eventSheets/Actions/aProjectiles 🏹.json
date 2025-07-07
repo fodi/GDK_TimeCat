@@ -118,7 +118,34 @@
 					}
 				}
 			],
-			"sid": 883292258865159
+			"sid": 883292258865159,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "Projectile",
+							"sid": 889860234315512,
+							"parameters": {
+								"child": "Projectile_Particles",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "Projectile_Particles",
+							"sid": 718074439895553,
+							"parameters": {
+								"speed": "Projectile.Bullet.Speed * 0.3"
+							}
+						}
+					],
+					"sid": 220800613176244
+				}
+			]
 		}
 	],
 	"sid": 641569333295045

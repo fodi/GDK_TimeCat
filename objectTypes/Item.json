@@ -4,12 +4,25 @@
 	"sid": 770033935898704,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "isDestroyed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 416980707214489
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "solid",
 			"name": "Solid",
 			"sid": 684864194960826
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 863191720538387
 		}
 	],
 	"effectTypes": [],

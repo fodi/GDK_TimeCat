@@ -111,11 +111,11 @@
 						{
 							"id": "compare-speed",
 							"objectClass": "Projectile",
-							"sid": 732371276013801,
+							"sid": 406978912182017,
 							"behaviorType": "Bullet",
 							"parameters": {
 								"comparison": 2,
-								"speed": "Functions.Config_getNumber(PARAM_Projectile_Speed)"
+								"speed": "10"
 							}
 						},
 						{

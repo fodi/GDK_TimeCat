@@ -487,16 +487,6 @@
 								"instance-variable": "targetPlayerId",
 								"value": "Player.playerId"
 							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 818532730867310,
-							"disabled": true,
-							"parameters": {
-								"type": "log",
-								"message": "\"Cannon #\" & Cannon.UID & \" selected player \" & Player.playerId & \" as a target.\""
-							}
 						}
 					],
 					"sid": 678812993783150
@@ -518,16 +508,6 @@
 							"parameters": {
 								"instance-variable": "targetPlayerId",
 								"value": "NOTHING"
-							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 441603511270265,
-							"disabled": true,
-							"parameters": {
-								"type": "log",
-								"message": "\"Cannon #\" & Cannon.UID & \" couldn't select a target.\""
 							}
 						}
 					],
@@ -587,6 +567,10 @@
 								{
 									"eventType": "comment",
 									"text": "Look directly at player if within X degrees"
+								},
+								{
+									"eventType": "comment",
+									"text": "todo mn or just look directly at selected player and only lerp while switching targets"
 								},
 								{
 									"eventType": "block",
@@ -667,7 +651,7 @@
 		},
 		{
 			"aceType": "action",
-			"aceName": "startAttack",
+			"aceName": "beginAttack",
 			"objectClass": "Cannon",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -758,10 +742,6 @@
 						{
 							"type": "comment",
 							"text": "Wait until the attack animation's end"
-						},
-						{
-							"type": "comment",
-							"text": "todo use timer instead"
 						},
 						{
 							"id": "wait",
@@ -1248,6 +1228,79 @@
 						}
 					],
 					"sid": 495382800259477
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "checkMaxSpeed",
+			"objectClass": "Cannon",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 866279655512816,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 319311198252082,
+							"parameters": {
+								"object": "Cannon",
+								"expression": "Cannon.Orbit.Speed",
+								"comparison": 5,
+								"value": "Cannon.R_Speed_Max"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-timer",
+							"objectClass": "Cannon",
+							"sid": 477906759339590,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "TIMER_Cannon_CheckMaxSpeed"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Cannon",
+							"sid": 684388477907491,
+							"behaviorType": "Orbit",
+							"parameters": {
+								"speed": "Self.R_Speed_Max"
+							}
+						},
+						{
+							"id": "set-acceleration",
+							"objectClass": "Cannon",
+							"sid": 159461102917086,
+							"behaviorType": "Orbit",
+							"parameters": {
+								"acceleration": "0"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 968238823839252,
+							"disabled": true,
+							"parameters": {
+								"type": "log",
+								"message": "\"Cannon #\" & Cannon.UID & \" reached max speed\""
+							}
+						}
+					],
+					"sid": 155281456437913
 				}
 			]
 		}

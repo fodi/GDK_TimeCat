@@ -51,7 +51,8 @@
 					}
 				}
 			],
-			"sid": 535391794478980
+			"sid": 535391794478980,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -78,7 +79,8 @@
 					}
 				}
 			],
-			"sid": 701792086990254
+			"sid": 701792086990254,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -247,6 +249,57 @@
 				}
 			],
 			"sid": 375666354103985
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-playing",
+					"objectClass": "bbPlayer",
+					"sid": 336300404563177,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "TWEEN_bbPlayer_Dead_Color"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-default-color",
+					"objectClass": "bbPlayer",
+					"sid": 993134753262168,
+					"parameters": {
+						"color": "rgbEx(Self.Tween.Value(TWEEN_bbPlayer_Dead_Color), Self.Tween.Value(TWEEN_bbPlayer_Dead_Color), Self.Tween.Value(TWEEN_bbPlayer_Dead_Color))"
+					}
+				}
+			],
+			"sid": 107354644956024
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-playing",
+					"objectClass": "GlobalTimer",
+					"sid": 401639726760559,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "TWEEN_Layer_UI_GameOver_FadeIn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-opacity",
+					"objectClass": "System",
+					"sid": 797294862542946,
+					"parameters": {
+						"layer": "LAYER_UI_GameOver",
+						"opacity": "GlobalTimer.Tween.Value(TWEEN_Layer_UI_GameOver_FadeIn)"
+					}
+				}
+			],
+			"sid": 927350348893823
 		}
 	],
 	"sid": 858674299755667

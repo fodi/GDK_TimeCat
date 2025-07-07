@@ -119,10 +119,6 @@
 							"text": "todo_maybe use noise instead of random?"
 						},
 						{
-							"eventType": "comment",
-							"text": "todo re-enable after assets"
-						},
-						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -270,6 +266,10 @@
 								{
 									"eventType": "comment",
 									"text": "Spawn decorations"
+								},
+								{
+									"eventType": "comment",
+									"text": "todo re-enable after decoration assets are imported"
 								},
 								{
 									"eventType": "block",

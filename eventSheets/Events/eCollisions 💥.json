@@ -243,12 +243,22 @@
 				},
 				{
 					"id": "compare-instance-variable",
-					"objectClass": "Player",
-					"sid": 683470593278381,
+					"objectClass": "Item",
+					"sid": 648281111032573,
 					"parameters": {
-						"instance-variable": "health",
-						"comparison": 4,
-						"value": "0"
+						"instance-variable": "isDestroyed",
+						"comparison": 0,
+						"value": "NO"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player",
+					"sid": 398457362883531,
+					"parameters": {
+						"instance-variable": "isDead",
+						"comparison": 0,
+						"value": "NO"
 					}
 				}
 			],
@@ -374,7 +384,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Picking up a box"
+					"text": "Picking up an item"
 				},
 				{
 					"eventType": "block",
@@ -389,7 +399,7 @@
 							"objectClass": "Player",
 							"sid": 150530598847333,
 							"parameters": {
-								"instance-variable": "carryingBoxUID",
+								"instance-variable": "carryingItemUID",
 								"comparison": 0,
 								"value": "NOTHING"
 							}
@@ -419,6 +429,16 @@
 					"sid": 972824945446061,
 					"parameters": {
 						"object": "Projectile"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Item",
+					"sid": 891548444619068,
+					"parameters": {
+						"instance-variable": "isDestroyed",
+						"comparison": 0,
+						"value": "NO"
 					}
 				}
 			],
@@ -533,9 +553,14 @@
 					}
 				},
 				{
-					"id": "is-visible",
+					"id": "compare-instance-variable",
 					"objectClass": "Item",
-					"sid": 811480670403065
+					"sid": 175577356564805,
+					"parameters": {
+						"instance-variable": "isDestroyed",
+						"comparison": 0,
+						"value": "NO"
+					}
 				}
 			],
 			"actions": [
@@ -577,7 +602,7 @@
 							"objectClass": "Player",
 							"sid": 142703911398793,
 							"parameters": {
-								"instance-variable": "carryingBoxUID",
+								"instance-variable": "carryingItemUID",
 								"value": "NOTHING"
 							}
 						},

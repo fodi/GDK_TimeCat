@@ -93,24 +93,6 @@
 							}
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 539466571565600,
-							"parameters": {
-								"variable": "R_Camera_Movement",
-								"value": "Functions.Config_getNumber(PARAM_Camera_Movement)"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 950628846480020,
-							"parameters": {
-								"variable": "R_Camera_Rotation",
-								"value": "Functions.Config_getNumber(PARAM_Camera_Rotation)"
-							}
-						},
-						{
 							"id": "log",
 							"objectClass": "Browser",
 							"sid": 802792626626156,
@@ -348,6 +330,10 @@
 					"sid": 409412098680375
 				},
 				{
+					"eventType": "comment",
+					"text": "Calculate and display final results"
+				},
+				{
 					"eventType": "variable",
 					"name": "listPlayers",
 					"type": "string",
@@ -495,21 +481,29 @@
 							}
 						},
 						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 583062071862387,
+							"id": "set-layer-opacity",
+							"objectClass": "System",
+							"sid": 844233196646782,
 							"parameters": {
-								"type": "log",
-								"message": "listPlayers & \"x\""
+								"layer": "LAYER_UI_GameOver",
+								"opacity": "0"
 							}
 						},
 						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 129180944495415,
+							"id": "tween-value",
+							"objectClass": "GlobalTimer",
+							"sid": 473872411405848,
+							"behaviorType": "Tween",
 							"parameters": {
-								"type": "log",
-								"message": "listPairs & \"x\""
+								"tags": "TWEEN_Layer_UI_GameOver_FadeIn",
+								"start-value": "0",
+								"end-value": "100",
+								"time": "2",
+								"ease": "easeinoutsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
 							}
 						}
 					],

@@ -131,18 +131,14 @@
 							"behaviorType": "Tween"
 						},
 						{
-							"type": "comment",
-							"text": "todo mn"
-						},
-						{
 							"id": "tween-value",
 							"objectClass": "UI_BlurbSF",
-							"sid": 527576642426798,
+							"sid": 924192230600849,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "TWEEN_Blurb_ZElevation",
 								"start-value": "0",
-								"end-value": "20",
+								"end-value": "fBlurbSpawners.R_Blurb_ZElevation_Tween",
 								"time": "timeout",
 								"ease": "easeoutcubic",
 								"destroy-on-complete": "yes",

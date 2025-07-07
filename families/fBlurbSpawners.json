@@ -4,18 +4,25 @@
 	"sid": 675982837152472,
 	"instanceVariables": [
 		{
-			"name": "R_Blurb_ZOffset_Normal",
+			"name": "R_Blurb_ZElevation_Normal",
 			"type": "number",
 			"desc": "",
 			"show": true,
 			"sid": 809770138691014
 		},
 		{
-			"name": "R_Blurb_ZOffset_Low",
+			"name": "R_Blurb_ZElevation_Low",
 			"type": "number",
 			"desc": "",
 			"show": true,
 			"sid": 626390935884147
+		},
+		{
+			"name": "R_Blurb_ZElevation_Tween",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 565518648388978
 		}
 	],
 	"behaviorTypes": [],

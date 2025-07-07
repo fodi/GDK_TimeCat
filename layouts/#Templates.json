@@ -56,10 +56,7 @@
 					},
 					"instanceFolderItem": {
 						"sid": 494284426361228,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"mesh": {
 						"cols": 2,
@@ -189,10 +186,7 @@
 					},
 					"instanceFolderItem": {
 						"sid": 375535735700021,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -263,10 +257,7 @@
 					},
 					"instanceFolderItem": {
 						"sid": 549565297199005,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -354,10 +345,7 @@
 					},
 					"instanceFolderItem": {
 						"sid": 647605630339063,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -450,6 +438,21 @@
 									"d": true,
 									"sm": "normal"
 								}
+							},
+							{
+								"uid": 74,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
 							}
 						],
 						"flags": {
@@ -479,10 +482,7 @@
 					},
 					"instanceFolderItem": {
 						"sid": 919295171424457,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -520,8 +520,8 @@
 						"R_Health_Start": 1,
 						"R_Health_BonusOnPair": 0,
 						"R_Health_BonusOnHeal": 0,
-						"R_Box_MovementSpeed": 0,
-						"R_Box_Distance": 20,
+						"R_Item_MovementSpeed": 0,
+						"R_Item_Carry_Distance": 20,
 						"R_MovementSpeed_Normal": 0,
 						"R_MovementSpeed_Slow": 0,
 						"IN_Up": 0,
@@ -535,19 +535,17 @@
 						"tileUID1": -1,
 						"tileUID2": -1,
 						"playerId": 0,
-						"carryingBoxUID": -1,
+						"carryingItemUID": -1,
 						"pairsFound": 0,
 						"isDead": 0,
 						"currentAngle": 0,
-						"OLD_IN_Move": 0,
-						"OLD_IN_Move_Angle": 0,
-						"OLD_IN_Aim": 0,
-						"OLD_IN_Aim_Angle": 0,
-						"IN_Angle_Set": 0,
-						"IN_Angle": 0,
-						"IN_Walk": 0,
-						"R_Blurb_ZOffset_Normal": 36,
-						"R_Blurb_ZOffset_Low": 12
+						"IN_Move": 0,
+						"IN_Move_Angle": 0,
+						"IN_Aim": 0,
+						"IN_Aim_Angle": 0,
+						"R_Blurb_ZElevation_Normal": 36,
+						"R_Blurb_ZElevation_Low": 12,
+						"R_Blurb_ZElevation_Tween": 20
 					},
 					"behaviors": {
 						"8Direction": {
@@ -639,10 +637,7 @@
 					},
 					"instanceFolderItem": {
 						"sid": 117359225502778,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -696,10 +691,7 @@
 					},
 					"instanceFolderItem": {
 						"sid": 602784574947435,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -736,10 +728,7 @@
 					"behaviors": {},
 					"instanceFolderItem": {
 						"sid": 718305286398615,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -776,10 +765,7 @@
 					"behaviors": {},
 					"instanceFolderItem": {
 						"sid": 659697957369555,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -817,7 +803,8 @@
 						"itemType": "",
 						"lastCarrierPlayerUID": -1,
 						"targetPlayerUID": -1,
-						"damage": 0
+						"damage": 0,
+						"isDestroyed": 0
 					},
 					"behaviors": {
 						"Bullet": {
@@ -838,6 +825,11 @@
 							"properties": {
 								"enabled": true,
 								"tags": "Box"
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
 							}
 						}
 					},
@@ -888,10 +880,7 @@
 					},
 					"instanceFolderItem": {
 						"sid": 413020137349645,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -950,10 +939,7 @@
 					},
 					"instanceFolderItem": {
 						"sid": 640583245407372,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -1030,10 +1016,7 @@
 					},
 					"instanceFolderItem": {
 						"sid": 128168351857394,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -1149,10 +1132,7 @@
 					},
 					"instanceFolderItem": {
 						"sid": 703641896788226,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -1234,10 +1214,7 @@
 					},
 					"instanceFolderItem": {
 						"sid": 502404143425560,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -1508,10 +1485,7 @@
 					},
 					"instanceFolderItem": {
 						"sid": 119510804584476,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -1559,10 +1533,7 @@
 					},
 					"instanceFolderItem": {
 						"sid": 517136803105126,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -1627,10 +1598,7 @@
 					},
 					"instanceFolderItem": {
 						"sid": 443441534028524,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -1695,10 +1663,7 @@
 					},
 					"instanceFolderItem": {
 						"sid": 296856928410894,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -1806,10 +1771,7 @@
 					},
 					"instanceFolderItem": {
 						"sid": 601953918370568,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -1845,10 +1807,7 @@
 					"behaviors": {},
 					"instanceFolderItem": {
 						"sid": 333387262637419,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"mesh": {
 						"cols": 2,
@@ -1941,10 +1900,7 @@
 					},
 					"instanceFolderItem": {
 						"sid": 863695023965939,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -1992,10 +1948,7 @@
 					"behaviors": {},
 					"instanceFolderItem": {
 						"sid": 993108744417361,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -2042,10 +1995,7 @@
 					"behaviors": {},
 					"instanceFolderItem": {
 						"sid": 978317431607951,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -2092,10 +2042,7 @@
 					"behaviors": {},
 					"instanceFolderItem": {
 						"sid": 863636515511109,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -2185,10 +2132,7 @@
 					},
 					"instanceFolderItem": {
 						"sid": 750965238210234,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"mesh": {
 						"cols": 2,
@@ -2283,10 +2227,7 @@
 					},
 					"instanceFolderItem": {
 						"sid": 437490164724051,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -2305,6 +2246,89 @@
 						],
 						"angle": 0,
 						"zElevation": 16
+					}
+				},
+				{
+					"type": "Projectile_Particles",
+					"properties": {
+						"rate": 20,
+						"spray-cone": 15,
+						"type": "continuous-spray",
+						"object": -1,
+						"initially-visible": true,
+						"live-preview": false,
+						"speed": 200,
+						"size": 2,
+						"opacity": 100,
+						"grow-rate": 0,
+						"x-randomiser": 0,
+						"y-randomiser": 0,
+						"initial-speed-randomiser": 100,
+						"size-randomiser": 2,
+						"grow-rate-randomiser": 0,
+						"acceleration": 0,
+						"gravity": 0,
+						"angle-randomiser": 10,
+						"life-speed-randomiser": 800,
+						"opacity-randomiser": 0,
+						"destroy-mode": "fade-to-invisible",
+						"timeout": 0.5
+					},
+					"uid": 74,
+					"sid": 821236109252383,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 14,
+						"uid": 74,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 2.220446049250313e-16,
+							"transformH": 2.220446049250313e-16,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 821236109252383,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 128,
+						"y": 32,
+						"width": 100,
+						"height": 100,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							0.1607843137254902,
+							0.7137254901960784,
+							0.9647058823529412,
+							1
+						],
+						"angle": 3.141592653589793,
+						"zElevation": 19,
+						"blendMode": "additive"
 					}
 				},
 				{
@@ -2340,8 +2364,8 @@
 							"transformX": 0,
 							"transformY": 0,
 							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
+							"transformW": 2.220446049250313e-16,
+							"transformH": 2.220446049250313e-16,
 							"transformA": 0,
 							"transformSX": 0,
 							"transformSY": 0,
@@ -2351,15 +2375,12 @@
 					},
 					"instanceFolderItem": {
 						"sid": 190333952582812,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 120,
+						"x": 112,
 						"y": 32,
 						"width": 48,
 						"height": 48,
@@ -2392,6 +2413,9 @@
 						"R_YInit": 1300,
 						"R_FieldOfView": 18,
 						"R_SmoothingFactor": 5,
+						"R_Movement_Distance_Minimum": 100,
+						"isMovementEnabled": 0,
+						"isRotationEnabled": 0,
 						"lookTargetX": 0,
 						"lookTargetY": 0,
 						"lookTargetOffsetX": 0,
@@ -2458,10 +2482,7 @@
 					},
 					"instanceFolderItem": {
 						"sid": 453823533597273,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
@@ -2526,10 +2547,7 @@
 					},
 					"instanceFolderItem": {
 						"sid": 574221979023541,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
+						"expanded": true
 					},
 					"mesh": {
 						"cols": 2,
@@ -2623,108 +2641,63 @@
 		"items": [
 			{
 				"sid": 375535735700021,
-				"expanded": true,
-				"folderName": "",
-				"indexInFolder": -1,
-				"folderNestingLevel": -1
+				"expanded": true
 			},
 			{
 				"sid": 919295171424457,
-				"expanded": true,
-				"folderName": "",
-				"indexInFolder": -1,
-				"folderNestingLevel": -1
+				"expanded": true
 			},
 			{
 				"sid": 117359225502778,
-				"expanded": true,
-				"folderName": "",
-				"indexInFolder": -1,
-				"folderNestingLevel": -1
+				"expanded": true
 			},
 			{
 				"sid": 602784574947435,
-				"expanded": true,
-				"folderName": "",
-				"indexInFolder": -1,
-				"folderNestingLevel": -1
+				"expanded": true
 			},
 			{
 				"sid": 718305286398615,
-				"expanded": true,
-				"folderName": "",
-				"indexInFolder": -1,
-				"folderNestingLevel": -1
+				"expanded": true
 			},
 			{
 				"sid": 659697957369555,
-				"expanded": true,
-				"folderName": "",
-				"indexInFolder": -1,
-				"folderNestingLevel": -1
+				"expanded": true
 			},
 			{
 				"sid": 413020137349645,
-				"expanded": true,
-				"folderName": "",
-				"indexInFolder": -1,
-				"folderNestingLevel": -1
+				"expanded": true
 			},
 			{
 				"sid": 640583245407372,
-				"expanded": true,
-				"folderName": "",
-				"indexInFolder": -1,
-				"folderNestingLevel": -1
+				"expanded": true
 			},
 			{
 				"sid": 703641896788226,
-				"expanded": true,
-				"folderName": "",
-				"indexInFolder": -1,
-				"folderNestingLevel": -1
+				"expanded": true
 			},
 			{
 				"sid": 119510804584476,
-				"expanded": true,
-				"folderName": "",
-				"indexInFolder": -1,
-				"folderNestingLevel": -1
+				"expanded": true
 			},
 			{
 				"sid": 517136803105126,
-				"expanded": true,
-				"folderName": "",
-				"indexInFolder": -1,
-				"folderNestingLevel": -1
+				"expanded": true
 			},
 			{
 				"sid": 443441534028524,
-				"expanded": true,
-				"folderName": "",
-				"indexInFolder": -1,
-				"folderNestingLevel": -1
+				"expanded": true
 			},
 			{
 				"sid": 296856928410894,
-				"expanded": true,
-				"folderName": "",
-				"indexInFolder": -1,
-				"folderNestingLevel": -1
+				"expanded": true
 			},
 			{
 				"sid": 601953918370568,
-				"expanded": true,
-				"folderName": "",
-				"indexInFolder": -1,
-				"folderNestingLevel": -1
+				"expanded": true
 			},
 			{
 				"sid": 453823533597273,
-				"expanded": true,
-				"folderName": "",
-				"indexInFolder": -1,
-				"folderNestingLevel": -1
+				"expanded": true
 			}
 		],
 		"subfolders": []

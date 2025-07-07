@@ -1,5 +1,5 @@
 {
-	"name": "aBox 📦",
+	"name": "aItem 🔮",
 	"events": [
 		{
 			"aceType": "action",
@@ -99,7 +99,7 @@
 							"sid": 550665157130665,
 							"behaviorType": "Tween",
 							"parameters": {
-								"tags": "TWEEN_Item_Appear",
+								"tags": "TWEEN_bbItem_Appear",
 								"property": "offsetZElevation",
 								"end-value": "16",
 								"time": "1",
@@ -208,7 +208,7 @@
 							"objectClass": "Player",
 							"sid": 417519179093379,
 							"parameters": {
-								"instance-variable": "carryingBoxUID",
+								"instance-variable": "carryingItemUID",
 								"comparison": 0,
 								"value": "Item.UID"
 							}
@@ -220,7 +220,7 @@
 							"objectClass": "Player",
 							"sid": 862364841000416,
 							"parameters": {
-								"instance-variable": "carryingBoxUID",
+								"instance-variable": "carryingItemUID",
 								"value": "NOTHING"
 							}
 						}
@@ -385,6 +385,15 @@
 			"conditions": [],
 			"actions": [
 				{
+					"id": "set-instvar-value",
+					"objectClass": "Item",
+					"sid": 335548788919233,
+					"parameters": {
+						"instance-variable": "isDestroyed",
+						"value": "YES"
+					}
+				},
+				{
 					"id": "stop-timer",
 					"objectClass": "Item",
 					"sid": 638770165200731,
@@ -392,27 +401,52 @@
 					"parameters": {
 						"tag": "TIMER_Box_FarCheck"
 					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "Item",
-					"sid": 145213199465830,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"type": "comment",
-					"text": "todo tween disappearance"
-				},
-				{
-					"id": "destroy",
-					"objectClass": "Item",
-					"sid": 526365654620188
 				}
 			],
 			"sid": 749560455039560,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "Item",
+							"sid": 993203003680047,
+							"parameters": {
+								"child": "bbItem",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "bbItem",
+							"sid": 998895545082197,
+							"parameters": {
+								"color": "rgbEx(300, 300, 300)"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "bbItem",
+							"sid": 282242601957228,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TWEEN_bbItem_Disappear",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "1",
+								"ease": "easeoutquint",
+								"destroy-on-complete": "yes",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 861939627756910
+				},
 				{
 					"eventType": "block",
 					"conditions": [

@@ -126,7 +126,7 @@
 					"sid": 664434996411964,
 					"parameters": [
 						"\"zZz\"",
-						"Self.R_Blurb_ZOffset_Low",
+						"Self.R_Blurb_ZElevation_Low",
 						"int(trim(tokenat(C_CSV_Colors_Int, 0, \",\")))",
 						"1.7"
 					]
@@ -184,10 +184,6 @@
 			"text": "Cannon"
 		},
 		{
-			"eventType": "comment",
-			"text": "todo CAs"
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -210,7 +206,7 @@
 			],
 			"actions": [
 				{
-					"customAction": "startAttack",
+					"customAction": "beginAttack",
 					"objectClass": "Cannon",
 					"sid": 507512664605177
 				},
@@ -243,65 +239,14 @@
 					}
 				}
 			],
-			"actions": [],
-			"sid": 922240342976189,
-			"children": [
+			"actions": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-comparison",
-							"objectClass": "System",
-							"sid": 319311198252082,
-							"parameters": {
-								"object": "Cannon",
-								"expression": "Cannon.Orbit.Speed",
-								"comparison": 5,
-								"value": "Cannon.R_Speed_Max"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "stop-timer",
-							"objectClass": "Cannon",
-							"sid": 477906759339590,
-							"behaviorType": "Timer",
-							"parameters": {
-								"tag": "TIMER_Cannon_CheckMaxSpeed"
-							}
-						},
-						{
-							"id": "set-speed",
-							"objectClass": "Cannon",
-							"sid": 684388477907491,
-							"behaviorType": "Orbit",
-							"parameters": {
-								"speed": "Self.R_Speed_Max"
-							}
-						},
-						{
-							"id": "set-acceleration",
-							"objectClass": "Cannon",
-							"sid": 159461102917086,
-							"behaviorType": "Orbit",
-							"parameters": {
-								"acceleration": "0"
-							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 968238823839252,
-							"parameters": {
-								"type": "log",
-								"message": "\"Cannon #\" & Cannon.UID & \" reached max speed\""
-							}
-						}
-					],
-					"sid": 155281456437913
+					"customAction": "checkMaxSpeed",
+					"objectClass": "Cannon",
+					"sid": 405398916636503
 				}
-			]
+			],
+			"sid": 922240342976189
 		},
 		{
 			"eventType": "comment",

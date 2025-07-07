@@ -19,6 +19,7 @@
 			"children": [
 				{
 					"eventType": "script",
+					"language": "javascript",
 					"script": [
 						"const paramsString = window.location.search",
 						"const searchParams = new URLSearchParams(paramsString)",

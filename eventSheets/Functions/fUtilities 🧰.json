@@ -223,6 +223,7 @@
 			"actions": [
 				{
 					"type": "script",
+					"language": "javascript",
 					"script": [
 						"runtime.setReturnValue(runtime.objects[localVars[\"name\"]] ? 1 : 0)"
 					]

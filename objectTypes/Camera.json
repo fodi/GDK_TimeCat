@@ -34,6 +34,27 @@
 			"sid": 911821838638427
 		},
 		{
+			"name": "R_Movement_Distance_Minimum",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 540110123515937
+		},
+		{
+			"name": "isMovementEnabled",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 171159555442106
+		},
+		{
+			"name": "isRotationEnabled",
+			"type": "number",
+			"desc": "",
+			"show": false,
+			"sid": 900512167984597
+		},
+		{
 			"name": "lookTargetX",
 			"type": "number",
 			"desc": "",
@@ -51,14 +72,14 @@
 			"name": "lookTargetOffsetX",
 			"type": "number",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 632220722618603
 		},
 		{
 			"name": "lookTargetOffsetY",
 			"type": "number",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 993657596533286
 		}
 	],

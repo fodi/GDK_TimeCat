@@ -63,6 +63,24 @@
 					}
 				},
 				{
+					"id": "set-instvar-value",
+					"objectClass": "Camera",
+					"sid": 292154585702051,
+					"parameters": {
+						"instance-variable": "isMovementEnabled",
+						"value": "Functions.Config_getNumber(PARAM_Camera_Movement)"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Camera",
+					"sid": 602389473227973,
+					"parameters": {
+						"instance-variable": "isRotationEnabled",
+						"value": "Functions.Config_getNumber(PARAM_Camera_Rotation)"
+					}
+				},
+				{
 					"id": "look-at-position",
 					"objectClass": "3DCamera",
 					"sid": 927806853125273,
@@ -156,11 +174,11 @@
 			"eventType": "custom-ace-block",
 			"conditions": [
 				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 975192984778600,
+					"id": "compare-instance-variable",
+					"objectClass": "Camera",
+					"sid": 658923388831290,
 					"parameters": {
-						"variable": "R_Camera_Movement",
+						"instance-variable": "isMovementEnabled",
 						"comparison": 0,
 						"value": "YES"
 					}
@@ -308,18 +326,14 @@
 							"sid": 303733081738012
 						},
 						{
-							"eventType": "comment",
-							"text": "todo mn / maybe use MoveTo on camera too"
-						},
-						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 253884622148940,
+									"id": "compare-instance-variable",
+									"objectClass": "Camera",
+									"sid": 730868138532043,
 									"parameters": {
-										"variable": "R_Camera_Rotation",
+										"instance-variable": "isRotationEnabled",
 										"comparison": 0,
 										"value": "YES"
 									}
@@ -334,10 +348,10 @@
 										{
 											"id": "compare-x",
 											"objectClass": "Camera",
-											"sid": 980785533892561,
+											"sid": 116416279504202,
 											"parameters": {
 												"comparison": 2,
-												"x-co-ordinate": "Camera.lookTargetX - 100"
+												"x-co-ordinate": "Self.lookTargetX - Self.R_Movement_Distance_Minimum"
 											}
 										}
 									],
@@ -345,9 +359,9 @@
 										{
 											"id": "set-x",
 											"objectClass": "Camera",
-											"sid": 687669309282707,
+											"sid": 221846518325445,
 											"parameters": {
-												"x": "Functions.expDecay(Self.X, Self.lookTargetX - 100, 5)"
+												"x": "Functions.expDecay(Self.X, Self.lookTargetX - Self.R_Movement_Distance_Minimum, 5)"
 											}
 										}
 									],
@@ -359,10 +373,10 @@
 										{
 											"id": "compare-x",
 											"objectClass": "Camera",
-											"sid": 738687042935791,
+											"sid": 994275264514801,
 											"parameters": {
 												"comparison": 4,
-												"x-co-ordinate": "Camera.lookTargetX + 100"
+												"x-co-ordinate": "Self.lookTargetX + Self.R_Movement_Distance_Minimum"
 											}
 										}
 									],
@@ -370,9 +384,9 @@
 										{
 											"id": "set-x",
 											"objectClass": "Camera",
-											"sid": 302680714434521,
+											"sid": 655671247210354,
 											"parameters": {
-												"x": "Functions.expDecay(Self.X, Self.lookTargetX + 100, 5)"
+												"x": "Functions.expDecay(Self.X, Self.lookTargetX + Self.R_Movement_Distance_Minimum, 5)"
 											}
 										}
 									],

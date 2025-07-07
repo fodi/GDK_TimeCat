@@ -286,6 +286,16 @@
 			"sid": 961188045231867
 		},
 		{
+			"eventType": "variable",
+			"name": "FRAME_Dead",
+			"type": "string",
+			"initialValue": "Dead",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 896411798967516
+		},
+		{
 			"eventType": "comment",
 			"text": "Item types"
 		},
@@ -392,6 +402,16 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 549838325396802
+		},
+		{
+			"eventType": "variable",
+			"name": "LAYER_UI_QR",
+			"type": "string",
+			"initialValue": "UI_QR",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 222936727134190
 		},
 		{
 			"eventType": "variable",
@@ -1277,6 +1297,36 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "TWEEN_bbItem_Disappear",
+			"type": "string",
+			"initialValue": "bbItem_Disappear",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 806063740465605
+		},
+		{
+			"eventType": "variable",
+			"name": "TWEEN_bbItem_Appear",
+			"type": "string",
+			"initialValue": "bbItem_Appear",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 596740073762461
+		},
+		{
+			"eventType": "variable",
+			"name": "TWEEN_bbPlayer_Dead_Color",
+			"type": "string",
+			"initialValue": "bbPlayer_Dead_Color",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 958372331767712
+		},
+		{
+			"eventType": "variable",
 			"name": "TWEEN_Blurb_ZElevation",
 			"type": "string",
 			"initialValue": "Blurb_ZElevation",
@@ -1304,26 +1354,6 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 752635108876203
-		},
-		{
-			"eventType": "variable",
-			"name": "TWEEN_Item_Disappear",
-			"type": "string",
-			"initialValue": "Item_Disappear",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 217402779635835
-		},
-		{
-			"eventType": "variable",
-			"name": "TWEEN_Item_Appear",
-			"type": "string",
-			"initialValue": "Item_Appear",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 662971613269830
 		},
 		{
 			"eventType": "variable",
@@ -1366,6 +1396,16 @@
 			"sid": 221134702150182
 		},
 		{
+			"eventType": "variable",
+			"name": "TWEEN_Layer_UI_GameOver_FadeIn",
+			"type": "string",
+			"initialValue": "Layer_UI_GameOver_FadeIn",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 566072797811945
+		},
+		{
 			"eventType": "comment",
 			"text": "Words"
 		},
@@ -1388,26 +1428,6 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 455255730079436
-		},
-		{
-			"eventType": "variable",
-			"name": "LAYER_UI_QR",
-			"type": "string",
-			"initialValue": "UI_QR",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 252911102619475
-		},
-		{
-			"eventType": "variable",
-			"name": "FRAME_Dead",
-			"type": "string",
-			"initialValue": "Dead",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 880234762066787
 		},
 		{
 			"eventType": "comment",
