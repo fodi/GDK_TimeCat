@@ -1,5 +1,5 @@
 {
-	"name": "Start",
+	"name": "Controls",
 	"layers": [
 		{
 			"name": "UI",
@@ -883,7 +883,7 @@
 				{
 					"type": "UI_TextSF",
 					"properties": {
-						"text": "Press ACTION to start!",
+						"text": "Press ACTION to continue",
 						"enable-bbcode": true,
 						"character-width": 30,
 						"character-height": 30,
@@ -952,9 +952,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 92,
+						"x": 53,
 						"y": 296,
-						"width": 456,
+						"width": 534,
 						"height": 64,
 						"originX": 0,
 						"originY": 0,
@@ -1041,5 +1041,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "Start 🔰"
+	"eventSheet": "Controls 🖱️"
 }

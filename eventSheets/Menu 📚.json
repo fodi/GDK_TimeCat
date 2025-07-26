@@ -1,0 +1,496 @@
+{
+	"name": "Menu 📚",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "eInput_Global 🔘"
+		},
+		{
+			"eventType": "variable",
+			"name": "C_menuItemsMidX",
+			"type": "number",
+			"initialValue": "192",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 782831195298218
+		},
+		{
+			"eventType": "variable",
+			"name": "C_menuItemsMidY",
+			"type": "number",
+			"initialValue": "220",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 263688905889601
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 773106314372003
+				}
+			],
+			"actions": [],
+			"sid": 375259258150390,
+			"children": [
+				{
+					"eventType": "script",
+					"language": "javascript",
+					"script": [
+						"const paramsString = window.location.search",
+						"const searchParams = new URLSearchParams(paramsString)",
+						"console.log(searchParams)",
+						"runtime.objects.jOverrides.getFirstInstance().setJsonDataCopy(Object.fromEntries(searchParams))"
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 138455190505938,
+							"parameters": {
+								"type": "log",
+								"message": "\"URL params: \" & jOverrides.ToBeautifiedString"
+							}
+						},
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 208937577866667,
+							"parameters": {
+								"tag": "FILE_Rules",
+								"file": "original.json"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 650912336993774
+						},
+						{
+							"id": "parse",
+							"objectClass": "jRules",
+							"sid": 981808967733227,
+							"parameters": {
+								"data": "AJAX.LastData"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "UI_Background",
+							"sid": 988976276708300,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetY",
+								"end-value": "0",
+								"time": "15",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "yes",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 109565956019444
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "UI_MenuText",
+					"sid": 680360313897418
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "UI_MenuText",
+					"sid": 412972175865862,
+					"parameters": {
+						"instance-variable": "initX",
+						"value": "Self.X"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "UI_MenuText",
+					"sid": 160689046620740,
+					"parameters": {
+						"instance-variable": "initY",
+						"value": "Self.Y"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "todo mn"
+				},
+				{
+					"id": "set-position",
+					"objectClass": "UI_MenuText",
+					"sid": 227453733898945,
+					"parameters": {
+						"x": "C_menuItemsMidX + cos(angle(C_menuItemsMidX, C_menuItemsMidY, Self.X, Self.Y)) * 400",
+						"y": "C_menuItemsMidY + sin(angle(C_menuItemsMidX, C_menuItemsMidY, Self.X, Self.Y)) * 400"
+					}
+				}
+			],
+			"sid": 382946763242760,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "tweenType",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 700238654340285
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 846131622349337,
+							"parameters": {
+								"variable": "tweenType",
+								"value": "choose(1, 2)"
+							}
+						}
+					],
+					"sid": 216319101721200
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 293432067823731,
+							"parameters": {
+								"variable": "tweenType",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "UI_MenuText",
+							"sid": 167697291553971,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "Self.initX",
+								"end-y": "Self.initY",
+								"time": "random(1.2, 1.7)",
+								"ease": "easeoutbounce",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 278352261710542
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 497810925319185,
+							"parameters": {
+								"variable": "tweenType",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "UI_MenuText",
+							"sid": 258003443540684,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "position",
+								"end-x": "Self.initX",
+								"end-y": "Self.initY",
+								"time": "random(1.2, 1.7)",
+								"ease": "easeoutback",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 840681924857557
+				},
+				{
+					"eventType": "comment",
+					"text": "todo remove \"exit\" menu item on web builds"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UI_MenuText",
+							"sid": 495193369056492,
+							"parameters": {
+								"instance-variable": "role",
+								"comparison": 0,
+								"value": "ROLE_Exit"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "UI_MenuText",
+							"sid": 705384537446924
+						}
+					],
+					"sid": 588546434189900,
+					"disabled": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 145313130471125,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "UI_MenuText"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 133003464747419,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UI_MenuText",
+							"sid": 701059682497300,
+							"parameters": {
+								"instance-variable": "role",
+								"comparison": 0,
+								"value": "ROLE_Start"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 807593173495625,
+							"parameters": {
+								"layout": "Level"
+							}
+						}
+					],
+					"sid": 787745091272199
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UI_MenuText",
+							"sid": 959530748605173,
+							"parameters": {
+								"instance-variable": "role",
+								"comparison": 0,
+								"value": "ROLE_Settings"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "alert",
+							"objectClass": "Browser",
+							"sid": 569302275281577,
+							"parameters": {
+								"message": "\"todo :)\""
+							}
+						}
+					],
+					"sid": 280051815876081
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UI_MenuText",
+							"sid": 756395574969274,
+							"parameters": {
+								"instance-variable": "role",
+								"comparison": 0,
+								"value": "ROLE_Controls"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 140497000769160,
+							"parameters": {
+								"layout": "Controls"
+							}
+						}
+					],
+					"sid": 556945333195643
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UI_MenuText",
+							"sid": 541761089492623,
+							"parameters": {
+								"instance-variable": "role",
+								"comparison": 0,
+								"value": "ROLE_Credits"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "alert",
+							"objectClass": "Browser",
+							"sid": 422236342501092,
+							"parameters": {
+								"message": "\"todo :)\""
+							}
+						}
+					],
+					"sid": 151123183263788
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UI_MenuText",
+							"sid": 278905231227124,
+							"parameters": {
+								"instance-variable": "role",
+								"comparison": 0,
+								"value": "ROLE_Exit"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "close",
+							"objectClass": "Browser",
+							"sid": 202737181297060
+						}
+					],
+					"sid": 368287427906792
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 430694057329253,
+					"parameters": {
+						"key": 32
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 110626778659553,
+					"parameters": {
+						"key": 96
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 416399443265646,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-a"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 218874657421367,
+					"parameters": {
+						"gamepad": "1",
+						"button": "button-a"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 618356535421814,
+					"parameters": {
+						"gamepad": "2",
+						"button": "button-a"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 741856481868075,
+					"parameters": {
+						"gamepad": "3",
+						"button": "button-a"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 447572189647268,
+					"parameters": {
+						"layout": "Level"
+					}
+				}
+			],
+			"sid": 384572606748455,
+			"isOrBlock": true
+		}
+	],
+	"sid": 940117091554371
+}

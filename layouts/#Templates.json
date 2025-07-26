@@ -608,6 +608,21 @@
 									"d": true,
 									"sm": "normal"
 								}
+							},
+							{
+								"uid": 83,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": false,
+									"w": false,
+									"h": false,
+									"a": false,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
 							}
 						],
 						"flags": {
@@ -1165,6 +1180,7 @@
 						"face-right": true,
 						"face-top": true,
 						"face-bottom": true,
+						"back-face-culling": false,
 						"z-tiling-factor": 1,
 						"object-back": -1,
 						"object-front": -1,
@@ -1878,6 +1894,7 @@
 						"face-right": true,
 						"face-top": false,
 						"face-bottom": true,
+						"back-face-culling": false,
 						"z-tiling-factor": 1,
 						"object-back": -1,
 						"object-front": -1,
@@ -1933,6 +1950,7 @@
 						"face-right": true,
 						"face-top": false,
 						"face-bottom": true,
+						"back-face-culling": false,
 						"z-tiling-factor": 1,
 						"object-back": -1,
 						"object-front": 602138203612419,
@@ -2189,6 +2207,84 @@
 						],
 						"angle": 0,
 						"zElevation": 0
+					}
+				},
+				{
+					"type": "PlayerAim",
+					"properties": {
+						"initially-visible": true,
+						"origin": "left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
+					},
+					"uid": 83,
+					"sid": 416529121214670,
+					"tags": "",
+					"instanceVariables": {
+						"initWidth": 0
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 7,
+						"uid": 83,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": false,
+							"w": false,
+							"h": false,
+							"a": false,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 416529121214670,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 208,
+						"y": 64,
+						"width": 104,
+						"height": 4,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0.6
+						],
+						"angle": 0,
+						"zElevation": 1,
+						"blendMode": "additive"
 					}
 				},
 				{

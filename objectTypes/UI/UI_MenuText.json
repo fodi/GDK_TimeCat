@@ -1,0 +1,53 @@
+{
+	"name": "UI_MenuText",
+	"plugin-id": "Text",
+	"sid": 530969215041071,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "role",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 392485385019488
+		},
+		{
+			"name": "initX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 440516963165892
+		},
+		{
+			"name": "initY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 312488744049168
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "SineRotation",
+			"sid": 116751414421682
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "SineX",
+			"sid": 909856930242438
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "SineY",
+			"sid": 209485190493570
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 111105201884086
+		}
+	],
+	"effectTypes": []
+}

@@ -1380,9 +1380,19 @@
 									"id": "set-instvar-value",
 									"objectClass": "Player",
 									"sid": 209450268025334,
+									"disabled": true,
 									"parameters": {
 										"instance-variable": "IN_Move_Angle",
 										"value": "angle(Player.X, Player.Y, Mouse.X, Mouse.Y)"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player",
+									"sid": 801628170642285,
+									"parameters": {
+										"instance-variable": "IN_Move_Angle",
+										"value": "angle(Player.X, Player.Y, 3DCamera.CanvasToLayerX(LAYER_Main, Mouse.AbsoluteX, Mouse.AbsoluteY, 0), 3DCamera.CanvasToLayerY(LAYER_Main, Mouse.AbsoluteX, Mouse.AbsoluteY, 0))"
 									}
 								}
 							],
@@ -1438,9 +1448,19 @@
 											"id": "set-instvar-value",
 											"objectClass": "Player",
 											"sid": 421745435918507,
+											"disabled": true,
 											"parameters": {
 												"instance-variable": "IN_Aim_Angle",
 												"value": "angle(Player.X, Player.Y, Mouse.X, Mouse.Y)"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 449204161660655,
+											"parameters": {
+												"instance-variable": "IN_Aim_Angle",
+												"value": "angle(Player.X, Player.Y, 3DCamera.CanvasToLayerX(LAYER_Main, Mouse.AbsoluteX, Mouse.AbsoluteY, 0), 3DCamera.CanvasToLayerY(LAYER_Main, Mouse.AbsoluteX, Mouse.AbsoluteY, 0))"
 											}
 										},
 										{
@@ -1943,7 +1963,16 @@
 				{
 					"id": "restart-layout",
 					"objectClass": "System",
-					"sid": 519485851427841
+					"sid": 519485851427841,
+					"disabled": true
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 645217678484481,
+					"parameters": {
+						"layout": "Menu"
+					}
 				}
 			],
 			"sid": 306261194890782,

@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 44002,
+	"savedWithRelease": 44900,
 	"name": "TimeCat",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -101,6 +101,13 @@
 			"type": "plugin",
 			"id": "Spritefont2",
 			"name": "Sprite font",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -263,7 +270,8 @@
 			"Water",
 			"Shield",
 			"bbAlert",
-			"Projectile_Particles"
+			"Projectile_Particles",
+			"PlayerAim"
 		],
 		"subfolders": [
 			{
@@ -305,7 +313,11 @@
 					"UI_Player_Images",
 					"UI_QRCode",
 					"UI_Loader",
-					"UI_SVG"
+					"UI_SVG",
+					"UI_MenuText",
+					"UI_Images",
+					"UI_Background",
+					"UI_Background2"
 				],
 				"subfolders": [],
 				"name": "UI"
@@ -376,7 +388,8 @@
 	},
 	"layouts": {
 		"items": [
-			"Start",
+			"Menu",
+			"Controls",
 			"Level",
 			"#Templates"
 		],
@@ -385,7 +398,8 @@
 	"eventSheets": {
 		"items": [
 			"Level 🗺️",
-			"Start 🔰"
+			"Controls 🖱️",
+			"Menu 📚"
 		],
 		"subfolders": [
 			{
@@ -933,7 +947,16 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "PilkiusRomeus-YwDL.ttf",
+					"type": "application/font-sfnt",
+					"sid": 196481078874551,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {
@@ -1018,7 +1041,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "55b",
+		"version": "56b",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",
@@ -1071,5 +1094,5 @@
 	},
 	"viewportWidth": 640,
 	"viewportHeight": 360,
-	"firstLayout": "Start"
+	"firstLayout": "Menu"
 }

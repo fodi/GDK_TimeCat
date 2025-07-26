@@ -1390,6 +1390,56 @@
 			"sid": 455255730079436
 		},
 		{
+			"eventType": "variable",
+			"name": "ROLE_Start",
+			"type": "string",
+			"initialValue": "Start",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 617981342833614
+		},
+		{
+			"eventType": "variable",
+			"name": "ROLE_Settings",
+			"type": "string",
+			"initialValue": "Settings",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 229602445513458
+		},
+		{
+			"eventType": "variable",
+			"name": "ROLE_Controls",
+			"type": "string",
+			"initialValue": "Controls",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 585665844570081
+		},
+		{
+			"eventType": "variable",
+			"name": "ROLE_Credits",
+			"type": "string",
+			"initialValue": "Credits",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 626379483745859
+		},
+		{
+			"eventType": "variable",
+			"name": "ROLE_Exit",
+			"type": "string",
+			"initialValue": "Exit",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 759102329670808
+		},
+		{
 			"eventType": "comment",
 			"text": "Unsorted"
 		},

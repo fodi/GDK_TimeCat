@@ -172,6 +172,48 @@
 						}
 					],
 					"sid": 598366990222191
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-children",
+							"objectClass": "Player",
+							"sid": 439870709202134,
+							"parameters": {
+								"child": "PlayerAim",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "PlayerAim",
+							"sid": 855890978680041,
+							"parameters": {
+								"instance-variable": "initWidth",
+								"value": "Self.Width"
+							}
+						},
+						{
+							"id": "set-width",
+							"objectClass": "PlayerAim",
+							"sid": 233816075936726,
+							"parameters": {
+								"width": "0"
+							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "PlayerAim",
+							"sid": 896760935975642,
+							"parameters": {
+								"layer": "LAYER_Lights"
+							}
+						}
+					],
+					"sid": 489275334653543
 				}
 			]
 		},
@@ -236,6 +278,15 @@
 									"sid": 895350066261387,
 									"parameters": {
 										"child": "bbPlayer",
+										"which": "own"
+									}
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "Player",
+									"sid": 731131003578691,
+									"parameters": {
+										"child": "PlayerAim",
 										"which": "own"
 									}
 								},
@@ -813,9 +864,46 @@
 											"parameters": {
 												"angle": "anglelerp(Self.Angle, Player.currentAngle, 0.2)"
 											}
+										},
+										{
+											"id": "set-width",
+											"objectClass": "PlayerAim",
+											"sid": 771955778802457,
+											"parameters": {
+												"width": "Self.initWidth"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "PlayerAim",
+											"sid": 678209400301816,
+											"parameters": {
+												"angle": "Player.currentAngle"
+											}
 										}
 									],
 									"sid": 257552961918341
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 987006996260180
+										}
+									],
+									"actions": [
+										{
+											"id": "set-width",
+											"objectClass": "PlayerAim",
+											"sid": 925286612778719,
+											"parameters": {
+												"width": "0"
+											}
+										}
+									],
+									"sid": 565732535307646
 								}
 							]
 						},
