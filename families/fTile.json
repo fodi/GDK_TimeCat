@@ -46,7 +46,12 @@
 			"sid": 236236091657871
 		}
 	],
-	"effectTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "skymen_BetterOutline",
+			"name": "Outline"
+		}
+	],
 	"members": [
 		"Tile"
 	]

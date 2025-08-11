@@ -2,6 +2,10 @@
 	"name": "eInput_Global 🔘",
 	"events": [
 		{
+			"eventType": "comment",
+			"text": "Toggle full screen"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -22,6 +26,10 @@
 			"sid": 848695742537860
 		},
 		{
+			"eventType": "comment",
+			"text": "Toggle music"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -40,6 +48,10 @@
 				}
 			],
 			"sid": 968157819090523
+		},
+		{
+			"eventType": "comment",
+			"text": "Navigate to kiosk landing page"
 		},
 		{
 			"eventType": "block",

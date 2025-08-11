@@ -3,7 +3,7 @@
 	"events": [
 		{
 			"aceType": "action",
-			"aceName": "spawn",
+			"aceName": "spawnAll",
 			"objectClass": "fTile",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -35,7 +35,12 @@
 			],
 			"eventType": "custom-ace-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Spawn all tiles for the level"
+				}
+			],
 			"sid": 189491113149965,
 			"children": [
 				{
@@ -67,7 +72,7 @@
 							"objectClass": "System",
 							"sid": 362477952439719,
 							"parameters": {
-								"name": "W_X",
+								"name": "LOOP_X",
 								"start-index": "0",
 								"end-index": "columns - 1"
 							}
@@ -77,7 +82,7 @@
 							"objectClass": "System",
 							"sid": 734064605507325,
 							"parameters": {
-								"name": "W_Y",
+								"name": "LOOP_Y",
 								"start-index": "0",
 								"end-index": "rows - 1"
 							}
@@ -90,7 +95,7 @@
 							"sid": 204177248564328,
 							"parameters": {
 								"where": "back",
-								"value": "(loopindex(W_X) * C_Level_Grid_Size + C_Level_Grid_Size * 0.5) & \",\" & (loopindex(W_Y) * C_Level_Grid_Size+ C_Level_Grid_Size * 0.5)",
+								"value": "(loopindex(LOOP_X) * C_Level_Grid_Size + C_Level_Grid_Size * 0.5) & \",\" & (loopindex(LOOP_Y) * C_Level_Grid_Size+ C_Level_Grid_Size * 0.5)",
 								"axis": "x"
 							}
 						}
@@ -283,7 +288,7 @@
 		},
 		{
 			"aceType": "action",
-			"aceName": "shuffle",
+			"aceName": "randomizeSymbols",
 			"objectClass": "fTile",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -293,7 +298,12 @@
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Randomly assign symbols to all \"unpaired\" tiles"
+				}
+			],
 			"sid": 167481556213047,
 			"children": [
 				{
@@ -523,7 +533,7 @@
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
-					"name": "newSymbol",
+					"name": "symbol",
 					"type": "string",
 					"initialValue": "",
 					"comment": "",
@@ -532,7 +542,12 @@
 			],
 			"eventType": "custom-ace-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Set the symbol for a single tile"
+				}
+			],
 			"sid": 364773611626042,
 			"children": [
 				{
@@ -555,7 +570,7 @@
 							"sid": 479971664122816,
 							"parameters": {
 								"instance-variable": "symbol",
-								"value": "newSymbol"
+								"value": "symbol"
 							}
 						},
 						{
@@ -563,7 +578,7 @@
 							"objectClass": "Symbol",
 							"sid": 470949729799045,
 							"parameters": {
-								"animation": "newSymbol",
+								"animation": "symbol",
 								"from": "beginning"
 							}
 						},
@@ -624,7 +639,12 @@
 			],
 			"eventType": "custom-ace-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Open a closed tile"
+				}
+			],
 			"sid": 355697437670729,
 			"children": [
 				{
@@ -680,6 +700,10 @@
 							}
 						},
 						{
+							"type": "comment",
+							"text": "todo? remove and use effect on tile instead"
+						},
+						{
 							"id": "spawn-another-object",
 							"objectClass": "fTile",
 							"sid": 280285669655295,
@@ -689,6 +713,25 @@
 								"image-point": "0",
 								"create-hierarchy": false,
 								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "fTile",
+							"sid": 395435552861451,
+							"parameters": {
+								"mode": "enable",
+								"effect": "EFFECT_Outline"
+							}
+						},
+						{
+							"id": "set-effect-parameter",
+							"objectClass": "fTile",
+							"sid": 139265188338252,
+							"parameters": {
+								"effect": "EFFECT_Outline",
+								"parameter-index": "0",
+								"value": "int(trim(tokenat(C_CSV_Colors_Int, playerId, \",\")))"
 							}
 						},
 						{
@@ -769,16 +812,6 @@
 									}
 								},
 								{
-									"id": "set-animation",
-									"objectClass": "Symbol",
-									"sid": 257589244022569,
-									"disabled": true,
-									"parameters": {
-										"animation": "Self.AnimationName",
-										"from": "beginning"
-									}
-								},
-								{
 									"id": "set-animation-frame",
 									"objectClass": "Symbol",
 									"sid": 641771061588698,
@@ -805,7 +838,12 @@
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Close a tile"
+				}
+			],
 			"sid": 314290759961667,
 			"children": [
 				{
@@ -849,6 +887,15 @@
 								"instance-variable": "pairPart",
 								"value": "0"
 							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "fTile",
+							"sid": 412925672932136,
+							"parameters": {
+								"mode": "disable",
+								"effect": "EFFECT_Outline"
+							}
 						}
 					],
 					"sid": 816532705994817
@@ -874,24 +921,6 @@
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "TWEEN_Symbol_Opacity"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "Symbol",
-							"sid": 326407234537377,
-							"disabled": true,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "TWEEN_Symbol_Opacity",
-								"property": "offsetOpacity",
-								"end-value": "0",
-								"time": "0.5",
-								"ease": "easeinquart",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
 							}
 						},
 						{
@@ -944,7 +973,7 @@
 		},
 		{
 			"aceType": "action",
-			"aceName": "remove",
+			"aceName": "disable",
 			"objectClass": "fTile",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -954,7 +983,12 @@
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Disable a tile so it cannot be opened anymore"
+				}
+			],
 			"sid": 460507058834829,
 			"children": [
 				{
@@ -985,7 +1019,7 @@
 							"objectClass": "fTile",
 							"sid": 125946783659131,
 							"parameters": {
-								"animation": "ANIM_Removed",
+								"animation": "ANIM_Disabled",
 								"from": "beginning"
 							}
 						},
@@ -1004,6 +1038,27 @@
 							"parameters": {
 								"instance-variable": "playerId",
 								"value": "NOTHING"
+							}
+						},
+						{
+							"id": "set-effect-parameter",
+							"objectClass": "fTile",
+							"sid": 891750249555192,
+							"disabled": true,
+							"parameters": {
+								"effect": "EFFECT_Outline",
+								"parameter-index": "1",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-effect-parameter",
+							"objectClass": "fTile",
+							"sid": 633672616006826,
+							"parameters": {
+								"effect": "EFFECT_Outline",
+								"parameter-index": "4",
+								"value": "40"
 							}
 						}
 					],

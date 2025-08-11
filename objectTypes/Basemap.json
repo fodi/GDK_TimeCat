@@ -11,6 +11,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 319738531989573
+		},
+		{
+			"name": "R_AnimationSpeed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 744094958096727
 		}
 	],
 	"behaviorTypes": [

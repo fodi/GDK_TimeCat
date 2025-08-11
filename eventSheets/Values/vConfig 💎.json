@@ -149,6 +149,30 @@
 		},
 		{
 			"eventType": "comment",
+			"text": "Obstacles"
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Obstacle_MaxAmountPerTile",
+			"type": "number",
+			"initialValue": "2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 614315448345872
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Obstacle_MaxRandomAngle",
+			"type": "number",
+			"initialValue": "20",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 905080714977737
+		},
+		{
+			"eventType": "comment",
 			"text": "Shield"
 		},
 		{
@@ -211,7 +235,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "CSV stuff"
+			"text": "CSV data"
 		},
 		{
 			"eventType": "variable",

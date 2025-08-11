@@ -1,0 +1,54 @@
+{
+	"name": "aUI_BlurbSF 🆎",
+	"events": [
+		{
+			"aceType": "action",
+			"aceName": "tick",
+			"objectClass": "UI_BlurbSF",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Update 2D blurb positions (follow 3D parent)"
+				}
+			],
+			"sid": 436070593979391,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-parent",
+							"objectClass": "UI_BlurbSF",
+							"sid": 406654413979365,
+							"parameters": {
+								"parent": "fBlurbSpawners",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "UI_BlurbSF",
+							"sid": 208080487343032,
+							"parameters": {
+								"x": "3DCamera.LayerToLayerX(LAYER_Main, LAYER_UI, fBlurbSpawners.X, fBlurbSpawners.Y, fBlurbSpawners.ZElevation + Self.zOffset + Self.Tween.Value(TWEEN_Blurb_ZElevation))",
+								"y": "3DCamera.LayerToLayerY(LAYER_Main, LAYER_UI, fBlurbSpawners.X, fBlurbSpawners.Y, fBlurbSpawners.ZElevation + Self.zOffset + Self.Tween.Value(TWEEN_Blurb_ZElevation))"
+							}
+						}
+					],
+					"sid": 466589146822916
+				}
+			]
+		}
+	],
+	"sid": 397804274889758
+}

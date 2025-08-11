@@ -1,0 +1,170 @@
+{
+	"name": "aBlurbSpawners 💬",
+	"events": [
+		{
+			"aceType": "action",
+			"aceName": "spawnBlurb",
+			"objectClass": "fBlurbSpawners",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "text",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 365365789450923
+				},
+				{
+					"name": "zOffset",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 549617152192766
+				},
+				{
+					"name": "color",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 410983597997050
+				},
+				{
+					"name": "timeout",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 136467557346615
+				}
+			],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Spawn a text blurb above a blurb spawner and optionally fade it out after a while"
+				}
+			],
+			"sid": 847981087869354,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "fBlurbSpawners",
+							"sid": 986576729681264,
+							"parameters": {
+								"object": "UI_BlurbSF",
+								"layer": "LAYER_UI",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "fBlurbSpawners",
+							"sid": 491653386084552,
+							"parameters": {
+								"child": "UI_BlurbSF",
+								"transform-x": false,
+								"transform-y": false,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-o": false,
+								"transform-z-elevation": false,
+								"transform-visibility": false,
+								"destroy-with-parent": false
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "UI_BlurbSF",
+							"sid": 245923198696587,
+							"parameters": {
+								"x": "3DCamera.LayerToLayerX(LAYER_Main, LAYER_UI, fBlurbSpawners.X, fBlurbSpawners.Y, fBlurbSpawners.ZElevation + zOffset)",
+								"y": "3DCamera.LayerToLayerY(LAYER_Main, LAYER_UI, fBlurbSpawners.X, fBlurbSpawners.Y, fBlurbSpawners.ZElevation + zOffset)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "UI_BlurbSF",
+							"sid": 584710183903292,
+							"parameters": {
+								"instance-variable": "zOffset",
+								"value": "zOffset"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "UI_BlurbSF",
+							"sid": 677449452828051,
+							"parameters": {
+								"text": "text"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "UI_BlurbSF",
+							"sid": 735836029708306,
+							"parameters": {
+								"color": "color"
+							}
+						}
+					],
+					"sid": 932652048616582,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 264169936074238,
+									"parameters": {
+										"variable": "timeout",
+										"comparison": 1,
+										"value": "NOTHING"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-all-tweens",
+									"objectClass": "UI_BlurbSF",
+									"sid": 804550457475489,
+									"behaviorType": "Tween"
+								},
+								{
+									"id": "tween-value",
+									"objectClass": "UI_BlurbSF",
+									"sid": 524437471143520,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "TWEEN_Blurb_ZElevation",
+										"start-value": "0",
+										"end-value": "fBlurbSpawners.R_Blurb_ZElevation_Tween",
+										"time": "timeout",
+										"ease": "easeoutcubic",
+										"destroy-on-complete": "yes",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 251632831514006
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 184136162333546
+}

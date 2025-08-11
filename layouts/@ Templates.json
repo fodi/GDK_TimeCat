@@ -1,5 +1,5 @@
 {
-	"name": "#Templates",
+	"name": "@ Templates",
 	"layers": [
 		{
 			"name": "Main",
@@ -139,6 +139,23 @@
 							"properties": {}
 						}
 					},
+					"effects": {
+						"Outline": {
+							"isEnabled": false,
+							"parameters": {
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"width": 2,
+								"precision-step": 1,
+								"samples": 8,
+								"opacity": 1
+							}
+						}
+					},
 					"sceneGraphData": {
 						"parent-uid": null,
 						"uid": 9,
@@ -191,8 +208,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 40,
-						"y": 40,
+						"x": 358,
+						"y": 270,
 						"width": 64,
 						"height": 64,
 						"originX": 0.5,
@@ -262,8 +279,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 40,
-						"y": 40,
+						"x": 358,
+						"y": 270,
 						"width": 56,
 						"height": 56,
 						"originX": 0.5,
@@ -543,6 +560,7 @@
 						"IN_Move_Angle": 0,
 						"IN_Aim": 0,
 						"IN_Aim_Angle": 0,
+						"colorName": "",
 						"R_Blurb_ZElevation_Normal": 36,
 						"R_Blurb_ZElevation_Low": 12,
 						"R_Blurb_ZElevation_Tween": 20
@@ -976,7 +994,7 @@
 					}
 				},
 				{
-					"type": "CameraTargetSmooth",
+					"type": "CameraTargetHelper",
 					"properties": {
 						"initially-visible": false,
 						"initial-animation": "Animation 1",
@@ -1525,7 +1543,7 @@
 				{
 					"type": "Selection",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Appearing",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -1542,7 +1560,7 @@
 							"properties": {
 								"speed": 40,
 								"acceleration": 0,
-								"enabled": true,
+								"enabled": false,
 								"live-preview": false
 							}
 						}
@@ -1718,7 +1736,8 @@
 					"sid": 601953918370568,
 					"tags": "",
 					"instanceVariables": {
-						"animationFrame": 0
+						"animationFrame": 0,
+						"R_AnimationSpeed": 1.4
 					},
 					"behaviors": {
 						"Timer": {
@@ -1839,7 +1858,7 @@
 								},
 								{
 									"x": 1,
-									"y": 0.8,
+									"y": 0.8125,
 									"z": 32,
 									"u": 1,
 									"v": 0
@@ -1870,8 +1889,8 @@
 						"y": 64,
 						"width": 32,
 						"height": 32,
-						"originX": 0.5,
-						"originY": 0.6875,
+						"originX": 0.484375,
+						"originY": 0.1328125,
 						"color": [
 							1,
 							1,
@@ -2085,7 +2104,7 @@
 					"type": "bbPlayer",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "1_Down",
+						"initial-animation": "Red_Down",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -2095,28 +2114,13 @@
 					"tags": "",
 					"instanceVariables": {
 						"playerId": 0,
-						"deadEffect_Brightness": 140,
-						"deadEffectGrayscale": 85,
-						"initAnimationSpeed": 0
+						"initAnimationSpeed": 0,
+						"colorName": ""
 					},
 					"behaviors": {
 						"Tween": {
 							"properties": {
 								"enabled": true
-							}
-						}
-					},
-					"effects": {
-						"Grayscale": {
-							"isEnabled": false,
-							"parameters": {
-								"intensity": 0
-							}
-						},
-						"Brightness": {
-							"isEnabled": false,
-							"parameters": {
-								"brightness": 1
 							}
 						}
 					},
@@ -2210,6 +2214,89 @@
 					}
 				},
 				{
+					"type": "3dStoneParticle",
+					"properties": {
+						"shape": "box",
+						"z-height": 8,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"back-face-culling": false,
+						"z-tiling-factor": 1,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 84,
+					"sid": 533120117668365,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 84,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": false,
+							"w": false,
+							"h": false,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 2.220446049250313e-16,
+							"transformH": 2.220446049250313e-16,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 533120117668365,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 468,
+						"y": 196,
+						"width": 8,
+						"height": 8,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "PlayerAim",
 					"properties": {
 						"initially-visible": true,
@@ -2267,20 +2354,58 @@
 						"sid": 416529121214670,
 						"expanded": true
 					},
+					"mesh": {
+						"cols": 2,
+						"rows": 2,
+						"points": [
+							[
+								{
+									"x": 0,
+									"y": 0,
+									"z": 0,
+									"u": 0,
+									"v": 0
+								},
+								{
+									"x": 1,
+									"y": 0,
+									"z": 0,
+									"u": 1,
+									"v": 0
+								}
+							],
+							[
+								{
+									"x": 0,
+									"y": 1,
+									"z": 0,
+									"u": 0,
+									"v": 1
+								},
+								{
+									"x": 1,
+									"y": 1,
+									"z": 0,
+									"u": 1,
+									"v": 1
+								}
+							]
+						]
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
 						"x": 208,
 						"y": 64,
 						"width": 104,
-						"height": 4,
+						"height": 2,
 						"originX": 0,
 						"originY": 0.5,
 						"color": [
 							1,
 							1,
 							1,
-							0.6
+							0.4
 						],
 						"angle": 0,
 						"zElevation": 1,
@@ -2493,7 +2618,7 @@
 					}
 				},
 				{
-					"type": "Camera",
+					"type": "CameraHelper",
 					"properties": {
 						"initially-visible": false,
 						"initial-animation": "Animation 1",

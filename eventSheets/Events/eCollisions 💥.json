@@ -42,7 +42,7 @@
 			"children": [
 				{
 					"eventType": "comment",
-					"text": "If player is sleeping, do nothing"
+					"text": "If player is sleeping: do nothing (projectile continues to move)"
 				},
 				{
 					"eventType": "block",
@@ -62,7 +62,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "If shield is active, deflect projectile"
+					"text": "If player's shield is active: deflect projectile"
 				},
 				{
 					"eventType": "block",
@@ -86,16 +86,6 @@
 						{
 							"id": "set-angle-of-motion",
 							"objectClass": "Projectile",
-							"sid": 610293374758599,
-							"disabled": true,
-							"behaviorType": "Bullet",
-							"parameters": {
-								"angle": "Self.Angle + 180"
-							}
-						},
-						{
-							"id": "set-angle-of-motion",
-							"objectClass": "Projectile",
 							"sid": 144350775627947,
 							"behaviorType": "Bullet",
 							"parameters": {
@@ -116,7 +106,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "If player is dead, deflect projectile"
+					"text": "If player is dead: deflect projectile"
 				},
 				{
 					"eventType": "block",
@@ -161,7 +151,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "If player is not sleeping or shielding, destroy projectile"
+					"text": "If player is not sleeping or shielding: destroy projectile & damage player if they are not hurting"
 				},
 				{
 					"eventType": "block",
@@ -190,10 +180,6 @@
 					],
 					"sid": 848703835571815,
 					"children": [
-						{
-							"eventType": "comment",
-							"text": "If player is not already being damaged, damage them"
-						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -317,16 +303,6 @@
 								{
 									"id": "set-angle-of-motion",
 									"objectClass": "Item",
-									"sid": 229698196328943,
-									"disabled": true,
-									"behaviorType": "Bullet",
-									"parameters": {
-										"angle": "Self.Angle + 180"
-									}
-								},
-								{
-									"id": "set-angle-of-motion",
-									"objectClass": "Item",
 									"sid": 563190783235774,
 									"behaviorType": "Bullet",
 									"parameters": {
@@ -407,7 +383,7 @@
 					],
 					"actions": [
 						{
-							"customAction": "pickupItem",
+							"customAction": "carryItem",
 							"objectClass": "Player",
 							"sid": 363599000050974
 						}
@@ -418,7 +394,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Item + Projectile (deflect)"
+			"text": "Item + Projectile: deflect projectile"
 		},
 		{
 			"eventType": "block",
@@ -443,30 +419,6 @@
 				}
 			],
 			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "Projectile",
-					"sid": 113610349786662,
-					"disabled": true
-				},
-				{
-					"id": "set-angle",
-					"objectClass": "Projectile",
-					"sid": 495721162677032,
-					"disabled": true,
-					"parameters": {
-						"angle": "Self.Angle + 180"
-					}
-				},
-				{
-					"id": "set-angle",
-					"objectClass": "Projectile",
-					"sid": 996804695352019,
-					"disabled": true,
-					"parameters": {
-						"angle": "angle(Item.X, Item.Y, Projectile.X, Projectile.Y)"
-					}
-				},
 				{
 					"id": "set-angle-of-motion",
 					"objectClass": "Projectile",
@@ -501,7 +453,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Cannon + Cannon"
+			"text": "Cannon + Cannon: invert movement directions"
 		},
 		{
 			"eventType": "block",
@@ -539,7 +491,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Item + Cannon"
+			"text": "Item + Cannon: damage cannon, destroy item"
 		},
 		{
 			"eventType": "block",
@@ -573,11 +525,12 @@
 					]
 				},
 				{
-					"customAction": "hit",
+					"customAction": "onHit",
 					"objectClass": "Cannon",
-					"sid": 744880831051018,
+					"sid": 500674787951622,
 					"parameters": [
-						"Item.damage"
+						"Item.damage",
+						"Item.Bullet.AngleOfMotion"
 					]
 				}
 			],
@@ -618,7 +571,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Cannon + Projectile that has bounced"
+			"text": "Cannon + Projectile that has bounced: damage cannon, destroy projectile"
 		},
 		{
 			"eventType": "block",
@@ -644,11 +597,12 @@
 			],
 			"actions": [
 				{
-					"customAction": "hit",
+					"customAction": "onHit",
 					"objectClass": "Cannon",
-					"sid": 240675697087209,
+					"sid": 311181267351977,
 					"parameters": [
-						"Projectile.R_Damage"
+						"Projectile.R_Damage",
+						"Projectile.Bullet.AngleOfMotion"
 					]
 				},
 				{

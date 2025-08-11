@@ -81,9 +81,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ANIM_Removed",
+			"name": "ANIM_Disabled",
 			"type": "string",
-			"initialValue": "Removed",
+			"initialValue": "Disabled",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -179,23 +179,13 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "EFFECT_bbPlayer_Grayscale",
+			"name": "EFFECT_Outline",
 			"type": "string",
-			"initialValue": "Grayscale",
+			"initialValue": "Outline",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 636420038736418
-		},
-		{
-			"eventType": "variable",
-			"name": "EFFECT_bbPlayer_Brightness",
-			"type": "string",
-			"initialValue": "Brightness",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 226079005543858
+			"sid": 543168788246791
 		},
 		{
 			"eventType": "comment",
@@ -257,11 +247,11 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Item types"
+			"text": "Game items"
 		},
 		{
 			"eventType": "variable",
-			"name": "IT_Slow",
+			"name": "ITEM_Slow",
 			"type": "string",
 			"initialValue": "Slow",
 			"comment": "",
@@ -271,7 +261,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "IT_Sleep",
+			"name": "ITEM_Sleep",
 			"type": "string",
 			"initialValue": "Sleep",
 			"comment": "",
@@ -281,7 +271,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "IT_Projectile",
+			"name": "ITEM_Projectile",
 			"type": "string",
 			"initialValue": "Projectile",
 			"comment": "",
@@ -291,7 +281,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "IT_Shield",
+			"name": "ITEM_Shield",
 			"type": "string",
 			"initialValue": "Shield",
 			"comment": "",
@@ -301,7 +291,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "IT_Health",
+			"name": "ITEM_Health",
 			"type": "string",
 			"initialValue": "Health",
 			"comment": "",
@@ -382,6 +372,30 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 964460120114832
+		},
+		{
+			"eventType": "comment",
+			"text": "Loops"
+		},
+		{
+			"eventType": "variable",
+			"name": "LOOP_X",
+			"type": "string",
+			"initialValue": "X",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 912311467005421
+		},
+		{
+			"eventType": "variable",
+			"name": "LOOP_Y",
+			"type": "string",
+			"initialValue": "Y",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 793280745906978
 		},
 		{
 			"eventType": "comment",
@@ -817,9 +831,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ROLE_DevLog",
+			"name": "ROLE_DevInfo",
 			"type": "string",
-			"initialValue": "DevLog",
+			"initialValue": "DevInfo",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -871,7 +885,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Sound effects"
+			"text": "Sounds"
 		},
 		{
 			"eventType": "variable",
@@ -1083,9 +1097,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TIMER_Item_FarCheck",
+			"name": "TIMER_Item_Checkup",
 			"type": "string",
-			"initialValue": "Item_FarCheck",
+			"initialValue": "Item_Checkup",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -1093,9 +1107,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TIMER_Cannon_Shoot",
+			"name": "TIMER_Cannon_Attack",
 			"type": "string",
-			"initialValue": "Cannon_Shoot",
+			"initialValue": "Cannon_Attack",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -1113,23 +1127,13 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TIMER_Cannon_CheckMaxSpeed",
+			"name": "TIMER_Cannon_Checkup",
 			"type": "string",
-			"initialValue": "Cannon_CheckMaxSpeed",
+			"initialValue": "Cannon_Checkup",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 264053325016035
-		},
-		{
-			"eventType": "variable",
-			"name": "TIMER_Cannon_PostShoot",
-			"type": "string",
-			"initialValue": "Cannon_PostShoot",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 212305476656056
 		},
 		{
 			"eventType": "variable",
@@ -1140,16 +1144,6 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 404574786009235
-		},
-		{
-			"eventType": "variable",
-			"name": "TIMER_Level_End",
-			"type": "string",
-			"initialValue": "Level_End",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 679381954568825
 		},
 		{
 			"eventType": "variable",
@@ -1203,6 +1197,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "TIMER_Projectile_Checkup",
+			"type": "string",
+			"initialValue": "Projectile_Checkup",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 387534686585754
+		},
+		{
+			"eventType": "variable",
 			"name": "TIMER_Tile_Close",
 			"type": "string",
 			"initialValue": "Tile_Close",
@@ -1210,16 +1214,6 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 937432569353992
-		},
-		{
-			"eventType": "variable",
-			"name": "TIMER_Projectile_Check_Distance",
-			"type": "string",
-			"initialValue": "Projectile_Check_Distance",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 539557331492116
 		},
 		{
 			"eventType": "comment",
@@ -1297,6 +1291,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "TWEEN_Cannon_Color_Appear",
+			"type": "string",
+			"initialValue": "Cannon_Color_Appear",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 313707206202011
+		},
+		{
+			"eventType": "variable",
 			"name": "TWEEN_Cannon_Opacity_Appear",
 			"type": "string",
 			"initialValue": "Cannon_Opacity_Appear",
@@ -1307,13 +1311,23 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TWEEN_Cannon_Color_Appear",
+			"name": "TWEEN_Cannon_Position_Disappear",
 			"type": "string",
-			"initialValue": "Cannon_Color_Appear",
+			"initialValue": "Cannon_Position_Disappear",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 752635108876203
+			"sid": 961250130793726
+		},
+		{
+			"eventType": "variable",
+			"name": "TWEEN_Layer_UI_GameOver_FadeIn",
+			"type": "string",
+			"initialValue": "Layer_UI_GameOver_FadeIn",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 589970997922633
 		},
 		{
 			"eventType": "variable",
@@ -1356,58 +1370,8 @@
 			"sid": 221134702150182
 		},
 		{
-			"eventType": "variable",
-			"name": "TWEEN_Layer_UI_GameOver_FadeIn",
-			"type": "string",
-			"initialValue": "Layer_UI_GameOver_FadeIn",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 566072797811945
-		},
-		{
 			"eventType": "comment",
 			"text": "Words"
-		},
-		{
-			"eventType": "variable",
-			"name": "W_X",
-			"type": "string",
-			"initialValue": "X",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 193279471320981
-		},
-		{
-			"eventType": "variable",
-			"name": "W_Y",
-			"type": "string",
-			"initialValue": "Y",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 455255730079436
-		},
-		{
-			"eventType": "variable",
-			"name": "ROLE_Start",
-			"type": "string",
-			"initialValue": "Start",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 617981342833614
-		},
-		{
-			"eventType": "variable",
-			"name": "ROLE_Settings",
-			"type": "string",
-			"initialValue": "Settings",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 229602445513458
 		},
 		{
 			"eventType": "variable",
@@ -1437,63 +1401,27 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 759102329670808
+			"sid": 213573742934084
 		},
 		{
-			"eventType": "comment",
-			"text": "Unsorted"
+			"eventType": "variable",
+			"name": "ROLE_Settings",
+			"type": "string",
+			"initialValue": "Settings",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 451001544961786
 		},
 		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Templates",
-			"description": "",
-			"isActiveOnStart": false,
-			"children": [
-				{
-					"eventType": "comment",
-					"text": "Effects"
-				},
-				{
-					"eventType": "variable",
-					"name": "EFFECTS_Effect1",
-					"type": "string",
-					"initialValue": "Effect1",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": true,
-					"sid": 440839480306403
-				},
-				{
-					"eventType": "comment",
-					"text": "Object types"
-				},
-				{
-					"eventType": "variable",
-					"name": "OT_ObjectType1",
-					"type": "string",
-					"initialValue": "ObjectType1",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": true,
-					"sid": 122405122541165
-				},
-				{
-					"eventType": "comment",
-					"text": "Signals"
-				},
-				{
-					"eventType": "variable",
-					"name": "SIGNAL_Signal1",
-					"type": "string",
-					"initialValue": "Signal1",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": true,
-					"sid": 774070709637436
-				}
-			],
-			"sid": 731591257483641
+			"eventType": "variable",
+			"name": "ROLE_Start",
+			"type": "string",
+			"initialValue": "Start",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 968759973856903
 		}
 	],
 	"sid": 359473117755789

@@ -13,7 +13,12 @@
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Spawn base map, 3D island, obstacles and decorations"
+				}
+			],
 			"sid": 235751073228539,
 			"children": [
 				{
@@ -99,10 +104,10 @@
 						{
 							"id": "start-timer",
 							"objectClass": "Basemap",
-							"sid": 664257435024294,
+							"sid": 675751566729554,
 							"behaviorType": "Timer",
 							"parameters": {
-								"duration": "0.7",
+								"duration": "1 / Self.R_AnimationSpeed",
 								"type": "regular",
 								"tag": "TIMER_Basemap_Animate"
 							}
@@ -126,7 +131,7 @@
 									"objectClass": "System",
 									"sid": 802909803266074,
 									"parameters": {
-										"name": "W_X",
+										"name": "LOOP_X",
 										"start-index": "C_Basemap_Water_Border + C_Basemap_Ground_Border",
 										"end-index": "Basemap.Width / C_Level_Grid_Size - C_Basemap_Water_Border - C_Basemap_Ground_Border - 2"
 									}
@@ -136,7 +141,7 @@
 									"objectClass": "System",
 									"sid": 435194794462435,
 									"parameters": {
-										"name": "W_Y",
+										"name": "LOOP_Y",
 										"start-index": "C_Basemap_Water_Border + C_Basemap_Ground_Border",
 										"end-index": "Basemap.Height / C_Level_Grid_Size - C_Basemap_Water_Border -C_Basemap_Ground_Border - 2"
 									}
@@ -147,10 +152,6 @@
 							"children": [
 								{
 									"eventType": "comment",
-									"text": "todo MNs"
-								},
-								{
-									"eventType": "comment",
 									"text": "Spawn obstacles"
 								},
 								{
@@ -159,9 +160,9 @@
 										{
 											"id": "repeat",
 											"objectClass": "System",
-											"sid": 488482427391480,
+											"sid": 511075898708323,
 											"parameters": {
-												"count": "int(random(0, 2))"
+												"count": "int(random(0, C_Obstacle_MaxAmountPerTile))"
 											}
 										}
 									],
@@ -173,8 +174,8 @@
 											"parameters": {
 												"object-to-create": "3dObstacle1",
 												"layer": "LAYER_Main",
-												"x": "Basemap.TileToPositionX(loopindex(W_X)) + random(0, C_Level_Grid_Size)",
-												"y": "Basemap.TileToPositionY(loopindex(W_Y)) + random(0, C_Level_Grid_Size)",
+												"x": "Basemap.TileToPositionX(loopindex(LOOP_X)) + random(0, C_Level_Grid_Size)",
+												"y": "Basemap.TileToPositionY(loopindex(LOOP_Y)) + random(0, C_Level_Grid_Size)",
 												"create-hierarchy": false,
 												"template-name": "\"\""
 											}
@@ -182,9 +183,9 @@
 										{
 											"id": "set-angle",
 											"objectClass": "3dObstacle1",
-											"sid": 776544171446487,
+											"sid": 573009861516357,
 											"parameters": {
-												"angle": "random(-20, 20)"
+												"angle": "random(-C_Obstacle_MaxRandomAngle, C_Obstacle_MaxRandomAngle)"
 											}
 										},
 										{
@@ -291,10 +292,18 @@
 											"parameters": {
 												"object-to-create": "bbDecor",
 												"layer": "LAYER_Main",
-												"x": "Basemap.TileToPositionX(loopindex(W_X)) + random(0, C_Level_Grid_Size)",
-												"y": "Basemap.TileToPositionY(loopindex(W_Y)) + random(0, C_Level_Grid_Size)",
+												"x": "Basemap.TileToPositionX(loopindex(LOOP_X)) + random(0, C_Level_Grid_Size)",
+												"y": "Basemap.TileToPositionY(loopindex(LOOP_Y)) + random(0, C_Level_Grid_Size)",
 												"create-hierarchy": false,
 												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-z-elevation",
+											"objectClass": "bbDecor",
+											"sid": 569116864258816,
+											"parameters": {
+												"z": "3dIsland.ZElevation + 3dIsland.ZHeight + 1"
 											}
 										},
 										{
@@ -392,7 +401,12 @@
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Redraw basemap to fake animation of waves"
+				}
+			],
 			"sid": 438626737435016,
 			"children": [
 				{
@@ -403,7 +417,7 @@
 							"objectClass": "System",
 							"sid": 391996921119762,
 							"parameters": {
-								"name": "W_X",
+								"name": "LOOP_X",
 								"start-index": "C_Basemap_Water_Border",
 								"end-index": "Basemap.Width / C_Level_Grid_Size - C_Basemap_Water_Border - 1"
 							}
@@ -413,7 +427,7 @@
 							"objectClass": "System",
 							"sid": 720543238612109,
 							"parameters": {
-								"name": "W_Y",
+								"name": "LOOP_Y",
 								"start-index": "C_Basemap_Water_Border",
 								"end-index": "Basemap.Height / C_Level_Grid_Size - C_Basemap_Water_Border - 1"
 							}
@@ -425,8 +439,8 @@
 							"objectClass": "Basemap",
 							"sid": 166679567509142,
 							"parameters": {
-								"tile-x": "loopindex(W_X)",
-								"tile-y": "loopindex(W_Y)",
+								"tile-x": "loopindex(LOOP_X)",
+								"tile-y": "loopindex(LOOP_Y)",
 								"brush": "Self.animationFrame = 0 ? BRUSH_Ground1 : BRUSH_Ground2"
 							}
 						}

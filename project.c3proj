@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 44900,
+	"savedWithRelease": 44902,
 	"name": "TimeCat",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -225,24 +225,18 @@
 		},
 		{
 			"type": "effect",
-			"id": "brightness",
-			"name": "Brightness",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "effect",
-			"id": "grayscale",
-			"name": "Grayscale",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "effect",
 			"id": "radialblur",
 			"name": "Radial blur",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "skymen_BetterOutline",
+			"name": "Better Outline",
+			"author": "skymen",
+			"bundled": false,
+			"version": "2.1.0.1"
 		},
 		{
 			"type": "effect",
@@ -261,9 +255,9 @@
 			"Projectile",
 			"Cannon",
 			"Wall",
-			"Camera",
+			"CameraHelper",
 			"Item",
-			"CameraTargetSmooth",
+			"CameraTargetHelper",
 			"Particles",
 			"Selection",
 			"Basemap",
@@ -316,8 +310,7 @@
 					"UI_SVG",
 					"UI_MenuText",
 					"UI_Images",
-					"UI_Background",
-					"UI_Background2"
+					"UI_Background"
 				],
 				"subfolders": [],
 				"name": "UI"
@@ -346,7 +339,8 @@
 				"items": [
 					"3dCannon",
 					"3dIsland",
-					"3dObstacle1"
+					"3dObstacle1",
+					"3dStoneParticle"
 				],
 				"subfolders": [],
 				"name": "3D"
@@ -375,7 +369,7 @@
 		"items": [
 			"fTile",
 			"fPlayer",
-			"fBox",
+			"fItem",
 			"fBlurbSpawners",
 			"fBillboards",
 			"f3DObjects",
@@ -391,7 +385,7 @@
 			"Menu",
 			"Controls",
 			"Level",
-			"#Templates"
+			"@ Templates"
 		],
 		"subfolders": []
 	},
@@ -407,7 +401,7 @@
 					"eAnimations 🎞️",
 					"eCollisions 💥",
 					"eCreated ✨",
-					"eCycles ⏱️",
+					"eSystem ⏱️",
 					"eTimers ⏰",
 					"eTweens 🌓",
 					"eInput_Level 🕹️",
@@ -445,10 +439,11 @@
 					"aProjectiles 🏹",
 					"aCamera 🎥",
 					"aItem 🔮",
-					"aUI_Blurb 🆎",
+					"aUI_BlurbSF 🆎",
 					"aBasemap 🌐",
 					"aUI_TextSF 🔠",
-					"aUI_Player_Images 😶"
+					"aUI_Player_Images 😶",
+					"aBlurbSpawners 💬"
 				],
 				"subfolders": [],
 				"name": "Actions"
@@ -1041,7 +1036,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "56b",
+		"version": "57b",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

@@ -63,7 +63,7 @@
 						},
 						{
 							"type": "comment",
-							"text": "Rule overrides (with fallback to default)"
+							"text": "Apply rules (within hardcoded limits)"
 						},
 						{
 							"id": "set-eventvar-value",
@@ -103,7 +103,7 @@
 						},
 						{
 							"type": "comment",
-							"text": "Cache level midpoint & calculate \"far\" distance"
+							"text": "Calculate and store level midpoint & \"far\" distance"
 						},
 						{
 							"id": "set-eventvar-value",
@@ -134,11 +134,11 @@
 						},
 						{
 							"type": "comment",
-							"text": "Spawn stuff"
+							"text": "Dynamically spawn things"
 						},
 						{
 							"customAction": "spawn",
-							"objectClass": "Camera",
+							"objectClass": "CameraHelper",
 							"sid": 948272544472166
 						},
 						{
@@ -158,7 +158,7 @@
 							"disabled": true
 						},
 						{
-							"customAction": "spawn",
+							"customAction": "spawnAll",
 							"objectClass": "Tile",
 							"customActionObjectClass": "fTile",
 							"sid": 536946566765191,
@@ -170,7 +170,7 @@
 						},
 						{
 							"type": "comment",
-							"text": "Shuffle tiles"
+							"text": "Wait for spawns and randomize tile symbols"
 						},
 						{
 							"id": "wait-for-previous-actions",
@@ -178,7 +178,7 @@
 							"sid": 504839884268299
 						},
 						{
-							"customAction": "shuffle",
+							"customAction": "randomizeSymbols",
 							"objectClass": "Tile",
 							"customActionObjectClass": "fTile",
 							"sid": 720023268420973
@@ -187,6 +187,10 @@
 					"sid": 700019727002712
 				}
 			]
+		},
+		{
+			"eventType": "comment",
+			"text": "todo start level immediately after lobby is implemented"
 		},
 		{
 			"functionName": "startLevel",
@@ -235,56 +239,60 @@
 			"functionReturnType": "none",
 			"functionCopyPicked": false,
 			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
+			"functionParameters": [
 				{
-					"id": "stop-timer",
-					"objectClass": "GlobalTimer",
-					"sid": 899846945515774,
-					"disabled": true,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "TIMER_Level_EverySecond"
-					}
-				},
-				{
-					"id": "stop-all-timers",
-					"objectClass": "GlobalTimer",
-					"sid": 137957579539954,
-					"behaviorType": "Timer"
-				},
-				{
-					"id": "stop-timer",
-					"objectClass": "Cannon",
-					"sid": 353772213496824,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "TIMER_Cannon_Shoot"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 321930704939205,
-					"parameters": {
-						"variable": "hasLevelEnded",
-						"value": "YES"
-					}
-				},
-				{
-					"id": "set-time-scale",
-					"objectClass": "System",
-					"sid": 496335927040394,
-					"disabled": true,
-					"parameters": {
-						"time-scale": "0"
-					}
+					"name": "delay",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 597498395859233
 				}
 			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
 			"sid": 710425574341323,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 979770246221362,
+							"parameters": {
+								"seconds": "delay",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "stop-all-timers",
+							"objectClass": "GlobalTimer",
+							"sid": 327945824898756,
+							"behaviorType": "Timer"
+						},
+						{
+							"id": "stop-timer",
+							"objectClass": "Cannon",
+							"sid": 933043111202672,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "TIMER_Cannon_Attack"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 333307465445629,
+							"parameters": {
+								"variable": "hasLevelEnded",
+								"value": "YES"
+							}
+						}
+					],
+					"sid": 962533969599405
+				},
 				{
 					"eventType": "comment",
 					"text": "Stop animation of non-dead players"
@@ -468,13 +476,17 @@
 					"sid": 599669916820556
 				},
 				{
+					"eventType": "comment",
+					"text": "todo showexit/restart button"
+				},
+				{
 					"eventType": "block",
 					"conditions": [],
 					"actions": [
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 556208761587287,
+							"sid": 450934407813011,
 							"parameters": {
 								"layer": "LAYER_UI_GameOver",
 								"visibility": "visible"
@@ -483,7 +495,7 @@
 						{
 							"id": "set-layer-opacity",
 							"objectClass": "System",
-							"sid": 844233196646782,
+							"sid": 276764460915059,
 							"parameters": {
 								"layer": "LAYER_UI_GameOver",
 								"opacity": "0"
@@ -492,7 +504,7 @@
 						{
 							"id": "tween-value",
 							"objectClass": "GlobalTimer",
-							"sid": 473872411405848,
+							"sid": 998478030590158,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "TWEEN_Layer_UI_GameOver_FadeIn",
@@ -507,7 +519,117 @@
 							}
 						}
 					],
-					"sid": 903516170251227
+					"sid": 183628848512277
+				}
+			]
+		},
+		{
+			"functionName": "checkStalemate",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 542560633857791,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "closedTileCount",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 536031174416077
+				},
+				{
+					"eventType": "comment",
+					"text": "Check for a stalemate"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 640983160056263,
+							"parameters": {
+								"variable": "hasLevelEnded",
+								"comparison": 0,
+								"value": "NO"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "fTile",
+							"sid": 682556398914890,
+							"parameters": {
+								"animation": "ANIM_Closed"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 790730340463337,
+							"parameters": {
+								"variable": "closedTileCount",
+								"value": "fTile.PickedCount"
+							}
+						}
+					],
+					"sid": 575955267471001,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "fTile",
+									"sid": 711451607147351,
+									"parameters": {
+										"instance-variable": "pairPart",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 773615507629036,
+									"parameters": {
+										"variable": "closedTileCount",
+										"comparison": 0,
+										"value": "fTile.PickedCount"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 406715241336255,
+									"parameters": {
+										"type": "log",
+										"message": "\"Stalemate\""
+									}
+								},
+								{
+									"callFunction": "endLevel",
+									"sid": 956090173414646,
+									"parameters": [
+										"0"
+									]
+								}
+							],
+							"sid": 640350976530176
+						}
+					]
 				}
 			]
 		},

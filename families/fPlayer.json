@@ -184,6 +184,13 @@
 			"desc": "",
 			"show": false,
 			"sid": 269239335039642
+		},
+		{
+			"name": "colorName",
+			"type": "string",
+			"desc": "",
+			"show": false,
+			"sid": 363664244636877
 		}
 	],
 	"behaviorTypes": [

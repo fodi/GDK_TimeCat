@@ -4,7 +4,7 @@
 		{
 			"aceType": "action",
 			"aceName": "spawn",
-			"objectClass": "Camera",
+			"objectClass": "CameraHelper",
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
@@ -15,456 +15,93 @@
 			"conditions": [],
 			"actions": [
 				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 331362440688918,
-					"parameters": {
-						"object-to-create": "Camera",
-						"layer": "LAYER_Shadows",
-						"x": "0",
-						"y": "0",
-						"create-hierarchy": true,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-z-elevation",
-					"objectClass": "Camera",
-					"sid": 783228507271557,
-					"parameters": {
-						"z": "Self.R_ZElevationInit"
-					}
-				},
-				{
-					"id": "set-position",
-					"objectClass": "Camera",
-					"sid": 832216773339108,
-					"parameters": {
-						"x": "midX",
-						"y": "Self.R_YInit"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Camera",
-					"sid": 943780953653690,
-					"parameters": {
-						"instance-variable": "lookTargetX",
-						"value": "midX"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Camera",
-					"sid": 651956959910255,
-					"parameters": {
-						"instance-variable": "lookTargetY",
-						"value": "midY"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Camera",
-					"sid": 292154585702051,
-					"parameters": {
-						"instance-variable": "isMovementEnabled",
-						"value": "Functions.Rules_getNumber(PARAM_Camera_Movement)"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Camera",
-					"sid": 602389473227973,
-					"parameters": {
-						"instance-variable": "isRotationEnabled",
-						"value": "Functions.Rules_getNumber(PARAM_Camera_Rotation)"
-					}
-				},
-				{
-					"id": "look-at-position",
-					"objectClass": "3DCamera",
-					"sid": 927806853125273,
-					"parameters": {
-						"cam-x": "Camera.X",
-						"cam-y": "Camera.Y",
-						"cam-z": "Camera.ZElevation",
-						"look-x": "Camera.lookTargetX",
-						"look-y": "Camera.lookTargetY",
-						"look-z": "0",
-						"up-x": "0",
-						"up-y": "0",
-						"up-z": "1"
-					}
-				},
-				{
-					"id": "set-field-of-view",
-					"objectClass": "3DCamera",
-					"sid": 965548753800107,
-					"parameters": {
-						"fov": "Camera.R_FieldOfView"
-					}
+					"type": "comment",
+					"text": "Spawn camera helper, camera target helper & initialize 3D camera"
 				}
 			],
 			"sid": 986035733445233,
 			"children": [
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-children",
-							"objectClass": "Camera",
-							"sid": 587121128936861,
-							"parameters": {
-								"child": "CameraTargetSmooth",
-								"which": "own"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "CameraTargetSmooth",
-							"sid": 315916648252093,
-							"parameters": {
-								"x": "Camera.lookTargetX",
-								"y": "Camera.lookTargetY"
-							}
-						},
-						{
-							"id": "set-listener-object",
-							"objectClass": "Audio",
-							"sid": 262033932030225,
-							"parameters": {
-								"object": "CameraTargetSmooth"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Camera",
-							"sid": 349076621656838,
-							"parameters": {
-								"instance-variable": "lookTargetOffsetX",
-								"value": "Self.X - CameraTargetSmooth.X"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Camera",
-							"sid": 176204534489995,
-							"parameters": {
-								"instance-variable": "lookTargetOffsetY",
-								"value": "Self.Y - CameraTargetSmooth.Y"
-							}
-						}
-					],
-					"sid": 418819901467012
-				}
-			]
-		},
-		{
-			"aceType": "action",
-			"aceName": "tick",
-			"objectClass": "Camera",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "custom-ace-block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Camera",
-					"sid": 658923388831290,
-					"parameters": {
-						"instance-variable": "isMovementEnabled",
-						"comparison": 0,
-						"value": "YES"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "move-to-position",
-					"objectClass": "CameraTargetSmooth",
-					"sid": 817086063577289,
-					"behaviorType": "MoveTo",
-					"parameters": {
-						"x": "Camera.lookTargetX",
-						"y": "Camera.lookTargetY",
-						"mode": "direct"
-					}
-				}
-			],
-			"sid": 584541642494638,
-			"children": [
-				{
-					"eventType": "variable",
-					"name": "playerCount_",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 783112164049340
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player",
-							"sid": 426381487145315,
-							"parameters": {
-								"instance-variable": "health",
-								"comparison": 4,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 907274617862551,
-							"parameters": {
-								"variable": "playerCount_",
-								"value": "Player.PickedCount"
-							}
-						}
-					],
-					"sid": 796885141603752,
-					"children": [
-						{
-							"eventType": "variable",
-							"name": "playerXSum",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"isStatic": false,
-							"isConstant": false,
-							"sid": 321105291584373
-						},
-						{
-							"eventType": "variable",
-							"name": "playerYSum",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"isStatic": false,
-							"isConstant": false,
-							"sid": 981260221859374
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "for-each",
-									"objectClass": "System",
-									"sid": 136870173203641,
-									"parameters": {
-										"object": "Player"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 473576685299743,
-									"parameters": {
-										"variable": "playerXSum",
-										"value": "Player.X"
-									}
-								},
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 850751965215256,
-									"parameters": {
-										"variable": "playerYSum",
-										"value": "Player.Y"
-									}
-								}
-							],
-							"sid": 196791959646625
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-children",
-									"objectClass": "Camera",
-									"sid": 782009283954518,
-									"parameters": {
-										"child": "CameraTargetSmooth",
-										"which": "own"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Camera",
-									"sid": 840822005176086,
-									"parameters": {
-										"instance-variable": "lookTargetX",
-										"value": "playerXSum / playerCount_"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Camera",
-									"sid": 127367201068491,
-									"parameters": {
-										"instance-variable": "lookTargetY",
-										"value": "playerYSum / playerCount_"
-									}
-								}
-							],
-							"sid": 303733081738012
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Camera",
-									"sid": 730868138532043,
-									"parameters": {
-										"instance-variable": "isRotationEnabled",
-										"comparison": 0,
-										"value": "YES"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 437020346469483,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-x",
-											"objectClass": "Camera",
-											"sid": 116416279504202,
-											"parameters": {
-												"comparison": 2,
-												"x-co-ordinate": "Self.lookTargetX - Self.R_Movement_Distance_Minimum"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-x",
-											"objectClass": "Camera",
-											"sid": 221846518325445,
-											"parameters": {
-												"x": "Functions.expDecay(Self.X, Self.lookTargetX - Self.R_Movement_Distance_Minimum, 5)"
-											}
-										}
-									],
-									"sid": 459400420912860
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-x",
-											"objectClass": "Camera",
-											"sid": 994275264514801,
-											"parameters": {
-												"comparison": 4,
-												"x-co-ordinate": "Self.lookTargetX + Self.R_Movement_Distance_Minimum"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-x",
-											"objectClass": "Camera",
-											"sid": 655671247210354,
-											"parameters": {
-												"x": "Functions.expDecay(Self.X, Self.lookTargetX + Self.R_Movement_Distance_Minimum, 5)"
-											}
-										}
-									],
-									"sid": 164161325231369
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "set-y",
-											"objectClass": "Camera",
-											"sid": 859034555669993,
-											"parameters": {
-												"y": "Functions.expDecay(Self.Y, Self.lookTargetY + Self.R_YInit, 5)"
-											}
-										}
-									],
-									"sid": 877246920063883
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 913641936614468
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "Camera",
-									"sid": 450766490389139,
-									"parameters": {
-										"x": "CameraTargetSmooth.X + Camera.lookTargetOffsetX",
-										"y": "CameraTargetSmooth.Y + Camera.lookTargetOffsetY"
-									}
-								}
-							],
-							"sid": 898621486711318
-						}
-					]
-				},
-				{
-					"eventType": "block",
 					"conditions": [],
 					"actions": [
 						{
-							"id": "look-at-position",
-							"objectClass": "3DCamera",
-							"sid": 993435486498227,
-							"disabled": true,
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 227746216314859,
 							"parameters": {
-								"cam-x": "Camera.X",
-								"cam-y": "Camera.Y",
-								"cam-z": "Camera.ZElevation",
-								"look-x": "Functions.expDecay(3DCamera.LookX, Camera.lookTargetX, Camera.R_SmoothingFactor)",
-								"look-y": "Functions.expDecay(3DCamera.LookY, Camera.lookTargetY, Camera.R_SmoothingFactor)",
-								"look-z": "0",
-								"up-x": "0",
-								"up-y": "0",
-								"up-z": "1"
+								"object-to-create": "CameraHelper",
+								"layer": "LAYER_Shadows",
+								"x": "0",
+								"y": "0",
+								"create-hierarchy": true,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "CameraHelper",
+							"sid": 552178286463473,
+							"parameters": {
+								"z": "Self.R_ZElevationInit"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "CameraHelper",
+							"sid": 239393060833000,
+							"parameters": {
+								"x": "midX",
+								"y": "Self.R_YInit"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "CameraHelper",
+							"sid": 925345598574905,
+							"parameters": {
+								"instance-variable": "lookTargetX",
+								"value": "midX"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "CameraHelper",
+							"sid": 594925617436905,
+							"parameters": {
+								"instance-variable": "lookTargetY",
+								"value": "midY"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "CameraHelper",
+							"sid": 620846989659559,
+							"parameters": {
+								"instance-variable": "isMovementEnabled",
+								"value": "Functions.Rules_getNumber(PARAM_Camera_Movement)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "CameraHelper",
+							"sid": 663161774110655,
+							"parameters": {
+								"instance-variable": "isRotationEnabled",
+								"value": "Functions.Rules_getNumber(PARAM_Camera_Rotation)"
 							}
 						},
 						{
 							"id": "look-at-position",
 							"objectClass": "3DCamera",
-							"sid": 686768156316486,
+							"sid": 962995064909365,
 							"parameters": {
-								"cam-x": "Camera.X",
-								"cam-y": "Camera.Y",
-								"cam-z": "Camera.ZElevation",
-								"look-x": "CameraTargetSmooth.X",
-								"look-y": "CameraTargetSmooth.Y",
-								"look-z": "CameraTargetSmooth.ZElevation",
+								"cam-x": "CameraHelper.X",
+								"cam-y": "CameraHelper.Y",
+								"cam-z": "CameraHelper.ZElevation",
+								"look-x": "CameraHelper.lookTargetX",
+								"look-y": "CameraHelper.lookTargetY",
+								"look-z": "0",
 								"up-x": "0",
 								"up-y": "0",
 								"up-z": "1"
@@ -473,13 +110,423 @@
 						{
 							"id": "set-field-of-view",
 							"objectClass": "3DCamera",
-							"sid": 291910530311444,
+							"sid": 106028134075415,
 							"parameters": {
-								"fov": "Camera.R_FieldOfView"
+								"fov": "CameraHelper.R_FieldOfView"
 							}
 						}
 					],
-					"sid": 897674794790431
+					"sid": 339269760463933,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "CameraHelper",
+									"sid": 319509648006723,
+									"parameters": {
+										"child": "CameraTargetHelper",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "CameraTargetHelper",
+									"sid": 582117177962288,
+									"parameters": {
+										"x": "CameraHelper.lookTargetX",
+										"y": "CameraHelper.lookTargetY"
+									}
+								},
+								{
+									"id": "set-listener-object",
+									"objectClass": "Audio",
+									"sid": 806640932042479,
+									"parameters": {
+										"object": "CameraTargetHelper"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "CameraHelper",
+									"sid": 902647247257350,
+									"parameters": {
+										"instance-variable": "lookTargetOffsetX",
+										"value": "Self.X - CameraTargetHelper.X"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "CameraHelper",
+									"sid": 667092858997632,
+									"parameters": {
+										"instance-variable": "lookTargetOffsetY",
+										"value": "Self.Y - CameraTargetHelper.Y"
+									}
+								}
+							],
+							"sid": 963649063793251
+						}
+					]
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "tick",
+			"objectClass": "CameraHelper",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Update position of camera helper & camera target helper objects, move 3D camera"
+				}
+			],
+			"sid": 584541642494638,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "If camera movement is enabled, move camera target helper (with acceleration/deceleration) towards camera look target position"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "CameraHelper",
+							"sid": 230320301216478,
+							"parameters": {
+								"instance-variable": "isMovementEnabled",
+								"comparison": 0,
+								"value": "YES"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-position",
+							"objectClass": "CameraTargetHelper",
+							"sid": 739298301170927,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "CameraHelper.lookTargetX",
+								"y": "CameraHelper.lookTargetY",
+								"mode": "direct"
+							}
+						}
+					],
+					"sid": 497638812858042,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "playerCount_",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 367870474980476
+						},
+						{
+							"eventType": "comment",
+							"text": "If there are players alive on the level..."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 511597492729612,
+									"parameters": {
+										"instance-variable": "health",
+										"comparison": 4,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 540981286743701,
+									"parameters": {
+										"variable": "playerCount_",
+										"value": "Player.PickedCount"
+									}
+								}
+							],
+							"sid": 309792596173613,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Calculate average position of alive players and update look target variables of the camera"
+								},
+								{
+									"eventType": "variable",
+									"name": "playerXSum",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 670098256827261
+								},
+								{
+									"eventType": "variable",
+									"name": "playerYSum",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 286329170254959
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 703310314713793,
+											"parameters": {
+												"object": "Player"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 262071103948974,
+											"parameters": {
+												"variable": "playerXSum",
+												"value": "Player.X"
+											}
+										},
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 952784572542325,
+											"parameters": {
+												"variable": "playerYSum",
+												"value": "Player.Y"
+											}
+										}
+									],
+									"sid": 769265313769787
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-children",
+											"objectClass": "CameraHelper",
+											"sid": 851785633742693,
+											"disabled": true,
+											"parameters": {
+												"child": "CameraTargetHelper",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "CameraHelper",
+											"sid": 598355393996049,
+											"parameters": {
+												"instance-variable": "lookTargetX",
+												"value": "playerXSum / playerCount_"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "CameraHelper",
+											"sid": 501321298652285,
+											"parameters": {
+												"instance-variable": "lookTargetY",
+												"value": "playerYSum / playerCount_"
+											}
+										}
+									],
+									"sid": 354409601194478
+								},
+								{
+									"eventType": "comment",
+									"text": "If camera rotation is enabled, position camera helper with a little \"wobble\""
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "CameraHelper",
+											"sid": 826711222675440,
+											"parameters": {
+												"instance-variable": "isRotationEnabled",
+												"comparison": 0,
+												"value": "YES"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 806005541602763,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-x",
+													"objectClass": "CameraHelper",
+													"sid": 808011106146306,
+													"parameters": {
+														"comparison": 2,
+														"x-co-ordinate": "Self.lookTargetX - Self.R_Movement_Distance_Minimum"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-x",
+													"objectClass": "CameraHelper",
+													"sid": 255820770407528,
+													"parameters": {
+														"x": "Functions.expDecay(Self.X, Self.lookTargetX - Self.R_Movement_Distance_Minimum, 5)"
+													}
+												}
+											],
+											"sid": 117658731135502
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-x",
+													"objectClass": "CameraHelper",
+													"sid": 574425409234978,
+													"parameters": {
+														"comparison": 4,
+														"x-co-ordinate": "Self.lookTargetX + Self.R_Movement_Distance_Minimum"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-x",
+													"objectClass": "CameraHelper",
+													"sid": 714074587619238,
+													"parameters": {
+														"x": "Functions.expDecay(Self.X, Self.lookTargetX + Self.R_Movement_Distance_Minimum, 5)"
+													}
+												}
+											],
+											"sid": 796188876636495
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-y",
+													"objectClass": "CameraHelper",
+													"sid": 453424749258692,
+													"parameters": {
+														"y": "Functions.expDecay(Self.Y, Self.lookTargetY + Self.R_YInit, 5)"
+													}
+												}
+											],
+											"sid": 735110759662358
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "If camera rotation is disabled, position camera helper without \"wobble\""
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 658589660808210
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "CameraHelper",
+											"sid": 665717021465072,
+											"parameters": {
+												"x": "CameraTargetHelper.X + CameraHelper.lookTargetOffsetX",
+												"y": "CameraTargetHelper.Y + CameraHelper.lookTargetOffsetY"
+											}
+										}
+									],
+									"sid": 726492195968418
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "look-at-position",
+									"objectClass": "3DCamera",
+									"sid": 959144455185295,
+									"disabled": true,
+									"parameters": {
+										"cam-x": "CameraHelper.X",
+										"cam-y": "CameraHelper.Y",
+										"cam-z": "CameraHelper.ZElevation",
+										"look-x": "Functions.expDecay(3DCamera.LookX, CameraHelper.lookTargetX, CameraHelper.R_SmoothingFactor)",
+										"look-y": "Functions.expDecay(3DCamera.LookY, CameraHelper.lookTargetY, CameraHelper.R_SmoothingFactor)",
+										"look-z": "0",
+										"up-x": "0",
+										"up-y": "0",
+										"up-z": "1"
+									}
+								},
+								{
+									"id": "look-at-position",
+									"objectClass": "3DCamera",
+									"sid": 265678632277576,
+									"parameters": {
+										"cam-x": "CameraHelper.X",
+										"cam-y": "CameraHelper.Y",
+										"cam-z": "CameraHelper.ZElevation",
+										"look-x": "CameraTargetHelper.X",
+										"look-y": "CameraTargetHelper.Y",
+										"look-z": "CameraTargetHelper.ZElevation",
+										"up-x": "0",
+										"up-y": "0",
+										"up-z": "1"
+									}
+								},
+								{
+									"id": "set-field-of-view",
+									"objectClass": "3DCamera",
+									"sid": 390050188321812,
+									"parameters": {
+										"fov": "CameraHelper.R_FieldOfView"
+									}
+								}
+							],
+							"sid": 861972277420022
+						}
+					]
 				}
 			]
 		}

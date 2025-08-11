@@ -37,117 +37,130 @@
 			"conditions": [],
 			"actions": [
 				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 128324909259821,
-					"parameters": {
-						"object-to-create": "Item",
-						"layer": "LAYER_Shadows",
-						"x": "x",
-						"y": "y",
-						"create-hierarchy": true,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-solid-collision-filter",
-					"objectClass": "Item",
-					"sid": 701894312110635,
-					"parameters": {
-						"mode": "exclusive",
-						"tags": "SOLID_Obstacle & \" \" &SOLID_Wall"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Item",
-					"sid": 654741773896637,
-					"parameters": {
-						"instance-variable": "itemType",
-						"value": "item"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Item",
-					"sid": 218372490768887,
-					"parameters": {
-						"instance-variable": "damage",
-						"value": "Functions.Rules_getNumber(PARAM_Item_Damage)"
-					}
+					"type": "comment",
+					"text": "Spawn requested item at position (after finding a pair of item symbols)"
 				}
 			],
 			"sid": 319187247191167,
 			"children": [
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-children",
-							"objectClass": "Item",
-							"sid": 324190126596710,
-							"parameters": {
-								"child": "bbItem",
-								"which": "own"
-							}
-						}
-					],
+					"conditions": [],
 					"actions": [
 						{
-							"id": "tween-one-property",
-							"objectClass": "bbItem",
-							"sid": 550665157130665,
-							"behaviorType": "Tween",
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 627288482676989,
 							"parameters": {
-								"tags": "TWEEN_bbItem_Appear",
-								"property": "offsetZElevation",
-								"end-value": "16",
-								"time": "1",
-								"ease": "easeoutelastic",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
+								"object-to-create": "Item",
+								"layer": "LAYER_Shadows",
+								"x": "x",
+								"y": "y",
+								"create-hierarchy": true,
+								"template-name": "\"\""
 							}
 						},
 						{
-							"id": "set-animation",
-							"objectClass": "bbItem",
-							"sid": 446435173781702,
+							"id": "set-solid-collision-filter",
+							"objectClass": "Item",
+							"sid": 428796327253295,
 							"parameters": {
-								"animation": "item",
-								"from": "beginning"
+								"mode": "exclusive",
+								"tags": "SOLID_Obstacle & \" \" &SOLID_Wall"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Item",
+							"sid": 279681922853528,
+							"parameters": {
+								"instance-variable": "itemType",
+								"value": "item"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Item",
+							"sid": 345497403166128,
+							"parameters": {
+								"instance-variable": "damage",
+								"value": "Functions.Rules_getNumber(PARAM_Item_Damage)"
 							}
 						}
 					],
-					"sid": 737005105864257,
+					"sid": 855483036444840,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 225153787950655,
+									"id": "pick-children",
+									"objectClass": "Item",
+									"sid": 351273204583190,
 									"parameters": {
-										"variable": "item",
-										"comparison": 0,
-										"value": "IT_Projectile"
+										"child": "bbItem",
+										"which": "own"
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "set-instvar-value",
-									"objectClass": "Item",
-									"sid": 958710616874271,
+									"id": "tween-one-property",
+									"objectClass": "bbItem",
+									"sid": 679942690456964,
+									"behaviorType": "Tween",
 									"parameters": {
-										"instance-variable": "damage",
-										"value": "Functions.Rules_getNumber(PARAM_Item_Attack_Damage)"
+										"tags": "TWEEN_bbItem_Appear",
+										"property": "offsetZElevation",
+										"end-value": "16",
+										"time": "1",
+										"ease": "easeoutelastic",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "bbItem",
+									"sid": 250377497795964,
+									"parameters": {
+										"animation": "item",
+										"from": "beginning"
 									}
 								}
 							],
-							"sid": 990302720483039
+							"sid": 447272385848559,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 942725317980878,
+											"parameters": {
+												"variable": "item",
+												"comparison": 0,
+												"value": "ITEM_Projectile"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Item",
+											"sid": 319634858693593,
+											"parameters": {
+												"instance-variable": "damage",
+												"value": "Functions.Rules_getNumber(PARAM_Item_Attack_Damage)"
+											}
+										}
+									],
+									"sid": 218698428428170
+								}
+							]
 						}
 					]
 				}
@@ -175,14 +188,8 @@
 			"conditions": [],
 			"actions": [
 				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 853075987724733,
-					"disabled": true,
-					"parameters": {
-						"type": "log",
-						"message": "\"Item hit player #\" & hitPlayerUID"
-					}
+					"type": "comment",
+					"text": "When a player gets hit, damage them and inflict the status effect on the player"
 				}
 			],
 			"sid": 829199685530026,
@@ -199,7 +206,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Remove item from player"
+					"text": "Remove item from originating player"
 				},
 				{
 					"eventType": "block",
@@ -239,6 +246,7 @@
 							"id": "compare-instance-variable",
 							"objectClass": "Item",
 							"sid": 946658408982949,
+							"disabled": true,
 							"parameters": {
 								"instance-variable": "targetPlayerUID",
 								"comparison": 0,
@@ -259,6 +267,7 @@
 							"id": "set-instvar-value",
 							"objectClass": "Item",
 							"sid": 663356910786334,
+							"disabled": true,
 							"parameters": {
 								"instance-variable": "targetPlayerUID",
 								"value": "Player.UID"
@@ -273,7 +282,7 @@
 							]
 						},
 						{
-							"customAction": "startEffect",
+							"customAction": "startStatus",
 							"objectClass": "Player",
 							"sid": 437832637241497,
 							"parameters": [
@@ -317,7 +326,7 @@
 		},
 		{
 			"aceType": "action",
-			"aceName": "farCheck",
+			"aceName": "checkup",
 			"objectClass": "Item",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -411,7 +420,7 @@
 							"sid": 204588848102143,
 							"behaviorType": "Timer",
 							"parameters": {
-								"tag": "TIMER_Item_FarCheck"
+								"tag": "TIMER_Item_Checkup"
 							}
 						},
 						{

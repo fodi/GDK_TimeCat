@@ -3,6 +3,58 @@
 	"events": [
 		{
 			"aceType": "action",
+			"aceName": "init",
+			"objectClass": "UI_TextSF",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Initialize contents of sprite font text objects"
+				}
+			],
+			"sid": 584109320025270,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Level title"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UI_TextSF",
+							"sid": 298616546133315,
+							"parameters": {
+								"instance-variable": "role",
+								"comparison": 0,
+								"value": "ROLE_Title"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UI_TextSF",
+							"sid": 112789094731138,
+							"parameters": {
+								"text": "Functions.Rules_getString(PARAM_Title)"
+							}
+						}
+					],
+					"sid": 967899475484053
+				}
+			]
+		},
+		{
+			"aceType": "action",
 			"aceName": "tick",
 			"objectClass": "UI_TextSF",
 			"functionDescription": "",
@@ -13,9 +65,18 @@
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Update contents of sprite font text objects"
+				}
+			],
 			"sid": 278302117043741,
 			"children": [
+				{
+					"eventType": "comment",
+					"text": "Developer info"
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -26,7 +87,7 @@
 							"parameters": {
 								"instance-variable": "role",
 								"comparison": 0,
-								"value": "ROLE_DevLog"
+								"value": "ROLE_DevInfo"
 							}
 						},
 						{
@@ -42,7 +103,7 @@
 							"sid": 670481936881243,
 							"disabled": true,
 							"parameters": {
-								"text": "\"Camera @ \" & round(Camera.X) & \", \" & round(Camera.Y) & \", \" & round(Camera.ZElevation) & \" | FoV: \" & Camera.R_FieldOfView & newline & \nFunctions.getDevInfo(\", \")"
+								"text": "\"Camera @ \" & round(CameraHelper.X) & \", \" & round(CameraHelper.Y) & \", \" & round(CameraHelper.ZElevation) & \" | FoV: \" & CameraHelper.R_FieldOfView & newline & \nFunctions.getDevInfo(\", \")"
 							}
 						},
 						{
@@ -55,49 +116,6 @@
 						}
 					],
 					"sid": 916679967059463
-				}
-			]
-		},
-		{
-			"aceType": "action",
-			"aceName": "init",
-			"objectClass": "UI_TextSF",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "custom-ace-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 393753129951466,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "UI_TextSF",
-							"sid": 954110601453250,
-							"parameters": {
-								"instance-variable": "role",
-								"comparison": 0,
-								"value": "ROLE_Title"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "UI_TextSF",
-							"sid": 664961869659522,
-							"parameters": {
-								"text": "Functions.Rules_getString(PARAM_Title)"
-							}
-						}
-					],
-					"sid": 268156217198112
 				}
 			]
 		}

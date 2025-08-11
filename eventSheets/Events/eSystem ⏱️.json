@@ -1,0 +1,103 @@
+{
+	"name": "eSystem ⏱️",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "Start: initialize level"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 934409235030864
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "initLevel",
+					"sid": 935426248210738
+				}
+			],
+			"sid": 106853073142729
+		},
+		{
+			"eventType": "comment",
+			"text": "Tick objects"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 552969549724375
+				}
+			],
+			"actions": [
+				{
+					"customAction": "tick",
+					"objectClass": "CameraHelper",
+					"sid": 956245024598579
+				},
+				{
+					"customAction": "tick",
+					"objectClass": "UI_BlurbSF",
+					"sid": 617896229175985
+				},
+				{
+					"customAction": "tick",
+					"objectClass": "UI_TextSF",
+					"sid": 263542475998482
+				}
+			],
+			"sid": 559613915501580,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 408812010461538,
+							"parameters": {
+								"object": "Player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "tick",
+							"objectClass": "Player",
+							"sid": 843651056754948
+						}
+					],
+					"sid": 832504992604495
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 361701297864707,
+							"parameters": {
+								"object": "Cannon"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "tick",
+							"objectClass": "Cannon",
+							"sid": 594641830660276
+						}
+					],
+					"sid": 108925331269662
+				}
+			]
+		}
+	],
+	"sid": 918958308783690
+}

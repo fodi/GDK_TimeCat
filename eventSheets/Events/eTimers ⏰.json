@@ -2,70 +2,155 @@
 	"name": "eTimers ⏰",
 	"events": [
 		{
-			"eventType": "comment",
-			"text": "Player"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-timer",
-					"objectClass": "Player",
-					"sid": 368694596564405,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "TIMER_Tile_Close"
-					}
-				},
-				{
-					"id": "for-each",
-					"objectClass": "System",
-					"sid": 613691177004148,
-					"parameters": {
-						"object": "Player"
-					}
-				}
-			],
-			"actions": [
-				{
-					"customAction": "closeTiles",
-					"objectClass": "Player",
-					"sid": 188374690230328
-				}
-			],
-			"sid": 454457054152501
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-timer",
-					"objectClass": "Player",
-					"sid": 765668752213644,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "TIMER_Player_Slow"
-					}
-				},
-				{
-					"id": "for-each",
-					"objectClass": "System",
-					"sid": 651530937117833,
-					"parameters": {
-						"object": "Player"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 607797466365295,
+			"eventType": "group",
+			"disabled": false,
+			"title": "Global timer",
+			"description": "",
+			"isActiveOnStart": true,
 			"children": [
+				{
+					"eventType": "comment",
+					"text": "Spawn cannon & start new spawn timer"
+				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-timer",
+							"objectClass": "GlobalTimer",
+							"sid": 732376867663727,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "TIMER_Cannon_Spawn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "GlobalTimer",
+							"sid": 718572729151381,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "random(Functions.Rules_getNumber(PARAM_Cannon_Spawn_Time_Min), Functions.Rules_getNumber(PARAM_Cannon_Spawn_Time_Max))",
+								"type": "once",
+								"tag": "TIMER_Cannon_Spawn"
+							}
+						},
+						{
+							"customAction": "spawn",
+							"objectClass": "Cannon",
+							"sid": 429550506026277
+						}
+					],
+					"sid": 691881611484882
+				},
+				{
+					"eventType": "comment",
+					"text": "Count elapsed time & check for stalemate"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "GlobalTimer",
+							"sid": 103812677786852,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "TIMER_Level_EverySecond"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 952852086947679,
+							"parameters": {
+								"variable": "timeElapsed",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "checkStalemate",
+							"sid": 302467566083466
+						}
+					],
+					"sid": 504055905074091
+				}
+			],
+			"sid": 981455865099070
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player timers",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Close tiles after players opened two"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Player",
+							"sid": 747720455298694,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "TIMER_Tile_Close"
+							}
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 801884939298214,
+							"parameters": {
+								"object": "Player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "closeTiles",
+							"objectClass": "Player",
+							"sid": 696710728350781
+						}
+					],
+					"sid": 987483897562427
+				},
+				{
+					"eventType": "comment",
+					"text": "When slow status wears off, stop particle effect"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Player",
+							"sid": 187523647995591,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "TIMER_Player_Slow"
+							}
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 860970132208461,
+							"parameters": {
+								"object": "Player"
+							}
+						},
+						{
 							"id": "pick-children",
 							"objectClass": "Player",
-							"sid": 387910092707000,
+							"sid": 659856280329663,
 							"parameters": {
 								"child": "Particles",
 								"which": "own"
@@ -76,7 +161,7 @@
 						{
 							"id": "set-rate",
 							"objectClass": "Particles",
-							"sid": 404554281953911,
+							"sid": 716351937600058,
 							"parameters": {
 								"rate": "0"
 							}
@@ -84,7 +169,7 @@
 						{
 							"id": "start-timer",
 							"objectClass": "Particles",
-							"sid": 300033526657276,
+							"sid": 943035697271903,
 							"behaviorType": "Timer",
 							"parameters": {
 								"duration": "Particles.Timeout",
@@ -93,403 +178,379 @@
 							}
 						}
 					],
-					"sid": 181037009272121
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-timer",
-					"objectClass": "Player",
-					"sid": 322168718065793,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "TIMER_Player_Sleep_Blurb"
-					}
+					"sid": 449374864851324
 				},
 				{
-					"id": "for-each",
-					"objectClass": "System",
-					"sid": 208600536325795,
-					"parameters": {
-						"object": "Player"
-					}
-				}
-			],
-			"actions": [
-				{
-					"customAction": "spawnBlurb",
-					"objectClass": "Player",
-					"customActionObjectClass": "fBlurbSpawners",
-					"sid": 664434996411964,
-					"parameters": [
-						"\"zZz\"",
-						"Self.R_Blurb_ZElevation_Low",
-						"int(trim(tokenat(C_CSV_Colors_Int, 0, \",\")))",
-						"1.7"
-					]
+					"eventType": "comment",
+					"text": "Spawn zZz blurbs every once for sleeping players"
 				},
 				{
-					"id": "start-timer",
-					"objectClass": "Player",
-					"sid": 493388124235060,
-					"behaviorType": "Timer",
-					"parameters": {
-						"duration": "random(1.4, 2)",
-						"type": "once",
-						"tag": "TIMER_Player_Sleep_Blurb"
-					}
-				}
-			],
-			"sid": 289643315531853
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-timer",
-					"objectClass": "Player",
-					"sid": 245072411420822,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "TIMER_Player_Sleep"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Player",
+							"sid": 730971858892934,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "TIMER_Player_Sleep_Blurb"
+							}
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 828823874098551,
+							"parameters": {
+								"object": "Player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "spawnBlurb",
+							"objectClass": "Player",
+							"customActionObjectClass": "fBlurbSpawners",
+							"sid": 202995069126426,
+							"parameters": [
+								"\"zZz\"",
+								"Self.R_Blurb_ZElevation_Low",
+								"int(trim(tokenat(C_CSV_Colors_Int, 0, \",\")))",
+								"1.7"
+							]
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Player",
+							"sid": 149139536440528,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "random(1.4, 2)",
+								"type": "once",
+								"tag": "TIMER_Player_Sleep_Blurb"
+							}
+						}
+					],
+					"sid": 122743744796391
 				},
 				{
-					"id": "for-each",
-					"objectClass": "System",
-					"sid": 958591880530749,
-					"parameters": {
-						"object": "Player"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "stop-timer",
-					"objectClass": "Player",
-					"sid": 290121690572948,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "TIMER_Player_Sleep_Blurb"
-					}
-				}
-			],
-			"sid": 373951052428713
-		},
-		{
-			"eventType": "comment",
-			"text": "Cannon"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-timer",
-					"objectClass": "Cannon",
-					"sid": 601779891073436,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "TIMER_Cannon_Shoot"
-					}
+					"eventType": "comment",
+					"text": "Sleep status expired, end it"
 				},
 				{
-					"id": "for-each",
-					"objectClass": "System",
-					"sid": 144438903343036,
-					"parameters": {
-						"object": "Cannon"
-					}
-				}
-			],
-			"actions": [
-				{
-					"customAction": "beginAttack",
-					"objectClass": "Cannon",
-					"sid": 507512664605177
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Player",
+							"sid": 924311046545452,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "TIMER_Player_Sleep"
+							}
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 127709778990984,
+							"parameters": {
+								"object": "Player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "endStatus",
+							"objectClass": "Player",
+							"sid": 375612320786514,
+							"parameters": [
+								"ITEM_Sleep"
+							]
+						}
+					],
+					"sid": 738743179647648
 				},
 				{
-					"customAction": "startShootTimer",
-					"objectClass": "Cannon",
-					"sid": 587226946553301
-				}
-			],
-			"sid": 285412513229668
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-timer",
-					"objectClass": "Cannon",
-					"sid": 851019762092103,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "TIMER_Cannon_CheckMaxSpeed"
-					}
+					"eventType": "comment",
+					"text": "Shield status expired, end it"
 				},
 				{
-					"id": "for-each",
-					"objectClass": "System",
-					"sid": 362965656635868,
-					"parameters": {
-						"object": "Cannon"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Player",
+							"sid": 487274510970374,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "TIMER_Player_Shield"
+							}
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 946828013821185,
+							"parameters": {
+								"object": "Player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "endStatus",
+							"objectClass": "Player",
+							"sid": 206435455500652,
+							"parameters": [
+								"ITEM_Shield"
+							]
+						}
+					],
+					"sid": 664134580762397
 				}
 			],
-			"actions": [
-				{
-					"customAction": "checkMaxSpeed",
-					"objectClass": "Cannon",
-					"sid": 405398916636503
-				}
-			],
-			"sid": 922240342976189
+			"sid": 706562317418324
 		},
 		{
-			"eventType": "comment",
-			"text": "Item"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "Cannon timers",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "on-timer",
-					"objectClass": "Item",
-					"sid": 723563679801714,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "TIMER_Item_FarCheck"
-					}
+					"eventType": "comment",
+					"text": "Attack & start new attack timer"
 				},
 				{
-					"id": "for-each",
-					"objectClass": "System",
-					"sid": 665724771262034,
-					"parameters": {
-						"object": "Item"
-					}
-				}
-			],
-			"actions": [
-				{
-					"customAction": "farCheck",
-					"objectClass": "Item",
-					"sid": 474970245810033
-				}
-			],
-			"sid": 825971556518263
-		},
-		{
-			"eventType": "comment",
-			"text": "Basemap"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-timer",
-					"objectClass": "Basemap",
-					"sid": 172932349480795,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "TIMER_Basemap_Animate"
-					}
-				}
-			],
-			"actions": [
-				{
-					"customAction": "animate",
-					"objectClass": "Basemap",
-					"sid": 932924525502399
-				}
-			],
-			"sid": 451497678528545
-		},
-		{
-			"eventType": "comment",
-			"text": "Particles"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-timer",
-					"objectClass": "Particles",
-					"sid": 228780410162996,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "TIMER_Particles_Destroy"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "Particles",
-					"sid": 336199360686459
-				}
-			],
-			"sid": 392042245225262
-		},
-		{
-			"eventType": "comment",
-			"text": "Global"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-timer",
-					"objectClass": "GlobalTimer",
-					"sid": 125135880580677,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "TIMER_Cannon_Spawn"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "start-timer",
-					"objectClass": "GlobalTimer",
-					"sid": 374891194834193,
-					"behaviorType": "Timer",
-					"parameters": {
-						"duration": "random(Functions.Rules_getNumber(PARAM_Cannon_Spawn_Time_Min), Functions.Rules_getNumber(PARAM_Cannon_Spawn_Time_Max))",
-						"type": "once",
-						"tag": "TIMER_Cannon_Spawn"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Cannon",
+							"sid": 635789443315222,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "TIMER_Cannon_Attack"
+							}
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 747030822248008,
+							"parameters": {
+								"object": "Cannon"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "attack",
+							"objectClass": "Cannon",
+							"sid": 795057214816528
+						},
+						{
+							"customAction": "startAttackTimer",
+							"objectClass": "Cannon",
+							"sid": 583880180870088
+						}
+					],
+					"sid": 575265250964202
 				},
 				{
-					"customAction": "spawn",
-					"objectClass": "Cannon",
-					"sid": 355258362113647
-				}
-			],
-			"sid": 847622964754267
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-timer",
-					"objectClass": "GlobalTimer",
-					"sid": 639673916960817,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "TIMER_Level_EverySecond"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 343899294385808,
-					"parameters": {
-						"variable": "timeElapsed",
-						"value": "1"
-					}
-				}
-			],
-			"sid": 591729364365293
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-timer",
-					"objectClass": "GlobalTimer",
-					"sid": 982606448127349,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "TIMER_Level_End"
-					}
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "endLevel",
-					"sid": 947505239421334
-				}
-			],
-			"sid": 366469736129611
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-timer",
-					"objectClass": "Player",
-					"sid": 419871603023438,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "TIMER_Player_Shield"
-					}
+					"eventType": "comment",
+					"text": "Limit cannon speeds periodically"
 				},
 				{
-					"id": "for-each",
-					"objectClass": "System",
-					"sid": 212919828785921,
-					"parameters": {
-						"object": "Player"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Cannon",
+							"sid": 356276600348961,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "TIMER_Cannon_Checkup"
+							}
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 920769237247535,
+							"parameters": {
+								"object": "Cannon"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "limitMaxSpeed",
+							"objectClass": "Cannon",
+							"sid": 702709784218969
+						}
+					],
+					"sid": 276291029497880
 				}
 			],
-			"actions": [
-				{
-					"customAction": "stopEffect",
-					"objectClass": "Player",
-					"sid": 326575440396527,
-					"parameters": [
-						"IT_Shield"
-					]
-				}
-			],
-			"sid": 497168656763740
+			"sid": 118641919880514
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "Item timers",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "on-timer",
-					"objectClass": "Projectile",
-					"sid": 110705523105698,
-					"behaviorType": "Timer",
-					"parameters": {
-						"tag": "TIMER_Projectile_Check_Distance"
-					}
+					"eventType": "comment",
+					"text": "Check for items that can be destroyed"
 				},
 				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "Projectile",
-					"sid": 546720046374448,
-					"parameters": {
-						"object": "Water"
-					},
-					"isInverted": true
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Item",
+							"sid": 886815073860345,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "TIMER_Item_Checkup"
+							}
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 620302709786332,
+							"parameters": {
+								"object": "Item"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "checkup",
+							"objectClass": "Item",
+							"sid": 708249446560765
+						}
+					],
+					"sid": 997461008669112
 				}
 			],
-			"actions": [
+			"sid": 456549438109684
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Basemap timers",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 294439713690390,
-					"parameters": {
-						"type": "log",
-						"message": "\"Destroying far away projectile #\" & Projectile.UID"
-					}
+					"eventType": "comment",
+					"text": "Animate base tilemap"
 				},
 				{
-					"id": "destroy",
-					"objectClass": "Projectile",
-					"sid": 865479466841684
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Basemap",
+							"sid": 335200556578857,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "TIMER_Basemap_Animate"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "animate",
+							"objectClass": "Basemap",
+							"sid": 511753813401676
+						}
+					],
+					"sid": 435073414054660
 				}
 			],
-			"sid": 465329642550252
+			"sid": 898517225454050
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Particle timers",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Destroy particle emitter after the last particle's lifetime expired"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Particles",
+							"sid": 772601710296616,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "TIMER_Particles_Destroy"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Particles",
+							"sid": 613781782243448
+						}
+					],
+					"sid": 466968932373232
+				}
+			],
+			"sid": 921035755019422
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Projectile timers",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Check for projectiles that can be destroyed"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Projectile",
+							"sid": 868957872158832,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "TIMER_Projectile_Checkup"
+							}
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 912458856401085,
+							"parameters": {
+								"object": "Projectile"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "checkup",
+							"objectClass": "Projectile",
+							"sid": 916433753437917
+						}
+					],
+					"sid": 551091691738178
+				}
+			],
+			"sid": 677990820308124
 		}
 	],
 	"sid": 750823255495774

@@ -13,7 +13,12 @@
 			"functionParameters": [],
 			"eventType": "custom-ace-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Spawn all four level boundary walls"
+				}
+			],
 			"sid": 470342704248425,
 			"children": [
 				{
@@ -132,29 +137,42 @@
 			"conditions": [],
 			"actions": [
 				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 930062226664986,
-					"parameters": {
-						"object-to-create": "Wall",
-						"layer": "LAYER_Main",
-						"x": "x",
-						"y": "y",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-size",
-					"objectClass": "Wall",
-					"sid": 889143486271318,
-					"parameters": {
-						"width": "width",
-						"height": "height"
-					}
+					"type": "comment",
+					"text": "Spawn a single wall at specified position with specified size"
 				}
 			],
-			"sid": 311397081222202
+			"sid": 311397081222202,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 290409115197009,
+							"parameters": {
+								"object-to-create": "Wall",
+								"layer": "LAYER_Main",
+								"x": "x",
+								"y": "y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "Wall",
+							"sid": 989890501221689,
+							"parameters": {
+								"width": "width",
+								"height": "height"
+							}
+						}
+					],
+					"sid": 597673243782367
+				}
+			]
 		}
 	],
 	"sid": 778340260570193

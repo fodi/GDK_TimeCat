@@ -165,7 +165,7 @@
 					"sid": 177950579560677,
 					"tags": "",
 					"instanceVariables": {
-						"role": "DevLog",
+						"role": "DevInfo",
 						"paramNumber": 0
 					},
 					"behaviors": {
@@ -306,9 +306,9 @@
 						"Anchor": {
 							"properties": {
 								"left-edge": "window-left",
-								"top-edge": "window-top",
+								"top-edge": "window-bottom",
 								"right-edge": "none",
-								"bottom-edge": "none",
+								"bottom-edge": "window-bottom",
 								"enabled": true
 							}
 						}
@@ -366,9 +366,9 @@
 						"Anchor": {
 							"properties": {
 								"left-edge": "window-right",
-								"top-edge": "window-top",
+								"top-edge": "window-bottom",
 								"right-edge": "none",
-								"bottom-edge": "none",
+								"bottom-edge": "window-bottom",
 								"enabled": true
 							}
 						}
@@ -426,7 +426,7 @@
 						"Anchor": {
 							"properties": {
 								"left-edge": "window-left",
-								"top-edge": "window-bottom",
+								"top-edge": "window-top",
 								"right-edge": "none",
 								"bottom-edge": "none",
 								"enabled": true
@@ -486,8 +486,8 @@
 						"Anchor": {
 							"properties": {
 								"left-edge": "window-right",
-								"top-edge": "window-bottom",
-								"right-edge": "none",
+								"top-edge": "window-top",
+								"right-edge": "window-right",
 								"bottom-edge": "none",
 								"enabled": true
 							}
@@ -533,9 +533,9 @@
 						"Anchor": {
 							"properties": {
 								"left-edge": "window-left",
-								"top-edge": "window-top",
+								"top-edge": "window-bottom",
 								"right-edge": "none",
-								"bottom-edge": "none",
+								"bottom-edge": "window-bottom",
 								"enabled": true
 							}
 						}
@@ -580,9 +580,9 @@
 						"Anchor": {
 							"properties": {
 								"left-edge": "window-right",
-								"top-edge": "window-top",
+								"top-edge": "window-bottom",
 								"right-edge": "none",
-								"bottom-edge": "none",
+								"bottom-edge": "window-bottom",
 								"enabled": true
 							}
 						}
@@ -627,7 +627,7 @@
 						"Anchor": {
 							"properties": {
 								"left-edge": "window-left",
-								"top-edge": "window-bottom",
+								"top-edge": "window-top",
 								"right-edge": "none",
 								"bottom-edge": "none",
 								"enabled": true
@@ -674,8 +674,8 @@
 						"Anchor": {
 							"properties": {
 								"left-edge": "window-right",
-								"top-edge": "window-bottom",
-								"right-edge": "none",
+								"top-edge": "window-top",
+								"right-edge": "window-right",
 								"bottom-edge": "none",
 								"enabled": true
 							}

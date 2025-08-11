@@ -27,6 +27,10 @@
 					"sid": 227741343129024
 				},
 				{
+					"eventType": "comment",
+					"text": "Get the highest number of pairs from player(s)"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -51,6 +55,10 @@
 						}
 					],
 					"sid": 556711266091912
+				},
+				{
+					"eventType": "comment",
+					"text": "Update player UI images: default, crowned, dead"
 				},
 				{
 					"eventType": "block",
@@ -145,16 +153,6 @@
 											"parameters": {
 												"frame-number": "FRAME_Crown"
 											}
-										},
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 640492036335259,
-											"disabled": true,
-											"parameters": {
-												"type": "log",
-												"message": "\"Crowned: \" & Player.playerId"
-											}
 										}
 									],
 									"sid": 595694160670667
@@ -179,16 +177,6 @@
 											"sid": 690527062235514,
 											"parameters": {
 												"frame-number": "FRAME_Default"
-											}
-										},
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 842129414211479,
-											"disabled": true,
-											"parameters": {
-												"type": "log",
-												"message": "\"Default: \" & Player.playerId"
 											}
 										}
 									],
@@ -216,16 +204,6 @@
 									"sid": 806731335664349,
 									"parameters": {
 										"frame-number": "FRAME_Dead"
-									}
-								},
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 819360371435325,
-									"disabled": true,
-									"parameters": {
-										"type": "log",
-										"message": "\"Dead: \" & Player.playerId"
 									}
 								}
 							],

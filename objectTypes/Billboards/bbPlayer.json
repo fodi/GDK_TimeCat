@@ -9,29 +9,22 @@
 			"name": "playerId",
 			"type": "number",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 863125805456258
-		},
-		{
-			"name": "deadEffect_Brightness",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 114890372520238
-		},
-		{
-			"name": "deadEffectGrayscale",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 739350716568227
 		},
 		{
 			"name": "initAnimationSpeed",
 			"type": "number",
 			"desc": "",
-			"show": true,
+			"show": false,
 			"sid": 699780347452330
+		},
+		{
+			"name": "colorName",
+			"type": "string",
+			"desc": "",
+			"show": false,
+			"sid": 149993138924449
 		}
 	],
 	"behaviorTypes": [
@@ -41,16 +34,7 @@
 			"sid": 540803510792621
 		}
 	],
-	"effectTypes": [
-		{
-			"effectId": "grayscale",
-			"name": "Grayscale"
-		},
-		{
-			"effectId": "brightness",
-			"name": "Brightness"
-		}
-	],
+	"effectTypes": [],
 	"animations": {
 		"items": [],
 		"subfolders": [
@@ -116,7 +100,7 @@
 							}
 						],
 						"sid": 734362796941145,
-						"name": "1_Down",
+						"name": "Red_Down",
 						"isLooping": true,
 						"isPingPong": false,
 						"repeatCount": 1,
@@ -183,7 +167,7 @@
 							}
 						],
 						"sid": 452008183218901,
-						"name": "1_Up",
+						"name": "Red_Up",
 						"isLooping": true,
 						"isPingPong": false,
 						"repeatCount": 1,
@@ -250,7 +234,7 @@
 							}
 						],
 						"sid": 279091241121561,
-						"name": "1_Left",
+						"name": "Red_Left",
 						"isLooping": true,
 						"isPingPong": false,
 						"repeatCount": 1,
@@ -365,7 +349,7 @@
 							}
 						],
 						"sid": 588995867100628,
-						"name": "1_Right",
+						"name": "Red_Right",
 						"isLooping": true,
 						"isPingPong": false,
 						"repeatCount": 1,
@@ -418,7 +402,7 @@
 							}
 						],
 						"sid": 600458270855813,
-						"name": "1_Sleeping",
+						"name": "Red_Sleeping",
 						"isLooping": true,
 						"isPingPong": true,
 						"repeatCount": 1,
@@ -443,7 +427,7 @@
 							}
 						],
 						"sid": 175330487305705,
-						"name": "1_Dead",
+						"name": "Red_Dead",
 						"isLooping": false,
 						"isPingPong": false,
 						"repeatCount": 1,
@@ -452,7 +436,7 @@
 					}
 				],
 				"subfolders": [],
-				"name": "1"
+				"name": "Red"
 			},
 			{
 				"items": [
@@ -516,7 +500,7 @@
 							}
 						],
 						"sid": 502560392815259,
-						"name": "2_Down",
+						"name": "Green_Down",
 						"isLooping": true,
 						"isPingPong": false,
 						"repeatCount": 1,
@@ -583,7 +567,7 @@
 							}
 						],
 						"sid": 218841061916469,
-						"name": "2_Up",
+						"name": "Green_Up",
 						"isLooping": true,
 						"isPingPong": false,
 						"repeatCount": 1,
@@ -650,7 +634,7 @@
 							}
 						],
 						"sid": 975999271577656,
-						"name": "2_Left",
+						"name": "Green_Left",
 						"isLooping": true,
 						"isPingPong": false,
 						"repeatCount": 1,
@@ -765,7 +749,7 @@
 							}
 						],
 						"sid": 505228357681762,
-						"name": "2_Right",
+						"name": "Green_Right",
 						"isLooping": true,
 						"isPingPong": false,
 						"repeatCount": 1,
@@ -818,7 +802,7 @@
 							}
 						],
 						"sid": 607267606050536,
-						"name": "2_Sleeping",
+						"name": "Green_Sleeping",
 						"isLooping": true,
 						"isPingPong": true,
 						"repeatCount": 1,
@@ -843,7 +827,7 @@
 							}
 						],
 						"sid": 731109795547003,
-						"name": "2_Dead",
+						"name": "Green_Dead",
 						"isLooping": false,
 						"isPingPong": false,
 						"repeatCount": 1,
@@ -852,7 +836,7 @@
 					}
 				],
 				"subfolders": [],
-				"name": "2"
+				"name": "Green"
 			},
 			{
 				"items": [
@@ -916,7 +900,7 @@
 							}
 						],
 						"sid": 539811116104779,
-						"name": "3_Down",
+						"name": "Yellow_Down",
 						"isLooping": true,
 						"isPingPong": false,
 						"repeatCount": 1,
@@ -983,7 +967,7 @@
 							}
 						],
 						"sid": 402542028539362,
-						"name": "3_Up",
+						"name": "Yellow_Up",
 						"isLooping": true,
 						"isPingPong": false,
 						"repeatCount": 1,
@@ -1050,7 +1034,7 @@
 							}
 						],
 						"sid": 119484063075908,
-						"name": "3_Left",
+						"name": "Yellow_Left",
 						"isLooping": true,
 						"isPingPong": false,
 						"repeatCount": 1,
@@ -1165,7 +1149,7 @@
 							}
 						],
 						"sid": 767797478866542,
-						"name": "3_Right",
+						"name": "Yellow_Right",
 						"isLooping": true,
 						"isPingPong": false,
 						"repeatCount": 1,
@@ -1218,7 +1202,7 @@
 							}
 						],
 						"sid": 264982265363973,
-						"name": "3_Sleeping",
+						"name": "Yellow_Sleeping",
 						"isLooping": true,
 						"isPingPong": true,
 						"repeatCount": 1,
@@ -1243,7 +1227,7 @@
 							}
 						],
 						"sid": 463711993851272,
-						"name": "3_Dead",
+						"name": "Yellow_Dead",
 						"isLooping": false,
 						"isPingPong": false,
 						"repeatCount": 1,
@@ -1252,7 +1236,7 @@
 					}
 				],
 				"subfolders": [],
-				"name": "3"
+				"name": "Yellow"
 			},
 			{
 				"items": [
@@ -1316,7 +1300,7 @@
 							}
 						],
 						"sid": 238558923497483,
-						"name": "4_Down",
+						"name": "Purple_Down",
 						"isLooping": true,
 						"isPingPong": false,
 						"repeatCount": 1,
@@ -1383,7 +1367,7 @@
 							}
 						],
 						"sid": 656591666399096,
-						"name": "4_Up",
+						"name": "Purple_Up",
 						"isLooping": true,
 						"isPingPong": false,
 						"repeatCount": 1,
@@ -1450,7 +1434,7 @@
 							}
 						],
 						"sid": 281653028699590,
-						"name": "4_Left",
+						"name": "Purple_Left",
 						"isLooping": true,
 						"isPingPong": false,
 						"repeatCount": 1,
@@ -1565,7 +1549,7 @@
 							}
 						],
 						"sid": 886489340916684,
-						"name": "4_Right",
+						"name": "Purple_Right",
 						"isLooping": true,
 						"isPingPong": false,
 						"repeatCount": 1,
@@ -1618,7 +1602,7 @@
 							}
 						],
 						"sid": 422837395761183,
-						"name": "4_Sleeping",
+						"name": "Purple_Sleeping",
 						"isLooping": true,
 						"isPingPong": true,
 						"repeatCount": 1,
@@ -1643,7 +1627,7 @@
 							}
 						],
 						"sid": 142067730731991,
-						"name": "4_Dead",
+						"name": "Purple_Dead",
 						"isLooping": false,
 						"isPingPong": false,
 						"repeatCount": 1,
@@ -1652,7 +1636,7 @@
 					}
 				],
 				"subfolders": [],
-				"name": "4"
+				"name": "Purple"
 			}
 		]
 	}

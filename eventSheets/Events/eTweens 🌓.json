@@ -2,304 +2,359 @@
 	"name": "eTweens 🌓",
 	"events": [
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "Global tweens",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "is-playing",
-					"objectClass": "bbPlayer",
-					"sid": 237965250536974,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "TWEEN_Player_Hurt"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-default-color",
-					"objectClass": "bbPlayer",
-					"sid": 738239000620220,
-					"parameters": {
-						"color": "rgbEx(100 + Self.Tween.Value(TWEEN_Player_Hurt), 100 + Self.Tween.Value(TWEEN_Player_Hurt), 100 + Self.Tween.Value(TWEEN_Player_Hurt))"
-					}
-				}
-			],
-			"sid": 788990583894013
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-playing",
-					"objectClass": "bbPlayer",
-					"sid": 169689730947737,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "EFFECT_bbPlayer_Brightness"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-effect-parameter",
-					"objectClass": "bbPlayer",
-					"sid": 165879482944233,
-					"parameters": {
-						"effect": "EFFECT_bbPlayer_Brightness",
-						"parameter-index": "0",
-						"value": "Self.Tween.Value(EFFECT_bbPlayer_Brightness)"
-					}
-				}
-			],
-			"sid": 535391794478980,
-			"disabled": true
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-playing",
-					"objectClass": "bbPlayer",
-					"sid": 933826614190174,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "EFFECT_bbPlayer_Grayscale"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-effect-parameter",
-					"objectClass": "bbPlayer",
-					"sid": 484322886705123,
-					"parameters": {
-						"effect": "EFFECT_bbPlayer_Grayscale",
-						"parameter-index": "0",
-						"value": "Self.Tween.Value(EFFECT_bbPlayer_Grayscale)"
-					}
-				}
-			],
-			"sid": 701792086990254,
-			"disabled": true
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-tweens-finished",
-					"objectClass": "3dCannon",
-					"sid": 970391860457903,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "TWEEN_3dCannon_ZElevation_Appear"
-					}
+					"eventType": "comment",
+					"text": "Fade in game over layer"
 				},
 				{
-					"id": "pick-parent",
-					"objectClass": "3dCannon",
-					"sid": 638089345007412,
-					"parameters": {
-						"parent": "Cannon",
-						"which": "own"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "GlobalTimer",
+							"sid": 745666764132865,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TWEEN_Layer_UI_GameOver_FadeIn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-opacity",
+							"objectClass": "System",
+							"sid": 600770367632009,
+							"parameters": {
+								"layer": "LAYER_UI_GameOver",
+								"opacity": "GlobalTimer.Tween.Value(TWEEN_Layer_UI_GameOver_FadeIn)"
+							}
+						}
+					],
+					"sid": 596630122430074
 				}
 			],
-			"actions": [
-				{
-					"customAction": "onSpawnTweenFinished",
-					"objectClass": "Cannon",
-					"sid": 635937490164971
-				}
-			],
-			"sid": 417283430561768
+			"sid": 406876761349037
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player tweens",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "on-tweens-finished",
-					"objectClass": "Cannon",
-					"sid": 442113074731417,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "TWEEN_Cannon_Opacity_Appear"
-					}
+					"eventType": "comment",
+					"text": "Player hurt color tween (above max trick)"
 				},
 				{
-					"id": "pick-children",
-					"objectClass": "Cannon",
-					"sid": 731177526938175,
-					"parameters": {
-						"child": "3dCannon",
-						"which": "own"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "bbPlayer",
+							"sid": 864578506490053,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TWEEN_Player_Hurt"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "bbPlayer",
+							"sid": 113152748375524,
+							"parameters": {
+								"color": "rgbEx(100 + Self.Tween.Value(TWEEN_Player_Hurt), 100 + Self.Tween.Value(TWEEN_Player_Hurt), 100 + Self.Tween.Value(TWEEN_Player_Hurt))"
+							}
+						}
+					],
+					"sid": 495173266209027
+				},
+				{
+					"eventType": "comment",
+					"text": "Player dead color tween (above max trick)"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "bbPlayer",
+							"sid": 251592869136348,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TWEEN_bbPlayer_Dead_Color"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-color",
+							"objectClass": "bbPlayer",
+							"sid": 136949133170389,
+							"parameters": {
+								"color": "rgbEx(Self.Tween.Value(TWEEN_bbPlayer_Dead_Color), Self.Tween.Value(TWEEN_bbPlayer_Dead_Color), Self.Tween.Value(TWEEN_bbPlayer_Dead_Color))"
+							}
+						}
+					],
+					"sid": 938397425737591
 				}
 			],
-			"actions": [
-				{
-					"customAction": "startMoving",
-					"objectClass": "Cannon",
-					"sid": 437806578770828
-				},
-				{
-					"customAction": "selectTarget",
-					"objectClass": "Cannon",
-					"sid": 311017688225980
-				},
-				{
-					"id": "tween-one-property",
-					"objectClass": "3dCannon",
-					"sid": 586465030844448,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "TWEEN_3dCannon_ZElevation_Appear",
-						"property": "offsetZElevation",
-						"end-value": "C_Cannon_ZElevation_Moving",
-						"time": "Cannon.R_Shoot_Interval_Min",
-						"ease": "easeoutsine",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				}
-			],
-			"sid": 987676784152033
+			"sid": 841733471239456
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "Cannon tweens",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "is-playing",
-					"objectClass": "3dCannon",
-					"sid": 532084453473807,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "TWEEN_3dCannon_ZElevation_Appear"
-					}
+					"eventType": "comment",
+					"text": "After 2D cannons faded in on the water, start their movement, target selection and emerge the 3D cannon from below the water"
 				},
 				{
-					"id": "compare-z-elevation",
-					"objectClass": "3dCannon",
-					"sid": 238643315308862,
-					"parameters": {
-						"which": "z-elevation",
-						"comparison": 5,
-						"z-elevation": "Basemap.ZElevation"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "Cannon",
+							"sid": 467569179963197,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TWEEN_Cannon_Opacity_Appear"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "Cannon",
+							"sid": 601945693193683,
+							"parameters": {
+								"child": "3dCannon",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "startMoving",
+							"objectClass": "Cannon",
+							"sid": 553792068186702
+						},
+						{
+							"customAction": "selectTarget",
+							"objectClass": "Cannon",
+							"sid": 998136026561228
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "3dCannon",
+							"sid": 281495943179562,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TWEEN_3dCannon_ZElevation_Appear",
+								"property": "offsetZElevation",
+								"end-value": "C_Cannon_ZElevation_Moving",
+								"time": "Cannon.R_Shoot_Interval_Min",
+								"ease": "easeoutsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 152095980902817
 				},
 				{
-					"id": "pick-parent",
-					"objectClass": "3dCannon",
-					"sid": 381357262441893,
-					"parameters": {
-						"parent": "Cannon",
-						"which": "own"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-animation",
-					"objectClass": "Cannon",
-					"sid": 683953884341667,
-					"parameters": {
-						"animation": "ANIM_Shadow",
-						"from": "beginning"
-					}
+					"eventType": "comment",
+					"text": "After a 3D cannon finished emerging (Z tween), start shoot timer"
 				},
 				{
-					"id": "move-to-layer",
-					"objectClass": "Cannon",
-					"sid": 267962812664877,
-					"parameters": {
-						"layer": "LAYER_Shadows"
-					}
-				}
-			],
-			"sid": 370174305111993
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-tweens-finished",
-					"objectClass": "3dCannon",
-					"sid": 586639887661776,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "TWEEN_3dCannon_ZElevation_Disappear"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "3dCannon",
+							"sid": 136225160098380,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TWEEN_3dCannon_ZElevation_Appear"
+							}
+						},
+						{
+							"id": "pick-parent",
+							"objectClass": "3dCannon",
+							"sid": 445862131168707,
+							"parameters": {
+								"parent": "Cannon",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "startAttackTimer",
+							"objectClass": "Cannon",
+							"sid": 922436118445811
+						}
+					],
+					"sid": 991240528557891
 				},
 				{
-					"id": "pick-parent",
-					"objectClass": "3dCannon",
-					"sid": 867652756620055,
-					"parameters": {
-						"parent": "Cannon",
-						"which": "own"
-					}
-				}
-			],
-			"actions": [
+					"eventType": "comment",
+					"text": "After 3D cannons are above water, turn 2D cannon into shadow"
+				},
 				{
-					"id": "destroy",
-					"objectClass": "Cannon",
-					"sid": 379923198049340
-				}
-			],
-			"sid": 375666354103985
-		},
-		{
-			"eventType": "block",
-			"conditions": [
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "3dCannon",
+							"sid": 531855691137226,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TWEEN_3dCannon_ZElevation_Appear"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "3dCannon",
+							"sid": 707602650129394,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 5,
+								"z-elevation": "Basemap.ZElevation"
+							}
+						},
+						{
+							"id": "pick-parent",
+							"objectClass": "3dCannon",
+							"sid": 225474348061154,
+							"parameters": {
+								"parent": "Cannon",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Cannon",
+							"sid": 112072906703558,
+							"parameters": {
+								"animation": "ANIM_Shadow",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "Cannon",
+							"sid": 541630320933994,
+							"parameters": {
+								"layer": "LAYER_Shadows"
+							}
+						}
+					],
+					"sid": 949336893668073
+				},
 				{
-					"id": "is-playing",
-					"objectClass": "bbPlayer",
-					"sid": 336300404563177,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "TWEEN_bbPlayer_Dead_Color"
-					}
-				}
-			],
-			"actions": [
+					"eventType": "comment",
+					"text": "After 3D cannons start sinking, hide shadow"
+				},
 				{
-					"id": "set-default-color",
-					"objectClass": "bbPlayer",
-					"sid": 993134753262168,
-					"parameters": {
-						"color": "rgbEx(Self.Tween.Value(TWEEN_bbPlayer_Dead_Color), Self.Tween.Value(TWEEN_bbPlayer_Dead_Color), Self.Tween.Value(TWEEN_bbPlayer_Dead_Color))"
-					}
-				}
-			],
-			"sid": 107354644956024
-		},
-		{
-			"eventType": "block",
-			"conditions": [
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "3dCannon",
+							"sid": 459895025139964,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TWEEN_3dCannon_ZElevation_Disappear"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "3dCannon",
+							"sid": 280221411561528,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 3,
+								"z-elevation": "Basemap.ZElevation"
+							}
+						},
+						{
+							"id": "pick-parent",
+							"objectClass": "3dCannon",
+							"sid": 502618276459785,
+							"parameters": {
+								"parent": "Cannon",
+								"which": "own"
+							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "Cannon",
+							"sid": 840566744666774
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Cannon",
+							"sid": 448070469156689,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 349631240182007
+				},
 				{
-					"id": "is-playing",
-					"objectClass": "GlobalTimer",
-					"sid": 401639726760559,
-					"behaviorType": "Tween",
-					"parameters": {
-						"tags": "TWEEN_Layer_UI_GameOver_FadeIn"
-					}
-				}
-			],
-			"actions": [
+					"eventType": "comment",
+					"text": "After 3D cannons finished disappearing, destroy 2D cannon"
+				},
 				{
-					"id": "set-layer-opacity",
-					"objectClass": "System",
-					"sid": 797294862542946,
-					"parameters": {
-						"layer": "LAYER_UI_GameOver",
-						"opacity": "GlobalTimer.Tween.Value(TWEEN_Layer_UI_GameOver_FadeIn)"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "3dCannon",
+							"sid": 461804336377022,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "TWEEN_3dCannon_ZElevation_Disappear"
+							}
+						},
+						{
+							"id": "pick-parent",
+							"objectClass": "3dCannon",
+							"sid": 904659243058393,
+							"parameters": {
+								"parent": "Cannon",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Cannon",
+							"sid": 735365947025773
+						}
+					],
+					"sid": 110467116478846
 				}
 			],
-			"sid": 927350348893823
+			"sid": 435979228908834
 		}
 	],
 	"sid": 858674299755667

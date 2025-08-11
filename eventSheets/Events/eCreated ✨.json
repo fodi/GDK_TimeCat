@@ -2,6 +2,10 @@
 	"name": "eCreated ✨",
 	"events": [
 		{
+			"eventType": "comment",
+			"text": "Move objects to their designated layers"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -81,9 +85,42 @@
 					"parameters": {
 						"layer": "LAYER_Billboards"
 					}
+				},
+				{
+					"id": "set-back-face-culling",
+					"objectClass": "f3DObjects",
+					"sid": 719621109639857,
+					"parameters": {
+						"back-face-culling": true
+					}
 				}
 			],
 			"sid": 585306370954250
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Shield",
+					"sid": 453503929323192
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-layer",
+					"objectClass": "Shield",
+					"sid": 142245820827616,
+					"parameters": {
+						"layer": "LAYER_Main"
+					}
+				}
+			],
+			"sid": 867462173000181
+		},
+		{
+			"eventType": "comment",
+			"text": "Initialize text objects (localize, update, etc)"
 		},
 		{
 			"eventType": "block",
@@ -102,6 +139,10 @@
 				}
 			],
 			"sid": 989455830182692
+		},
+		{
+			"eventType": "comment",
+			"text": "Generate QR code"
 		},
 		{
 			"eventType": "block",
@@ -123,27 +164,6 @@
 				}
 			],
 			"sid": 578342114602252
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-created",
-					"objectClass": "Shield",
-					"sid": 700413918508985
-				}
-			],
-			"actions": [
-				{
-					"id": "move-to-layer",
-					"objectClass": "Shield",
-					"sid": 808815629835394,
-					"parameters": {
-						"layer": "LAYER_Main"
-					}
-				}
-			],
-			"sid": 772241769387817
 		}
 	],
 	"sid": 397755584574739
