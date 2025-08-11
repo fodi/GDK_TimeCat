@@ -191,6 +191,20 @@
 			"desc": "",
 			"show": false,
 			"sid": 363664244636877
+		},
+		{
+			"name": "colorInteger",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 850443865601441
+		},
+		{
+			"name": "colorHex",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 145039766955922
 		}
 	],
 	"behaviorTypes": [

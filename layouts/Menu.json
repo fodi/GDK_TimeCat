@@ -762,20 +762,7 @@
 		"subfolders": []
 	},
 	"sid": 423107404740592,
-	"nonworld-instances": [
-		{
-			"type": "arrAvailablePlayerColors",
-			"properties": {
-				"width": 0,
-				"height": 1,
-				"depth": 1
-			},
-			"uid": 8,
-			"sid": 649831677524567,
-			"tags": "",
-			"instanceVariables": {}
-		}
-	],
+	"nonworld-instances": [],
 	"effectTypes": [],
 	"width": 640,
 	"height": 360,

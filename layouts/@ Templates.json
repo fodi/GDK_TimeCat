@@ -551,7 +551,7 @@
 						"health": 1,
 						"tileUID1": -1,
 						"tileUID2": -1,
-						"playerId": 0,
+						"playerId": -1,
 						"carryingItemUID": -1,
 						"pairsFound": 0,
 						"isDead": 0,
@@ -561,6 +561,8 @@
 						"IN_Aim": 0,
 						"IN_Aim_Angle": 0,
 						"colorName": "",
+						"colorInteger": 0,
+						"colorHex": "",
 						"R_Blurb_ZElevation_Normal": 36,
 						"R_Blurb_ZElevation_Low": 12,
 						"R_Blurb_ZElevation_Tween": 20

@@ -667,6 +667,16 @@
 								"comparison": 0,
 								"value": "NOTHING"
 							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player",
+							"sid": 494931887470715,
+							"parameters": {
+								"instance-variable": "playerId",
+								"comparison": 0,
+								"value": "playerId"
+							}
 						}
 					],
 					"actions": [
@@ -711,11 +721,11 @@
 						{
 							"id": "set-effect-parameter",
 							"objectClass": "fTile",
-							"sid": 139265188338252,
+							"sid": 525620567106968,
 							"parameters": {
 								"effect": "EFFECT_Tile_Outline",
 								"parameter-index": "0",
-								"value": "int(trim(tokenat(C_CSV_Colors_Int, playerId, \",\")))"
+								"value": "Player.colorInteger"
 							}
 						}
 					],

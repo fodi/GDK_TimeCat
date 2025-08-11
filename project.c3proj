@@ -276,8 +276,7 @@
 				"items": [
 					"jOverrides",
 					"jRules",
-					"arrTilePositions",
-					"arrAvailablePlayerColors"
+					"arrTilePositions"
 				],
 				"subfolders": [],
 				"name": "Data"
@@ -1019,7 +1018,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "59",
+		"version": "60c",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

@@ -231,11 +231,11 @@
 							"customAction": "spawnBlurb",
 							"objectClass": "Player",
 							"customActionObjectClass": "fBlurbSpawners",
-							"sid": 202995069126426,
+							"sid": 207825884630162,
 							"parameters": [
 								"\"zZz\"",
 								"Self.R_Blurb_ZElevation_Low",
-								"int(trim(tokenat(C_CSV_Colors_Int, 0, \",\")))",
+								"Player.colorInteger",
 								"1.7"
 							]
 						},

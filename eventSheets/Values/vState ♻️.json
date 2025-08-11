@@ -37,7 +37,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "State"
+			"text": "Level state"
 		},
 		{
 			"eventType": "variable",
@@ -158,6 +158,16 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 232588228690011
+		},
+		{
+			"eventType": "variable",
+			"name": "nextColorIndex",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "Skip first color (white)",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 169166098497280
 		}
 	],
 	"sid": 756444675677784

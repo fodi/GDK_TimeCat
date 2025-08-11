@@ -166,7 +166,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"role": "DevInfo",
-						"paramNumber": 0
+						"paramNumber": 0,
+						"paramString": ""
 					},
 					"behaviors": {
 						"Anchor": {
@@ -300,7 +301,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"role": "PlayerHealth",
-						"paramNumber": 1
+						"paramNumber": 1,
+						"paramString": "Red"
 					},
 					"behaviors": {
 						"Anchor": {
@@ -360,7 +362,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"role": "PlayerHealth",
-						"paramNumber": 2
+						"paramNumber": 2,
+						"paramString": "Green"
 					},
 					"behaviors": {
 						"Anchor": {
@@ -420,7 +423,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"role": "PlayerHealth",
-						"paramNumber": 3
+						"paramNumber": 3,
+						"paramString": "Yellow"
 					},
 					"behaviors": {
 						"Anchor": {
@@ -480,7 +484,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"role": "PlayerHealth",
-						"paramNumber": 4
+						"paramNumber": 4,
+						"paramString": "Purple"
 					},
 					"behaviors": {
 						"Anchor": {
@@ -728,7 +733,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"role": "Title",
-						"paramNumber": 0
+						"paramNumber": 0,
+						"paramString": ""
 					},
 					"behaviors": {
 						"Anchor": {
@@ -1006,7 +1012,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"role": "GameOver_Players",
-						"paramNumber": 0
+						"paramNumber": 0,
+						"paramString": ""
 					},
 					"behaviors": {
 						"Anchor": {
@@ -1094,7 +1101,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"role": "",
-						"paramNumber": 0
+						"paramNumber": 0,
+						"paramString": ""
 					},
 					"behaviors": {
 						"Anchor": {
@@ -1182,7 +1190,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"role": "GameOver_Pairs",
-						"paramNumber": 0
+						"paramNumber": 0,
+						"paramString": ""
 					},
 					"behaviors": {
 						"Anchor": {
@@ -1270,7 +1279,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"role": "GameOver_Time",
-						"paramNumber": 0
+						"paramNumber": 0,
+						"paramString": ""
 					},
 					"behaviors": {
 						"Anchor": {

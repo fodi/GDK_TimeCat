@@ -48,282 +48,344 @@
 										"comparison": 0,
 										"value": "NO"
 									}
-								},
-								{
-									"id": "compare-size",
-									"objectClass": "arrAvailablePlayerColors",
-									"sid": 400413236786447,
-									"parameters": {
-										"axis": "x",
-										"comparison": 4,
-										"value": "0"
-									}
 								}
 							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 933293394355053,
-									"parameters": {
-										"variable": "playerCount",
-										"value": "1"
-									}
-								},
-								{
-									"callFunction": "playSoundAt",
-									"sid": 542440971123499,
-									"parameters": [
-										"Player.X",
-										"Player.Y",
-										"SFX_Player_Spawning",
-										"1",
-										"NO"
-									]
-								},
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 531431080367747,
-									"parameters": {
-										"object-to-create": "Player",
-										"layer": "LAYER_Shadows",
-										"x": "midX",
-										"y": "midY",
-										"create-hierarchy": true,
-										"template-name": "\"\""
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Player",
-									"sid": 262098553697174,
-									"parameters": {
-										"instance-variable": "playerId",
-										"value": "playerId"
-									}
-								},
-								{
-									"type": "comment",
-									"text": "Apply rules"
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Player",
-									"sid": 921658259330035,
-									"parameters": {
-										"instance-variable": "R_Health_Start",
-										"value": "Functions.Rules_getNumber(PARAM_Player_Health)"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Player",
-									"sid": 100231028186690,
-									"parameters": {
-										"instance-variable": "health",
-										"value": "Self.R_Health_Start"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Player",
-									"sid": 264253102479519,
-									"parameters": {
-										"instance-variable": "R_Health_BonusOnPair",
-										"value": "Functions.Rules_getNumber(PARAM_Player_Heal_Pair)"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Player",
-									"sid": 467471551709186,
-									"parameters": {
-										"instance-variable": "R_Health_BonusOnHeal",
-										"value": "Functions.Rules_getNumber(PARAM_Player_Heal_Item)"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Player",
-									"sid": 490795877766781,
-									"parameters": {
-										"instance-variable": "R_MovementSpeed_Normal",
-										"value": "Functions.Rules_getNumber(PARAM_Player_MovementSpeed)"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Player",
-									"sid": 152717991793070,
-									"parameters": {
-										"instance-variable": "R_MovementSpeed_Slow",
-										"value": "Functions.Rules_getNumber(PARAM_Player_MovementSpeed_Slow)"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Player",
-									"sid": 640528475662065,
-									"parameters": {
-										"instance-variable": "R_Item_MovementSpeed",
-										"value": "Functions.Rules_getNumber(PARAM_Item_Speed)"
-									}
-								},
-								{
-									"id": "set-max-speed",
-									"objectClass": "Player",
-									"sid": 502341442205300,
-									"behaviorType": "8Direction",
-									"parameters": {
-										"max-speed": "Self.R_MovementSpeed_Normal"
-									}
-								},
-								{
-									"type": "comment",
-									"text": "Initialize "
-								},
-								{
-									"id": "set-solid-collision-filter",
-									"objectClass": "Player",
-									"sid": 270102040153958,
-									"parameters": {
-										"mode": "exclusive",
-										"tags": "SOLID_Item"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Player",
-									"sid": 422682848770302,
-									"parameters": {
-										"instance-variable": "colorName",
-										"value": "trim(arrAvailablePlayerColors.Front)"
-									}
-								},
-								{
-									"id": "pop",
-									"objectClass": "arrAvailablePlayerColors",
-									"sid": 679121821406775,
-									"parameters": {
-										"where": "front",
-										"axis": "x"
-									}
-								}
-							],
+							"actions": [],
 							"sid": 460520553576043,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "pick-children",
-											"objectClass": "Player",
-											"sid": 718274796982839,
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 535689573282806,
 											"parameters": {
-												"child": "bbPlayer",
-												"which": "own"
+												"variable": "nextColorIndex",
+												"comparison": 3,
+												"value": "tokencount(C_CSV_Colors_Name, COMMA) - 1"
 											}
 										}
 									],
 									"actions": [
 										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 481692336664557,
+											"parameters": {
+												"variable": "playerCount",
+												"value": "1"
+											}
+										},
+										{
+											"callFunction": "playSoundAt",
+											"sid": 404771086118215,
+											"parameters": [
+												"Player.X",
+												"Player.Y",
+												"SFX_Player_Spawning",
+												"1",
+												"NO"
+											]
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 905239627841197,
+											"parameters": {
+												"object-to-create": "Player",
+												"layer": "LAYER_Shadows",
+												"x": "midX",
+												"y": "midY",
+												"create-hierarchy": true,
+												"template-name": "\"\""
+											}
+										},
+										{
 											"id": "set-instvar-value",
-											"objectClass": "bbPlayer",
-											"sid": 609745530929794,
+											"objectClass": "Player",
+											"sid": 742468032327390,
 											"parameters": {
 												"instance-variable": "playerId",
-												"value": "Player.playerId"
+												"value": "playerId"
+											}
+										},
+										{
+											"type": "comment",
+											"text": "Apply rules"
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 429499742881473,
+											"parameters": {
+												"instance-variable": "R_Health_Start",
+												"value": "Functions.Rules_getNumber(PARAM_Player_Health)"
 											}
 										},
 										{
 											"id": "set-instvar-value",
-											"objectClass": "bbPlayer",
-											"sid": 588026345869491,
+											"objectClass": "Player",
+											"sid": 179198357469105,
+											"parameters": {
+												"instance-variable": "health",
+												"value": "Self.R_Health_Start"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 769739054575046,
+											"parameters": {
+												"instance-variable": "R_Health_BonusOnPair",
+												"value": "Functions.Rules_getNumber(PARAM_Player_Heal_Pair)"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 602927814130087,
+											"parameters": {
+												"instance-variable": "R_Health_BonusOnHeal",
+												"value": "Functions.Rules_getNumber(PARAM_Player_Heal_Item)"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 752066722167865,
+											"parameters": {
+												"instance-variable": "R_MovementSpeed_Normal",
+												"value": "Functions.Rules_getNumber(PARAM_Player_MovementSpeed)"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 192191049211638,
+											"parameters": {
+												"instance-variable": "R_MovementSpeed_Slow",
+												"value": "Functions.Rules_getNumber(PARAM_Player_MovementSpeed_Slow)"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 517105553104028,
+											"parameters": {
+												"instance-variable": "R_Item_MovementSpeed",
+												"value": "Functions.Rules_getNumber(PARAM_Item_Speed)"
+											}
+										},
+										{
+											"id": "set-max-speed",
+											"objectClass": "Player",
+											"sid": 710177924794002,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"max-speed": "Self.R_MovementSpeed_Normal"
+											}
+										},
+										{
+											"type": "comment",
+											"text": "Initialize "
+										},
+										{
+											"id": "set-solid-collision-filter",
+											"objectClass": "Player",
+											"sid": 123727416802088,
+											"parameters": {
+												"mode": "exclusive",
+												"tags": "SOLID_Item"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 410192372357229,
 											"parameters": {
 												"instance-variable": "colorName",
-												"value": "Player.colorName"
+												"value": "trim(tokenat(C_CSV_Colors_Name, nextColorIndex, COMMA))"
 											}
 										},
 										{
 											"id": "set-instvar-value",
-											"objectClass": "bbPlayer",
-											"sid": 660404312847286,
+											"objectClass": "Player",
+											"sid": 856726801465719,
 											"parameters": {
-												"instance-variable": "initAnimationSpeed",
-												"value": "Self.AnimationSpeed"
+												"instance-variable": "colorInteger",
+												"value": "trim(tokenat(C_CSV_Colors_Int, nextColorIndex, COMMA))"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 495680318563751,
+											"parameters": {
+												"instance-variable": "colorHex",
+												"value": "trim(tokenat(C_CSV_Colors_Hex, nextColorIndex, COMMA))"
+											}
+										},
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 509103970132566,
+											"parameters": {
+												"variable": "nextColorIndex",
+												"value": "1"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 412079765574706,
+											"parameters": {
+												"type": "log",
+												"message": "StringSub(\"Player {0} joins as {1}!\", Player.playerId, Player.colorName)"
 											}
 										}
 									],
-									"sid": 273664776016531
+									"sid": 295177354341926,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "Player",
+													"sid": 258881883658037,
+													"parameters": {
+														"child": "bbPlayer",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "bbPlayer",
+													"sid": 672493833958026,
+													"parameters": {
+														"instance-variable": "playerId",
+														"value": "Player.playerId"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "bbPlayer",
+													"sid": 172823731537543,
+													"parameters": {
+														"instance-variable": "colorName",
+														"value": "Player.colorName"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "bbPlayer",
+													"sid": 958735067434260,
+													"parameters": {
+														"instance-variable": "initAnimationSpeed",
+														"value": "Self.AnimationSpeed"
+													}
+												}
+											],
+											"sid": 627899176498312
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "Player",
+													"sid": 226517911813355,
+													"parameters": {
+														"child": "bbAlert",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "bbAlert",
+													"sid": 746571213471885,
+													"parameters": {
+														"animation": "str(Player.playerId)",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 598262466519567
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "Player",
+													"sid": 105173960631351,
+													"parameters": {
+														"child": "PlayerAim",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "PlayerAim",
+													"sid": 891932653183697,
+													"parameters": {
+														"instance-variable": "initWidth",
+														"value": "Self.Width"
+													}
+												},
+												{
+													"id": "set-width",
+													"objectClass": "PlayerAim",
+													"sid": 428487674265166,
+													"parameters": {
+														"width": "0"
+													}
+												},
+												{
+													"id": "move-to-layer",
+													"objectClass": "PlayerAim",
+													"sid": 513089416390905,
+													"parameters": {
+														"layer": "LAYER_Lights"
+													}
+												}
+											],
+											"sid": 577812282699804
+										}
+									]
 								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "pick-children",
-											"objectClass": "Player",
-											"sid": 194808628058926,
-											"parameters": {
-												"child": "bbAlert",
-												"which": "own"
-											}
+											"id": "else",
+											"objectClass": "System",
+											"sid": 882206839672779
 										}
 									],
 									"actions": [
 										{
-											"id": "set-animation",
-											"objectClass": "bbAlert",
-											"sid": 626602439471769,
-											"parameters": {
-												"animation": "str(Player.playerId)",
-												"from": "beginning"
-											}
-										}
-									],
-									"sid": 394852947208366
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-children",
-											"objectClass": "Player",
-											"sid": 789679984872578,
-											"parameters": {
-												"child": "PlayerAim",
-												"which": "own"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-instvar-value",
-											"objectClass": "PlayerAim",
-											"sid": 964245335796635,
-											"parameters": {
-												"instance-variable": "initWidth",
-												"value": "Self.Width"
-											}
+											"type": "comment",
+											"text": "todo_nth audio/visual feedback"
 										},
 										{
-											"id": "set-width",
-											"objectClass": "PlayerAim",
-											"sid": 187626896454205,
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 826191696534322,
 											"parameters": {
-												"width": "0"
-											}
-										},
-										{
-											"id": "move-to-layer",
-											"objectClass": "PlayerAim",
-											"sid": 519729281310809,
-											"parameters": {
-												"layer": "LAYER_Lights"
+												"type": "log",
+												"message": "StringSub(\"Player {0} can't join, all colors are taken.\", playerId)"
 											}
 										}
 									],
-									"sid": 264015851247583
+									"sid": 548360170257583
 								}
 							]
 						}
@@ -1053,10 +1115,21 @@
 											"id": "compare-instance-variable",
 											"objectClass": "UI_TextSF",
 											"sid": 948589958176988,
+											"disabled": true,
 											"parameters": {
 												"instance-variable": "paramNumber",
 												"comparison": 0,
 												"value": "Player.playerId"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "UI_TextSF",
+											"sid": 627949463685805,
+											"parameters": {
+												"instance-variable": "paramString",
+												"comparison": 0,
+												"value": "Player.colorName"
 											}
 										}
 									],
@@ -1064,9 +1137,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "UI_TextSF",
-											"sid": 875403342173894,
+											"sid": 723757273578552,
 											"parameters": {
-												"text": "\"[color=#\" & trim(tokenat(C_CSV_Colors_Hex, Player.playerId, \",\")) & \"][scale=0.4]TIME[/scale]\" & newline & int(Player.health)"
+												"text": "\"[color=#\" & Player.colorHex & \"][scale=0.4]TIME[/scale]\" & newline & int(Player.health)"
 											}
 										}
 									],
@@ -1952,11 +2025,11 @@
 															"customAction": "spawnBlurb",
 															"objectClass": "Player",
 															"customActionObjectClass": "fBlurbSpawners",
-															"sid": 141643181661356,
+															"sid": 158394135905306,
 															"parameters": [
 																"\"+\" & roundToDp(amount, 1) & \" sec\"",
 																"Self.R_Blurb_ZElevation_Normal",
-																"rgbEx(0, 100, 0)",
+																"Player.colorInteger",
 																"0.8"
 															]
 														}
@@ -2107,11 +2180,12 @@
 															"customAction": "spawnBlurb",
 															"objectClass": "Player",
 															"customActionObjectClass": "fBlurbSpawners",
-															"sid": 938030404420582,
+															"sid": 866508907317701,
+															"breakpoint": true,
 															"parameters": [
 																"str(roundToDp(amount, 1)) & \" sec\"",
 																"Self.R_Blurb_ZElevation_Normal",
-																"rgbEx(100, 0, 0)",
+																"Player.colorInteger",
 																"0.8"
 															]
 														}

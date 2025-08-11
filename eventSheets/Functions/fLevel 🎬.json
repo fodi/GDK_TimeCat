@@ -113,29 +113,6 @@
 						},
 						{
 							"type": "comment",
-							"text": "Reset available player colours"
-						},
-						{
-							"id": "split-string",
-							"objectClass": "arrAvailablePlayerColors",
-							"sid": 300816214904284,
-							"parameters": {
-								"string": "C_CSV_Colors_Name",
-								"separator": "\",\"",
-								"type": "string"
-							}
-						},
-						{
-							"id": "pop",
-							"objectClass": "arrAvailablePlayerColors",
-							"sid": 597543886577805,
-							"parameters": {
-								"where": "front",
-								"axis": "x"
-							}
-						},
-						{
-							"type": "comment",
 							"text": "Dynamically spawn things"
 						},
 						{
@@ -394,19 +371,19 @@
 								{
 									"id": "add-to-eventvar",
 									"objectClass": "System",
-									"sid": 100384028333803,
+									"sid": 452899521331076,
 									"parameters": {
 										"variable": "listPlayers",
-										"value": "\"[color=#\" & trim(tokenat(C_CSV_Colors_Hex, Player.playerId, \",\")) & \"]\" & trim(tokenat(C_CSV_Colors_Name, Player.playerId, \",\")) & \" TimeCat:[/color] \" & newline"
+										"value": "\"[color=#\" & Player.colorHex & \"]\" & Player.colorName & \" TimeCat:[/color] \" & newline"
 									}
 								},
 								{
 									"id": "add-to-eventvar",
 									"objectClass": "System",
-									"sid": 687474592801202,
+									"sid": 627142691664534,
 									"parameters": {
 										"variable": "listPairs",
-										"value": "\"[color=#\" & trim(tokenat(C_CSV_Colors_Hex, Player.playerId, \",\")) & \"]\" & zeropad(Player.pairsFound, len(str(R_Level_Rows * R_Level_Columns))) & \"[/color] \" & newline\n"
+										"value": "\"[color=#\" & Player.colorHex & \"]\" & zeropad(Player.pairsFound, len(str(R_Level_Rows * R_Level_Columns))) & \"[/color] \" & newline\n"
 									}
 								}
 							],

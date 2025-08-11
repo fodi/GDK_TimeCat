@@ -65,7 +65,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"role": "",
-						"paramNumber": 0
+						"paramNumber": 0,
+						"paramString": ""
 					},
 					"behaviors": {
 						"Anchor": {
@@ -267,7 +268,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"role": "",
-						"paramNumber": 0
+						"paramNumber": 0,
+						"paramString": ""
 					},
 					"behaviors": {
 						"Anchor": {
@@ -469,7 +471,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"role": "",
-						"paramNumber": 0
+						"paramNumber": 0,
+						"paramString": ""
 					},
 					"behaviors": {
 						"Anchor": {
@@ -614,7 +617,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"role": "",
-						"paramNumber": 0
+						"paramNumber": 0,
+						"paramString": ""
 					},
 					"behaviors": {
 						"Anchor": {
@@ -816,7 +820,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"role": "",
-						"paramNumber": 0
+						"paramNumber": 0,
+						"paramString": ""
 					},
 					"behaviors": {
 						"Anchor": {
@@ -904,7 +909,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"role": "",
-						"paramNumber": 0
+						"paramNumber": 0,
+						"paramString": ""
 					},
 					"behaviors": {
 						"Anchor": {
