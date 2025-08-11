@@ -905,7 +905,7 @@
 							"parameters": {
 								"duration": "0.1",
 								"type": "regular",
-								"tag": "TIMER_Cannon_Checkup"
+								"tag": "TIMER_Cannon_Cleanup"
 							}
 						}
 					],
@@ -1323,6 +1323,13 @@
 					"initialValue": "0",
 					"comment": "",
 					"sid": 139184670931786
+				},
+				{
+					"name": "knockbackAmount",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 832088146355022
 				}
 			],
 			"eventType": "custom-ace-block",
@@ -1351,17 +1358,13 @@
 					],
 					"actions": [
 						{
-							"type": "comment",
-							"text": "todo_mn"
-						},
-						{
 							"customAction": "changeHealth",
 							"objectClass": "Cannon",
-							"sid": 903873063038961,
+							"sid": 451366416736974,
 							"parameters": [
 								"-damageAmount",
 								"knockbackAngle",
-								"100"
+								"knockbackAmount"
 							]
 						},
 						{
@@ -1438,7 +1441,7 @@
 							"sid": 477906759339590,
 							"behaviorType": "Timer",
 							"parameters": {
-								"tag": "TIMER_Cannon_Checkup"
+								"tag": "TIMER_Cannon_Cleanup"
 							}
 						},
 						{

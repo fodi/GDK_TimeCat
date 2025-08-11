@@ -74,6 +74,31 @@
 						}
 					],
 					"sid": 504055905074091
+				},
+				{
+					"eventType": "comment",
+					"text": "End level (after a delay)"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "GlobalTimer",
+							"sid": 646015654965377,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "TIMER_Level_End"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "endLevel",
+							"sid": 519038943816453
+						}
+					],
+					"sid": 185054819413734
 				}
 			],
 			"sid": 981455865099070
@@ -364,7 +389,7 @@
 							"sid": 356276600348961,
 							"behaviorType": "Timer",
 							"parameters": {
-								"tag": "TIMER_Cannon_Checkup"
+								"tag": "TIMER_Cannon_Cleanup"
 							}
 						},
 						{
@@ -408,7 +433,7 @@
 							"sid": 886815073860345,
 							"behaviorType": "Timer",
 							"parameters": {
-								"tag": "TIMER_Item_Checkup"
+								"tag": "TIMER_Item_Cleanup"
 							}
 						},
 						{
@@ -422,7 +447,7 @@
 					],
 					"actions": [
 						{
-							"customAction": "checkup",
+							"customAction": "cleanup",
 							"objectClass": "Item",
 							"sid": 708249446560765
 						}
@@ -524,7 +549,7 @@
 							"sid": 868957872158832,
 							"behaviorType": "Timer",
 							"parameters": {
-								"tag": "TIMER_Projectile_Checkup"
+								"tag": "TIMER_Projectile_Cleanup"
 							}
 						},
 						{
@@ -538,7 +563,7 @@
 					],
 					"actions": [
 						{
-							"customAction": "checkup",
+							"customAction": "cleanup",
 							"objectClass": "Projectile",
 							"sid": 916433753437917
 						}

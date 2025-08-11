@@ -579,10 +579,11 @@
 						{
 							"customAction": "onHit",
 							"objectClass": "Cannon",
-							"sid": 768985674448403,
+							"sid": 834737319529061,
 							"parameters": [
 								"Item.damage",
-								"Item.Bullet.AngleOfMotion"
+								"Item.Bullet.AngleOfMotion",
+								"100"
 							]
 						}
 					],
@@ -660,10 +661,11 @@
 						{
 							"customAction": "onHit",
 							"objectClass": "Cannon",
-							"sid": 852909509730968,
+							"sid": 532368305334125,
 							"parameters": [
 								"Projectile.R_Damage",
-								"Projectile.Bullet.AngleOfMotion"
+								"Projectile.Bullet.AngleOfMotion",
+								"50"
 							]
 						},
 						{

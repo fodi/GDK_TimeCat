@@ -1057,9 +1057,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TIMER_Item_Checkup",
+			"name": "TIMER_Item_Cleanup",
 			"type": "string",
-			"initialValue": "Item_Checkup",
+			"initialValue": "Item_Cleanup",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -1087,9 +1087,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TIMER_Cannon_Checkup",
+			"name": "TIMER_Cannon_Cleanup",
 			"type": "string",
-			"initialValue": "Cannon_Checkup",
+			"initialValue": "Cannon_Cleanup",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -1104,6 +1104,16 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 404574786009235
+		},
+		{
+			"eventType": "variable",
+			"name": "TIMER_Level_End",
+			"type": "string",
+			"initialValue": "Level_End",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 162098022142475
 		},
 		{
 			"eventType": "variable",
@@ -1157,9 +1167,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "TIMER_Projectile_Checkup",
+			"name": "TIMER_Projectile_Cleanup",
 			"type": "string",
-			"initialValue": "Projectile_Checkup",
+			"initialValue": "Projectile_Cleanup",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,

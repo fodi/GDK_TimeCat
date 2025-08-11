@@ -795,7 +795,6 @@
 					"sid": 413020137349645,
 					"tags": "",
 					"instanceVariables": {
-						"R_OverlapCheckTIme": 0.2,
 						"itemType": "",
 						"lastCarrierPlayerUID": -1,
 						"targetPlayerUID": -1,

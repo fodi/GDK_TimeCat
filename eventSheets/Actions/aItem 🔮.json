@@ -326,7 +326,7 @@
 		},
 		{
 			"aceType": "action",
-			"aceName": "checkup",
+			"aceName": "cleanup",
 			"objectClass": "Item",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -339,7 +339,7 @@
 			"actions": [
 				{
 					"type": "comment",
-					"text": "Check if an item is too far to hit anything"
+					"text": "Destroy items that are no longer needed"
 				}
 			],
 			"sid": 623953325643464,
@@ -420,7 +420,7 @@
 							"sid": 204588848102143,
 							"behaviorType": "Timer",
 							"parameters": {
-								"tag": "TIMER_Item_Checkup"
+								"tag": "TIMER_Item_Cleanup"
 							}
 						},
 						{

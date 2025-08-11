@@ -113,6 +113,29 @@
 						},
 						{
 							"type": "comment",
+							"text": "Reset available player colours"
+						},
+						{
+							"id": "split-string",
+							"objectClass": "arrAvailablePlayerColors",
+							"sid": 300816214904284,
+							"parameters": {
+								"string": "C_CSV_Colors_Name",
+								"separator": "\",\"",
+								"type": "string"
+							}
+						},
+						{
+							"id": "pop",
+							"objectClass": "arrAvailablePlayerColors",
+							"sid": 597543886577805,
+							"parameters": {
+								"where": "front",
+								"axis": "x"
+							}
+						},
+						{
+							"type": "comment",
 							"text": "Dynamically spawn things"
 						},
 						{
@@ -217,292 +240,303 @@
 			"functionReturnType": "none",
 			"functionCopyPicked": false,
 			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "delay",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"sid": 597498395859233
-				}
-			],
+			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
 			"actions": [
 				{
 					"type": "comment",
-					"text": "Show end of level UI (when a win/lose/stalemate condition occurs)"
+					"text": "Show end of level UI (after win/stalemate condition)"
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 492738207087861,
+					"parameters": {
+						"type": "log",
+						"message": "\"[endLevel]\""
+					}
 				}
 			],
 			"sid": 710425574341323,
 			"children": [
 				{
 					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "stop-timer",
-							"objectClass": "Cannon",
-							"sid": 649635622633285,
-							"behaviorType": "Timer",
-							"parameters": {
-								"tag": "TIMER_Cannon_Attack"
-							}
-						},
-						{
-							"id": "stop-all-timers",
-							"objectClass": "GlobalTimer",
-							"sid": 609620382965553,
-							"behaviorType": "Timer"
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 903447591057552,
-							"parameters": {
-								"seconds": "delay",
-								"use-timescale": true
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 333307465445629,
-							"parameters": {
-								"variable": "hasLevelEnded",
-								"value": "YES"
-							}
-						}
-					],
-					"sid": 962533969599405
-				},
-				{
-					"eventType": "comment",
-					"text": "Stop animation of non-dead players"
-				},
-				{
-					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player",
-							"sid": 844941692539561,
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 659490502039144,
 							"parameters": {
-								"instance-variable": "isDead",
+								"variable": "hasLevelEnded",
 								"comparison": 0,
 								"value": "NO"
 							}
+						}
+					],
+					"actions": [],
+					"sid": 450069422782248,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "stop-timer",
+									"objectClass": "Cannon",
+									"sid": 358986966047905,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "TIMER_Cannon_Attack"
+									}
+								},
+								{
+									"id": "stop-all-timers",
+									"objectClass": "GlobalTimer",
+									"sid": 969892520526371,
+									"behaviorType": "Timer"
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 145809337330651,
+									"parameters": {
+										"variable": "hasLevelEnded",
+										"value": "YES"
+									}
+								}
+							],
+							"sid": 499689925399229
 						},
 						{
-							"id": "pick-children",
-							"objectClass": "Player",
-							"sid": 969745171386853,
-							"parameters": {
-								"child": "bbPlayer",
-								"which": "own"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "bbPlayer",
-							"sid": 104369632608245,
-							"parameters": {
-								"frame-number": "FRAME_Avatar_Standing"
-							}
+							"eventType": "comment",
+							"text": "Stop animation of non-dead players"
 						},
 						{
-							"id": "stop-animation",
-							"objectClass": "bbPlayer",
-							"sid": 719172974410111
-						}
-					],
-					"sid": 409412098680375
-				},
-				{
-					"eventType": "comment",
-					"text": "Calculate and display final results"
-				},
-				{
-					"eventType": "variable",
-					"name": "listPlayers",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 666367931482954
-				},
-				{
-					"eventType": "variable",
-					"name": "listPairs",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 775163012593881
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for-each-ordered",
-							"objectClass": "System",
-							"sid": 407413745834233,
-							"parameters": {
-								"object": "Player",
-								"expression": "Player.pairsFound",
-								"order": "descending"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 845560198879629,
-							"parameters": {
-								"variable": "listPlayers",
-								"value": "\"[color=#\" & trim(tokenat(C_CSV_Colors_Hex, Player.playerId, \",\")) & \"]\" & trim(tokenat(C_CSV_Colors_Name, Player.playerId, \",\")) & \" TimeCat:[/color] \" & newline"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 797751854008370,
+									"parameters": {
+										"instance-variable": "isDead",
+										"comparison": 0,
+										"value": "NO"
+									}
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "Player",
+									"sid": 177207799917617,
+									"parameters": {
+										"child": "bbPlayer",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "bbPlayer",
+									"sid": 673390930598908,
+									"parameters": {
+										"frame-number": "FRAME_Avatar_Standing"
+									}
+								},
+								{
+									"id": "stop-animation",
+									"objectClass": "bbPlayer",
+									"sid": 336908980802203
+								}
+							],
+							"sid": 143298983412002
 						},
 						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 232304720988205,
-							"parameters": {
-								"variable": "listPairs",
-								"value": "\"[color=#\" & trim(tokenat(C_CSV_Colors_Hex, Player.playerId, \",\")) & \"]\" & zeropad(Player.pairsFound, len(str(R_Level_Rows * R_Level_Columns))) & \"[/color] \" & newline\n"
-							}
-						}
-					],
-					"sid": 199608784540189
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "UI_TextSF",
-							"sid": 583517689119900,
-							"parameters": {
-								"instance-variable": "role",
-								"comparison": 0,
-								"value": "ROLE_GameOver_Players"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "UI_TextSF",
-							"sid": 517862874485078,
-							"parameters": {
-								"text": "listPlayers"
-							}
-						}
-					],
-					"sid": 458263492062037
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "UI_TextSF",
-							"sid": 720490650279945,
-							"parameters": {
-								"instance-variable": "role",
-								"comparison": 0,
-								"value": "ROLE_GameOver_Pairs"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "UI_TextSF",
-							"sid": 100689758043285,
-							"parameters": {
-								"text": "listPairs"
-							}
-						}
-					],
-					"sid": 276471871339799
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "UI_TextSF",
-							"sid": 820968273788433,
-							"parameters": {
-								"instance-variable": "role",
-								"comparison": 0,
-								"value": "ROLE_GameOver_Time"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "UI_TextSF",
-							"sid": 435881924516295,
-							"parameters": {
-								"text": "\"Time elapsed: \" & Functions.formatTime(timeElapsed)"
-							}
-						}
-					],
-					"sid": 599669916820556
-				},
-				{
-					"eventType": "comment",
-					"text": "todo showexit/restart button"
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 450934407813011,
-							"parameters": {
-								"layer": "LAYER_UI_GameOver",
-								"visibility": "visible"
-							}
+							"eventType": "comment",
+							"text": "Calculate and display final results"
 						},
 						{
-							"id": "set-layer-opacity",
-							"objectClass": "System",
-							"sid": 276764460915059,
-							"parameters": {
-								"layer": "LAYER_UI_GameOver",
-								"opacity": "0"
-							}
+							"eventType": "variable",
+							"name": "listPlayers",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 603897774466968
 						},
 						{
-							"id": "tween-value",
-							"objectClass": "GlobalTimer",
-							"sid": 998478030590158,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "TWEEN_Layer_UI_GameOver_FadeIn",
-								"start-value": "0",
-								"end-value": "100",
-								"time": "2",
-								"ease": "easeinoutsine",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
+							"eventType": "variable",
+							"name": "listPairs",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 190223943321980
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each-ordered",
+									"objectClass": "System",
+									"sid": 193157789480809,
+									"parameters": {
+										"object": "Player",
+										"expression": "Player.pairsFound",
+										"order": "descending"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 100384028333803,
+									"parameters": {
+										"variable": "listPlayers",
+										"value": "\"[color=#\" & trim(tokenat(C_CSV_Colors_Hex, Player.playerId, \",\")) & \"]\" & trim(tokenat(C_CSV_Colors_Name, Player.playerId, \",\")) & \" TimeCat:[/color] \" & newline"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 687474592801202,
+									"parameters": {
+										"variable": "listPairs",
+										"value": "\"[color=#\" & trim(tokenat(C_CSV_Colors_Hex, Player.playerId, \",\")) & \"]\" & zeropad(Player.pairsFound, len(str(R_Level_Rows * R_Level_Columns))) & \"[/color] \" & newline\n"
+									}
+								}
+							],
+							"sid": 863260826281066
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UI_TextSF",
+									"sid": 660808550461788,
+									"parameters": {
+										"instance-variable": "role",
+										"comparison": 0,
+										"value": "ROLE_GameOver_Players"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "UI_TextSF",
+									"sid": 943109537983407,
+									"parameters": {
+										"text": "listPlayers"
+									}
+								}
+							],
+							"sid": 149749201779701
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UI_TextSF",
+									"sid": 615852394284696,
+									"parameters": {
+										"instance-variable": "role",
+										"comparison": 0,
+										"value": "ROLE_GameOver_Pairs"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "UI_TextSF",
+									"sid": 660627425274636,
+									"parameters": {
+										"text": "listPairs"
+									}
+								}
+							],
+							"sid": 449146671899896
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UI_TextSF",
+									"sid": 684797768879284,
+									"parameters": {
+										"instance-variable": "role",
+										"comparison": 0,
+										"value": "ROLE_GameOver_Time"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "UI_TextSF",
+									"sid": 670312115295356,
+									"parameters": {
+										"text": "\"Time elapsed: \" & Functions.formatTime(timeElapsed)"
+									}
+								}
+							],
+							"sid": 222155649119255
+						},
+						{
+							"eventType": "comment",
+							"text": "todo showexit/restart button"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 887160100539620,
+									"parameters": {
+										"layer": "LAYER_UI_GameOver",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-layer-opacity",
+									"objectClass": "System",
+									"sid": 396575902865600,
+									"parameters": {
+										"layer": "LAYER_UI_GameOver",
+										"opacity": "0"
+									}
+								},
+								{
+									"id": "tween-value",
+									"objectClass": "GlobalTimer",
+									"sid": 933452752044215,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "TWEEN_Layer_UI_GameOver_FadeIn",
+										"start-value": "0",
+										"end-value": "100",
+										"time": "2",
+										"ease": "easeinoutsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 462155073579385
 						}
-					],
-					"sid": 183628848512277
+					]
 				}
 			]
 		},
@@ -608,11 +642,15 @@
 									}
 								},
 								{
-									"callFunction": "endLevel",
-									"sid": 264150703406664,
-									"parameters": [
-										"2"
-									]
+									"id": "start-timer",
+									"objectClass": "GlobalTimer",
+									"sid": 923243033229186,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "2",
+										"type": "once",
+										"tag": "TIMER_Level_End"
+									}
 								}
 							],
 							"sid": 640350976530176

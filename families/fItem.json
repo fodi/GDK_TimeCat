@@ -4,13 +4,6 @@
 	"sid": 897028857692841,
 	"instanceVariables": [
 		{
-			"name": "R_OverlapCheckTIme",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 408962874798054
-		},
-		{
 			"name": "itemType",
 			"type": "string",
 			"desc": "",

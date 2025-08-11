@@ -48,6 +48,16 @@
 										"comparison": 0,
 										"value": "NO"
 									}
+								},
+								{
+									"id": "compare-size",
+									"objectClass": "arrAvailablePlayerColors",
+									"sid": 400413236786447,
+									"parameters": {
+										"axis": "x",
+										"comparison": 4,
+										"value": "0"
+									}
 								}
 							],
 							"actions": [
@@ -183,16 +193,21 @@
 									}
 								},
 								{
-									"type": "comment",
-									"text": "todo set color previously in lobby"
-								},
-								{
 									"id": "set-instvar-value",
 									"objectClass": "Player",
-									"sid": 725382807756150,
+									"sid": 422682848770302,
 									"parameters": {
 										"instance-variable": "colorName",
-										"value": "trim(tokenat(C_CSV_Colors_Name, Self.playerId, \",\"))"
+										"value": "trim(arrAvailablePlayerColors.Front)"
+									}
+								},
+								{
+									"id": "pop",
+									"objectClass": "arrAvailablePlayerColors",
+									"sid": 679121821406775,
+									"parameters": {
+										"where": "front",
+										"axis": "x"
 									}
 								}
 							],
@@ -1840,11 +1855,15 @@
 															}
 														},
 														{
-															"callFunction": "endLevel",
-															"sid": 843623620368533,
-															"parameters": [
-																"2"
-															]
+															"id": "start-timer",
+															"objectClass": "GlobalTimer",
+															"sid": 347827297960176,
+															"behaviorType": "Timer",
+															"parameters": {
+																"duration": "2",
+																"type": "once",
+																"tag": "TIMER_Level_End"
+															}
 														}
 													],
 													"sid": 894239661621207
@@ -1862,11 +1881,15 @@
 											],
 											"actions": [
 												{
-													"callFunction": "endLevel",
-													"sid": 614682627649996,
-													"parameters": [
-														"1"
-													]
+													"id": "start-timer",
+													"objectClass": "GlobalTimer",
+													"sid": 520025966054300,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "1",
+														"type": "once",
+														"tag": "TIMER_Level_End"
+													}
 												}
 											],
 											"sid": 550849872275882
@@ -2469,12 +2492,12 @@
 								{
 									"id": "start-timer",
 									"objectClass": "Item",
-									"sid": 689399500699290,
+									"sid": 239233247076325,
 									"behaviorType": "Timer",
 									"parameters": {
-										"duration": "Self.R_OverlapCheckTIme",
+										"duration": "0.5",
 										"type": "regular",
-										"tag": "TIMER_Item_Checkup"
+										"tag": "TIMER_Item_Cleanup"
 									}
 								}
 							],
@@ -2853,11 +2876,15 @@
 													}
 												},
 												{
-													"callFunction": "endLevel",
-													"sid": 558572284250317,
-													"parameters": [
-														"2"
-													]
+													"id": "start-timer",
+													"objectClass": "GlobalTimer",
+													"sid": 134826624123500,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "2",
+														"type": "once",
+														"tag": "TIMER_Level_End"
+													}
 												}
 											],
 											"sid": 269811260453554

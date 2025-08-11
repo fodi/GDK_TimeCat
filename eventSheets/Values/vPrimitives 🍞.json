@@ -52,6 +52,20 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 690954017069938
+		},
+		{
+			"eventType": "comment",
+			"text": "Characters"
+		},
+		{
+			"eventType": "variable",
+			"name": "COMMA",
+			"type": "string",
+			"initialValue": ",",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 558272503067146
 		}
 	],
 	"sid": 366441789310355
