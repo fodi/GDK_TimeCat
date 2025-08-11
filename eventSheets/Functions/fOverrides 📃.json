@@ -2,14 +2,6 @@
 	"name": "fOverrides 📃",
 	"events": [
 		{
-			"eventType": "comment",
-			"text": "load default rules, put override on top"
-		},
-		{
-			"eventType": "comment",
-			"text": "todo convert to CA"
-		},
-		{
 			"functionName": "Rules_getNumber",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -27,7 +19,12 @@
 			],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Get number value for a rule (override or default)"
+				}
+			],
 			"sid": 989674657250768,
 			"children": [
 				{
@@ -115,7 +112,12 @@
 			],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Get string value for a rule (override or default)"
+				}
+			],
 			"sid": 403396410492465,
 			"children": [
 				{

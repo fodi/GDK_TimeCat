@@ -2,7 +2,7 @@
 	"name": "fLevel 🎬",
 	"events": [
 		{
-			"functionName": "initLevel",
+			"functionName": "prepareLevel",
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
@@ -11,56 +11,18 @@
 			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Dynamically spawn things, apply level rules"
+				}
+			],
 			"sid": 551882248979971,
 			"children": [
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 290790031571504,
-							"parameters": {
-								"first-value": "LayoutName",
-								"comparison": 0,
-								"second-value": "\"#ObjectTemplates\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 965472588350010,
-							"parameters": {
-								"layout": "Level"
-							}
-						}
-					],
-					"sid": 697939848357861
-				},
-				{
-					"eventType": "block",
 					"conditions": [],
 					"actions": [
-						{
-							"type": "comment",
-							"text": "Spawn \"textures\" (including icons)"
-						},
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 120079589552053,
-							"parameters": {
-								"object-to-create": "UI_Icons",
-								"layer": "LAYER_UI",
-								"x": "0",
-								"y": "-1000",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
 						{
 							"type": "comment",
 							"text": "Apply rules (within hardcoded limits)"
@@ -95,10 +57,10 @@
 						{
 							"id": "log",
 							"objectClass": "Browser",
-							"sid": 802792626626156,
+							"sid": 606519280005235,
 							"parameters": {
 								"type": "log",
-								"message": "R_Level_Rows & \" rows, \" & R_Level_Columns & \" columns will be generated\""
+								"message": "StringSub(\"Generating {0} x {1} level.\", R_Level_Columns, R_Level_Rows)"
 							}
 						},
 						{
@@ -134,6 +96,23 @@
 						},
 						{
 							"type": "comment",
+							"text": "Spawn \"textures\" (including icons)"
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 118846807200647,
+							"parameters": {
+								"object-to-create": "UI_Icons",
+								"layer": "LAYER_UI",
+								"x": "0",
+								"y": "-1000",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"type": "comment",
 							"text": "Dynamically spawn things"
 						},
 						{
@@ -150,12 +129,6 @@
 							"customAction": "spawn",
 							"objectClass": "Basemap",
 							"sid": 954492913769098
-						},
-						{
-							"id": "wait-for-previous-actions",
-							"objectClass": "System",
-							"sid": 227468188170636,
-							"disabled": true
 						},
 						{
 							"customAction": "spawnAll",
@@ -189,10 +162,6 @@
 			]
 		},
 		{
-			"eventType": "comment",
-			"text": "todo start level immediately after lobby is implemented"
-		},
-		{
 			"functionName": "startLevel",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -205,32 +174,41 @@
 			"actions": [
 				{
 					"type": "comment",
-					"text": "Start timers"
-				},
-				{
-					"id": "start-timer",
-					"objectClass": "GlobalTimer",
-					"sid": 970543763221190,
-					"behaviorType": "Timer",
-					"parameters": {
-						"duration": "C_Cannon_FirstSpawnDelay",
-						"type": "once",
-						"tag": "TIMER_Cannon_Spawn"
-					}
-				},
-				{
-					"id": "start-timer",
-					"objectClass": "GlobalTimer",
-					"sid": 588765737489399,
-					"behaviorType": "Timer",
-					"parameters": {
-						"duration": "1",
-						"type": "regular",
-						"tag": "TIMER_Level_EverySecond"
-					}
+					"text": "Start global timers when first player joins"
 				}
 			],
-			"sid": 411310852850741
+			"sid": 411310852850741,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "GlobalTimer",
+							"sid": 534031228863031,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "C_Cannon_FirstSpawnDelay",
+								"type": "once",
+								"tag": "TIMER_Cannon_Spawn"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "GlobalTimer",
+							"sid": 292531329924352,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1",
+								"type": "regular",
+								"tag": "TIMER_Level_EverySecond"
+							}
+						}
+					],
+					"sid": 698328570277481
+				}
+			]
 		},
 		{
 			"functionName": "endLevel",
@@ -250,7 +228,12 @@
 			],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Show end of level UI (when a win/lose/stalemate condition occurs)"
+				}
+			],
 			"sid": 710425574341323,
 			"children": [
 				{
@@ -258,27 +241,27 @@
 					"conditions": [],
 					"actions": [
 						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 979770246221362,
+							"id": "stop-timer",
+							"objectClass": "Cannon",
+							"sid": 649635622633285,
+							"behaviorType": "Timer",
 							"parameters": {
-								"seconds": "delay",
-								"use-timescale": true
+								"tag": "TIMER_Cannon_Attack"
 							}
 						},
 						{
 							"id": "stop-all-timers",
 							"objectClass": "GlobalTimer",
-							"sid": 327945824898756,
+							"sid": 609620382965553,
 							"behaviorType": "Timer"
 						},
 						{
-							"id": "stop-timer",
-							"objectClass": "Cannon",
-							"sid": 933043111202672,
-							"behaviorType": "Timer",
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 903447591057552,
 							"parameters": {
-								"tag": "TIMER_Cannon_Attack"
+								"seconds": "delay",
+								"use-timescale": true
 							}
 						},
 						{
@@ -326,7 +309,7 @@
 							"objectClass": "bbPlayer",
 							"sid": 104369632608245,
 							"parameters": {
-								"frame-number": "FRAME_Standing"
+								"frame-number": "FRAME_Avatar_Standing"
 							}
 						},
 						{
@@ -533,12 +516,17 @@
 			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "When all enabled tiles are opened as the first part of pairs (by different players), end level"
+				}
+			],
 			"sid": 542560633857791,
 			"children": [
 				{
 					"eventType": "variable",
-					"name": "closedTileCount",
+					"name": "enabledTileCount",
 					"type": "number",
 					"initialValue": "0",
 					"comment": "",
@@ -568,7 +556,7 @@
 							"objectClass": "fTile",
 							"sid": 682556398914890,
 							"parameters": {
-								"animation": "ANIM_Closed"
+								"animation": "ANIM_Tile_Enabled"
 							}
 						}
 					],
@@ -578,7 +566,7 @@
 							"objectClass": "System",
 							"sid": 790730340463337,
 							"parameters": {
-								"variable": "closedTileCount",
+								"variable": "enabledTileCount",
 								"value": "fTile.PickedCount"
 							}
 						}
@@ -603,7 +591,7 @@
 									"objectClass": "System",
 									"sid": 773615507629036,
 									"parameters": {
-										"variable": "closedTileCount",
+										"variable": "enabledTileCount",
 										"comparison": 0,
 										"value": "fTile.PickedCount"
 									}
@@ -621,9 +609,9 @@
 								},
 								{
 									"callFunction": "endLevel",
-									"sid": 956090173414646,
+									"sid": 264150703406664,
 									"parameters": [
-										"0"
+										"2"
 									]
 								}
 							],
@@ -642,19 +630,13 @@
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
-			"conditions": [
+			"conditions": [],
+			"actions": [
 				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 261601930527017,
-					"parameters": {
-						"variable": "hasLevelEnded",
-						"comparison": 0,
-						"value": "NO"
-					}
+					"type": "comment",
+					"text": "Pause / unpause game"
 				}
 			],
-			"actions": [],
 			"sid": 809940863427421,
 			"children": [
 				{
@@ -663,64 +645,83 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 919876928730091,
+							"sid": 519553485005798,
 							"parameters": {
-								"variable": "isPaused",
+								"variable": "hasLevelEnded",
 								"comparison": 0,
 								"value": "NO"
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 965248633065216,
+					"children": [
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 735846580416898,
-							"parameters": {
-								"variable": "isPaused",
-								"value": "YES"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 552681680217280,
+									"parameters": {
+										"variable": "isPaused",
+										"comparison": 0,
+										"value": "NO"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 253789858326129,
+									"parameters": {
+										"variable": "isPaused",
+										"value": "YES"
+									}
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 598357348710767,
+									"parameters": {
+										"time-scale": "0"
+									}
+								}
+							],
+							"sid": 153441686495358
 						},
 						{
-							"id": "set-time-scale",
-							"objectClass": "System",
-							"sid": 794453566470112,
-							"parameters": {
-								"time-scale": "0"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 865156384066460
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 355552254278054,
+									"parameters": {
+										"variable": "isPaused",
+										"value": "NO"
+									}
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 278654996878909,
+									"parameters": {
+										"time-scale": "1"
+									}
+								}
+							],
+							"sid": 350332963767953
 						}
-					],
-					"sid": 893541940908097
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 639831566345621
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 136729695085155,
-							"parameters": {
-								"variable": "isPaused",
-								"value": "NO"
-							}
-						},
-						{
-							"id": "set-time-scale",
-							"objectClass": "System",
-							"sid": 755107212905453,
-							"parameters": {
-								"time-scale": "1"
-							}
-						}
-					],
-					"sid": 315146358317456
+					]
 				}
 			]
 		}

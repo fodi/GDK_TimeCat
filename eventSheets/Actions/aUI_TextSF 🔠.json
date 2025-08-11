@@ -100,15 +100,6 @@
 						{
 							"id": "set-text",
 							"objectClass": "UI_TextSF",
-							"sid": 670481936881243,
-							"disabled": true,
-							"parameters": {
-								"text": "\"Camera @ \" & round(CameraHelper.X) & \", \" & round(CameraHelper.Y) & \", \" & round(CameraHelper.ZElevation) & \" | FoV: \" & CameraHelper.R_FieldOfView & newline & \nFunctions.getDevInfo(\", \")"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "UI_TextSF",
 							"sid": 107159282085912,
 							"parameters": {
 								"text": "Functions.getDevInfo(\", \")"

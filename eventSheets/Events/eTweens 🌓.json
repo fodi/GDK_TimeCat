@@ -250,7 +250,7 @@
 							"objectClass": "Cannon",
 							"sid": 112072906703558,
 							"parameters": {
-								"animation": "ANIM_Shadow",
+								"animation": "ANIM_Cannon_Shadow",
 								"from": "beginning"
 							}
 						},

@@ -25,7 +25,7 @@
 			"sid": 333589245315584
 		},
 		{
-			"name": "pairingState",
+			"name": "state",
 			"type": "string",
 			"desc": "",
 			"show": true,

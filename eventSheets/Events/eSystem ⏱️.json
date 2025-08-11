@@ -16,7 +16,7 @@
 			],
 			"actions": [
 				{
-					"callFunction": "initLevel",
+					"callFunction": "prepareLevel",
 					"sid": 935426248210738
 				}
 			],

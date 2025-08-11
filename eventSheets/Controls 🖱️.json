@@ -9,65 +9,46 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-key-pressed",
+					"id": "on-any-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 306861812081110,
-					"parameters": {
-						"key": 32
-					}
+					"sid": 460757341041988
 				},
 				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 647703696752862,
-					"parameters": {
-						"key": 96
-					}
-				},
-				{
-					"id": "on-button-pressed",
+					"id": "on-any-button-pressed",
 					"objectClass": "Gamepad",
-					"sid": 511226128380053,
+					"sid": 627970240203371,
 					"parameters": {
-						"gamepad": "0",
-						"button": "button-a"
+						"gamepad": "0"
 					}
 				},
 				{
-					"id": "on-button-pressed",
+					"id": "on-any-button-pressed",
 					"objectClass": "Gamepad",
-					"sid": 789244389869487,
+					"sid": 942521456340064,
 					"parameters": {
-						"gamepad": "1",
-						"button": "button-a"
+						"gamepad": "1"
 					}
 				},
 				{
-					"id": "on-button-pressed",
+					"id": "on-any-button-pressed",
 					"objectClass": "Gamepad",
-					"sid": 832143231582130,
+					"sid": 112013975539314,
 					"parameters": {
-						"gamepad": "2",
-						"button": "button-a"
+						"gamepad": "2"
 					}
 				},
 				{
-					"id": "on-button-pressed",
+					"id": "on-any-button-pressed",
 					"objectClass": "Gamepad",
-					"sid": 905191312258514,
+					"sid": 496909450605493,
 					"parameters": {
-						"gamepad": "3",
-						"button": "button-a"
+						"gamepad": "3"
 					}
 				},
 				{
-					"id": "on-click",
+					"id": "on-any-click",
 					"objectClass": "Mouse",
-					"sid": 864940358428027,
-					"parameters": {
-						"mouse-button": "right",
-						"click-type": "clicked"
-					}
+					"sid": 212770313556119
 				}
 			],
 			"actions": [

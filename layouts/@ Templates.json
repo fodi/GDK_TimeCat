@@ -119,7 +119,7 @@
 					"type": "Tile",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Closed",
+						"initial-animation": "Enabled",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -131,7 +131,7 @@
 						"symbol": "",
 						"randomId": 0,
 						"playerId": -1,
-						"pairingState": "",
+						"state": "",
 						"pairPart": 0
 					},
 					"behaviors": {
@@ -746,43 +746,6 @@
 					}
 				},
 				{
-					"type": "UI_Loader",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 8,
-					"sid": 718305286398615,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"instanceFolderItem": {
-						"sid": 718305286398615,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 156,
-						"y": 122,
-						"width": 32,
-						"height": 32,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "UI_Icons",
 					"properties": {
 						"initially-visible": false,
@@ -1132,7 +1095,7 @@
 									"h": false,
 									"a": true,
 									"o": false,
-									"v": false,
+									"v": true,
 									"d": true,
 									"sm": "normal"
 								}
@@ -1229,7 +1192,7 @@
 							"h": false,
 							"a": true,
 							"o": false,
-							"v": false,
+							"v": true,
 							"d": true,
 							"sm": "normal"
 						},
@@ -1534,54 +1497,6 @@
 							0.03529411764705882,
 							0.9294117647058824,
 							0.9568627450980393,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "Selection",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Appearing",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 41,
-					"sid": 517136803105126,
-					"tags": "",
-					"instanceVariables": {
-						"playerId": -1
-					},
-					"behaviors": {
-						"Rotate": {
-							"properties": {
-								"speed": 40,
-								"acceleration": 0,
-								"enabled": false,
-								"live-preview": false
-							}
-						}
-					},
-					"instanceFolderItem": {
-						"sid": 517136803105126,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 96,
-						"y": 124,
-						"width": 64,
-						"height": 64,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
 							1
 						],
 						"angle": 0,
@@ -1958,7 +1873,7 @@
 					}
 				},
 				{
-					"type": "3dIsland",
+					"type": "3dTerrain",
 					"properties": {
 						"shape": "box",
 						"z-height": 16,
@@ -2642,20 +2557,7 @@
 						"lookTargetOffsetX": 0,
 						"lookTargetOffsetY": 0
 					},
-					"behaviors": {
-						"8Direction": {
-							"properties": {
-								"max-speed": 200,
-								"acceleration": 600,
-								"deceleration": 500,
-								"directions": "dir-8",
-								"set-angle": "no",
-								"allow-sliding": false,
-								"default-controls": false,
-								"enabled": true
-							}
-						}
-					},
+					"behaviors": {},
 					"sceneGraphData": {
 						"parent-uid": null,
 						"uid": 24,
@@ -2877,10 +2779,6 @@
 				"expanded": true
 			},
 			{
-				"sid": 718305286398615,
-				"expanded": true
-			},
-			{
 				"sid": 659697957369555,
 				"expanded": true
 			},
@@ -2898,10 +2796,6 @@
 			},
 			{
 				"sid": 119510804584476,
-				"expanded": true
-			},
-			{
-				"sid": 517136803105126,
 				"expanded": true
 			},
 			{

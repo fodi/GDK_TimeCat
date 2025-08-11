@@ -30,7 +30,7 @@
 							"objectClass": "System",
 							"sid": 387041241793500,
 							"parameters": {
-								"object-to-create": "3dIsland",
+								"object-to-create": "3dTerrain",
 								"layer": "LAYER_Main",
 								"x": "midX",
 								"y": "midY",
@@ -40,7 +40,7 @@
 						},
 						{
 							"id": "set-size",
-							"objectClass": "3dIsland",
+							"objectClass": "3dTerrain",
 							"sid": 254412891170235,
 							"parameters": {
 								"width": "R_Level_Columns * C_Level_Grid_Size",
@@ -49,7 +49,7 @@
 						},
 						{
 							"id": "set-z-elevation",
-							"objectClass": "3dIsland",
+							"objectClass": "3dTerrain",
 							"sid": 234220207332348,
 							"parameters": {
 								"z": "- Self.ZHeight - 1.5"
@@ -73,7 +73,7 @@
 							"objectClass": "Basemap",
 							"sid": 726197248474709,
 							"parameters": {
-								"z": "3dIsland.ZElevation"
+								"z": "3dTerrain.ZElevation"
 							}
 						},
 						{
@@ -303,7 +303,7 @@
 											"objectClass": "bbDecor",
 											"sid": 569116864258816,
 											"parameters": {
-												"z": "3dIsland.ZElevation + 3dIsland.ZHeight + 1"
+												"z": "3dTerrain.ZElevation + 3dTerrain.ZHeight + 1"
 											}
 										},
 										{
@@ -441,7 +441,7 @@
 							"parameters": {
 								"tile-x": "loopindex(LOOP_X)",
 								"tile-y": "loopindex(LOOP_Y)",
-								"brush": "Self.animationFrame = 0 ? BRUSH_Ground1 : BRUSH_Ground2"
+								"brush": "Self.animationFrame = 0 ? BRUSH_Basemap_Ground1 : BRUSH_Basemap_Ground2"
 							}
 						}
 					],

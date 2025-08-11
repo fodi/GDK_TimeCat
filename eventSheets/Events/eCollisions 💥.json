@@ -15,198 +15,208 @@
 					"parameters": {
 						"object": "Projectile"
 					}
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player",
-					"sid": 469161696424432,
-					"parameters": {
-						"instance-variable": "health",
-						"comparison": 4,
-						"value": "0"
-					}
 				}
 			],
-			"actions": [
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 173204966581156,
-					"parameters": {
-						"type": "log",
-						"message": "\"player vs projectile\""
-					}
-				}
-			],
+			"actions": [],
 			"sid": 569478695533574,
 			"children": [
 				{
-					"eventType": "comment",
-					"text": "If player is sleeping: do nothing (projectile continues to move)"
-				},
-				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-timer-running",
+							"id": "compare-instance-variable",
 							"objectClass": "Player",
-							"sid": 671435894151249,
-							"behaviorType": "Timer",
+							"sid": 727137741413413,
+							"disabled": true,
 							"parameters": {
-								"tag": "TIMER_Player_Sleep"
+								"instance-variable": "health",
+								"comparison": 4,
+								"value": "0"
 							}
-						}
-					],
-					"actions": [],
-					"sid": 955430814014931
-				},
-				{
-					"eventType": "comment",
-					"text": "If player's shield is active: deflect projectile"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 568412633650547
-						},
-						{
-							"id": "is-timer-running",
-							"objectClass": "Player",
-							"sid": 236318664035261,
-							"behaviorType": "Timer",
-							"parameters": {
-								"tag": "TIMER_Player_Shield"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-angle-of-motion",
-							"objectClass": "Projectile",
-							"sid": 144350775627947,
-							"behaviorType": "Bullet",
-							"parameters": {
-								"angle": "angle(Player.X, Player.Y, Projectile.X, Projectile.Y)"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Projectile",
-							"sid": 633029659876551,
-							"parameters": {
-								"instance-variable": "hasBounced",
-								"value": "YES"
-							}
-						}
-					],
-					"sid": 434726947866257
-				},
-				{
-					"eventType": "comment",
-					"text": "If player is dead: deflect projectile"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 873518249524976
 						},
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player",
-							"sid": 525751555540447,
+							"sid": 208870508755429,
 							"parameters": {
 								"instance-variable": "isDead",
 								"comparison": 0,
-								"value": "YES"
+								"value": "NO"
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "set-angle-of-motion",
-							"objectClass": "Projectile",
-							"sid": 791473841098568,
-							"behaviorType": "Bullet",
-							"parameters": {
-								"angle": "angle(Player.X, Player.Y, Projectile.X, Projectile.Y)"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Projectile",
-							"sid": 658977712916146,
-							"parameters": {
-								"instance-variable": "hasBounced",
-								"value": "YES"
-							}
-						}
-					],
-					"sid": 984195664934550
-				},
-				{
-					"eventType": "comment",
-					"text": "If player is not sleeping or shielding: destroy projectile & damage player if they are not hurting"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 559862186860546
-						},
-						{
-							"id": "pick-children",
-							"objectClass": "Player",
-							"sid": 494429868464192,
-							"parameters": {
-								"child": "bbPlayer",
-								"which": "own"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "Projectile",
-							"sid": 110107631039347
-						}
-					],
-					"sid": 848703835571815,
+					"actions": [],
+					"sid": 327440044645183,
 					"children": [
+						{
+							"eventType": "comment",
+							"text": "If player is sleeping: do nothing (projectile continues to move)"
+						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-playing",
-									"objectClass": "bbPlayer",
-									"sid": 338068904611292,
-									"behaviorType": "Tween",
+									"id": "is-timer-running",
+									"objectClass": "Player",
+									"sid": 336886656018862,
+									"behaviorType": "Timer",
 									"parameters": {
-										"tags": "TWEEN_Player_Hurt"
-									},
-									"isInverted": true
+										"tag": "TIMER_Player_Sleep"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 670283054938796
+						},
+						{
+							"eventType": "comment",
+							"text": "If player's shield is active: deflect projectile"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 752021953281756
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "Player",
+									"sid": 892420572112907,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "TIMER_Player_Shield"
+									}
 								}
 							],
 							"actions": [
 								{
-									"customAction": "changeHealth",
-									"objectClass": "Player",
-									"sid": 429123063564477,
-									"parameters": [
-										"-Projectile.R_Damage",
-										"YES",
-										"YES"
-									]
+									"id": "set-angle-of-motion",
+									"objectClass": "Projectile",
+									"sid": 779116564188859,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "angle(Player.X, Player.Y, Projectile.X, Projectile.Y)"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Projectile",
+									"sid": 356138683461619,
+									"parameters": {
+										"instance-variable": "hasBounced",
+										"value": "YES"
+									}
 								}
 							],
-							"sid": 694951997498462
+							"sid": 839077593046747
+						},
+						{
+							"eventType": "comment",
+							"text": "If player is dead: deflect projectile"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 555513040682877
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 147208343690096,
+									"parameters": {
+										"instance-variable": "isDead",
+										"comparison": 0,
+										"value": "YES"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "Projectile",
+									"sid": 300988555537981,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "angle(Player.X, Player.Y, Projectile.X, Projectile.Y)"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Projectile",
+									"sid": 391936997257321,
+									"parameters": {
+										"instance-variable": "hasBounced",
+										"value": "YES"
+									}
+								}
+							],
+							"sid": 356888609795112
+						},
+						{
+							"eventType": "comment",
+							"text": "If player is not sleeping or shielding: destroy projectile & damage player if they are not hurting"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 721809880798259
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "Player",
+									"sid": 531386692422022,
+									"parameters": {
+										"child": "bbPlayer",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Projectile",
+									"sid": 823025509855134
+								}
+							],
+							"sid": 572460066764052,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-playing",
+											"objectClass": "bbPlayer",
+											"sid": 372265028265846,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "TWEEN_Player_Hurt"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"customAction": "changeHealth",
+											"objectClass": "Player",
+											"sid": 938795120851868,
+											"parameters": [
+												"-Projectile.R_Damage",
+												"YES",
+												"YES"
+											]
+										}
+									],
+									"sid": 731052260718157
+								}
+							]
 						}
 					]
 				}
@@ -226,104 +236,148 @@
 					"parameters": {
 						"object": "Item"
 					}
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Item",
-					"sid": 648281111032573,
-					"parameters": {
-						"instance-variable": "isDestroyed",
-						"comparison": 0,
-						"value": "NO"
-					}
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player",
-					"sid": 398457362883531,
-					"parameters": {
-						"instance-variable": "isDead",
-						"comparison": 0,
-						"value": "NO"
-					}
 				}
 			],
 			"actions": [],
 			"sid": 820446053971430,
 			"children": [
 				{
-					"eventType": "comment",
-					"text": "A (previously) carried item hits another player"
-				},
-				{
 					"eventType": "block",
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Item",
-							"sid": 567305030346269,
+							"sid": 427538744958743,
 							"parameters": {
-								"instance-variable": "lastCarrierPlayerUID",
-								"comparison": 1,
-								"value": "NOTHING"
+								"instance-variable": "isDestroyed",
+								"comparison": 0,
+								"value": "NO"
 							}
 						},
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Item",
-							"sid": 700076625495284,
+							"objectClass": "Player",
+							"sid": 791776920333829,
 							"parameters": {
-								"instance-variable": "lastCarrierPlayerUID",
-								"comparison": 1,
-								"value": "Player.UID"
+								"instance-variable": "isDead",
+								"comparison": 0,
+								"value": "NO"
 							}
 						}
 					],
 					"actions": [],
-					"sid": 657091044556624,
+					"sid": 939580578939987,
 					"children": [
 						{
 							"eventType": "comment",
-							"text": "If the hit player is shielded, deflect item"
+							"text": "A (previously) carried item hits another player"
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-timer-running",
-									"objectClass": "Player",
-									"sid": 612108730879132,
-									"behaviorType": "Timer",
-									"parameters": {
-										"tag": "TIMER_Player_Shield"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-angle-of-motion",
+									"id": "compare-instance-variable",
 									"objectClass": "Item",
-									"sid": 563190783235774,
-									"behaviorType": "Bullet",
+									"sid": 237716042960831,
 									"parameters": {
-										"angle": "angle(Player.X, Player.Y, Item.X, Item.Y)"
+										"instance-variable": "lastCarrierPlayerUID",
+										"comparison": 1,
+										"value": "NOTHING"
 									}
 								},
 								{
-									"id": "set-instvar-value",
-									"objectClass": "Projectile",
-									"sid": 922435845946192,
+									"id": "compare-instance-variable",
+									"objectClass": "Item",
+									"sid": 753199089075550,
 									"parameters": {
-										"instance-variable": "hasBounced",
-										"value": "YES"
+										"instance-variable": "lastCarrierPlayerUID",
+										"comparison": 1,
+										"value": "Player.UID"
 									}
 								}
 							],
-							"sid": 262754130635738
+							"actions": [],
+							"sid": 511567901558557,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "If the hit player is shielded, deflect item"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-timer-running",
+											"objectClass": "Player",
+											"sid": 258017708783596,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "TIMER_Player_Shield"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "Item",
+											"sid": 695470867380536,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "angle(Player.X, Player.Y, Item.X, Item.Y)"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Projectile",
+											"sid": 705379705439814,
+											"parameters": {
+												"instance-variable": "hasBounced",
+												"value": "YES"
+											}
+										}
+									],
+									"sid": 454035181591863
+								},
+								{
+									"eventType": "comment",
+									"text": "Otherwise, hit player if they are not sleeping"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 943666374843299
+										},
+										{
+											"id": "is-timer-running",
+											"objectClass": "Player",
+											"sid": 573825313114064,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "TIMER_Player_Sleep"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"customAction": "onPlayerHit",
+											"objectClass": "Item",
+											"sid": 491581803011449,
+											"parameters": [
+												"Player.UID"
+											]
+										}
+									],
+									"sid": 559106819719805
+								}
+							]
 						},
 						{
 							"eventType": "comment",
-							"text": "Otherwise, hit player if they are not sleeping"
+							"text": "Picking up an item"
 						},
 						{
 							"eventType": "block",
@@ -331,64 +385,29 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 730122912166470
+									"sid": 969801749021310
 								},
 								{
-									"id": "is-timer-running",
+									"id": "compare-instance-variable",
 									"objectClass": "Player",
-									"sid": 127978984592569,
-									"behaviorType": "Timer",
+									"sid": 844399341665682,
 									"parameters": {
-										"tag": "TIMER_Player_Sleep"
-									},
-									"isInverted": true
+										"instance-variable": "carryingItemUID",
+										"comparison": 0,
+										"value": "NOTHING"
+									}
 								}
 							],
 							"actions": [
 								{
-									"customAction": "onPlayerHit",
-									"objectClass": "Item",
-									"sid": 711254653050779,
-									"parameters": [
-										"Player.UID"
-									]
+									"customAction": "carryItem",
+									"objectClass": "Player",
+									"sid": 925196982345706
 								}
 							],
-							"sid": 606271236363055
+							"sid": 768426181869560
 						}
 					]
-				},
-				{
-					"eventType": "comment",
-					"text": "Picking up an item"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 765509090422871
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player",
-							"sid": 150530598847333,
-							"parameters": {
-								"instance-variable": "carryingItemUID",
-								"comparison": 0,
-								"value": "NOTHING"
-							}
-						}
-					],
-					"actions": [
-						{
-							"customAction": "carryItem",
-							"objectClass": "Player",
-							"sid": 363599000050974
-						}
-					],
-					"sid": 906580957467785
 				}
 			]
 		},
@@ -406,50 +425,59 @@
 					"parameters": {
 						"object": "Projectile"
 					}
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Item",
-					"sid": 891548444619068,
-					"parameters": {
-						"instance-variable": "isDestroyed",
-						"comparison": 0,
-						"value": "NO"
-					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 823790296874762,
+			"children": [
 				{
-					"id": "set-angle-of-motion",
-					"objectClass": "Projectile",
-					"sid": 341964545923344,
-					"behaviorType": "Bullet",
-					"parameters": {
-						"angle": "angle(Item.X, Item.Y, Projectile.X, Projectile.Y)"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Projectile",
-					"sid": 360434335754949,
-					"parameters": {
-						"instance-variable": "hasBounced",
-						"value": "YES"
-					}
-				},
-				{
-					"callFunction": "playSoundAt",
-					"sid": 492698710024327,
-					"parameters": [
-						"Cannon.X",
-						"Cannon.Y",
-						"SFX_Collision_Item_Projectile",
-						"4",
-						"NO"
-					]
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Item",
+							"sid": 952078749089950,
+							"parameters": {
+								"instance-variable": "isDestroyed",
+								"comparison": 0,
+								"value": "NO"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "Projectile",
+							"sid": 395306058698874,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "angle(Item.X, Item.Y, Projectile.X, Projectile.Y)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Projectile",
+							"sid": 636259790671523,
+							"parameters": {
+								"instance-variable": "hasBounced",
+								"value": "YES"
+							}
+						},
+						{
+							"callFunction": "playSoundAt",
+							"sid": 368681710994344,
+							"parameters": [
+								"Cannon.X",
+								"Cannon.Y",
+								"SFX_Collision_Item_Projectile",
+								"4",
+								"NO"
+							]
+						}
+					],
+					"sid": 155524659171186
 				}
-			],
-			"sid": 823790296874762
+			]
 		},
 		{
 			"eventType": "comment",
@@ -469,25 +497,38 @@
 			],
 			"actions": [
 				{
-					"id": "set-speed",
-					"objectClass": "Cannon",
-					"sid": 834041421751103,
-					"behaviorType": "Orbit",
-					"parameters": {
-						"speed": "-Self.Orbit.Speed"
-					}
-				},
-				{
-					"id": "set-speed",
-					"objectClass": "fCannon",
-					"sid": 910511038382573,
-					"behaviorType": "Orbit",
-					"parameters": {
-						"speed": "-Self.Orbit.Speed"
-					}
+					"type": "comment",
+					"text": "todo slow down cannons?"
 				}
 			],
-			"sid": 879981744248505
+			"sid": 879981744248505,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "Cannon",
+							"sid": 641827555301294,
+							"behaviorType": "Orbit",
+							"parameters": {
+								"speed": "-Self.Orbit.Speed"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "fCannon",
+							"sid": 812701003572421,
+							"behaviorType": "Orbit",
+							"parameters": {
+								"speed": "-Self.Orbit.Speed"
+							}
+						}
+					],
+					"sid": 222850800031646
+				}
+			]
 		},
 		{
 			"eventType": "comment",
@@ -503,69 +544,82 @@
 					"parameters": {
 						"object": "Cannon"
 					}
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Item",
-					"sid": 175577356564805,
-					"parameters": {
-						"instance-variable": "isDestroyed",
-						"comparison": 0,
-						"value": "NO"
-					}
 				}
 			],
-			"actions": [
-				{
-					"customAction": "remove",
-					"objectClass": "Item",
-					"sid": 175867567655683,
-					"parameters": [
-						"YES"
-					]
-				},
-				{
-					"customAction": "onHit",
-					"objectClass": "Cannon",
-					"sid": 500674787951622,
-					"parameters": [
-						"Item.damage",
-						"Item.Bullet.AngleOfMotion"
-					]
-				}
-			],
+			"actions": [],
 			"sid": 442998353580713,
 			"children": [
+				{
+					"eventType": "comment",
+					"text": "todo_maybe ca?"
+				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "pick-parent",
+							"id": "compare-instance-variable",
 							"objectClass": "Item",
-							"sid": 841995550896338,
+							"sid": 182303237184185,
 							"parameters": {
-								"parent": "Player",
-								"which": "own"
+								"instance-variable": "isDestroyed",
+								"comparison": 0,
+								"value": "NO"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-instvar-value",
-							"objectClass": "Player",
-							"sid": 142703911398793,
-							"parameters": {
-								"instance-variable": "carryingItemUID",
-								"value": "NOTHING"
-							}
+							"customAction": "remove",
+							"objectClass": "Item",
+							"sid": 955607682820919,
+							"parameters": [
+								"YES"
+							]
 						},
 						{
-							"id": "remove-from-parent",
-							"objectClass": "Item",
-							"sid": 490725011358599
+							"customAction": "onHit",
+							"objectClass": "Cannon",
+							"sid": 768985674448403,
+							"parameters": [
+								"Item.damage",
+								"Item.Bullet.AngleOfMotion"
+							]
 						}
 					],
-					"sid": 563861360343114
+					"sid": 115262792652881,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-parent",
+									"objectClass": "Item",
+									"sid": 431754216965517,
+									"parameters": {
+										"parent": "Player",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player",
+									"sid": 350391710871366,
+									"parameters": {
+										"instance-variable": "carryingItemUID",
+										"value": "NOTHING"
+									}
+								},
+								{
+									"id": "remove-from-parent",
+									"objectClass": "Item",
+									"sid": 234536805433471
+								}
+							],
+							"sid": 806846190674985
+						}
+					]
 				}
 			]
 		},
@@ -583,35 +637,44 @@
 					"parameters": {
 						"object": "Projectile"
 					}
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Projectile",
-					"sid": 963364709066529,
-					"parameters": {
-						"instance-variable": "hasBounced",
-						"comparison": 0,
-						"value": "YES"
-					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 158747799349680,
+			"children": [
 				{
-					"customAction": "onHit",
-					"objectClass": "Cannon",
-					"sid": 311181267351977,
-					"parameters": [
-						"Projectile.R_Damage",
-						"Projectile.Bullet.AngleOfMotion"
-					]
-				},
-				{
-					"id": "destroy",
-					"objectClass": "Projectile",
-					"sid": 274685401095826
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Projectile",
+							"sid": 659696738378574,
+							"parameters": {
+								"instance-variable": "hasBounced",
+								"comparison": 0,
+								"value": "YES"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "onHit",
+							"objectClass": "Cannon",
+							"sid": 852909509730968,
+							"parameters": [
+								"Projectile.R_Damage",
+								"Projectile.Bullet.AngleOfMotion"
+							]
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Projectile",
+							"sid": 289173567583963
+						}
+					],
+					"sid": 986420137663087
 				}
-			],
-			"sid": 158747799349680
+			]
 		}
 	],
 	"sid": 441405412204844

@@ -328,18 +328,7 @@
 								},
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-children",
-											"objectClass": "CameraHelper",
-											"sid": 851785633742693,
-											"disabled": true,
-											"parameters": {
-												"child": "CameraTargetHelper",
-												"which": "own"
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [
 										{
 											"id": "set-instvar-value",
@@ -482,23 +471,6 @@
 							"eventType": "block",
 							"conditions": [],
 							"actions": [
-								{
-									"id": "look-at-position",
-									"objectClass": "3DCamera",
-									"sid": 959144455185295,
-									"disabled": true,
-									"parameters": {
-										"cam-x": "CameraHelper.X",
-										"cam-y": "CameraHelper.Y",
-										"cam-z": "CameraHelper.ZElevation",
-										"look-x": "Functions.expDecay(3DCamera.LookX, CameraHelper.lookTargetX, CameraHelper.R_SmoothingFactor)",
-										"look-y": "Functions.expDecay(3DCamera.LookY, CameraHelper.lookTargetY, CameraHelper.R_SmoothingFactor)",
-										"look-z": "0",
-										"up-x": "0",
-										"up-y": "0",
-										"up-z": "1"
-									}
-								},
 								{
 									"id": "look-at-position",
 									"objectClass": "3DCamera",

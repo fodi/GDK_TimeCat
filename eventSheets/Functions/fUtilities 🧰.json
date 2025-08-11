@@ -11,7 +11,12 @@
 			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Toggle between fullscreen and windowed mode"
+				}
+			],
 			"sid": 886938183459389,
 			"children": [
 				{
@@ -74,7 +79,12 @@
 			],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Toggle visibility and interaction of a layer (both on / both off)"
+				}
+			],
 			"sid": 725868792420929,
 			"children": [
 				{
@@ -192,6 +202,10 @@
 			"conditions": [],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "Map a value on a range to a new range"
+				},
+				{
 					"id": "set-function-return-value",
 					"objectClass": "Functions",
 					"sid": 660127848899638,
@@ -297,26 +311,17 @@
 				{
 					"type": "comment",
 					"text": "based on https://www.youtube.com/watch?v=LSNQuFEDOyQ"
+				},
+				{
+					"id": "set-function-return-value",
+					"objectClass": "Functions",
+					"sid": 561629946046968,
+					"parameters": {
+						"value": "to + (from - to) * exp(-decay * dt)"
+					}
 				}
 			],
-			"sid": 135747702409854,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-function-return-value",
-							"objectClass": "Functions",
-							"sid": 880282940666285,
-							"parameters": {
-								"value": "to + (from - to) * exp(-decay * dt)"
-							}
-						}
-					],
-					"sid": 351123785643453
-				}
-			]
+			"sid": 135747702409854
 		},
 		{
 			"functionName": "hex2color",
@@ -435,6 +440,10 @@
 			"conditions": [],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "Just like distance() but for 3D"
+				},
+				{
 					"id": "set-function-return-value",
 					"objectClass": "Functions",
 					"sid": 268312568073306,
@@ -463,7 +472,12 @@
 			],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Format seconds as (hours:)(minutes:)seconds"
+				}
+			],
 			"sid": 905055554994244,
 			"children": [
 				{
@@ -541,15 +555,28 @@
 			"conditions": [],
 			"actions": [
 				{
-					"id": "set-function-return-value",
-					"objectClass": "Functions",
-					"sid": 379954441688701,
-					"parameters": {
-						"value": "StringSub(\"Build {1}{0}{2} FPS{0}{3}% CPU{0}{4}% GPU{0}{5} objects\", divider, projectversion, fps, round(cpuutilisation * 100), round(gpuutilisation * 100), objectcount)"
-					}
+					"type": "comment",
+					"text": "Return FPS, CPU, GPU and object count stats as a string with a divider"
 				}
 			],
-			"sid": 562801702725526
+			"sid": 562801702725526,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 351056532216589,
+							"parameters": {
+								"value": "StringSub(\"Build {1}{0}{2} FPS{0}{3}% CPU{0}{4}% GPU{0}{5} objects\", divider, projectversion, fps, round(cpuutilisation * 100), round(gpuutilisation * 100), objectcount)"
+							}
+						}
+					],
+					"sid": 512851208883573
+				}
+			]
 		},
 		{
 			"functionName": "roundToDpPad",
@@ -577,6 +604,10 @@
 			"eventType": "function-block",
 			"conditions": [],
 			"actions": [
+				{
+					"type": "comment",
+					"text": "Round and format a number to certain decimal places with zero padding on the fractional part"
+				},
 				{
 					"id": "set-function-return-value",
 					"objectClass": "Functions",

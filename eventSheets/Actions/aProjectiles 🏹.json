@@ -178,7 +178,6 @@
 							"id": "log",
 							"objectClass": "Browser",
 							"sid": 750155261263904,
-							"disabled": true,
 							"parameters": {
 								"type": "log",
 								"message": "\"Destroying far away projectile #\" & Projectile.UID"

@@ -31,7 +31,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ANIM_Up",
+			"name": "ANIM_Player_Up",
 			"type": "string",
 			"initialValue": "Up",
 			"comment": "",
@@ -41,7 +41,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ANIM_Down",
+			"name": "ANIM_Player_Down",
 			"type": "string",
 			"initialValue": "Down",
 			"comment": "",
@@ -51,7 +51,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ANIM_Left",
+			"name": "ANIM_Player_Left",
 			"type": "string",
 			"initialValue": "Left",
 			"comment": "",
@@ -61,7 +61,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ANIM_Right",
+			"name": "ANIM_Player_Right",
 			"type": "string",
 			"initialValue": "Right",
 			"comment": "",
@@ -71,9 +71,19 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ANIM_Closed",
+			"name": "ANIM_Player_Sleeping",
 			"type": "string",
-			"initialValue": "Closed",
+			"initialValue": "Sleeping",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 722763181501680
+		},
+		{
+			"eventType": "variable",
+			"name": "ANIM_Tile_Enabled",
+			"type": "string",
+			"initialValue": "Enabled",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -81,7 +91,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ANIM_Disabled",
+			"name": "ANIM_Tile_Disabled",
 			"type": "string",
 			"initialValue": "Disabled",
 			"comment": "",
@@ -91,57 +101,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ANIM_Dead",
-			"type": "string",
-			"initialValue": "Dead",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 488962984099819
-		},
-		{
-			"eventType": "variable",
-			"name": "ANIM_Sleeping",
-			"type": "string",
-			"initialValue": "Sleeping",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 542683229904901
-		},
-		{
-			"eventType": "variable",
-			"name": "ANIM_Selection_Appearing",
-			"type": "string",
-			"initialValue": "Appearing",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 587833827850006
-		},
-		{
-			"eventType": "variable",
-			"name": "ANIM_Selection_Disappearing",
-			"type": "string",
-			"initialValue": "Disappearing",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 499227530954365
-		},
-		{
-			"eventType": "variable",
-			"name": "ANIM_Selection_Connecting",
-			"type": "string",
-			"initialValue": "Connecting",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 914897034252219
-		},
-		{
-			"eventType": "variable",
-			"name": "ANIM_Shadow",
+			"name": "ANIM_Cannon_Shadow",
 			"type": "string",
 			"initialValue": "Shadow",
 			"comment": "",
@@ -155,7 +115,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "BRUSH_Ground1",
+			"name": "BRUSH_Basemap_Ground1",
 			"type": "string",
 			"initialValue": "Ground1",
 			"comment": "",
@@ -165,7 +125,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "BRUSH_Ground2",
+			"name": "BRUSH_Basemap_Ground2",
 			"type": "string",
 			"initialValue": "Ground2",
 			"comment": "",
@@ -179,7 +139,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "EFFECT_Outline",
+			"name": "EFFECT_Tile_Outline",
 			"type": "string",
 			"initialValue": "Outline",
 			"comment": "",
@@ -207,7 +167,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "FRAME_Standing",
+			"name": "FRAME_Avatar_Standing",
 			"type": "string",
 			"initialValue": "Standing",
 			"comment": "",
@@ -217,7 +177,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "FRAME_Default",
+			"name": "FRAME_Avatar_Default",
 			"type": "string",
 			"initialValue": "Default",
 			"comment": "",
@@ -227,7 +187,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "FRAME_Crown",
+			"name": "FRAME_Avatar_Crown",
 			"type": "string",
 			"initialValue": "Crown",
 			"comment": "",
@@ -237,7 +197,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "FRAME_Dead",
+			"name": "FRAME_Avatar_Dead",
 			"type": "string",
 			"initialValue": "Dead",
 			"comment": "",
@@ -305,13 +265,53 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "LAYER_Main",
+			"name": "LAYER_UI_GameOver",
 			"type": "string",
-			"initialValue": "Main",
+			"initialValue": "UI_GameOver",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 556452912442956
+			"sid": 397814989795649
+		},
+		{
+			"eventType": "variable",
+			"name": "LAYER_UI_QR",
+			"type": "string",
+			"initialValue": "UI_QR",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 644738121785837
+		},
+		{
+			"eventType": "variable",
+			"name": "LAYER_UI",
+			"type": "string",
+			"initialValue": "UI",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 864241814282850
+		},
+		{
+			"eventType": "variable",
+			"name": "LAYER_Billboards",
+			"type": "string",
+			"initialValue": "Billboards",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 762135620237499
+		},
+		{
+			"eventType": "variable",
+			"name": "LAYER_Lights",
+			"type": "string",
+			"initialValue": "Lights",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 821311157498278
 		},
 		{
 			"eventType": "variable",
@@ -325,53 +325,13 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "LAYER_Lights",
+			"name": "LAYER_Main",
 			"type": "string",
-			"initialValue": "Lights",
+			"initialValue": "Main",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 588222627223352
-		},
-		{
-			"eventType": "variable",
-			"name": "LAYER_UI",
-			"type": "string",
-			"initialValue": "UI",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 935922502294559
-		},
-		{
-			"eventType": "variable",
-			"name": "LAYER_UI_GameOver",
-			"type": "string",
-			"initialValue": "UI_GameOver",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 549838325396802
-		},
-		{
-			"eventType": "variable",
-			"name": "LAYER_UI_QR",
-			"type": "string",
-			"initialValue": "UI_QR",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 222936727134190
-		},
-		{
-			"eventType": "variable",
-			"name": "LAYER_Billboards",
-			"type": "string",
-			"initialValue": "Billboards",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 964460120114832
+			"sid": 837236529339338
 		},
 		{
 			"eventType": "comment",
@@ -753,11 +713,11 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Pairing states"
+			"text": "States"
 		},
 		{
 			"eventType": "variable",
-			"name": "PS_Unpaired",
+			"name": "STATE_Tile_Unpaired",
 			"type": "string",
 			"initialValue": "Unpaired",
 			"comment": "",
@@ -767,7 +727,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "PS_Pairing",
+			"name": "STATE_Tile_Pairing",
 			"type": "string",
 			"initialValue": "Pairing",
 			"comment": "",
@@ -777,7 +737,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "PS_Paired",
+			"name": "STATE_Tile_Paired",
 			"type": "string",
 			"initialValue": "Paired",
 			"comment": "",

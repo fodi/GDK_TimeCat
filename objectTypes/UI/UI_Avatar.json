@@ -1,5 +1,5 @@
 {
-	"name": "UI_Player_Images",
+	"name": "UI_Avatar",
 	"plugin-id": "Sprite",
 	"sid": 553379737667311,
 	"isGlobal": false,
@@ -75,7 +75,7 @@
 					}
 				],
 				"sid": 638648896088436,
-				"name": "1",
+				"name": "Red",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -142,7 +142,7 @@
 					}
 				],
 				"sid": 598146216094275,
-				"name": "2",
+				"name": "Green",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -209,7 +209,7 @@
 					}
 				],
 				"sid": 518034397190126,
-				"name": "3",
+				"name": "Yellow",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -276,7 +276,7 @@
 					}
 				],
 				"sid": 519031315331873,
-				"name": "4",
+				"name": "Purple",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

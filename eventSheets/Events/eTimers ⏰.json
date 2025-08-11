@@ -47,7 +47,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Count elapsed time & check for stalemate"
+					"text": "Count elapsed time (every second)"
 				},
 				{
 					"eventType": "block",
@@ -71,10 +71,6 @@
 								"variable": "timeElapsed",
 								"value": "1"
 							}
-						},
-						{
-							"callFunction": "checkStalemate",
-							"sid": 302467566083466
 						}
 					],
 					"sid": 504055905074091

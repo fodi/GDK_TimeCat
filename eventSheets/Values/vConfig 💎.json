@@ -129,16 +129,6 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "C_Level_Tile_Size",
-			"type": "number",
-			"initialValue": "48",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 947364314065724
-		},
-		{
-			"eventType": "variable",
 			"name": "C_Level_Tile_Angle_Random",
 			"type": "number",
 			"initialValue": "4",
@@ -146,6 +136,26 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 731082638757979
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Level_Tile_Pair_OptimalMaxDistance",
+			"type": "number",
+			"initialValue": "160",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 560163939294438
+		},
+		{
+			"eventType": "variable",
+			"name": "C_Level_Tile_Size",
+			"type": "number",
+			"initialValue": "48",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 349233946058820
 		},
 		{
 			"eventType": "comment",

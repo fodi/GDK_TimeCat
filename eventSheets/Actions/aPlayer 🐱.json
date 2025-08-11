@@ -580,7 +580,7 @@
 													"objectClass": "Player",
 													"sid": 433386441470360,
 													"parameters": [
-														"ANIM_Right"
+														"ANIM_Player_Right"
 													]
 												}
 											],
@@ -611,7 +611,7 @@
 													"objectClass": "Player",
 													"sid": 955619481031936,
 													"parameters": [
-														"ANIM_Left"
+														"ANIM_Player_Left"
 													]
 												}
 											],
@@ -642,7 +642,7 @@
 													"objectClass": "Player",
 													"sid": 820554339447990,
 													"parameters": [
-														"ANIM_Up"
+														"ANIM_Player_Up"
 													]
 												}
 											],
@@ -673,7 +673,7 @@
 													"objectClass": "Player",
 													"sid": 290223706015107,
 													"parameters": [
-														"ANIM_Down"
+														"ANIM_Player_Down"
 													]
 												}
 											],
@@ -924,7 +924,7 @@
 													"objectClass": "bbPlayer",
 													"sid": 367602872033897,
 													"parameters": {
-														"frame-number": "FRAME_Standing"
+														"frame-number": "FRAME_Avatar_Standing"
 													}
 												}
 											],
@@ -1195,7 +1195,7 @@
 													"children": [
 														{
 															"eventType": "comment",
-															"text": "If player is not waiting for tiles closing"
+															"text": "If player is not waiting for tiles to close"
 														},
 														{
 															"eventType": "block",
@@ -1236,7 +1236,7 @@
 																			"objectClass": "Tile",
 																			"sid": 289923452431442,
 																			"parameters": {
-																				"animation": "ANIM_Closed"
+																				"animation": "ANIM_Tile_Enabled"
 																			}
 																		},
 																		{
@@ -1274,6 +1274,10 @@
 																	"sid": 357395324232724,
 																	"children": [
 																		{
+																			"eventType": "comment",
+																			"text": "First tile"
+																		},
+																		{
 																			"eventType": "block",
 																			"conditions": [
 																				{
@@ -1306,9 +1310,17 @@
 																						"Player.playerId",
 																						"1"
 																					]
+																				},
+																				{
+																					"callFunction": "checkStalemate",
+																					"sid": 398417561252019
 																				}
 																			],
 																			"sid": 857029789170060
+																		},
+																		{
+																			"eventType": "comment",
+																			"text": "Second tile"
 																		},
 																		{
 																			"eventType": "block",
@@ -1356,7 +1368,7 @@
 																},
 																{
 																	"eventType": "comment",
-																	"text": "If player has two tiles open, check them for matches"
+																	"text": "If player has two tiles open, check for a symbol pair"
 																},
 																{
 																	"eventType": "block",
@@ -1641,10 +1653,10 @@
 										{
 											"id": "log",
 											"objectClass": "Browser",
-											"sid": 153503382993396,
+											"sid": 834805240858095,
 											"parameters": {
 												"type": "log",
-												"message": "\"Player \" & Player.playerId & \" ran out of time.\""
+												"message": "Player.colorName & \" player is dead.\""
 											}
 										},
 										{
@@ -1721,7 +1733,7 @@
 										},
 										{
 											"customAction": "update",
-											"objectClass": "UI_Player_Images",
+											"objectClass": "UI_Avatar",
 											"sid": 650448336760570
 										}
 									],
@@ -1821,10 +1833,10 @@
 														{
 															"id": "log",
 															"objectClass": "Browser",
-															"sid": 802044499598535,
+															"sid": 889916219404810,
 															"parameters": {
 																"type": "log",
-																"message": "\"Multiplayer last man standing\""
+																"message": "StringSub(\"Multiplayer: last man standing ({0}).\", Player.colorName)"
 															}
 														},
 														{
@@ -2685,7 +2697,7 @@
 										},
 										{
 											"customAction": "update",
-											"objectClass": "UI_Player_Images",
+											"objectClass": "UI_Avatar",
 											"sid": 205984086454903
 										}
 									],
@@ -3499,7 +3511,7 @@
 									"objectClass": "Player",
 									"sid": 149222350355827,
 									"parameters": [
-										"ANIM_Sleeping"
+										"ANIM_Player_Sleeping"
 									]
 								},
 								{

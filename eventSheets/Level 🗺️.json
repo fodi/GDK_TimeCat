@@ -3,10 +3,6 @@
 	"events": [
 		{
 			"eventType": "include",
-			"includeSheet": "eAnimations 🎞️"
-		},
-		{
-			"eventType": "include",
 			"includeSheet": "eCollisions 💥"
 		},
 		{

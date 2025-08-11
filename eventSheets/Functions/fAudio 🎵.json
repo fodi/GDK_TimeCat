@@ -11,7 +11,12 @@
 			"functionParameters": [],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Toggle between background music tracks and no background music"
+				}
+			],
 			"sid": 413284577371563,
 			"children": [
 				{
@@ -140,7 +145,12 @@
 			],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Play a single unpositioned sound with optional variation & debouncing"
+				}
+			],
 			"sid": 499044112798543,
 			"children": [
 				{
@@ -269,7 +279,12 @@
 			],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Play a single 2D positioned sound with optional variation & debouncing"
+				}
+			],
 			"sid": 706239808608895,
 			"children": [
 				{

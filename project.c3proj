@@ -15,13 +15,6 @@
 		},
 		{
 			"type": "plugin",
-			"id": "AdvancedRandom",
-			"name": "Advanced Random",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
 			"id": "Arr",
 			"name": "Array",
 			"author": "Scirra",
@@ -176,13 +169,6 @@
 		},
 		{
 			"type": "behavior",
-			"id": "Rotate",
-			"name": "Rotate",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
 			"id": "Sin",
 			"name": "Sine",
 			"author": "Scirra",
@@ -259,11 +245,9 @@
 			"Item",
 			"CameraTargetHelper",
 			"Particles",
-			"Selection",
 			"Basemap",
 			"Water",
 			"Shield",
-			"bbAlert",
 			"Projectile_Particles",
 			"PlayerAim"
 		],
@@ -274,8 +258,7 @@
 					"GlobalTimer",
 					"3DCamera",
 					"Audio",
-					"AJAX",
-					"AdvancedRandom"
+					"AJAX"
 				],
 				"subfolders": [],
 				"name": "Utilities"
@@ -304,9 +287,8 @@
 					"UI_Icons",
 					"UI_BlurbSF",
 					"UI_Rectangle",
-					"UI_Player_Images",
+					"UI_Avatar",
 					"UI_QRCode",
-					"UI_Loader",
 					"UI_SVG",
 					"UI_MenuText",
 					"UI_Images",
@@ -330,7 +312,8 @@
 					"bbPlayer",
 					"bbProjectile",
 					"bbDecor",
-					"bbItem"
+					"bbItem",
+					"bbAlert"
 				],
 				"subfolders": [],
 				"name": "Billboards"
@@ -338,7 +321,7 @@
 			{
 				"items": [
 					"3dCannon",
-					"3dIsland",
+					"3dTerrain",
 					"3dObstacle1",
 					"3dStoneParticle"
 				],
@@ -398,7 +381,6 @@
 		"subfolders": [
 			{
 				"items": [
-					"eAnimations 🎞️",
 					"eCollisions 💥",
 					"eCreated ✨",
 					"eSystem ⏱️",
@@ -1036,7 +1018,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "57b",
+		"version": "58",
 		"autoIncrementVersion": false,
 		"author": "Lasermagnet Games",
 		"authorEmail": "games@lasermagnet.com",

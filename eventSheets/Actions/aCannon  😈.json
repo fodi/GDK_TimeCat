@@ -142,6 +142,14 @@
 							}
 						},
 						{
+							"id": "set-visible",
+							"objectClass": "Cannon",
+							"sid": 694796100320004,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
 							"type": "comment",
 							"text": "Initialize a cannon"
 						},
@@ -283,28 +291,6 @@
 							}
 						},
 						{
-							"type": "comment",
-							"text": "blergh"
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 114628332872552,
-							"parameters": {
-								"seconds": "dt * 2",
-								"use-timescale": true
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Cannon",
-							"sid": 782227550076583,
-							"parameters": {
-								"instance-variable": "isInitialized",
-								"value": "YES"
-							}
-						},
-						{
 							"id": "set-angle-toward-position",
 							"objectClass": "Cannon",
 							"sid": 395140256709513,
@@ -399,6 +385,43 @@
 								}
 							],
 							"sid": 189233420045399
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "this is an yucky workaround because the cannon spawns in the middle of the level and the orbit behaviour doesn't immediately reposition it"
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 979331382614448,
+									"parameters": {
+										"seconds": "dt * 2",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Cannon",
+									"sid": 921688856275679,
+									"parameters": {
+										"instance-variable": "isInitialized",
+										"value": "YES"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Cannon",
+									"sid": 581672308249083,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 562111437314413
 						}
 					]
 				}
@@ -816,10 +839,10 @@
 								{
 									"id": "log",
 									"objectClass": "Browser",
-									"sid": 683865789618110,
+									"sid": 435508653439587,
 									"parameters": {
 										"type": "log",
-										"message": "\"Cannon has no target, skipping attack\""
+										"message": "StringSub(\"Cannon #{0} has no target, skipping attack.\", Cannon.UID)"
 									}
 								}
 							],

@@ -1360,12 +1360,6 @@
 							"sid": 359396442737817,
 							"children": [
 								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 970444849440074
-								},
-								{
 									"eventType": "comment",
 									"text": "Mouse as fallback"
 								},
@@ -2080,183 +2074,189 @@
 			"children": [
 				{
 					"eventType": "comment",
-					"text": "Kill a random player"
+					"text": "Preview-only stuff"
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 330196428565290,
-							"parameters": {
-								"key": 75
-							}
-						},
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 325012946556829,
-							"parameters": {
-								"key": 16
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player",
-							"sid": 539931941371326,
-							"parameters": {
-								"instance-variable": "isDead",
-								"comparison": 0,
-								"value": "NO"
-							}
-						},
-						{
-							"id": "pick-random-instance",
-							"objectClass": "System",
-							"sid": 800356689883337,
-							"parameters": {
-								"object": "Player"
-							}
-						},
-						{
 							"id": "is-in-preview",
 							"objectClass": "System",
-							"sid": 920158339021953
+							"sid": 897568102004347
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 879481860914955,
+					"children": [
 						{
-							"customAction": "changeHealth",
-							"objectClass": "Player",
-							"sid": 146020109637759,
-							"parameters": [
-								"-9999",
-								"YES",
-								"YES"
-							]
-						}
-					],
-					"sid": 221274952355326
-				},
-				{
-					"eventType": "comment",
-					"text": "Spawn a cannon"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 948518219933314,
-							"parameters": {
-								"key": 67
-							}
+							"eventType": "comment",
+							"text": "Kill a random player"
 						},
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 262043909394990,
-							"parameters": {
-								"key": 16
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 986913769339132,
+									"parameters": {
+										"key": 75
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 636677554388791,
+									"parameters": {
+										"key": 16
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 839100071808734,
+									"parameters": {
+										"instance-variable": "isDead",
+										"comparison": 0,
+										"value": "NO"
+									}
+								},
+								{
+									"id": "pick-random-instance",
+									"objectClass": "System",
+									"sid": 455548754021893,
+									"parameters": {
+										"object": "Player"
+									}
+								}
+							],
+							"actions": [
+								{
+									"customAction": "changeHealth",
+									"objectClass": "Player",
+									"sid": 630326087271397,
+									"parameters": [
+										"-9999",
+										"YES",
+										"YES"
+									]
+								}
+							],
+							"sid": 675639720816591
 						},
 						{
-							"id": "is-in-preview",
-							"objectClass": "System",
-							"sid": 873524528860268
-						}
-					],
-					"actions": [
-						{
-							"customAction": "spawn",
-							"objectClass": "Cannon",
-							"sid": 905304928283476
-						}
-					],
-					"sid": 885534510591842
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 185409335998506,
-							"parameters": {
-								"key": 86
-							}
+							"eventType": "comment",
+							"text": "Spawn a cannon"
 						},
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 653356155519876,
-							"parameters": {
-								"key": 16
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 739235138449009,
+									"parameters": {
+										"key": 67
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 724391357347612,
+									"parameters": {
+										"key": 16
+									}
+								}
+							],
+							"actions": [
+								{
+									"customAction": "spawn",
+									"objectClass": "Cannon",
+									"sid": 806411423436956
+								}
+							],
+							"sid": 519932586503902
 						},
 						{
-							"id": "is-in-preview",
-							"objectClass": "System",
-							"sid": 173251779252270
-						}
-					],
-					"actions": [
-						{
-							"customAction": "attack",
-							"objectClass": "Cannon",
-							"sid": 309745609914254
-						}
-					],
-					"sid": 823914743636078
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 709319968508342,
-							"parameters": {
-								"key": 66
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 106318779712414,
+									"parameters": {
+										"key": 86
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 644762738486652,
+									"parameters": {
+										"key": 16
+									}
+								},
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 711800483407804,
+									"parameters": {
+										"object": "Cannon"
+									}
+								}
+							],
+							"actions": [
+								{
+									"customAction": "attack",
+									"objectClass": "Cannon",
+									"sid": 466193081021168
+								}
+							],
+							"sid": 991599422708963
 						},
 						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 556267026661369,
-							"parameters": {
-								"key": 16
-							}
-						},
-						{
-							"id": "is-in-preview",
-							"objectClass": "System",
-							"sid": 666088024194463
-						},
-						{
-							"id": "for-each",
-							"objectClass": "System",
-							"sid": 430070613995685,
-							"parameters": {
-								"object": "Cannon"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 729463005155382,
+									"parameters": {
+										"key": 66
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 247891095024163,
+									"parameters": {
+										"key": 16
+									}
+								},
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 730393131332896,
+									"parameters": {
+										"object": "Cannon"
+									}
+								}
+							],
+							"actions": [
+								{
+									"customAction": "changeHealth",
+									"objectClass": "Cannon",
+									"sid": 277536009514108,
+									"parameters": [
+										"-Self.health",
+										"angle(midX, midY, Self.X, Self.Y)",
+										"100"
+									]
+								}
+							],
+							"sid": 130162962180731
 						}
-					],
-					"actions": [
-						{
-							"customAction": "changeHealth",
-							"objectClass": "Cannon",
-							"sid": 657067827373012,
-							"parameters": [
-								"-Self.health",
-								"angle(midX, midY, Self.X, Self.Y)",
-								"100"
-							]
-						}
-					],
-					"sid": 696221050069728
+					]
 				},
 				{
 					"eventType": "comment",
@@ -2379,504 +2379,6 @@
 							"sid": 978498058186916
 						}
 					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 741755244109110,
-							"parameters": {
-								"key": 88
-							}
-						},
-						{
-							"id": "compare-opacity",
-							"objectClass": "Symbol",
-							"sid": 375887966230010,
-							"parameters": {
-								"comparison": 0,
-								"opacity": "100"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "Symbol",
-							"sid": 211287232467612,
-							"parameters": {
-								"visibility": "toggle"
-							}
-						}
-					],
-					"sid": 556549061208795,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 694036550868403,
-							"parameters": {
-								"key": 107
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-z-elevation",
-							"objectClass": "CameraHelper",
-							"sid": 952042408619073,
-							"parameters": {
-								"z": "Self.ZElevation - 5"
-							}
-						}
-					],
-					"sid": 349815076857173,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 272062554337996,
-							"parameters": {
-								"key": 109
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-z-elevation",
-							"objectClass": "CameraHelper",
-							"sid": 202461511704725,
-							"parameters": {
-								"z": "Self.ZElevation + 5"
-							}
-						}
-					],
-					"sid": 813145669667060,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 348947455835998,
-							"parameters": {
-								"key": 111
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "subtract-from-instvar",
-							"objectClass": "CameraHelper",
-							"sid": 650983970135699,
-							"parameters": {
-								"instance-variable": "R_FieldOfView",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 181569761256367,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 426557159543174,
-							"parameters": {
-								"key": 106
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-instvar",
-							"objectClass": "CameraHelper",
-							"sid": 295332584510756,
-							"parameters": {
-								"instance-variable": "R_FieldOfView",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 981083144871587,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 845512472805252,
-							"parameters": {
-								"key": 104
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "CameraHelper",
-							"sid": 546427801694875,
-							"behaviorType": "8Direction",
-							"parameters": {
-								"control": "up"
-							}
-						}
-					],
-					"sid": 667294599852306,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 368023981175758,
-							"parameters": {
-								"key": 98
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "CameraHelper",
-							"sid": 545663379602025,
-							"behaviorType": "8Direction",
-							"parameters": {
-								"control": "down"
-							}
-						}
-					],
-					"sid": 207890546441287,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 383191344626872,
-							"parameters": {
-								"key": 100
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "CameraHelper",
-							"sid": 309146840867719,
-							"behaviorType": "8Direction",
-							"parameters": {
-								"control": "left"
-							}
-						}
-					],
-					"sid": 375526865816699,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 634988818694175,
-							"parameters": {
-								"key": 102
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "CameraHelper",
-							"sid": 377267492259088,
-							"behaviorType": "8Direction",
-							"parameters": {
-								"control": "right"
-							}
-						}
-					],
-					"sid": 764929391571421,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 978834128716843,
-							"parameters": {
-								"key": 101
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-x",
-							"objectClass": "CameraHelper",
-							"sid": 995044476593640,
-							"parameters": {
-								"x": "midX"
-							}
-						}
-					],
-					"sid": 285712576902914,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 271239190509787,
-							"parameters": {
-								"key": 72
-							}
-						}
-					],
-					"actions": [],
-					"sid": 534131565185211,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "key-is-down",
-									"objectClass": "Keyboard",
-									"sid": 623042786198422,
-									"parameters": {
-										"key": 16
-									}
-								}
-							],
-							"actions": [
-								{
-									"customAction": "changeHealth",
-									"objectClass": "Player",
-									"sid": 101095062808219,
-									"parameters": [
-										"100",
-										"YES",
-										"YES"
-									]
-								}
-							],
-							"sid": 667711142532795,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 233255705759614
-								}
-							],
-							"actions": [
-								{
-									"customAction": "changeHealth",
-									"objectClass": "Player",
-									"sid": 628177427952531,
-									"parameters": [
-										"5",
-										"YES",
-										"YES"
-									]
-								}
-							],
-							"sid": 108090257441285,
-							"disabled": true
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 315801862150686,
-							"parameters": {
-								"key": 78
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "endLevel",
-							"sid": 937869845440389,
-							"parameters": [
-								"0"
-							]
-						}
-					],
-					"sid": 493835906592029,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 472175350096800,
-							"parameters": {
-								"key": 49
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player",
-							"sid": 182740929594051,
-							"parameters": {
-								"instance-variable": "playerId",
-								"comparison": 0,
-								"value": "1"
-							}
-						}
-					],
-					"actions": [
-						{
-							"customAction": "startStatus",
-							"objectClass": "Player",
-							"sid": 991327677168168,
-							"parameters": [
-								"ITEM_Sleep"
-							]
-						}
-					],
-					"sid": 971514204768969,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 907015543371770,
-							"parameters": {
-								"key": 50
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player",
-							"sid": 992914321330330,
-							"parameters": {
-								"instance-variable": "playerId",
-								"comparison": 0,
-								"value": "1"
-							}
-						}
-					],
-					"actions": [
-						{
-							"customAction": "startStatus",
-							"objectClass": "Player",
-							"sid": 904493575332135,
-							"parameters": [
-								"ITEM_Shield"
-							]
-						}
-					],
-					"sid": 749649414615612,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 163334350888591,
-							"parameters": {
-								"key": 189
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 229450609732912,
-							"parameters": {
-								"variable": "isPaused",
-								"comparison": 0,
-								"value": "NO"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-time-scale",
-							"objectClass": "System",
-							"sid": 188302687972153,
-							"parameters": {
-								"time-scale": "0.3"
-							}
-						}
-					],
-					"sid": 829424935116990,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-released",
-							"objectClass": "Keyboard",
-							"sid": 715148581528390,
-							"parameters": {
-								"key": 189
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 363789091725690,
-							"parameters": {
-								"variable": "isPaused",
-								"comparison": 0,
-								"value": "NO"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-time-scale",
-							"objectClass": "System",
-							"sid": 246405193411116,
-							"parameters": {
-								"time-scale": "1"
-							}
-						}
-					],
-					"sid": 277463322850566,
-					"disabled": true
 				}
 			],
 			"sid": 445167778018070

@@ -229,8 +229,8 @@
 							"objectClass": "fTile",
 							"sid": 544264342409808,
 							"parameters": {
-								"instance-variable": "pairingState",
-								"value": "PS_Unpaired"
+								"instance-variable": "state",
+								"value": "STATE_Tile_Unpaired"
 							}
 						}
 					],
@@ -332,9 +332,9 @@
 							"objectClass": "fTile",
 							"sid": 592723398729277,
 							"parameters": {
-								"instance-variable": "pairingState",
+								"instance-variable": "state",
 								"comparison": 0,
-								"value": "PS_Unpaired"
+								"value": "STATE_Tile_Unpaired"
 							}
 						},
 						{
@@ -352,8 +352,8 @@
 							"objectClass": "fTile",
 							"sid": 289792783884646,
 							"parameters": {
-								"instance-variable": "pairingState",
-								"value": "PS_Pairing"
+								"instance-variable": "state",
+								"value": "STATE_Tile_Pairing"
 							}
 						}
 					],
@@ -367,9 +367,9 @@
 									"objectClass": "Tile",
 									"sid": 818207990369155,
 									"parameters": {
-										"instance-variable": "pairingState",
+										"instance-variable": "state",
 										"comparison": 0,
-										"value": "PS_Unpaired"
+										"value": "STATE_Tile_Unpaired"
 									}
 								}
 							],
@@ -401,7 +401,7 @@
 												"object": "Tile",
 												"expression": "distance(fTile.X, fTile.Y, Tile.X, Tile.Y)",
 												"comparison": 2,
-												"value": "R_Level_Tile_Pair_OptimalMaxDistance"
+												"value": "C_Level_Tile_Pair_OptimalMaxDistance"
 											}
 										},
 										{
@@ -587,8 +587,8 @@
 							"objectClass": "fTile",
 							"sid": 948916382663629,
 							"parameters": {
-								"instance-variable": "pairingState",
-								"value": "PS_Paired"
+								"instance-variable": "state",
+								"value": "STATE_Tile_Paired"
 							}
 						},
 						{
@@ -655,7 +655,7 @@
 							"objectClass": "fTile",
 							"sid": 789577521854274,
 							"parameters": {
-								"animation": "ANIM_Closed"
+								"animation": "ANIM_Tile_Enabled"
 							}
 						},
 						{
@@ -700,28 +700,12 @@
 							}
 						},
 						{
-							"type": "comment",
-							"text": "todo? remove and use effect on tile instead"
-						},
-						{
-							"id": "spawn-another-object",
-							"objectClass": "fTile",
-							"sid": 280285669655295,
-							"parameters": {
-								"object": "Selection",
-								"layer": "Self.LayerName",
-								"image-point": "0",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
 							"id": "set-effect-enabled",
 							"objectClass": "fTile",
 							"sid": 395435552861451,
 							"parameters": {
 								"mode": "enable",
-								"effect": "EFFECT_Outline"
+								"effect": "EFFECT_Tile_Outline"
 							}
 						},
 						{
@@ -729,43 +713,9 @@
 							"objectClass": "fTile",
 							"sid": 139265188338252,
 							"parameters": {
-								"effect": "EFFECT_Outline",
+								"effect": "EFFECT_Tile_Outline",
 								"parameter-index": "0",
 								"value": "int(trim(tokenat(C_CSV_Colors_Int, playerId, \",\")))"
-							}
-						},
-						{
-							"id": "set-size",
-							"objectClass": "Selection",
-							"sid": 917974084338432,
-							"parameters": {
-								"width": "C_Level_Tile_Size",
-								"height": "C_Level_Tile_Size"
-							}
-						},
-						{
-							"id": "set-default-color",
-							"objectClass": "Selection",
-							"sid": 381392959767863,
-							"parameters": {
-								"color": "int(trim(tokenat(C_CSV_Colors_Int, playerId, \",\")))"
-							}
-						},
-						{
-							"id": "add-child",
-							"objectClass": "fTile",
-							"sid": 269611443614432,
-							"parameters": {
-								"child": "Selection",
-								"transform-x": false,
-								"transform-y": false,
-								"transform-w": false,
-								"transform-h": false,
-								"transform-a": false,
-								"transform-o": false,
-								"transform-z-elevation": false,
-								"transform-visibility": false,
-								"destroy-with-parent": true
 							}
 						}
 					],
@@ -866,7 +816,7 @@
 							"objectClass": "fTile",
 							"sid": 932757053142308,
 							"parameters": {
-								"animation": "ANIM_Closed",
+								"animation": "ANIM_Tile_Enabled",
 								"from": "beginning"
 							}
 						},
@@ -894,7 +844,7 @@
 							"sid": 412925672932136,
 							"parameters": {
 								"mode": "disable",
-								"effect": "EFFECT_Outline"
+								"effect": "EFFECT_Tile_Outline"
 							}
 						}
 					],
@@ -942,32 +892,6 @@
 						}
 					],
 					"sid": 590462676628338
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-children",
-							"objectClass": "fTile",
-							"sid": 327026390872941,
-							"parameters": {
-								"child": "Selection",
-								"which": "own"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation",
-							"objectClass": "Selection",
-							"sid": 590548689309274,
-							"parameters": {
-								"animation": "ANIM_Selection_Disappearing",
-								"from": "beginning"
-							}
-						}
-					],
-					"sid": 739207904164038
 				}
 			]
 		},
@@ -1019,7 +943,7 @@
 							"objectClass": "fTile",
 							"sid": 125946783659131,
 							"parameters": {
-								"animation": "ANIM_Disabled",
+								"animation": "ANIM_TILE_Disabled",
 								"from": "beginning"
 							}
 						},
@@ -1046,7 +970,7 @@
 							"sid": 891750249555192,
 							"disabled": true,
 							"parameters": {
-								"effect": "EFFECT_Outline",
+								"effect": "EFFECT_Tile_Outline",
 								"parameter-index": "1",
 								"value": "1"
 							}
@@ -1056,7 +980,7 @@
 							"objectClass": "fTile",
 							"sid": 633672616006826,
 							"parameters": {
-								"effect": "EFFECT_Outline",
+								"effect": "EFFECT_Tile_Outline",
 								"parameter-index": "4",
 								"value": "40"
 							}
@@ -1114,32 +1038,6 @@
 						}
 					],
 					"sid": 323371826168423
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-children",
-							"objectClass": "fTile",
-							"sid": 536847552539695,
-							"parameters": {
-								"child": "Selection",
-								"which": "own"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation",
-							"objectClass": "Selection",
-							"sid": 947583576664110,
-							"parameters": {
-								"animation": "ANIM_Selection_Connecting",
-								"from": "beginning"
-							}
-						}
-					],
-					"sid": 914338399659779
 				}
 			]
 		}

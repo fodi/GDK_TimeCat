@@ -18,8 +18,8 @@
 	
 	"pr_damage": 5,
 	"pr_speed": 150,
-	"pr_speed_increase": 20,
-	"pr_speed_max": 600,
+	"pr_speed_increase": 15,
+	"pr_speed_max": 400,
 	"pr_spawn_time_min": 1.5,
 	"pr_spawn_time_max": 3,
 	

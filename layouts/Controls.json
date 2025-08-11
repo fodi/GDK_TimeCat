@@ -44,7 +44,7 @@
 				{
 					"type": "UI_TextSF",
 					"properties": {
-						"text": "DIRECTION\n(move,\naim)",
+						"text": "DIRECTION\nmove / aim\n\n",
 						"enable-bbcode": true,
 						"character-width": 30,
 						"character-height": 30,
@@ -448,7 +448,7 @@
 				{
 					"type": "UI_TextSF",
 					"properties": {
-						"text": "ACTION\n(open tile, throw orb)",
+						"text": "ACTION\nopen tile, throw item",
 						"enable-bbcode": true,
 						"character-width": 30,
 						"character-height": 30,
@@ -883,7 +883,7 @@
 				{
 					"type": "UI_TextSF",
 					"properties": {
-						"text": "Press ACTION to continue",
+						"text": "Press anything to continue",
 						"enable-bbcode": true,
 						"character-width": 30,
 						"character-height": 30,

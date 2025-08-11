@@ -2,24 +2,8 @@
 	"name": "vPrimitives 🍞",
 	"events": [
 		{
-			"eventType": "variable",
-			"name": "EMPTY",
-			"type": "string",
-			"initialValue": "",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 690954017069938
-		},
-		{
-			"eventType": "variable",
-			"name": "NOTHING",
-			"type": "number",
-			"initialValue": "-1",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 845860890811930
+			"eventType": "comment",
+			"text": "\"Booleans\""
 		},
 		{
 			"eventType": "variable",
@@ -29,7 +13,7 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 461697262232296
+			"sid": 713287161975703
 		},
 		{
 			"eventType": "variable",
@@ -39,7 +23,35 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 360652774259531
+			"sid": 613543867981338
+		},
+		{
+			"eventType": "comment",
+			"text": "\"Null\""
+		},
+		{
+			"eventType": "variable",
+			"name": "NOTHING",
+			"type": "number",
+			"initialValue": "-1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 705221962973449
+		},
+		{
+			"eventType": "comment",
+			"text": "Empty string"
+		},
+		{
+			"eventType": "variable",
+			"name": "EMPTY",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 690954017069938
 		}
 	],
 	"sid": 366441789310355
